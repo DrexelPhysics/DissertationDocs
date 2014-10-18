@@ -1,0 +1,101 @@
+%%
+%% This is file `example-1.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% drexel-thesis.dtx  (with options: `example-part')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2010 W. Trevor King
+%% 
+%% This file may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License, either version 1.3 of this license
+%% or (at your option) any later version.  The latest version of this
+%% license is in:
+%% 
+%%    http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.3 or later is part of all distributions of LaTeX version
+%% 2003/06/01 or later.
+%% 
+\part{A Part Heading}
+\chapter{A Chapter Heading}
+\section{A Section Heading}
+The following sectioning commands are available:
+\begin{quote}
+ part \\
+ chapter \\
+ section \\
+ subsection \\
+ subsubsection \\
+ paragraph \\
+ subparagraph
+\end{quote}
+
+\subsection{natbib}
+You can cite your references with |natbib|'s |\citet| and |\citep|
+macros.  See
+\href{http://www.ctan.org/tex-archive/macros/latex/contrib/natbib/}
+{the natbib manual} for details.
+
+Here we have a text citation \citet{rief97} followed by a
+parenthetical citation\citep{rief97}.
+
+\subsubsection{Tables and Figures}
+\Blindtext[2]
+\begin{table}
+  \begin{center}
+  \begin{tabular}{r@{.}l r@{.}l r@{.}l}
+    \multicolumn{2}{c}{Time (s)} &
+      \multicolumn{2}{c}{John Henry (m)} &
+      \multicolumn{2}{c}{Steam drill (m)} \\
+    0&0 & 0&0 & 0&0 \\
+    10&0 & 4&3 & 3&75 \\
+    30&0 & 11&9 & 10&1 \\
+    \ldots
+  \end{tabular}
+  \caption{A table float.} % low caption allowed with floatrow
+%% Note the strange |r@{.}l| notation in the |\tabular| column
+%% definition.  This allows for numbers aligned at the decimal point
+%% (see \href{http://www.stat.unipg.it/tex-man/ltx-68.html}{here}).
+%%
+%% |\multicolumn{num_cols}{alignment}{contents}| allows the headings
+%% to span the pre- and post-decimal columns.
+  \end{center}
+\end{table}
+\Blindtext[2]
+\begin{figure}
+  \caption{A figure float. \blindtext} % high caption allowed with floatrow
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{drexel-logo}
+  \end{center}
+\end{figure}
+\Blindtext[3]
+\begin{figure}
+  \begin{center}
+    \subfloat[][]{%
+      \includegraphics[width=0.2\textwidth]{drexel-logo}%
+      \label{fig:sub-a}}
+    \subfloat[][]{%
+      \includegraphics[width=0.2\textwidth]{drexel-logo}%
+      \label{fig:sub-b}}
+    \caption{(a) One subfig float. (b) Another subfig float.%
+      \label{fig:both}}
+  \end{center}
+\end{figure}
+You can reference the subfig floats individually (\ref{fig:sub-a}) or
+together (\ref{fig:both}).
+
+\Blindtext[3]
+
+\part{Another Part}
+\chapter{Another Chapter}
+\Blindtext[5]
+\chapter{A Long Title Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
+Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla}
+\Blindtext[5]
+\endinput
+%%
+%% End of file `example-1.tex'.
