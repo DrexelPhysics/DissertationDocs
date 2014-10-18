@@ -1,0 +1,9 @@
+This is the README file for 'draftmark' package, version 1.2.
+
+This package puts a user-specified draftmark on select pages of documents. It is more general than the 'draftwatermark' package by Sergio Callegari and 'draftcopy' by Jurgen Vollmer. The advantages of this package over 'draftwatermark' include: the user can specify his/her own draftmark and color, the draftmark position and orientation, the page (all pages, odd pages, even pages, a particular page number, and a range of pages) on which the draftmark should appear, and all the options are passed directly to package instead of being defined by macros. There is also the provision to use the macro \draftmarksetup, which can be used to dynamically specify draftmark properties for each page or range of pages. With the 'xcolor' package (loaded by this package), all colors can be passed to this package. The code of this package is very much shorter than that of the 'draftcopy' package by Jurgen Vollmer (2002) because it capitalizes on some dvi hook packages that have become available in recent years. With the \includegraphics command, this package can be used to insert graphic watermarks, but it is meant to be used primarily with text draftmarks. Graphic watermarks are conveniently handled by the sister 'xwatermark' package.
+
+Copyright (c) 2009 Ahmed Musa (a.musa@rocketmail.com).
+
+This work may be distributed and/or modified for non-commercial purposes only.
+
+End of README file. 

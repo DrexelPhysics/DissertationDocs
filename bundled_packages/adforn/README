@@ -1,0 +1,32 @@
+adforn
+------
+
+adforn consists of:
+1. the Ornements ADF font developed by Hirwen Harendel, Arkandis Digital
+Foundry (ADF) and released under the terms set out in the files COPYING and
+NOTICE in postscript type 1 format; 
+2. (La)TeX support by Clea F. Rees released under the LPPL. All files covered
+by the LPPL are listed in the file manifest.txt.
+
+Information and resources concerning Ornements ADF, including an opentype
+version of the font, and other ADF fonts can be found on the foundry's
+homepage:
+	http://arkandis.tuxfamily.org/
+
+(La)TeX Support
+---------------
+
+For details, please see adforn.pdf.
+
+The (La)TeX support should be considered somewhat experimental. If you find
+any problems, please let me know and I will try to correct them. If you can
+send a fix, so much the better.
+
+Contact Details
+---------------
+
+If you have comments about the font itself, please contact Hirwen Harendal
+(harendalh <at> hotmail <dot> com). 
+
+Clea F. Rees (cfrees <at> imapmail <dot> org)
+2010/07/30
