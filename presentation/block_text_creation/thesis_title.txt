@@ -1,9 +1,0 @@
-On the Role of
-Entropy
-in the Protein Folding Process
-: \phantom{\Large in the Protein Folding Process}
-\definecolor{xc}{cmyk}{0, 0.02, 0.0, 0.0} $\textcolor{xc} \bullet$ \includegraphics[width=3cm]{vignette.pdf} $\textcolor{xc} \bullet$
-: \phantom{\Large in the Protein Folding Process}
-A Ph.D. defense by
-{\textsc Travis Hoppe}
-Advised by Dr. Jian-Min Yuan
