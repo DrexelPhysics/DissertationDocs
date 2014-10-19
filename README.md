@@ -18,7 +18,7 @@ The LaTeX class file, [`drexel-thesis.cls`](Templates/drexel-thesis.cls), requir
 
 ## Dissertation Requirements
 
-A PDF document entitled, [`thesismanual.pdf`](Templates/thesismanual.pdf) has also been included and contains all requirements for formatting and arrangement of
+A PDF document entitled, [`thesismanual.pdf`](Templates/thesismanual.pdf?raw=true) has also been included and contains all requirements for formatting and arrangement of
 a Drexel Dissertation, according to the Drexel University Office of Research and Graduate Studies. 
 The dissertation template, [`example.tex`](Templates/example.tex), should in principle always be up-to-date to reflect these formatting and arrangement requirement.
 
