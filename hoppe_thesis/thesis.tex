@@ -1,0 +1,107 @@
+%\documentclass[subfig,indenttoc,blackref]{drexel-thesis} % library copy
+\documentclass[subfig,blackref,draftspace]{drexel-thesis} % for committee
+%\documentclass[draft,subfig,blackref,draftwatermark]{drexel-thesis} % draft copy
+
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{dsfont} % Fancy R^n symbol
+\usepackage{placeins}   % To allow pictures to flush after a section
+
+% fncychap clobbers \appendix with a silly implementation that breaks
+% hyperlinks to appendix chapters.  Work around this by ignoring their
+% implementation completely.
+\let\temporaryAppendix\appendix
+\usepackage[Conny]{fncychap}  % Nicer style used for distribution
+\let\appendix\temporaryAppendix
+
+\usepackage{tikz}
+\usepackage{tkz-berge}
+\usetikzlibrary{shapes}
+
+\ChRuleWidth{1.5pt}
+\ChTitleVar{\Large \sc \bf}
+\ChNumVar{\Large \sc \bf}
+\ChNameVar{\Large \sc \bf}
+
+
+\input{supplement/customizations}
+
+\includeonly{
+     tex/preamble,              %Dedications, acknowledgments, TOC, and abstract
+     tex/preface,               %Biophysics topical comments
+     tex/introduction,          %CHAPTER: Introduction
+     tex/methods,               %CHAPTER: Computational Methods   
+     tex/entropic_flow_paper/entropic_hoppe_2009, %CHAPTER: Entropic paper
+     tex/WL_crowding_paper/WL_crowding_paper,     %CHAPTER: WL paper
+     tex/aggregation,           %CHAPTER: Conformational States Under Crowding
+     tex/clustering_kinetics,       %CHAPTER: Clustering and Kinetics
+     tex/conclusion,            %CHAPTER: Conclusion
+     tex/macrostate_approx_CV,  %APPENDEX
+}
+
+%\setkeys{Gin}{draft} % Draft mode on the pictures
+
+\usepackage[super,sort&compress,comma]{natbib} % fancy citation extensions
+\bibliographystyle{unsrtnat}
+
+\author{Travis Hoppe}
+\title{On the Role of Entropy in the Protein Folding Process}
+\DUTmonth{May}
+\DUTyear{2011}
+\degree{Doctor of Philosophy}
+\advisor{Dr. Jian-Min Yuan}
+\copyrighttext{\copyrighttextCCBYSA}
+
+\input{pictures/tikzpics}
+
+\begin{document}
+
+\suppressfooter
+\include{tex/preamble}
+
+\begin{thesis}
+  \pdfbookmark[-1]{Main Matter}{Main Matter}
+  %\setstretch{1.2}
+  \include{tex/preface}
+  \restorefooter
+
+  %CHAPTER: Introduction
+  \include{tex/introduction}
+
+  %CHAPTER: Computational Methods   
+  \include{tex/methods}
+  
+  %CHAPTER: Entropic forces and Cosolute Flows
+  \include{tex/entropic_flow_paper/entropic_hoppe_2009}
+
+  %CHAPTER: Conformational States Under Crowding
+  \include{tex/WL_crowding_paper/WL_crowding_paper}
+
+  %CHAPTER: Generalized Aggregation Models
+  \include{tex/aggregation}
+
+  %CHAPTER: Clustering and Kinetics
+  \include{tex/clustering_kinetics}
+
+  %CHAPTER: Conclusion
+  \include{tex/conclusion}
+\end{thesis}
+
+\suppressfooter
+
+\bibliography{%
+tex/WL_crowding_paper/WL_lattice_protein,%
+tex/entropic_flow_paper/REF_depletion_force_corrected,%
+bibliographies/bulkref,%
+bibliographies/clustering_kinetics_boston_poster_part.bib,%
+bibliographies/extra.bib,%
+bibliographies/graph_iso.bib}
+
+\appendix % appendix needs to be in its own environment
+\restorefooter
+\include{tex/macrostate_approx_CV}
+
+\end{document}
