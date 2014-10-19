@@ -11,7 +11,9 @@ The latex dissertation template file, entitled, 'example.tex' contains
 a nearly bare bones example of a dissertation. A PDF version of this
 example can be obtained by running:
 
+``` bash
     $ pdflatex example.tex
+```
 
 The latex class file, `drexel-thesis.cls`, required for styling and
 arrangement, has also been included here.
