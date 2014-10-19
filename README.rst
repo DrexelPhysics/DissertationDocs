@@ -59,59 +59,59 @@ Examples
    Creating a new (and personal) remote copy of this repo is called
    'forking', and only needs to be done once.
 
-To fork the DrexelPhysics/DissertationDocs repo, simply navigate to
-the project repository on Github, and click on 'Fork', most likely
-located in the upper right corner of the page. Make sure to select
-your own account as the location.
+   To fork the DrexelPhysics/DissertationDocs repo, simply navigate to
+   the project repository on Github, and click on 'Fork', most likely
+   located in the upper right corner of the page. Make sure to select
+   your own account as the location.
 
-After the repo has been forked, you now have two version of
-DissertationDocs. The first is the public project (owner:
-DrexelPhysics), and the other is your own personal copy
-(UNAME/DissertationDocs; WARNING: this repo is likely still
-public. Avoid putting any sensitive information here).  
+   After the repo has been forked, you now have two version of
+   DissertationDocs. The first is the public project (owner:
+   DrexelPhysics), and the other is your own personal copy
+   (UNAME/DissertationDocs; WARNING: this repo is likely still
+   public. Avoid putting any sensitive information here).  
 
-It is now time to create a local copy of your own repo,
-DissertationDocs. In the command line, navigate to some location 
-on your local machine, and create a directory called, 'drexelphysics.'
-Within this directory, create another directory called,
-'dissertationdocs.' Now clone your remote repo into this repository:
+   It is now time to create a local copy of your own repo,
+   DissertationDocs. In the command line, navigate to some location 
+   on your local machine, and create a directory called, 'drexelphysics.'
+   Within this directory, create another directory called,
+   'dissertationdocs.' Now clone your remote repo into this repository:
 
->>> git clone https://github.com/UNAME/DissertationDocs.git
+.. code-block:: bash
 
-where 'UNAME' is your Github username. This also only needs to be done
-once. You are now free to create or modify files within this new local
-git directory.
+    $ git clone https://github.com/UNAME/DissertationDocs.git
 
-The last thing one needs to do, is to tell git where 'upstream' is
-located. Upstream should always point to the larger
-DrexelPhysics/DissertationDocs repo. This ensures that updating your
-personal remote and local repos will always pull from the correct
-location. In order to set upstream, do the following within your local
-git directory:
+   where 'UNAME' is your Github username. This also only needs to be done
+   once. You are now free to create or modify files within this new local
+   git directory.
 
->>> git remote add upstream git@github.com:DrexelPhysics/DissertationDocs.git
+   The last thing one needs to do, is to tell git where 'upstream' is
+   located. Upstream should always point to the larger
+   DrexelPhysics/DissertationDocs repo. This ensures that updating your
+   personal remote and local repos will always pull from the correct
+   location. In order to set upstream, do the following within your local
+   git directory:
 
-If this has worked, a simple:
+.. code-block:: bash
 
->>> git remote -v
+    $ git remote add upstream git@github.com:DrexelPhysics/DissertationDocs.git
 
-will show the following: 
->>> origin	https://github.com/UNAME/DissertationDocs.git (fetch)
->>> origin	https://github.com/UNAME/DissertationDocs.git (push)
->>> upstream	git@github.com:DrexelPhysics/DissertationDocs.git (fetch)
->>> upstream	git@github.com:DrexelPhysics/DissertationDocs.git (push)
+   If this has worked, a simple:
 
-The process of setting your upstream only needs to be done once.
+.. code-block:: bash
 
-2) Making changes to files, and updating your own local and remote repos:
-If new files are created or existing files are modified, 
+    $ git remote -v
 
+   will show the following: 
 
-3) Pushing changes upstream:
+.. code-block:: bash
 
+    $ origin	https://github.com/UNAME/DissertationDocs.git (fetch)
+    $ origin	https://github.com/UNAME/DissertationDocs.git (push)
+    $ upstream	git@github.com:DrexelPhysics/DissertationDocs.git (fetch)
+    $ upstream	git@github.com:DrexelPhysics/DissertationDocs.git (push)
 
-4) 
+   The process of setting your upstream only needs to be done once.
 
+.. topic:: Making changes to files, and updating your own local and remote repos
 
-
- 
+.. topic:: Pushing changes upstream
