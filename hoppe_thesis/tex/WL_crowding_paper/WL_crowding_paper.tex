@@ -93,11 +93,11 @@ of the positive energetic contributions to the Hamiltonian when one ignores the 
 As an illustrative example of the decoupling method consider a 12 bead homopolymer defined over a cubic lattice where every connection is favorable ($\GO_{ij} = 1$ if $|i-j| > 1$) in the particular conformation shown in Figure \ref{fig:Sample_homopoly_backbone}. All of the native connections, which in this case are simply all nearest neighbors, are shown in Figure \ref{fig:Sample_homopoly_connections}. Abstracting the representation to a graph in Figure \ref{fig:Sample_homopoly_graph} shows the finite system that solves the density of states over the Potts model. Usually, when solving a Potts/Ising-type system the underlying graph has a high degree of symmetry (cubic lattices or Cayley trees are common examples). For a typical graph produced by our model this symmetry is broken, forcing us to numerically compute $\Omega_2 (\sigma, \KP; \CHIX(\mathbf{c}))$. However, the number of edges in the graph determine the maximum number of favorable connections. Since this number is small, the convergence of the Wang-Landau algorithm on this portion of the DOS is rapid.
 \begin{figure}[ht]
   \subfloat[][Backbone $\mathbf{c}$]{\label{fig:Sample_homopoly_backbone}
- \includegraphics[width=\figurewidthTRIPLE]{WL_crowding_paper/homopoly_backbone_trim.png}}
+ \includegraphics[width=\figurewidthTRIPLE]{tex/WL_crowding_paper/homopoly_backbone_trim.png}}
  \subfloat[][Native Contacts $\CHIX(\mathbf{c})$]{\label{fig:Sample_homopoly_connections}
- \includegraphics[width=\figurewidthTRIPLE]{WL_crowding_paper/homopoly_connections_trim.png}} \\
+ \includegraphics[width=\figurewidthTRIPLE]{tex/WL_crowding_paper/homopoly_connections_trim.png}} \\
  \subfloat[][Connection Graph $\CHIX(\mathbf{c}) \to g(\mathbf{c})$]{\label{fig:Sample_homopoly_graph}
- \includegraphics[width=\figurewidthSINGLE]{WL_crowding_paper/3d_example_graph-crop.pdf}}
+ \includegraphics[width=\figurewidthSINGLE]{tex/WL_crowding_paper/3d_example_graph-crop.pdf}}
 \caption{Sample homopolymer (with all connections favorable) on a cubic lattice with (a) the backbone, and (b) the energetically favorable connections. The problem of finding the density of states for the internal conformations of each bead for this conformation is then reduced to solving the density of states of the Potts model over the graph shown in (c). Note that the labels in (c) are shown only to guide the eye, all valid permutations of the indices belong to $\text{Aut}( g(\mathbf{c}) )$ and hence define the same Potts sub-problem. The $\GO$ model in the Hamiltonian would make some of the connections in $\CHIX(\mathbf{c})$ unfavorable, further simplifying the problem. Additionally, our model is defined over a fcc lattice, while the example shown above is a cubic lattice for illustrative purposes.}
 \end{figure}
 
@@ -169,13 +169,13 @@ The first peptide (sequence: \texttt{RFSEV$^D$[PG]\linebreak[0]KKFITS$^D$[PG]\li
 An artifact of the fcc lattice forces the $\beta$-hairpin to be made over an odd number of lattice sites, thus we replace the Pro-Gly residues in the first two designed proteins and the Ala-Thr residues in the third peptide trpzip4-m1, with a combined residue (denoted with a square bracket, e.g..\ [PG]). The experimental measurements on these peptides have been carried out using temperature jump experiments, for details see \cite{du_understanding_2006,xu_probing_2008}.
 \begin{figure}[ht]
  \subfloat[][Chemical Representation]{\label{fig:28_residue_seq_chem_sch}
- \includegraphics[width=\figurewidthSINGLE]{WL_crowding_paper/PIC_28_residue_seq_chem_sch.png}}
+ \includegraphics[width=\figurewidthSINGLE]{tex/WL_crowding_paper/PIC_28_residue_seq_chem_sch.png}}
 \caption{Native state of the peptide $^D$P$^D$P$^D$P represented schematically. The Pro-Gly amino acid residues at each end are combined to a single bead to allow for the proper turn structure on the fcc lattice. Image used with permission from Gai.\cite{xu_probing_2008}}
 \end{figure}
 
 \begin{figure}[ht]
  \subfloat[][Chemical Representation]{\label{fig:trpzip_residue_seq_chem_sch}
- \includegraphics[width=\figurewidthSINGLE]{WL_crowding_paper/trpzipm1_du_pic.png}}
+ \includegraphics[width=\figurewidthSINGLE]{tex/WL_crowding_paper/trpzipm1_du_pic.png}}
 \caption{Native state of the trpzip-m1 peptide represented schematically. 
 This image was generated from the NMR structure of trpzip4 (PDB code 1LE3, structure 1). The dashed lines represent the hydrogen bonds. Image used with permission from Gai.\cite{du_understanding_2006}}
 \end{figure}
@@ -200,7 +200,7 @@ Four-stranded   & 4.319 & 1751.3 & 0.0    \\
 \end{table}
 
 \begin{figure}[ht]
- \includegraphics[width=\figurewidthSINGLE]{WL_crowding_paper/PLOT_all_experimental_fits-crop.pdf}
+ \includegraphics[width=\figurewidthSINGLE]{tex/WL_crowding_paper/PLOT_all_experimental_fits-crop.pdf}
  \caption{Experimental data of fraction folded versus temperature for trpzip4-m1 (blue circles) and the three stranded $\beta$-sheet $^D$P$^D$P (red diamonds). Model fits are shown with dashed lines of the same color. The thin (black) vertical lines are shown to mark the critical temperatures at $36.1$ and $48.5$ $^\circ$C for three-stranded and trpzip4-m1 peptides respectively. The fit for the four stranded $\beta$-sheet $^D$P$^D$P$^D$P is similar to the three strand and is not shown for clarity.}
   \label{fig:Exp_fits}
 \end{figure}
@@ -210,7 +210,7 @@ In this section we use the model defined above to study the effects of crowders 
 
 Heat capacity as a function of temperature for trpzip4-m1 is shown in Figure \ref{fig:trpzip_CV_plot} while the melting points for all peptides listed in Table \ref{table:melting_points}.  As expected, trpzip4-m1 displays crowding enhanced stability with the change of critical temperature $\Delta T_c=[1.03, 1.65] ^\circ C$ at packing fractions $\phi=[0.13, 0.20]$ respectively. However, the three and four stranded $\beta$-sheets exhibit a slight decrease in their critical temperatures with $\phi$, indicating an entropically based \textit{instability} caused by the crowders. 
 \begin{figure}[ht]
-\includegraphics[width=\figurewidthSINGLE]{WL_crowding_paper/PLOT_trpzip_CV-crop.pdf}
+\includegraphics[width=\figurewidthSINGLE]{tex/WL_crowding_paper/PLOT_trpzip_CV-crop.pdf}
 \caption{Specific heat per residue count for the protein trpzip4-m1 in the presence of crowders.}
 \label{fig:trpzip_CV_plot}
 \end{figure}
@@ -234,8 +234,8 @@ Four-stranded             & $50.5 \pm 0.8$  & 49.18    & 49.01 & 48.94 \\
 
 The native state for the three and four stranded $\beta$-sheets are highly aspherical. When considering the entropic effects of crowders, the system prefers compact conformations that minimize the excluded volume effect. As a consequence of this, the native state ceases to be the minimum free energy conformation at large enough $\phi$. Crowding-induced conformational change of the native state has been observed experimentally in a recent work by Dhar \textit{et.\ al.\ }\cite{dhar_structure_2010} who studied phosphoglycerate kinase (PGK) with the same crowders as our simulations (Ficoll 70). In this study, the conformational states were changed dramatically with crowders; an optimal non-zero packing fraction of crowders was found to increase the protein's activity. In our simulation, there was no shift to a new distinct native state at higher crowding concentrations. Rather, we observed a gradual shift towards more compact conformations at the expense of breaking energetically favored bonds, a general collapse of the $\beta$-sheet. As an example of the native conformation, which is enthalpically favored, versus an entropically favored one see Figure \ref{fig:sample_states}. Previous studies that showed crowding enhanced stability often dealt with globular wild-type proteins, whose natural environment required them to operate in crowded conditions. In contrast to the PGK study, the two larger peptides in our study were not wild-type, rather they were designed and studied because of the fact that they folded into beta-like conformations at realistic temperatures without aggregation. This suggests further experimentation on the designed peptides to determine if the destabilization of the native state against those of the unfolded and intermediate states under crowded conditions can be observed experimentally. 
 \begin{figure}[ht]
-\includegraphics[width=5cm]{WL_crowding_paper/samplepic1.png} 
-\includegraphics[width=5cm]{WL_crowding_paper/samplepic2.png}
+\includegraphics[width=5cm]{tex/WL_crowding_paper/samplepic1.png} 
+\includegraphics[width=5cm]{tex/WL_crowding_paper/samplepic2.png}
 \caption{Example of native state (top) and intermediate state (bottom) of the three-stranded peptide. The top state has ten bonds (shown as thin blue lines) while the bottom has eight bonds, making the native state favored energetically. However the ratio of activity coefficients $\ln \gamma_1 / \ln \gamma_2$ is $1.13$ at 200 mg/ml ($\phi = 0.13$) favors the eight bond structure due to the entropic crowding effects. The C and N terminus marked with red and green beads respectively and the combined Pro-Gly amino acid residues are purple beads.}
 \label{fig:sample_states}
 \end{figure}
@@ -251,7 +251,7 @@ In order to assess the effect on the conformational states we examine the Boltzm
 Figure \ref{fig:trpzip_chem_change_plot} of this free energy term for trpzip4-m1 illuminates several interesting structural features from an ensemble perspective. At large temperatures we see that this excess chemical potential approaches a constant, proportional to the change in the unfolded states due to the crowders. Conversely, at very low temperatures crowders have no effect on the only viable conformation, the native state. Near the folding transition temperature, the effect is large and non-linear.
 
 \begin{figure}[ht]
-\includegraphics[width=\figurewidthSINGLE]{WL_crowding_paper/PLOT_trpzip_change_chem_pot-crop.pdf}
+\includegraphics[width=\figurewidthSINGLE]{tex/WL_crowding_paper/PLOT_trpzip_change_chem_pot-crop.pdf}
 \caption{Excess chemical potential (defined in Eq. \ref{eq:d_mu}) for the protein trpzip4-m1 in the presence of crowders.}
 \label{fig:trpzip_chem_change_plot}
 \end{figure}

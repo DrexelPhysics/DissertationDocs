@@ -73,13 +73,13 @@ The crowders consisted of a fixed number $N=50$ of homogeneous hard-discs whose 
 Statistical averages of the velocity and density fields were taken by dividing the system into $150^2$ square cells. Snapshots of the fields were taken after $1/5$ of the total simulation time to allow for an initial thermalizing of the system. The resulting density patterns shown in FIG. \ref{fig:density_plot} are complex, but similar to other studies of hard-solutes near boundary conditions. As an example, consider in FIG. \ref{fig:radial_plot} the density distributions plotted along the major and minor axes. Each curve is zero inside the depletion zone, then it exhibits characteristic oscillations on the length scale of the crowder diameter. The reason for this is well known, the crowder statistically prefers to form shells around immobile barriers. It is also clear from the earlier discussion that the density on-contact should be larger for the minor (flatter) axis of the ellipse, as the depletion force there is greater.
 
 \begin{figure}
-\includegraphics[width=\figurewidthSINGLE]{entropic_flow_paper/FIG1_EDIT.jpg}
+\includegraphics[width=\figurewidthSINGLE]{tex/entropic_flow_paper/FIG1_EDIT.jpg}
 \caption{Contours of averaged density profiles for an aspect ratio $k=2.0$, packing fraction $\Pi=0.30$, and relative crowder radius $r_c/L=0.04370$. The density has been normalized such that the bulk density is unity. Both the hard-ellipse and an approximation of the depletion zone are shown schematically.}
 \label{fig:density_plot}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\figurewidthSINGLE]{entropic_flow_paper/FIG2_EDIT.jpg}
+\includegraphics[width=\figurewidthSINGLE]{tex/entropic_flow_paper/FIG2_EDIT.jpg}
 \caption{Generalized distribution function along each elliptical axis for the parameters aspect ratio $k=2.0$, packing fraction $\Pi=0.30$, and relative crowder radius $r_c/L=0.04370$. The distribution function $g(r)$, is a measure of the average density at a point, normalized to one at the bulk density. The position of the function is to be taken from the origin along the specified axis, with the distance in units of $L$. The blue (solid) and black (dashed) curves denote the values along the minor and major axis respectively. The density on-contact is significantly greater at the minor axis of the ellipse. The curves exhibits characteristic oscillations at precisely the crowder diameter. }
 \label{fig:radial_plot}
 \end{figure}
@@ -87,7 +87,7 @@ Statistical averages of the velocity and density fields were taken by dividing t
 Interestingly, when we plot the time-averaged velocity field near the hard ellipse the field exhibits four vortices. Since the system has four-fold symmetry (up to a sign change in the curl of the velocity field), we show only a portion of the upper quadrant of the velocity in FIG. \ref{fig:velocity_plot}. The velocity field clearly exhibits a single vortex, one that remains stable in both size and location for the duration of the simulation. The net angular momentum of the system is still zero as each vortex has a counter-rotating partner, but the distribution of the momentum has been partitioned along the quadrant lines. This is an initially surprising result, as such flows are usually caused by a thermal gradient, advective field or other potential. The entropic flows observed here are completely the result of treating the ellipse as a hard boundary (rather than a free particle), which serves to redistribute the angular momentum of the system. This is discussed further in next section. The exterior periodic boundary conditions serve to enclose the flow. It is unknown if the flows obtained are still valid in an infinite bath ($L \rightarrow \infty$). The deviation from uniformity of both the density and velocity fields occurs whenever $k \neq 1$. As the the aspect ratio approaches unity ($k \rightarrow 1$) the pattern generation takes longer to develop implying that there are no observed phase transitions.
 
 \begin{figure}
-\includegraphics[width=15cm]{entropic_flow_paper/FIG3_fourvelocity.jpg}
+\includegraphics[width=15cm]{tex/entropic_flow_paper/FIG3_fourvelocity.jpg}
 \caption{Time-averaged velocity vectors in the upper right quadrant of the simulation for different parameters (shown on chart). For comparison of vector magnitudes the largest arrow in the lower-right graph corresponds to a velocity that is 6.4\% and 11.8\% of the average and median respectively of the initial velocity distribution. The general magnitude of the vectors is highly dependent on the aspect ratio, and disappears completely for a circle ($k=1$). Both the hard-ellipse and an approximation of the depletion zone are shown schematically. }
 \label{fig:velocity_plot}
 \end{figure}
@@ -103,7 +103,7 @@ where the sum extends over the set $C$ of all recorded collisions of the crowder
 $R$ is a positive function over both increasing aspect ratio and crowder density as show in FIG. \ref{fig:Pratio_plot}. Furthermore it shows the scaling of $R$ is roughly quadratic over an increase of the aspect ratio. Values of $R>1$, more pressure against the major axis, suggest a return to a spherical shape. The results obtained show that the presence of crowders near a fixed aspherical molecule is not the favored state, one that becomes increasingly unfavorable in both crowded conditions and aspect ratio. 
 
 \begin{figure}
-\includegraphics[width=\figurewidthSINGLE]{entropic_flow_paper/FIG4_EDIT.jpg}
+\includegraphics[width=\figurewidthSINGLE]{tex/entropic_flow_paper/FIG4_EDIT.jpg}
 \caption{Plot of the pressure ratio $R$ as a function of the aspect ratio $k$ for various values of fixed packing fraction $\Pi$. Each point on the graph represents a complete simulation with different parameters. The values of the fixed packing fraction include $\Pi=[0.10,0.15,0.20,0.25,0.30]$. A quadratic best fit curve shown for each value of $\Pi$ with the bottom curve corresponding to $\Pi=0.10$ and the other curves following sequentially. Note that each curve starts at $R=1.00$ regardless of $\Pi$ since the aspect ratio starts at $k=1.0$. }
 \label{fig:Pratio_plot}
 \end{figure}
@@ -161,7 +161,7 @@ R(\theta) =
 Lacking further information on the $\phi$ dependence of the velocity distribution we assume that this distribution is the same at all points. As such, an integration over a range of velocities drawn from a Boltzmann distribution at temperature $T$ would scale the expression by a constant factor. As expected, the expression reduces to $\left < \Delta L(\phi) \right >=0$ for circles. For aspect ratios where $k \neq 1$, we see in FIG. \ref{fig:delta_L} that there are four regions of non-zero $\left < \Delta L(\phi) \right >$ separated by the symmetries of the ellipse. If the crowder particles are allowed to interact, regions of alternating $\left < \Delta L(\phi) \right >$ indicate the potential to develop counter-rotating flows in each quadrant. 
 %
 \begin{figure}
-\includegraphics[width=\figurewidthSINGLE]{entropic_flow_paper/FIG5_EDIT.jpg}
+\includegraphics[width=\figurewidthSINGLE]{tex/entropic_flow_paper/FIG5_EDIT.jpg}
 \caption{Plot of $\left < \Delta L(\phi) \right >$ for various aspect ratios as a function of the elliptical parameter $\phi$. With area fixed at $E_a E_b \pi=1$, aspect ratios are plotted from $k=E_a/E_b=1$ to $k=2$ in increments of $1/6$. The dashed lines indicate the two curves $k=1,5/3$, with the flat line corresponding to the circle. }
 \label{fig:delta_L}
 \end{figure}
