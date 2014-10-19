@@ -7,25 +7,20 @@ comprehensive and up-to-date.
 
 ## General Template
 
-The latex dissertation template file, entitled, `example.tex` contains
-a nearly bare bones example of a dissertation. A PDF version of this
-example can be obtained by running:
+The LaTeX dissertation template file entitled, [`example.tex`](Templates/example.tex), contains a bare bones example of a dissertation. 
+A PDF version of this example can be obtained by running from the `Template` directory:
 
 ``` bash
 $ pdflatex example.tex
 ```
 
-The latex class file, `drexel-thesis.cls`, required for styling and
-arrangement, has also been included here.
+The LaTeX class file, [`drexel-thesis.cls`](Templates/drexel-thesis.cls), required for styling and arrangement, has also been included here.
 
 ## Dissertation Requirements
 
-A pdf document entitled, `thesishandbook.pdf` has also been included
-and contains all requirements for formatting and arrangement of
-a Drexel Dissertation, according to the Drexel University Office of
-Research and Graduate Studies. The dissertation template,
-`example.tex`, should in principle always be up-to-date to reflect
-these formatting and arrangement requirement at all times.
+A PDF document entitled, [`thesismanual.pdf`](Templates/thesismanual.pdf) has also been included and contains all requirements for formatting and arrangement of
+a Drexel Dissertation, according to the Drexel University Office of Research and Graduate Studies. 
+The dissertation template, [`example.tex`](Templates/example.tex), should in principle always be up-to-date to reflect these formatting and arrangement requirement.
 
 ## Purpose of this repository
 
@@ -37,7 +32,8 @@ resource remains useful for everyone (now and in the future):
 
   * All users are granted full privileges to this repo; no exceptions.
   * All users are very much encouraged (but of course are in no way required) to upload their own personal dissertations as examples for less senior students.
-  * All users should generally refrain from deleting files, unless it has been determined (and ideally confirmed by a qualified person) that something is either out-of-date, or is incorrect. Another exception is the deletion of personal thesis files located in a sub-directory of this repo.
+  * All users should generally refrain from deleting files, unless it has been determined (and ideally confirmed by a qualified person) that something is either out-of-date, or is incorrect. 
+  * Users should not modify others uploaded Thesis without _explict_ permission.
 
 ## Examples
 
@@ -116,7 +112,7 @@ $ mkdir FirstLast
 ```
 
 First, let's add a readme file, which describes and lists all files
-(and perhaps non-standard latex packages used) which will exist in
+(and perhaps non-standard LaTeX packages used) which will exist in
 this sub-directory. Now let's tell git to begin tracking this file.
 
 ``` bash
