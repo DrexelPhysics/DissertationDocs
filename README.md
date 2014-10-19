@@ -1,6 +1,4 @@
-========================
 # Drexel Dissertation Template Files
-========================
 
 This repository (hereafter, "repo") is a collection of all documents
 and template files needed for the completion of a Ph.D. in physics at
@@ -8,7 +6,6 @@ Drexel University. Attempts will be made to keep this repo
 comprehensive and up-to-date.
 
 ## General Template
-----------------
 
 The latex dissertation template file, entitled, 'example.tex' contains
 a nearly bare bones example of a dissertation. A PDF version of this
@@ -20,7 +17,6 @@ The latex class file, `drexel-thesis.cls`, required for styling and
 arrangement, has also been included here.
 
 ## Dissertation Requirements
--------------------------
 
 A pdf document entitled, `thesishandbook.pdf` has also been included
 and contains all requirements for formatting and arrangement of
@@ -30,7 +26,6 @@ Research and Graduate Studies. The dissertation template,
 these formatting and arrangement requirement at all times.
 
 ## Purpose of this repository
---------------------------
 
 All Drexel University graduate physics students are allowed and
 encouraged to use this repo. This repo serves as a central (public)
@@ -43,7 +38,6 @@ resource remains useful for everyone (now and in the future):
   * All users should generally refrain from deleting files, unless it has been determined (and ideally confirmed by a qualified person) that something is either out-of-date, or is incorrect. Another exception is the deletion of personal thesis files located in a sub-directory of this repo.
 
 ## Examples
---------
 
 #### Getting Started
 
@@ -124,7 +118,6 @@ to speed with our local repo containing new content.
 
     $ git commit -am "Added README.rst."
     $ git push
-
 
 #### Pushing changes upstream
 
