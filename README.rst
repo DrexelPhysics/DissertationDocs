@@ -42,27 +42,22 @@ should be outlined to ensure that this be useful for everyone (now and
 in the future):
 
   * All users are granted full privileges to this repo; no exceptions.
-  * All users are very much encouraged (but of course are in no way
-  required) to upload their own personal dissertations as examples for
-  less senior students.
-  * All users should generally refrain from deleting files, unless it
-  has been determined (and ideally confirmed by a qualified person)
-  that something is either out-of-date, or is incorrect. Another
-  exception is the deletion of personal thesis files located in a
-  sub-directory of this repo.
+  * All users are very much encouraged (but of course are in no way required) to upload their own personal dissertations as examples for less senior students.
+  * All users should generally refrain from deleting files, unless it has been determined (and ideally confirmed by a qualified person) that something is either out-of-date, or is incorrect. Another exception is the deletion of personal thesis files located in a sub-directory of this repo.
 
 ---------
 
 Examples
 --------
 
-  * Getting started:
-Git/Github has a bit of a steep learning curve. The first step is to
-create a complete copy of the DrexelPhysics/DissertationDocs
-repo to associate with your own Github account. If you do not already
-have a Github account, now would be a good time to create one. 
-Creating a new (and personal) remote copy of this repo is called
-'forking', and only needs to be done once.
+.. topic:: Getting Started
+
+   Git/Github has a bit of a steep learning curve. The first step is to
+   create a complete copy of the DrexelPhysics/DissertationDocs
+   repo to associate with your own Github account. If you do not already
+   have a Github account, now would be a good time to create one. 
+   Creating a new (and personal) remote copy of this repo is called
+   'forking', and only needs to be done once.
 
 To fork the DrexelPhysics/DissertationDocs repo, simply navigate to
 the project repository on Github, and click on 'Fork', most likely
