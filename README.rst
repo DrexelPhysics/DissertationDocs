@@ -1,4 +1,3 @@
-========================
 Drexel Dissertation Template Files
 ========================
 
@@ -146,3 +145,9 @@ to speed with our local repo containing new content.
 ------------------------
 Pushing changes upstream
 ------------------------
+
+Pushing content upstream will be done in the form of a 'pull request.'
+Since we have already defined upstream as
+DrexelPhysics/DissertationDocs above, and we have outlined how keep
+your own remote repo up to speed with your local repo changes, we need
+t 
