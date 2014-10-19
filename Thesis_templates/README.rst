@@ -18,7 +18,9 @@ example can be obtained by running:
 
     $ pdflatex example.tex
 
-2) Dissertation Requirements:
+Dissertation Requirements
+-------------------------
+
 A pdf document entitled, 'thesishandbook.pdf' has also been included
 and contains all requirements for formatting and arrangement of
 a Drexel Dissertation, according to the Drexel University Office of
@@ -26,7 +28,9 @@ Research and Graduate Studies. The dissertation template,
 'example.pdf', should in principle always be up-to-date to reflect
 these formatting and arrangement requirement at all times.
 
-3) Purpose of this repository:
+Purpose of this repository
+--------------------------
+
 All Drexel University graduate physics students are allowed and
 encouraged to use this repos. The purpose of this reposit is for there
 to be one central (public) location for students to come to in order
@@ -34,12 +38,12 @@ to aid them in writing and formatting their dissertation. A few rules
 should be outlined to ensure that this be useful for everyone (now and
 in the future):
 
-  - All users are granted full privileges to this repo; no
+  * All users are granted full privileges to this repo; no
   exceptions.
-  - All users are very much encouraged (but of course are in no way
+  * All users are very much encouraged (but of course are in no way
   required) to upload their own personal dissertations as examples for
   less senior students.
-  - All users should generally refrain from deleting files, unless it
+  * All users should generally refrain from deleting files, unless it
   has been determined (and ideally confirmed by a qualified person)
   that something is either out-of-date, or is incorrect. Another
   exception is the deletion of personal thesis files located in a
@@ -50,7 +54,7 @@ in the future):
 Examples
 --------
 
-1) Getting started:
+  * Getting started:
 Git/Github has a bit of a steep learning curve. The first step is to
 create a complete copy of the DrexelPhysics/DissertationDocs
 repo to associate with your own Github account. If you do not already
