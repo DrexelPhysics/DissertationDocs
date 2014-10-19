@@ -35,11 +35,10 @@ Purpose of this repository
 --------------------------
 
 All Drexel University graduate physics students are allowed and
-encouraged to use this repos. The purpose of this reposit is for there
-to be one central (public) location for students to come to in order
-to aid them in writing and formatting their dissertation. A few rules
-should be outlined to ensure that this be useful for everyone (now and
-in the future):
+encouraged to use this repo. This repo serves as a central (public)
+location for hosting references and templates to aid in the formatting
+of a Drexel dissertation. Below are a few rules to ensure that this
+resource remains useful for everyone (now and in the future):
 
   * All users are granted full privileges to this repo; no exceptions.
   * All users are very much encouraged (but of course are in no way required) to upload their own personal dissertations as examples for less senior students.
