@@ -28,7 +28,7 @@ A pdf document entitled, 'thesishandbook.pdf' has also been included
 and contains all requirements for formatting and arrangement of
 a Drexel Dissertation, according to the Drexel University Office of
 Research and Graduate Studies. The dissertation template,
-'example.pdf', should in principle always be up-to-date to reflect
+'example.tex', should in principle always be up-to-date to reflect
 these formatting and arrangement requirement at all times.
 
 Purpose of this repository
