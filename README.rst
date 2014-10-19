@@ -111,6 +111,37 @@ will show the following:
 
 The process of setting your upstream only needs to be done once.
 
-.. topic:: Making changes to files, and updating your own local and remote repos
+.. topic:: Adding/Modifying Files
+
+As an example of how to update local and remote repos, let's try
+adding a specific thesis folder which contains all relevant thesis
+files. In the command line, navigate to the git directory
+'DissertationDocs'. Within this repository, create a new directory
+'FirstLast' (where 'First' is your first name, and 'Last' if your last
+name). 
+
+.. code-block:: bash
+
+    $ mkdir FirstLast
+
+First, let's add a readme file, which describes and lists all files
+(and perhaps non-standard latex packages used) which will exist in
+this sub-directory. Now let's tell git to begin tracking this file.
+
+.. code-block:: bash
+
+    $ cd FirstLast
+    $ touch README.rst 
+    $ git add README.rst 
+
+Now git knows about this file, and all modifications to it will
+be tracked as well. The next step is to bring our own remote repo up
+to speed with our local repo containing new content.
+
+.. code-block:: bash
+
+    $ git commit -am "Added README.rst."
+    $ git push
+
 
 .. topic:: Pushing changes upstream
