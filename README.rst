@@ -143,5 +143,6 @@ to speed with our local repo containing new content.
     $ git commit -am "Added README.rst."
     $ git push
 
-
-.. topic:: Pushing changes upstream
+------------------------
+Pushing changes upstream
+------------------------
