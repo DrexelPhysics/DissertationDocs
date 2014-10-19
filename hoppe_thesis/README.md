@@ -1,9 +1,9 @@
 ## Ph.D. thesis, [Travis Hoppe](http://thoppe.github.io/)
-[Full LaTeX source](.) and [final product](thesis.pdf).
+[Full LaTeX source](.) and [final product](thesis.pdf?raw=true).
 
 Type `make` from the command-line to build the thesis.
 Assuming you have a standard build this should be fine, though I pull heavily from the "extras" packages in the Ubuntu builds.
-To view the [final PDF](thesis.pdf) without cloning the repo, click "save-as" in on the link and view from your local PDF viewer.
+To view the [final PDF](thesis.pdf?raw=true) without cloning the repo, click "save-as" in on the link and view from your local PDF viewer.
 
 
 The final thesis is about 150 pages in the "library-format" double spacing, but realistically, is only about 100 pages using single spacing.
