@@ -12,4 +12,3 @@ cleanext = ~ .out .log .toc .aux .log .lof .bbl .blg
 
 clean:
 	$(foreach x,$(cleanext),find . -name *$(x) | xargs -I {} rm -vf {};)
-	rm -vf thesis.pdf

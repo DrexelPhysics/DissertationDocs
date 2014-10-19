@@ -1,9 +1,8 @@
-# Ph.D. thesis 
-## Travis Hoppe
-Full LaTeX source and final product.
+## Ph.D. thesis, [Travis Hoppe](http://thoppe.github.io/)
+[Full LaTeX source](.) and [final product](thesis.pdf).
 
 Type `make` from the command-line to build the thesis.
-Assuming you have a standard build this should be find, though I pull heavily from the "extras" packages in the Ubuntu builds.
+Assuming you have a standard build this should be fine, though I pull heavily from the "extras" packages in the Ubuntu builds.
 
 > A protein's ultimate function and activity is determined by the unique three-dimensional structure taken by the folding process. Protein malfunction due to misfolding is the culprit of many clinical disorders, such as abnormal protein aggregations. This leads to neurodegenerative disorders like Huntington's and Alzheimer's disease. We focus on a subset of the folding problem, exploring the role and effects of entropy on the process of protein folding. Four major concepts and models are developed and each pertains to a specific aspect of the folding process: entropic forces, conformational states under crowding, aggregation, and macrostate kinetics from microstate trajectories. 
 
