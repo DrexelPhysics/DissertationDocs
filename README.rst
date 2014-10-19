@@ -89,7 +89,7 @@ located. Upstream should always point to the larger
 DrexelPhysics/DissertationDocs repo. This ensures that updating your
 personal remote and local repos will always pull from the correct
 location. In order to set upstream, do the following within your local
-git directory:
+git directory (inside of DissertationDocs):
 
 .. code-block:: bash
 
