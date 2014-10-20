@@ -172,13 +172,12 @@ local repository:
 ``` bash
 $ git branch first-last-thesis
 $ git branch
-$ >>> first-last-thesis
-$ >>> * master
-$
+first-last-thesis
+* master
 $ git checkout first-last-thesis
 $ git branch
-$ >>> * first-last-thesis
-$ >>>  master
+* first-last-thesis
+master
 $ git push --set-upstream origin first-last-thesis
 ```
 
@@ -202,7 +201,7 @@ $ git push
 ```
 
 The above commit/push commands are necessary because we are submitting
-a pull request to DrexelPhysics through out remote repo, which needs
+a pull request to DrexelPhysics through our remote repo, which needs
 to be up to date. We are now good to follow the above instructions for
 submitting a pull request:
 
@@ -229,8 +228,8 @@ $ git merge upstream/master
 $ git push
 ```
 
-** Check to make sure that your changes are present before contining
-   on to the next step. **
+**Check to make sure that your changes are present before contining
+   on to the next step.**
 
 Now, we can delete the feature branch:
 
@@ -248,6 +247,6 @@ Luckily, most things in git can be un-done. Even if you think you've
 done irreparable damage to your repo, chances are, you haven't. For
 questions, comments, and concerns, contact:
 
-* Austen Groener:
-  austen.m.groener@drexel.edu/austen.groener@gmail.com * 
+*Austen Groener:
+  austen.m.groener@drexel.edu/austen.groener@gmail.com* 
 
