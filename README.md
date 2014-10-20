@@ -179,6 +179,7 @@ $ git checkout first-last-thesis
 $ git branch
 $ >>> * first-last-thesis
 $ >>>  master
+$ git push --set-upstream origin first-last-thesis
 ```
 
 Now let's make some changes. First let's create a new folder in the
