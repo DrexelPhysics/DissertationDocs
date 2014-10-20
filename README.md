@@ -122,8 +122,8 @@ this sub-directory. Now let's tell git to begin tracking this file.
 
 ``` bash
 $ cd FirstLast
-$ touch README.rst 
-$ git add README.rst 
+$ touch README.md 
+$ git add README.md 
 ```
 
 Now git knows about this file, and all modifications to it will
@@ -136,4 +136,120 @@ $ git push
 ```
 
 #### Pushing changes upstream
+
+Once thesis files have been added to your local git repo (and these
+changes have been pushed to your remote repo), the last step will be
+to push them upstream. Pushing content upstream will be done through
+'pull requests'. Navigate to the DrexelPhysics page, and click on 'Pull
+Request'. At the very top, click on 'New Pull Request'. Then select 'compare
+across forks', with the base fork as
+DrexelPhysics/DissertationDocs:master; the head fork should always be
+your version of this repo (the one that contains modified content:
+UNAME/DissertationDocs:first-last-thesis). Step-by-step instructions
+are included below:
+
+> A Note About Branches:
+> You will notice that the above discussion of submitting a pull
+> request does not have you using the 'master' branch of your
+> DissertationDocs repo. This is intentional, and requires a word on
+> branching. In general, pushing content upstream should be done by
+> creating a branch off of your own master branch, separating out the
+> development of a single feature from the rest of the current working
+> project. **One feature, one branch.**
+
+Let's create a new branch. For this example we're pushing thesis
+documents upstream.
+
+
+Which branch are we currently on?
+
+``` bash
+$ git branch
+$ >>> * master
+```
+
+Creating a new branch will effectively create a new copy of the entire
+local repository:
+
+``` bash
+$ git branch first-last-thesis
+$ git branch
+$ >>> first-last-thesis
+$ >>> * master
+$
+$ git checkout first-last-thesis
+$ git branch
+$ >>> * first-last-thesis
+$ >>>  master
+$ git push --set-upstream origin first-last-thesis
+```
+
+Now let's make some changes. First let's create a new folder in the
+Examples directory.
+
+``` bash
+$ cd DissertationDocs/Examples
+$ mkdir FirstLast
+$ cd FirstLast
+```
+
+Next, move all relevant files into this directory through the command
+line. Git doesn't know they exist yet, so we'll have to tell it to
+begin tracking them. We'll also 
+
+``` bash
+$ git add .
+$ git commit -am "Adding First Last thesis files."
+$ git push
+```
+
+The above commit/push commands are necessary because we are submitting
+a pull request to DrexelPhysics through out remote repo, which needs
+to be up to date. We are now good to follow the above instructions for
+submitting a pull request:
+
+> Navigate to the DrexelPhysics page, and click on 'Pull Request'. At
+> the very top, click on 'New Pull Request'. Then select 'compare
+> across forks', with the base fork as
+> DrexelPhysics/DissertationDocs:master; the head fork should always
+> be your version of this repo (the one that contains modified content:
+> UNAME/DissertationDocs:first-last-thesis).
+
+Next, click on 'Create pull request'. Once this has been done,
+navigate to the pull request you've just submitted, and if it tells
+you that it is ready to merge, do so. Now all users can pull down
+these changes from upstream.
+
+A last word on cleaning up: The 'first-last-thesis' branch is no
+longer needed. First, checkout your master branch, and pull in changes
+from upstream:
+
+``` bash
+$ git checkout master
+$ git fetch upstream
+$ git merge upstream/master
+$ git push
+```
+
+** Check to make sure that your changes are present before contining
+   on to the next step. **
+
+Now, we can delete the feature branch:
+
+``` bash
+$ git branch -d first-last-thesis
+```
+
+You now have successfully added all of your thesis documents to your
+local, remote, and upstream repositories.
+
+
+#### I need help
+
+Luckily, most things in git can be un-done. Even if you think you've
+done irreparable damage to your repo, chances are, you haven't. For
+questions, comments, and concerns, contact:
+
+* Austen Groener:
+  austen.m.groener@drexel.edu/austen.groener@gmail.com * 
 
