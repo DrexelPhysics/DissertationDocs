@@ -249,6 +249,6 @@ Luckily, most things in git can be un-done. Even if you think you've
 done irreparable damage to your repo, chances are, you haven't. For
 questions, comments, and concerns, contact:
 
-*Austen Groener:
-  austen.m.groener@drexel.edu/austen.groener@gmail.com* 
+_Austen Groener:
+  austen.m.groener (at) drexel.edu/austen.groener (at) gmail.com_ 
 
