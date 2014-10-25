@@ -1,0 +1,112 @@
+% Spacings between the chapter top and to the text
+%\newcommand{\chaptertopspacing}{10}
+%\newcommand{\chaptertotextspacing}{-10}
+%\newcommand{\chaptertopspacingSTAR}{10}
+%\newcommand{\chaptertotextspacingSTAR}{-10}
+
+% Convenience functions
+\newcommand{\civ}{\ion{C}{4}}
+\newcommand{\alphauv}{$\alpha_{\rm uv}$}
+\newcommand{\aox}{$\alpha_{\rm ox}$}
+\newcommand{\ax}{$\alpha_{\rm x}$}
+\newcommand{\luvaox}{$L_{\rm uv}$--$\alpha_{\rm ox}$}
+\newcommand{\lbol}{$L_{\rm bol}$}
+\newcommand{\luv}{$L_{\rm uv}$}
+\newcommand{\lx}{$L_{\rm x}$}
+\newcommand{\llam}{$L_{\lambda}$}
+\newcommand{\ltwofive}{$L_{\rm 2500\,\AA}$}
+\newcommand{\lfiveone}{$L_{\rm 5100\,\AA}$}
+\newcommand{\bctwofive}{BC$_{\rm 2500\,\AA}$}
+\newcommand{\bcfiveone}{BC$_{\rm 5100\,\AA}$}
+\newcommand{\onemum}{1\,$\mu$m}
+\newcommand{\tenmum}{10\,$\mu$m}
+\newcommand{\thirtymum}{30\,$\mu$m}
+\newcommand{\twokev}{2\,keV}
+\newcommand{\tenkev}{10\,keV}
+\newcommand{\hundredev}{0.1\,keV}
+\newcommand{\twohundredev}{0.2\,keV}
+\newcommand{\ebv}{{\rm E(B-V)}}
+\newcommand{\dal}{\Delta(\alpha_{\lambda})}
+\newcommand{\dgi}{\Delta(g-i)}
+\newcommand{\dug}{\Delta(u-g)}
+\newcommand{\diz}{\Delta(i-z)}
+\newcommand{\mrel}{\Delta m}
+\newcommand{\mbh}{M_{\rm BH}}
+\newcommand{\lmbh}{\log{(M_{\rm BH})}}
+%\newcommand{\lf}{L_{\rm frac}}
+\newcommand{\lf}{L/L_{\rm Edd}}
+
+% -----------------------------------------------------------------------------
+% Customize fncychap settings
+%\iffinal{}{
+%	\ChRuleWidth{1.5pt}
+%	\ChTitleLowerCase
+%	\ChTitleVar{\Huge \sc}
+%	}
+
+% -----------------------------------------------------------------------------
+% tighten the fncychap spacings, TeX code taken from
+% http://tex.stackexchange.com/questions/13357/fncychap-package-reduce-vertical-gap-space-between-header-and-chapter-heading
+
+%\makeatletter
+%\renewcommand*{\@makechapterhead}[1]{%
+%  \iffinal{\setstretch{\@ssp}}{}
+%  
+%  \vspace*{\chaptertopspacing\p@}%
+%  {\parindent \z@ \raggedright \normalfont \center
+%    \ifnum \c@secnumdepth >\m@ne
+%      \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 040920
+%        \DOCH
+%      \fi
+%    \fi
+%    \interlinepenalty\@M
+%    \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 060424
+%      \DOTI{#1}%
+%    \else%
+%      \DOTIS{#1}%
+%    \fi
+%    \vspace*{\chaptertotextspacing\p@}
+%  }
+%  \iffinal{\setstretch{\@dsp}}{}  
+%}
+%
+%
+% \renewcommand*{\@makeschapterhead}[1]{%
+%  \vspace*{\chaptertopspacingSTAR\p@}%
+%  {\parindent \z@ \raggedright \center
+%    \normalfont
+%    \interlinepenalty\@M
+%    \DOTIS{#1}
+%    \vskip \chaptertotextspacingSTAR\p@
+%  }}
+% 
+%\makeatother
+%
+%
+%% -----------------------------------------------------------------------------
+%% redefine abstract from drexel-thesis since the spacing is now wrong
+%\makeatletter
+%\renewenvironment{abstract}{%
+%  \listed@schapter{\abstractname}%
+%  \blanklines{-0}%
+%  \begin{center}
+%      \setstretch{\@ssp}%
+%      \@DUT@title\\
+%      \@DUT@author\\
+%      \ifdaring{%
+%        \ifnum\c@@DUT@advisors=\@ne%
+%        Advisor:
+%        \else%
+%        Advisors:
+%        \fi}{}
+%      \@DUT@advisor\\
+%  \end{center}
+%  \blanklines{4}%
+%  \setstretch{\@dsp}%
+%  \@nobreaktrue
+%  \@afterindentfalse
+%  \@afterheading
+%}{%
+%  \par\setstretch{\@ssp}%
+%}
+%\makeatother

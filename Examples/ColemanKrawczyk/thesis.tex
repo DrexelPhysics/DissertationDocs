@@ -1,0 +1,91 @@
+%\documentclass[final,subfig,blackref,approvalform]{drexel-thesis} %final copy
+\documentclass[final,subfig,blackref]{drexel-thesis} %final copy
+%\documentclass[daring,subfig,blackref,draftspace]{drexel-thesis} %for committee
+%\documentclass[daring,subfig,blackref,draftwatermark,draftspace]{drexel-thesis} %draft copy
+
+%swap margins so the wide one is down the binding edge when printing double sided
+%only use this with twoside
+%\let\tmp\oddsidemargin
+%\let\oddsidemargin\evensidemargin
+%\let\evensidemargin\tmp
+%\reversemarginpar
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{placeins}   % To allow pictures to flush after a section
+\usepackage{setspace}
+\usepackage{nth}
+\usepackage{natbib}
+\bibliographystyle{yahapj}
+
+% fncychap clobbers \appendix with a silly implementation that breaks
+% hyperlinks to appendix chapters.  Work around this by ignoring their
+% implementation completely.
+%\let\temporaryAppendix\appendix
+%\usepackage[Conny]{fncychap}  % Nicer style used for distribution
+%\usepackage[]{fncychap}
+%\let\appendix\temporaryAppendix
+
+\usepackage{deluxetable}
+\usepackage{aastex_hack}
+%\usepackage[left]{showlabels}
+
+\input{supplement/customizations}
+
+\includeonly{
+	tex/preamble,
+	tex/Introduction,
+	tex/Data,
+	tex/SEDs,
+	tex/Dust,
+	tex/BH,
+	tex/Conclusion,
+	tex/appendix,
+	tex/CV,
+}
+
+\author{Coleman M. Krawczyk}
+\title{Spectral Energy Distributions, Dust, and Black Hole Properties: A Statistical, Multi-Wavelength Quasar Analysis}
+\DUTmonth{September}
+\DUTyear{2014}
+\degree{Doctor of Philosophy}
+\advisor{Dr. Gordon Richards}
+\copyrighttext{}
+
+\begin{document}
+
+\include{tex/preamble}
+
+\begin{thesis}
+  \pdfbookmark[-1]{Main Matter}{Main Matter}
+  \ifdaring{\setstretch{1.3}}{}
+  %\ifdaring{\setstretch{1.3}}{\setstretch{1.3}}
+  
+  %CHAPTER: Introduction
+  \include{tex/Introduction}
+  
+  %CHAPTER: Data
+  \include{tex/Data}
+  
+  %CHAPTER: Multiwavelength SEDs
+  \include{tex/SEDs}
+  
+  %CHAPTER: Dusty Quasars
+  \include{tex/Dust}
+  
+  %CHAPTER: Black Hole Properties
+  \include{tex/BH}
+  
+  %CHAPTER: Conclusion
+  \include{tex/Conclusion}
+  
+  
+\end{thesis}
+
+\bibliography{bib/All_refs}
+
+\appendix
+\include{tex/appendix}
+\include{tex/CV}
+
+\end{document}
