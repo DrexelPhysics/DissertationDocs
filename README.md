@@ -41,7 +41,7 @@ Below are a few rules to ensure that this resource remains useful for everyone:
 + **Travis Hoppe**: [_On the Role of Entropy in the Protein Folding Process_](Examples/TravisHoppe)
 + **Trevor King**: [_Open Source Single Molecule Force Spectroscopy_](Examples/TrevorKing)
 + **Coleman
-  Krawczyk**:[_Spectral Energy Distributions, Dust, and Black Hole Properties: A Statistical, Multi-Wavelength Quasar Analysis_](Examples/ColemanKrawczyk)
+  Krawczyk**: [_Spectral Energy Distributions, Dust, and Black Hole Properties: A Statistical, Multi-Wavelength Quasar Analysis_](Examples/ColemanKrawczyk)
 
 ## Getting Started
 
