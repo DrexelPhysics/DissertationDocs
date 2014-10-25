@@ -1,0 +1,149 @@
+Dear Coleman,
+
+I enjoyed reading your paper. I learned a lot, and there is great
+stuff in there. Appended are my comments. I have a few concerns, but
+I think it's in good shape overall. FYI - I will be moving to
+Connecticut the last week of August, but otherwise available through
+the fall.
+
+Cheers,
+Sarah
+
+%start of comments
+
+General:
+
+(1) You have included a lot of detail about the specific methodology
+you used for determining the E(B-V) and a_lambda distributions for the
+quasars. I am assuming that this is something you developed, and
+given the amount of work that appears to be involved and the likely
+utility of this methodology for other people, you should promote it
+(mention it explicitly and in more detail) in the abstract so it won't
+be just quasar people that find it. If this is a well-known
+methodology that you just adopted for this project, then there is way
+too much detail in section 3, and it should be cut substantially.
+
+(2) The combination of stronger [OII] emission (likely from star
+formation in the host galaxy) and weaker Balmer line emission in the
+lower-z (because the optical spectra are available) intrinsically red
+quasars makes me suspicious that the host galaxy continuum has been
+under-subtracted from this set of objects. This would both make the
+continuum redder and decrease the EW of the Balmer lines. 
+----
+Coleman -- one thing that you could do is to do it again *without*
+any host subtraction just to see how much effect is has. 
+----
+Specifics
+about the host galaxy subtraction need to be outlined, e.g., what
+template was used? how was the template normalized? Using a z=0
+elliptical template (if this is what was done) is problematic for high
+z in particular (even in a quiescent galaxy the stellar populations
+will be at least a few Gyr younger). I think a referee is likely to
+have similar questions about this part of the conclusions.
+----
+Sarah -- can you suggest better templates as a function of redshift? 
+----
+(3) I am not sure if this is within the scope of this paper, but I'd
+be interested in discussing further what the E(B-V) distribution can
+tell us about dust in the host galaxy vs. dust in the vicinity of the
+quasar. 
+----
+You'll be interested in the "multiple scatterings" dust model results that
+Karen asked us to run too. 
+----
+The link between BAL quasars that are very blue and very dust
+reddened and their CIV BAL features tells us that that dust must be
+associated with the quasar. For the ones with absolutely no dust,
+that means that there exist dust-free lines-of-sight through the
+hosts, which is really remarkable. The fraction of dust-free quasars
+should be quantified. Are those most likely to be "post-feedback"
+types of systems? How else would you get no dust through the kpcs of
+the galaxy ISM? Quiescent stellar populations have AGB stars, and
+local ellipticals have some mid-IR emission from dust. Are there any
+other regimes in the alpha_lambda vs. E(B-V) parameter space that can
+give some insight into the quasar dust vs. host dust balance?
+----
+I think that we can answer this to some extent just by looking at
+the E(B-V) distribution from the MW for the full SDSS sample.  I
+did this really quickly and found that
+E(B-V)<0.01 is 4.2% of SDSS quasars
+<0.02 is 32%
+<0.05 is 84.5%
+
+So, how rare they are depends on what we'd call "no" dust.   But I'd
+also say that, even with our attempts to break the degeneracy,
+"no dust" just means that we can't distinguish between a little dust
+and a change in the power-law slope. 
+----
+Specifics:
+
+================
+Sec. 2
+--------------
+Even with the reference to K13, would suggest including a short para.
+that specifies the S/N of the match detections to GALEX, UKIDSS and
+[particularly] 2MASS to make clear that photometric errors and
+Eddington bias [for 2MASS] are not affecting the colours of the
+individual quasars significantly. [cmk: only needed in paper, not thesis (all one section in the thesis)]
+
+Similarly, I don't see any discussion of the dispersion in the individual
+SEDs due to intrinsic variability, which is not insignificant given some
+of the epoch differences between SDSS and the other surveys. The inter-survey
+colours are definitely affected. That sais I don't expect there is a significant
+impact on the conclusions, although the dispersion in the spread of
+the intrinsic power-laws is definitely measurable when I have used [for
+example] SDSS and UKIDSS. So, suggest short para. making clear that results
+are not affected by variability. [cmk: not sure where to put this...]
+
+Further on
+
+A comment, about which you can't really do anything, although it does sort
+of relate. Ages ago I determined the shape of the extinction curve for
+1200-3000A using the SDSS quasar spectra and the photometric data
+longward of 3000A. I really should publish the result. While the shape
+is certainly SMC-like the slope in the UV below 2000A is definitely not
+as steep as SMC. Suspect that one can see that in some of your c1 - c2
+plots.
+
+Similarly, when I generate a model SED to reproduce my version of your
+modal colours one definitely needs two power-laws. one relatively blue
+(alpha_nu~=-0.5 below ~2800A) and one with alpha_nu~=-0.1 out to a
+micron. Guess the manifestation in the plots is a degree of curvature
+in the distribution of points in the c1-c2 plots? 
+
+================
+
+p. 12 
+
+How does presence of BALs affect "curvature"? Could the flux missing
+from the CIV band induce "curvature"? [cmk: not sure]
+
+
+Fig. 14
+
+lowest panel, explicitly indicate the SBB on the panel (overplot
+power-law continuum). [cmk: not sure this makes sense for this plot]
+
+p. 15 
+
+A few words are warranted here on how limb-darkening of the accretion
+disk would be expected to affect the colors. If the dust is intrinsic
+to the quasar, then more reddening should go with more limb-darkening
+(assuming the dust originates in the plane of the accretion disk). [cmk: I have no idea what this is]
+
+Do any of the intrinsically bluest quasars have no dust? Does the
+fraction of quasars with E(B-V) consistent with 0 change with
+intrinsic color? Examining this could reveal something about host
+galaxy dust. [cmk: this is answered in the marginaliztion plot...]
+---------
+
+4. The discussion is slightly weak, in my opinion, due to the lack of
+interpretation comments.   Did you intend that, or are you hoping that
+some of us will kick in some stuff?  I am wondering, e.g., why some
+quasars have bluer intrinsic continua than red quasars - do I remember
+a link with inclination, maybe an old Netzer paper?  That might
+explain the stronger CIV, given that the continuum contribution would
+decrease as cos theta from face on to edge on.  Although, this would
+not explain why Hbeta is weaker when the spectrum is redder....
+
+%end of comments

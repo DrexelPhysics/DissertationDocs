@@ -1,0 +1,3 @@
+In my thesis I made use of the standard aastex and emulateapj (including deluxetable) astro macros for latex. To get these to work with the `drexel-thesis.cls` I had to using the `aastex_hack.sty` included here. The `yahapj.bst` file makes it so the references are properly hyperlinked to their ads/arXiv pages.
+
+In addidtion to my thesis I have also included my presentation slides. These were also made in latex (using beamer), and in them I made heavy use of tikz, a package that allows you to annotate basic shapes onto the slides. The commented `\draw[help lines,xstep=.1,ystep=.1] (0,0) grid (1,1);` lines will draw a series of grid lines on the slide to help with positioning.

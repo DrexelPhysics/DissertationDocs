@@ -1,0 +1,155 @@
+\chapter{Introduction}
+
+Most massive (bulge-dominated) galaxies are believed to harbor a supermassive black hole at their centers \citep{Kormendy:1995}.  For the most part, these black holes are passive, but when the host galaxy's gas loses angular momentum it accretes onto the black hole, creating a luminous quasar \citep{Lynden-Bell:1969}. This gas can be disrupted in a number of ways, including galaxy mergers \citep[e.g.][]{Kauffmann:2000, Hopkins:2006} and secular fueling \citep[e.g.][and references therein]{Hopkins:2009}. Most of the energy output is due to an accretion disk that forms about the black hole which either directly or indirectly produces radiation across nearly the entire electromagnetic spectrum (EM) \citep{Elvis:1994}.  As a result of the quasar process, some of the energy is ``fed back'' into the galaxy, possibly disrupting the galaxy's gas supply \citep{Silk:1998,Fabian:1999} and quenching accretion of matter onto the black hole itself \citep[e.g.,][]{Di-Matteo:2005, Djorgovski:2008}.  
+
+The basic structure of a quasar is as follows \citep[e.g.][]{Antonucci:1993,Urry:1995,Krolik:1999,Heckman:2014}.  Directly surrounding the central supermassive black hole is a geometrically-thin, optically-thick accretion disk. A radial temperature gradient within this disk results in thermal continuum emission in the optical through ultraviolet.  Surrounding this accretion disk is a hot corona which can Compton-up-scatter the continuum light into the X-ray regime.  On scales of light-days to light-years a population of dense gas clouds are photo-ionized by this radiation.  These gas clouds have large velocity dispersions (several thousand km s$^{-1}$) leading broad emission lines.  
+
+Moving out further from the central black hole there is a region with large amount of obscuring material usually referred to as the dusty torus \citep{Krolik:1988, Pier:1992, Krolik:1999, Beckmann:2012}.  The inner edge of this region is set by the sublimation temperature of the dust.  As the light from the accretion disk passes through this dust it is absorbed and reemitted as thermal radiation in the near- and mid-infrared.  On the scales of a few hundred to a few thousand pc there is a population of lower density and lower velocity gas clouds.  As the ionizing radiation from the inner regions of the quasar passes, it photo-ionizes this gas, producing narrow emission lines.  In some quasars, powerful jets are produced along the polar direction of the accretion disk, leading to synchrotron emission visible at radio wavelengths.
+
+\section{Accretion Disk} \label{sec:AD}
+
+Once the gas around the black hole has a mechanism for losing angular momentum, the gas will form an accretion disk as it falls into the black hole.  Due to differential rotation within this accretion disk, there is friction within the gas, causing it to heat up and radiate strongly in the optical and ultraviolet.  One of the most basic models for the accretion disk is the $\alpha$--disk model originally developed by \citet{Shakura:1973}.
+
+\subsection{$\alpha$--Disk Model}
+
+The $\alpha$--disk model is a model for an optically-thick, geometrically-thin accretion disk.  This model assumes that the angular momentum of the in-falling material is removed from the disk through a viscosity term $\alpha$\footnote{All the derived quantities in this model are only weakly dependent on $\alpha$ and its exact value is unimportant.}.  For this model, \citet{Shakura:1973}  found the radius dependent temperature profile for the accretion disk is:
+\begin{equation} \label{disk_temp}
+ kT \propto \left( \frac{M_{\rm BH}}{M_\sun} \right)^{-1/4} \left( \frac{\dot{M}}{\dot{M}_{\rm Edd}} \right)^{1/4} R^{-3/4}
+\end{equation}
+where $M_{\rm BH}$ is the mass of the central black hole, $M_\sun$ is the mass of the Sun, $\dot{M}$ is the accretion rate, $\dot{M}_{\rm Edd}$ is the Eddington accretion rate (see Equation~\ref{eqn:M_edd}), and $R$ is the distance to the central black hole.  Assuming each portion of the accretion disk radiates locally like a blackbody, the monochromatic luminosity can be written as:
+\begin{equation}
+ L_{\nu} = \frac{8\pi h \nu^3}{c^2} \int_{R_0}^{R_1} \frac{RdR}{e^x-1}
+\end{equation}
+where $x=h\nu/kT$, $R_0$ is the inner edge of the accretion disk, and $R_1$ is the outer edge.  Taking the limit where $h\nu<<kT$:
+\begin{equation}
+ L_{\nu} \propto \nu^{1/3}.
+\end{equation}
+This would correspond to a $g-i$ color of -0.17, whereas the typical quasar has a $g-i$ color of 0.23, redder than this prediction.
+When $h\nu>>kT$ the luminosity falls off exponentially. In \S\ref{sec:mcmc_ip} we will explore both the observed and intrinsic colors in comparison with this model.
+
+\subsection{Eddington Luminosity} \label{Eddington_fraction}
+The Eddington luminosity ($L_{\rm Edd}$) is the point where the radiation pressure produced by the quasar balances the inward gravitational force caused by the central black hole \citep{Rybicki:1986}.  At this point, the in-falling material is in hydrostatic equilibrium and the acceleration is zero:
+\begin{equation} \label{eqn:hydro_eqn}
+ \frac{du}{dt} = -\frac{\nabla p}{\rho} - \nabla \Phi = 0
+\end{equation}
+where $u$ is the velocity, $p$ is the pressure, $\rho$ is the density, and $\Phi$ is the gravitational potential.  For a quasar, the pressure is dominated by radiation pressure associated with a radiation flux $F_{\rm rad}$ \citep[e.g.][]{Stern:2014}:
+\begin{equation}
+ -\frac{\nabla p}{\rho} = \frac{\kappa}{c} F_{\rm rad}
+\end{equation}
+where $\kappa$ is the opacity of the accreting material, and $c$ is the speed of light.  The luminosity of a source bounded by the surface $S$ is
+\begin{equation}
+ L_{\rm Edd} = \int_S F_{\rm rad} \cdot dS = \int_S \frac{c}{\kappa} \nabla \Phi \cdot dS,
+\end{equation}
+where the second equality comes from Equation~\ref{eqn:hydro_eqn}.  Assuming the opacity is constant over the surface and using the divergence theorem and Poisson's equation:
+\begin{equation}
+L_{\rm Edd} = \frac{c}{\kappa} \int_V \nabla^2 \Phi dV = \frac{4\pi Gc}{\kappa} \int_V \rho dV = \frac{4\pi G M_{\rm BH} c}{\kappa}.
+\end{equation}
+Assuming the accreting material is made up of pure ionized hydrogen, this luminosity becomes \citep{Rybicki:1986}:
+\begin{equation} \label{eqn:L_edd}
+ L_{\rm Edd} = \frac{4\pi G M_{\rm BH} m_{\rm p} c}{\sigma_{\rm T}} \simeq 1.23 \times 10^{38}\, \frac{\rm erg}{\rm s} \left( \frac{M_{\rm BH}}{M_\sun} \right) 
+\end{equation}
+where $m_{\rm p}$ is the mass of the proton and $\sigma_{\rm T}$ is the Thomson scattering cross-section.% $M_\sun$ is the mass of the Sun.
+
+Assuming the matter in the accretion disk has a constant accretion rate at all radii, the luminosity is given by:
+\begin{equation} \label{eqn:L_M}
+ L = \eta \dot{M} c^2.
+\end{equation}
+where $\eta$ is the efficiency for the accretion process converting mass into energy\footnote{$\eta$ is dependent on the spin ($a$) of the black hole and can take on values from 0.06 up to 0.4.}. Combining this equation with Equation~\ref{eqn:L_edd} we can define $\dot{M}_{\rm Edd}$ as
+\begin{equation} \label{eqn:M_edd}
+ \dot{M}_{\rm Edd} = \frac{L_{\rm Edd}}{\eta c^2} \simeq \frac{2.17 \times 10^{-9}}{\eta}\, \frac{M_\sun}{\rm year} \left( \frac{M_{\rm BH}}{M_\sun} \right) 
+\end{equation}
+Combining Equations~\ref{eqn:M_edd} and \ref{eqn:L_M}  we get the relation:
+\begin{equation} \label{eqn:L2M}
+ \frac{L}{L_{\rm Edd}} = \frac{\dot{M}}{\dot{M}_{\rm Edd}}
+\end{equation}
+This final relation allows the for the accretion rate to be estimated using the observable quantities $L$ and $M_{\rm BH}$, a property we will take advantage of in Chapter~\ref{BH}.
+
+
+\section{Spectral Energy Distributions}
+
+As seen in \S\ref{sec:AD}, accretion disk models make predictions based on $\dot{M}$ or, using Equation~\ref{eqn:L2M}, based on the observable (bolometric) luminosity, \lbol, while what can be measured is usually the monochromatic luminosity, \llam \hspace{.3em}\footnote{$\nu L_{\nu} = \lambda L_{\lambda}$}.  The bolometric luminosity is given by the integrated area under the full spectral energy distribution (SED).  The ratio between \lbol\ and \llam\ defines a ``bolometric correction,'' which can be applied generically if there is reason to believe that the quasar SED is well-known (if not well-measured for an individual object).  Currently the best quasar SEDs are based on only tens or hundreds of bright quasars \citep{Elvis:1994,Richards:2006}. However, over 100,000 luminous broad-line quasars have been spectroscopically confirmed \citep{Schneider:2010}.  As it is dangerous to assume that we can extrapolate the results from a few hundred of the brightest quasars to the whole population, it is important to expand our knowledge to cover the full quasar sample.
+
+While \citet{Elvis:1994} and \citet{Richards:2006} provide the most complete SEDs in terms of number of objects and overall wavelength coverage, further understanding of the SED comes from a variety of other investigations from both spectroscopy and multi-wavelength imaging across the EM spectrum.  
+For example, composite SEDs, from the radio to the X-ray, for 85 optically and radio selected bright quasars ($\log{(\nu L_{\nu})}\mid_{\lambda=3000 {\rm \AA}} \geq 44$) with $z<1.5$ were made by \citet{Shang:2011}, and the bolometric corrections for this sample were tabulated by \citet{Runnoe:2012}.  
+\citet{Stern:2012} construct SEDs for over 3500 low-z ($z<0.2$) type 1 active galactic nucleus (AGN) with broad H$\alpha$ lines ranging from the near-infrared (near-IR) up to the X-ray with $\log{(\nu L_{\nu})}\mid_{\lambda=2500 {\rm \AA}} \geq 42$, while \citet{Assef:2010} present SEDs using over 5300 AGNs spanning the mid-infrared (mid-IR) up to the X-ray, with redshift going up to $\sim$ 5.6, from the AGN and Galaxy Evolution Survey \citep[AGES; ][]{Kochanek:2012}.
+In the mid-IR, \citet{Deo:2011} produced a composite spectrum using 25 luminous type 1 quasars at $z \sim 2$.
+
+\citet{Vanden-Berk:2001} used 2200 Sloan Digital Sky Survey (SDSS) spectra in the redshift range of $0.04<z<4.79$ to construct a mean quasar spectrum covering wavelengths from 800\AA\ to 8555\AA\ in the rest frame.  From this they found that the mean UV continuum is roughly a powerlaw with $\alpha_{\nu}=-0.44$ ($f_{\nu}\propto\nu^{\alpha}$).    
+To explore the far-UV (FUV) region of the quasar spectrum, \citet{Telfer:2002} used $\sim 330$ {\em Hubble Space Telescope} spectra of 184 quasars, with $z>0.33$, covering rest frame wavelengths from 500\AA\ to 1200\AA, and found an anti-correlation between the spectral index of the FUV ($\alpha_{{\rm FUV}}$) and the luminosity at 2500\AA.  This work was later supplemented at lower redshift and lower luminosity by \citet{Scott:2004}, who used 100 {\em FUSE} spectra covering the FUV.  By combining their data with that from \citet{Telfer:2002}, they found an anti-correlation that can be characterized by
+\begin{equation}
+ \alpha_{{\rm FUV}} = 21.02-0.49 \log \left( \frac{\lambda_{1100{\rm \AA}} L_{1100{\rm \AA}}}{\mbox{erg s}^{-1}}\right).
+ \label{scott_eq}
+\end{equation}
+
+At shorter wavelengths, using 73 quasars, \citet{Avni:1982} found a dependency of the spectral index between the optical and the X-ray and a quasar's luminosity.  This relation was further studied by a number of authors, including \citet{Steffen:2006}, who used 333 quasars with $z<6$ and $\log{(\nu L_{\nu})}\mid_{\lambda=2500 {\rm \AA}} \geq 42$, to find the relationship between the UV and X-ray luminosities to be:
+\begin{equation}
+ \log{(L_{{\rm 2keV}})} = (0.721 \pm 0.011) \log{(L_{2500 {\rm \AA}})} + (4.531 \pm 0.688),
+ \label{just_eq}
+\end{equation}
+while \citet{Just:2007} have extended this result to higher luminosities.
+Recently, \citet{Lusso:2010} completed a similar study using 545 X-ray selected quasars and found a similar relationship.   In the X-ray regime, the mean SED appears to have $\alpha_{\nu}\sim-1$ \citep[e.g.,][]{George:2000} before cutting off at $\sim 500\,{\rm keV}$ \citep{Zdziarski:1995}.  These relations allow us to extend our SEDs into the X-ray when our data lacks coverage at those wavelengths. 
+
+\section{Dust Reddening} \label{sec:dust_intro}
+
+In the unification model for quasars \citep{Antonucci:1993,Urry:1995} there is a large amount of obscuring material (usually referred to as the dust torus) around the accretion disk that can block the light emitted from the accretion disk along certain lines of sight.  As its name suggests, this area is filled with dust, small particles that condense out of the interstellar gas in galaxies.  When light passes through this dust it not only dims the intensity but also reddens it \citep{Trumpler:1930, Pei:1992, Goobar:2008}.  These processes happen for two reasons: first, dust scatters some photons out of the line of sight, and second, the dust absorbs some photons, converting their energy into heat.  This second process preferentially absorbs photons of shorter wavelengths since dust grains are effective absorbers of photons with wavelengths smaller than the characteristic size of the dust grains.  As the dust heats up it reradiates these photons in the infrared (IR), causing the observed light to be redder after passing through the dust \citep{Binney:1998}.% than entering it.
+
+Extinction is the combination of both scattering and absorption.  The standard notation for the extinction of an object in the $X$--band magnitude is:
+\begin{equation}
+ A_X = (m-m_0)_X
+\end{equation}
+where $m$ is the observed magnitude and $m_0$ is the magnitude that would be observed in the absence of extinction. The color excess or reddening in the $X-Y$ color is defined to be:
+\begin{equation}
+ {\rm E}(X-Y) = A_X-A_Y.
+\end{equation}
+The normalized extinction is given by:
+\begin{equation}
+ R_X = \frac{A_X}{\rm E(B-V)}
+\end{equation}
+In the literature the most commonly cited extinction is $A_V$, the most cited color excess is $\ebv$, and the most cited normalized extinction is $R_V$.  The value of $R_V$ is related to the size of the dust grains such that large dust grains have higher values of $R_V$ \citep{Draine:2003}.
+
+%Since our line of sight could pass through the dusty torus and/or the dust in the interstellar medium of the host galaxy, a good knowledge of the quasar dust extinction is needed.  Only by correcting for this reddening effect can accurate SEDs and \lbol values be found for a sample of quasars.
+
+For distant quasars, several mechanisms contribute to extinction: the Milky Way, galaxies along the line of sight, the quasar host galaxy, and the nuclear region itself.  While it is relatively straightforward to correct for and/or mitigate against the first two sources of reddening, it can be quite difficult to disentangle the last two sources and to properly isolate the effects of reddening from intrinsic differences in the spectral energy distribution (SED). Indeed, quasars can appear ``red'' (or rather, redder than average) both because they are intrinsically red or because of dust reddening \citep{Richards:2003}.
+
+Quasar SEDs between the UV and near-IR are generally described by a modified black body \citep{Shakura:1973} which is produced by an accretion disk with a range of temperatures.  At wavelengths which start to sample the high-temperature limit of the accretion disk, the SED begins to ``turn over,'' following the Wien part of the distribution.  The location of this turnover is likely a function of luminosity \citep[e.g., ][]{Brotherton:1999,Scott:2004}. At longer wavelengths, contamination from the host galaxy itself can make the intrinsic contribution of the central engine difficult to measure. Once the host galaxy contribution is accounted for, it is generally found that, between the rest-frame wavelengths of 1\,$\mu$m and 1216\,\AA, a quasar's continuum can be roughly approximated as a powerlaw \citep[e.g., ][]{Vanden-Berk:2001,Richards:2006,Krawczyk:2013}. However, if there are significant amounts of dust associated with the quasar, then the continuum will take on the form:
+\begin{equation} \label{eqn:red_eq} 
+L_{\lambda,{\rm rest}} \propto \lambda^{\alpha_\lambda} e^{-\tau_\lambda} \propto \lambda^{\alpha_\lambda} 10^{-{\rm E(B-V)}R_{\lambda}/2.5} 
+\end{equation}
+where $L_{\lambda,{\rm rest}}$ is the rest frame luminosity, $\alpha_\lambda$ is the intrinsic spectral index, $\tau_\lambda$ is the optical depth of the dust, and $R_{\lambda}$ is a function that is dependent on the physical properties of the dust.  For small amounts of dust reddening, the SED will simply appear to have a ``steeper'' (redder) powerlaw.  For larger amounts of reddening, noticeable curvature can be seen.  In \S\ref{sec:red_v_red:phot} we use this curvature as in indicator for the type of dust present in quasars.
+
+Deviations from the mean quasar SED have been used previously to define red quasar samples, including \citet{Gregg:2002} who used an optical-infrared spectral index of $\alpha<-1$ as their defining property. Very dust reddened quasars can be difficult to identify in optical surveys, both because of their redder than average color (often similar to stellar colors) and the corresponding extinction. Radio and infrared selection \citep[e.g., ][]{Gregg:2002,Glikman:2007} help to overcome this. These studies suggest that a significant portion ($>25\%$) of the underlying quasar population is dust reddened (yet still classified as Type 1 by virtue of having broad emission lines).
+
+The ability to identify the nature of any dust reddening, determine the magnitude of the effect, and correct for it is important for a number of reasons, for example, determining the true spectral index and optical luminosity of the quasars and, more importantly, to determine the {\em bolometric} luminosity of the quasar (as done in Chapter~\ref{BH}).  This value is crucial for making comparisons between quasars photometered at different rest-frame wavelengths, the extreme example being comparisons of unobscured (type 1) and obscured (type 2) quasars \citep[e.g., ][]{Zakamska:2003,Merloni:2014}, where the luminosity of the latter must be measured not in the optical/UV continuum, but instead from narrow emission lines, the IR or X-ray. Accurate bolometric luminosities are also needed for accurate estimates of the accretion rate and the Eddington ratio, $L_{\rm Bol}/L_{\rm Edd}$ (see Equation~\ref{eqn:L2M}). Thus proper determination of the SED provides a powerful link from observed properties to the parameters of accretion disk physics: mass, accretion rate, and spin \citep{Shakura:1973,Hubeny:1997}.
+
+\section{Black Hole Masses} \label{sec:intro_MBH}
+
+Quasars are known to be highly variable in luminosity.  Due to the large distance between the accretion disk and the broad line region (BLR) there is an observable time lag between the variability in the continuum and the, variability in the broad emission lines.  Combining this time lag with the speed of light gives a measure of the distance ($R_{\rm BLR}$) between the central black hole and the BLR.  Assuming the BLR is in virial equilibrium and the velocity dispersion of the BLR can be estimated from the width of the broad spectral lines ($\Delta V$), the black hole mass can be estimated:
+\begin{equation} \label{eqn:mbh_rm}
+ \mbh = f\left( \frac{R_{\rm BLR} \Delta V^2}{G} \right)
+\end{equation}
+where $f$ is a dimensionless number that is dependent on the geometry of the system, and $G$ is the gravitational constant.  This process for estimating $\mbh$ is called reverberation mapping (RM).  Although $f$ can't be measured directly, an ensemble average, $\langle f \rangle$, can be found empirically under the assumption that active galaxies have the same $\mbh$--$\sigma_*$ relation as local inactive galaxies \citep[e.g.][]{Onken:2004,Woo:2010,Woo:2013,Graham:2011,Park:2012}.
+
+Unfortunately, there are only a small number ($\sim$50) of quasars with RM data.  In order to measure black hole masses for a larger number of quasars, various scaling relations have been found for other observables that are correlated with $\mbh$ in the RM sample.  In particular, $R_{\rm BLR}$ correlates well with luminosity \citep[e.g.][]{Kaspi:2000,Kaspi:2005,Bentz:2006,Bentz:2009,Bentz:2013}:
+\begin{equation} \label{eqn:R_L}
+ R_{\rm BLR} \propto (\lambda L_{\lambda})^\alpha
+\end{equation}
+where $\alpha$ has been found to be $0.533^{+0.035}_{-0.033}$ when using the H$\beta$ line for calibration \citep{Bentz:2013}.
+
+By replacing $R_{\rm BLR}$ in Equation~\ref{eqn:mbh_rm} with luminosity via Equation~\ref{eqn:R_L} and using a spectral line's FWHM for $\Delta V$, several studies \citep[e.g.][]{McLure:2004,Vestergaard:2006,Vestergaard:2009} have found scaling relations for $\mbh$ of the form:
+\begin{equation} \label{eqn:r_l}
+ \log{\left(\frac{\mbh}{M_\sun}\right)} = a + b\log{\left( \frac{\lambda L_{\lambda}}{10^{44}\,{\rm erg\; s}^{-1}} \right)} + 2\log{\left( \frac{\rm FWHM}{{\rm km\; s}^{-1}} \right)}
+\end{equation}
+where FWHM is the full width at half maximum for either H$\beta$, \ion{Mg}{2}, or \civ.  The relation for H$\beta$ is directly calibrated off of the RM data via Equation~\ref{eqn:R_L}, but due to a lack of RM data for either \ion{Mg}{2} or \civ, these relations are calibrated using H$\beta$ masses under the assumption that every line estimator should produce the same result.
+
+Although the FWHM is the most commonly used value for $\Delta V$ (since it is more robust against noise in the spectra) it has been shown to produce biased masses \citep{Wang:2009,Rafiee:2011,Peterson:2011,Denney:2012,Denney:2013,Park:2013}.  Masses calculated using the line dispersion ($\sigma_{\rm line}$) tend to be more accurate and produce less scatter when compared to the RM masses.  To address this concern, \citet{Wang:2009} parameterized $\Delta V^2 \propto {\rm FWHM}^\gamma$, essentially changing the 2 on the last term of Equation~\ref{eqn:r_l} into a free parameter $\gamma$:
+\begin{equation} \label{eqn:r_l_gamma}
+ \log{\left(\frac{\mbh}{M_\sun}\right)} = a + b\log{\left( \frac{\lambda L_{\lambda}}{10^{44}\,{\rm erg\; s}^{-1}} \right)} + \gamma \log{\left( \frac{\rm FWHM}{1000\, {\rm km\; s}^{-1}} \right)}
+\end{equation}
+ This parameterization has recently been used by \citet{Rafiee:2011} and \citet{Park:2013} to update the scaling relations for the \ion{Mg}{2} and \civ\ mass estimates respectively. 
+
+%[PUT a and b VALUES HERE]
+
+\section{Outline}
+
+This thesis is structured as follows. The data used for this analysis are presented in Chapter~\ref{data}.  After introducing the corrections and data analysis methods, Chapter~\ref{SEDs} presents our findings for individual and mean bolometric corrections.  Chapter~\ref{Dust} presents our methods and findings for estimating dust reddening associated with a subset of our quasars.  The statistical methods used in this chapter are outlined in more detail in Appendix~\ref{ch:mcmc}. In Chapter~\ref{BH}, we apply the corrections from Chapter~\ref{Dust} to our SEDs and use estimated black hole masses to study changes in the SEDs with the properties of the central black hole. Finally, we present our conclusions in Chapter~\ref{conclusions}. Throughout this work we use a $\Lambda$CDM cosmology with $H_0=71$ km s$^{-1}$ Mpc$^{-1}$, $\Omega_\Lambda = 0.734$, and $\Omega_m = 0.266$, consistent with the {\em Wilkinson Microwave Anisotropy Probe} 7 cosmology \citep{Jarosik:2011}.
+
