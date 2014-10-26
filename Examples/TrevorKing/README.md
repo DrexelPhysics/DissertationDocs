@@ -3,7 +3,7 @@
 + [Color PDF](TrevorKingDissertationColor.pdf?raw=true)
 + [Black & White PDF](TrevorKingDissertation.pdf?raw=true)
 
-The LaTeX source for this thesis is not currently available. 
+The LaTeX source for this can be found at: http://git.tremily.us/?p=thesis.git.
 
 --------------------------------------------------------------------------
 
