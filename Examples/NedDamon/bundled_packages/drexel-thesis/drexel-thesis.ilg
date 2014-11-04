@@ -1,0 +1,14 @@
+This is makeindex, version 2.15 [TeX Live 2010] (kpathsea + Thai support).
+Scanning style file /usr/local/texlive/2010/texmf-dist/makeindex/latex/gglo.ist........
+** Input style error (file = /usr/local/texlive/2010/texmf-dist/makeindex/latex/gglo.ist, line = 76):
+   -- Unknown specifier lethead_prefix.
+** Input style error (file = /usr/local/texlive/2010/texmf-dist/makeindex/latex/gglo.ist, line = 77):
+   -- Unknown specifier lethead_suffix.
+** Input style error (file = /usr/local/texlive/2010/texmf-dist/makeindex/latex/gglo.ist, line = 78):
+   -- Unknown specifier lethead_flag.
+......done (14 attributes redefined, 3 ignored).
+Scanning input file drexel-thesis.glo....done (31 entries accepted, 0 rejected).
+Sorting entries....done (156 comparisons).
+Generating output file drexel-thesis.gls....done (70 lines written, 0 warnings).
+Output written in drexel-thesis.gls.
+Transcript written in drexel-thesis.ilg.

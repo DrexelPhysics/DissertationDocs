@@ -1,0 +1,95 @@
+#% Do not delete the line below; configure depends on this      
+#  \DeclareLaTeXClass[drexel-thesis]{Drexel Thesis}
+
+# Read the definitions from book.layout
+Input book.layout
+
+# This puts these in the listed order on the menu.
+
+Style Abstract
+End
+
+Style Dedication
+End
+
+Style Acknowledgements
+End
+
+Style Vita
+End
+
+# The actual definitions for the various elements.
+# Those not explicitly defined here are taken from Book.
+
+Style Abstract
+   LeftMargin     "MMM"
+   RightMargin    "MMM"
+   ParIndent      "MM"
+   Category       FrontMatter
+   LatexType      Environment
+   LatexName      thesisabstract
+   Align          Block
+   LabelType      Centered_Top_Environment
+   LabelString    "Abstract"
+   Font
+     Size         Normal
+   EndFont
+   LabelFont
+     Series       Bold
+     Size         Normal
+   EndFont
+End
+
+Style Acknowledgements
+   LeftMargin     "MMM"
+   RightMargin    "MMM"
+   ParIndent      "MM"
+   Category       FrontMatter
+   LatexType      Environment
+   LatexName      acknowledgments
+   Align          Block
+   LabelType      Centered_Top_Environment
+   LabelString    "Acknowledgements"
+   Font
+     Size         Normal
+   EndFont
+   LabelFont
+     Series       Bold
+     Size         Normal
+   EndFont
+End
+
+Style Dedication
+   Category       FrontMatter
+   LatexType      Environment
+   LatexName      dedications
+   LabelType      Centered_Top_Environment
+   Align          Center
+   LabelString    "Dedication"
+   Font
+     Size         Normal
+   EndFont
+   LabelFont
+     Series       Bold
+     Size         Normal
+   EndFont
+End
+
+Style Vita
+   LeftMargin     "MMM"
+   RightMargin    "MMM"
+   ParIndent      "MM"
+   Category       BackMatter
+   LatexType      Environment
+   LatexName      vita
+   Align          Block
+   LabelType      Centered_Top_Environment
+   LabelString    "Vita"
+   Font
+     Size         Normal
+   EndFont
+   LabelFont
+     Series       Bold
+     Size         Normal
+   EndFont
+End

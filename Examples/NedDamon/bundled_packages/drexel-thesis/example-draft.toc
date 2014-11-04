@@ -1,0 +1,17 @@
+\select@language {english}
+\contentsline {chapter}{List of Tables}{ii}{section*.4}
+\contentsline {chapter}{List of Figures}{ii}{section*.5}
+\contentsline {chapter}{Abstract}{ii}{section*.6}
+\contentsline {part}{\numberline {I}A Part Heading}{2}{part.1}
+\contentsline {chapter}{\numberline {1}A Chapter Heading}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}A Section Heading}{2}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}natbib}{2}{subsection.1.1.1}
+\contentsline {subsubsection}{Tables and Figures}{2}{section*.7}
+\contentsline {part}{\numberline {II}Another Part}{4}{part.2}
+\contentsline {chapter}{\numberline {2}Another Chapter}{4}{chapter.2}
+\contentsline {chapter}{\numberline {3}A Long Title Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla}{5}{chapter.3}
+\contentsline {chapter}{Bibliography}{7}{section*.12}
+\cftsetindents {chapter}{0pt}{6.5em} \renewcommand {\cftchappresnum }{\appendixname ~} \renewcommand {\cftchapaftersnum }{:}
+\contentsline {chapter}{\numberline {A}Some Appendix Heading}{8}{appendix.A}
+\contentsline {chapter}{\numberline {B}Another Appendix Heading}{8}{appendix.B}
+\contentsline {chapter}{Vita}{10}{section*.13}

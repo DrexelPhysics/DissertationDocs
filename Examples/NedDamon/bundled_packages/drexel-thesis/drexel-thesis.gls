@@ -1,0 +1,70 @@
+
+ \begin{theglossary} 
+
+    \makeatletter\scan@allowedfalse
+
+  \item 0.1\efill 
+ \subitem General:\ Rewrite by Daniel J.~Cross\pfill 1
+  \item 0.10\efill 
+ \subitem General:\ W.~Trevor King added $\delimiter "026E30F $DUT\unhbox \voidb@x \lower .8ex\hbox {$\,\mathaccent "0365\relax {\ }\,$} aliases for all public macros and environments and renamed $\delimiter "026E30F $defmonth and $\delimiter "026E30F $defyear to $\delimiter "026E30F $DUTmonth and $\delimiter "026E30F $DUTyear for consistency with the new aliases.\pfill 
+		1
+  \item 0.11\efill 
+ \subitem \verb*+\ifdaring+:\ W.~Trevor King added macro.\pfill 9
+    \subitem \verb*+DUTabstract+:\ W.~Trevor King added ``Advisor(s):'' for daring users.\pfill 42
+  \item 0.12\efill 
+ \subitem \verb*+DUTabstract+:\ W.~Trevor King added $\delimiter "026E30F $par to detach the single space $\delimiter "026E30F $setstretch from the from the final paragraph.\pfill 
+		42
+    \subitem \verb*+DUTacknowledgments+:\ W.~Trevor King added $\delimiter "026E30F $par to detach the single space $\delimiter "026E30F $setstretch from the from the final paragraph.\pfill 
+		42
+    \subitem \verb*+DUTdedications+:\ W.~Trevor King added $\delimiter "026E30F $par to detach the single space $\delimiter "026E30F $setstretch from the from the final paragraph.\pfill 
+		41
+    \subitem \verb*+DUTvita+:\ W.~Trevor King added $\delimiter "026E30F $par to detach the single space $\delimiter "026E30F $setstretch from the from the final paragraph.\pfill 
+		43
+  \item 0.13\efill 
+ \subitem General:\ W.~Trevor King cleaned up TOC/LOT/LOF code.\pfill 1
+    \subitem \verb*+\cftfigpagefont+:\ Added $\delimiter "026E30F $cftfigpagefont definition and switch $\delimiter "026E30F $cftfigfont from hardcoded $\delimiter "026E30F $normalsize$\delimiter "026E30F $singlespace to $\delimiter "026E30F $DUT$@$toc$@$low$@$font. The $\delimiter "026E30F $singlespace portion appears to be unnecessary, and it was causing post-number linebreak issues with latex (pdflatex always worked).\pfill 
+		47
+    \subitem \verb*+\cftsubsubsecpagefont+:\ Added $\delimiter "026E30F $cft*pagefont definitions and switch $\delimiter "026E30F $cft*font from hardcoded $\delimiter "026E30F $normalsize to $\delimiter "026E30F $DUT$@$toc$@$low$@$font.\pfill 
+		46
+    \subitem \verb*+\cfttabpagefont+:\ Added $\delimiter "026E30F $cfttabpagefont definition switch $\delimiter "026E30F $cfttabfont from hardcoded $\delimiter "026E30F $normalsize$\delimiter "026E30F $singlespace to $\delimiter "026E30F $DUT$@$toc$@$low$@$font. The $\delimiter "026E30F $singlespace portion appears to be unnecessary, and it was causing post-number linebreak issues with latex (pdflatex always worked).\pfill 
+		48
+    \subitem \verb*+\DUT@toc@high@font+:\ Renamed from $\delimiter "026E30F @$cont$@$font.\pfill 45
+    \subitem \verb*+\DUT@toc@low@font+:\ Macro added.\pfill 46
+    \subitem \verb*+\DUT@toc@page@font+:\ Macro added.\pfill 46
+    \subitem \verb*+\l@DUT@toc@sep+:\ Renamed from $\delimiter "026E30F $l$@$cont$@$sep.\pfill 45
+    \subitem \verb*+blackref+:\ W.~Trevor King added blackref option.\pfill 19
+  \item 0.14\efill 
+ \subitem General:\ Evan Sultanik added the \texttt  {approvalform} option for including a \LaTeX  \ version of the T-1 thesis form.\pfill 
+		1
+    \subitem \verb*+\drexellogobw+:\ Evan Sultanik added macro.\pfill 11
+    \subitem \verb*+\DUT@makeapprovalform+:\ Evan Sultanik added macro.\pfill 9
+  \item 0.2\efill 
+ \subitem General:\ W.~Trevor King transitioned from thesis.cls to drexel-thesis.dtx and did a good deal of reorganizing.\pfill 
+		1
+  \item 0.3\efill 
+ \subitem \verb*+\@DUT@baselineskip+:\ Use $\delimiter "026E30F $setlength to store the value at the default font. The previous version used $\delimiter "026E30F $let, which made $\delimiter "026E30F $DUT\spacefactor \@m baselineskip a synonym for $\delimiter "026E30F $baselineskip that changed with font size.\pfill 
+		28
+    \subitem General:\ W.~Trevor King merged drexelthesis.cls developed in the Comp.~Sci.~Department by Jeff Abrahamson, Evan Sultanik, C.Y.~Ip, Christopher S.~Dahn, Christopher D.~Cera, Mitchell Peabody, David T.~McWherter, and Vincent A.~Cicirello. Based on the University of Toronto Thesis \LaTeXe  \ Class. Also greatly improved the documentation by incorperating bits of the base/*.dtx files.\pfill 
+		1
+  \item 0.4\efill 
+ \subitem General:\ W.~Trevor King repositioned hyperref inclusion for proper hyperref overriding. The previous implementation couldn't handle $\delimiter "026E30F $label for $\delimiter "026E30F $paragraph and some other section levels. The page number for the reference was correct, but the link went to the label's parent chapter.\pfill 
+		1
+    \subitem \verb*+\DUTcopyrighttextCCBYSA+:\ W.~Trevor King renamed from $\delimiter "026E30F $copyrighttextCC, and made specific to Creative Commons Attribution-ShareAlike Version 3.0.\pfill 
+		34
+  \item 0.5\efill 
+ \subitem General:\ W.~Trevor King use hypcap for better caption hyperlink anchor placement.\pfill 
+		1
+  \item 0.6\efill 
+ \subitem General:\ W.~Trevor King fixed $\delimiter "026E30F $if$@$final handling. Previous versions used it more like a hypothetical $\delimiter "026E30F $if$@$finalspace. Also adjusted theindex to use a listed$@$schapter.\pfill 
+		1
+  \item 0.7\efill 
+ \subitem \verb*+\iffinal+:\ W.~Trevor King added macro.\pfill 9
+  \item 0.8\efill 
+ \subitem \verb*+\maketitle+:\ W.~Trevor King replaced Frontmatter with Front Matter and Titlepage with Title Page for consistency with \LaTeX  's book class.\pfill 
+		33
+    \subitem \verb*+DUTthesis+:\ W.~Trevor King replaced Backmatter with Back Matter for consistency with \LaTeX  's book class.\pfill 
+		43
+  \item 0.9\efill 
+ \subitem \verb*+\@chapter+:\ W.~Trevor King disabled the label macro for typeout.\pfill 38
+
+ \end{theglossary}

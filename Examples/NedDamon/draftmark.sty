@@ -1,0 +1,222 @@
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++%
+% This is file 'draftmark.sty'.                                            %
+%                                                                          %
+% This package puts a user-specified draftmark and arbitrary texts on      %
+% select pages of documents. It is more general than the 'draftwatermark'  %
+% package by Sergio Callegari and 'draftcopy' by J\"{u}rgen Vollmer. The   %
+% advantages of this package over 'draftwatermark' include: the user can   %
+% specify his/her own draftmark and color, the draftmark position and      %
+% orientation, the page (all pages, odd pages, even pages, a particular    %
+% page number, and a range of pages) on which the draftmark should appear, %
+% and all the options are passed directly to package instead of being      %
+% defined by user-macros. There is also the provision to use the macro     %
+% \draftmarksetup, which can be utilized to dynamically specify draftmark  %
+% properties for each page or range of pages. With the 'xcolor' package    %
+% (loaded by this package), all colors can be passed to this package. The  %
+% code of this package is very much shorter than that of the 'draftcopy'   %
+% package by Jurgen Vollmer (2002) because it capitalizes on dvi hooks     %
+% from Heiko Oberdiek's 'atbegshi' package.                                %
+%                                                                          %
+% With the \includegraphics command, this package can be used to insert    %
+% graphic watermarks.                                                      %
+%                                                                          %
+% This work may be distributed and/or modified under the conditions        %
+% of the LaTeX Project Public License, either version 1.3 of this          %
+% license or any later version. The latest version of this license         %
+% is in http://www.latex-project.org/lppl.txt and version 1.3 or later     %
+% is part of all distributions of LaTeX version 2005/12/01 or later.       %
+%                                                                          %
+% Copyright (c) 2009 Ahmed Musa (a.musa@rocketmail.com).                   %
+%                                                                          %
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++%
+\begingroup
+\catcode064=11% @
+\catcode123=01% {
+\catcode125=02% }
+\def\x{\endgroup
+  \edef\dmark@restorecodeatend{%
+    \catcode035=\the\catcode035\relax
+    \catcode064=\the\catcode064\relax
+    \catcode123=\the\catcode123\relax
+    \catcode125=\the\catcode125\relax
+  }%
+}
+\x
+\catcode035=06% #
+\catcode064=11% @
+\catcode123=01% {
+\catcode125=02% }
+\def\dmark@ensurecode#1#2{%
+  \edef\dmark@restorecodeatend{%
+    \dmark@restorecodeatend
+    \catcode#1=\the\catcode#1\relax
+  }%
+  \catcode#1=#2\relax
+}
+\dmark@ensurecode{010}{12}% ^^J
+\dmark@ensurecode{033}{12}% !
+\dmark@ensurecode{039}{12}% '
+\dmark@ensurecode{040}{12}% (
+\dmark@ensurecode{041}{12}% )
+\dmark@ensurecode{042}{12}% *
+\dmark@ensurecode{044}{12}% ,
+\dmark@ensurecode{045}{12}% -
+\dmark@ensurecode{046}{12}% .
+\dmark@ensurecode{047}{12}% /
+\dmark@ensurecode{058}{12}% :
+\dmark@ensurecode{060}{12}% <
+\dmark@ensurecode{061}{12}% =
+\dmark@ensurecode{062}{12}% >
+\dmark@ensurecode{094}{07}% ^ (superscript)
+\dmark@ensurecode{096}{12}% `
+\dmark@ensurecode{254}{12}% ^^fe
+\dmark@ensurecode{255}{12}% ^^ff
+\dmark@ensurecode{126}{13}% ~ (active)
+\AtEndOfPackage{\dmark@restorecodeatend}
+\def\readRCS$#1 #2 #3 #4 #5 #6 #7 #8 ${%
+  \def\filedate{#4}%
+  \def\fileversion{v#3}%
+  \def\filetime{#5}%
+  \def\fileauthor{#6\space#7}
+}
+\def\filedesc{%
+  Puts user-specified watermarks on select document pages (\fileauthor)}
+\readRCS
+$Id: draftmark.sty,v 1.2 2009/10/07 09:00:00 Ahmed Musa Exp $
+\ProvidesPackage{draftmark}[\filedate\space\fileversion\space\filedesc]
+\NeedsTeXFormat{LaTeX2e}[1996/12/01]
+\RequirePackage{fix-cm}
+\RequirePackage{graphicx}
+\RequirePackage{xkeyval}[2008/08/13]
+\RequirePackage{etextools}[2009/09/30]
+\RequirePackage{atbegshi}
+\RequirePackage{picture}
+\RequirePackage{xcolor}
+\RequirePackage{xifthen}[2009/04/17]
+\RequirePackage{ltxnew}
+\newrobustcmd\dmark@info[1]{\PackageInfo{draftmark}{#1\@gobble}}
+\newrobustcmd\dmark@warn[1]{\PackageWarningNoLine{draftmark}{#1}}
+\newrobustcmd\dmark@err[1]{\PackageError{draftmark}{#1}{\@ehc}}
+\def\dmark@numexpr#1#2{\xifblank{#2}{%
+    \expandafter\dmark@err{Blank argument for number}}{}
+  \ifundef{#1}{\new\count#1\relax #1=\numexpr#2\relax}{#1=\numexpr#2\relax}
+}
+\def\dmark@dimexpr#1#2{\xifblank{#2}{%
+  \expandafter\dmark@err{Blank argument for dimension}}{}
+  \ifundef{#1}{\new\dimen#1\relax #1=\dimexpr#2\relax}{#1=\dimexpr#2\relax}
+}
+\new\let\dmark@papercenter\relax
+\dmark@numexpr{\c@dmark@page}{\z@}
+\define@boolkey[KV]{draftmark}[dmark@]{draft}[true]{%
+  \ifdmark@draft\global\dmark@finalfalse\fi}
+\define@boolkey[KV]{draftmark}[dmark@]{final}[true]{%
+  \ifdmark@final\global\dmark@draftfalse\fi}
+\define@boolkeys[KV]{draftmark}[dmark@]{particularpage,
+  pagerange,showcenter,acceptrange}[true]
+\define@boolkey[KV]{draftmark}[dmark@]{firstpage}[true]{%
+  \ifdmark@firstpage\c@dmark@page=\@ne\fi}
+\define@boolkey[KV]{draftmark}[dmark@]{allpages}[true]{%
+  \ifdmark@allpages\c@dmark@page=\@ne\fi}
+\define@boolkey[KV]{draftmark}[dmark@]{oddpages}[true]{%
+  \ifdmark@oddpages\c@dmark@page=\@ne\fi}
+\define@boolkey[KV]{draftmark}[dmark@]{evenpages}[true]{%
+  \ifdmark@evenpages\c@dmark@page=\@ne\fi}
+\define@cmdkey[KV]{draftmark}[dmark@]{page}[1]{%
+  \dmark@particularpagetrue\c@dmark@page=\@ne\relax
+}
+\new\def\dmark@papercenter{\color{red}%
+  \put(0,-0.5\paperheight){\line(1,0){\paperwidth}}
+  \put(0.5\paperwidth,0){\line(0,-1){\paperheight}}
+  \put(0.5\paperwidth,-0.5\paperheight){\circle{10}}
+}
+\define@cmdkey[KV]{draftmark}[dmark@]{pages}[1-1]{%
+  \dmark@pagerangetrue\c@dmark@page=\@ne\relax
+}
+\define@cmdkey[KV]{draftmark}[dmark@]{fontfamily}[cmr]{}
+\define@cmdkey[KV]{draftmark}[dmark@]{fontsize}[5cm]{}
+\define@cmdkey[KV]{draftmark}[dmark@]{mark}[DRAFT]{}
+\define@key[KV]{draftmark}{color}[gray]{%
+  \xifstrequal{#1}{gray}{%
+    \def\dmark@color{\color[gray]{\dmark@grayness}}%
+  }{\def\dmark@color{\color{#1}}}
+}
+\define@cmdkey[KV]{draftmark}[dmark@]{grayness}[0.8]{}
+\define@cmdkey[KV]{draftmark}[dmark@]{angle}[45]{}
+\define@cmdkey[KV]{draftmark}[dmark@]{scale}[1]{}
+\define@cmdkey[KV]{draftmark}[dmark@]{coordunit}[mm]{}
+\define@key[KV]{draftmark}{xcoord}[0]{%
+  \dmark@dimexpr{\dmark@xcoord}{0.5\paperwidth+#1\dmark@coordunit}%
+}
+\define@key[KV]{draftmark}{ycoord}[0]{%
+  \dmark@dimexpr{\dmark@ycoord}{-0.5\paperheight+#1\dmark@coordunit}%
+}
+\DeclareOptionX*{\dmark@warn{Unknown option '\CurrentOption' ignored}}
+\ExecuteOptionsX[KV]<draftmark>{angle,scale,mark,color,grayness,
+  fontfamily,fontsize,coordunit,xcoord,ycoord,final}
+\ProcessOptionsX*[KV]<draftmark>\relax
+\new\gdef\draftmarksetup#1{\setkeys[KV]{draftmark}{#1}}
+\ifbool{dmark@acceptrange}{\RequirePackage[acceptempty]{pagerange}}{%
+  \RequirePackage[acceptempty=false]{pagerange}}
+\ifdmark@final
+  \dmark@info{Option 'final': no draftmark printed}
+  \expandafter\endinput
+\fi
+\newcommand\dmark@draftmark{%
+  \begingroup
+  \makebox(0,0){\rotatebox{\dmark@angle}{\scalebox{\dmark@scale}{%
+  \parbox[c]{\paperheight}{\dmark@color\centering
+    \fontfamily{\dmark@fontfamily}\fontseries{b}%
+    \fontsize{\dmark@fontsize}{1.2\dmark@fontsize}\selectfont
+    \dmark@mark
+  }}}}%
+  \endgroup
+}
+\newrobustcmd\dmark@tempa{%
+  \put(\dmark@xcoord,\dmark@ycoord){\dmark@draftmark}%
+  \ifdmark@showcenter\dmark@papercenter\fi
+}
+\newrobustcmd\dmark@printdraftmark{%
+  \ifnum\c@dmark@page=\z@
+    \ifnum\c@page=\@ne
+      \dmark@tempa%
+    \fi
+  \else\ifnum\c@dmark@page=\@ne
+    \ifdmark@allpages
+      \dmark@tempa%
+    \else\ifdmark@firstpage
+      \ifnum\c@page=\@ne
+        \dmark@tempa%
+      \fi
+    \else\ifdmark@oddpages
+      \ifodd\c@page
+        \dmark@tempa%
+      \fi
+    \else\ifdmark@evenpages
+      \unless\ifodd\c@page
+        \dmark@tempa%
+      \fi
+    \else\ifdmark@particularpage
+      \ifnum\c@page=\dmark@page
+        \dmark@tempa%
+      \fi
+    \else\ifdmark@pagerange
+      \pagerange{\dmark@pages}%
+      \dmark@numexpr{\dmark@pagestart}{\pagestart}%
+      \dmark@numexpr{\dmark@pageend}{\pageend}%
+      \ifthenelse{\(\c@page=\dmark@pagestart\OR\c@page=\dmark@pageend\)
+        \OR \(\c@page>\dmark@pagestart\AND\c@page<\dmark@pageend\)}{%
+        \dmark@tempa}{}
+    \fi\fi\fi\fi\fi\fi
+  \fi\fi
+}
+\ifdmark@draft
+  \AtBeginShipout{\AtBeginShipoutUpperLeft{\dmark@printdraftmark}}%
+  \dmark@info{Option 'draft': draftmark printed}
+  \ifnum\c@dmark@page=\z@
+    \dmark@warn{Draftmark printed on page 1 only:\MessageBreak
+      No page option ('allpages', 'firstpage',\MessageBreak
+      'oddpages', 'evenpages', 'page=value'\MessageBreak
+      or 'pages=x-x') has been passed to package}
+\fi\fi
+
+\endinput

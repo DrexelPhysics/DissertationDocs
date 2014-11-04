@@ -1,0 +1,9 @@
+name: Thesis
+files: /home/travis/research/thesis/thesis_master_aggregation.tex
+files: /home/travis/research/thesis/thesis.tex
+basedir: /home/travis/research/thesis/
+basefile: 
+template: 
+view_bars: 0
+word_wrap: 1
+savedir: /home/travis/research/thesis

@@ -1,0 +1,85 @@
+\documentclass[subfig,blackref,approvalform]{drexel-thesis} % library copy
+%\documentclass[subfig,blackref,draftspace]{drexel-thesis} % for committee
+%\documentclass[draft,subfig,blackref,draftwatermark]{drexel-thesis} % draft copy
+
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{dsfont} % Fancy R^n symbol
+\usepackage{placeins}   % To allow pictures to flush after a section
+
+% fncychap clobbers \appendix with a silly implementation that breaks
+% hyperlinks to appendix chapters.  Work around this by ignoring their
+% implementation completely.
+\let\temporaryAppendix\appendix
+%\usepackage[Conny]{fncychap}  % Nicer style used for distribution
+\usepackage[]{fncychap}
+\let\appendix\temporaryAppendix
+
+\usepackage{tikz}
+\usepackage{tkz-berge}
+\usetikzlibrary{shapes}
+
+\input{supplement/customizations}
+
+\includeonly{
+     tex/preamble,              %Dedications, acknowledgments, TOC, and abstract
+     tex/preface,               %Biophysics topical comments
+     tex/introduction,          %CHAPTER: Introduction
+     tex/methods,               %CHAPTER: Computational Methods   
+     Neutrino_ Oscillation/Neutrino_Oscillation, %CHAPTER: Entropic paper
+     DC_Results/Double_Chooz,     %CHAPTER: WL paper
+     AA/Articulated_Arm,           %CHAPTER: Conformational States Under Crowding
+     Paraphotons/Paraphotons,       %CHAPTER: Clustering and Kinetics
+     }
+
+%\setkeys{Gin}{draft} % Draft mode on the pictures
+
+\usepackage[square,numbers,sort&compress,comma]{natbib} % fancy citation extensions
+\bibliographystyle{unsrtnat}
+
+\author{Edward Angus Damon}
+\title{Measurement of Paraphotons in the Double Chooz Experiment Using Articulated Arm Calibration Methods}
+\DUTmonth{May}
+\DUTyear{2014}
+\degree{Doctor of Philosophy}
+\advisor{Dr. Jelena Maricic}
+\copyrighttext{\copyrighttextCCBYSA}
+
+\input{pictures/tikzpics}
+
+
+\begin{document}
+
+
+\suppressfooter
+\include{tex/preamble}
+
+\begin{thesis}
+  \pdfbookmark[-1]{Main Matter}{Main Matter}
+  \setstretch{1.2}
+  \include{tex/preface}
+  \restorefooter
+
+  %CHAPTER: Introduction
+  \include{tex/introduction}
+  
+
+  %CHAPTER: Prior Results from Double Chooz
+  \include{DC_Results/Double_Chooz}
+
+  %CHAPTER: Articulated Arm
+  \include{AA/Articulated_Arm}
+
+  %CHAPTER: Paraphotons
+  \include{Paraphotons/Paraphotons}
+
+\end{thesis}
+
+\suppressfooter
+
+\bibliography{bibliographies/bulkref}
+
+\end{document}

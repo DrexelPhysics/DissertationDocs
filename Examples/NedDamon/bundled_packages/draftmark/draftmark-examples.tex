@@ -1,0 +1,124 @@
+\documentclass[a4paper,10pt,final]{article}
+\InputIfFileExists{draftmark-guide.cfg}{}{No file draftmark-guide.cfg}
+\pagestyle{fancyplain}
+\begin{document}
+\MakeShortVerb{\+}
+\title{\bfseries The \texttt{\TC{blue}{draftmark}}~\xcopyright{Package}{red}
+  \\[1ex]\fbox{\large Version~1.2}\\[1ex]
+  \textsf{EXAMPLES}}
+\author{Ahmed Musa\\[1ex]University of Central Lancashire\\
+  Preston PR1 2HE, UK\\[1ex]
+  \texttt{a.musa@rocketmail.com}}
+\maketitle
+
+\draftmarksetup{fontfamily=bch,,angle=45,scale=0.8,xcoord=0,ycoord=0,
+  mark={\fboxsep=5pt\fboxrule=4pt\color{magenta}%
+  \fbox{\color{magenta!60!blue!25}DRAFT}}}
+
+\section{Introduction}
+\lletter{T}{he source} file of this document is +draftmark-examples.tex+ and is available from CTAN as part of the +draftmark+ bundle. A full user guide is also part of that bundle.
+
+This package puts user-specified draftmark on select pages of documents. It is more general than the packages +draftwatermark+ by Sergio Callegari and +draftcopy+ by J\"{u}rgen Vollmer. The merits of this package over +draftwatermark+ and +draftcopy+ include: the user can specify draftmark and color, the draftmark position, orientation, the page(s) (all pages, odd pages, even pages, a particular page, and a range of pages) on which the draftmark should appear, and all the options are passed directly to package instead of being defined in the source file by many macros. Moreover, all these options can be customized for individual pages and segments of the document. This is achieved by the provision of the +\draftmarksetup+ macro, by which the user can dynamically pass the draftmark properties for each page or range of pages. This is the only user macro of this package.
+
+With the +\includegraphics+ command, this package can readily be used to insert graphic watermarks, but it is meant to be used primarily with text draftmarks. Graphic watermarks are conveniently handled by the sister +xwatermark+ package.
+
+\section{User interface}
+\lletter{T}{he package} may be loaded with full options such as in the following two sample statements:
+
+\begin{dmverbatim}
+\usepackage[draft,allpages=true,fontfamily=pag,color=gray,grayness=0.8,
+  mark=DRAFT,angle=45,scale=0.8,xcoord=0,ycoord=0]{draftmark}
+
+\usepackage[draft,pages=1-4,fontfamily=phv,color=red!55!yellow!50,
+  mark=CONFIDENTIAL,angle=55,scale=0.8,xcoord=20,ycoord=10]{draftmark}.
+\end{dmverbatim}
+
+The option +draft+ or +final+ and the one that specifies the pages on which the draftmark should appear (+allpages+, +oddpages+, +evenpages+, \etc) should be set when loading the package, \eg,
+
+\begin{dmverbatim}
+\usepackage[draft,evenpages]{draftmark}.
+\end{dmverbatim}
+
+The remaining options can be set dynamically using the +\draftmarksetup+ macro. These other options can, if desired, be set for each page of the document.
+
+\draftmarksetup{fontfamily=bch,angle=90,scale=0.6,xcoord=0,ycoord=0,
+  mark={%
+    \centering
+    \TC{red}{G$\star$}\TC{yellow!65}{Circulation}\\[.25ex]
+    \TC{purple!45}{Unrestricted}\\[.25ex]\TC{green}{Document}%
+  }
+}
+
+\newpage
+\lipsum[1-4]
+\draftmarksetup{fontfamily=put,angle=45,xcoord=0,ycoord=0,
+  mark={\fboxsep=5pt\fboxrule=4pt\relax
+  \color{red}\fbox{\TC{magenta}{\sffamily Systems}}\\[.25ex]
+  \color{green}\fbox{\TC{red!65}{Engineering}}\\[.25ex]
+  \color{red}\fbox{\TC{magenta}{\sffamily Department}}}%
+}
+
+\newpage
+\lipsum[1-4]
+\draftmarksetup{fontfamily=pbk,color=gray,grayness=.8,
+  angle=45,scale=.7,xcoord=0,ycoord=0,
+  mark={\raggedright Restricted\\[.2ex]\raggedleft Document}%
+}
+
+\newpage
+\lipsum[1-4]
+\draftmarksetup{fontfamily=bch,color=purple!70,
+  angle=45,scale=.7,coordunit=pc,xcoord=0,ycoord=0,
+  mark={%
+    \fboxsep=5pt\fboxrule=10pt\relax
+    \begin{boxedminipage}{\paperheight}%
+      \fboxsep=5pt\fboxrule=4pt\centering
+      Our \TC{red}{New}\\[.25ex]\TC{orange}{\fbox{BiZ}}~\TC{blue}{Strategy}%
+    \end{boxedminipage}%
+  }
+}
+
+\newpage
+\lipsum[1-4]
+\draftmarksetup{fontfamily=phv,angle=90,scale=.7,
+  color=red!75!blue!25,xcoord=0,ycoord=0,
+  mark={\TC{blue}{$\cdot$}\TC{red}{Official}\TC{blue}{$\cdot$}%
+  \\[8.5ex]\TC{red}{$\cdot$}\TC{blue!45}{Document}\TC{red}{$\cdot$}}%
+}
+
+\newpage
+\lipsum[1-4]
+\draftmarksetup{showcenter=true,fontfamily=ppl,angle=10,scale=.8,
+  color=red!45,coordunit=pc,xcoord=0,ycoord=0,
+  mark={\fbox{\TC{red}{*}}\\[1ex]Classified
+  \\[1ex]\rotatebox{180}{\fbox{\TC{red}{*}}}}}
+
+\newpage
+\lipsum[1-4]
+\draftmarksetup{showcenter=false,fontfamily=phv,angle=90,scale=.8,
+  grayness=0.5,coordunit=mm,xcoord=0,ycoord=0,
+  mark={
+    \fboxsep=5pt\fboxrule=10pt
+    \begin{boxedminipage}{\paperwidth}%
+      \vspace*{1cm}%
+      \fboxsep=5pt\fboxrule=4pt%
+      \raggedright\color{blue}\fbox{\TC{red}{Control}}\\[1cm]
+      \raggedleft\color{green}\fbox{\TC{purple}{Version}}%
+      \vspace*{1cm}%
+    \end{boxedminipage}\relax
+  }
+}
+
+\newpage
+\lipsum[1-4]
+\draftmarksetup{fontfamily=pnc,color=cyan!50!blue!25,
+  mark={\fboxsep=15pt\fboxrule=14pt\color{blue}
+  \fbox{{\color{cyan!50!blue!25}PENDING}}},
+  angle=45,scale=0.8,xcoord=0,ycoord=0}
+
+\newpage
+\lipsum[1-4]
+% All marks are empty on this page:
+\draftmarksetup{mark=}
+
+\end{document}

@@ -1,0 +1,311 @@
+\begin{thebibliography}{46}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Bahcall}(2005)]{Bahcall}
+J.~N. {Bahcall}.
+\newblock {Solar Models and Solar Neutrinos}.
+\newblock \emph{Physica Scripta Volume T}, 121:\penalty0 46--50, January 2005.
+\newblock \doi{10.1088/0031-8949/2005/T121/006}.
+
+\bibitem[{Goodman} and {Lasserre}(2006)]{DCWhitepaper}
+M.~{Goodman} and Thierry {Lasserre}.
+\newblock {Double Chooz, A Search for the Neutrino Mixing Angle theta-13}.
+\newblock \emph{ArXiv High Energy Physics - Experiment e-prints}, June 2006.
+
+\bibitem[{Abe} et~al.(2012)]{DC_2012}
+Y.~{Abe} et~al.
+\newblock {Reactor $\nu_{e}$ disappearance in the Double Chooz experiment}.
+\newblock \emph{Phys. Rev. D}, 86\penalty0 (5):\penalty0 052008, September
+  2012.
+\newblock \doi{10.1103/PhysRevD.86.052008}.
+
+\bibitem[{Lane}(2007)]{PMTCalibration}
+Charles {Lane}.
+\newblock Gain determination for r1408 pmts.
+\newblock \emph{Personal Communication}, Apr 2007.
+
+\bibitem[{Strong} et~al.(2004){Strong}, {Moskalenko}, and {Reimer}]{EG_Strong}
+A.~W. {Strong}, I.~V. {Moskalenko}, and O.~{Reimer}.
+\newblock {A New Determination of the Extragalactic Diffuse Gamma-Ray
+  Background from EGRET Data}.
+\newblock \emph{APJ}, 613:\penalty0 956--961, October 2004.
+\newblock \doi{10.1086/423196}.
+
+\bibitem[{Inada} et~al.(2013){Inada}, {Namba}, {Asai}, {Kobayashi}, {Tanaka},
+  {Tamasaku}, {Sawada}, and {Ishikawa}]{2013PhLB..722..301I}
+T.~{Inada}, T.~{Namba}, S.~{Asai}, T.~{Kobayashi}, Y.~{Tanaka}, K.~{Tamasaku},
+  K.~{Sawada}, and T.~{Ishikawa}.
+\newblock {Results of a search for paraphotons with intense X-ray beams at
+  SPring-8}.
+\newblock \emph{Physics Letters B}, 722:\penalty0 301--304, May 2013.
+\newblock \doi{10.1016/j.physletb.2013.04.033}.
+
+\bibitem[{Winslow}(2012)]{Lindley}
+Lindley {Winslow}.
+\newblock Singles spectrum/ double beta decay analysis.
+\newblock \emph{Double Chooz Internal Technical Note}, 2012.
+
+\bibitem[Scotto(2013)]{Moondog}
+Robert Scotto.
+\newblock \emph{Moondog}.
+\newblock Process, 2013.
+
+\bibitem[Kurie et~al.(1936)Kurie, Richardson, and Paxton]{Beta_Spectrum}
+Franz N.~D. Kurie, J.~R. Richardson, and H.~C. Paxton.
+\newblock The radiations emitted from artificially produced radioactive
+  substances. i. the upper limits and shapes of the $\beta$-ray spectra from
+  several elements.
+\newblock \emph{Phys. Rev.}, 49:\penalty0 368--381, Mar 1936.
+\newblock \doi{10.1103/PhysRev.49.368}.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRev.49.368}.
+
+\bibitem[{Wilson}(1968)]{Fermi}
+F.~L. {Wilson}.
+\newblock {Fermi's Theory of Beta Decay}.
+\newblock \emph{American Journal of Physics}, 36:\penalty0 1150--1160, December
+  1968.
+\newblock \doi{10.1119/1.1974382}.
+
+\bibitem[Brown(1978)]{Pauli}
+Laurie~M Brown.
+\newblock The idea of the neutrino.
+\newblock \emph{Physics Today}, pages 23--28, sep 1978.
+
+\bibitem[{Cowan} et~al.(1956){Cowan}, {Reines}, {Harrison}, {Kruse}, and
+  {McGuire}]{Cowan}
+C.~L. {Cowan}, Jr., F.~{Reines}, F.~B. {Harrison}, H.~W. {Kruse}, and A.~D.
+  {McGuire}.
+\newblock {Detection of the Free Neutrino: A Confirmation}.
+\newblock \emph{Science}, 124:\penalty0 103--104, July 1956.
+\newblock \doi{10.1126/science.124.3212.103}.
+
+\bibitem[{Anicin}(2005)]{Lederman}
+I.~V. {Anicin}.
+\newblock {The Neutrino - Its Past, Present and Future}.
+\newblock \emph{ArXiv Physics e-prints}, March 2005.
+
+\bibitem[Bahcall et~al.(1995)Bahcall, Pinsonneault, and
+  Wasserburg]{bahcall_intro_95}
+John~N. Bahcall, M.~H. Pinsonneault, and G.~J. Wasserburg.
+\newblock Solar models with helium and heavy-element diffusion.
+\newblock \emph{Rev. Mod. Phys.}, 67:\penalty0 781--808, Oct 1995.
+\newblock \doi{10.1103/RevModPhys.67.781}.
+\newblock URL \url{http://link.aps.org/doi/10.1103/RevModPhys.67.781}.
+
+\bibitem[{Cleveland} et~al.(1998){Cleveland}, {Daily}, {Davis}, {Distel},
+  {Lande}, {Lee}, {Wildenhain}, and {Ullman}]{Homestake}
+B.~T. {Cleveland}, T.~{Daily}, R.~{Davis}, Jr., J.~R. {Distel}, K.~{Lande},
+  C.~K. {Lee}, P.~S. {Wildenhain}, and J.~{Ullman}.
+\newblock {Measurement of the Solar Electron Neutrino Flux with the Homestake
+  Chlorine Detector}.
+\newblock \emph{apj}, 496:\penalty0 505, March 1998.
+\newblock \doi{10.1086/305343}.
+
+\bibitem[Haxton(1995)]{Haxton}
+Haxton.
+\newblock Annual review.
+\newblock \emph{Annual Reviews of Astronomy and Astrophysics}, 33:\penalty0
+  459--504, 1995.
+
+\bibitem[{Fukuda} et~al.(1998)]{SuperK}
+Y.~{Fukuda} et~al.
+\newblock {Evidence for Oscillation of Atmospheric Neutrinos}.
+\newblock \emph{Physical Review Letters}, 81:\penalty0 1562--1567, August 1998.
+\newblock \doi{10.1103/PhysRevLett.81.1562}.
+
+\bibitem[Ahmad et~al.(2001)]{SNO}
+Q.R. Ahmad et~al.
+\newblock Measurement of the rate of interactions produced by 8b solar
+  neutrinos at the sudbury neutrino observatory.
+\newblock \emph{Physical Review Letters}, 87, 2001.
+
+\bibitem[{Pontecorvo}(1968)]{Ponte}
+B.~{Pontecorvo}.
+\newblock {Neutrino Experiments and the Problem of Conservation of Leptonic
+  Charge}.
+\newblock \emph{Soviet Journal of Experimental and Theoretical Physics},
+  26:\penalty0 984, May 1968.
+
+\bibitem[{Maki} et~al.(1962){Maki}, {Nakagawa}, and {Sakata}]{PMNS}
+Z.~{Maki}, M.~{Nakagawa}, and S.~{Sakata}.
+\newblock {Remarks on the Unified Model of Elementary Particles}.
+\newblock \emph{Progress of Theoretical Physics}, 28:\penalty0 870--880,
+  November 1962.
+\newblock \doi{10.1143/PTP.28.870}.
+
+\bibitem[{Particle Data Group}(2004)]{PMNSBreakdown}
+{Particle Data Group}.
+\newblock {Review of Particle Physics}.
+\newblock \emph{Physics Letters B}, 592:\penalty0 1--5, July 2004.
+\newblock \doi{10.1016/j.physletb.2004.06.001}.
+
+\bibitem[{Apollonio} et~al.(2003)]{Chooz}
+M.~{Apollonio} et~al.
+\newblock {Search for neutrino oscillations on a long base-line at the CHOOZ
+  nuclear power station}.
+\newblock \emph{European Physical Journal C}, 27:\penalty0 331--374, April
+  2003.
+\newblock \doi{10.1140/epjc/s2002-01127-9}.
+
+\bibitem[{Abe} et~al.(2013)]{DC_2013}
+Y.~{Abe} et~al.
+\newblock {First Measurement of $\theta_13$ from Delayed Neutron Capture on
+  Hydrogen in the Double Chooz Experiment}.
+\newblock \emph{ArXiv e-prints}, January 2013.
+
+\bibitem[{Agostinelli} et~al.(2003)]{G4}
+S.~{Agostinelli} et~al.
+\newblock Geant4: A simulation toolkit.
+\newblock \emph{Nucl. Instrum. Meth. A}, 506:\penalty0 250 --303, 2003.
+
+\bibitem[{Losecco}(2008)]{DCGLG4sim}
+J.~{Losecco}.
+\newblock Double chooz geant 4 compatibility.
+\newblock \emph{Double Chooz Internal Tech Note}, 2008.
+
+\bibitem[{Adamson} et~al.(2011)]{MINOS}
+P.~{Adamson} et~al.
+\newblock Measurement of the neutrino mass splitting and flavor mixing by
+  minos.
+\newblock \emph{Phys. Rev. Lett.}, 106:\penalty0 181801, May 2011.
+\newblock \doi{10.1103/PhysRevLett.106.181801}.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.106.181801}.
+
+\bibitem[Haser(2013)]{Julia_Efficiency}
+Julia Haser.
+\newblock Detection efficiency: Gd-fraction discrepancies.
+\newblock \emph{Double Chooz Technical Note}, 2013.
+
+\bibitem[of~Syracuse(250 BCE)]{Archimedes}
+Archimedes of~Syracuse.
+\newblock \emph{On Floating Bodies}.
+\newblock 250 BCE.
+
+\bibitem[{Damon} and {Kennerly}(2008)]{Sam}
+E~{Damon} and S.~{Kennerly}.
+\newblock Simulated point differentiation.
+\newblock \emph{Double Chooz Internal Tech Note}, 2008.
+
+\bibitem[{Afanasev} et~al.(2009){Afanasev}, {Baker}, {Beard}, {Biallas},
+  {Boyce}, {Minarni}, {Ramdon}, {Shinn}, and {Slocum}]{Para_Afanasev}
+A.~{Afanasev}, O.~K. {Baker}, K.~B. {Beard}, G.~{Biallas}, J.~{Boyce},
+  M.~{Minarni}, R.~{Ramdon}, M.~{Shinn}, and P.~{Slocum}.
+\newblock {New experimental limit on photon hidden-sector paraphoton mixing}.
+\newblock \emph{Physics Letters B}, 679:\penalty0 317--320, August 2009.
+\newblock \doi{10.1016/j.physletb.2009.07.055}.
+
+\bibitem[{Arkani-Hamed} et~al.(2009){Arkani-Hamed}, {Finkbeiner}, {Slatyer},
+  and {Weiner}]{Para_Justification}
+N.~{Arkani-Hamed}, D.~P. {Finkbeiner}, T.~R. {Slatyer}, and N.~{Weiner}.
+\newblock {A theory of dark matter}.
+\newblock \emph{Physics Review D}, 79\penalty0 (1):\penalty0 015014, January
+  2009.
+\newblock \doi{10.1103/PhysRevD.79.015014}.
+
+\bibitem[{Adriani} et~al.(2009)]{PAMELA}
+O.~{Adriani} et~al.
+\newblock {An anomalous positron abundance in cosmic rays with energies
+  1.5-100GeV}.
+\newblock \emph{Nature}, 458:\penalty0 607--609, April 2009.
+\newblock \doi{10.1038/nature07942}.
+
+\bibitem[{Aguilar} et~al.(2013)]{AMS}
+M.~{Aguilar} et~al.
+\newblock First result from the alpha magnetic spectrometer on the
+  international space station: Precision measurement of the positron fraction
+  in primary cosmic rays of 0.5Ð350 gev.
+\newblock \emph{Phys. Rev. Lett.}, 110:\penalty0 141102, Apr 2013.
+\newblock \doi{10.1103/PhysRevLett.110.141102}.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.110.141102}.
+
+\bibitem[{Thompson} et~al.(2005){Thompson}, {Bertsch}, and {O'Neal}]{EGRET}
+D.~J. {Thompson}, D.~L. {Bertsch}, and R.~H. {O'Neal}, Jr.
+\newblock {The Highest-Energy Photons Seen by the Energetic Gamma Ray
+  Experiment Telescope (EGRET) on the Compton Gamma Ray Observatory}.
+\newblock \emph{ApJ}, 157:\penalty0 324--334, April 2005.
+\newblock \doi{10.1086/427981}.
+
+\bibitem[{Nelson} and {Walsh}(2008{\natexlab{a}})]{Camo_Vector}
+A.~E. {Nelson} and J.~{Walsh}.
+\newblock {Chameleon vector bosons}.
+\newblock \emph{PRD}, 77\penalty0 (9):\penalty0 095006, May 2008{\natexlab{a}}.
+\newblock \doi{10.1103/PhysRevD.77.095006}.
+
+\bibitem[{Nelson} and {Walsh}(2008{\natexlab{b}})]{Vector_Boson}
+A.~E. {Nelson} and J.~{Walsh}.
+\newblock {Short baseline neutrino oscillations and a new light gauge boson}.
+\newblock \emph{PHysical Review D}, 77\penalty0 (3):\penalty0 033001, February
+  2008{\natexlab{b}}.
+\newblock \doi{10.1103/PhysRevD.77.033001}.
+
+\bibitem[{Chou} et~al.(2009)]{GammeV}
+A.~S. {Chou} et~al.
+\newblock {A Search for chameleon particles using a photon regeneration
+  technique}.
+\newblock \emph{Phys.Rev.Lett.}, 102:\penalty0 030402, 2009.
+\newblock \doi{10.1103/PhysRevLett.102.030402}.
+
+\bibitem[{Cad{\`e}ne} et~al.(2013){Cad{\`e}ne}, {Berceau}, {Fouch{\'e}},
+  {Battesti}, and {Rizzo}]{BMV}
+A.~{Cad{\`e}ne}, P.~{Berceau}, M.~{Fouch{\'e}}, R.~{Battesti}, and C.~{Rizzo}.
+\newblock {Vacuum magnetic linear birefringence using pulsed fields: the BMV
+  experiment}.
+\newblock \emph{ArXiv e-prints}, February 2013.
+
+\bibitem[Schott et~al.(2011)]{OSQAR}
+Matthias Schott et~al.
+\newblock First results of the full-scale osqar photon regeneration experiment.
+\newblock 2011.
+
+\bibitem[Parker et~al.(2013)Parker, Rybka, and Tobar]{Parker:2013fba}
+Stephen~R. Parker, Gray Rybka, and Michael~E. Tobar.
+\newblock {Hidden Sector Photon Coupling of Resonant Cavities}.
+\newblock \emph{Phys.Rev.}, D87:\penalty0 115008, 2013.
+\newblock \doi{10.1103/PhysRevD.87.115008}.
+
+\bibitem[{Jones}(2009)]{Chris_Jones}
+Chris {Jones}.
+\newblock Searching for light dark bosons with paragon: Paraphoton gadolinium
+  detection.
+\newblock \emph{Double Chooz Internal Tech Note}, 2009.
+
+\bibitem[Collaboration(2014)]{DC_2014}
+DC~Collaboration.
+\newblock {Background-independent measurement of
+  \$$\backslash$theta\_$\{$13$\}$\$ in Double Chooz}.
+\newblock \emph{ArXiv e-prints}, January 2014.
+
+\bibitem[Lopez(2014)]{Mariano}
+J.~Mariano Lopez.
+\newblock Accidental background and composition.
+\newblock \emph{Double Chooz Internal Technical Note}, 2014.
+
+\bibitem[M.~Fallot(2010)]{ReactorPaper}
+D.~Lhuillier M.~Fallot, L.~Giot.
+\newblock Uncertainty on thermal power measurement.
+\newblock \emph{Double Chooz Internal Technical Note}, 2010.
+
+\bibitem[{Lundberg} et~al.(2010){Lundberg}, {Conrad}, {Rolke}, and
+  {Lopez}]{Rolke}
+J.~{Lundberg}, J.~{Conrad}, W.~{Rolke}, and A.~{Lopez}.
+\newblock {Limits, discovery and cut optimization for a Poisson process with
+  uncertainty in background and signal efficiency: TRolke 2.0}.
+\newblock \emph{Computer Physics Communications}, 181:\penalty0 683--686, March
+  2010.
+\newblock \doi{10.1016/j.cpc.2009.11.001}.
+
+\bibitem[Beausoleil et~al.(1987)Beausoleil, McIntyre, Foot, Hildum, Couillaud,
+  and H\"ansch]{Rydberg}
+R.~G. Beausoleil, D.~H. McIntyre, C.~J. Foot, E.~A. Hildum, B.~Couillaud, and
+  T.~W. H\"ansch.
+\newblock Continuous-wave measurement of the 1<i>s</i> lamb shift in atomic
+  hydrogen.
+\newblock \emph{Phys. Rev. A}, 35:\penalty0 4878--4881, Jun 1987.
+\newblock \doi{10.1103/PhysRevA.35.4878}.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevA.35.4878}.
+
+\end{thebibliography}

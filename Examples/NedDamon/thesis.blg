@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2010)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: unsrtnat.bst
+A level-1 auxiliary file: tex/preamble.aux
+A level-1 auxiliary file: tex/preface.aux
+A level-1 auxiliary file: tex/introduction.aux
+A level-1 auxiliary file: DC_Results/Double_Chooz.aux
+A level-1 auxiliary file: AA/Articulated_Arm.aux
+A level-1 auxiliary file: Paraphotons/Paraphotons.aux
+Database file #1: bibliographies/bulkref.bib
+Warning--empty publisher in Archimedes
+Warning--empty journal in OSQAR
+You've used 46 entries,
+            2481 wiz_defined-function locations,
+            886 strings with 11901 characters,
+and the built_in function-call counts, 16440 in all, are:
+= -- 1398
+> -- 788
+< -- 33
++ -- 321
+- -- 228
+* -- 1226
+:= -- 2708
+add.period$ -- 168
+call.type$ -- 46
+change.case$ -- 90
+chr.to.int$ -- 45
+cite$ -- 48
+duplicate$ -- 866
+empty$ -- 1518
+format.name$ -- 293
+if$ -- 3484
+int.to.chr$ -- 2
+int.to.str$ -- 47
+missing$ -- 48
+newline$ -- 268
+num.names$ -- 138
+pop$ -- 335
+preamble$ -- 1
+purify$ -- 46
+quote$ -- 0
+skip$ -- 482
+stack$ -- 0
+substring$ -- 595
+swap$ -- 131
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 316
+warning$ -- 2
+while$ -- 121
+width$ -- 0
+write$ -- 647
+(There were 2 warnings)
