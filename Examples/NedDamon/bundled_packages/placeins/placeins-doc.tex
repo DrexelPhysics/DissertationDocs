@@ -1,0 +1,75 @@
+\documentclass[pagesize=auto, fontsize=12pt, DIV=9, parskip=half]{scrartcl}
+
+\usepackage{fixltx2e}
+\usepackage{etex}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\newcommand*{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}
+\newcommand*{\pkg}[1]{\textsf{#1}}
+\newcommand*{\cs}[1]{\texttt{\textbackslash#1}}
+\makeatletter
+\newcommand*{\cmd}[1]{\cs{\expandafter\@gobble\string#1}}
+\makeatother
+\newcommand*{\opt}[1]{\texttt{#1}}
+
+\addtokomafont{title}{\rmfamily}
+
+\title{The \pkg{placeins} package\thanks{This manual corresponds to \pkg{placeins.sty}~ver~2.2, dated~April 18, 2005.}}
+\author{Donald Arseneau\thanks{\mail{asnd@triumf.ca}}}
+\date{April 18, 2005}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{sloppypar}
+  \pkg{Placeins.sty} keeps floats `in their place', preventing them from floating
+  past a ``\cmd{\FloatBarrier}'' command into another section.  To use it, declare
+  ``\verb+\usepackage{placeins}+'' and insert ``\cmd{\FloatBarrier}'' at places that floats 
+  should not move past, perhaps at every ``\cmd{\section}''.
+\end{sloppypar}
+
+
+\minisec{Option: \opt{[section]}}
+
+\begin{sloppypar}
+  A more convenient way to stop floats at section boundaries is to change 
+  the definition of ``\cmd{\section}'' to include ``\cmd{\FloatBarrier}'', either at the
+  beginning, before ``\cmd{\@startsection}'', or in the `style' specification (see 
+  The \LaTeX\ Companion, section~2.2.2; or~2.3 in the 1st ed).  If you specify 
+  ``\verb+\usepackage[section]{placeins}+'', then the ``\cmd{\section}'' command will be 
+  redefined with ``\cmd{\FloatBarrier}'' inserted at the beginning.
+\end{sloppypar}
+
+
+\minisec{Options: \opt{[above]} \opt{[below]}}
+
+Something you may not like is that, by default, ``\cmd{\FloatBarrier}'' is very 
+strict, and will (try to) prevent a float from appearing above the start 
+of the current section or below the start of the next section, even 
+though the float is still on the same page as its intended section.  
+Each restriction can be relaxed separately by using the ``\opt{[above]}'' and 
+``\opt{[below]}'' package options: ``\opt{[above]}'' allows floats to appear above their 
+section, if on the same page; ``\opt{[below]}'' allows below.
+
+NOTE!  The original version of \pkg{placeins.sty} acted like it was loaded
+with the option ``\opt{[above]}'' specified.
+
+There is a problem with \LaTeX's ``\cmd{\suppressfloats}'' being out of step with 
+the page breaking (see usenet msg \texttt{<yfi656pbsn0.fsf@triumf.ca>} and thread)
+which sometimes allows a float to go above a ``\cmd{\FloatBarrier}'' placed near
+the top of a page. Maybe \pkg{placeins} will fix it sometime later.
+
+
+\minisec{Option: \opt{[verbose]}}
+
+There is a package option ``\opt{[verbose]}'' that causes many messages to be
+written in the log file.  It might be used to answer the question:
+`How did \emph{that} get \emph{there}?!?'
+
+\end{document}

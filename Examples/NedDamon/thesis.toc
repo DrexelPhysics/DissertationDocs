@@ -1,0 +1,65 @@
+\contentsline {chapter}{List of Figures}{iv}{section*.3}
+\contentsline {chapter}{Abstract}{xi}{section*.5}
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Initial Discovery}{2}{section.1.1}
+\contentsline {subsubsection}{Beta Decay and the Neutrino}{2}{section*.6}
+\contentsline {section}{\numberline {1.2}First Detection}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}The Solar Neutrino Problem}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}Resolution of the Solar Neutrino Problem}{6}{section.1.4}
+\contentsline {section}{\numberline {1.5}Neutrino Oscillation and the PMNS Matrix}{9}{section.1.5}
+\contentsline {section}{\numberline {1.6}Chapter Overview}{10}{section.1.6}
+\contentsline {subsubsection}{The Double Chooz Experiment and the Search for $\theta _{13}$}{10}{section*.8}
+\contentsline {subsubsection}{The Articulated Arm and Full-Volume Calibration of the Double Chooz Experiment}{11}{section*.9}
+\contentsline {subsubsection}{Paraphotons}{11}{section*.10}
+\contentsline {chapter}{\numberline {2}Double Chooz: First Hints of $\theta _{13}$}{12}{chapter.2}
+\contentsline {section}{\numberline {2.1}The State of the PMNS Matrix}{12}{section.2.1}
+\contentsline {section}{\numberline {2.2}The Double Chooz Detectors}{13}{section.2.2}
+\contentsline {section}{\numberline {2.3}Experimental Setup}{14}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Alternate Analysis Tool}{16}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}PMT Gain Calibration}{21}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Backgrounds}{29}{section.2.4}
+\contentsline {section}{\numberline {2.5}Simulation}{31}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Reactor Simulation}{31}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Detector Simulation}{31}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Signal Reconstruction}{32}{subsection.2.5.3}
+\contentsline {section}{\numberline {2.6}Results}{33}{section.2.6}
+\contentsline {chapter}{\numberline {3}The Articulated Arm System}{39}{chapter.3}
+\contentsline {section}{\numberline {3.1}Description}{39}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Telescoping Segments}{41}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Articulating Segments}{44}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Drive Assembly}{46}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Secondary Safety Systems}{48}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Secondary Control System}{50}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Secondary Containment System}{50}{subsection.3.1.6}
+\contentsline {section}{\numberline {3.2}Development and Testing}{50}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Linearity Testing}{53}{subsection.3.2.1}
+\contentsline {subsubsection}{\emph {Z} Motion Testing}{53}{section*.45}
+\contentsline {subsubsection}{$\phi $ Motion Testing}{58}{section*.49}
+\contentsline {subsection}{\numberline {3.2.2}Articulation Testing}{59}{subsection.3.2.2}
+\contentsline {subsubsection}{Droop Testing}{60}{section*.51}
+\contentsline {subsubsection}{Pressure Testing}{67}{section*.58}
+\contentsline {subsection}{\numberline {3.2.3}Planar Motion}{68}{subsection.3.2.3}
+\contentsline {subsubsection}{Telescoping Planar Motion}{68}{section*.59}
+\contentsline {subsubsection}{Articulating Planar Motion}{70}{section*.61}
+\contentsline {subsection}{\numberline {3.2.4}Liquid Pressure Validation}{71}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Simulation}{72}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}AA Reconstruction Accuracy}{72}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}AA Energy Effects}{78}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Current and Future Deployments}{80}{section.3.4}
+\contentsline {chapter}{\numberline {4}Paraphotons}{82}{chapter.4}
+\contentsline {section}{\numberline {4.1}Theory and Motivation}{82}{section.4.1}
+\contentsline {section}{\numberline {4.2}Prior Searches}{84}{section.4.2}
+\contentsline {section}{\numberline {4.3}Analysis Overview}{86}{section.4.3}
+\contentsline {section}{\numberline {4.4}Expected Signal}{87}{section.4.4}
+\contentsline {section}{\numberline {4.5}Simulation}{89}{section.4.5}
+\contentsline {section}{\numberline {4.6}Analysis and Data Processing}{90}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Analysis Overview}{90}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Cuts}{90}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Data Processing}{96}{subsection.4.6.3}
+\contentsline {subsection}{\numberline {4.6.4}Off/Off Data Analysis}{96}{subsection.4.6.4}
+\contentsline {subsection}{\numberline {4.6.5}Sensitivity}{102}{subsection.4.6.5}
+\contentsline {subsection}{\numberline {4.6.6}Paraphoton Injected Sample}{103}{subsection.4.6.6}
+\contentsline {subsection}{\numberline {4.6.7}On/On and Final Fits}{104}{subsection.4.6.7}
+\contentsline {section}{\numberline {4.7}Future Work}{106}{section.4.7}
+\contentsline {section}{\numberline {4.8}Conclusion}{108}{section.4.8}
+\contentsline {chapter}{Bibliography}{109}{section*.88}

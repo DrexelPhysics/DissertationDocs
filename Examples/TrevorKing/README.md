@@ -6,6 +6,7 @@
 The LaTeX source for this thesis can be found here: http://git.tremily.us/?p=thesis.git
 The original source for the drexel-thesis package: http://git.tremily.us/?p=drexel-thesis.git
 A sparse drexel-thesis example: http://blog.tremily.us/posts/drexel-thesis/
+>>>>>>> upstream/master
 
 --------------------------------------------------------------------------
 
