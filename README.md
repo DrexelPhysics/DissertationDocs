@@ -39,6 +39,7 @@ Below are a few rules to ensure that this resource remains useful for everyone:
 ### Examples:
 
 + **Coleman Krawczyk**: [_Spectral Energy Distributions, Dust, and Black Hole Properties: A Statistical, Multi-Wavelength Quasar Analysis_](Examples/ColemanKrawczyk)
++ **Edward Damon**: [_Measurement of Paraphotons in the Double Chooz Experiment Using Articulated Arm Calibration Methods_](Examples/NedDamon)
 + **Travis Hoppe**: [_On the Role of Entropy in the Protein Folding Process_](Examples/TravisHoppe)
 + **Trevor King**: [_Open Source Single Molecule Force Spectroscopy_](Examples/TrevorKing)
 
