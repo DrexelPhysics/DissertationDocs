@@ -1,0 +1,64 @@
+\section{Contour integration}
+
+As a brief review, some definite integrals from $-\infty$ to $\infty$
+can be evaluated by integrating along the contour \C\ shown in
+\cref{fig:UHP-contour}.
+%
+\nomenclature[o  ]{$\infty$}{Infinity}
+
+\begin{figure}
+  \asyinclude{figures/contour/contour}
+  \caption{Integral contour \C\ enclosing the upper half of the
+    complex plane.  If the integrand $f(z)$ goes to zero ``quickly
+    enough'' as the radius of \C\ approaches infinity, then the only
+    contribution comes from integration along the real axis (see text
+    for details).\label{fig:UHP-contour}}
+\end{figure}
+
+A sufficient condition on the function $f(z)$ to be integrated, is
+that $\lim_{\abs{z}\rightarrow\infty}\abs{f(z)}$ falls off at least as
+fast as $\frac{1}{z^2}$.  When this is the case, the integral around
+the outer semicircle of \C\ is 0, so the
+$\iC{f(z)}=\iInfInf{z}{f(z)}$.
+
+We can evaluate the integral using the residue theorem\index{residue theorem},
+\begin{equation}
+  \iC{f(x)} = \sum_{z_p \in \{\text{poles in \C}\}} 2\pi i \Res{z_p}{f(z)} \;,
+                                        \label{eq:res-thm}
+\end{equation}
+where for simple poles (single roots)
+\begin{equation}
+  \Res{z_p}{f(z)} = \limZp(z-z_p) f(z) \;, \label{eq:res-simple}
+\end{equation}
+and in general for a pole of order $n$
+\begin{equation}
+  \Res{z_p}{f(z)} = \frac{1}{(n-1)!} \cdot\limZp
+                       \nderiv{n-1}{z}{}\left[ (z-z_p)^n \cdot f(z) \right] \;.
+                                        \label{eq:res-general}
+\end{equation}
+
+%We also use the following theorem
+%\begin{thm} \label{thm:res-even-fn}
+%If $f(z) = f(-z)$, then $\Res{z_p}{f(z)} = \Res{-z_p}{f(z)}$.\\
+%\end{thm}
+%\begin{proof}
+%If $g(z)$ is even, then $\deriv{z}{g}$ must be odd
+% (consider the Lorentz expansion).
+%By induction, $\nderiv{n}{z}{g}$ is even when $n$ is even,
+%and odd when $n$ is odd.
+%By inspection, $(z-z_p)^n$ is also even iff $n$ is even.
+%Therefore, 
+%\begin{equation}
+%  (z-z_p)^n \cdot f(z)
+%\end{equation}
+%is even iff $n$ is even, so
+%\begin{equation}
+%  \nderiv{n-1}{z}{}\left( (z-z_p)^n \cdot f(z) \right)
+%\end{equation}
+%is always even, so 
+%\begin{equation}
+%  \Res{z_p}{f(z)} = \frac{1}{(n-1)!} \cdot\limZp
+%                       \nderiv{n-1}{z}{}\left[ (z-z_p)^n \cdot f(z) \right]
+%\end{equation}
+%must be even with respect to $z_p$ $\qed$.
+%\end{proof}

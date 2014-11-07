@@ -1,0 +1,6 @@
+I didn't have a good understanding of the theory behind thermally
+calibrating an AFM cantilever, so I work it out here with all the
+gory details :p.
+
+The test subdirectory contains some Python scripts I used to test my
+algebra and get a better feel for what was going on.

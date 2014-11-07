@@ -1,0 +1,189 @@
+The most common method for calibrating cantilevers for atomic force
+microscopes is via thermal vibration\citep{florin95}.  In this
+chapter, I'll derive the theory behind this procedure and introduce
+my \calibcant\ package for performing this calibration automatically.
+
+We know the energy of the cantilever's thermal vibration from the
+equipartion theorem (\cref{eq:equipart,sec:cantilever-calib:intro}).
+Solving the equipartition theorem for the spring contant $\kappa$
+yields
+\begin{equation}
+  \kappa = \frac{k_BT}{\avg{x^2}} \;, \label{eq:equipart_k}
+\end{equation}
+so we need to measure (or estimate) the temperature $T$ and variance
+of the cantilever position $\avg{x^2}$ in order to estimate $\kappa$.
+
+We don't measure $x$ directly, though.  We reflect a laser off the
+back of the cantilever and measure the position of the deflected beam
+with a photodiode (\cref{fig:afm-schematic}).  In order to convert the
+photodiode signal $V_p$\index{$V_p$} to a tip displacement $x$, we
+scale $V_p$ by a linear photodiode sensitivity
+$\sigma_p$\index{$\sigma_p$}.
+\begin{equation}
+  x(t) = \frac{V_p(t)}{\sigma_p} \;. \label{eq:x-from-Vp}
+\end{equation}
+We measure $\sigma_p$ by pushing the tip against the substrate surface
+and measuring the slope (deflection volts per piezo meter) of the
+resulting contact-deflection trace (\cref{sec:calibcant:bump}).  By
+keeping $V_p$ and $\sigma_p$ separate in our calculation of $\kappa$,
+we can gauge the relative importance errors in each parameter and
+calculate the uncertainty in our estimated $\kappa$
+(\cref{sec:calibcant:discussion:errors}).
+%
+\nomenclature[sr ]{$V_p$}{The vertical photodiode deflection voltage
+  (\cref{fig:afm-schematic,eq:x-from-Vp}).}
+\nomenclature[sg s_p ]{$\sigma_p$}{The linear photodiode sensitivity to
+  cantilever displacement (\cref{fig:afm-schematic,eq:x-from-Vp}).}
+
+In order to filter out noise in the measured value of $\avg{V_p^2}$ we
+fit the measured cantilever deflection to the expected theoretical
+power spectral density ($\PSD_f$\index{PSD@\PSD!in frequency space})
+of a damped harmonic oscillator exposed to thermal noise
+\begin{equation}
+  \PSD_f(V_p, f) = \frac{G_{1f}}{(f_0^2-f^2)^2 + \beta_f^2 f^2} \;.
+  \label{eq:psd-Vp}
+\end{equation}
+In terms of the fit parameters $G_{1f}$\index{$G_{1f}$},
+$f_0$\index{$f_0$}, and $\beta_f$\index{$\beta_f$}, the expectation
+value for $V_p^2$ is given by
+\begin{equation}
+  \avg{V_p(t)^2} = \frac{\pi G_{1f}}{2\beta_f f_0^2} \;.
+  \label{eq:avg-Vp-Gone-f}
+\end{equation}
+%
+\nomenclature[o PSDf ]{$\PSD_f$}{Power spectral density in
+  frequency space
+  \begin{equation}
+    \PSD_f(g, f) \equiv \normLimT 2 \magSq{ \Fourf{g(t)}(f) } \;.
+  \end{equation}}
+\nomenclature[sr ]{$f$}{Frequency (hertz).}
+\nomenclature[sr ]{$f_0$}{Resonant frequency (hertz).}
+\nomenclature[sg p ]{$\pi$}{Archmides' constant, $\pi=3.14159\ldots$.
+  The ratio of a circle's circumference to its diameter.}
+
+Combining \cref{eq:equipart_k,eq:x-from-Vp,eq:avg-Vp-Gone-f}, we
+have
+\begin{align}
+  \kappa &= \frac{\sigma_p^2 k_BT}{\avg{V_p(t)^2}}
+    = \frac{2 \beta_f f_0^2 \sigma_p^2 k_BT}{\pi G_{1f}} \;.
+  \label{eq:kappa}
+\end{align}
+A calibration run consists of bumping the surface with the cantilever
+tip to measure $\sigma_p$ (\cref{sec:calibcant:bump}), measuring the
+buffer temperature $T$ with a thermocouple
+(\cref{sec:calibcant:temperature}), and measuring thermal vibration
+when the tip is far from the surface to extract the fit parameters
+$G_{1f}$, $f_0$, and $\beta_f$ (\cref{sec:calibcant:vibration}).
+
+Although this theory should be well established
+(\cref{sec:calibcant:survey}), there is continued confusion about the
+details of the fitting (\cref{sec:calibcant:lorentzian}).  To avoid
+further ambiguity, I'll derive the power spectral density mentioned
+above (\cref{eq:psd-Vp,eq:avg-Vp-Gone-f})
+in \cref{sec:calibcant:theory}.  In \cref{sec:calibcant:procedure},
+I'll introduce my \calibcant\ package for automatically calibrating
+cantilevers.  I'll clear up a few remaining points
+in \cref{sec:calibcant:discussion} before wrapping up
+with \cref{sec:calibcant:conclusions}.
+
+\section{Related work}
+\label{sec:calibcant:survey}
+
+In reality, the cantilever motion is more complicated than a pure
+simple harmonic oscillator.  Various corrections taking into acount
+higher order vibrational modes\citep{butt95,stark01} and cantilever
+tilt\citep{hutter05} have been proposed and
+reviewed\citep{florin95,levy02,ohler07}, but we will focus here on the
+derivation of noise in damped simple harmonic oscillators that
+underlies all frequency-space methods for improving the basic
+$\kappa\avg{x^2} = k_BT$ method.
+
+\citet{roters96} derive the \PSD\ with a similar Fourier transform,
+but they use the fluctuation--dissipation theorem to extract the \PSD\
+from the susceptibility (see
+their \fref{equation}{4}).  \citet{benedetti12} has independently
+developed a Parseval's approach similar to mine (in
+his \fref{section}{8.2.1}), although he glosses over some of the
+integrals.  \citet{berg-sorensen04} has an extensive treatment of the
+extremely overdamped case and laser tweezer calibration, which they
+revisit a year later during a discussion of noise
+color\citep{berg-sorensen05}.  \citet{gittes98} derive some related
+results in the extremely overdamped case, such the fact that the
+signal to thermal noise ratio is independent of trap stiffness
+$\kappa$.  Despite this earlier work, I think it is worth explicitly
+deriving the \PSD\ of a damped harmonic oscillator here, as I have
+been unable to find a reference that I feel treats the problem with
+sufficient rigor.  An explicit derivation may also help clear up the
+confusion about the proper \PSD\ form discussed in the next section.
+
+\section{Fitting with a Lorentzian}
+\label{sec:calibcant:lorentzian}
+
+It is popular to refer to the thermal power spectral density as a
+``Lorentzian''\citep{howard88,hutter93,roters96,levy02,florin95}, but
+there is dissagreement on what this means.  The classic Lorentzian
+function is\citep{mathworld-lorentzian}
+\begin{equation}
+  L(x) = \frac{1}{\pi}\frac{\frac{1}{2}\Gamma}
+                           {(x-x_0)^2 + \p({\frac{1}{2}\Gamma})^2} \;,
+  \label{eq:lorentzian}
+\end{equation}
+where $x_0$ sets the center and $\Gamma$ sets the width of the curve.
+However, the correct \PSD\ for a damped harmonic oscillator in a white
+noise bath is given by \cref{eq:psd-Vp}\citep{burnham03,benedetti12}.
+
+These formulas are fundamentally different.
+
+For example, the slope of \cref{eq:psd-Vp} is zero at $f=0$, as we can
+see by using the chain rule repeatedly,
+\begin{align}
+  \deriv{f}{\PSD_f}
+    &= \deriv{f}{}\p({\frac{G_{1f}}{(f_0^2-f^2)^2 + \beta_f^2 f^2}})
+    = \frac{-G_{1f}}{\p({(f_0^2-f^2)^2 + \beta_f^2 f^2})^2}
+      \deriv{f}{}\p({(f_0^2-f^2)^2 + \beta_f^2 f^2}) \\
+    &= \frac{-G_{1f}}{\p({(f_0^2-f^2)^2 + \beta_f^2 f^2})^2}
+      \p({2(f_0^2-f^2)\deriv{f}{}(f_0^2 - f^2) + 2\beta_f^2 f}) \\
+    &= \frac{-G_{1f}}{\p({(f_0^2-f^2)^2 + \beta_f^2 f^2})^2}
+      \p({-4f(f_0^2-f^2) + 2\beta_f^2 f}) \\
+    &= \frac{2G_{1f}f}{\p({(f_0^2-f^2)^2 + \beta_f^2 f^2})^2}
+      \p({2(f_0^2-f^2) - \beta_f^2})
+    \label{eq:model-psd-df} \\
+  \left.\deriv{f}{\PSD_f}\right|_{f=0} &= 0 \;.
+    \label{eq:model-psd-df-zero}
+\end{align}
+On the other hand, the slope of \cref{eq:lorentzian} is only zero at
+the peak (where $x=x_0$).
+\begin{align}
+  \deriv{x}{L(x)}
+    &= \frac{1}{\pi}\frac{\frac{-1}{2}\Gamma}
+                         {\p({(x-x_0)^2 + \p({\frac{1}{2}\Gamma})^2})^2}
+         \cdot \deriv{x}{}\p({(x-x_0)^2 + \p({\frac{1}{2}\Gamma})^2}) \\
+    &= \frac{1}{\pi}\frac{\frac{-1}{2}\Gamma}
+                         {\p({(x-x_0)^2 + \p({\frac{1}{2}\Gamma})^2})^2}
+         \cdot 2 (x-x_0) \\
+    &= \frac{1}{\pi}\frac{-\Gamma (x-x_0)}
+                         {\p({(x-x_0)^2 + \p({\frac{1}{2}\Gamma})^2})^2}
+  \label{eq:lorentzian-dx}
+\end{align}
+
+It is unclear whether the ``Lorentzian'' references are due to
+uncertainty about the definition of the Lorentzian or to the fact that
+the two equations have similar behavior near the
+peak.  \citet{florin95} likely \emph{are} using \cref{eq:lorentzian},
+as the slope of the fitted \PSD\ in their \fref{figure}{2}, has a
+slope at $f=0$.  If they were using \cref{eq:psd-Vp}, the derivative
+would have been zero (\cref{eq:model-psd-df-zero}).
+
+We have at least two models in use, one likely the ``Lorentzian''
+(\cref{eq:lorentzian}) and one that's not.  Perhaps researchers
+claiming to use the ``Lorentzian'' are consistently
+using \cref{eq:lorentzian}?  There are at least two
+counterexamples---\citet{roters96,benedetti12}---with solid
+derivations of
+\cref{eq:DHO-psd} which they then refer to as the ``Lorentzian''.
+Which formula are the remaining ``Lorentzian'' fitters using?  What
+about groups that only reference their method as ``thermal
+calibration'' without specifying a \PSD\ model?  In order to avoid any
+uncertainty, we leave \cref{eq:psd-Vp} unnamed.  I encourage future
+researchers to explicitly list the model they use, ideally by citing
+their associated open source calibration package.

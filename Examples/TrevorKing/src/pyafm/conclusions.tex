@@ -1,0 +1,44 @@
+\section{Conclusions}
+\label{sec:pyafm:conclusions}
+
+Developing an open software stack for controlling single molecule
+force spectroscopy is hard work, especially for scientists who lack
+experience designing or managing moderately large software projects.
+Coming into this project, I already had several years of experience
+working with LabVIEW, but I had very little experience in other
+languages and no formal training in project maintenance.  I spent the
+first two years of my research project acquiring enough experience to
+start making progress on a sustainable stack\footnote{%
+  Since last summer I've been helping the
+  \href{http://software-carpentry.org/}{Software Carpentry}
+  project\citep{wilson06b} reach out to scientists (mostly graduate
+  students) to provide boot camp introductions to software development
+  and version control.  It's a chance to tell other folks what I wish
+  I'd been told when I was starting out.
+}, and I've spent the remaining time tuning this stack (and the
+analysis software) while running experiments.
+
+An open source stack allows collaborative development so that this
+development cost can be shared between labs, as well as lowering the
+barrier to entry for new labs entering the field.  Besides benefiting
+SMFS groups, lower-level packages in the stack will be useful to a
+wider audience (who can share the maintenance cost).  My existing
+stack and future distributed maintenance will allow researchers to
+focus on generating new science, instead of generating new software.
+
+Besides development efficiencies, a common stack could provide a
+benchmark for comparative analysis between experiments carried out by
+different labs.  With every lab using in-house software and in-house
+hardware, it's hard to judge the reliability or accuracy of the lab's
+published research.  A common stack should include methods like those
+used in \cref{sec:pyafm:discussion} to characterize and validate your
+apparatus.  A common stack also provides a common file format for
+experimental data, which makes it easier to share data and analysis
+tools.
+
+While there have been other attempts SMFS control which claim to be
+open source, they have either been based on closed source
+tools\citep{aioanei11} or have (critically) not actually published
+their source\citep{materassi09}.  Both of these limitations make it
+hard to realize the benefits of communal, open source development, and
+the \pyafm\ stack suffers from neither.

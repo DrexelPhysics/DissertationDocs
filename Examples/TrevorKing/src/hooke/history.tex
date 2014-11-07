@@ -1,0 +1,66 @@
+\section{History}
+\label{sec:hooke:history}
+
+\Hooke\ was originally developed by \citet{sandal09} working at the
+University of Bologna.  It was actively developed until the paper came
+out, after which development became more sporadic.  This was partly
+because \Hooke\ worked well enough for the original authors and partly
+because some of the developers had graduated and moved on to other
+fields\footnote{
+  Developer turnover may seem like a good reason to avoid open source
+  software.  Why use something when its developers may not stay around
+  to support it?  This argument may make sense if you're comparing
+  open source and commercial packages, but it makes less sense if
+  you're comparing existing open source packages to hypothetical
+  in-house software.  Why \emph{not} use something, if it's free and
+  already exists?  Figuring out someone else's software is often much
+  more efficient than writing your own tool from
+  scratch\footnotemark{}.
+}\footnotetext{
+  \ldots says the person who threw out the existing implementation and
+  rewrote the control stack from scratch ;).  I'm ok with starting
+  over if the existing project is not maintainable, but realize that
+  you're probably biting off a lot of work.
+}.
+
+Before discovering \Hooke in 2010, I had been using a series of fairly
+site-specific scripts to post-process my unfolding data.  Excited by
+the existence of a published, open source post-processing framework, I
+dropped my scripts and started working on \Hooke.  Other open-source
+tools for post-processing SMFS data exist, but they are based on
+closed sorce tools\citep{kuhn05,aioanei11} and some are no longer
+being developed\citep{kuhn05}.  There are also some completely closed
+source tools such as \citetalias{punias}\citep{carl08} and JPK's
+\citetalias{force-robot}\citep{struckmeier08}.  Other work along this
+line exists, but source code is unavailable\citep{andreopoulos11}.
+
+\Hooke\ supports a wide range of input file formats via \emph{drivers}
+(\cref{sec:hooke:drivers}), but when I began working on the project,
+there wasn't a clear interface between the drivers and processing
+\emph{plugins} (\cref{sec:hooke:plugins}).  I cleaned up this
+interface as part of a general refactoring, fixing a number of plugins
+that relied on obscure internals in particular driver code.  My
+refactoring removed these leaky abstractions, and now every analysis
+plugin works with every data driver.
+
+\Hooke\ has been designed with an eye to modular flexibility, with a
+command line interface (CLI) and graphical user interface (GUI).
+However, as with drivers and plugins, the initial abstractions were
+leaky.  I added a generic argument interface for analysis plugins, and
+taught the interfaces how to handle the generic argument types
+(\cref{sec:hooke:ui}).  With this framework, new analysis plugins are
+automatically supported by both the CLI and the GUI.  As a side effect
+of this reorganization, the GUI (which had previously been a display
+for the CLI) became truly interactive.  The interactive portions of
+the GUI owe a large debt to earlier work by Rolf Schmidt et al.~from
+the Centre for NanoScience Research at Concordia University.
+%
+\nomenclature[text ]{UI}{User interface.  What a user uses to interact
+  with a software package (\cf~GUI and CLI).}
+\nomenclature[text ]{CLI}{Command line interface.  A textual computing
+  environtment, where the user controls execution by typing commands
+  at a prompt (\cf~GUI and UI).}
+\nomenclature[text ]{GUI}{Graphical user interface.  A graphical
+  computing environment, where the user controls execution through
+  primarily through mouse clicks and interactive menus and widgets
+  (\cf~CLI and UI).}

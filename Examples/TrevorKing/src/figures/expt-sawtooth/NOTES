@@ -1,0 +1,7 @@
+Force (pN) vs Extension (nm)
+Red data, green WLCs.
+Force:     -100 pN -> top
+Extension: -5 nm -> 250 nm.
+
+Data fit using
+  sawmodel_mark -p 4e-10 sawmodel.xml

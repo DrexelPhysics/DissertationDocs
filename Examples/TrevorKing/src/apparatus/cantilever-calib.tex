@@ -1,0 +1,52 @@
+\section{Cantilever spring constant calibration}
+\label{sec:cantilever-calib:intro}
+
+In order to measure forces accurately with an AFM, it is important to
+measure the cantilever spring constant $\kappa$\index{$\kappa$}.  The
+force exerted on the cantilever can then be deduced from its
+deflection via Hooke's law,\index{Hooke's law}
+\begin{equation}
+  F=-\kappa x \;,  \label{eq:hooke}
+\end{equation}
+where $x$ is the perpendicular displacement of the cantilever tip
+($x_c$ in \cref{fig:unfolding-schematic}).
+%
+\nomenclature[sr ]{$F$}{Force (newtons).}
+\nomenclature[sg k ]{$\kappa$}{Spring constant (newtons per meter).}
+\nomenclature[sr ]{$x$}{Displacement (meters).}
+
+The basic idea is to use the equipartition theorem, which gives the
+thermal energy per degree of freedom.  For a simple harmonic
+oscillator, the only degree of freedom is $x$, so we
+have\citep{hutter93}
+\begin{equation}
+  \frac{1}{2} \kappa \avg{x^2} = \frac{1}{2} k_BT \;, \label{eq:equipart}
+\end{equation}
+where $k_B$ is Boltzmann's constant, $T$ is the absolute temperature,
+and $\avg{x^2}$ is the average value of $x^2$ measured
+over a long time interval.
+%
+\nomenclature[sr ]{$k_B$}{Boltzmann's constant,
+  $k_B = 1.380 65\E{-23}\U{J/K}$\citep{codata-boltzmann}.}
+\nomenclature[sr ]{$T$}{Absolute temperature (Kelvin).}
+\nomenclature[o  ]{$\avg{s(t)}$}{Mean (expectation value) of a
+  time-series $s(t)$
+  \begin{equation}
+    \avg{A} \equiv \iLimT{A} \;.
+  \end{equation}}
+\nomenclature[o  ]{$\equiv$}{Defined as (\ie\ equivalent to).}
+
+To calculate the spring constant $\kappa$ using \cref{eq:equipart}, we
+need to measure the buffer temperature $T$ and the thermal vibration
+variance $\avg{x^2}$.  We measure the temperature with a thermocouple
+inserted into the AFM fluid cell, and we measure the thermal vibration
+by monitoring the cantilever during thermal oscillation when it is far
+from the substrate surface.
+
+The raw cantilever deflection data will have sources of noise that are
+not due to the cantilever's thermal vibration (e.g.~electronic noise
+in the detector).  To avoid biasing $\kappa$, there is a fairly
+elaborate theory behind extracting $\avg{x^2}$.  For more detail, see
+\cref{sec:calibcant}, where I discuss the $\avg{x^2}$ extraction in
+detail and present my open source \calibcant\ tool for automated
+cantilever calibration.

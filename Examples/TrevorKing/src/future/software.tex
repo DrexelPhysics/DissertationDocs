@@ -1,0 +1,80 @@
+\section{Software}
+\label{sec:future:software}
+
+Open source experiment control is possible!  Even for a small lab,
+with a single novice developer\footnote{
+  I started this project with a bit of LabVIEW and Matlab experience,
+  but only a few days of Python from the physics department's
+  ``Welcome to Drexel'' boot camp.  I stumbled across version control
+  on my own, after a year of maintaining a directory full of
+  version-stampted tarballs.
+},
+building reasonable software on top of existing pieces is possible.
+After a significant investment in developing
+\sawsim\ (\cref{sec:sawsim}), the \pyafm\ stack
+(\cref{sec:pyafm,sec:calibcant}), and \Hooke\ (\cref{sec:hooke}), we
+have a complete experiment control and analysis suite for single
+molecule force spectroscopy.  All of the software in the
+stack---including the existing libraries and systems layer
+dependencies---is open source, so other labs are free to use, improve,
+and republish it as they see fit.
+%
+\nomenclature[text ]{tarball}{A single file containing a collection of
+  files and directories.  Created by
+  \href{http://www.gnu.org/software/tar/}{Tar}, tarballs were
+  originally used for tape archives (hence the name), but they are now
+  often used for distributing project source code.}
+
+As the body of existing science increases, new researchers must become
+at the same time more specialized and more interdisciplinary than
+their fore-bearers.  With a relatively fixed undergraduate curriculum,
+new researchers cannot afford to spend time becoming experts in every
+field that bears on their research project.  By pooling resources
+between labs, individual researchers can reduce time spent on generic
+tooling and increase time spent on their particular project.
+Experiment control, analysis, and simulation software is particularly
+amenable to community development, because the cost of sharing
+software between labs is minimal.
+
+Besides the low cost of transferring the data itself, the rise of
+distributed version control systems such as \citetalias{git} have
+reduced the administrative overhead of maintaining a project with many
+far-flung contributors.  Researchers can automatically fetch and merge
+changes made by other groups, incorperating remote improvements.  They
+can also commit and push local improvements, which are then available
+for remote researchers to incorperate.  The version control systems
+and workflows that facilitate this cooperation scale well, from small
+projects with a single user, to huge projects like the Linux kernel
+with thousands of developers contributing to each release.
+
+Once the software used in a lab has been published, it is also easier
+to audit by others who may be skeptical of the summary published in a
+journal article.  For example, resolving the confusion about the
+``Lorentzian'' (\cref{sec:calibcant:lorentzian}) would be trivial if
+\citet{florin95} had also published their explicit procudure for
+generating their figure.  Do you think I'm not calibrating my
+cantilevers correctly?  Feel free to dig through my code.  Let me know
+if you find something wrong (or fix it and send me a patch!).  Science
+is built on reproducible experiments and analysis, and open source
+software allows you to explicitly specify your methods.  With well
+organized code, the specification should be clear from high-level,
+experiment-design choices down through low-level bit manipulation.
+
+Many researchers have not received formal training in software
+development best practices, so how do we bootstrap this transition to
+open source science?  There is a wealth of documentation available
+online for self-teaching, and scientists have lots of experience
+reading technical writing in their own field.  For those who are
+overwhelmed by the amount of available resources, organizations such
+as \href{http://http://software-carpentry.org/}{Software Carpentry}
+are actively reaching out to scientists with short boot camps to lay
+the ground work.  Mastery of any subject takes a significant
+investment, but gaining a working level of knowledge in distributed
+version control should only take a few days\footnote{
+  Software Carpentry allocates half a day to take students from ``What
+  is version control?'' to being functioning \citetalias{git} users.
+}.  The difficulty for the uninitiated is often not mastering the new
+tool or workflow, but learning that it exists at all.  There are a
+number of papers highlighting best practices and tools that are good
+surveys for guiding future
+learning\citep{wilson06a,wilson06b,vandewalle09,aruliah12}.

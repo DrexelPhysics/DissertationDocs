@@ -1,0 +1,157 @@
+\section{Integrals}
+\label{sec:integrals}
+
+In the following sections I work out derivations for integrals that
+are important in \cref{sec:calibcant:theory}.
+
+\subsection{Highly damped integral}
+\label{sec:integrals:highly-damped}
+
+\begin{equation}
+  I = \iOInf{z}{\frac{1}{a^2 + z^2}}
+    = \frac{1}{2} \iInfInf{z}{\frac{1}{a^2 + z^2}}
+    = \frac{1}{2} \iInfInf{u}{\frac{1}{a^2 + (au)^2} \cdot a}
+    = \frac{1}{2a} \iInfInf{u}{\frac{1}{u^2+1}} \;,
+\end{equation}
+where $u \equiv z/a$ and $du = dz/a$.  The integrand
+$f(u)\equiv(u^2+1)^{-1}$ has simple poles at $u_p = \pm i$.  Using
+\cref{eq:res-simple},
+\begin{align}
+  I &= \frac{1}{2a} \cdot 2 \pi i \ResX{u}{i}{f(u)}
+    = \frac{1}{2a} \cdot 2 \pi i \limX{u}{i} (u-i) \frac{1}{u^2+1}
+    = \frac{1}{2a} \cdot 2 \pi i \limX{u}{i} \frac{1}{u+i} \\
+    &= \frac{1}{2a} \cdot \frac{2 \pi i}{i+i}
+    = \frac{\pi}{2 a} \;.
+\end{align}
+This result is used in \cref{eq:ODHO-psd-int}.
+
+\subsection{General case integral}
+\label{sec:integrals:general}
+
+We will show that, for any $(a,b > 0) \in \Reals$,
+\begin{equation}
+  I = \iInfInf{z}{\frac{1}{(a^2-z^2)^2 + b^2 z^2}} = \frac{\pi}{b a^2} \;.
+\end{equation}
+%
+\nomenclature[so aR ]{\Reals}{Real numbers.}
+
+First we note that $\abs{f(z)} \rightarrow 0$ like $\abs{z^{-4}}$ for
+$\abs{z} \gg 1$, and that $f(z)$ is even, so
+\begin{equation}
+  I = \iC{\frac{1}{(a^2-z^2)^2 + b^2 z^2}} \;,
+\end{equation}
+where \C\ is the contour shown in \cref{fig:UHP-contour}.
+
+Because the denominator is of the form $A^2 + B^2$, we can factor it
+into $(A+iB)(A-iB)$. % thanks Prof. Yuan
+\begin{equation}
+  (a^2-z^2)^2 + b^2 z^2
+      = (a^2-z^2 \colA{+} ibz)(a^2-z^2 \colA{-} ibz)
+\end{equation}
+The roots of $z^2 \colA{\pm} ibz - a^2$ are given by
+\begin{equation}
+  z_{r\colB{\pm}}
+       = \colA{\pm}\frac{ib}{2} \left(
+                       1 \colB{\pm} \sqrt{1-4\frac{-a^2}{(ib)^2}}
+                                 \right)
+       = \pm\frac{ib}{2} \left(
+                       1 \pm \sqrt{1-4\frac{a^2}{b^2}}
+                          \right)
+       = \pm\frac{ib}{2} \left(
+                       1 \pm S
+                          \right) \;,
+\end{equation}
+where $S \equiv \sqrt{1-4\frac{a^2}{b^2}}$.
+
+%critical damping when $\omega_0^2 = \beta'^2$ % TM
+%where our $a = \omega_0$ and $b = \beta$,
+%and $\beta = \gamma/m = 2 \beta'$
+%Critical damping when $a^2 =  b^2/4$, so $S = 0$
+To determine the nature and locations of the roots, consider the following
+cases
+\begin{itemize}
+ \item $a < b/2$, overdamped.
+ \item $a = b/2$, critically damped.
+ \item $a > b/2$, underdamped.
+\end{itemize}
+
+In the overdamped case $S \in \Reals$ and $S > 0$,
+so $z_{r\pm}$ is purely imaginary, and $z_{r+} \ne z_{r-}$.
+For any $a < b/2$, we have $0 < S < 1$, so $\Imag(z_{r\pm}) > 0$.
+Thus, there are two single poles in the upper half plane ($z_{r\pm}$),
+and two single poles in the lower half plane ($-z_{r\pm}$).
+
+In the critically damped case $S = 0$, so $z_{r+} = z_{r-}$,
+and we have double poles at $\pm z_{r+} = \frac{ib}{2}$.
+
+In the underdamped case $S$ is purely imaginary, 
+so $z_{r\pm}$ is complex, with $z_{r+}$ in the 2\nd quarter,
+and $z_{r-}$ in the 1\st quarter.
+The other two simple poles, $-z_{r-}$ and $-z_{r+}$, are in the
+3\rd and 4\sth quarters respectively.
+
+Our contour \C\ always encloses the poles $z_{r\pm}$.
+We will deal with the simple pole cases first, 
+and then return to the critically damped case.
+
+\subsubsection{Over- and under-damped}
+
+Our factored function $f(z)$ is
+\begin{equation}
+  f(z) = \frac{1}{(z-z_{r+})(z+z_{r+})(z+z_{r-})(z-z_{r-})} \;.
+\end{equation}
+
+Applying \cref{eq:res-thm,eq:res-simple} we have
+\begin{align}
+  I &= 2\pi i \left( \Res{z_{r+}}{f(z)} + \Res{z_{r-}}{f(z)} \right) \\
+    &= 2\pi i \left(
+              \frac{1}{       (z_{r+}+z_{r+})
+                        \colA{(z_{r+}+z_{r-})
+                              (z_{r+}-z_{r-})}  }
+            + \frac{1}{ \colA{(z_{r-}-z_{r+})
+                              (z_{r-}+z_{r+})}
+                              (z_{r-}+z_{r-})  }
+              \right) \\
+    &= \frac{\pi i}{\colA{z_{r+}^2-z_{r-}^2}} \left(
+                   \frac{1}{z_{r+}}
+          \colA{-} \frac{1}{z_{r-}}
+              \right)
+     = \frac{\pi i}{   \left( \colB{\frac{ib}{2}} (1+S) \right)^2
+                     - \left( \colB{\frac{ib}{2}} (1-S) \right)^2 }
+              \cdot \frac{z_{r-}-z_{r+}}{z_{r+}z_{r-}} \\
+    &= \frac{\colB{-4}\pi i / \colB{b^2}}{  (1+2S+S^2) - (1-2S+S^2)  }
+              \cdot \frac{ \colA{\frac{ib}{2}} [(1-S) - (1+S)] }
+                         { \left(\frac{ib}{2}\right)^{\colA{2}} (1+S)(1-S) }
+     = \frac{-8\pi / b^3}{  4S  }
+              \cdot \frac{-2S}
+                         {(1 - S^2)} \\
+    &= \frac{ 4\pi }{ b^3 (1 - S^2)}
+     = \frac{ 4\pi }{ b^3 [1 - (1-4\frac{a^2}{b^2})]}
+     = \frac{ 4\pi }{ b^3 \cdot 4\frac{a^2}{b^2}}
+     = \frac{ \pi }{ b a^2 } \;. \label{eq:gen-int-noncrit}
+\end{align}
+
+
+\subsubsection{Critically damped}
+
+Our factored function $f(z)$ is
+\begin{equation}
+  f(z) = \frac{1}{(z-z_{r+})^2(z-z_{r-})^2} \;.
+\end{equation}
+
+Applying \cref{eq:res-thm,eq:res-general} we have
+\begin{align}
+  I &= 2\pi i \Res{z_{r+}}{f(z)}
+     = \colA{2}\pi i \left( \colA{\frac{1}{2!}}
+                                   \limZ{z_{r+}}
+                                    \deriv{z}{} \frac{1}{(z + z_{r+})^2}
+                     \right)
+     = \pi i \limZ{z_{r+}} -2 \cdot \frac{1}{(z_{r+} + z_{r+})^3} \\
+    &= - 2 \pi i \frac{1}{z_{r+}^3}
+     = \colA{-} 2 \pi \colA{i} \frac{1}{(\frac{\colA{i}b}{2})^3}
+     = \frac{\pi}{b (\frac{b}{2})^2}
+     = \frac{\pi}{b a^2} \;, \label{eq:gen_int_crit}
+\end{align}
+which matches \cref{eq:gen-int-noncrit}.
+
+This result is used in \cref{eq:DHO-psd-int}.

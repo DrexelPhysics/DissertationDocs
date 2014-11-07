@@ -1,0 +1,32 @@
+%% Ispell local dictionary:
+
+%% Science words
+% LocalWords: polysaccharides polypeptide biomembrane biopolymers photodetector
+% LocalWords: piconewtons nanonewtons nanometers vt tetramer timesteps timestep
+% LocalWords: ubiquitin titin immunoglobulin sawteeth octamer octameric multi
+% LocalWords: unstretched undeflected unfoldings underdamped
+% LocalWords: rebalances nonspecific equilibrated
+% LocalWords: Streptomyces avidinii streptavidin streptavidin's
+
+%% Abbreviations:
+% LocalWords: Tel AFM AFMs afm WLC wlc FJC fjc PACS MSC pN nm MC ddFLN
+% LocalWords: PDB SWE
+
+%% Names and related
+% LocalWords: Hookean hooke Kramers kramers Mascheroni Kullback Leibler
+% LocalWords: Markovian msu Meihong Su gyang Guoliang CSIRO Drexel
+% LocalWords: bustamante forde smith merkel carrion vazquez rief levy fernandez
+% LocalWords: chyan lu klimov li zinober jollymore marko sims evans schlierf
+% LocalWords: janshoff granzier linke verdier dicola lin wolfsberg mcpherson
+% LocalWords: collins claverie venter freitag alon levinthal bedard halvorsen
+% LocalWords: pymol sawsim
+
+%% LaTeX and related
+% LocalWords: documentclass elsarticle pt tnoteref tnotetext fnref fntext
+% LocalWords: corref cortext ead form url cor TODO
+
+%% Reference abbreviations
+% LocalWords: sec fig eq expt sim dep const prob hist hists
+
+%% Other
+% Localwords: proven

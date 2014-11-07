@@ -1,0 +1,60 @@
+\section{Simulations}
+\label{sec:cantilever:simulations}
+
+As discussed in \cref{sec:sawsim:cantilever}, we can model the I27
+multimers as an array of Bell-model unfolders in series with a
+cantilever.  Any unfolded domains also contribute to the tension
+according to the WLC\index{WLC} tension formula.  Completing 1000
+simulated pulls for each cantilever/pulling-speed/multimer-number
+combination with our \sawsim\ Monte Carlo simulator yielded the
+following results
+(\cref{fig:cant:sim:v-dep,fig:cant:sim:load-dep,fig:cant:sim:i-dep}).
+
+\begin{figure}
+  \asyinclude{figures/cantilever-sim/v-dep}
+  \caption{Unfolding force velocity dependence for different
+    cantilevers.\label{fig:cant:sim:v-dep}}
+\end{figure}
+
+\begin{figure}
+  \asyinclude{figures/cantilever-sim/loading-rate}
+  \caption{Unfolding force loading rate dependence simulations for
+    different cantilevers.\label{fig:cant:sim:load-dep}}
+\end{figure}
+
+\begin{figure}
+  \asyinclude{figures/cantilever-sim/i-dep}
+  \caption{Unfolding force peak index dependence simulations for
+    different cantilevers.\label{fig:cant:sim:i-dep}}
+\end{figure}
+
+%\begin{figure}
+%\begin{asy}
+%size(6cm,4cm,IgnoreAspect);
+%scale(Linear, Linear);
+%real xscale=1e9;
+%real yscale=1e12;
+%
+%graphFile("cantilever/stiffness_force-127_8", xscale, yscale, phard, m30, t=units("127","pN/nm"), dots=true);
+%graphFile("cantilever/stiffness_force-27_8", xscale, yscale, phard, m8, t=units("27","pN/nm"), dots=true);
+%
+%xlimits(0,200);
+%ylimits(0,350);
+%
+%label(sLabel("Sawtooth curves ("+units("v = 1","$\mu$m/s")+", 8 domains)"), point(N),N);
+%xaxis(sLabel("Distance (nm)"),BottomTop,LeftTicks);
+%yaxis(sLabel("Tension (pN)"),Left,RightTicks);
+%
+%picture q=secondaryY(new void(picture pic) {
+%  scale(pic,Linear,Linear);
+%  graphFile(pic, "cantilever/stiffness_stiffness-127_8", xscale, 1e3, pmed, m30, dots=true);
+%  graphFile(pic, "cantilever/stiffness_stiffness-27_8", xscale, 1e3, pmed, m8, dots=true);
+%  ylimits(pic, 0, 130);
+%  yaxis(pic, sLabel("Stiffness (pN/nm)"),Right, LeftTicks);
+%});
+%add(q);
+%
+%add(legend(),point(E)+(24pt,0),20E,UnFill);
+%\end{asy}
+%\end{figure}
+

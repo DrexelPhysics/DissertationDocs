@@ -1,0 +1,56 @@
+import os.path
+
+from site_cons.site_init import subdirs, link_wtk_graph, link_pyfit
+
+
+FIGURES = ['v-dep', 'v-dep-sd']
+
+# Get the passed in environment.
+Import('env')
+
+data_dirs = [env.Dir(d) for d in subdirs(env, '*')]
+data_files = [env.File(os.path.join(str(d), 'v_dep'))
+              for d in data_dirs]
+
+pyfit = link_pyfit(env)
+
+fit_files = []
+sd_fit_files = []
+for f in data_files:
+    fit = env.Command(
+        str(f)+'.fit',
+        [f, pyfit],
+        "python %s -m math:log -f 'A*log(x,10)+B' -v $SOURCE > $TARGET"
+        % pyfit[0].get_abspath())
+    fit_dat = env.Command(
+        str(fit[0])+'.dat',
+        fit,
+        "sed -n 's/^[A-Z]: //p' $SOURCE > $TARGET")
+    fit_files.append(fit_dat)
+    sd_fit = env.Command(
+        str(f)+'-sd.fit',
+        [f, pyfit],
+        "python %s -m math:log -f 'A*log(x,10)+B' -y 2 -v $SOURCE > $TARGET"
+        % pyfit[0].get_abspath())
+    sd_fit_dat = env.Command(
+        str(sd_fit[0])+'.dat',
+        sd_fit,
+        "sed -n 's/^[A-Z]: //p' $SOURCE > $TARGET")
+    sd_fit_files.append(sd_fit_dat)
+
+v_dep_data = data_files + fit_files
+v_dep_sd_data = data_files + sd_fit_files
+
+wtk_graph = link_wtk_graph(env)
+
+for fig in FIGURES:
+    asyfile = '%s.asy' % fig  # static .asy file
+    pyfig = fig.replace('-', '_')
+    data = '%s_data' % (pyfig)
+    asydata = []
+    if data in globals():     # generated data dependencies
+        asydata = globals()[data]
+    env.Asymptote([asyfile, wtk_graph] + asydata)
+
+# Pass back the modified environment.
+Return('env')

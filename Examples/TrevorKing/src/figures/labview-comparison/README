@@ -1,0 +1,17 @@
+Using my compare-unfold.py script from my blog:
+
+  $ git clone git://tremily.us/blog.git
+  $ ls blog/posts/Comparing_velocity_clamp_experiments/compare-unfold.py
+
+  $ compare-unfold.py -o full.png gyang/2012-10-01-unfold/ wking/unfold/
+  $ compare-unfold.py --contact-slope -o contact-slope.pdf gyang/2012-10-01-unfold/ wking/unfold/
+  $ compare-unfold.py --non-contact-noise -o non-contact-noise.png gyang/2012-10-01-unfold/ wking/unfold/
+
+I prefer the vector-format PDF, but for size regions it's better to
+use PNGs when you're plotting tons of points.
+
+The single-*.png images come from manual zooms and saves of:
+
+  $ compare-unfold.py --single gyang/2012-10-01-unfold/ wking/unfold/
+
+This should be automated, but I haven't had time yet.

@@ -1,0 +1,47 @@
+import os.path
+
+from site_cons.site_init import link_wtk_graph, link_pyfit
+
+
+FIGURES = ['order-dep']
+
+# Get the passed in environment.
+Import('env')
+
+data_dir = env.Dir('data')
+data_files = [f for f in env.Glob(os.path.join(str(data_dir), 'order.avg-*'))
+              if 'fit' not in str(f)]
+order_dep_py = File('order_dep.py')
+
+pyfit = link_pyfit(env)
+
+fit_files = []
+for f in data_files:
+    N = int(str(f).rsplit('-', 1)[-1])
+    fit = env.Command(
+        str(f)+'.fit',
+        [f, pyfit, order_dep_py],
+        "python %s -m order_dep:atheory -f 'atheory(i=x, N=%d, Kwlc=A)' -p 1 -x -1 -y 0 -v $SOURCE > $TARGET"
+        % (pyfit[0].get_abspath(), N))
+    fit_dat = env.Command(
+        str(fit[0])+'.dat',
+        fit,
+        "sed -n 's/^[A-Z]: -//p' $SOURCE > $TARGET")
+	# Note the minus --^ which ensures a Kwlc solution >= 0.
+    fit_files.append(fit_dat)
+
+order_dep_data = data_files + fit_files
+
+wtk_graph = link_wtk_graph(env)
+
+for fig in FIGURES:
+    asyfile = '%s.asy' % fig  # static .asy file
+    pyfig = fig.replace('-', '_')
+    data = '%s_data' % (pyfig)
+    asydata = []
+    if data in globals():     # generated data dependencies
+        asydata = globals()[data]
+    env.Asymptote([asyfile, wtk_graph] + asydata)
+
+# Pass back the modified environment.
+Return('env')

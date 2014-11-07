@@ -1,12 +1,16 @@
 ## Ph.D. thesis, Trevor King
 
+Final copies:
+
 + [Color PDF](TrevorKingDissertationColor.pdf?raw=true)
 + [Black & White PDF](TrevorKingDissertation.pdf?raw=true)
 
-The LaTeX source for this thesis can be found here: http://git.tremily.us/?p=thesis.git
-The original source for the drexel-thesis package: http://git.tremily.us/?p=drexel-thesis.git
-A sparse drexel-thesis example: http://blog.tremily.us/posts/drexel-thesis/
->>>>>>> upstream/master
+This is a reduced version of original thesis source, much of the raw data text files have been removed for space.
+Please see the original here (with version commits):
+
++ LaTeX source for this thesis can be found here: http://git.tremily.us/?p=thesis.git
++ The original source for the drexel-thesis package: http://git.tremily.us/?p=drexel-thesis.git
++ A sparse drexel-thesis example: http://blog.tremily.us/posts/drexel-thesis/
 
 --------------------------------------------------------------------------
 

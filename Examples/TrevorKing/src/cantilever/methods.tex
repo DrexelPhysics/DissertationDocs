@@ -1,0 +1,51 @@
+\section{Methods}
+
+\subparagraph*{}\label{sec:I27}
+The experiments were carried out on octomers of I27 (\cref{fig:I27}).
+\index{I27}
+I27 is a model protein that has been used in mechanical unfolding
+experiments since the first use of synthetic
+chains\citep{carrion-vazquez99b,TODO}.  It was used here because it is
+both well characterized and readily available (%
+\href{http://www.athenaes.com/}{AthenaES}, Baltimore, MD,
+\href{http://www.athenaes.com/I27OAFMReferenceProtein.php}{0304}).
+
+I27's unfolding mechanism seems to involve stretching into a metastable
+intermediate state followed by Bell-model escape to the unfolded
+state\citep{marszalek99}, although there is not yet a consensus of
+the presense of the proposed intermediate\citep{TODO}.
+
+The I27 octamers were stored in a TODO buffer solution.
+
+Mechanical unfolding experiments were carried out on I27 octomers
+(AthenaES) in PBS on gold-coated coverslips.  We used both cantilevers
+on Olympus's OMCL-TR400-PSA-1, which are nominally $80$ and
+$20\U{pN/nm}$.  Promising sawtooth curves were selected by eye and fit
+to WLCs\index{WLC} to identify I27 unfolding events.  The results were
+sorted into two bins according to cantilever stiffness, and then
+averaged across each cantilever-stiffness/pulling-speed group to
+produce \cref{fig:cant:v-dep}.
+
+\begin{figure}
+  \asyinclude{figures/cantilever-data/v-dep}
+  \caption{Pulling speed dependence of I27 for different cantilever
+    stiffnesses.  The listed stiffnesses are averages across several
+    individual cantilevers and calibrations.  Each box is the average
+    of some number of unfolding events, and the box area is
+    proportional to that number.  There are $82$ unfolding events for
+    the stiff cantilevers and $274$ for the soft cantilevers.%
+    \label{fig:cant:v-dep}}
+\end{figure}
+
+Unfortunately, the data are not of high enough quality to extract the
+unfolding parameters $k$ or $\Delta x$.  Note that the increase in
+mean unfolding force is not entirely due to the increased loading rate
+of the stiffer cantilever, because the difference is still present in
+the loading rate dependence (\cref{fig:cant:load-dep}).  The
+loading rates were extracted from the data by taking the slope of the
+fit WLC\index{WLC} at unfolding.
+
+\begin{figure}
+  \asyinclude{figures/cantilever-data/loading-rate}
+  \caption{Loading rate.\label{fig:cant:load-dep}}
+\end{figure}

@@ -1,0 +1,354 @@
+\section{The pyafm stack}
+\label{sec:pyafm:stack}
+
+In order to reduce future maintenance costs, I have based my stack as
+much as possible on existing open source software, and split my stack
+into reusable components where such components might appeal to a wider
+audience.  From the bottom up, \pycomedi\ wraps the Comedi device
+driver for generic input/output, \pypiezo\ builds generic
+piezo-control logic on top of \pycomedi, \pyafm\ combines a
+\pypiezo-controlled piezo with a \stepper-controlled stepper motor and
+\pypid-controlled temperature controller, and \unfoldprotein\ adds
+experiment logic to \pyafm\ to carry out velocity-clamp force
+spectroscopy (\cref{fig:pyafm:stack}).
+
+\begin{figure}
+  \tikzstack{}{black!20}
+  \caption{Dependency graph for my modular experiment control stack.
+    The \unfoldprotein\ package controls the experiment, but the same
+    stack is used by \calibcant\ for cantilever calibration
+    (\cref{fig:calibcant:stack}).  The dashed line
+    (\tikzline{black!20,dashed}) separates the software components (on
+    the left) from their associated hardware (on the right).  The data
+    flow between components is shown with arrows.  For example, the
+    \stepper\ package calls \pycomedi, which talks to the DAQ card, to
+    write digital output that controls the stepper motor
+    (\tikzline{blue,->}, \cref{sec:pyafm:stepper}).  The
+    \pypiezo\ package, on the other hand, uses two-way communication
+    with the DAQ card (\tikzline{red,<->}), writing driving voltages
+    to position the piezo and recording photodiode voltages to monitor
+    the cantilever deflection (\cref{sec:pyafm:pypiezo}).  The
+    \pypid\ package measures the buffer temperature using a
+    thermocouple inserted in the fluid cell (\tikzline{purple,<-},
+    \cref{sec:pyafm:pypid}).  I represent the thermocouple with a
+    thermometer icon (\thermometer), because I expect it is more
+    recognizable than a more realistic
+    \thermocouple.\label{fig:pyafm:stack}}
+\end{figure}
+
+\subsection{Pycomedi}
+\label{sec:pyafm:pycomedi}
+
+After my experience with C (\cref{sec:ni-daqmx}), I knew I wanted a
+higher level language for the bulk of my experiments.
+\citetalias{comedi} already had \citetalias{beazley96}-generated
+Python bindings, so I set to work creating \pycomedi, an
+object-oriented interface around the \citetalias{beazley96} bindings.
+The first generation \pycomedi\ interface was much easier to use than
+the raw SWIG bindings, especially for simultaneous analog
+input/output, which I needed to monitor cantilever deflection during
+piezo-sweeping velocity-clamp pulls.
+
+The SWIG-based interface to Comedi provided a solid base for my
+experiment control stack, but as the stack matured, I started bumping
+up against problems due to both my poor design
+choices\footnote{\citet{brooks95} says ``plan to throw one away,''
+  although I'm more optimistic about the feasibility of long-term
+  maintenance than he is.} and general awkwardness with the thin SWIG
+bindings.  In 2011 I ripped out most of this layer and used
+\citetalias{cython} to bind directly to Comedi's userspace library.
+This lead to a much more Pythonic interface, and removed a number of
+previously sticky workarounds required by earlier versions of
+\pycomedi.
+
+As a generic Python interface to Comedi, \pycomedi\ has a wider user
+base than the rest of my experiment control stack (there are more
+folks writing Python code for DAQ cards on Linux than there are
+writing velocity-clamp AFM controllers on Linux).  I've had a number
+of people contact me directly with \pycomedi\ questions, including a
+neuroscientist, a radiologist, and an automotive electrician.
+\href{http://pieleric.free.fr/}{\'Eric Piel} even contributed a few
+patches for software-calibrated devices.
+
+Comparing the NI-DAQmx implementation of digital writes
+(\cref{fig:ni-daqmx}) with a more complete \pycomedi\ implementation
+(\cref{fig:pycomedi}), the \pycomedi\ implementation reads much more
+naturally.  The main difference is that Python's object-oriented
+structure allows us to bundle complex Comedi subdevice handling into a
+series of intuitive methods.  We also benefit from Python's exception
+handling.  While C requires you to actively check for exceptions where
+they might occur (``hey, this write failed''), Python exceptions
+bubble up the call stack so you can deal with them at a more
+appropriate level (``hey, the stepper motor failed'').  This allows us
+to centralize error handling in higher level code, making the low
+level code much cleaner.
+
+\begin{figure}
+  \begin{center}
+\begin{minted}{python}
+from pycomedi.device import Device
+from pycomedi.channel import DigitalChannel
+from pycomedi.constant import SUBDEVICE_TYPE, IO_DIRECTION
+
+device = Device('/dev/comedi0')
+device.open()
+
+subdevice = device.find_subdevice_by_type(SUBDEVICE_TYPE.dio)
+channels = [subdevice.channel(i, factory=DigitalChannel)
+            for i in (0, 1, 2, 3)]
+for chan in channels:
+    chan.dio_config(IO_DIRECTION.output)
+
+def write(value):
+    subdevice.dio_bitfield(bits=value, write_mask=2**4-1)
+\end{minted}
+    \caption{A four-channel digital output example in \pycomedi\ (from
+      the \stepper\ doctest).  Compare this with the much more verbose
+      \cref{fig:ni-daqmx}, which is analogous to the
+      \texttt{subdevice.dio\_bitfield()} call.\label{fig:pycomedi}}
+  \end{center}
+\end{figure}
+
+\subsection{Pypiezo}
+\label{sec:pyafm:pypiezo}
+
+The piezo controlling code builds on the framework established by
+\pycomedi\ to define an interface for controlling the peizo-mounted
+surface (\cref{fig:piezo-schematic}).  This involves code to sweep the
+piezo in a hardware-timed ramp as well as code for discrete jumps.  To
+carry out these tasks, \pypiezo also contains code to convert piezo
+motion (in meters) to DAC output voltages (in bits), an
+\hFconfig-based framework for automatically configuring
+\pycomedi\ channels and piezo axes, and surface detection logic.
+
+Because of the tight coupling needed between piezo motion and
+cantilever deflection detection for synchronized ramps, the basic
+\texttt{Piezo} class can be configured with generic \pycomedi\ input
+channels.  In practice, only the cantilever deflection is monitored,
+but if other \pypiezo\ users want to measure other analog inputs, the
+functionality is already built in.
+%
+\nomenclature[text ]{DAC}{Digital to analog converter.  A device that
+  converts a digital signal into an analog signal.  The inverse of an
+  ADC}
+\nomenclature[text ]{ADC}{Analog to digital converter.  A device that
+  digitizes an analog signal.  The inverse of a DAC.}
+
+The surface detection logic is somewhat heuristic, although it has
+proven quite robust in practice.  Given a particular piezo axis,
+target deflection, number of steps, and an allowed piezo range, the
+procedure is:
+
+\begin{enumerate}
+  \item \label{item:pypiezo-surface-retract-1} Ramp the piezo from its
+    current position away to its maximum separation $z_\text{max}$.
+  \item \label{item:pypiezo-surface-step-approach} Step the piezo in
+    towards its minimum separation, checking the deflection after each
+    step to see if the target deflection threshold has been crossed.
+    This is the high-contact piezo position $z_\text{min}$.
+  \item \label{item:pypiezo-surface-retract-2} Ramp the piezo away to
+    its maximum separation $z_\text{max}$.  Because of protein on the
+    surface, the detachment region between the contact region and
+    non-contact region may have additional forces
+    (\cref{fig:expt-sawtooth}).  This can make the determination of
+    the contact kink difficult.  The full retraction breaks any
+    protein-based contacts between the cantilever and the surface.
+  \item \label{item:pypiezo-surface-ramp-approach} Ramp the piezo in
+    to the high-contact position $z_\text{min}$.  Because any
+    protein-based contacts were broken in the previous step, the
+    contact kink at $z_\text{kink}$ should be clear and crisp.
+  \item \label{item:pypiezo-surface-reset} Ramp the piezo back to the
+    original position.
+\end{enumerate}
+
+The deflection data $d(z)$ from
+\ref{item:pypiezo-surface-ramp-approach}, which should clearly show
+the contact kink, is fit to a bilinear model (a linear non-contact
+region and a linear contact region, which meet at the the contact
+kink).  The fitting is carried out by minimizing the residual
+difference between the approach data and bilinear model with SciPy's
+\imint{python}|leastsq| optimizer, a wrapper around MINPACK's
+\imint{fortran}|lmdif| and \imint{fortran}|lmder|
+algorithms\citep{scipy-leastsq,minpack}.
+
+\begin{equation}
+  d(z) = \begin{cases}
+      d_\text{kink} + \sigma_{p,\text{c}} (z - z_\text{kink})
+        &  z \le z_\text{kink} \\
+      d_\text{kink} + \sigma_{p,\text{nc}} (z - z_\text{kink})
+        &  z \ge z_\text{kink}
+    \end{cases}
+  \label{eq:bilinear-surface}
+\end{equation}
+
+Initial parameters for the fit are:
+
+\begin{align}
+  d_\text{kink} &= d(z_\text{max}) \\
+  z_\text{kink} &= \frac{z_\text{max} - z_\text{min}}{2} \\
+  \sigma_{p,\text{c}} &= 2\cdot
+     \frac{d(z_\text{max}) - d(z_\text{min})}{z_\text{max} - z_\text{min}} \\
+  \sigma_{p,\text{nc}} &= 0
+\end{align}
+
+The fitted $d_\text{kink}$ is accepted unless:
+
+\begin{itemize}
+  \item the fitted slope ratio
+    $\abs{\sigma_{p,\text{c}}/\sigma_{p,\text{nc}}}$ is less than a
+    minimum threshold (which defaults to 10), or
+  \item the fitted kink position $z_\text{kink}$ is within an excluded
+    $z_\text{window}$ of the boundaries ($z_\text{window}$ defaults to
+    2\% of the total range $z_\text{max} - z_\text{min}$).
+\end{itemize}
+
+The default slope ratios work well for the cantilevers I generally
+use, but softer cantilevers may have enough drift that the minumum
+slope ratio threshold needs to be reduced.  I have not yet run into
+problems with the default kink window.  Although these are low level
+parameters, appropriate values may depend on details of the particular
+experimental setup.  The \hFconfig-based configuration structure makes
+it easy to configure (and record) the values of many similar heuristic
+parameters like these involved in robust experiment control.
+
+In the event that the surface detection is not acceptable,
+\pypiezo\ raises an exception which bubbles up the call stack until it
+is handled in \unfoldprotein\ (\cref{sec:pyafm:unfold-protein}).
+
+\subsection{Pyafm}
+\label{sec:pyafm:pyafm}
+
+Sweeping piezos around and measuring the resulting cantilever
+deflection is the core of velocity-clamp force spectroscopy.  However,
+our experimental apparatus contains some additional supporting
+hardware: a stepper motor for coarse positioning and a
+peltier/thermocouple module for temperature control.  The
+\pyafm\ module builds on \pypiezo,
+\stepper\ (\cref{sec:pyafm:stepper}), and
+\pypid\ (\cref{sec:pyafm:pypid}) to provide an easy to use (and easy
+to configure) \imint{python}|AFM| class for controlling the whole
+package.
+
+While the piezo tube is able to move the surface relative to the
+cantilever tip (\cref{fig:afm-schematic-and-piezo}), it only has a
+limited range (on the order of microns).  Achieving such a small
+separation by hand when assembling the microscope is unlikely, so a
+stepper motor controlling a fine pitch screw is used for course
+positioning.  Generic stepper control is handled by the
+\stepper\ package, and \pyafm\ builds on this to add \hFconfig-based
+configuration (time delay between steps, approximate step size,
+approximate stepper backlash, digital control port, \ldots) and a few
+course positioning methods:
+
+\begin{description}
+  \item[\imint{python}|AFM.move_away_from_surface|] provides a safety
+    mechanism that higher level applications can use to bail out.  For
+    example, when \unfoldprotein\ can not locate the surface (for
+    example, a bubble in the fluid cell may be blocking the laser
+    beam), it uses this method to put some distance between the
+    cantilever and the surface, to avoid crashing the tip and breaking
+    the cantilever.  Less drastically, this method is also used by
+    \calibcant\ (\cref{sec:calibcant}) when it changes from the
+    surface bump stage (\cref{sec:calibcant:bump}) to the thermal
+    vibration stage (\cref{sec:calibcant:vibration}).
+  \item[\imint{python}|AFM.stepper_approach|] quickly positions the
+    surface within piezo-range of the cantilever tip by stepping in
+    (with the stepper motor) until the cantilever deflection crosses a
+    target threshold.  The piezo extension is kept constant during the
+    approach, but a single stepper step only moves the surface $\sim
+    170\U{nm}$, and our cantilevers can safely absorb deflections on
+    that scale.
+  \item[\imint{python}|AFM.move_just_onto_surface|] is a more refined
+    version of \imint{python}|AFM.stepper_approach|.  This method uses
+    \pypiezo's surface detection algorithm to locate the surface kink
+    position $z_\text{kink}$, and adjusts the stepper in single steps
+    until the measured kink is within two stepper steps ($\sim
+    340\U{nm}$) of the centered piezo position.  Then it shifts the
+    piezo to position the cantilever tip at an exact offset from the
+    measured kink.  This precise positioning is used for running
+    \calibcant's bumps (\cref{sec:calibcant:bump}), but the per-step
+    piezo manipulation makes long distance approaches much slower than
+    \imint{python}|AFM.stepper_approach|.
+\end{description}
+
+\subsection{Unfold-protein}
+\label{sec:pyafm:unfold-protein}
+
+Capping the experimental control stack, \unfoldprotein\ adds the
+actual experiment logic to the lower level control software.  The
+abstractions provided by the lower level code make for clean, easily
+adaptable code
+(\cref{fig:unfold-protein:unfolder,fig:unfold-protein:scanner}).
+
+\begin{figure}
+  \begin{center}
+\begin{minted}[mathescape]{python}
+class Unfolder (object):
+    # $\ldots$
+    def run(self):
+        """Approach-bind-unfold-save[-plot] cycle.
+        """
+        ret = {}
+        ret['timestamp'] = _email_utils.formatdate(localtime=True)
+        ret['temperature'] = self.afm.get_temperature()
+        ret['approach'] = self._approach()
+        self._bind()
+        ret['unfold'] = self._unfold()
+        self._save(**ret)
+        if _package_config['matplotlib']:
+            self._plot(**ret)
+        return ret
+\end{minted}
+    \caption{The main unfolding loop in \unfoldprotein.  Compare this
+      with the much more opaque pull phase in
+      \cref{fig:labview}.\label{fig:unfold-protein:unfolder}}
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+\begin{minted}[mathescape]{python}
+class UnfoldScanner (object):
+    # $\ldots$
+    def run(self, stepper_tweaks=True):
+        self._stop = False
+        _signal.signal(_signal.SIGTERM, self._handle_stop_signal)
+        self.unfolder.afm.move_away_from_surface()
+        self.stepper_approach()
+        for i in range(self.config['velocity']['num loops']):
+            _LOG.info('on loop {} of {}'.format(
+                    i, self.config['velocity']['num loops']))
+            for velocity in self.config['velocity']['unfolding velocities']:
+                if self._stop:
+                    return
+                self.unfolder.config['unfold']['velocity'] = velocity
+                try:
+                    self.unfolder.run()
+                except _ExceptionTooFar:
+                    if stepper_tweaks:
+                        self.stepper_approach()
+                    else:
+                        raise
+                except _ExceptionTooClose:
+                    if stepper_tweaks:
+                        self.afm.move_away_from_surface()
+                        self.stepper_approach()
+                    else:
+                        raise
+                else:
+                    self.position_scan_step()
+\end{minted}
+    \caption{The scanning loop \unfoldprotein.  Unfolding pulls are
+      carried out with repeated calls to
+      \imint{python}|self.unfolder.run()|
+      (\cref{fig:unfold-protein:unfolder}), looping over the
+      configured range of velocities for a configured number of
+      cycles.  If \imint{python}|stepper_tweaks| is
+      \imint{python}|True|, the scanner adjusts the stepper position
+      to keep the surface within the piezo's range.  After a
+      successful pull, \imint{python}|self.position_scan_step()|
+      shifts the piezo in the $x$ direction, so the next pull will not
+      hit the same surface
+      location.\label{fig:unfold-protein:scanner}}
+  \end{center}
+\end{figure}

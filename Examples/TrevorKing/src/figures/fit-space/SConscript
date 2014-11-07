@@ -1,0 +1,58 @@
+import os.path
+
+from site_cons.site_init import link_wtk_graph, link_pyfit
+
+
+FIGURES = ['king_vs_best', 'fit-valley'] #, 'mean_and_stdev']
+
+# Get the passed in environment.
+Import('env')
+
+data = File('data')
+
+king_vs_best_data = []
+
+fit_valley = env.Command(
+    'fit-valley.dat',
+    ['extract_fit_valley.py', data],
+    'python $SOURCES > $TARGET')
+king_vs_best_data.append(fit_valley)
+
+best_dir = Dir('Best_2002_detailed_unfolding_pathway')
+best_valley = File(os.path.join(str(best_dir), 'fig3a.dat'))
+king_vs_best_data.append(best_valley)
+
+pyfit = link_pyfit(env)
+
+king_vs_best_fit_files = []
+for f in king_vs_best_data:
+    opts = ''
+    if f == best_valley:
+        opts = '-x 1 -y 0 '
+    if hasattr(f, '__len__'): # fit_valley is an array, but best_valley is not
+        f = f[0]
+    fit = env.Command(
+        str(f)+'.fit',
+        [f, pyfit],
+        "python %s -m math:log -f 'A*log(x,10)+B' %s-v $SOURCE > $TARGET"
+        % (pyfit[0].get_abspath(), opts))
+    fit_dat = env.Command(
+        str(fit[0])+'.dat',
+        fit,
+        "sed -n 's/^[A-Z]: //p' $SOURCE > $TARGET")
+    king_vs_best_fit_files.append(fit_dat)
+king_vs_best_data += king_vs_best_fit_files
+
+wtk_graph = link_wtk_graph(env)
+
+for fig in FIGURES:
+    asyfile = '%s.asy' % fig
+    pyfig = fig.replace('-', '_')
+    data = '%s_data' % (pyfig)
+    asydata = []
+    if data in globals():    # generated data dependencies
+        asydata = globals()[data]
+    env.Asymptote([asyfile, wtk_graph] + asydata)
+
+# Pass back the modified environment.
+Return('env')

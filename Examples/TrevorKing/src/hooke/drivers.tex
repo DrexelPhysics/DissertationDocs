@@ -1,0 +1,30 @@
+\section{Drivers for loading unfolding pull data}
+\label{sec:hooke:drivers}
+
+\Hooke\ supports a number of different SMFS data formats, including
+Hemingway\citep{materassi09}, JPK's \citetalias{force-robot}, Asylum's
+MFP3D\citep{mfp-3d}, Bruker's \citetalias{picoforce}, and my
+\unfoldprotein\ (\cref{sec:pyafm:unfold-protein}) formats.  The
+drivers are responsible for loading curve data into a standardized
+format so that plugins can work with data from any source.  Drivers
+can determine if they are capable of reading a particular file, so if
+you need to analyze a directory full of curve files in a number of
+formats, you can just point Hooke at the directory and it will pick
+the appropriate driver for each curve.
+
+After loading and parsing the data, drivers return a list of scaled
+\emph{blocks} and a dictionary\footnote{
+  Python dictionaries are hash tables, which allow you to easily
+  access arbitrary data if you know the key under which it was stored.
+} of metadata.  Each block corresponds to a different phase of the
+experiment; standard unfolding experiments have an approach block and
+a retraction block.  The piezo position and cantilever deflection data
+in each block is scaled by the driver into meters, but further
+processing (e.g. the conversion of cantilever position to a chain
+tension in newtons) is carried out by plugins.  The metadata
+dictionary includes standard keys for information that is required for
+the analysis (e.g.~the calibrated spring constant in N/m).  If the
+driver can parse any additional metadata from the file, it adds it to
+the dictionary using non-standard keys.  You can use this auxilliary
+metadata to perform subsequent analysis (e.g.~``give me all the curves
+that were recorded in \texttt{PBS + 0.5M CaCl2}'').

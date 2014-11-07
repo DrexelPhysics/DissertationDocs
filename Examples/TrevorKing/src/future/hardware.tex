@@ -1,0 +1,49 @@
+\section{Hardware}
+\label{sec:future:hardware}
+
+Very few approach--bind--retract cycles actually pick up a protein and
+produce a clean unfolding curve.  This makes it hard to gather
+sufficient unfolding statistics unless you can run experiments
+continuously over a long time span.  While our modified
+MultiMode\citep{multimode} gets the job done, some hardware upgrades
+would allow futher automation, increasing throughput through longer
+run times.
+
+MultiModes measure the position of the cantilever by monitoring the
+reflected laser with a four-segment photodiode.  While the vertical
+and horizontal signals are accessible in the cable connecting the
+MultiMode to its controlling NanoScope, the total photodiode signal is
+not.  The loss of laser signal---which can occur when bubbles in the
+fluid cell obstruct the laser---results in low voltage deflection that
+is independent of piezo position.  This flat-line deflection also
+occurs when mechanical drift moves the surface out of range for the
+piezo positioner.  In the drift case, we would like to use the stepper
+motor to reduce the tip--surface separation.  In the loss-of-signal
+case, we would like to \emph{increase} the tip--surface separation to
+avoid accidentally crashing the tip into a surface we can no longer
+detect.  By exposing the total photodiode signal to the control
+software, we could unambiguously distinguish these two cases.  This
+would allow for longer runs, aggressively using the stepper motor to
+mitigate mechanical drift.
+
+We could also reduce deflection signal noise---which is especially
+important for accurate cantilever calibration
+(\cref{sec:calibcant})---by automating photodiode positioning.  The
+four-segment photodiode has the least signal noise when the deflected
+laser lands near the point between all four sections.  However,
+mechanical drift in microscope alignment causes the spot location to
+vary with time.  We currently use manual thumbscrews to re-zero the
+photodiode as needed, but unmonitored overnight runs would require
+computer-controlled positioning.  Similar automatic positioning would
+be useful for automatically aligning the incoming laser with the
+cantilever.  While laser--cantilever alignment seems to be less
+sensitive than cantilever--photodiode alignment, automatic laser
+alignment would also open the door to automatic piezo calibration
+through measurements of laser interference patterns\citep{jaschke95}.
+
+Finally, our current hardware does not address potential piezo
+hysteresis, nonlinearity, or drift.  Newer piezos often use capacitive
+feedback, adjusting the driving voltage as needed to maintain the
+target extension.  Besides making existing distance measurements more
+accurate, the increased stability opens the door to slower pulling
+speeds needed to monitor proteins with less stable folded positions.

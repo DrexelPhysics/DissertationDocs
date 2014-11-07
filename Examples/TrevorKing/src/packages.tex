@@ -1,0 +1,107 @@
+% Remove the \leftmark (chapter title), since some chapter/section
+% titles would overlap.
+\fancyfoot[RE,LO]{}
+
+%\usepackage[utf8]{inputenc} % Allow UTF-8 characters in input files
+
+\usepackage[super,sort&compress,comma]{natbib} % fancy citation extensions
+% super selects citations in superscript mode
+% sort&compress automatically sorts and compresses compound citations (\citep{a,b,...})
+% comma seperates multiple citations with commas rather than the default semicolons.
+
+\bibliographystyle{unsrtnat} % Number citations in the order referenced.
+
+% use symbols for footnotes, so they aren't confused with references
+%\usepackage[symbol*]{footmisc}
+
+% Formatting stuff for the curriculum vitae
+\usepackage{bibunits}
+\defaultbibliography{blurb/main,root}
+\defaultbibliographystyle{plain}
+\usepackage[ManyBibs,LabelsAligned]{currvita}
+
+% Nicer references with \cref, \Cref, etc.
+\usepackage[capitalize]{cleveref}
+
+% For defining my own \fref command
+\usepackage{boolexpr}
+\usepackage{pdftexcmds}
+
+% Epigraphs (chapter-leading quotations)
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{5in}
+
+\usepackage{makeidx} % Indexing
+\makeindex
+\usepackage[intoc,noprefix]{nomencl} % Abbreviation indexing
+% Prefixes:
+%   o :    Operators and function symbols
+%   sg :   Greek symbols
+%   so :   Other (non-Greek/Roman symbols)
+%   sr :   Roman symbols
+%   text : Abbreviations, chemical names, phrases, etc
+\makenomenclature
+\makeatletter
+% override nomencl's thenomenclature to use drexel-thesis's listed@schapter
+\def\thenomenclature{%
+  \listed@schapter{\nomname}
+  \nompreamble
+  \list{}{%
+    \labelwidth\nom@tempdim
+    \leftmargin\labelwidth
+    \advance\leftmargin\labelsep
+    \itemsep\nomitemsep
+    \let\makelabel\nomlabel}}
+\makeatother
+\iffinal{}{
+  %\usepackage{showidx} % Print index keys in margins
+  % for some reason, showidx disables Index generation...
+  %\usepackage{showkeys} % Print labels in margins
+}
+
+% fix assorted LaTeX issues and defines \textsubscript
+\usepackage{fixltx2e}
+% environments for multiline displayed equations, and other enhancements
+\usepackage{amsmath}
+% proof environment and extensions for the \newtheorem command
+\usepackage{amsthm}
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+% fonts like mathbb (blackboard bold) and mathcal (caligraphic)
+\usepackage{amsfonts}
+% double struck math fonts
+\usepackage{dsfont}
+% nicer table formatting (\toprule, \cimidrule, \midrule, and \bottomrule)
+\usepackage{booktabs}
+% syntax highlighting for source code
+\usepackage{minted}
+% for table alignment on decimals (and maybe for units later)
+\usepackage{siunitx}
+% for \NewDocumentCommand
+\usepackage{xparse}
+
+\usepackage{xcolor}
+
+% The lineno packages adds line numbers. Start line numbering with
+% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+% for the whole article with \linenumbers after \end{preamble}.
+% Note that line numbering messes with TOC/LOT/LOF \numberline,
+% so ensure line numbering is off for the tables.
+\iffinal{}{\usepackage{lineno}}
+
+\usepackage{pgf}          % fancy graphics
+\usepackage{tikz}         % a nice, inline PGF frontend
+\usetikzlibrary{automata} % graph-theory library
+\usetikzlibrary{backgrounds} % background layers
+\usetikzlibrary{calc}     % coordinate-calculation library
+\usetikzlibrary{decorations.markings}       % custom marks
+\usetikzlibrary{decorations.pathreplacing}  % braces and other fancy paths
+\usetikzlibrary{topaths}      % 'curve to' style lines (in, out, etc.)
+\usetikzlibrary{shapes.misc}  % for 'rounded rectangle'
+
+\usepackage[inline]{asymptote}    % more fancy graphics ;).
+
+\usepackage{epsdice}      % dice-face font
+
+\usepackage{wtk_cmmds}    % common personal macros, in ~/texmf/tex/latex/
+\input{local_cmmds}

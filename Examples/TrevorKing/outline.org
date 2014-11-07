@@ -1,0 +1,101 @@
+* Introduction
+** Protein folding problem
+** Current approaches/state of the field as a whole
+** Single molecule techniques
+*** Literature review
+**** Single molecule force spectroscopy
+***** Original force spectroscopy paper?
+***** Bustamante and lambda DNA (1994)
+      Demonstrates that labda DNA force-extension curves are well
+      modeled as WLCs, introducing WLCs in the context of force
+      spectroscopy.
+***** Evans and biotin/streptavidin (1997)
+      Unfolding and theory.  Example on ligand-receptor binding.
+***** Rief and Titin (1997)
+      First force spectroscopy on a multi-globular single protein.
+      Reversible suggests unfolding of individual domains.
+***** Carrion-Vazquez review (2000)
+      Geometry argument for pulling angle irrelevance.
+***** Li review (2000)
+      Unfolding not due to pulling domains off the substrate surface.
+***** Carrion-Vazquez and I27 (1997)
+      First force spectroscopy on synthesized multi-globular I27.
+      Comparisons of unfolding constants with chemical techniques.
+**** Temperature dependent unfolding
+***** Hyeon and Thirumalai (2003)
+      Extend Kramers' theory to determine energy landscape roughness.
+***** Yang and temperature control (2006)
+      Previous measurements on temperature dependent protein unfolding.
+** Goals
+* Protein unfolding and related theories
+** Bell's model
+** Kramer's model
+** Temperature and energy roughness
+** Jarzynsky's inequality
+** AFM cantilever calibration
+** Sources of error
+*** Cantilever spring constant effect
+**** Evans, 2001
+     pages 115--116 and Figure 2.a
+     
+     Discusses energy landscape curvature and rebinding effects.
+     (Aha, this is what Noy wanted me to talk about).
+**** Walton et al. 2008
+     Biophys J, 94 (2008), 7 2621--2630.
+     
+     Energy landscape E
+     E*  = E(x) + ½kx²
+     E** = E(x) - Fx + ½kx²
+     F_b = x_b/k_B T
+     k_off = k₀ exp([F_R - ½kx_b]/F_b)
+*** Scaffold effect
+    Competetion between number of parallel unfolders and effective
+    loading rate.  The unfolding rate must be binned somehow, and the
+    scaffold effect makes binning difficult.
+      k(F,Delta F,kappa)
+        = unfolding rate of proteins present within Delta F of an
+          average tension F applied via a linker of stiffness
+          kappa=dF/dx (kappa to deal with the 
+	  [[Cantilever spring constant effect]].
+    I suggest we use the censored survival statistics common to
+    medical studies, and hopefully see exponential decay for each
+    force.  We'll probably have to lump similar loading rates
+    (=kappa∙v) together, and the more gently loaded proteins will
+    survive longer (having a lower mean force after the same length of
+    time in the [F, F+Delta F] bin).  The general trend will also be
+    towards accelerated exponential decay, since the mean forces of
+    all proteins will increase throughout the bin.
+**** Zinober et al. 2002
+     Protein Science, 11 (2002), 12 2759--2765.
+     Monte Carlo simulation and experiment on I27 and mutants.
+**** Censored survival statistics, Kaplan-Meier
+***** Kaplan, E.L. & Meier, P. 1958 
+      "Nonparametric estimation from incomplete observations," Journal
+      of the American Statistical Association, 53, 457-481 (1958).
+***** Chris Barker 2009
+      "The Mean, Median, and Confidence Intervals of the Kaplan-Meier
+      Survival Estimate—Computations and Applications," The American
+      Statistician, 63(1), 78--80 (2009).  DOI 10.1198/tast.2009.0015      
+***** Newcombe, Robert G. 1998
+      "Two-Sided Confidence Intervals for the Single Proportion:
+      Comparison of Seven Methods," Statistics in Medicine, 17,
+      857-872 (1998).
+***** Wilson, E. B. 1927
+      "Probable Inference, the Law of Succession, and Statistical
+      Inference," Journal of the American Statistical Association, 22,
+      209-212 (1927).
+***** Greenwood, M. 1926
+      "The natural duration of cancer." Reports on Public Health and
+      Medical Subjects 33, 1–26. Her Majesty’s Stationery Office, London.
+***** Meeker, W.Q., and Escobar, L.A. 1998
+      "Statistical Methods for Reliability Data", John Wiley & Sons,
+      Inc., New York, 1998.
+      Greenwood's formula for Kaplan-Meier error.  Example calculations:
+        http://www.weibull.com/LifeDataWeb/nonparametric_analysis.htm
+* Measurements
+** Temperature dependent energy landscape roughness
+** Effect of cantilever stiffness on unfolding behavior
+* Software
+** Experiment control/analysis software
+** Sawsim
+* Summary/future directions

@@ -1,0 +1,15 @@
+print 'reading', __file__
+
+# Get the passed in environment.
+Import('env')
+
+# Configure the builders. This is all we're doing here for this case.
+env = SConscript('builders.SConscript', 'env')
+
+for python_file in Glob('*.py'):
+    env.Command(python_file.replace('.py', '.png'),
+                python_file,
+                'python $SOURCE')
+
+# Pass back the modified environment.
+Return('env')

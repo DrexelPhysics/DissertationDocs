@@ -1,0 +1,16 @@
+import os.path
+
+# Get the passed in environment.
+Import('env')
+
+# Copy all non-SConscript files into the parent directory.
+packages = []
+for path in Glob('*'):
+    if str(path) is not 'SConscript':
+        packages.append(env.Command(
+                os.path.join('..', str(path)), path,
+                Copy('$TARGET', '$SOURCE')))
+env.Alias('extra-packages', packages)
+
+# Pass back the modified environment.
+Return('env')

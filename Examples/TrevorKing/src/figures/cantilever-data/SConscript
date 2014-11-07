@@ -1,0 +1,89 @@
+import os.path
+
+from site_cons.site_init import link_wtk_graph
+
+
+FIGURES = ['v-dep', 'loading-rate']
+Ks = ['131.98', '24.33'] # HACK!  these are not static
+
+# Get the passed in environment.
+Import('env')
+
+data_dir = Dir('data')
+raw = File(os.path.join(str(data_dir), 'raw'))
+raw = [raw]
+# = env.Command(
+#    os.path.join(str(data_dir), 'raw'),
+#    ['extract_f_v_k_data.sh'],
+#    './$SOURCE > $TARGET')
+#env.Requires(raw, data_dir)
+
+averaged_data = env.Command(
+    os.path.join(str(data_dir), 'averaged-data'),
+    ['avg_data.py'] + raw,
+    'cd .. && python avg_data.py',
+    chdir=True)
+spring_constants = env.SideEffect(
+    os.path.join(str(data_dir), 'spring-constants'),
+    averaged_data)
+
+loading_rate_dir = Dir('loading-rate.d')
+def loading_rate_file(k):
+    return os.path.join(str(loading_rate_dir), 'loading_rate_%s.dat' % k)
+
+loading_rates = env.Command(
+    loading_rate_file(Ks[0]),
+    ['get_loading_rates.py', 'avg_data.py', raw],
+    'cd .. && python get_loading_rates.py',
+    chdir=True)
+#env.Requires(loading_rates, loading_rate_dir)
+
+loading_rate_data = [loading_rates]
+for k in Ks[1:]:
+    loading_rate_data.append(
+        env.SideEffect(loading_rate_file(k), loading_rates))
+
+v_dep_dir = Dir('v-dep.d')
+def v_dep_file(k):
+    return os.path.join(str(v_dep_dir), 'v_dep_%s.dat' % k)
+def v_dep_fit_file(k):
+    return os.path.join(str(v_dep_dir), 'v_dep_%s.fit.dat' % k)
+
+v_deps = env.Command(
+    v_dep_file(Ks[0]),
+    ['get_v_dep.sh', spring_constants, averaged_data],
+    'cd .. && ./get_v_dep.sh',
+    chdir=True)
+#env.Requires(v_deps, v_dep_dir)
+
+v_dep_data = [v_deps]
+for k in Ks[1:]:
+    v_dep_data.append(
+        env.SideEffect(v_dep_file(k), v_deps))
+    
+for k,data in zip(Ks, v_dep_data):    
+    v_dep_data.append(
+        env.Command(
+            v_dep_fit_file(k),
+            ['fit_data.py'] + data,
+            'python $SOURCES  > $TARGET'))
+
+v_dep = env.Command(
+        'v-dep.asy',
+        ['make_v_dep_plots.sh'] + v_dep_data,
+        './make_v_dep_plots.sh',
+        chdir=True)
+env.SideEffect('v-dep.gp', v_dep)
+
+
+wtk_graph = link_wtk_graph(env)
+
+for fig in FIGURES:
+    asyfile = '%s.asy' % fig  # static .asy file
+    pyfig = fig.replace('-', '_')
+    if pyfig in globals():    # generated .asy file
+        asyfile = globals()[pyfig]
+    env.Asymptote([asyfile, wtk_graph])
+
+# Pass back the modified environment.
+Return('env')

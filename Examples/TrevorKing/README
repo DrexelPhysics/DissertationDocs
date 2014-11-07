@@ -1,0 +1,40 @@
+Trevor's thesis.  Useful for learning about mechanical protein
+unfolding and all sorts of fun LaTeX tricks ;).
+
+Building
+--------
+
+All the goodies are in the tex/ directory.
+
+Build with:
+
+  tex$ scons
+
+Rebuild (after editing some file(s) in tex/src/) with:
+
+  tex$ scons
+
+Getting the source
+------------------
+
+The thesis source is versioned in Git [1].  Clone the thesis
+repository with:
+
+  $ git clone git://tremily.us/thesis.git
+
+I've released the source under CC Attribution-ShareAlike (COPYING), so
+feel free to reuse and pass it on under those terms.  See [2] for a
+human-readable summary.
+
+The drexel-thesis package
+-------------------------
+
+The Drexel Physics department (well, currently me, but eventually...)
+maintains a LaTeX class that implements all the formatting required
+by Drexel.  Take a look at [3] or clone the code with:
+
+  $ git clone git://tremily.us/drexel-thesis.git
+
+[1]: http://git-scm.com/
+[2]: http://creativecommons.org/licenses/by-sa/3.0/
+[3]: http://blog.tremily.us/posts/drexel-thesis/

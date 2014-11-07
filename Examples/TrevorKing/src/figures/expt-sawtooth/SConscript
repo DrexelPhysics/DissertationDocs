@@ -1,0 +1,29 @@
+from site_cons.site_init import link_wtk_graph
+
+
+FIGURES = ['expt-sawtooth']
+
+# Get the passed in environment.
+Import('env')
+
+wtk_graph = link_wtk_graph(env)
+
+xml_fit = File('sawmodel.xml')
+expt_sawtooth_data = [
+    env.Command(
+        'expt-Ls.dat',
+        [xml_fit],
+        r"sed -n 's/^ *<L>\(.*\)<\/L>/\1/p' $SOURCE > $TARGET"),
+    ]
+
+for fig in FIGURES:
+    asyfile = '%s.asy' % fig  # static .asy file
+    pyfig = fig.replace('-', '_')
+    data = '%s_data' % (pyfig)
+    asydata = []
+    if data in globals():     # generated data dependencies
+        asydata = globals()[data]
+    env.Asymptote([asyfile, wtk_graph] + asydata)
+
+# Pass back the modified environment.
+Return('env')

@@ -1,0 +1,10 @@
+# Get the passed in environment.
+Import('env')
+
+if 'DOT' in env:
+    env.Command('concept_map.png', 'concept_map.dot',
+                'dot -Tpng $SOURCE > $TARGET',
+	        chdir=True)
+
+# Pass back the modified environment.
+Return('env')

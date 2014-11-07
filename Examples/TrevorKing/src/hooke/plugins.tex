@@ -1,0 +1,25 @@
+\section{Plugins for analysis}
+\label{sec:hooke:plugins}
+
+Plugins are groups of related commands for processing curves.  Curves
+can be stored in playlists, and there are builtin plugins for
+administrative tasks like managing curves (getting curve metadata,
+exporting blocks, \ldots) and playlists (moving to the next curve,
+globbing curves to the playlist, \ldots).  There are also analysis
+plugins with commands for doing science.  The \imint{python}|vclamp|
+plugin for velocity clamp analysis has commands for finding the
+surface contact point, scaling the cantilever deflection, removing the
+cantilever deflection from the total extension (\cref{fig:procedure}),
+and flattening polynomial drift in the non-contact region.  The
+\imint{python}|flatfilt| plugin has commands for identifying peaks
+based on spikes in the deflection derivative and for filtering curves
+from a playlist that only have more than a minimum threshold of such
+peaks\citep{sandal08}.  The \imint{python}|polymer_fit| plugin has
+commands for fitting polymer models to the loading peaks
+(\cref{sec:sawsim:tension}), which may have been identified using the
+\imint{python}|flatfilt| plugin or with any other peak-marking plugin.
+For other available plugins, see the \Hooke\ documentation.
+%
+\nomenclature[text ]{playlist}{Playlists are containers in
+  \Hooke\ that hold lists of unfolding curves along with some
+  additional metadata.}

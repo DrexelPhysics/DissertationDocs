@@ -1,0 +1,61 @@
+from distutils.sysconfig import get_python_lib
+import os.path
+import SCons.Scanner
+
+from site_cons.site_init import (
+     include_child_SConscripts, check_exec, recursive_glob)
+from site_cons.site_tools import asymptote, gnuplot, pymol
+
+# Make a new environment.
+env = Environment(ENV={
+    'PATH':['/usr/local/bin', '/opt/bin', '/bin', '/usr/bin'],
+    'HOME':os.path.expanduser('~'),
+    'PYMOL_PATH':os.path.join(get_python_lib(), 'pymol'),
+    'PYMOL_DATA':'/usr/share/pymol/data',
+    'PYMOL_SCRIPTS':'/usr/share/pymol/scripts',
+    })
+if 'DISPLAY' in os.environ:
+   env['ENV']['DISPLAY'] = os.environ['DISPLAY']
+
+asymptote.generate(env)
+gnuplot.generate(env)
+pymol.generate(env)
+
+if not env.GetOption('clean'):
+    # Configure the environment since we're not cleaning.
+    conf = Configure(env, custom_tests={'CheckExec':check_exec})
+    if not conf.CheckExec('pymol'):
+        print 'PyMol is not installed!'
+        Exit(1)
+    conf.CheckExec('dot')
+    env = conf.Finish()
+
+# Include sub-SConscript files with rules for figures, packages, etc.
+env = include_child_SConscripts(env, SConscript)
+
+# Alias the thesis' base latex, which is used by when building the
+# Asymptote graphics.
+env.Alias('latex-base', [Glob('*.tex'), env.Alias('extra-packages')])
+
+# Alias Bibtex files (?since SCons' LaTeX scanned isn't picking them up?)
+env.Alias('bibtex-files', recursive_glob(env, '*.bib'))
+
+# Add a rule for the thesis itself.
+thesis = env.PDF('root.tex')
+env.Depends(thesis, env.Alias('extra-packages'))
+env.Depends(thesis, env.Alias('asymptote-figures'))
+env.Depends(thesis, env.Alias('bibtex-files'))
+
+Return('thesis')
+
+#thesis.pdf : build
+#	(cd ./build && $(LATEX) root)
+#	(cd ./build && bibtex root)
+#	(cd ./build && $(LATEX) root)
+#	(cd ./build && bibtex root)
+#	(cd ./build && $(LATEX) root)
+#	(cd ./build && bibtex root)
+#	(cd ./build && makeindex root.nlo -s nomencl.ist -o root.nls)
+#	(cd ./build && makeindex root.idx)
+#	(cd ./build && $(LATEX) root)
+#	(cd ./build && $(LATEX) root)

@@ -1,0 +1,101 @@
+% Copyright (C)  2010-2013  W.Trevor King <wking@tremily.us>
+% Permission is granted to copy, distribute, and/or modify this document
+% under the terms of the Creative Commons Attribution-ShareAlike License
+% Version 3.0.
+% 
+% You should have revieved a copy of the Creative Commons
+% Attribution-ShareAlike License along with this program (COPYING-CC);
+% if not, visit
+%   http://creativecommons.org/licenses/by-sa/3.0/legalcode
+
+\documentclass[%
+  subfig,%
+  indenttoc,%
+  approvalform,%
+  final%
+%  draft%
+]{drexel-thesis}
+% See drexel-thesis.pdf for more options.
+
+%\includeonly{%
+%  cantilever/main,%
+%  temperature/main%
+%  cantilever-calib/main
+%}
+
+\author{William Trevor King}
+\title{Open source single molecule force spectroscopy}
+\DUTmonth{June}
+\DUTyear{2013}
+\degree{Doctor of Philosophy}
+\advisor{Guoliang Yang, Ph.D.}
+\advisor{Luis Cruz Cruz, Ph.D.}
+\copyrighttext{\copyrighttextCCBYSA}
+
+\input{packages}
+
+\begin{document}
+
+% Work-directory for Asymptote files (no spaces):
+\def\asydir{figures/scratch}
+\begin{asydef}
+// Global Asymptote definitions go here.
+//texpreamble("\documentclass{drexel-thesis}");
+//usepackage("packages");
+defaultpen(fontsize(10));  // match drexel-thesis's default 10pt font size
+\end{asydef}
+
+
+\begin{preamble}
+
+\include{blurb/dedications}
+\include{blurb/acknowledgments}
+
+\tableofcontents
+\listoftables
+\listoffigures
+
+\include{blurb/abstract}
+
+\end{preamble}
+\iffinal{}{\linenumbers}
+
+\begin{thesis}
+\pdfbookmark[-1]{Mainmatter}{Mainmatter}
+\include{introduction/main}
+\include{apparatus/main}
+\include{sawsim/main}
+\include{pyafm/main}
+\include{calibcant/main}
+\include{hooke/main}
+%\include{temperature/main}
+%\include{cantilever/main}
+\include{salt/main}
+\include{future/main}
+\end{thesis}
+
+\bibliography{%
+  blurb/main,%
+  apparatus/main,%
+%  sawsim/main,% currently empty
+  pyafm/main,%
+  calibcant/main,%
+  hooke/main,%
+  salt/main,%
+  future/main,%
+  packaging/main,%
+  figures/main,%
+  root}
+
+\appendix
+\include{cantilever-calib/main}
+%\include{viscocity/main}
+
+\printnomenclature
+% avoid index's second column overlapping the nomenclature space.
+\iffinal{}{\pagebreak}
+%\printindex
+
+\include{blurb/vita}
+
+\end{document}

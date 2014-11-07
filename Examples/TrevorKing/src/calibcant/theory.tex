@@ -1,0 +1,511 @@
+\section{Power spectra of damped harmonic oscillators}
+\label{sec:calibcant:theory}
+
+As discussed in \cref{sec:calibcant:lorentzian}, the power spectral
+density for a Hookean cantilever is surprisingly ambiguous.  In this
+section, I'll derive the frequency-space power spectra of the
+deflection voltage (\cref{eq:avg-Vp-Gone-f,eq:model-psd}), modeling
+the cantilever as a damped harmonic oscillator\index{damped harmonic
+  oscillator}.
+\begin{equation}
+  m\ddt{x} + \gamma \dt{x} + \kappa x = F(t) \;,
+  \label{eq:DHO}
+  % DHO for Damped Harmonic Oscillator
+\end{equation}
+where $x$ is the displacement from equilibrium\index{$x$},
+ $m$ is the effective mass\index{$m$},
+ $\gamma$ is the effective drag coefficient\index{$\gamma$},
+ $\kappa$ is the spring constant\index{$\kappa$}, and
+ $F(t)$ is the external driving force\index{$F(t)$}.
+During the non-contact phase of calibration,
+ $F(t)$ comes from random thermal noise.
+%
+\nomenclature[sr ]{$m$}{Effective mass of a damped harmonic oscillator
+  (\cref{eq:DHO}).}
+\nomenclature[sg c ]{$\gamma$}{Damped harmonic oscillator drag
+  coefficient $F_\text{drag} = \gamma\dt{x}$ (\cref{eq:DHO}).}
+\nomenclature[o d1 ]{$\dt{s}$}{First derivative of the time-series
+  $s(t)$ with respect to time.  $\dt{s} = \deriv{t}{s}$.}
+\nomenclature[o d2 ]{$\ddt{s}$}{Second derivative of the time-series
+  $s(t)$ with respect to time.  $\ddt{s} = \nderiv{2}{t}{s}$.}
+
+In the following analysis, we use the unitary, angular frequency
+Fourier transform normalization
+\begin{equation}
+  \Four{x(t)} \equiv \frac{1}{\sqrt{2\pi}} \iInfInf{t}{x(t) e^{-i \omega t}}\;,
+\end{equation}
+where $\omega$ is the angular frequency and $i\equiv\sqrt{-1}$ is the
+imaginary unit.
+%
+\nomenclature[o F ]{\Four{s(t)}}{Fourier transform of the time-series
+  $s(t)$.
+  $s(f) = \Four{s(t)}
+   \equiv \frac{1}{\sqrt{2\pi}} \iInfInf{t}{s(t) e^{-i \omega t}}$.
+  }\index{Fourier transform}
+\nomenclature[sr ]{$i$}{Imaginary unit $i\equiv\sqrt{-1}$.}
+\nomenclature[sg z ]{$\omega$}{Angular frequency (radians per second).}
+
+We also use the following theorems (proved elsewhere):
+\begin{align}
+  \cos\left(\frac{\theta}{2}\right) &= \pm\sqrt{\frac{1}{2}[1+\cos(\theta)]}\;,
+     &\text{\citep{cos-halfangle}} \label{eq:cos-halfangle} \\
+  \Four{\nderiv{n}{t}{x(t)}} &= (i \omega)^n x(\omega) \;,
+     &\text{\citep{four-deriv}} \label{eq:four-deriv} \\
+%  \Four{x*y} &= x(\omega) y(\omega),  \label{eq:four-conv}
+%     & \text{and} \\
+  \iInfInf{t}{\magSq{x(t)}} &= \iInfInf{\omega}{\magSq{x(w)}} \;.
+     &\text{(Parseval's)\citep{parseval}} \label{eq:parseval}
+\end{align}
+\index{cosine half-angle}
+\index{Parseval's theorem}
+%where $x*y$ denotes the convolution of $x$ and $y$,
+%\begin{equation}
+%  x*y \equiv \iInfInf{\tau}{x(t-\tau)y(\tau)}.
+%\end{equation}
+As a corollary to Parseval's theorem, we note that the one sided power
+spectral density per unit time (\PSD) defined by
+\begin{align}
+  \PSD(x, \omega) &\equiv \normLimT 2 \abs{x(\omega)}^2
+     &\text{\citep{PSD}} \label{eq:psd-def}
+\end{align}
+\index{PSD@\PSD}
+relates to the variance by
+\begin{align}
+  \avg{x(t)^2}
+     &= \iLimT{\magSq{x(t)}}
+     = \normLimT \iInfInf{\omega}{\magSq{x(\omega)}}
+     = \iOInf{\omega}{\PSD(x,\omega)} \;, \label{eq:parseval-var}
+\end{align}
+where $t_T$ is the total time over which data has been aquired.
+%
+\nomenclature[o PSDo ]{$\PSD$}{Power spectral density in angular
+  frequency space
+  \begin{equation}
+    \PSD(g, w) \equiv \normLimT 2 \magSq{ \Four{g(t)}(\omega) } \;.
+  \end{equation}}
+\nomenclature[o ]{$\abs{z}$}{Absolute value (or magnitude) of $z$.  For
+  complex $z$, $\abs{z}\equiv\sqrt{z\conj{z}}$.}
+
+We also use the Wiener--Khinchin theorem,
+which relates the two sided power spectral density $S_{xx}(\omega)$
+to the autocorrelation function $r_{xx}(t)$ via
+\begin{align}
+  S_{xx}(\omega) &= \Four{ r_{xx}(t) } \;,
+       &\text{(Wiener--Khinchin)\citep{wiener-khinchin}}
+    \label{eq:wiener_khinchin}
+\end{align}
+\index{Wiener-Khinchin theorem}
+where $r_{xx}(t)$ is defined in terms of the expectation value
+\begin{align}
+  r_{xx}(t) &\equiv \avg{x(\tau)\conj{x}(\tau-t)} \;,
+       &\text{\citep{wikipedia-wiener-khinchin}}
+    \label{eq:autocorrelation}
+\end{align}
+and $\conj{x}$ represents the complex conjugate of $x$.
+%
+\nomenclature[o ]{$S_{xx}(\omega)$}{Two sided power spectral density
+  in angular frequency space (\cref{eq:wiener_khinchin}).}
+\nomenclature[o ]{$r_{xx}(t)$}{Autocorrelation function
+  (\cref{eq:autocorrelation}).}
+\nomenclature[o ]{$\conj{z}$}{Complex conjugate of $z$.}
+
+\subsection{Highly damped case}
+\label{sec:calibcant:ODHO}
+
+For highly damped systems, the inertial term in \cref{eq:DHO} becomes
+insignificant ($m \rightarrow 0$).  This model is commonly used for
+optically trapped beads\citep{bechhoefer02}.  Because it is simpler
+and solutions are more easily
+available\citep{bechhoefer02,burnham03,grossman05}, it will serve to
+outline the general approach before we dive into the general case.
+
+Fourier transforming \cref{eq:DHO} with $m=0$ and applying
+\cref{eq:four-deriv} we have
+% ODHO stands for very Over Damped Harmonic oscillator
+\begin{align}
+  (i \gamma \omega + \kappa) x(\omega) &= F(\omega) \label{eq:ODHO-freq} \\
+  \abs{x(\omega)}^2 &= \frac{\abs{F(\omega)}^2}
+                            {\kappa^2 + \gamma^2 \omega^2} \;.
+                                               \label{eq:ODHO-xmag}
+\end{align}
+\index{Damped harmonic oscillator!extremely overdamped}
+We compute the \PSD\ by plugging \cref{eq:ODHO-xmag} into
+\cref{eq:psd-def}
+\begin{equation}
+  \PSD(x, \omega)
+        = \normLimT \frac{2\magSq{F(\omega)}}{\kappa^2 + \gamma^2\omega^2} \;.
+                                               \label{eq:ODHO-psd-F}
+\end{equation}
+\index{PSD@\PSD}
+
+Because thermal noise is white (not autocorrelated + Wiener--Khinchin
+Theorem), we can write the one sided thermal power spectral density
+per unit time as
+\begin{equation}
+  G_0 \equiv \PSD(F, \omega)
+     = \normLimT 2 \magSq{F(\omega)} \;. \label{eq:GOdef} % label O != zero
+\end{equation}
+%
+\nomenclature[sr ]{$G_0$}{The power spectrum of the thermal noise in
+  angular frequency space (\cref{eq:GOdef}).}
+
+Plugging \cref{eq:GOdef} into \cref{eq:ODHO-psd-F} we have
+\begin{equation}
+  \PSD(x, \omega) = \frac{G_0}{\kappa^2 + \gamma^2\omega^2} \;.
+  \label{eq:ODHO-psd-GO}
+\end{equation}
+This is the formula we would use to fit our measured \PSD, but let us
+go a bit farther to find the expected \PSD\ and thermal noise given
+$\gamma$ and $\kappa$.
+
+Integrating over positive $\omega$ to find the total power per unit
+time yields
+\begin{align}
+  \iOInf{\omega}{\PSD(x, \omega)}
+     = \iOInf{\omega}{\frac{G_0}{\kappa^2 + \gamma^2\omega^2}}
+     = \frac{G_0}{\gamma}\iOInf{z}{\frac{1}{\kappa^2 + z^2}}
+     = \frac{\pi G_0}{2 \gamma \kappa} \;,
+  \label{eq:ODHO-psd-int}
+\end{align}
+where we made the simplifying replacement $z\equiv\gamma\omega$, so
+$\dd \omega = \dd z/\gamma$.  The integral is solved in
+\cref{sec:integrals:highly-damped}.
+
+Plugging into our corollary to Parseval's theorem (\cref{eq:parseval-var}), 
+\begin{equation}
+  \avg{x(t)^2} = \frac{\pi G_0}{2 \gamma \kappa} \;. \label{eq:ODHO-var}
+\end{equation}
+
+Plugging \cref{eq:ODHO-var} into \cref{eq:equipart} we have
+\begin{align}
+  \kappa \frac{\pi G_0}{2 \gamma \kappa} &= k_BT \\
+  G_0 &= \frac{2 \gamma k_BT}{\pi} \;.  \label{eq:ODHO-GO}
+\end{align}
+
+Combining \cref{eq:ODHO-psd-GO,eq:ODHO-GO}, we expect $x(t)$ to have a
+power spectral density per unit time given by\footnote{%
+  \cref{eq:ODHO-psd} is \xref{bechhoefer02}{equation}{A12} (who's
+  $\tau_0\equiv\gamma/\kappa$), except that they're missing a factor
+  of $1/\pi$.
+  \cref{eq:ODHO-psd} is also \xref{burnham03}{equation}{8}, where
+  their damping coefficient $b$ is equivalent to our $\gamma$, their
+  frequency $\nu$ is equivalent to our $f=\omega/2\pi$, and their roll
+  off frequency $\nu_R\equiv k/2\pi b$ is equivalent to our
+  $\kappa/2\pi\gamma$.
+}
+\begin{equation}
+  \PSD(x, \omega) = \frac{2}{\pi}
+                       \cdot
+                    \frac{\gamma k_BT}{\kappa^2 + \gamma^2\omega^2} \;.
+  \label{eq:ODHO-psd}
+\end{equation}
+\index{PSD@\PSD}
+
+\subsection{General form}
+\label{sec:calibcant:SHO}
+
+The procedure here is exactly the same as the previous section.  The
+integral normalizing $G_0$, however, becomes a little more
+complicated.
+
+Fourier transforming \cref{eq:DHO} and applying \cref{eq:four-deriv}
+we have
+\begin{align}
+  (-m\omega^2 + i \gamma \omega + \kappa) x(\omega) &= F(\omega)
+                                              \label{eq:DHO-freq} \\
+  (\omega_0^2-\omega^2 + i \beta \omega) x(\omega) &= \frac{F(\omega)}{m} \\
+  \abs{x(\omega)}^2 &= \frac{\abs{F(\omega)}^2/m^2}
+                        {(\omega_0^2-\omega^2)^2 + \beta^2\omega^2} \;,
+                                              \label{eq:DHO-xmag}
+\end{align}
+where $\omega_0 \equiv \sqrt{\kappa/m}$\index{$\omega_0$} is the
+resonant angular frequency and $\beta \equiv \gamma / m$ is the
+drag-acceleration coefficient.\index{Damped harmonic
+  oscillator}\index{$\gamma$}\index{$\kappa$}\index{$\beta$}
+%
+\nomenclature[sg b ]{$\beta$}{Damped harmonic oscillator
+  drag-acceleration coefficient $\beta \equiv \gamma/m$
+  (\cref{eq:DHO-xmag}).}
+\nomenclature[sg z0 ]{$\omega_0$}{Resonant angular frequency (radians
+  per second, \cref{eq:DHO-xmag}).}
+
+We compute the \PSD\ by plugging \cref{eq:DHO-xmag} into
+\cref{eq:psd-def}
+\begin{equation}
+  \PSD(x, \omega)
+        = \normLimT \frac{2 \abs{F(\omega)}^2/m^2}
+                         {(\omega_0^2-\omega^2)^2 + \beta^2\omega^2} \;.
+                                               \label{eq:DHO-psd-F}
+\end{equation}
+\index{PSD@\PSD}
+
+Plugging \cref{eq:GOdef} into \cref{eq:DHO-psd-F} we have\footnote{
+  \Cref{eq:model-psd} is \xref{roters96}{equation}{4}
+}
+\begin{equation}
+  \PSD(x, \omega) = \frac{G_0/m^2}{(\omega_0^2-\omega^2)^2 +\beta^2\omega^2}\;.
+    \label{eq:model-psd}
+\end{equation}
+
+Integrating over positive $\omega$ to find the total power per unit
+time yields
+\begin{equation}
+  \iOInf{\omega}{\PSD(x, \omega)}
+     = \frac{G_0}{2m^2}
+       \iInfInf{\omega}{\frac{1}{(\omega_0^2-\omega^2)^2 + \beta^2\omega^2}}
+     = \frac{G_0}{2m^2} \cdot \frac{\pi}{\beta\omega_0^2}
+     = \frac{\pi G_0}{2m^2 \beta \omega_0^2}
+  \label{eq:DHO-psd-int}
+\end{equation}
+where the integration is solved in \cref{sec:integrals:general}\footnote{
+  Comparing \cref{eq:ODHO-psd-int,eq:DHO-psd-int}, we see
+  \begin{equation}
+    \frac{\pi G_0}{2m^2 \beta \omega_0^2}
+      = \frac{\pi G_0}{2m^2 \frac{\gamma}{m} \frac{k}{m}}
+      = \frac{\pi G_0}{2 \gamma \kappa} \;.
+  \end{equation}
+  This is not a coincidence.  Both spectra satisfy the equipartion
+  theorem, so
+  \begin{equation}
+    \iOInf{\omega}{\PSD(x, \omega)} = \avg{x(t)^2} = \frac{k_BT}{\kappa} \;,
+  \end{equation}
+  which is the same for both cases.
+}.
+By the corollary to Parseval's theorem (\cref{eq:parseval-var}), we have
+\begin{equation}
+  \avg{x(t)^2}
+    = \frac{\pi G_0}{2m^2 \beta \omega_0^2} \;.  \label{eq:DHO-var}
+\end{equation}
+
+Plugging \cref{eq:DHO-var} into the equipartition theorem
+(\cref{eq:equipart}) we can reproduce \cref{eq:ODHO-GO}.
+\begin{align}
+  \kappa \frac{\pi G_0}{2m^2 \beta \omega_0^2} &= k_BT \, \\
+  G_0 &= \frac{2m^2 \beta \omega_0^2 k_BT}{\pi \kappa}
+    = \frac{2m^2 \beta \frac{\kappa}{m} k_BT}{\pi \kappa}
+    = \frac{2m \beta k_BT}{\pi}
+    = \frac{2m \frac{\gamma}{m} k_BT}{\pi}
+    = \frac{2 \gamma k_BT}{\pi} \;.  \label{eq:GO}
+\end{align}
+
+Combining \cref{eq:model-psd,eq:GO}, we expect $x(t)$ to have a power
+spectral density per unit time given by\footnote{%
+  \cref{eq:DHO-psd} is \xref{benedetti12}{equation}{8.11}.
+}
+\begin{equation}
+  \PSD(x, \omega) = \frac{2 k_BT \beta}
+                   { \pi m \p[{(\omega_0^2-\omega^2)^2 + \beta^2\omega^2}] }\;.
+  \label{eq:DHO-psd}
+\end{equation}
+\index{PSD@\PSD}
+
+As expected, we can recover the extremely overdamped form
+\cref{eq:ODHO-psd} from the general form \cref{eq:DHO-psd}.  Plugging
+in for $\beta\equiv\gamma/m$ and $\omega_0\equiv\sqrt{\kappa/m}$,
+\begin{align}
+  \limX{m}{0} \PSD(x, \omega)
+    &= \limX{m}{0} \frac{2 k_BT \gamma}
+       { \pi m^2 \p[{\p({\frac{\kappa}{m}-\omega^2})^2 + \frac{\gamma^2}{m^2}\omega^2}] }
+     = \limX{m}{0} \frac{2 k_BT \gamma}
+       { \pi \p[{(\kappa-m\omega^2)^2 + \gamma^2\omega^2}] } \\
+    &= \frac{2}{\pi}
+               \cdot
+       \frac{\gamma k_BT}{\kappa^2 + \gamma^2\omega^2} \;.
+\end{align}
+
+\subsection{Fitting deflection voltage directly}
+\label{sec:calibcant:voltage}
+
+In order to keep our errors in measuring $\sigma_p$ separate from
+other errors in measuring $\avg{x(t)^2}$, we can fit the voltage
+spectrum before converting to distance.  Plugging \cref{eq:x-from-Vp}
+into \cref{eq:DHO},
+\begin{align}
+  \frac{\ddt{V_p}}{\sigma_p} + \beta\frac{\dt{V_p}}{\sigma_p}
+    + \omega_0^2 \frac{V_p}{\sigma_p}
+                 &= F(t) \\
+  \ddt{V_p} + \beta\dt{V_p} + \omega_0^2 V_p
+                 &= \sigma_p\frac{F(t)}{m}  \label{eq:DHO-ddt-Vp} \\
+  \ddt{V_p} + \beta\dt{V_p} + \omega_0^2 V_p
+                 &= \frac{F_p(t)}{m} \;,
+\end{align}
+where $F_p(t)\equiv \sigma_p F(t)$.  This has the same form as
+\cref{eq:DHO}, which can be rearranged to:
+\begin{align}
+  \ddt{x} + \frac{\gamma}{m} \dt{x} + \frac{\kappa}{m} x &= \frac{F(t)}{m} \\
+  \ddt{x} + \beta \dt{x} + \omega_0^2 x &= \frac{F(t)}{m} \;,
+\end{align}
+so the \PSD\ of $V_p(t)$ will be the same as the \PSD\ of $x(t)$,
+after the replacements $x\rightarrow V_p(t)$, $F\rightarrow F_p$, and
+(because of \cref{eq:GOdef}) $G_0\rightarrow\sigma_p^2G_0$.  Making
+these replacements in \cref{eq:model-psd,eq:DHO-var}, we have
+\begin{align}
+  \PSD(V_p, \omega) &= \frac{\sigma_p^2 G_0/m^2}
+                         { (\omega_0^2-\omega^2)^2 + \beta^2\omega^2 } \\
+  \avg{V_p(t)^2} &= \frac{\pi \sigma_p^2 G_0}{2 m^2 \beta \omega_0^2}
+                  = \sigma_p^2 \avg{x(t)^2} \;.
+\end{align}
+The scaling parameters---$G_0$ and $m$---cannot be fit independently,
+so we condense the power spectrum of the right hand side of
+\cref{eq:DHO-ddt-Vp} into a single
+\begin{equation}
+  G_1 \equiv \frac{\sigma_p^2 G_0}{m^2} \;.  \label{eq:Gone-def}
+\end{equation}
+This gives
+\begin{align}
+  \PSD(V_p, \omega)
+    &= \frac{G_1}{ (\omega_0^2-\omega^2)^2 + \beta^2\omega^2 }
+    \label{eq:psd-Vp-Gone} \\
+  \avg{V_p(t)^2} &= \frac{\pi G_1}{2 \beta \omega_0^2}
+                  = \sigma_p^2 \avg{x(t)^2} \;.
+    \label{eq:avg-Vp-Gone}
+\end{align}
+%
+\nomenclature[sr ]{$G_1$}{The scaled power spectrum of the thermal
+  noise in angular frequency space (\cref{eq:Gone-def}).}
+
+Plugging into the equipartition theorem (\cref{eq:equipart_k}) yields
+\begin{align}
+  \kappa &= \frac{\sigma_p^2 k_BT}{\avg{V_p(t)^2}}
+    = \frac{2 \beta \omega_0^2 \sigma_p^2 k_BT}{\pi G_1} \;.
+\end{align}
+Shifting this around, we can find the expected value of $G_1$.
+\begin{equation}
+  G_1 = \frac{2 \beta \omega_0^2 \sigma_p^2 k_BT}{\pi \kappa}
+    = \frac{2 \beta \frac{\kappa}{m} \sigma_p^2 k_BT}{\pi \kappa}
+    = \frac{2 \beta \sigma_p^2 k_BT}{\pi m}
+    \label{eq:Gone}
+\end{equation}
+
+\subsection{Fitting deflection voltage in frequency space}
+\label{sec:calibcant:frequency}
+
+As another alternative, you could fit in frequency
+$f\equiv\omega/2\pi$ instead of angular frequency $\omega$.  The
+analysis will be the same, but we must be careful with normalization
+due to the different scales.  Comparing the angular frequency and
+normal frequency unitary Fourier transforms
+\begin{align}
+  \Four{x(t)}(\omega)
+    &\equiv \frac{1}{\sqrt{2\pi}} \iInfInf{t}{x(t) e^{-i \omega t}} \\
+  \Fourf{x(t)}(f) &\equiv \iInfInf{t}{x(t) e^{-2\pi i f t}}
+     = \iInfInf{t}{x(t) e^{-i \omega t}}
+     = \sqrt{2\pi}\cdot\Four{x(t)}(\omega=2\pi f) \;,
+\end{align}
+from which we can translate the \PSD
+\begin{align}
+  \PSD(x, \omega) &\equiv \normLimT 2 \magSq{ \Four{x(t)}(\omega) } \\
+  \begin{split}
+  \PSD_f(x, f) &\equiv \normLimT 2 \magSq{ \Fourf{x(t)}(f) }
+    = 2\pi \cdot \normLimT 2 \magSq{ \Four{x(t)}(\omega=2\pi f) } \\
+    &= 2\pi \PSD(x, \omega=2\pi f) \;.
+  \end{split}
+\end{align}
+%
+\nomenclature[sr ]{$t$}{Time (seconds).}
+\index{PSD@\PSD!in frequency space}
+%
+The variance of the function $x(t)$ is then given by plugging into
+\cref{eq:parseval-var} (our corollary to Parseval's theorem)
+\begin{align}
+  \avg{x(t)^2} &= \iOInf{\omega}{\PSD(x,\omega)}
+     = \iOInf{f}{\frac{1}{2\pi}\PSD_f(x,f)2\pi\cdot}
+     = \iOInf{f}{\PSD_f(x,f)} \;.
+\end{align}
+We can now extract \cref{eq:psd-Vp,eq:avg-Vp-Gone-f} from
+\cref{eq:psd-Vp-Gone,eq:avg-Vp-Gone}.
+\begin{align}
+  \begin{split}
+  \PSD_f(V_p, f) &= 2\pi\PSD(V_p, \omega)
+     = \frac{2\pi G_1}{(4\pi^2f_0^2-4\pi^2f^2)^2 + \beta^2 4\pi^2f^2}
+     = \frac{2\pi G_1}{16\pi^4(f_0^2-f^2)^2 + \beta^2 4\pi^2f^2} \\
+     &= \frac{G_1/8\pi^3}{(f_0^2-f^2)^2 + \frac{\beta^2 f^2}{4\pi^2}}
+     = \frac{G_{1f}}{(f_0^2-f^2)^2 + \beta_f^2 f^2}
+     %\label{eq:psd-Vp}
+  \end{split} \\
+  \avg{V_p(t)^2}
+    &= \frac{\pi \frac{G_1}{(2\pi)^3}}
+      {2 \frac{\beta}{2\pi} \p({\frac{\omega_0}{2\pi}})^2}
+    = \frac{\pi G_{1f}}{2 \beta_f f_0^2} \;.
+     %\label{eq:avg-Vp-Gone-f}
+\end{align}
+where $f_0\equiv\omega_0/2\pi$, $\beta_f\equiv\beta/2\pi$, and
+$G_{1f}\equiv G_1/8\pi^3$.  Finally, we can generate
+\cref{eq:kappa} from \cref{eq:equipart_k,eq:x-from-Vp}.
+\begin{align}
+  \kappa &= \frac{\sigma_p^2 k_BT}{\avg{V_p(t)^2}}
+    = \frac{2 \beta_f f_0^2 \sigma_p^2 k_BT}{\pi G_{1f}} \;.
+\end{align}
+
+Shifting this around, we can find the expected value of $G_{1f}$.
+\begin{equation}
+  G_{1f} = \frac{2 \beta_f f_0^2 \sigma_p^2 k_BT}{\pi \kappa}
+    = \frac{2 \beta_f \frac{\kappa}{4\pi^2 m} \sigma_p^2 k_BT}{\pi \kappa}
+    = \frac{\beta_f \sigma_p^2 k_BT}{2\pi^3 m}
+    \label{eq:Gone-f}
+\end{equation}
+
+Plugging \cref{eq:Gone-f} into \cref{eq:psd-Vp}, we have
+\begin{equation}
+  \PSD_f(V_p, f) = \frac{\sigma_p^2 k_BT \beta_f}{2\pi^3 m} \cdot
+                    \frac{1}{(f_0^2-f^2)^2 + \beta_f^2 f^2}
+\end{equation}
+From which we can recover \xref{burnham03}{equation}{6}.
+\begin{align}
+  \PSD_f(x, f) &= \frac{\PSD_f(V_p, f)}{\sigma_p^2}
+    = \frac{k_BT \colA{\beta_f}}{2\pi^3 m} \cdot
+      \frac{1}{(f_0^2-f^2)^2 + \colA{\beta_f^2} f^2} \\
+    &= \frac{k_BT \colAB{f_0}}{2\pi^3 m \colA{Q}} \cdot
+      \frac{1}{\colB{(f_0^2}-f^2)^2 + \frac{\colAB{f_0^2}f^2}{\colA{Q^2}}}
+    = \frac{k_BT}{2\pi^3 m Q \colAB{f_0^3}} \cdot
+      \frac{1}{(\colB{1}-\frac{f^2}{\colB{f_0^2}})^2 +
+        \frac{f^2}{\colB{f_0^2}Q^2}} \\
+    &= \frac{k_BT}{\colB{2\pi^3} m Q \colAB{\p({\frac{\omega_0}{2\pi}})^3}}
+      \cdot
+      \frac{1}{(1-\frac{f^2}{f_0^2})^2 + \frac{f^2}{f_0^2Q^2}}
+    = \frac{\colB{4}k_BT}{m Q \colB{\omega_0}\colAB{\omega_0^2}} \cdot
+      \frac{1}{(1-\frac{f^2}{f_0^2})^2 + \frac{f^2}{f_0^2Q^2}} \\
+    &= \frac{4k_BT}{\colB{m} Q \omega_0\frac{\colA{\kappa}}{\colAB{m}}} \cdot
+      \frac{1}{(1-\frac{f^2}{f_0^2})^2 + \frac{f^2}{f_0^2Q^2}}
+    = \frac{4 k_BT}{\omega_0 Q \kappa}
+      \frac{1}{(1-\frac{f^2}{f_0^2})^2 + \frac{f^2}{f_0^2Q^2}} \;,
+  \label{eq:psd-f-x}
+\end{align}
+where $Q$ is the quality factor\citep{burnham03}
+\begin{equation}
+  Q \equiv \frac{\sqrt{\kappa m}}{\gamma}
+    = \sqrt{\frac{\kappa}{m}}\frac{m}{\gamma}
+    = \frac{\omega_0}{\beta}
+    = \frac{2\pi f_0}{2\pi\beta_f}
+    = \frac{f_0}{\beta_f} \;.
+  \label{eq:Q}
+\end{equation}
+%
+\nomenclature[sr ]{$Q$}{Quality factor of a damped harmonic
+  oscillator.  $Q\equiv \frac{\sqrt{\kappa m}}{\gamma}$
+  (\cref{eq:Q}).}
+
+% TODO: re-integrate the following
+
+% \begin{split}
+% \PSD_f(V_p, f) =
+% 2\pi\PSD(V_p,\omega)
+%     = \frac{2\pi G_{1p}}{(4\pi f_0^2-4\pi^2f^2)^2 + \beta^2 4\pi^2f^2}
+%     = \frac{2\pi G_{1p}}{16\pi^4(f_0^2-f^2)^2 + \beta^2 4\pi^2f^2} \\
+%     &= \frac{G_{1p}/8\pi^3}{(f_0^2-f^2)^2 + \frac{\beta^2 f^2}{4\pi^2}}
+%  \end{split} \\
+
+%    = \frac{\pi G_{1p} / (2\pi)^3}{2\beta/(2\pi) \omega_0^2/(2\pi)^2}
+%    = \frac{\pi G_{1p}}{2\beta\omega_0^2} = \avg{V_p(t)^2} % check!
+
+%where $f_0\equiv\omega_0/2\pi$, $\beta_f\equiv\beta/2\pi$, and
+%$G_{1f}\equiv G_{1p}/8\pi^3$.  Finally
+
+%From \cref{eq:Gone}, we expect $G_{1f}$ to be
+%\begin{equation}
+%  G_{1f} = \frac{G_{1p}}{8\pi^3}
+%    = \frac{\sigma_p^2 G_1}{8\pi^3}
+%    = \frac{\frac{2}{\pi m} \sigma_p^2 k_BT \beta}{8\pi^3}
+%    = \frac{\sigma_p^2 k_BT \beta}{4\pi^4 m} \;.
+%    \label{eq:Gone-f}
+% \end{equation}

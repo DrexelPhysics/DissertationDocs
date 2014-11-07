@@ -1,0 +1,37 @@
+Velocity clamp experiments have been carried out since the initial
+work by \citet{rief97a}, so I was somewhat surprised that there
+weren't already community-driven packages for carrying out and
+analyzing these
+experiments\citep{claerbout92,buckheit95,schwab00,vandewalle09}.  When
+I joined Prof.~Yang's lab, we were using experiment control software
+written in \citetalias{labview} and analysis software written in
+\citetalias{wavemetrics-igor}, both developed in-house.  The existing
+software was not designed to control sample temperature or for easy
+extension, so I proceeded to write my own control and analysis stack
+to add these capabilities.
+
+For those of you thinking, ``Why is he calling this thing a stack?'',
+software is rarely developed as a single monolithic program.  Instead,
+developers write software as a series of modular components, with each
+layer in the stack using lower level features from the layers below it
+to supply higher level features to the layers above it.  New
+high-level programs will contain logic for the new idea (perform
+velocity-clamp unfolding experiments) and leverage pre-existing
+packages for all the old ideas that you need to get the job done (open
+a file, Fourier transform an array, \ldots).  A well structured suite
+of software breaks up the task at hand into many sub-components, with
+a distinct package handling each component.
+
+\citet{whitehead11} introduces his claim about civilization and
+subconscious operations to motivate the utility of symbolism in
+subconcious reasoning.  By encapsulating already established ideas in
+a compact form, we can focus on the crux of an issue without being
+distracted by the peripheral boilerplate.
+
+In this chapter, I will discuss the earlier frameworks and abortive
+attempts that lead me towards my current architecture
+(\cref{sec:aio-frameworks,sec:pyafm:stack}).  I will also discuss some
+auxiliary packages I developed to support the main stack
+(\cref{sec:pyafm:auxiliary}).  I'll wrap up by comparing my stack with
+Prof.~Yang's earlier framework and summarizing lessons I've learned
+along the way (\cref{sec:pyafm:discussion,sec:pyafm:conclusions}).
