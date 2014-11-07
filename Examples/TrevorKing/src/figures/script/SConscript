@@ -1,0 +1,7 @@
+# Get the passed in environment.
+Import('env')
+
+pyfit = env.File('pyfit')
+
+# Pass back the modified environment.
+Return('env')

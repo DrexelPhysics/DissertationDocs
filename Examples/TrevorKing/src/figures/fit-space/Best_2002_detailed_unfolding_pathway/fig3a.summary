@@ -1,0 +1,62 @@
+Best
+====
+
+Fitting Best's figure 3a (good-fit region for fitting <F>(v) data).
+  k_u^0 = b exp(a x_u)
+with a = (-40.7215 ± 0.32)∙10⁹ m⁻¹
+and  b = (39.727 ± 4.029) s⁻¹
+
+The quite-good-fit region extends from 
+  x_u = 0.308 nm, k_u^0 = 1.41e-4 s⁻¹
+to
+  x_u = 0.372 nm, k_u^0 = 1.01e-5 s⁻¹
+
+King and comparison
+===================
+
+Comparing this to the fit valley for my 2009_sawsim figure
+  a = (-44.6235 ± 1.277)∙10⁹ m⁻¹
+  b = (25.4465 ± 4.305) s⁻¹
+we see that the slopes (a) are the same, and the intercepts (b) are
+slightly offset.  This means the orientation of the model valley
+dln(k_u0)/dx_u is independent of the particular data set in question,
+and instead is an inherent “feature” of our particular model.
+
+Analysis of valley minimum
+==========================
+
+If we stick to the "valley floor", extrapolating out another 0.08 nm
+in x_u from the King parameters, my generated histogram at
+  (x_u = 0.28 nm, k_u0 = 9.535∙10⁻⁵ s⁻¹)
+is much narrower (as expected from Gumbel) than the experimental
+distribution, although this might be due to a reasonable ammount of
+noise or drifty peak extraction spreading the experimental data.
+
+Gnuplot fit details for Best
+============================
+
+> f(x) = b*exp(a*x)
+> a = -40
+> b = 40
+> fit f(x) 'fig3a.data' using ($1*1e9):2 via a,b
+...
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.20387e-11
+rel. change during last iteration : -5.91348e-07
+
+degrees of freedom    (FIT_NDF)                        : 14
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 9.27313e-07
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.5991e-13
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -40.7215         +/- 0.32         (0.7858%)
+b               = 39.727           +/- 4.029        (10.14%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.999  1.000 

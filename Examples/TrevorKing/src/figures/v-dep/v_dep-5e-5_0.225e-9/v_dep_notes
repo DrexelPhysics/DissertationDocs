@@ -1,0 +1,3 @@
+Date Wed Oct 7 16:03:07 EDT 2009
+Run$ sawsim -T300 -s cantilever,hooke,0.050 -N1 -s 'folded,piston,{3.7e-9}' -N8 -s 'unfolded,wlc,1,{0.40e-9,28.1e-9}' -k 'folded,unfolded,bell,{5e-5,0.225e-9}' -q folded -v $V
+for V in 1e-9 1e-8 1e-7 1e-6 1e-5

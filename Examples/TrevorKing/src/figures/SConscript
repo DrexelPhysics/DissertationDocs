@@ -1,0 +1,13 @@
+from site_cons.site_init import include_child_SConscripts
+from site_cons.site_tools.asymptote import asyfigs
+
+# Get the passed in environment.
+Import('env')
+
+if Execute(Mkdir('scratch')):
+	 Exit(1)  # failed to make the Asymptote scratch directory
+env = include_child_SConscripts(env, SConscript, first=['asy', 'script'])
+env.Alias('asymptote-figures', asyfigs)
+
+# Pass back the modified environment.
+Return('env')

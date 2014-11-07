@@ -1,0 +1,66 @@
+\section{Mechanical unfolding experiments}
+\label{sec:procedure}
+
+% AFM unfolding procedure
+In a mechanical unfolding experiment, a protein polymer is tethered
+between two surfaces: a flat substrate and an AFM tip.  The polymer is
+stretched by increasing the separation between the two surfaces
+(\cref{fig:unfolding-schematic}).  The most common mode is the
+constant speed experiment in which the substrate surface is moved away
+from the tip at a uniform rate.  The tethering surfaces, \ie, the AFM
+tip and the substrate, have much larger radii of curvature than the
+dimensions of single domain globular proteins that are normally used
+for folding studies.  This causes difficulties in manipulating
+individual protein molecules because nonspecific interactions between
+the AFM tip and the substrate may be stronger than the forces required
+to unfold the protein when the surfaces are a few nanometers apart.
+To circumvent these difficulties, globular protein molecules are
+linked into polymers, which are then used in the AFM
+studies\citep{carrion-vazquez99a,chyan04,carrion-vazquez03}.  When
+such a polymer is pulled from its ends, each protein molecule feels
+the externally applied force, which increases the probability of
+unfolding by reducing the free energy barrier between the native and
+unfolded states.  The unfolding of one molecule in the polymer causes
+a sudden lengthening of the polymer chain, which reduces the force on
+each protein molecule and prevents another unfolding event from
+occurring immediately.  The force versus extension relationship, or
+\emph{force curve}, shows a typical sawtooth pattern
+(\cref{fig:expt-sawtooth}), where each peak corresponds to the
+unfolding of a single protein domain in the polymer.  Therefore, the
+individual unfolding events are separated from each other in space and
+time, allowing single molecule resolution despite the use of
+multi-domain test proteins.
+%
+\nomenclature[text ]{force curve}{Or force--distance curve.
+  Cantilever-force versus piezo extension data aquired during a force
+  spectroscopy experiment (\cref{fig:expt-sawtooth}).}
+
+\begin{figure}
+  \begin{center}
+  \subfloat[][]{\asyinclude{figures/schematic/unfolding}%
+    \label{fig:unfolding-schematic}}
+  \hspace{.25in}%
+  \subfloat[][]{\asyinclude{figures/expt-sawtooth/expt-sawtooth}%
+    \label{fig:expt-sawtooth}}
+  % Possibly use carrion-vazquez00 figure 2 to show scale of afm tip
+  \caption{\protect\subref{fig:unfolding-schematic} Schematic of the
+    experimental setup for mechanical unfolding of proteins using an
+    AFM (not to scale).  An experiment starts with the tip in contact
+    with the substrate surface, which is then moved away from the tip
+    at a constant speed.  $x_t$ is the distance traveled by the
+    substrate, $x_c$ is the cantilever deflection, $x_u$ is the
+    extension of the unfolded polymer, and $x_f=x_{f1}+x_{f2}$ is the
+    extension of the folded polymer.
+    \protect\subref{fig:expt-sawtooth} An experimental force curve
+    from stretching a ubiquitin polymer (\tikzline{red}) with the
+    rising parts of the peaks fitted to the WLC\index{WLC} model
+    (\tikzline{blue}, \cref{sec:sawsim:tension:wlc})\citep{chyan04}.
+    The pulling speed used was $1\U{$\mu$m/s}$.  The irregular
+    features at the beginning of the curve are due to nonspecific
+    interactions between the tip and the substrate surface, and the
+    last high force peak is caused by the detachment of the polymer
+    from the tip or the substrate surface.  Note that the abscissa is
+    the extension of the protein chain
+    $x_t-x_c$.\label{fig:procedure}}
+  \end{center}
+\end{figure}

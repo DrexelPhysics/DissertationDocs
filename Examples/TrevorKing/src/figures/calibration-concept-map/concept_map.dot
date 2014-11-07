@@ -1,0 +1,60 @@
+graph message_handler {
+
+  epsilon=0.01;
+  nodesep=0.1; /* inches */
+
+  edge [
+//    arrowhead=normal,
+//    dir=both,
+//    len=1
+	];
+
+  /* concept nodes */
+  node [
+    shape=box,
+//    fontsize=12,
+    color=black,
+    fillcolor=white,
+    style="rounded,filled"
+	];
+
+  k_spring [label="Spring constant"];
+  equipartition [label="Equipartition theorem"];
+
+  temperature [label="Temperature"];
+
+  photo_sense [label="Photodiode sensitivity"];
+
+  voltage_var_spring [label="Voltage variance\ndue to the spring"];
+  psd_fit [label="Fit power spectral density"];
+  psd_measured [label="Measured power spectral density"];
+
+
+  /* data nodes */
+  node [
+    fillcolor="#ffd83d", /* drexel yellow */
+	];
+
+  thermocouple [label="Thermocouple voltage"];
+  contact_slope [label="Surface contact"];
+  voltage_noise [label="Voltage noise"];
+
+  /* Deeper calibration nodes */
+  node [
+    fillcolor="#ff9999", /* reddish */
+	];
+  zp_calib [label="Z-piezo calibration"];
+  volt_calib [label="Voltmeter calibration"];
+  thermocouple_calib [label="Thermocouple calibration"];
+
+  k_spring -- equipartition;
+
+  equipartition -- temperature -- thermocouple;
+  equipartition -- photo_sense -- contact_slope;
+  equipartition -- voltage_var_spring -- psd_fit -- psd_measured -- voltage_noise;
+
+  temperature -- thermocouple_calib;
+  photo_sense -- zp_calib;
+  psd_measured -- volt_calib;
+
+}

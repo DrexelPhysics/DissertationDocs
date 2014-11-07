@@ -1,0 +1,14 @@
+from site_cons.site_init import link_wtk_graph
+
+FIGURES = ['contour']
+
+# Get the passed in environment.
+Import('env')
+
+wtk_graph = link_wtk_graph(env)
+
+for fig in FIGURES:
+    env.Asymptote(['%s.asy' % fig, wtk_graph])
+
+# Pass back the modified environment.
+Return('env')

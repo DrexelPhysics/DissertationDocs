@@ -1,0 +1,218 @@
+\section{Auxiliary packages}
+\label{sec:pyafm:auxiliary}
+
+The previous section covered the core of the experiment stack
+(\cref{sec:pyafm:stack}), but skipped over some of the more peripheral
+packages.
+
+\subsection{h5config}
+\label{sec:pyafm:h5config}
+
+The \hFconfig\ package makes it easy to save and load configuration
+classes from disk.  After populating base configuration classes with
+parameters (\cref{fig:h5config}), \hFconfig\ automatically generates
+\citetalias{hdf5} and \citetalias{yaml} backends for saving and
+loading that class.
+
+\begin{figure}
+  \begin{center}
+\begin{minted}[mathescape]{python}
+import h5config.config as _config
+
+class AxisConfig (_config.Config):
+    "Configure a single piezo axis"
+    settings = [
+        _config.FloatSetting(
+            name='gain',
+            help=(
+                'Volts applied at piezo per volt output from the DAQ card '
+                '(e.g. if your DAQ output is amplified before driving the '
+                'piezo),')),
+        _config.FloatSetting(
+            name='sensitivity',
+            help='Meters of piezo deflection per volt applied to the piezo.'),
+        # $\ldots$
+        _config.ConfigSetting(
+            name='channel',
+            help='Configure the underlying DAC channel.',
+            config_class=OutputChannelConfig,
+            default=None),
+        # $\ldots$
+        ]
+\end{minted}
+    \caption{Portions of the configuration class for a single piezo
+      axis (from \pypiezo, \cref{sec:pyafm:pypiezo}).  The more
+      generic analog output channel configuration is nested under the
+      \imint{python}|channel| setting.\label{fig:h5config}}
+  \end{center}
+\end{figure}
+
+Basic configuration types include booleans, integers, floating point
+numbers, enumerated choices, and freeform text.  There is also support
+for lists of these basic types (e.g.~lists of integers).  The key
+feature is nesting configuration classes.  This means that your higher
+level tools can have their own configuration settings and also include
+the configuration settings for their lower level components.  For
+example, the piezo axis configuration given in \cref{fig:h5config}
+contains configuration settings specific to piezo axes, and it also
+contains a reference to the configuration settings for a generic
+analog output channel.  The piezo axis code doesn't need to know what
+the analog output channel configuration settings are, those are
+defined somewhere else.
+
+The nesting continues all the way up the stack, to the
+\unfoldprotein\ configuration.  This means that a single file
+(\imint{console}|~/.config/unfold_protein.yaml|) contains every
+configurable setting required for the whole experiment in an
+easy-to-edit text format.  Adding additional configuration settings at
+any level of the experiment stack is just a matter of adjusting a
+single \imint{python}|h5config.config.Config| subclass the
+corresponding entry in the configuration file.  There is no need to
+adjust the higher level code, the new setting is passed down the stack
+to its point of use automatically.
+
+Besides making it easy to configure your experiment, \hFconfig\ also
+makes it easy to save the configuration alongside your data.  The
+section of \unfoldprotein\ that writes the whole configuration stack
+into the per-pull HDF5 file is only four lines long.  This makes
+post-processing much easier, because almost every setting needed to
+analyze the data is already stored in the data file (the only missing
+values are those that you did not need during the experiment control
+phase).
+
+\subsection{stepper}
+\label{sec:pyafm:stepper}
+
+Because of thermal drift and mechanical instability, the distance
+between the tip and the surface changes significantly over time.  When
+the distance change exceeds the range of the piezo scanner, the
+stepper motor must be engaged to reposition the AFM tip relative to
+the sample.  The earlier LabVIEW software (\cref{sec:labview}) lacked
+the ability to control the motor on its own, so it would pause roughly
+every half hour and prompt the operator to make the necessary manual
+adjustments.  Automatic motor control allows the system to run longer
+without interrupts, facilitating the collection of large data sets.
+
+The \stepper\ package provides Python control of stepper
+motors\cite{jones95}.  The package is mostly concerned with the
+maintenance of internal motor state:
+
+\begin{description}
+  \item[position] is a half-step counter that records the current
+    motor position.
+  \item[full step] selects full or half stepping.
+  \item[logic] selects active high or active low operation.
+  \item[delay] sets the time delay between steps in seconds, in case
+    the motor response is slower than the digital output driver.
+  \item[step size] approximates the step size in meters.
+  \item[backlash] estimates the drive chain backlash in half-steps.
+\end{description}
+
+Actualizing the motor control signal is left up to the caller, in this
+case \pyafm.
+
+We verified the stability and reproducibility of the microscopic
+movement of the motor by making several approach-retreat cycles from
+the surface of $\sim$70 steps which resulted in the data displayed in
+\cref{fig:stepper:backlash}.  We also measured the distance the
+surface moved with every step by determining the change in deflection
+voltage as a function of peizo position as we stepped the AFM tip
+closer the the surface.  Our stepsize data is displayed in
+\cref{fig:stepper:step-size}.
+
+The motor is very consistent when approaching the surface, which
+indicates that our control software is operating correctly.  However,
+the motor exhibits some hysteretic behavior on a scale of $\sim$46
+steps, which is almost certainly due to \emph{backlash}, or slack in
+the motor--surface coupling machinery.  The first 46 steps in a new
+direction take the slack out of the coupling, and further steps move
+the tip relative to the surface.  The problem can be avoided entirely
+by simply replacing ``backwards motion by one step'' with ``backwards
+motion by 60 steps and forward motion by 59 steps''.
+
+One issue raised by backlash is that it might be the source of some of
+our surface drift, as the drive-chain relaxes towards some central
+value and pulls the surface with it.  By oscillating into our eventual
+position, we could perhaps settle the system at the beginning,
+reducing the need for adjustments later on.  While this is not a
+problem for the current unfolding experiments, it could be an issue
+for longer unfolding-refolding experiments.
+
+\begin{figure}
+  \begin{center}
+    \subfloat[][]{\label{fig:stepper:backlash}
+      \asyinclude{figures/stepper/backlash}}
+    \hspace{\stretch{1}}
+    \subfloat[][]{\label{fig:stepper:step-size}
+      \asyinclude{figures/stepper/step-size}}
+    \caption{\protect\subref{fig:stepper:backlash} Stepper motor
+      reproducibility, stability, and backlash.  The data are from a
+      single continuous counterclockwise trace of 14 approach-retreat
+      cycles.  The jump from about $(18, -6)$ to $(17, -0.4)$ is the
+      snap-off effect, where short-range attractive interactions
+      between the tip and the sample---due to surface wetting in
+      air---require the tip to be actively pulled off surface.  Signal
+      noise is comparable to that expected by drift.
+      \protect\subref{fig:stepper:step-size} Motor step size
+      calibration.  The stepper gradually stepped closer to the
+      surface, feeling forward with the piezo after each step.
+      Successive motor positions yield traces $a$, $b$, $c$, $d$, and
+      $e$.  As the motor moves the sample closer, less piezo movement
+      is required to approach to same deflection level.  The average
+      spacing between the traces is roughly $170\U{nm}$.  Traces $c$
+      and $d$ have regions of negative deflection because the tip no
+      longer retracts far enough from the surface to break free of the
+      snap-off effect.  There is no backlash because the data were
+      taken during a single approach.\label{fig:stepper}}
+  \end{center}
+\end{figure}
+
+\subsection{pypid}
+\label{sec:pyafm:pypid}
+
+The final component of the experiment control stack is \pypid, which
+uses \citetalias{pymodbus} to communicate with a Melcor Series MTCA
+Thermoelectric Cooler Controller\citep{melcor} over a serial line.
+The controller monitors the fluid cell temperature with a
+thermocouple, and reading temperatures from the controller is fairly
+straightforward (\cref{fig:unfold-protein:unfolder}).  Temperature
+control is via a Peltier device mounted underneath the sample surface
+(\cref{fig:peltier}).
+
+\begin{figure}
+  \begin{center}
+    \asyinclude{figures/schematic/peltier}
+    \caption{A Peltier functions by applying a voltage to regions of
+      p- and n-type semiconductor in series.  Conduction in n-type
+      semiconductors is mainly through thermally excited electrons and
+      in p-type semiconductors is mainly through thermally excited
+      holes.  Applying a positive voltage as shown in this figure
+      cools the sample by constantly pumping hot conductors in both
+      semiconductors towards heat sink, which radiates the heat into
+      the environment.  Reversing the applied voltage heats the
+      surface.\label{fig:peltier}}
+  \end{center}
+\end{figure}
+
+The controller tries to keep the measured temperature at the setpoint
+temperature via a modified proportional-integral-derivative (PID)
+feedback algorithm.  PID systems have been around for a
+while\citep{ziegler42}, but finding appropriate feedback terms for
+sensitive systems is not trivial.  There are a number of tuning
+procedures which characterize the system by evaluating its response
+under simpler driving conditions.  The \pypid\ package implements
+Ziegler--Nichols' step response\citep{ziegler42}, bang-bang response,
+and ultimate cycle response\citep{ziegler42} tuning rules, as well as
+Cohen--Coon's\citep{cohen53} and Wang--Juang--Chan's\citep{wang95}
+step response tuning rules\citep{astrom93}.
+%
+\nomenclature[text ]{PID}{Proportional-integral-derivative feedback.
+  For a process value $p$, setpoint $p_0$, and manipulated variable
+  $m$, the standard PID algorithm is
+  \begin{align}
+    m(t) &= K_p e(t) + K_i \integral{0}{t}{\tau}{e(\tau)}
+            + K_d \deriv{t}{e(t)} \\
+    e(t) &= p_0 - p \;,
+  \end{align}
+  where $e$ is the error function, $K_p$ is the proportional gain,
+  $K_i$ is the integral gain, and $K_d$ is the derivative gain.}

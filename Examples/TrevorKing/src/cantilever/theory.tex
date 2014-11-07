@@ -1,0 +1,80 @@
+\section{Theoretical background}
+\label{sec:cantilever:theory}
+
+Understanding a protein's free energy landscape is important to
+effectively model protein folding and unfolding behavior.  Force
+spectroscopy has been a useful technique for exploring these free
+energy landscapes and those of the related field of ligand-receptor
+kinetics.  In force spectroscopy with the atomic force microscope
+(AFM), it is common practice to use spring constants in the range of
+$50\U{pN/nm}$, but the effect of the cantilever itself on the free
+energy landscape is generally ignored.  However, in AFM
+biotin-streptavidin unbinding experiments, \citet{walton08}
+demonstrated a surprisingly strong effect on unbinding force due to
+cantilever stiffness.  The unbinding force approximately doubled due
+to a change from a $35\U{pN/nm}$ cantilever to a $58\U{pN/nm}$
+cantilever.  Alarmed by the magnitude of the shift, we repeated their
+experiment on octomeric I27 to determine the magnitude for our
+mechanical protein unfolding experiments.
+
+\begin{figure}
+  \asyinclude{figures/schematic/landscape-cant}
+  \caption{Energy landscape of a protein being stretched by an
+    external force.  For a discussion of methods for calculating
+    unfolding rates from such a landscape, see
+    \cref{sec:sawsim:rate}.\label{fig:landscape:cantilever}}
+\end{figure}
+
+The presence of attached linkers and cantilevers alters the free
+energy landscape.  Tension in the linkers favors domain unfolding, but
+that tension is not necessarily independent of the unfolding reaction
+coordinate.  For sufficiently stiff cantilevers and linkers, even the
+small extension of the domain as it shifts from its bound to
+transition state noticeably reduces the effective tension.  Assuming
+the bound and transition state extensions are relatively independent
+of the applied tension, the energy of the transition state will be
+\begin{align*}
+  E_b(f) &= E_b(f=0) - \int_0^{\Delta x} f(x) dx \\
+         &= E_b(f=0) - \int_0^{\Delta x} [f(x=0) - \kappa x] dx \\
+         &= E_b(f=0) - f(x=0) \Delta x + \frac{1}{2}\kappa \Delta x^2 \;,
+\end{align*}
+where $\kappa$ is the effective linker spring constant for that
+tension.  The Bell-model unfolding rate is thus
+\begin{align*}
+  k(f) &= k_0 \exp{\frac{f\Delta x - \frac{1}{2}\kappa \Delta x^2}{k_B T}} \;,
+\end{align*}
+and stiffer linkers will increase the mean unfolding force.
+
+Unfolded I27 domains can be well-modeled as wormlike chains (WLCs,
+\cref{sec:sawsim:tension:wlc})\citep{carrion-vazquez99b}, where $p
+\approx 4\U{\AA}$ is the persistence length, and $L \approx 28\U{nm}$
+is the contour length of the unfolded domain.  Obviously effective
+stiffness of an unfolded I27 domain is highly dependent on the
+unfolding force, and for tensions $\sim 280\U{pN}$ is $\sim
+190\U{pN/nm}$.  This is within a factor of four of common cantilever
+spring constants, so cantilever stiffness drives the effective spring
+constant for the first four domains, after which point I27 stiffness
+takes the lead.
+
+\begin{figure}
+  \begin{tikzpicture}
+    % Inspired by Florian Hollandt's RNA codons
+    %   http://www.texample.net/tikz/examples/rna-codons-table/
+    \tikzstyle{every node}=[inner sep=1.7pt,anchor=center]
+    \tikzstyle{doublebond}=[double distance=3pt]
+    \node (Ca) at (0,0) {};
+    \node (Cb) at ($(Ca)+(0:1)$)  {};
+    \node (Na) at ($(Cb)+(60:1)$) {N};
+    \node (Cc) at ($(Na)+(0:1)$)  {C};
+    \node (Nb) at ($(Cc)+(0:1)$)  {N};
+    \node (Cd) at ($(Nb)+(60:1)$) {};
+    \node (Ce) at ($(Cd)+(0:1)$)  {};
+    \node (Cf) at ($(Ce)+(60:1)$) {};
+    \draw (Ca.center) -- (Cb.center) -- (Na);
+    \draw[doublebond] (Na) -- (Cc) -- (Nb);
+    \draw (Nb) -- (Cd.center) -- (Ce.center) -- (Cf.center);
+  \end{tikzpicture}%
+  \caption{1-Ethyl-3-(3-dimethylaminopropyl)carbodiimide (EDC), a
+    short, stiff linker which has been used to bind proteins to gold
+    surfaces\cite{lee05}.\label{fig:EDC}}
+\end{figure}

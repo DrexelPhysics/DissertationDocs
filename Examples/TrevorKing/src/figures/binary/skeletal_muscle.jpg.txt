@@ -1,0 +1,39 @@
+Adapted from http://en.wikipedia.org/wiki/File:Skeletal_muscle.jpg
+
+Bone/Muscle group picture.
+  Source:
+    http://training.seer.cancer.gov/module_anatomy/images/illu_muscle_structure.jpg
+  from
+    http://training.seer.cancer.gov/anatomy/muscular/structure.html
+  License: Public domain
+
+A muscle fiber.
+  Created by Raul654 using Rama's myofibril drawing for use in this picture
+  License: GFDL
+
+A myofibril. Drawn by Rama and modified by Raul654
+  License: GFDL
+
+A single sarcomere. Drawn by Rama and modified by Raul654
+  License: GFDL
+
+While the fragments were originally created under the GFDL license,
+Wikipedia relicensed the fragements under CC-BY-SA 3.0 as allowed by
+the GFDL 1.3.  Therefore:
+
+This file is licensed under the Creative Commons Attribution-Share
+Alike 3.0 Unported license.
+  You are free:
+    to share – to copy, distribute and transmit the work
+    to remix – to adapt the work
+  Under the following conditions:
+    attribution – You must attribute the work in the manner specified
+      by the author or licensor (but not in any way that suggests that
+      they endorse you or your use of the work).
+    share alike – If you alter, transform, or build upon this work,
+      you may distribute the resulting work only under the same or
+      similar license to this one.
+
+I (W. Trevor King) reorganized and colored the pieces so they fit more
+clearly on a smaller page, and my thesis is CC-BY-SA 3.0, so no
+problems there.

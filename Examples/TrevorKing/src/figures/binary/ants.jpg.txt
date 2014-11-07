@@ -1,0 +1,13 @@
+This is a high-res version of Figure 1a from mlot11.
+
+Downloaded from
+
+  http://antlab.gatech.edu/antlab/The_Ant_Raft_files/the_ant_raft1.pdf
+
+Extracted with:
+
+  $ pdfimages the_ant_raft1.pdf img
+
+Converted to JPEG with:
+
+  $ convert img-000.ppm ants.jpg

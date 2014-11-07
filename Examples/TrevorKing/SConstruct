@@ -1,0 +1,8 @@
+#Help("""...""")
+
+VariantDir('build', 'src')
+thesis_build = SConscript('build/SConscript')
+Clean(thesis_build, 'build')
+thesis_pdf = Command('thesis.pdf', thesis_build, Copy("$TARGET", "$SOURCE"))
+Alias('pdf', thesis_pdf)
+Default(thesis_pdf)

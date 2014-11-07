@@ -1,0 +1,16 @@
+from site_cons.site_init import link_wtk_graph
+
+
+FIGURES = ['sim-sawtooth']
+
+# Get the passed in environment.
+Import('env')
+
+wtk_graph = link_wtk_graph(env)
+
+for fig in FIGURES:
+    asyfile = '%s.asy' % fig  # static .asy file
+    env.Asymptote([asyfile, wtk_graph])
+
+# Pass back the modified environment.
+Return('env')

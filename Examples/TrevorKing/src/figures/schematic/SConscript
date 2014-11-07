@@ -1,0 +1,21 @@
+from site_cons.site_init import link_wtk_graph
+
+FIGURES = ['unfolding', 'afm', 'kramers-integrand', 'landscape',
+    'landscape-bell', 'landscape-cant', 'monte-carlo', 'piezo',
+    'wlc-extension', 'wlc-model', 'fjc-extension', 'fjc-model']
+
+# Get the passed in environment.
+Import('env')
+
+wtk_graph = link_wtk_graph(env)
+
+for fig in FIGURES:
+    deps = [wtk_graph]
+    if fig in ['unfolding', 'afm']:
+        deps.append('base_afm.asy')
+    if fig in ['unfolding', 'wlc-model', 'fjc-model']:
+        deps.append('wiggle')
+    env.Asymptote(['%s.asy' % fig] + deps)
+
+# Pass back the modified environment.
+Return('env')

@@ -1,0 +1,8 @@
+# Get the passed in environment.
+Import('env')
+
+asy = env.Alias('asytools', ['wtk_graph.asy'])
+env.Depends(asy, Alias('latex-base'))
+
+# Pass back the modified environment.
+Return('env')

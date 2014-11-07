@@ -1,0 +1,28 @@
+Setup with DI water on an old gold coverslip with a new cantilever
+(Asylum Research; Olympus TR400PSA; lot 860135, date 2009-01-20, chip
+32/35).
+
+The deflection signal is jumpy.  After flushing in the water, I only
+tweaked the photodiode position twice, but there are a number of
+discrete jumps in the slow-bend data.
+
+
+First calibration run without the plastic bell.  It may be noisy
+because there are a couple of compressors running in the room, and
+I've left the microscope TV on (but with the microcope light off).
+
+First calibration had trouble finding the surface.  Repeat.
+
+Third calibration with the TV off.
+
+Fourth calibration with TV off and the plastic bell, but with the
+syringe on the short hose, the bell doesn't seal very well.
+
+Run some pulls with my unfold.py.
+
+Quit and run slow_bend.  After ~20 samples, pull the thermocouple out
+of the cell into the air.  After another ~20 samples, wipe dry with a
+Kimwipe.
+
+Switch to Marisa's setup (using my DAQ card and not touching the
+multimode).

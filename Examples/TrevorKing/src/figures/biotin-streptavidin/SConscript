@@ -1,0 +1,8 @@
+# Get the passed in environment.
+Import('env')
+
+for pml in Glob('*.pml'):
+    env.Pymol(pml)
+
+# Pass back the modified environment.
+Return('env')

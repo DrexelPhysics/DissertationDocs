@@ -1,0 +1,23 @@
+\section{Conclusions}
+\label{sec:hooke:conclusions}
+
+My \Hooke\ work builds on previous open source development from other
+groups to provide a solid, extensible framework for processing raw
+force spectroscopy data.  With this framework, it's easy to add
+analysis plugins to support new approaches to data analysis.  It's
+also easy to add drivers to support new data file formats.
+
+In it's current state, \Hooke\ is used by a handful of people to
+analyze single molecule velocity clamp unfolding experiments.  Even
+with Hooke helping out, the process is not automatic.  Because of the
+scarcity of clean curves, it's hard to set agressive margins for
+automatically filtering clean unfolding sawteeth from curves that
+contain other interactions.  Manually identifying clean curves from
+the rest is time consuming and subjective.  By writing software to
+objectively identify unfolding events, we can improve the quality of
+the resulting science while at the same time increasing throughput.
+Real world data is messy, so developing objective filtering procedures
+is difficult.  With \Hooke's standardized framework and broad support
+for existing analysis procedures, it will be easy to apply new
+objective filtering procedures to old data, and see how well the new
+procedures match up with their partially automated predecessors.

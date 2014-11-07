@@ -1,0 +1,26 @@
+from site_cons.site_init import link_wtk_graph
+
+
+FIGURES = ['kappa-sawteeth']
+
+# Get the passed in environment.
+Import('env')
+
+# we generate include files on the fly in kappa-sawteeth.asy, my
+# default Asymptote scanner won't work.  As a fallback, we set the
+# dependencies explicitly.
+kappa_sawteeth_data = env.Glob("k-*.dat");
+
+wtk_graph = link_wtk_graph(env)
+
+for fig in FIGURES:
+    asyfile = '%s.asy' % fig  # static .asy file
+    pyfig = fig.replace('-', '_')
+    data = '%s_data' % (pyfig)
+    asydata = []
+    if data in globals():     # generated data dependencies
+        asydata = globals()[data]
+    env.Asymptote([asyfile, wtk_graph] + asydata)
+
+# Pass back the modified environment.
+Return('env')

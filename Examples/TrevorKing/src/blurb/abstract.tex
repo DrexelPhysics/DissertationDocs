@@ -1,0 +1,35 @@
+\begin{abstract}
+Single molecule force spectroscopy (SMFS) experiments provide an
+experimental benchmark for testing simulated and theoretical
+predictions of protein unfolding behavior.  Despite it use since
+1997\citep{rief97a}, the labs currently engaged in SMFS use in-house
+software and procedures for critical tasks such as cantilever
+calibration and Monte Carlo unfolding simulation.  Besides wasting
+developer time producing and maintaining redundant implementations,
+the lack of transparency makes it more difficult to share data and
+techniques between labs, which slows progress.  In some cases it can
+also lead to ambiguity as to which of several similar approaches,
+correction factors, etc.\ were used in a particular paper.
+%
+\nomenclature[text ]{SMFS}{Single molecule force spectroscopy.}
+
+In this thesis, I introduce an SMFS sofware suite for cantilever
+calibration (\calibcant), experiment control (\unfoldprotein),
+analysis (\Hooke), and postprocessing (\sawsim) in the context of
+velocity clamp unfolding of I27 octomers in buffers with varying
+concentrations of
+\CaCl\citep{calibcant,unfold-protein,sandal09,king10}.  All of the
+tools are licensed under open source licenses, which allows SMFS
+researchers to centralize future development.  Where possible, care
+has been taken to keep these packages operating system (OS) agnostic.
+The experiment logic in \unfoldprotein\ and \calibcant\ is still
+nominally OS agnostic, but those packages depend on more fundamental
+packages that control the physical hardware in use\citep{pyafm}.  At
+the bottom of the physical-interface stack are the \Comedi\ drivers
+from the Linux kernel\citep{comedi}.  Users running other operating
+systems should be able to swap in analogous low level
+physical-interface packages if Linux is not an option.
+%
+\nomenclature[text ]{OS}{Operating system.}
+
+\end{abstract}

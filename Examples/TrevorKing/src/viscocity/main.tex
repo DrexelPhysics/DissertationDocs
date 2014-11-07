@@ -1,0 +1,81 @@
+\chapter{Hydrodynamic effects in fast AFM single-molecule force measurements}
+\label{sec:viscocity}
+
+\begin{center}
+{\Large M\"uller notes} \\
+\end{center}
+
+We had some trouble with the notation in \citet{janovjak05}, so I'll
+try and clear some things up\ldots
+
+\begin{center}
+\begin{tabular}{r|l|l}
+ M\"uller \Bstrut & Trevor & Meaning \\
+ \hline
+ $z_{surface}$ \Tstrut & $z_{surface}$ & Distance from the surface to the equilibrium cantilever position (increases on pulling) \\
+ $z_{cantilever}$ & $z_{cantilever}$ & Cantilever deflection from its equilibrium position (downward deflection positive) \\
+ $h$ & $h$ & $h = z_{surface} - z_{cantilever}$ the distance between the tip and surface \\
+ $v_{tip}$ & $v_{tip,surface}$ & $v_{tip,surface} = dh/dt$, tip velocity relative to the surface \\
+  & $v_{eq,surface}$ & $v_{eq,surface} = dz_{surface}/dt$, pulling speed \\
+  & $v_{tip,eq}$ & $v_{tip,eq} = dz_{cantilever}/dt$, tip velocity relative to its equilibrium position \\
+ $F_{measured}$ & $F_{measured}$ & Measured force deflecting the cantilever \\
+ $F_{net}$ & $F_{protein}$ & Force applied to stretch the protein \\
+ $F_d$ & $F_d$ & Drag force acting on the cantilever \\
+ $\Delta F$ & $F_{d:tip,eq}$ & Drag force due to only to $v_{tip,eq}$ \\
+  & $F_{d:eq,surface}$ & Drag force due to only to $v_{eq,surface}$, the drag on an untethered cantilever \\
+  & $F_{meas,zeroed}$ & $ F_{meas,zeroed} = F_{measured} - F_{d:eq,surface}$, defined for zero force in the detached region
+ \end{tabular}
+\end{center}
+
+M\"uller equations:
+\begin{align}
+ F_d &= \frac{6 \pi \eta a_{eff}^2}{h + d_{eff}} \cdot v_{tip} \label{mul_Fd} \\
+ h &= z_{surface} - z_{cantilever} \\
+ v_{tip} &= \frac{dh}{dt} \\
+ \Delta F &= F_d(v,h) - F_d(v_{tip}, h) \label{mul_delF} \\
+ F_{net} &= F_{measured} + \Delta F \label{mul_Fnet}
+\end{align}
+
+Trevor derivations: \\
+For \cref{mul_delF}, we assume that all the fluid in the cell moves with the surface
+ (i.e., fluid flow does not depend on height above the surface).
+So the drag force is proportional to the speed of the tip relative to the surface.
+\begin{equation}
+ F_d = D(h) v_{tip,surface}
+\end{equation}
+Where $D(h)$ is some constant that can depend on $h$ (like $6 \pi \eta a_{eff}^2 / (h + d_{eff})$).
+This is \xref{janovjak05}{equation}{mul\_Fd??}.
+Substituting in $v_{tip,surface} = v_{eq,surface} - v_{tip,eq}$ we have
+\begin{align}
+ F_d &= D(h) v_{eq,surface} - D(h)v_{tip,eq} = F_{d:eq,surface} - F_{d:tip,eq} \\
+ F_{d:tip, eq} &= F_{d:eq,surface} - F_d
+\end{align}
+This is \xref{janovjak05}{equation}{mul\_delF??}.
+The measured force deflecting the cantilever is then
+\begin{align}
+ F_{measured} &= F_{protein} + F_d \\
+ F_{protein} &= F_{measured} - F_d = F_{measured} - (F_{d:eq,surface} - F_{d:tip,eq}) \\
+  &= F_{meas,zeroed}' + F_{d:tip,eq} = F_{meas,zeroed}' + D(h)v_{tip,eq}
+\end{align}
+This is \xref{janovjak05}{equation}{mul\_Fnet??}.
+
+The treatment assumes the drag force on a detached cantilever doesn't depend on distance (see dashed line in \xref{janovjak05}{figure}{4b,c}), which doesn't make sense because
+\begin{equation}
+ F_{d:eq,surface} = D(h)v_{eq,surface}
+\end{equation}
+And $D(h)$ depends on $h$.  Therefore, this treatment uses $F_{meas,zeroed}'$, not $F_{meas,zeroed}$, where
+\begin{equation}
+  F_{meas,zeroed}' = F_{measured} - F_{d:eq,surface,h\approx300nm}
+   = F_{meas,zeroed} + [D(h) - D(300nm)]v_{eq,surface}
+\end{equation}
+What can we do about this?
+
+The correction from $F_{meas,zeroed}'$ (solid line in \xref{janovjak05}{figure}{3a}) to $F_{protein}$ (dashed line) comes from adding $F_{d:tip,eq}$, which is why $F_{protein} = F_{meas,zeroed}'$ when
+\begin{align}
+ 0 = F_{d:tip,eq} \propto v_{tip,eq} = \frac{dz_{cantilever}}{dt} \propto \frac{dF_{meas,zeroed}}{dt}, \\ 
+\end{align}
+why $F_{protein} < F_{meas,zeroed}'$ when the cantilever is rebounding ($v_{tip,eq} < 0$), and
+why $F_{protein} > F_{meas,zeroed}'$ when the cantilever is loading the protein ($v_{tip,eq} > 0$).
+
+This last ($F_{protein} > F_{meas,zeroed}'$ on loading) is why the raw
+measurement \emph{underestimates} the unfolding force.

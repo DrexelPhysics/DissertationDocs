@@ -1,0 +1,106 @@
+% Why simulations?  And why are we leading with them?
+Unfolding proteins by pulling on them with an AFM yields a series of
+force curves (\cref{fig:expt-sawtooth}).  How do we get from the
+unfolding curves to a deeper understanding of the unfolding physics?
+In this chapter, I present my \sawsim\ simulator, which performs
+discrete-state unfolding simulations using theoretical models of
+protein unfolding.  By finding the models and parameters that best
+reproduce the experimental data, we can find unforced unfolding rates
+and other unfolded polymer distances that can be cross-checked in
+chemical unfolding experiments and used to validate more detailed
+molecular dynamics simulations.  The \sawsim\ simulations discussed
+here are carried out after the unfolding experiments
+(\cref{sec:pyafm}), cantilever calibration (\cref{sec:calibcant}), and
+post-processing (\cref{sec:hooke}), but I discuss \sawsim\ first
+because it provides the cleanest description of the underlying
+physical processes.  After we cover the theory here, we will be better
+prepared for the realistic complications discussed in the following
+chapters.
+
+% AFM unfolding analysis, what we'll do.
+Much theoretical and computational work has been done in order to
+extract information about the structural, kinetic, and energetic
+properties of the protein molecules from the experimental data of
+force-induced protein unfolding measurements.  Steered molecular
+dynamics simulations\citep{lu98,lu99}, as well as calculations and
+simulations using lattice\citep{klimov99,socci99} and off-lattice
+models\citep{klimov00,li01}, have provided insights into structural
+and energetic changes during force-induced protein unfolding.
+However, these simulations often involve time scales that are orders
+of magnitude smaller than those of the experiments
+(\cref{sec:single-molecule}), and the parameters used in the
+calculations are often neither experimentally controllable nor
+measurable.
+% (TODO: example parameters of each type).
+As a result, a Monte Carlo simulation approach based on a simple
+two-state kinetic model for the protein is usually used to analyze
+data from mechanical unfolding experiments.  A comparison of the force
+curves measured experimentally and those generated from simulations
+can yield the unfolding rate constant of the protein in the absence of
+force as well as the distance from the native state to the transition
+state along the pulling direction.  The Monte Carlo simulation method
+has been used since the first report of mechanical unfolding
+experiments using the AFM%
+\citep{rief97b,rief97a,rief98,carrion-vazquez99b,best02,zinober02,jollymore09},
+but these previous implementations are neither fully described nor
+publicly available.
+
+To fill this gap, I developed the \sawsim\ simulation
+program\citep{king10}.  In this chapter, I provide a detailed
+description of the simulation procedure, including the theories,
+approximations, and assumptions involved.  I also explain the
+procedure for extracting kinetic properties of the protein from
+experimental data and introduce a quantitative measure of fit quality
+between simulation and experimental results.  In addition, the effects
+of various experimental parameters on force curve appearance are
+demonstrated, and the errors associated with different methods of data
+pooling are discussed.  These results should be useful in future
+experimental design, artifact identification, and data analysis for
+single molecule mechanical unfolding experiments.
+
+\section{Review of current research}
+
+There is a long history of protein unfolding and unbinding
+simulations.  Early work by \citet{grubmuller96} and
+\citet{izrailev97} focused on molecular dynamics (MD) simulations of
+receptor-ligand breakage.  Around the same time, \citet{evans97}
+introduced a Monte Carlo Kramers' simulation in the context of
+receptor-ligand breakage.  The approach pioneered by \citet{evans97}
+was used as the basis for analysis of the initial protein unfolding
+experiments\citep{rief97a}.  However, none of these earlier
+implementations were open source, which made it difficult to reuse or
+validate their results.
+%
+\nomenclature[text ]{MD}{Molecular dynamics simulation.  Simulate the
+  physical motion of atoms and molecules by numerically solving
+  Newton's equations.}
+
+Within the Monte Carlo simulation approach, there are two main models
+for protein domain unfolding under tension: Bell's and
+Kramers'\citep{schlierf06,hummer03,dudko06}.  Bell introduced his
+model in the context of cell adhesion\citep{bell78}, but it has been
+widely used to model mechanical unfolding in
+proteins\citep{rief97a,carrion-vazquez99b,schlierf06} due to its
+simplicity and ease of use\citep{hummer03}
+(\cref{sec:sawsim:rate:bell}).  Kramers introduced his theory in the
+context of thermally activated barrier crossings, which is how we use
+it here (\cref{sec:sawsim:rate:other}).
+
+Evans introduced the saddle-point Kramers' approximation in a protein
+unfolding context in 1997 (\xref{evans97}{equation}{3}).  However,
+early work on mechanical unfolding focused on the simpler Bell
+model\citep{rief97a}.  In the early 2000's, the
+saddle-point/steepest-descent approximation to Kramer's model
+(\xref{hanggi90}{equation}{4.56c}) was introduced into our
+field\citep{dudko03,hyeon03}.  By the mid 2000's, the full-blown
+double-integral form of Kramer's model
+(\xref{hanggi90}{equation}{4.56b}) was in use\citep{schlierf06}.
+
+There have been some tangential attempts towards even fancier models:
+\citet{dudko03} attempted to reduce the restrictions of the
+single-unfolding-path model and \citet{hyeon03} attempted to measure
+the local roughness using temperature dependent unfolding.  However,
+further work on these lines has been slow, because the Bell model fits
+the data well despite its simplicity.  For more complicated transition
+rate models to gain ground, we need larger, more detailed datasets
+that expose features which the Bell model doesn't capture.

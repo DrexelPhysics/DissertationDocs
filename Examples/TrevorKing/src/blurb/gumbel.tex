@@ -1,0 +1,75 @@
+\chapter{The Gumbel (minimum) distribution}
+\label{sec:gumbel}
+
+The Gumbel (minimum) distribution is also refered to as the extreme
+value type I distribution distribution\citep{NIST:gumbel}, the
+log-Weibull distribution\citep{wikipedia:gumbel}, the double
+exponential distribution\citep{wikipedia:gumbel}.  The Gumbel
+distribution is often confused with the Gompertz
+distribution\citep{wikipedia:gumbel}.  To avoid confusion, we can
+express both Gumbel and Gompertz in terms of the Generalized extreme
+value distribution (GEV, a.k.a. the Fisher--Tippett
+distribution\citep{wikipedia:GEV}), which has a probability
+distribution given by
+
+\begin{align}
+  P_\text{GEV}(x|\mu,\sigma,\eta)
+    &= \frac{1}{\sigma}t(x)\exp{-t(x)} \\
+  t(x) &= \begin{cases}
+      \p({1 + \p({\frac{x-\mu}{\sigma}})\eta})^{-1/\eta} &
+        \text{if } \eta \ne 0 \\
+      \exp{-\frac{x-\mu}{\sigma}} & \text{if } \eta = 0
+    \end{cases}
+\end{align}
+where $\mu\in\Reals$ is the location parameter, $\sigma>0$ is the
+scale parameter, and $\eta\in\Reals$ is the shape
+parameter\citep{wikipedia:GEV}.
+
+To recover the Gumbel distribution, set $\eta=0$.
+\begin{align}
+  P_\text{Gumbel}(x|\mu,\sigma)
+    &= \frac{1}{\sigma}\exp{-\frac{x-\mu}{\sigma}}
+       \exp{\exp{-\frac{x-\mu}{\sigma}}} \\
+    &= \frac{1}{\sigma}\exp{z - \exp(-z)} \;,
+\end{align}
+where $z\equiv (x-\mu)/\sigma$.  This form matches
+\citet{wikipedia:gumbel} and, with the replacements
+$\mu\rightarrow\alpha$ and $\sigma\rightarrow\rho$, also matches
+\cref{eq:sawsim:gumbel}.
+% TODO: add gumbel58 citations where appropriate
+
+To recover the Gompertz distribution\citet{wikipedia:gompertz}
+\begin{align}
+  P_\text{Gompertz}(x|\nu,b)
+    &= b\nu\exp{bx}\exp{\nu}\exp{-\nu\exp{bx}}
+\end{align}
+, set $$.
+
+Finally, there are a few other similarly named distributions to watch
+out for.  The Type-1 Gumbel distribution\citet{wikipedia:gumbel-t1}
+\begin{equation}
+  P_\text{Type-1 Gumbel}(x|a,b)
+    = ab\exp{-(b\exp{-ax}+ax)}}
+    = -\exp{-b}\cdotP_\text{Gompertz})(x|b,-a)
+\end{equation}
+is similar to the Gompertz distrubution, differing only by a constant
+scale factor.  Since both probability distributions are normalized,
+the difference comes from the range of allowed $x$.  For the Gompertz
+distribution, $x\ge0$.  For the Type-1 Gumbel distribution,
+$-\infty<x<\infty$.  Note that the Type-1 Gumbel distribution is not
+the same as the Gumbel (minimum) distribution.
+
+The Type-2 Gumbel distribution\citet{wikipedia:gumbel-t2}
+\begin{equation}
+  P_\text{Type-2 Gumbel}(x|a,b) = abx^{-a-1}\exp{-bx^{-a}}
+\end{equation}
+has $x$ being raised to powers (vs. $e$ being raised to powers in the
+other distributions), so it is an entirely different beast.
+
+Properties of the Bell model recieve more coverage under the name of
+the older and equivalent Gompertz
+distribution\citep{gompertz25,olshansky97,wu04}.  eq:sawsim:order-depA
+warning about the ``Gompertz'' model is in order, because there seem
+to be at least two unfolding/dying rate formulas that go by that name.
+Compare, for example, \xref{braverman08}{equation}{5} and
+\xref{juckett93}{figure}{2}.
