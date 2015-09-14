@@ -1,0 +1,532 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bibliography stuff from aastex.cls
+%% lines 1551-1648
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\jnl@style=\rmfamily 
+\def\ref@jnl#1{{\jnl@style#1}}% 
+\newcommand\aj{\ref@jnl{AJ}}% Astronomical Journal 
+\newcommand\araa{\ref@jnl{ARA\&A}}% Annual Review of Astron and Astrophys 
+\newcommand\apj{\ref@jnl{ApJ}}% Astrophysical Journal 
+\newcommand\apjl{\ref@jnl{ApJ}}% Astrophysical Journal, Letters 
+\newcommand\apjs{\ref@jnl{ApJS}}% Astrophysical Journal, Supplement 
+\newcommand\ao{\ref@jnl{Appl.~Opt.}}% Applied Optics 
+\newcommand\apss{\ref@jnl{Ap\&SS}}% Astrophysics and Space Science 
+\newcommand\aap{\ref@jnl{A\&A}}% Astronomy and Astrophysics 
+\newcommand\aapr{\ref@jnl{A\&A~Rev.}}% Astronomy and Astrophysics Reviews 
+\newcommand\aaps{\ref@jnl{A\&AS}}% Astronomy and Astrophysics, Supplement 
+\newcommand\azh{\ref@jnl{AZh}}% Astronomicheskii Zhurnal 
+\newcommand\baas{\ref@jnl{BAAS}}% Bulletin of the AAS 
+\newcommand\jrasc{\ref@jnl{JRASC}}% Journal of the RAS of Canada 
+\newcommand\memras{\ref@jnl{MmRAS}}% Memoirs of the RAS 
+\newcommand\mnras{\ref@jnl{MNRAS}}% Monthly Notices of the RAS 
+\newcommand\pra{\ref@jnl{Phys.~Rev.~A}}% Physical Review A: General Physics 
+\newcommand\prb{\ref@jnl{Phys.~Rev.~B}}% Physical Review B: Solid State 
+\newcommand\prc{\ref@jnl{Phys.~Rev.~C}}% Physical Review C 
+\newcommand\prd{\ref@jnl{Phys.~Rev.~D}}% Physical Review D 
+\newcommand\pre{\ref@jnl{Phys.~Rev.~E}}% Physical Review E 
+\newcommand\prl{\ref@jnl{Phys.~Rev.~Lett.}}% Physical Review Letters 
+\newcommand\pasp{\ref@jnl{PASP}}% Publications of the ASP 
+\newcommand\pasj{\ref@jnl{PASJ}}% Publications of the ASJ 
+\newcommand\qjras{\ref@jnl{QJRAS}}% Quarterly Journal of the RAS 
+\newcommand\skytel{\ref@jnl{S\&T}}% Sky and Telescope 
+\newcommand\solphys{\ref@jnl{Sol.~Phys.}}% Solar Physics 
+\newcommand\sovast{\ref@jnl{Soviet~Ast.}}% Soviet Astronomy 
+\newcommand\ssr{\ref@jnl{Space~Sci.~Rev.}}%          % Space Science Reviews 
+\newcommand\zap{\ref@jnl{ZAp}}% Zeitschrift fuer Astrophysik 
+\newcommand\nat{\ref@jnl{Nature}}% Nature 
+\newcommand\iaucirc{\ref@jnl{IAU~Circ.}}% IAU Cirulars 
+\newcommand\aplett{\ref@jnl{Astrophys.~Lett.}}% Astrophysics Letters 
+\newcommand\apspr{\ref@jnl{Astrophys.~Space~Phys.~Res.}}% Astrophysics Space Physics Research 
+\newcommand\bain{\ref@jnl{Bull.~Astron.~Inst.~Netherlands}}% Bul. Astr. Inst. of the Netherlands 
+\newcommand\fcp{\ref@jnl{Fund.~Cosmic~Phys.}}% Fundamental Cosmic Physics 
+\newcommand\gca{\ref@jnl{Geochim.~Cosmochim.~Acta}}% Geochimica Cosmochimica Acta 
+\newcommand\grl{\ref@jnl{Geophys.~Res.~Lett.}}% Geophysics Research Letters 
+\newcommand\jcp{\ref@jnl{J.~Chem.~Phys.}}% Journal of Chemical Physics 
+\newcommand\jgr{\ref@jnl{J.~Geophys.~Res.}}% Journal of Geophysics Research 
+\newcommand\jqsrt{\ref@jnl{J.~Quant.~Spec.~Radiat.~Transf.}}% Journal of Quantitiative Spectroscopy and Radiative Trasfer 
+\newcommand\memsai{\ref@jnl{Mem.~Soc.~Astron.~Italiana}}% Mem. Societa Astronomica Italiana 
+\newcommand\nphysa{\ref@jnl{Nucl.~Phys.~A}}% Nuclear Physics A 
+\newcommand\physrep{\ref@jnl{Phys.~Rep.}}% Physics Reports 
+\newcommand\physscr{\ref@jnl{Phys.~Scr}}% Physica Scripta 
+\newcommand\planss{\ref@jnl{Planet.~Space~Sci.}}% Planetary Space Science 
+\newcommand\procspie{\ref@jnl{Proc.~SPIE}}% Proceedings of the SPIE 
+\let\astap=\aap 
+\let\apjlett=\apjl 
+\let\apjsupp=\apjs 
+\let\applopt=\ao 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Symbols from aastex.cls
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% lines 1649-1771
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\phn{\phantom{0}}% 
+\newcommand\phd{\phantom{.}}% 
+\newcommand\phs{\phantom{$-$}}% 
+\newcommand\phm[1]{\phantom{#1}}% 
+\let\la=\lesssim            % For Springer A&A compliance... 
+\let\ga=\gtrsim 
+\newcommand\sq{\mbox{\rlap{$\sqcap$}$\sqcup$}}% 
+\newcommand\arcdeg{\mbox{$^\circ$}}% 
+\newcommand\arcmin{\mbox{$^\prime$}}% 
+\newcommand\arcsec{\mbox{$^{\prime\prime}$}}% 
+\newcommand\fd{\mbox{$.\!\!^{\mathrm d}$}}% 
+\newcommand\fh{\mbox{$.\!\!^{\mathrm h}$}}% 
+\newcommand\fm{\mbox{$.\!\!^{\mathrm m}$}}% 
+\newcommand\fs{\mbox{$.\!\!^{\mathrm s}$}}% 
+\newcommand\fdg{\mbox{$.\!\!^\circ$}}% 
+\newcommand\farcm@mss{\mbox{$.\mkern-4mu^\prime$}}% 
+\let\farcm\farcm@mss 
+\newcommand\farcs@mss{\mbox{$.\!\!^{\prime\prime}$}}% 
+\let\farcs\farcs@mss 
+\newcommand\fp{\mbox{$.\!\!^{\scriptscriptstyle\mathrm p}$}}% 
+\newcommand\micron{\mbox{$\mu$m}}% 
+\def\farcm@apj{% 
+ \mbox{.\kern -0.7ex\raisebox{.9ex}{\scriptsize$\prime$}}% 
+}% 
+\def\farcs@apj{% 
+ \mbox{% 
+  \kern  0.13ex.% 
+  \kern -0.95ex\raisebox{.9ex}{\scriptsize$\prime\prime$}% 
+  \kern -0.1ex% 
+ }% 
+}% 
+\newcommand\case[2]{\mbox{$\frac{#1}{#2}$}}% 
+\newcommand\slantfrac{\case}% 
+\newcommand\onehalf{\slantfrac{1}{2}}% 
+\newcommand\onethird{\slantfrac{1}{3}}% 
+\newcommand\twothirds{\slantfrac{2}{3}}% 
+\newcommand\onequarter{\slantfrac{1}{4}}% 
+\newcommand\threequarters{\slantfrac{3}{4}}% 
+\newcommand\ubvr{\mbox{$U\!BV\!R$}}%% UBVR system 
+\newcommand\ub{\mbox{$U\!-\!B$}}%   % U-B 
+\newcommand\bv{\mbox{$B\!-\!V$}}%   % B-V 
+\newcommand\vr{\mbox{$V\!-\!R$}}%   % V-R 
+\newcommand\ur{\mbox{$U\!-\!R$}}%   % U-R 
+\newcommand\ion[2]{#1$\;${%
+\ifx\@currsize\normalsize\small \else
+\ifx\@currsize\small\footnotesize \else
+\ifx\@currsize\footnotesize\scriptsize \else
+\ifx\@currsize\scriptsize\tiny \else
+\ifx\@currsize\large\normalsize \else
+\ifx\@currsize\Large\large
+\fi\fi\fi\fi\fi\fi
+\rmfamily\@Roman{#2}}\relax}% 
+%%%%\newcommand\nodata{ ~$\cdots$~ }% 
+\newcommand\diameter{\ooalign{\hfil/\hfil\crcr\mathhexbox20D}}% 
+\newcommand\degr{\arcdeg}% 
+\newcommand\Sun{\sun}% 
+\newcommand\Sol{\sun}% 
+\newcommand\sun{\odot}% 
+\newcommand\Mercury{\astro{\char1}}% Mercury symbol, "1" 
+\newcommand\Venus{\astro{\char2}}% Venus symbol, "2" 
+\newcommand\Earth{\earth}% 
+\newcommand\Terra{\earth}% 
+\newcommand\earth{\oplus}% 
+\newcommand\Mars{\astro{\char4}}% Mars symbol, "4" 
+\newcommand\Jupiter{\astro{\char5}}% Jupiter symbol, "5" 
+\newcommand\Saturn{\astro{\char6}}% Saturn symbol, "6" 
+\newcommand\Uranus{\astro{\char7}}% Uranus symbol, "7" 
+\newcommand\Neptune{\astro{\char8}}% Neptune symbol, "8" 
+\newcommand\Pluto{\astro{\char9}}% Pluo symbol, "9" 
+\newcommand\Moon{\astro{\char10}}% Moon symbol, "M" 
+\newcommand\Luna{\Moon}% 
+\newcommand\Aries{\astro{\char11}}% 
+\newcommand\VEq{\Aries}% vernal equinox (Aries) 
+\newcommand\Taurus{\astro{\char12}}% 
+\newcommand\Gemini{\astro{\char13}}% 
+\newcommand\Cancer{\astro{\char14}}% 
+\newcommand\Leo{\astro{\char15}}% 
+\newcommand\Virgo{\astro{\char16}}% 
+\newcommand\Libra{\astro{\char17}}% 
+\newcommand\AEq{\Libra}% autumnal equinox (Libra) 
+\newcommand\Scorpius{\astro{\char18}}% 
+\newcommand\Sagittarius{\astro{\char19}}% 
+\newcommand\Capricornus{\astro{\char20}}% 
+\newcommand\Aquarius{\astro{\char21}}% 
+\newcommand\Pisces{\astro{\char22}}% 
+\def\load@astro{% 
+ \dimen@=1\aas@ptsize\p@ 
+ \font\astro@font=Astrosym at\dimen@ 
+}% 
+\def\astro#1{\leavevmode\hbox{\astro@font#1}}% 
+\def\astro@font{% 
+ \ClassWarning{aastex}{% 
+  Please use class option `astro', since you are using the astro font.% 
+ }% 
+}% 
+\newcommand\sbond{\chem@bnd{\@sbnd}}% 
+\newcommand\dbond{\chem@bnd{\@dbnd}}% 
+\newcommand\tbond{\chem@bnd{\@tbnd}}% 
+\def\chem@bnd#1{% 
+ {% 
+  \kern.1em\relax 
+  \setbox\z@\hbox{M}% 
+  \dimen@ii.8em\relax 
+  \p@=.1em\relax 
+  \dimen@.5\ht\z@\dimen@i-\dimen@ 
+  \advance\dimen@1.5\p@\advance\dimen@i-1.0\p@ 
+  #1% 
+  \kern.1em\relax 
+  }% 
+ }% 
+\def\@sbnd{% 
+ \advance\dimen@-1.5\p@\advance\dimen@i1.5\p@ 
+ \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak 
+ }% 
+\def\@dbnd{% 
+ \advance\dimen@-0.5\p@\advance\dimen@i0.5\p@ 
+ \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak 
+ \advance\dimen@-1.5\p@\advance\dimen@i1.5\p@ 
+ \hskip-\dimen@ii 
+ \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak 
+ }% 
+\def\@tbnd{% 
+ \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak 
+ \advance\dimen@-1.5\p@\advance\dimen@i1.5\p@ 
+ \hskip-\dimen@ii 
+ \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak 
+ \advance\dimen@-1.5\p@\advance\dimen@i1.5\p@ 
+ \hskip-\dimen@ii 
+ \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak 
+ }% 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% End of symbols inclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Begin deluxetable inclusion
+%% lines 1194-1295 & 1295-1505
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand\colhead[1]{\multicolumn{1}{c}{#1}\pt@addcol}% 
+%\newcommand\tabletypesize[1]{\def\pt@typesize{#1}}%AO-access to different type sizes in deluxetable 
+%\def\pt@typesize{}% 
+%\newcommand\tablecolumns[1]{% 
+% \pt@column=#1\relax 
+% \pt@ncol=#1\relax 
+% \global\let\pt@addcol\@empty 
+%}% 
+%\newcommand\tablecaption[1]{\gdef\pt@caption{#1}}% 
+%\newcommand\tablehead[1]{% 
+% \gdef\pt@head{% 
+%  \hline\hline 
+%  \relax\\[-1.7ex]% 
+%  #1\hskip\tabcolsep 
+%  \\[.7ex]% 
+%  \hline 
+%  \relax\\[-1.5ex]% 
+% }% 
+%}% 
+%\def\tablehead@aj#1{% 
+% \gdef\pt@head{% 
+%  #1\hskip\tabcolsep 
+%  \\[.7ex]% 
+%  \hline 
+%  \relax\\[-1.5ex]% 
+% }% 
+%}% 
+%\newif\if@pt@rot 
+%\newcommand\rotate{\@pt@rottrue}% 
+%\newcommand\tabletail[1]{\gdef\pt@tail{#1}}% 
+%\newcommand\tablewidth[1]{\pt@width=#1\relax}% 
+%\newcommand\tableheadfrac[1]{\gdef\pt@headfrac{#1}}% 
+%\AtBeginDocument{% 
+% \let\pt@caption\@empty 
+% \let\pt@head\@empty 
+% \let\pt@tail\@empty 
+% \pt@width\textwidth 
+% \def\pt@headfrac{.1}% 
+%}% 
+%\def\pt@calcnlines{% 
+% \begingroup 
+%  \if@pt@rot\textheight\textwidth\fi 
+%  \pt@typesize%AO-type sizes in deluxetable 
+%  \@tempdima\pt@headfrac\textheight 
+%  \@tempdimb\textheight\advance\@tempdimb by-\@tempdima 
+%  \@tempdima\arraystretch\baselineskip 
+%  \divide\@tempdimb by\@tempdima 
+%  \global\pt@nlines\@tempdimb 
+% \endgroup 
+%}% 
+%\def\pt@tabacol{% 
+% \edef\@preamble{\@preamble\hskip\tabcolsep\tabskip\fill}% 
+%}% 
+%\newdimen\pt@tmpcapwidth 
+%\long\def\@makecaption@plano#1#2{% 
+% \@ifdim{\pt@width>\z@}{% 
+%  \pt@tmpcapwidth\pt@width 
+% }{% 
+%  \pt@tmpcapwidth\textwidth 
+% }% 
+% \center 
+%  \parbox{\pt@tmpcapwidth}{% 
+%   \@make@caption@text{#1}{#2}% 
+%  }% 
+% \endcenter 
+%}% 
+%\def\fnum@ptable{Table \thetable}% 
+%\def\fnum@ptablecont{Table \thetable---{\rmfamily Continued}}% 
+%\long\def\@make@caption@text#1#2{% 
+% \center\rmfamily#1.\quad#2\endcenter 
+%}% 
+%\long\def\@makecaption@plano@cont#1#2{% 
+% \center\rmfamily#1\endcenter 
+% \vskip 2.5ex 
+%}% 
+%\def\fnum@ptablecont@pptt{Table \thetable---{\itshape Continued}}% 
+%\long\def\@make@caption@text@pptt#1#2{% 
+% \center\sc#1\\[.5ex]#2\endcenter 
+%}% 
+%\long\def\@makecaption@plano@cont@pptt#1#2{% 
+% \center\sc#1\endcenter 
+% \vskip 1.5ex 
+%}% 
+%\def\fnum@ptable@apj{TABLE \thetable}% 
+%\def\fnum@ptablecont@apj{TABLE \thetable---{\itshape Continued}}% 
+%\long\def\@make@caption@text@apj#1#2{% 
+% \center\Large\sc#1\\[.5ex]#2\endcenter 
+%}% 
+%\long\def\@makecaption@plano@cont@apj#1#2{% 
+% \center\Large\sc#1\endcenter 
+% \vskip 1.5ex 
+%}% 
+%\def\fnum@ptable@aj{Table \thetable.}% 
+%\def\fnum@ptablecont@aj{Table \thetable.\space{\rmfamily (continued)}}% 
+%\long\def\@make@caption@text@aj#1#2{% 
+% \center\large{\sc#1}\space#2\endcenter 
+%}% 
+%\long\def\@makecaption@plano@cont@aj#1#2{% 
+% \center\large{\sc#1}\endcenter 
+% \vskip 1.5ex 
+%}% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newenvironment{deluxetable}[1]{% 
+% \def\pt@format{\string#1}% 
+% \let\@acol\pt@tabacol 
+% \let\@tabularcr\@ptabularcr 
+% \let\@tablenotetext\@ptablenotetext 
+% \let\@tablenotes\@ptablenotes 
+% \global\pt@ncol\z@ 
+% \global\pt@column\z@ 
+% \global\pt@page\@ne 
+% \gdef\pt@addcol{\global\advance\pt@ncol\@ne}% 
+%}{% 
+% \spew@tblnotes 
+% \typeout@deluxetable 
+% \endcenter 
+% \end@plano@float 
+%}% 
+%%%%% Back compatability with outdated ``planotable'':
+%%%%%\let@environment{planotable}{deluxetable}% 
+%%%%%\def\@plano@float{% Invoked by \startdata 
+%%%%% \begingroup 
+%%%%%  \if@pt@rot\columnwidth\textheight\fi %AO-deluxetable \rotate 
+%%%%%  \@plano@float@{table}% 
+%%%%%}% 
+%%%%%\def\end@plano@float{% S/B invoked by \enddata; instead by \enddeluxetable 
+%%%%%  \end@plano@float@ 
+%%%%% \endgroup 
+%%%%%}% 
+%%%%%\def\@plano@float@{\@float}%AO-extra layer of abstraction for float processing 
+%%%%%\def\end@plano@float@{\end@float}% 
+%%%%%\appdef\@endfloatbox{% 
+%%%%% \if@pt@rot\global\setbox\@currbox\vbox{\rotatebox{90}{\box\@currbox}}\fi 
+%%%%%}% 
+%\def\typeout@deluxetable@mss{% 
+% \typeout{% 
+%  Table \thetable\space has been set to width \the\pt@width 
+% }% 
+%}% 
+%\def\typeout@deluxetable@ppt{% 
+% \typeout{% 
+%  Page  \the\pt@page \space of table \thetable\space has been set to 
+%  width \the\pt@width\space with \the\pt@nlines\space lines per page 
+% }% 
+%}% 
+%\let\typeout@deluxetable\typeout@deluxetable@mss 
+%\newcommand\startdata{% 
+% \pt@calcnlines 
+% \@ifdim{\pt@width>\z@}{% 
+%  \def\@halignto{\@to\pt@width}% 
+% }{% 
+%  \def\@halignto{}% 
+% }% 
+% \let\fnum@table=\fnum@ptable 
+% \let\@makecaption\@makecaption@plano 
+% \global\pt@line\z@ 
+% \start@pt@tabular 
+% \after@startdata 
+%}% 
+%\def\start@pt@tabular{% 
+% \@plano@float 
+% \center 
+% \expandafter\caption\expandafter{\pt@caption}% 
+% \pt@typesize%AO-type sizes in deluxetable 
+% \expandafter\@tabular\expandafter{\pt@format}% 
+%}% 
+%\def\set@pt@box#1{\setbox\pt@box}% 
+%\def\after@startdata{\pt@head}% 
+%\def\after@startdata@aj{\hline\hline\relax\\[-1.7ex]\pt@head}% 
+%\def\enddata{% 
+% \crcr 
+% \noalign{\vskip .7ex}% 
+% \before@enddata 
+% \endtabular 
+% \setbox\pt@box\lastbox 
+% \pt@width\wd\pt@box\box\pt@box 
+%}% 
+%\def\before@enddata{\hline}% 
+%\def\before@enddata@aj{\hline\hline}% 
+%\def\nl{\substitute@command\nl\\}% 
+%\def\nextline{\substitute@command\nextline\\}% 
+%\def\@ptabularcr{% 
+% {\ifnum0=`}\fi % A klootch just in case the next token is & or \cr 
+% \@ifstar{% 
+%  \@testopt{\@argptabularcr\@empty}\z@skip 
+% }{% 
+%  \@testopt{\@argptabularcr\ptable@@split}\z@skip 
+% }% 
+%}% 
+%\def\@argptabularcr#1[#2]{% 
+% \ifnum0=`{\fi}% To undo the effect of the klootch. 
+% \@ifdim{#2>\z@}{% 
+%  \unskip\@xargarraycr{#2}% 
+% }{% 
+%  \@yargarraycr{#2}% 
+% }\ptable@split#1% 
+%}% 
+%\def\ptable@split#1{% 
+% \noalign{% 
+%  \global\advance\pt@line\@ne 
+%  \@ifnum{\pt@line<\pt@nlines}{}{% 
+%   \aftergroup#1% 
+%  }% 
+% }% 
+%}% 
+%\def\ptable@@split{% 
+%  \before@suspendpt 
+%  \endtabular 
+%  \setbox\pt@box\lastbox 
+%  \pt@width\wd\pt@box\box\pt@box 
+%  \typeout@pt@nl 
+%  \global\advance\pt@page\@ne 
+%  \endcenter 
+%  \end@plano@float 
+%  \clearpage 
+%  \addtocounter{table}{\m@ne}% 
+%  \let\fnum@table=\fnum@ptablecont 
+%  \let\@makecaption\@makecaption@plano@cont 
+%  \global\pt@ncol=\pt@column%  Either 0 or value of \tablecolumns 
+%  \global\pt@line\z@ 
+%  \start@pt@tabular 
+%  \before@resumept 
+%  \pt@head 
+%}% 
+%\def\before@suspendpt{}% 
+%\def\before@resumept{}% 
+%\def\before@suspendpt@aj{\@tabularcr\noalign{\vskip .7ex}\hline}% 
+%\def\before@resumept@aj{\hline\relax\@tabularcr[-1.7ex]}% 
+%\def\typeout@pt@nl@ppt{% 
+% \typeout{% 
+%  Page \the\pt@page\space of table \thetable\space has been set to 
+%  width \the\pt@width 
+% }% 
+%}% 
+%\def\typeout@pt@nl@mss{% 
+% \typeout{% 
+%  Page \the\pt@page\space of table \thetable\space has been set to 
+%  width \the\pt@width\space with \the\pt@nlines\space lines per page 
+% }% 
+%}% 
+%\def\typeout@pt@nl@aj{% 
+% \typeout{% 
+%  Table \thetable\space has been set to 
+%  width \the\pt@width\space with \the\pt@nlines\space lines per page 
+% }% 
+%}% 
+%\let\typeout@pt@nl\typeout@pt@nl@mss 
+%\newcommand\tablevspace[1]{\substitute@command\tablevspace\\[#1]}% 
+%\newcommand\tablebreak{\substitute@command\tablebreak\\}%{\cr\ptable@@split}% 
+%\newcommand\cutinhead[1]{% 
+% \noalign{\vskip 1.5ex}% 
+% \hline 
+% \@ptabularcr 
+% \noalign{\vskip -4ex}% 
+% \multicolumn{\pt@ncol}{c}{#1}% 
+% \@ptabularcr 
+% \noalign{\vskip .8ex}% 
+% \hline 
+% \@ptabularcr 
+% \noalign{\vskip -2ex}% 
+%}% 
+%\def\cutinhead@ppt#1{% 
+% \noalign{\vskip 1.5ex}% 
+% \hline 
+% \@ptabularcr 
+% \noalign{\vskip -2ex}% Style Note: in apj, it is -1.5ex 
+% \multicolumn{\pt@ncol}{c}{#1}% 
+% \@ptabularcr 
+% \noalign{\vskip .8ex}% 
+% \hline 
+% \@ptabularcr 
+% \noalign{\vskip -2ex}% 
+%}% 
+%\newcommand\sidehead[1]{% 
+% \noalign{\vskip 1.5ex}% 
+% \multicolumn{\pt@ncol}{@{\hskip\z@}l}{#1}% 
+% \@ptabularcr 
+% \noalign{\vskip .5ex}% 
+%}% 
+%\def\@ptablenotetext#1#2{% 
+% \vspace{0ex}% Style Note: in ppt, it is gone 
+% {\parbox{\pt@width}{\hskip1em$^{\mathrm#1}$#2}\par}% 
+%}% 
+%\def\@ptablenotes#1{% 
+% \par 
+% \vspace{2ex}% 
+% {\setlength\parskip{1.5ex}#1}% 
+%}% 
+%\def\@ptablenotes@apj#1{% 
+% \par 
+% \vspace{2ex}% 
+% {#1}% 
+%}% 
+%\newcommand\tablerefs[1]{\appgdef\tblnote@list{\@tableref{#1}}}% 
+%\def\@tableref#1{% 
+% \par 
+% \vspace*{3ex}% 
+% {\parbox{\pt@width}{\hskip1em\rmfamily References. --- #1}\par}% 
+%}% 
+%\newcommand\tablecomments[1]{\appgdef\tblnote@list{\@tablecom{#1}}}% 
+%\def\@tablecom#1{% 
+% \par 
+% \vspace*{3ex}% 
+% {\parbox{\pt@width}{\hskip1em\rmfamily Note. --- #1}\par}% 
+%}% 
+%\def\@tableref@pptt#1{% 
+% \par 
+% \vspace*{3ex}{% 
+% \parbox{\pt@width}{\hskip1em{\sc References.---}#1}\par}% 
+%}% 
+%\def\@tablecom@pptt#1{% 
+% \vspace*{3ex}{% 
+% \parbox{\pt@width}{\hskip1em{\sc Note.---}#1}\par}% 
+%}% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Addition of /plottwo:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\eps@scaling{1.0}% 
+\newcommand\epsscale[1]{\gdef\eps@scaling{#1}}% 
+\newcommand\plotone[1]{% 
+ \centering 
+ \leavevmode 
+ \includegraphics[width={\eps@scaling\columnwidth}]{#1}% 
+}% 
+\newcommand\plottwo[2]{% 
+ \centering 
+ \leavevmode 
+ \columnwidth=.45\columnwidth 
+ \includegraphics[width={\eps@scaling\columnwidth}]{#1}% 
+ \hfil 
+ \includegraphics[width={\eps@scaling\columnwidth}]{#2}% 
+}% 

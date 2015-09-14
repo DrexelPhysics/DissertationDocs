@@ -1,0 +1,46 @@
+\contentsline {chapter}{List of Tables}{vi}{section*.4}
+\contentsline {chapter}{List of Figures}{vii}{section*.5}
+\contentsline {chapter}{Abstract}{ix}{section*.6}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}The Radial Density Profile}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Cluster Scaling Relations}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Clusters and Environment}{7}{section.1.3}
+\contentsline {section}{\numberline {1.4}Outline}{11}{section.1.4}
+\contentsline {chapter}{\numberline {2}Cluster Shape and Orientation}{12}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{12}{section.2.1}
+\contentsline {section}{\numberline {2.2}Triaxial Projections}{14}{section.2.2}
+\contentsline {section}{\numberline {2.3}Sample and Methods}{15}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Simulation Sample}{15}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Methods}{18}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Non-Virialized Halos}{19}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}Results}{21}{section.2.4}
+\contentsline {section}{\numberline {2.5}Summary and Conclusions}{28}{section.2.5}
+\contentsline {section}{\numberline {2.6}Future Work}{37}{section.2.6}
+\contentsline {chapter}{\numberline {3}The Observed c-M Relation}{38}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{38}{section.3.1}
+\contentsline {section}{\numberline {3.2}Reconstruction Techniques}{41}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Weak Lensing (WL)}{41}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Strong Lensing (SL)}{42}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Weak+Strong Lensing (WL+SL)}{43}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}X-ray}{43}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Line-of-sight Velocity Dispersion (LOSVD)}{44}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}The Caustic Method (CM)}{44}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Hybrid Techniques}{45}{subsection.3.2.7}
+\contentsline {section}{\numberline {3.3}The Sample}{45}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Normalization Procedure}{48}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.4}The Observed c-M Relation}{51}{section.3.4}
+\contentsline {section}{\numberline {3.5}Projection and Shape}{56}{section.3.5}
+\contentsline {section}{\numberline {3.6}Conclusions And Discussions}{61}{section.3.6}
+\contentsline {chapter}{\numberline {4}Clusters And The LSS Environment}{66}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{66}{section.4.1}
+\contentsline {section}{\numberline {4.2}Data}{67}{section.4.2}
+\contentsline {section}{\numberline {4.3}Galaxies Around Clusters}{70}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Quantifying Structure}{71}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Results And Future Work}{74}{section.4.4}
+\contentsline {chapter}{\numberline {5}Conclusions}{79}{chapter.5}
+\contentsline {chapter}{Bibliography}{82}{section*.51}
+\cftsetindents {chapter}{0pt}{6.5em} \renewcommand {\cftchappresnum }{\appendixname \nobreakspace {}} \renewcommand {\cftchapaftersnum }{:}
+\contentsline {chapter}{\numberline {A}Analytical Projection of Prolate Spheroidal Halos}{90}{appendix.A}
+\contentsline {chapter}{\numberline {B}Lensing Cosmology Correction}{92}{appendix.B}
+\contentsline {chapter}{\numberline {C}Full Observational Dataset}{94}{appendix.C}
+\contentsline {chapter}{Vita}{127}{section*.52}

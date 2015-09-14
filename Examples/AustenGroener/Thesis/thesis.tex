@@ -1,0 +1,72 @@
+\documentclass[final,subfig,blackref]{drexel-thesis}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{esvect}
+
+\usepackage{pdflscape} % For the observational data table
+\usepackage{longtable} % For the observational data table
+
+\usepackage{natbib}
+\bibliographystyle{yahapj}
+
+\usepackage{aastex_hack}
+
+%% For uncommon journals
+%\newcommand\mnras{{MNRAS}}%
+%\newcommand\aap{{A\&A}}%
+%\newcommand\aaps{{A\&AS}}%
+%\newcommand\apj{{ApJ}}%
+%\newcommand\apjl{{ApJ}}%
+%\newcommand\apjs{{ApJ}}%
+%\newcommand\araa{{ARA\&A}}%
+%\newcommand\aj{{AJ}}%
+%\newcommand\ssr{{Space Sci. Rev.}}%
+%\newcommand\pasj{{PASJ}}% 
+\newcommand\nar{{NAR}}%
+%\newcommand\physrep{{Physics Reports}}%
+
+
+\author{Austen M. Groener}
+\title{Dark Matter in Galaxy Clusters: Shape, Projection, and Environment}
+\DUTmonth{September}
+\DUTyear{2015}
+\degree{Doctor of Philosophy}
+\advisor{Dr. David Goldberg}
+\copyrighttext{}
+
+\begin{document}
+
+\include{tex/preamble}
+
+\begin{thesis}
+  \pdfbookmark[-1]{Main Matter}{Main Matter}
+  \ifdaring{\setstretch{1.3}}{}
+  %\ifdaring{\setstretch{1.3}}{\setstretch{1.3}}
+  
+  %CHAPTER: Introduction
+  \include{tex/Introduction}
+  
+  %CHAPTER: Work In Simulations and Theory
+  \include{tex/ClusterProjectionProject}
+  
+  %CHAPTER: Observational Concentration Mass Relation
+  \include{tex/CMRelationProject}
+  
+  %CHAPTER: Cluster Environmental Study
+  \include{tex/ClusterEnvironment}
+  
+  %CHAPTER: Conclusion
+  \include{tex/Conclusion}
+  
+  
+\end{thesis}
+
+\bibliography{bib/All_refs}
+
+\appendix
+\include{tex/appendix}
+\include{tex/CV}
+
+\end{document}
