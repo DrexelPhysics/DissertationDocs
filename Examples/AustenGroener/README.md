@@ -1,6 +1,6 @@
 ## Ph.D. thesis, Austen M. Groener
 
-+ [Final PDF](thesis.pdf?raw=true)
++ [Final PDF](Thesis/thesis.pdf?raw=true)
 
 Special latex macros for my thesis include aastex_hack, yahapj, and a few non-standard latex packages for things like fonts, images, and long (sideways) tables.
 
