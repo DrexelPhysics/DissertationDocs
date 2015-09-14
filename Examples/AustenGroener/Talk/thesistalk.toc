@@ -1,0 +1,9 @@
+\beamer@endinputifotherversion {3.26pt}
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{The Anatomy of a Cluster}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{The Radial Density Profile}{12}{0}{1}
+\beamer@subsectionintoc {1}{3}{Cluster Geometry}{17}{0}{1}
+\beamer@sectionintoc {2}{Cluster Shape \& Orientation}{21}{0}{2}
+\beamer@sectionintoc {3}{The Observed c-M Relation}{30}{0}{3}
+\beamer@sectionintoc {4}{Clusters and the LSS of the Universe}{41}{0}{4}
+\beamer@sectionintoc {5}{Conclusions}{47}{0}{5}

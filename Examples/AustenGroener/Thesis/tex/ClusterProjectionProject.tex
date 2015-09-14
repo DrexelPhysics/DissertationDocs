@@ -1,0 +1,680 @@
+\chapter[Cluster Shape and Orientation]{Shape Profiles and Orientation Bias for Weak and Strong Lensing
+  Cluster Halos}
+
+\section{Introduction}
+
+Gravitational lensing has proven an incredibly useful tool in
+creating detailed maps of projected density without requiring any
+assumptions regarding either a halo's dynamical state or hydrostatic
+equilibrium of its gas. Recently, strong and weak 
+gravitational lensing methods have been used side by side to constrain
+the distribution of mass on different scales within the same cluster
+lens \citep[for Abell 1689 for example, see][]{BroadhurstEtAl2005,HalkolaEtAl2006,DebEtAl2012}.    
+
+Furthermore, galaxy cluster halos are both predicted and observed to be prolate spheroidal in
+shape (see section 1.3). However, clusters are often modeled using spherically symmetric
+distributions of mass, which seriously alter their utility as cosmological probes.
+
+
+Additional complications arise in this picture of cluster halos in
+that halo axis ratios change as a function of
+radius. \citet{FrenkEtAl1988} and \citet{ColeLacey1996} found that
+simulation halos become more spherical towards the center, whereas
+\citet{DubinskiCarlberg1991}, \citet{WarrenEtAl1992}, and
+\citet{JS2002} have concluded the opposite. Nearly all are in agreement
+that there is good alignment between isodensity (or isopotential)
+surfaces on most scales. More recent work done by
+\citet{HayashiEtAl2007} show that axis ratios of both isopotential and
+isodensity surfaces consistently increase with radius for seven
+galaxy-scale simulations.   
+
+Though lensing concentrations are systematically higher than their
+predicted values simply due to orientation bias, there
+are other reasons to believe that clusters identified by their strong
+lensing features are a biased population. For one, the most massive
+clusters are simply more effective gravitational lenses,
+preferentially sampling the highest region of the cluster mass
+hierarchy \citep{CN2007}.  
+
+Many studies have employed joint weak and strong lensing reconstruction
+techniques in order to probe much larger regions of the radial density profile.
+However, weak and strong lensing can sometimes independently produce
+vastly different results, and are rather sensitive to the a priori
+assumptions made regarding the distribution of mass within the cluster
+lens. \citet{BroadhurstEtAl2005} and
+\citet{HalkolaEtAl2006} both find weak lensing concentrations to be
+much larger than ones produced by strong lensing of the well-known
+cluster Abell 1689, when a spherical model is used. Weak + strong
+lensing analyses of Abell 1689 have generally been in agreement with
+one another, however, concentrations remain inconsistent with what
+theory predicts
+\citep{CL03.1,HalkolaEtAl2006,LimousinEtAl2007}. Only when a 
+triaxial halo model is employed do theory 
+and observation come into agreement (\citealt{OguriEtAl2005}; for a
+complete overview of the cluster Abell 1689, see $\S$5 of
+\citealt{LimousinEtAl2013}). The model assumptions and priors used in
+weak and strong lensing methods can produce large uncertainty in
+reconstructed parameters. However, physical features of the cluster
+halos, for example the combination of an orientation bias together with an
+intrinsic trend in halo shape as a function of radius could perhaps
+also lay at the heart of discrepancies of this nature, and work to
+diminish the accuracy of lensing techniques as stand-alone tools as
+well as joint techniques. 
+
+Lastly, ongoing baryonic physics within galaxy clusters
+(specifically cooling, star formation, and AGN feedback) has the
+potential to significantly alter the distribution of mass within
+clusters, and is absent from many simulations of structure
+formation. \citet{KazantzidisEtAl2004} show that the addition of gas
+cooling to simulations of clusters has the potential to significantly
+increase axial ratios in the inner-most regions when compared to
+corresponding clusters formed in adiabatic simulations.
+
+The lensing cross-section also depends sensitively on the
+addition of baryons to cluster simulations, and can be boosted by a
+factor of a few
+\citep{PuchweinEtAl2005,WambsganssEtAl2008,RozoEtAl2008}. 
+Studies which do not include AGN feedback suffer from over-cooling,
+and the addition of this component reduces the enhancement of the
+lensing cross-section to at most a factor of two
+\citep{MeadEtAl2010}. \citet{KilledarEtAl2012} find Einstein radii of
+clusters to be larger only by $5\%$ when AGN feedback is included for
+$\mathrm{z_{s} = 2}$ (increasing to $10-20\%$ for lower source redshifts).
+
+In this chapter we present a study of the shape and alignment of
+isodensity surfaces from simulated cluster halos of the MDR1
+cosmological simulation \citep{PradaEtAl2012} throughout a range of radial
+scales. Differences between the concentration parameter on weak and
+strong lensing scales will be quantified by the analytical projection
+of NFW halos, for the specific case that their major axes point along
+our line of sight. This chapter is organized as follows. In section
+$\S$2.2, we discuss the extension of the spherical NFW model and present
+prolate spheroidal simplifications of halo properties upon projection
+of the 3D NFW profile along the line of sight. In $\S$2.3 we define our
+samples and methods we will use to analyze halo intrinsic
+properties. In $\S$2.4 we present our findings on weak and strong
+lensing scales within clusters, and discuss our results in $\S$2.5. And
+lastly, in $\S$2.6 we add a general discussion of future work.  
+
+\section[Triaxial Projections]{Projections of Triaxial NFW Halos}
+The Navarro-Frenk-White density profile \citep{NFW1996} has been shown
+accurately describe the density profiles of simulation halos over many decades
+of mass. Throughout this chapter, we will focus on the NFW profile,
+parameterized by the following definition of the concentration parameter:
+\begin{equation}
+\mathrm{c_{200} \equiv r_{200}/r_{s}}.
+\end{equation}
+The characteristic overdensity of the cluster is also defined in terms of this
+particular definition of the concentration (by direct substitution of Eq. 2.1
+into Eq. 1.6).
+
+Following that, the mass can now be defined in terms of $\mathrm{r_{200}}$ and the
+cosmology-dependent critical density of the universe at the redshift
+of the halo. 
+\begin{equation}
+\mathrm{M_{200}(z) = \frac{4}{3} \pi r_{200}^{3} \cdot 200 \rho_{cr}(z)}
+\end{equation} 
+
+Simulations show that halos deviate from spherical symmetry by
+a considerable amount, with a preference for prolate over oblate
+spheroids. \citet{Doroshkevich1970} has made the case that triaxial
+collapse is a necessary outcome of structure formation models which
+are seeded by Gaussian random initial conditions. The spherical NFW
+profile can be extended to accommodate triaxial halos by redefining
+the radial coordinate as an ellipsoidal coordinate:  
+\begin{equation}
+\mathrm{\zeta^{2} = \frac{x^{2}}{c^{2}} + \frac{y^{2}}{b^{2}} + \frac{z^{2}}{a^{2}}}
+\end{equation}
+where $a,b,c$ are the semi-major, -intermediate, and -minor axes of
+the ellipsoidal shell under consideration. Each set of semi-axes is
+unique to a specific radial value within each halo by the relationship
+$\mathrm{abc = r^{3}}$.   
+
+The projection of an arbitrary triaxial halo onto a 2-dimensional plane is
+a unique process. However, the reverse process is degenerate. To
+understand the limits of projection biases due to orientation, we 
+simplify the generalized projection of triaxial halos found in
+\citet{SerenoEtAl2010b} assuming a prolate spheroidal geometry. The
+following observed (projected) parameters can be expressed in terms of
+the angle $\mathrm{\theta}$ between the line-of-sight and 
+the major axis of a prolate spheroid, as well as a single axial ratio
+intrinsic to the cluster (Table 2.1; see then Figure 2.1).    
+
+\begin{figure}
+\begin{center}$
+\begin{array}{c}
+  \includegraphics[width=0.85\textwidth]{images/ClusterProjectionProject/ConcProjections.png} \\
+  \includegraphics[width=0.85\textwidth]{images/ClusterProjectionProject/AngleProjections.png}
+\end{array}$
+\end{center}
+\caption[Analytical concentration and shape relations.]{{\em Top Panel}: The ratio of projected concentration,
+  $\mathrm{C_{2D}}$, to the intrinsic concentration, $\mathrm{c}$, as a
+  function of prolateness, $\mathrm{q}$ (these curves assume line-of-sight
+  alignment of the major axis). {\em Bottom Panel}: The projected axis ratio,
+  $\mathrm{Q}$, as a function of the degree of line-of-sight alignment,
+  $\mathrm{\theta}$, for prolate spheroidal halos.}
+\end{figure}
+
+\begin{table}
+\caption{Prolate Spheroidal Geometry}
+\label{table-1}
+\begin{tabular}{cc}
+\hline
+\hline
+\textbf{Projected Quantity} & \textbf{Prolate Spheroidal Expression} \\ 
+\hline 
+$ Q $ &  $\frac{q}{\sqrt{\sin^{2}{\theta} + q^{2}\cos^{2}{\theta}}}$\\
+\hline
+$R_{s}$ &  $\frac{q}{Q}  r_{s}$\\
+\hline
+$\delta_{C}$ & $\frac{Q^{2}}{q} \delta_{c}$\\
+\hline
+\end{tabular}
+
+\medskip
+Shown here are the analytical expressions for projected quantities
+expressed  in terms of intrinsic quantities and halo orientation used
+throughout this study. As a general rule, projected quantities will be 
+capitalized while intrinsic quantities will not be.
+\end{table}
+
+\section{Sample and Methods}
+\subsection{Simulation Sample}
+
+We aim to quantify the effect which line-of-sight alignment of
+triaxial cluster halos has upon projected concentrations on both
+weak and strong lensing scales in the presence of slowly evolving
+isodensity shapes. We study clusters from the MDR1 cosmological
+simulation \citep{PradaEtAl2012} of the MultiDark Project\footnotemark
+\footnotetext[1]{http://www.multidark.org/MultiDark/}.  MDR1 is a 
+dark matter only simulation which uses $2048^{3}$ particles in
+a box 1 h$^{-1}$Gpc on a side. The mass of simulation particles is $8.721 \times 10^{9}$ 
+h$^{-1}$M$_{\odot}$, with a resolution of 7 h$^{-1}$kpc. The
+simulation uses results from WMAP5 as its cosmology and was run with
+the Adaptive-Refinement Tree (ART) code \citep{Kravtsov1997}.  
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.85\textwidth]{images/ClusterProjectionProject/multidarkhalomassfunctions.pdf}      
+\caption[The MultiDark MDR1 Mass Function.]{The MDR1 mass function (dashed black) using the FOF algorithm. The gray
+  shaded region shows the cluster halo regime. Overplotted are the low
+  (blue), medium (green), and high (red) mass samples extracted from
+  the database.}  
+\label{fig:MDR1 Mass Function}
+\end{figure}
+
+The MDR1 simulation database \citep{Riebe2013} contains halo catalogs which are
+found using two different halo finding algorithms (``Bound Density
+Maximum'' BDM, and  ``Friends-of-Friends'' FOF) taken at 85 redshift
+snapshots. The masses of halos found through these two methods range
+from $1.7 \times 10^{11} \mathrm{h}^{-1} \mathrm{M}_{\odot}$ - $1.6 \times 10^{15}
+\mathrm{h}^{-1} \mathrm{M}_{\odot}$. We impose a lower cutoff in halo mass of $1 \times 10^{13}
+\mathrm{h}^{-1} \mathrm{M}_{\odot}$ to mark the beginning of the cluster halo regime which
+are considered for this study. Figure 2.2 shows the mass function of the
+sample at redshift $z=0$.   
+
+In our study, three halo samples were extracted from the MDR1 FOF
+table (relative linking length of 0.17) of the MultiDark Database for
+further study. Smaller linking lengths (e.g. halo substructures) are
+available, however these were purposefully left out since it is beyond
+the scope of this study.
+\begin{itemize}
+\item Low Mass: $2.5 - 2.6 \times 10^{13} \mathrm{h}^{-1} \mathrm{M}_{\odot}$ [6007 halos]
+\item Medium Mass: $1.0 - 1.1 \times 10^{14} \mathrm{h}^{-1} \mathrm{M}_{\odot}$ [2905 halos] 
+\item High Mass: $> 1.0 \times 10^{15} \mathrm{h}^{-1} \mathrm{M}_{\odot}$ [121 halos]
+\end{itemize}
+
+It should be noted here that our results are derived using one
+particular agglomerative, single-linkage clustering algorithm
+(FOF). Studies have been conducted which compare various halo-finding
+algorithms for simulation data (see \citet{KnebeEtAl2011} for a
+general review of such algorithms and how they perform in identifying
+structures from simulations). \citet{DespaliEtAl2013} have shown that
+halo shape can depend upon the choice of method used to identify halos
+from the overall simulation volume.
+
+\subsection{Methods}
+Following, for example, \citet{WarrenEtAl1992} and \citet{ShawEtAl2006}, we
+compute the moment of inertia tensor, from which we obtain the average
+shape of the halo at a given radius:
+\begin{equation}
+\mathrm{I_{ij} = \sum_{n=1}^{n=N} m_{p} (r_{i,n} - \bar{r_{i}})(r_{j,n} - \bar{r_{j}})}
+\end{equation}
+where $\mathrm{r_{i,n}}$ is the coordinate of the $\mathrm{n^{th}}$ particle in the
+$\mathrm{i^{th}}$ direction (where $\mathrm{i,j \in {x,y,z}}$), and
+$\mathrm{m_{p}}$ is the mass of the simulation particle. Finding the eigenvalues
+and eigenvectors of $\mathrm{I}$ can uniquely determine the orientation and
+axis ratios. 
+
+This method of determining shape has its
+drawbacks. \citet{ShawEtAl2006}, \citet{JingSuto2002}, and
+\citet{BailinSteinmetz2004} have all found that this approach often
+fails to converge in high resolution simulations with substantial
+substructure. Additionally, substructures of fixed mass will affect
+the components of the moment of inertia tensor on larger 
+scales than it will on small scales. In order to correct for this
+potential bias, we apply a Gaussian weighting function, $\mathrm{w_{g}
+(\zeta)}$, (to Equation 2.6) which matches both the shape and orientation
+of each bounding ellipsoid within the iterative process. 
+
+ We find good convergence with this method for MDR1 halos. For our
+ purposes, calculating the shape of each halo using the inertia
+ tensor, with the addition of a triaxial, Gaussian weighting function,
+ will be more than adequate to describe the macrostructure of the
+ parent halo.   
+
+\subsection{Non-Virialized Halos}
+Mergers are common physical processes in the
+formation of galaxy clusters
+\citep{PS1974,BondEtAl1991,LaceyCole1993}. Special care is taken to 
+separate out halos which are better fit by more than one halo for each
+mass sample, since parameters like concentration and scale radius are
+only properly defined for a single halo profile (Figure 2.3). The Mean Shift
+clustering algorithm \citep{FukunagaHostetler1975} is used on low and
+medium mass clusters, while the K-Means \citep{HartiganWong1979}
+clustering algorithm is used for high mass halos.  
+
+\begin{figure}
+\begin{center}$
+\begin{array}{cc}
+  \includegraphics[width=0.5\textwidth]{images/ClusterProjectionProject/clustering_example.png} & \includegraphics[width=0.5\textwidth]{images/ClusterProjectionProject/kmeans_example_good.png} \\
+  \multicolumn{2}{c}{\includegraphics[width=1.0\textwidth]{images/ClusterProjectionProject/millimilHalo_ID_3000042000008.png}} 
+\end{array}$
+\end{center}
+\caption[Examples of Virialized and Non-Virialized Halos]{{\em Upper Row}: Examples of actively merging system of halos, which
+  are excluded from our study. Mean-shift (left) and K-means (right) algorithms
+are applied to each halo (depending on mass) in order to determine if a single
+parent halo is present. {\em Bottom}: A dynamically relaxed, single-model dark
+matter halo.}
+\end{figure}
+
+The Mean Shift algorithm is a non-parametric algorithm which 
+requires no initial guess for the number of clusters, making it
+ideal for handling clusters of arbitrary shape or number. It locates
+local density maxima and uses a tuning parameter to associate each particle's
+membership to a corresponding maximum. Conversely, the K-Means
+algorithm necessarily requires k-clusters to group particles into. K-Means scales as $O(knT)$ (where $k$ is
+the number of clusters, $n$ is the number of points, and $T$ is the
+number of iterations) and therefore was chosen for the high mass sample of 121 halos.
+
+Additionally, to prevent contamination of each sample by unrelaxed or
+actively merging structures which may {\em still} be well-fit by a single
+model, halos are checked for virialization using the following \citep{ShawEtAl2006}:   
+\begin{equation}
+\mathrm{\beta = \frac{2T_{0}-E_{s}}{W_{0}} + 1}
+\end{equation}
+where $\mathrm{T_{0}}$ is the total kinetic energy, $\mathrm{W_{0}}$ is the total
+potential energy, and $\mathrm{E_{s}}$ comes from the pressure of the outer
+perimeter of the halo, an important contribution which comes from the
+fact that cluster halos are not isolated systems. This term is calculated by
+assuming an ideal gas of particles, where one can approximate surface pressure
+as being:
+\begin{equation}
+\mathrm{P_{s} = \frac{1}{3} \frac{\sum_{i} m_{i}v_{i}^{2}}{V}}
+\end{equation}
+where the summation is carried out over particles which lay in the outermost
+20\% of the halo ($\mathrm{>R_{0.8}}$). The volume occupied, is then:
+\begin{equation}
+\mathrm{V = \frac{4\pi R_{vir}^{3}}{3} - \frac{4\pi R_{0.8}^{3}}{3}}
+\end{equation}
+where $\mathrm{R_{vir}}$ is the outermost radius, and $\mathrm{R_{0.9}}$ is
+the median of the outermost particles. Therefore the energy $\mathrm{E_{s}}$
+can be approximated by: 
+\begin{equation}
+\mathrm{E_{s} \approx 4 \pi R_{0.9}^{3} P_{s}}
+\end{equation}
+
+A cut is made at $\mathrm{\beta > -0.2}$ in order to remove halos which have sufficient
+surface pressure at their virial radii, indicating that they are currently in a state
+of collapse \citep{ShawEtAl2006}. Figure 2.4 displays the distributions of
+$\mathrm{\beta}$ for each mass sample.
+
+\begin{figure}
+\begin{center}$
+\begin{array}{c}
+\includegraphics[width=\textwidth]{images/ClusterProjectionProject/Beta_Distributions2.eps}
+\end{array}$
+\end{center}
+\caption[The Virial $\mathrm{\beta}$ Parameter]{The distributions of virial $\mathrm{\beta}$ parameters, for the low,
+  medium, and high mass samples.}
+\end{figure}
+
+All analysis results for each cluster halo within this study have been
+stored in a downloadable database\footnotemark
+\footnotetext[2]{http://www.physics.drexel.edu/$\sim$groenera/zodb$\_$file.fs}. 
+
+\section{Results}
+Based upon the above criteria, that a halo must be both virialized and 
+best fit by a single component halo model, we find that  $55.3\%$,
+$42.0\%$, and $17.4 \%$ of halos in the low, medium, and high mass
+samples make it through our selection criteria. This tendency
+ of finding higher mass halos in an un-relaxed state is a natural
+ prediction of hierarchical structure formation models, since the
+ largest halos are the last structures to form and must undergo major
+ merging events. Additionally, nearly  all of these cluster halos can be
+ described as being prolate ellipsoids, becoming marginally more spherical with
+ increasing distance from the cluster center (See Figure 2.5-2.7; See Table 2.2 for a
+summary of these shape results).  
+
+\begin{table}
+\begin{center}
+\caption{Cluster Halo Geometry}
+\label{table-2}
+\begin{tabular}{@{}lcccccc}
+\hline
+\hline
+\textbf{Radial Scale}& & & & \textbf{Low} & \textbf{Medium} & \textbf{High} \\ 
+\hline
+$0.5 \cdot r_{200}$ & & $\bar{p} \pm \sigma_{p}$ & & $0.67 \pm 0.15$ & $0.62 \pm 0.14$ & $0.56 \pm 0.13$ \\
+& & $\bar{q} \pm \sigma_{q}$ & & $0.53 \pm 0.12 $ & $0.49 \pm 0.11$ & $0.42 \pm 0.06$ \\
+\hline
+$r_{200}$ & & $\bar{p} \pm \sigma_{p}$ & & $0.71 \pm 0.13$ & $0.66 \pm 0.13$ & $0.54 \pm 0.15$ \\
+& & $\bar{q} \pm \sigma_{q}$ & & $0.57 \pm 0.11$ & $0.52 \pm 0.10$ & $0.42 \pm 0.08$ \\
+\hline
+$2 \cdot r_{200}$ & & $\bar{p} \pm \sigma_{p}$ & & $0.69 \pm 0.12$ & $0.67 \pm 0.12$ & $0.54 \pm 0.12$ \\
+& & $\bar{q} \pm \sigma_{q}$ & & $0.55 \pm 0.10$ & $0.53 \pm 0.10$ & $0.43 \pm 0.08 $ \\
+\hline
+\end{tabular}
+
+\medskip
+Reported here are the sample mean (standard deviation) values of the
+semi-intermediate to semi-major axis ratio $p$, and semi-minor to semi-major
+axis ratio $q$ for each mass sample (virialized, non-mergers) at various
+physical scales of interest.
+\end{center}
+\end{table}
+
+\begin{figure}
+\begin{center}$
+\begin{array}{c}
+  \includegraphics[width=0.65\textwidth]{images/ClusterProjectionProject/LMSingleVirialHalf.pdf} \\
+  \includegraphics[width=0.65\textwidth]{images/ClusterProjectionProject/LMSingleVirialFull.pdf}
+\end{array}$
+\end{center}
+\caption[Low Mass Shape Results]{The distribution of isodensity shapes for the low mass halo sample at a radial scale of $\sim 0.5 r_{200}$. The green and blue shaded regions are the 1- and
+  2-$\sigma$ gaussian error ellipses, and red indicates the sample mean.}
+\end{figure}
+
+\begin{figure}
+\begin{center}$
+\begin{array}{c}
+  \includegraphics[width=0.65\textwidth]{images/ClusterProjectionProject/MMSingleVirialHalf.pdf} \\
+  \includegraphics[width=0.65\textwidth]{images/ClusterProjectionProject/MMSingleVirialFull.pdf}
+\end{array}$
+\end{center}
+\caption[Medium Mass Shape Results]{Same as Figure 2.5, but for the medium mass halo sample.}
+\end{figure}
+
+\begin{figure}
+\begin{center}$
+\begin{array}{c}
+  \includegraphics[width=0.65\textwidth]{images/ClusterProjectionProject/HMSingleVirialHalf.pdf} \\
+  \includegraphics[width=0.65\textwidth]{images/ClusterProjectionProject/HMSingleVirialFull.pdf}
+\end{array}$
+\end{center}
+\caption[High Mass Shape Results]{Same as Figure 2.5, but for the medium mass halo sample.}
+\end{figure}
+
+Intrinsic NFW concentrations are shown in Figure 2.8 and are consistent
+with those produced in previous simulations as well as previous
+studies of the MultiDark simulation \citep{PradaEtAl2012}.  As expected, halo
+concentrations decrease with increasing halo mass. This
+concentration-mass relationship is generally fit with a power-law model which
+takes the form:  
+\begin{equation}
+\mathrm{c_{200} = \frac{c_{0}}{\left( 1+z \right)^{\beta}} \left( \frac{\mathrm{M}_{200}}{\mathrm{M}_{*}} \right)^{\alpha}}
+\end{equation}
+where for our sample $\mathrm{z=0}$, and we use M$_{*}= 10^{14} \mathrm{h}^{-1}
+$M$_{\odot}$ (Figure 2.9). We first compute $r_{200}$ from the
+cumulative density profile of each halo, and thus establishing  
+M$_{200}$. Next, by fitting NFW profiles to these density profiles we
+obtain concentration parameters. For MDR1 cluster halos, we find a
+concentration-mass relation of  
+\begin{equation}
+\mathrm{c_{200} = \left( 4.775 \pm 0.022 \right) \left( \frac{\mathrm{M}_{200}}{10^{14} \mathrm{h}^{-1}
+    \mathrm{M}_{\odot}} \right)^{-0.056 \pm 0.007}}
+\end{equation}
+
+\begin{figure}
+ \centering
+ \includegraphics[width=0.75\textwidth]{images/ClusterProjectionProject/SingleVirialConcs.pdf}
+\caption[MDR1 Intrinsic Concentration Parameters]{The distributions of intrinsic concentrations for all single virialized halos of each mass sample. From top to bottom: 1) Low Mass, 2) Medium Mass, and 3) High Mass.}
+\end{figure}
+
+From the intrinsic distributions of shape and concentration found for
+each sample population, we find that solely due to line-of-sight
+orientation (that is, perfectly aligned with the major axis),
+analytically projected concentrations tend to be 
+systematically higher by about $20\%-50\%$ for virialized, single model halos. Halos with
+intrinsically low concentrations have been found to suffer from a larger
+orientation bias $\sim 50\%$, whereas higher intrinsic concentrations
+tend to produce an over-concentration of $\sim 20\%$, albeit with much lower
+scatter. Additionally, this trend tends to flatten out with
+increasing distance from the cluster center. This implies that, for a fixed 
+halo concentration, inner regions of halos (those probed on or near strong
+lensing scales) will bias higher than outer regions of halos (those probed
+on weak lensing scales) if viewed along the major axis. This information is
+most saliently captured for relaxed, low mass halos (Figure 2.10; See also
+Figure 2.11 for medium mass halos, and Table 2.3 for a complete summary). 
+
+The underlying cause for this mismatch in over-concentration between
+halos with low and high intrinsic concentrations is due to the magnitude of the
+change in shape as a function of radius. Low concentration halos are shown to
+significantly change their shape between $\mathrm{0.5 \cdot r_{200}}$ and $\mathrm{r_{200}}$,
+increasing in p and q, $81\%$ and $80\%$ of the time with median differences of
+$\mathrm{\Delta p = 0.14}$ and $\mathrm{\Delta q = 0.11}$ (Figure 2.12). Halos with high intrinsic 
+concentrations increase in p and q $\sim 65 \%$ of the time, however,
+the median value of the difference in axial ratio drops to $\sim 0.03$.
+
+On the extreme end, we have shown that although a systematic bias
+exists, certain low concentration halos ($\mathrm{c_{200}\sim 1-3}$) with extreme
+axis ratios can produce upwards of a factor of two higher in projected
+concentration on a case-by-case basis. This can be seen most notably
+in the low and medium mass samples at $\mathrm{r\sim 0.5 \cdot  r_{200}}$.
+
+Additionally, we also find that concentric ellipsoidal shells are well
+described as being coaxial with one another, that is to say there
+is insignificant amounts of twisting of isodensity surfaces for each mass
+population. Alignment becomes even better with increasing radius,
+where the misalignment is a maximum at the innermost radial
+value (Figures 2.13-2.15). It should be noted, however, that alignment results
+are expected to be biased low due to correlation between each ellipsoidal
+surface and ones interior to it. Though the aggregate shows relatively
+good alignment, it is again possible for individual cluster halos to produce
+significant ($\la 30^{\circ}$) offsets between projected isodensities
+located at strong and weak lensing scales. This fact alone complicates
+things; however, in the limit of large numbers of cluster halos, this
+effect should be minimal in biasing reconstructed concentrations for
+the population as a whole.  
+
+\begin{figure}
+\centering
+\includegraphics[width=0.75\textwidth]{images/ClusterProjectionProject/cM_slope.pdf}
+\caption[The Intrinsic MDR1 c-M Relation]{Shown here is the intrinsic concentration-mass relationship for the MDR1 cosmological simulation run. Orange stars represent values of concentration from the analytical expression found in \citet{PradaEtAl2012} at redshift $z=0$ for values of halo mass corresponding to the sample used in this study.}
+\end{figure}
+
+\section{Summary and Conclusions}
+
+We have shown that relaxed MultiDark MDR1 simulation (FOF) cluster
+halos, which are well described by a single NFW density profile, are
+primarily prolate spheroidal in geometry and become increasingly more spherical with
+increasing radius from the cluster center of mass. Using shape on weak
+and strong lensing scales as well as derived concentrations,
+we analytically project these halos along the line of sight. In doing
+so, we find that low mass clusters are typically over-concentrated by
+about 56\% and 20\% at half $\mathrm{r_{200}}$ for concentrations  between
+1-3 and 7-10, respectively. At $\mathrm{r_{200}}$ this enhancement drops to
+38\% and 19\%. What this tells us is that the average projected
+concentration differs by about 18\% for halos with intrinsically low
+concentrations simply due to differences in halo geometry as a 
+function of radius. Clusters which do not meet this criteria show the
+opposite trend in shape, becoming more prolate with increasing radius. 
+
+Strong lensing clusters are usually identified by their hard to miss
+tangential or radial arcs, and are expected to represent a biased
+population simply because large mass and alignment along the line of
+sight are key ingredients in producing large Einstein radii. If these
+lensing clusters are in fact preferentially aligned along the line of
+sight (and are relaxed), we would expect that all else being 
+equal weak lensing reconstructions should under-estimate the
+concentration for a population of such objects.   
+  
+Projection effects aside, additional complications arise in measuring
+halo concentration using strong and weak lensing. For example, halo
+substructure can play a significant role in altering the shape of the
+lens as seen by strong lensing \citep{MeneghettiEtAl2007},  along with
+massive objects unassociated with the halo which lay along the line of
+sight \citep{PuchweinHilbert2009}.  \citet{RedlichEtAl2012} also find
+that cluster mergers bias high the distribution of Einstein Radii,
+highlighting another source of potential bias. The weak lensing signal
+can be diminished by things like atmospheric PSF, correlations in the
+orientation of background galaxies due to large scale structure, among
+the usual sources of uncertainty in measuring galaxy shapes (for a
+review of galaxy shape measurement and correlation of galaxy shapes,
+see \citealt{HoekstraJain2008}; for a discussion of cluster triaxiality
+and projections of large scale structure see
+\citealt{BeckerKravtsov2011}). Lastly, \citet{GiocoliEtAl2014}
+  conclude through simulations that the use of a generalized NFW model
+  reduces mass and concentration reconstruction biases for clusters
+ containing a BCG and adiabatic contraction of the dark matter. They
+ also find that halo parameters differ between WL and WL+SL
+ reconstruction methods, and that strong lensing selected clusters can
+have concentrations 20-30\% in excess of the expected average at fixed
+mass. 
+
+\begin{table}
+\begin{center}
+\caption{Concentration Enhancements}
+\label{table-3}
+\begin{tabular}{@{}lcccccc}
+\hline
+\hline
+\textbf{Radial Scale}& & \textbf{Low Mass} & & \textbf{Medium Mass} \\ 
+& $c_{200}$ & $\bar{\Delta}_{c_{200}} \pm \sigma_{\Delta}$ & $c_{200}$ & $\bar{\Delta}_{c_{200}} \pm \sigma_{\Delta}$ \\ 
+\hline
+$0.5 \cdot r_{200}$ & $[1-3]$ & $1.56 \pm 0.29$ & $[1-3]$ & $1.52 \pm 0.25$\\
+& $[7-10]$ & $1.20 \pm 0.07$ & $[6-9]$ & $1.26 \pm 0.09$ \\
+\hline
+$ r_{200}$ & $[1-3]$ & $1.38 \pm 0.16$ & $[1-3]$ & $1.43 \pm 0.15$\\
+& $[7-10]$ & $1.19 \pm 0.09$ & $[6-9]$ & $1.24 \pm 0.09$\\
+\hline
+$1.5 \cdot r_{200}$ & $[1-3]$ & $1.30 \pm 0.12$ & $[1-3]$ & $1.34 \pm 0.11$ \\
+& $[7-10]$ & $1.17 \pm 0.07$ & $[6-9]$ & $1.22 \pm 0.09$ \\
+\hline
+$2 \cdot r_{200}$ & $[1-3]$ & $1.28 \pm 0.11$ & $[1-3]$ & $1.31 \pm 0.10$\\
+& $[7-10]$ & $1.18 \pm 0.07$ & $[6-9]$ & $1.23 \pm 0.09 $ \\
+\hline
+
+\end{tabular}
+
+\medskip
+Average Concentration Enhancement ($\mathrm{\Delta_{c_{200}} \equiv
+C_{200}/c_{200}}$) on Weak and Strong Lensing Scales for Low and Medium
+Mass Samples.
+\end{center}
+\end{table}
+
+
+\begin{figure}
+\begin{center}$
+\begin{array}{c}
+  \includegraphics[width=0.75\textwidth]{images/ClusterProjectionProject/LMSingleVirialHalfConcsLOS.pdf} \\
+  \includegraphics[width=0.75\textwidth]{images/ClusterProjectionProject/LMSingleVirialFullConcsLOS.pdf}
+\end{array}$
+\end{center}
+\caption[Low Mass Concentration Enhancements]{Shown here are concentration enhancements against intrinsic
+  halo concentrations for line-of-sight oriented halos for the low
+  mass, single-model, relaxed halo population.  In the top (bottom) panel,
+  we show the population at $\mathrm{\sim 0.5 \cdot r_{200}}$ ($\mathrm{\sim 1 \cdot
+  r_{200}}$). Overplotted are the mean and standard deviation of low
+  ($\mathrm{1 \le c_{200} \le 3}$) and high ($\mathrm{7 \le c_{200} \le 10}$)
+  concentration halos for comparison. We find two novel trends: 1) the
+concentration enhancement is a function of the radial scale within the
+halo, where inner regions are found to be significantly higher than
+outer regions; this feature is most noticeable for halos with
+intrinsically low concentrations,  and 2) the concentration
+enhancement is a function of the intrinsic halo concentration (albeit
+with some scatter).} 
+\end{figure}
+
+\begin{figure}
+\begin{center}$
+\begin{array}{c}
+  \includegraphics[width=0.75\textwidth]{images/ClusterProjectionProject/MMSingleVirialHalfConcsLOS.png} \\
+  \includegraphics[width=0.75\textwidth]{images/ClusterProjectionProject/MMSingleVirialFullConcsLOS.png}
+\end{array}$
+\end{center}
+\caption[Medium Mass Concentration Enhancements]{The concentration enhancements against intrinsic halo concentrations
+  for line-of-sight oriented halos the the medium mass, single-model, relaxed
+  halo population.} 
+\end{figure}
+
+\begin{figure}
+\begin{center}$
+\begin{array}{cc}
+  \includegraphics[width=0.5\textwidth]{images/ClusterProjectionProject/p_low_1to3_half_full.pdf} & \includegraphics[width=0.5\textwidth]{images/ClusterProjectionProject/p_low_7to10_half_full.pdf} \\
+  \includegraphics[width=0.5\textwidth]{images/ClusterProjectionProject/q_low_1to3_half_full.pdf} & \includegraphics[width=0.5\textwidth]{images/ClusterProjectionProject/q_low_7to10_half_full.pdf} \\
+  \includegraphics[width=0.5\textwidth]{images/ClusterProjectionProject/pq_low_1to3_half_full_diff.pdf} & \includegraphics[width=0.5\textwidth]{images/ClusterProjectionProject/pq_low_7to10_half_full_diff.pdf}
+\end{array}$
+\end{center}
+\caption[A Summary of The Change in Shape for the Low Mass Sample]{Halos with intrinsically low concentrations exhibit a much larger change in shape as a function of radius. \textit{Upper left and middle}: Normalized distributions of axial ratios p and q for low-mass, low-concentration (1-3) halos at half $\mathrm{r_{200}}$ (blue) and $\mathrm{r_{200}}$ (green). \textit{Bottom left and middle}: The distributions of axial ratios p and q for low-mass, high-concentration (7-10) halos at half $\mathrm{r_{200}}$ and $\mathrm{r_{200}}$. \textit{Upper right, (Lower right)}: Distributions of the differences in axial ratios p (purple) and q (orange) for low-concentration (high-concentration) low-mass cluster halos.}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}$
+\begin{array}{c}
+  \includegraphics[width=0.9\textwidth]{images/ClusterProjectionProject/LowMass_EllipsoidAlignment_BoxViolin_Virialized.png}
+\end{array}$
+\end{center}
+\caption[Low Mass Isodensity Alignment]{A `violin plot' for the low mass sample, showing the distribution of
+  angles between the major axis of an isodensity at radial coordinate
+  $\mathrm{r_{i}}$, and one at $\mathrm{r_{i} + \Delta r}$. Green shaded regions
+represent the distributions of angles, and overplotted is a box plot showing
+the location of the quartiles (25\%, 50\%, and 75\%).}
+\end{figure}
+
+\begin{figure}
+\begin{center}$
+\begin{array}{c}
+  \includegraphics[width=0.9\textwidth]{images/ClusterProjectionProject/MediumMass_EllipsoidAlignment_BoxViolin_Virialized.png}
+\end{array}$
+\end{center}
+\caption[Medium Mass Isodensity Alignment]{A `violin plot' for the medium mass sample.}
+\end{figure}
+
+\begin{figure}
+\begin{center}$
+\begin{array}{c}
+  \includegraphics[width=0.9\textwidth]{images/ClusterProjectionProject/HighMass_EllipsoidAlignment_BoxViolin_Virialized.png}
+\end{array}$
+\end{center}
+\caption[High Mass Isodensity Alignment]{A `violin plot' for the high mass sample.}
+\end{figure}
+
+\section{Future Work}
+
+An explicit prediction has been made regarding the discrepancy between
+projected halo concentrations of cluster halos on characteristic
+lensing scales. A natural next step would be to simulate the signal
+produced from gravitational lensing by conducting mock weak and strong
+lensing analyses. However, one would realistically need to include the
+effects of baryons. Additionally, we plan to summarize the current
+state of the field of galaxy cluster mass reconstructions in each of
+the methods used. In future work, we will aggregate all measured NFW
+mass/concentration pairs from these methods in order to shed light on
+potential systematic observational biases, particularly on strong and
+weak lensing scales.  
+
+It has yet to be determined if this effect manifests itself in a
+measurable way for the cluster halo population. Follow-up observations
+of strong lensing clusters could be proposed as a way of testing the
+veracity of this prediction. Knowing the intrinsic distribution of
+cluster concentrations is difficult if not impossible due to the
+degenerate nature of the reverse-projection process. However, the shape
+of the distribution of measured concentrations due to lensing could
+possibly contain hallmark characteristics which could indicate the
+level of line of sight biasing of the population. With this
+information known, ultimately a correction procedure could then be
+proposed.

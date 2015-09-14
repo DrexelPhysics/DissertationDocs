@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: yahapj.bst
+A level-1 auxiliary file: tex/preamble.aux
+A level-1 auxiliary file: tex/Introduction.aux
+A level-1 auxiliary file: tex/ClusterProjectionProject.aux
+A level-1 auxiliary file: tex/CMRelationProject.aux
+A level-1 auxiliary file: tex/ClusterEnvironment.aux
+A level-1 auxiliary file: tex/Conclusion.aux
+A level-1 auxiliary file: tex/appendix.aux
+A level-1 auxiliary file: tex/CV.aux
+Reallocated field_info (elt_size=4) to 12424 items from 5000.
+Database file #1: bib/All_refs.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+You've used 256 entries,
+            3201 wiz_defined-function locations,
+            2446 strings with 60187 characters,
+and the built_in function-call counts, 142193 in all, are:
+= -- 11684
+> -- 10182
+< -- 74
++ -- 3974
+- -- 3767
+* -- 12513
+:= -- 25272
+add.period$ -- 256
+call.type$ -- 256
+change.case$ -- 1885
+chr.to.int$ -- 217
+cite$ -- 256
+duplicate$ -- 7033
+empty$ -- 8742
+format.name$ -- 4065
+if$ -- 28510
+int.to.chr$ -- 40
+int.to.str$ -- 1
+missing$ -- 253
+newline$ -- 772
+num.names$ -- 1026
+pop$ -- 2816
+preamble$ -- 1
+purify$ -- 1885
+quote$ -- 0
+skip$ -- 4087
+stack$ -- 0
+substring$ -- 6250
+swap$ -- 294
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 2304
+warning$ -- 0
+while$ -- 1214
+width$ -- 0
+write$ -- 2563

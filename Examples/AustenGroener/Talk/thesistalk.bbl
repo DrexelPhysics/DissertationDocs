@@ -1,0 +1,24 @@
+\begin{thebibliography}{4}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Comerford} \& {Natarajan}(2007)}]{CN07}
+{Comerford}, J.~M., \& {Natarajan}, P. 2007,
+  \href{http://dx.doi.org/10.1111/j.1365-2966.2007.11934.x}{\mnras, 379, 190}
+
+\bibitem[{{Kravtsov} {et~al.}(1997){Kravtsov}, {Klypin}, \&
+  {Khokhlov}}]{KravtsovEtAl1997}
+{Kravtsov}, A.~V., {Klypin}, A.~A., \& {Khokhlov}, A.~M. 1997,
+  \href{http://dx.doi.org/10.1086/313015}{\apjs, 111, 73}
+
+\bibitem[{{Prada} {et~al.}(2012){Prada}, {Klypin}, {Cuesta}, {Betancort-Rijo},
+  \& {Primack}}]{PradaEtAl2012}
+{Prada}, F., {Klypin}, A.~A., {Cuesta}, A.~J., {Betancort-Rijo}, J.~E., \&
+  {Primack}, J. 2012,
+  \href{http://dx.doi.org/10.1111/j.1365-2966.2012.21007.x}{\mnras, 423, 3018}
+
+\bibitem[{{Shaw} {et~al.}(2006){Shaw}, {Weller}, {Ostriker}, \&
+  {Bode}}]{ShawEtAl2006}
+{Shaw}, L.~D., {Weller}, J., {Ostriker}, J.~P., \& {Bode}, P. 2006,
+  \href{http://dx.doi.org/10.1086/505016}{\apj, 646, 815}
+
+\end{thebibliography}
