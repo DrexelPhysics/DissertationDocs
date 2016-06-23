@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: example.aux
+The style file: unsrtnat.bst
+A level-1 auxiliary file: example-1.aux
+A level-1 auxiliary file: example-a.aux
+Database file #1: example-ref.bib
+You've used 1 entry,
+            2481 wiz_defined-function locations,
+            576 strings with 4903 characters,
+and the built_in function-call counts, 544 in all, are:
+= -- 44
+> -- 33
+< -- 0
++ -- 12
+- -- 10
+* -- 53
+:= -- 96
+add.period$ -- 5
+call.type$ -- 1
+change.case$ -- 2
+chr.to.int$ -- 1
+cite$ -- 1
+duplicate$ -- 19
+empty$ -- 41
+format.name$ -- 11
+if$ -- 105
+int.to.chr$ -- 1
+int.to.str$ -- 2
+missing$ -- 1
+newline$ -- 15
+num.names$ -- 3
+pop$ -- 5
+preamble$ -- 1
+purify$ -- 1
+quote$ -- 0
+skip$ -- 11
+stack$ -- 0
+substring$ -- 33
+swap$ -- 2
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 7
+warning$ -- 0
+while$ -- 4
+width$ -- 0
+write$ -- 24

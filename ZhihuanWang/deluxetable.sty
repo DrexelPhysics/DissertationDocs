@@ -1,0 +1,560 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% deluxetable.sty:  Standalone definitions of aastex's deluxetable. 
+% 
+% Credit: This file kindly provided by Alexey Vikhlinin. 
+% 
+% USAGE: 
+% 
+% 1. Put \usepackage{deluxetable} in the preamble of your document. 
+% 2. Copy this text to a local file called deluxetable.sty. 
+% 
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]% 
+\ProvidesPackage{deluxetable}% 
+
+\def\pt@headfrac@ass@normalsize{.1}
+\def\pt@headfrac@ass@footnotesize{.12}
+\def\pt@headfrac@ass@scriptsize{.15}
+\def\pt@notemin@normal{4.5}
+\def\pt@notemin@footnote{4.5}
+\def\pt@notemin@script{5}
+
+\def\@to{to}%
+\newcommand\nodata{ ~$\cdots$~ }% 
+\newcommand\ulap[1]{\vbox\@to\z@{{\vss#1}}}% 
+\newcommand\dlap[1]{\vbox\@to\z@{{#1\vss}}}% 
+
+\newcommand\let@environment[2]{% 
+ \expandafter\let 
+ \csname#1\expandafter\endcsname\csname#2\endcsname 
+ \expandafter\let 
+ \csname end#1\expandafter\endcsname\csname end#2\endcsname 
+ }% 
+
+\def\substitute@command#1#2{% 
+ \ClassWarning{aastex}{% 
+  Command \protect#1\space is deprecated in aastex. 
+  Using \protect#2\space instead (please fix your document). 
+ }% 
+ #2% 
+}% 
+\def\remove@command#1{% 
+ \ClassWarning{aastex}{% 
+  Command \protect#1\space is deprecated in aastex. 
+  Please remove it from your document% 
+ }% 
+}% 
+\def\@provide#1{%Implicit #2 
+ \@ifxundefined#1{\def#1}{\def\@tempa}% 
+}% 
+\def\prepdef#1#2{% 
+ \@ifxundefined#1{\toks@{}}{\toks@\expandafter{#1}}% 
+ \toks@ii{#2}% 
+ \edef#1{\the\toks@ii\the\toks@}% 
+}% 
+\def\appdef#1#2{% 
+ \@ifxundefined#1{\toks@{}}{\toks@\expandafter{#1}}% 
+ \toks@ii{#2}% 
+ \edef#1{\the\toks@\the\toks@ii}% 
+}% 
+\def\appgdef#1#2{% 
+ \@ifxundefined#1{\toks@{}}{\toks@\expandafter{#1}}% 
+ \toks@ii{#2}% 
+ \xdef#1{\the\toks@\the\toks@ii}% 
+}% 
+\toksdef\toks@ii=\tw@ 
+\long\def\@ifxundefined#1{\@ifx{\undefined#1}}% 
+\def\@boolean#1#2{% 
+  \long\def#1{% 
+    #2% \if<something> 
+      \expandafter\boolean@true 
+    \else 
+      \expandafter\boolean@false 
+    \fi 
+  }% 
+}% 
+\def\@boole@def#1#{\@boolean{#1}}% Implicit #2 
+\@boole@def\@ifx#1{\ifx#1}% 
+\@boole@def\@ifx@empty#1{\ifx\@empty#1}% 
+\@boole@def\@ifnum#1{\ifnum#1}% 
+\@boole@def\@ifdim#1{\ifdim#1}% 
+\@boole@def\@ifvoid#1{\ifvoid#1}% 
+\long\def\boolean@true#1#2{#1}% 
+\long\def\boolean@false#1#2{#2}% 
+
+\newskip\tnotemarkskip
+\tnotemarkskip7pt
+\newdimen\@abovenoteskip%
+\newcommand\tablenotemark[1]{% 
+\rlap{$^{\mathrm #1}$}\hskip\tnotemarkskip\ignorespaces% Fixed: the space after notemark
+}% 
+\def\@tablenotetext#1#2{% 
+ \vspace{.5ex}% 
+ {\noindent\llap{$^{#1}$}#2\par}% 
+}% 
+\def\@tablenotes#1{% 
+ \par 
+ \vspace{4.5ex}\footnoterule\vspace{.5ex}% 
+ {\footnotesize#1}% 
+}% 
+\def\@tablenotes@pptt#1{% 
+ \par 
+ \vspace{3.2ex}\footnoterule\vspace{.4ex}% 
+ {\footnotesize#1}% 
+}% 
+\AtBeginDocument{% 
+ \let\tblnote@list\@empty 
+}% 
+\newcommand\tablenotetext[2]{\ifdim\@abovenoteskip=0pt\global\@abovenoteskip=20pt\fi%
+ \appgdef\tblnote@list{\hsize\pt@width\leftskip\z@\rightskip\z@%
+ \@tablenotetext{#1}{\parfillskip\z@ plus1fil#2\endgraf}}%
+}% 
+\def\spew@tblnotes{% 
+ \@ifx@empty\tblnote@list{}{% 
+  \@tablenotes{\tblnote@list}% 
+  \global\let\tblnote@list\@empty 
+ }% 
+}% 
+\prepdef\endtable{\spew@tblnotes}% 
+\expandafter\prepdef\csname endtable*\endcsname{\spew@tblnotes}% 
+\let\tableline=\hline 
+\long\def\@makecaption#1#2{\vskip 2ex\noindent#1\ #2\par}% 
+\newcommand\tablenum[1]{% 
+ \def\thetable{#1}% 
+ \let\@currentlabel\thetable 
+ \addtocounter{table}{\m@ne}% 
+}% 
+\newcommand\dummytable{\refstepcounter{table}}% 
+\newbox\pt@box 
+\newdimen\pt@width 
+\newcount\pt@line 
+\newcount\pt@column 
+\newcount\pt@nlines 
+\newcount\pt@ncol 
+\newcount\pt@page 
+\newcommand\colhead[1]{\multicolumn{1}{c}{#1}\pt@addcol}% 
+\gdef\pt@footnotesize{\string\footnotesize}
+\gdef\pt@scriptsize{\string\scriptsize}
+\newcommand\tabletypesize[1]{\def\pt@typesize{#1}\gdef\@typesize{\string#1}
+ \ifx\@typesize\pt@footnotesize
+      \def\pt@headfrac{\pt@headfrac@ass@footnotesize}
+  \else
+      \ifx\@typesize\pt@scriptsize
+          \def\pt@headfrac{\pt@headfrac@ass@scriptsize}
+      \else
+          \def\pt@headfrac{\pt@headfrac@ass@normalsize}%
+      \fi
+\fi
+}% Access to different type sizes in deluxetable
+\def\pt@typesize{}% 
+\newcommand\tablecolumns[1]{% 
+ \pt@column=#1\relax%
+ \pt@ncol=#1\relax%
+ \global\let\pt@addcol\@empty%
+}% 
+\newcommand\tablecaption[1]{\gdef\pt@caption{\tnotemarkskip8pt#1}}%Fixed: space after mark
+\newcommand\tablehead[1]{% 
+ \gdef\pt@head{% 
+  \hline\hline 
+  \relax\\[-1.7ex]% 
+  #1\hskip\tabcolsep 
+  \\[.7ex]% 
+  \hline 
+  \relax\\[-1.5ex]% 
+ }% 
+}% 
+\def\tablehead@aj#1{% 
+ \gdef\pt@head{% 
+  #1\hskip\tabcolsep 
+  \\[.7ex]% 
+  \hline 
+  \relax\\[-1.5ex]% 
+ }% 
+}% 
+\newif\if@pt@rot 
+\newcommand\rotate{\@pt@rottrue}% 
+\newcommand\tabletail[1]{\gdef\pt@tail{#1}}% 
+\newcommand\tablewidth[1]{\pt@width=#1\relax}% 
+\newcommand\tableheadfrac[1]{\gdef\pt@headfrac{#1}}% 
+\AtBeginDocument{% 
+ \let\pt@caption\@empty%
+ \let\pt@head\@empty%
+ \let\pt@tail\@empty%
+ \pt@width\textwidth%
+ %\def\pt@headfrac{.1}%
+ \def\pt@headfrac{\pt@headfrac@ass@normalsize}% initialize typesize to consider
+}%                                            % while calculating rows
+\newdimen\tabbaseskip%
+\def\pt@calcnlines{% 
+ \begingroup%
+  \if@pt@rot\textheight\textwidth\fi% rotate tables
+  \pt@typesize% Type sizes in deluxetable
+  \@tempdima\pt@headfrac\textheight 
+  \@tempdimb\textheight\advance\@tempdimb by-\@tempdima 
+  \@tempdima\arraystretch\baselineskip 
+  \global\tabbaseskip\baselineskip
+  \divide\@tempdimb by\@tempdima 
+  \global\pt@nlines\@tempdimb 
+ \endgroup 
+}% 
+\def\pt@tabacol{% 
+ \edef\@preamble{\@preamble\hskip\tabcolsep\tabskip\fill}% 
+}% 
+\newdimen\pt@tmpcapwidth 
+\long\def\@makecaption@plano#1#2{% 
+ \@ifdim{\pt@width>\z@}{% 
+  \pt@tmpcapwidth\pt@width 
+ }{% 
+  \pt@tmpcapwidth\hsize
+ }% 
+  \parbox{\pt@tmpcapwidth}{% 
+   \@make@caption@text{#1}{#2}% 
+  }% 
+ \endcenter 
+}% 
+\def\fnum@ptable{Table \thetable}% 
+\def\fnum@ptablecont{Table \thetable---{\rmfamily Continued}}%
+\long\def\@make@caption@text#1#2{% 
+ \center\rmfamily#1.\quad#2\endcenter 
+}% 
+\long\def\@makecaption@plano@cont#1#2{% 
+ \center\rmfamily#1\endcenter 
+ \vskip 2.5ex 
+}% 
+\def\fnum@ptablecont@pptt{Table \thetable---{\itshape Continued}}%
+\long\def\@make@caption@text@pptt#1#2{% 
+ \center\sc#1\\[.5ex]#2\endcenter 
+}% 
+\long\def\@makecaption@plano@cont@pptt#1#2{% 
+ \center\sc#1\endcenter 
+ \vskip 1.5ex 
+}% 
+\def\fnum@ptable@apj{TABLE \thetable}% 
+\def\fnum@ptablecont@apj{TABLE \thetable---{\itshape Continued}}%
+\long\def\@make@caption@text@apj#1#2{% 
+ \center\Large\sc#1\\[.5ex]#2\endcenter 
+}% 
+\long\def\@makecaption@plano@cont@apj#1#2{% 
+ \center\Large\sc#1\endcenter 
+ \vskip 1.5ex 
+}% 
+\def\fnum@ptable@aj{Table \thetable.}% 
+\def\fnum@ptablecont@aj{Table \thetable.\space{\rmfamily (continued)}}% 
+\long\def\@make@caption@text@aj#1#2{% 
+ \center\large{\sc#1}\space#2\endcenter 
+}% 
+\long\def\@makecaption@plano@cont@aj#1#2{% 
+ \center\large{\sc#1}\endcenter 
+ \vskip 1.5ex 
+}% 
+\newbox\spew@tblnotesbox%
+\newbox\restof@tblnotesbox%
+\global\newdimen\noteheight%
+\global\newdimen\pt@tabnoteminht%
+\global\pt@tabnoteminht=0pt%
+\newenvironment{deluxetable}[1]{% 
+ \maketitle
+ \def\pt@format{\string#1}% 
+ \let\@acol\pt@tabacol%
+ \let\@tabularcr\@ptabularcr%
+ \let\@tablenotetext\@ptablenotetext%
+ \let\@tablenotes\@ptablenotes%
+ \global\pt@ncol\z@%
+ \global\pt@column\z@%
+ \global\pt@page\@ne%
+ \gdef\pt@addcol{\global\advance\pt@ncol\@ne}% 
+ \if@pt@rot\leavevmode\fi%
+}{% 
+  \ifx\@typesize\pt@footnotesize%%% considering the table typesize in calculation
+    \global\pt@tabnoteminht=\pt@notemin@footnote\baselineskip
+  \else
+    \ifx\@typesize\pt@scriptsize
+       \global\pt@tabnoteminht=\pt@notemin@script\baselineskip
+    \else
+       \global\pt@tabnoteminht=\pt@notemin@normal\baselineskip
+    \fi
+  \fi
+ \global\advance\pt@tabnoteminht-\@abovenoteskip
+ \global\@abovenoteskip=0pt
+ \setbox\spew@tblnotesbox\vbox{\spew@tblnotes}%
+ %%
+ %% Finding the available space for tablenotes in current page
+ \if@pt@rot\global\noteheight\textwidth\else\global\noteheight\textheight\fi%
+ \global\advance\noteheight-\ht\captionbox%
+ \global\advance\noteheight-\pt@line\tabbaseskip
+ \if@twocolumn  %% tables in preprint2 style
+    \ifx\@typesize\pt@scriptsize
+    \global\advance\noteheight-6\baselineskip%
+    \else
+    \global\advance\noteheight-3\baselineskip%
+    \fi
+  \else
+    \global\advance\noteheight-2\baselineskip%
+  \fi
+%%
+%% Print the maximum lines of notes below table within current page
+   \ifdim\noteheight<\pt@tabnoteminht% if not possible to keep the minimum two lines
+     \global\noteheight=0pt%         % the whole notes move to next page.
+     \global\setbox\restof@tblnotesbox\vbox{\unvbox\spew@tblnotesbox}%
+   \else
+   %%
+   %% if possible two lines, check the length of notes
+     \ifdim\ht\spew@tblnotesbox>\noteheight%
+        % Print maximum notes in available space and store the remaining part
+        \hbox\@to\hsize{\hfil\vsplit\spew@tblnotesbox to \noteheight\hfil}%
+        \global\setbox\restof@tblnotesbox\vbox{\unvbox\spew@tblnotesbox}%
+     \else%
+        % Print the whole notes in current page.
+        \vbox{\hbox\@to\hsize{\hfil\box\spew@tblnotesbox\hfil}}%
+     \fi
+   \fi
+ \typeout@deluxetable%
+ \endcenter%
+ \end@plano@float%
+%%
+%% Print the remaining tablenotes into new page(s).
+%% print each page until the remaining box empty.
+ \loop\ifvoid\restof@tblnotesbox\else%
+ \clearpage
+ %%
+ %% check whether the remaining box is a full/partial page
+ \ifdim\ht\restof@tblnotesbox<\if@pt@rot\hsize\else\vsize\fi%
+     \vbox to \textheight{\if@pt@rot\vfill\fi\hbox to \textwidth{\if@pt@rot\else\hfil\fi
+     \if@pt@rot\rotatebox{90}{\box\restof@tblnotesbox}
+     \else{\box\restof@tblnotesbox}\fi\hfil}\vfill}%
+ \else%
+    \vbox to \textheight{\vfill\hbox to \textwidth{\hfil%
+    \if@pt@rot\rotatebox{90}{\vsplit\restof@tblnotesbox to \textwidth}
+    \else{\vsplit\restof@tblnotesbox to \textheight}\fi\hfil}\vfill}%
+ \fi%
+ \clearpage
+ \repeat%
+ \addtocounter{table}{\m@ne}%
+ \tabletypesize{\normalsize}%
+}% 
+\let@environment{planotable}{deluxetable}% 
+\def\@plano@float{% Invoked by \startdata 
+ \begingroup%
+  \if@pt@rot\columnwidth\textheight\fi% Deluxetable table \rotate
+  \@plano@float@{table}% 
+}% 
+\def\end@plano@float{% S/B invoked by \enddata; instead by \enddeluxetable 
+  \end@plano@float@\endgroup}%
+\def\@plano@float@{\@float}% Extra layer of abstraction for float processing
+\def\end@plano@float@{%
+\end@float}%
+\newdimen\firsttabskip
+\firsttabskip-\hsize
+\appdef\@endfloatbox{% 
+\if@pt@rot
+\global\setbox\@currbox\vbox{\hskip\firsttabskip\global\firsttabskip\z@%
+\rotatebox{90}{\box\@currbox}}\else\global\firsttabskip\z@\fi%
+}% 
+\def\typeout@deluxetable@mss{% 
+ \typeout{% 
+  Table \thetable\space has been set to width \the\pt@width 
+ }% 
+}% 
+\def\typeout@deluxetable@ppt{% 
+ \typeout{% 
+  Page  \the\pt@page \space of table \thetable\space has been set to 
+  width \the\pt@width\space with \the\pt@nlines\space lines per page 
+ }% 
+}% 
+\let\typeout@deluxetable\typeout@deluxetable@mss 
+\newcommand\startdata{% 
+ \pt@calcnlines 
+ \@ifdim{\pt@width>\z@}{% 
+  \def\@halignto{\@to\pt@width}% 
+ }{% 
+  \def\@halignto{}% 
+ }% 
+ \let\fnum@table=\fnum@ptable 
+ \let\@makecaption\@makecaption@plano 
+ \global\pt@line\z@ 
+ \start@pt@tabular 
+ \after@startdata 
+}% 
+\global\newbox\captionbox
+\def\start@pt@tabular{\par%
+ \@plano@float 
+ \center 
+ \expandafter\caption\expandafter{\pt@caption}% 
+ \global\setbox\captionbox\vbox{\expandafter\caption\expandafter{\pt@caption}}
+ \pt@typesize% Type sizes in deluxetable
+ \expandafter\@tabular\expandafter{\pt@format}% 
+}% 
+\def\set@pt@box#1{\setbox\pt@box}% 
+\def\after@startdata{\pt@head}% 
+\def\after@startdata@aj{\hline\hline\relax\\[-1.7ex]\pt@head}% 
+\def\enddata{% 
+ \crcr 
+ \noalign{\vskip .7ex}% 
+ \before@enddata%
+ \endtabular%
+ \setbox\pt@box\lastbox%
+ \pt@width\wd\pt@box
+ \hbox \@to \hsize{\hfil\box\pt@box\hfil}%
+ \ignorespaces}%
+\def\before@enddata{\hline}% 
+\def\before@enddata@aj{\hline\hline}% 
+\def\nl{\substitute@command\nl\\}% 
+\def\nextline{\substitute@command\nextline\\}% 
+\def\@ptabularcr{% 
+ {\ifnum0=`}\fi % A klootch just in case the next token is & or \cr 
+ \@ifstar{% 
+  \@testopt{\@argptabularcr\@empty}\z@skip%
+ }{% 
+  \@testopt{\@argptabularcr\ptable@@split}\z@skip%
+ }%
+ }% 
+\newdimen\pt@reduceline
+\newdimen\extra@vspace
+\extra@vspace\z@
+\def\@xargptarraycr#1{\@tempdima #1%
+   \global\advance\extra@vspace\@tempdima%        % adding the optional spaces
+   \advance\@tempdima\dp \@arstrutbox%
+   \vrule \@height\z@ \@depth\@tempdima \@width\z@%
+   \global\pt@reduceline\arraystretch\tabbaseskip% total lines to be reduced
+   \@whilenum\pt@reduceline<\extra@vspace%       % reducing the excess lines%
+   \do{%
+   \global\advance\extra@vspace-\pt@reduceline%
+   \global\advance\pt@line1
+}% 
+\cr}%
+\def\@argptabularcr#1[#2]{% 
+ \ifnum0=`{\fi}% To undo the effect of the klootch. 
+ \@ifdim{#2>\z@}{% 
+  \unskip\@xargptarraycr{#2}%
+ }{% 
+  \@yargarraycr{#2}% 
+ }\ptable@split#1% 
+}% 
+\def\ptable@split#1{% 
+ \noalign{% 
+  \global\advance\pt@line\@ne%
+  \@ifnum{\pt@line<\pt@nlines}{}{% 
+   \aftergroup#1% 
+  }% 
+ }% 
+}% 
+\def\ptable@@split{% 
+  \before@suspendpt%
+  \endtabular%
+  \setbox\pt@box\lastbox%
+  \pt@width\wd\pt@box\box\pt@box%
+  \typeout@pt@nl%
+  \global\advance\pt@page\@ne%
+  \endcenter%
+  \end@plano@float%
+  \clearpage 
+  \global\extra@vspace\z@
+  \addtocounter{table}{-2}%
+  \let\fnum@table=\fnum@ptablecont%
+  \let\@makecaption\@makecaption@plano@cont%
+  \global\pt@ncol=\pt@column%  Either 0 or value of \tablecolumns 
+  \global\pt@line\z@%
+  \start@pt@tabular%
+  \before@resumept%
+  \pt@head%
+}% 
+\def\before@suspendpt{}% 
+\def\before@resumept{}% 
+\def\before@suspendpt@aj{\@tabularcr\noalign{\vskip .7ex}\hline}% 
+\def\before@resumept@aj{\hline\relax\@tabularcr[-1.7ex]}% 
+\def\typeout@pt@nl@ppt{% 
+ \typeout{% 
+  Page \the\pt@page\space of table \thetable\space has been set to 
+  width \the\pt@width 
+ }% 
+}% 
+\def\typeout@pt@nl@mss{% 
+ \typeout{% 
+  Page \the\pt@page\space of table \thetable\space has been set to 
+  width \the\pt@width\space with \the\pt@nlines\space lines per page 
+ }% 
+}% 
+\def\typeout@pt@nl@aj{% 
+ \typeout{% 
+  Table \thetable\space has been set to 
+  width \the\pt@width\space with \the\pt@nlines\space lines per page 
+ }% 
+}% 
+\let\typeout@pt@nl\typeout@pt@nl@mss 
+\newcommand\tablevspace[1]{\substitute@command\tablevspace\\[#1]}% 
+%\newcommand\tablebreak{\cr\ptable@@split}%\\{\cr\ptable@@split}%
+\newcommand\cutinhead[1]{% 
+ \noalign{\vskip 1.5ex}% 
+ \hline 
+ \@ptabularcr 
+ \noalign{\vskip -4ex}% 
+ \multicolumn{\pt@ncol}{c}{#1}% 
+ \@ptabularcr 
+ \noalign{\vskip .8ex}% 
+ \hline 
+ \@ptabularcr 
+ \noalign{\vskip -2ex}% 
+}% 
+\def\cutinhead@ppt#1{% 
+ \noalign{\vskip 1.5ex}% 
+ \hline 
+ \@ptabularcr 
+ \noalign{\vskip -2ex}% Style Note: in apj, it is -1.5ex 
+ \multicolumn{\pt@ncol}{c}{#1}% 
+ \@ptabularcr 
+ \noalign{\vskip .8ex}% 
+ \hline 
+ \@ptabularcr 
+ \noalign{\vskip -2ex}% 
+}% 
+\newcommand\sidehead[1]{% 
+ \noalign{\vskip 1.5ex}% 
+ \multicolumn{\pt@ncol}{@{\hskip\z@}l}{#1}% 
+ \@ptabularcr 
+ \noalign{\vskip .5ex}% 
+}% 
+\def\@ptablenotetext#1#2{% 
+ \vspace{0ex}% Style Note: in ppt, it is gone 
+ {%\parbox{\pt@width}%
+ {\hskip1em$^{\mathrm#1}$#2}\par}%
+}% 
+\def\@ptablenotes#1{% 
+ \par 
+ \vspace{2ex}% 
+ {\setlength\parskip{1.5ex}#1}% 
+}% 
+\def\@ptablenotes@apj#1{% 
+ \par 
+ \vspace{2ex}% 
+ {#1}% 
+}% 
+\newcommand\tablerefs[1]{\ifdim\@abovenoteskip=0pt\global\@abovenoteskip=10pt\fi
+\appgdef\tblnote@list{\hsize\pt@width\leftskip\z@\rightskip\z@%
+\@tableref{\parfillskip\z@ plus1fil#1\endgraf}}}%
+\def\@tableref#1{% 
+ \par 
+ \vspace*{3ex}% 
+ {%\parbox{\pt@width} %%%%
+ {\hskip1em\rmfamily References. --- #1}\par}%
+}% 
+\newcommand\tablecomments[1]{\ifdim\@abovenoteskip=0pt\global\@abovenoteskip=10pt\fi
+\appgdef\tblnote@list{\hsize\pt@width\leftskip\z@\rightskip\z@%
+\@tablecom{\parfillskip\z@ plus1fil#1\endgraf}}}%
+\def\@tablecom#1{% 
+ \par 
+ \vspace*{3ex}% 
+ {%\parbox{\pt@width} %%%
+{\hskip1em\rmfamily Note. --- #1}\par}%
+}% 
+\def\@tableref@pptt#1{% 
+ \par 
+ \vspace*{3ex}%
+ {%\parbox{\pt@width} %%%
+ {\hskip1em{\sc References.---}#1}\par}%
+}% 
+\def\@tablecom@pptt#1{% 
+ \vspace*{3ex}{% 
+ \parbox{\pt@width}{\hskip1em{\sc Note.---}#1}\par}% 
+}% 
+\endinput 
+%% 
+%% ................................... End of file `deluxetable.sty'.
