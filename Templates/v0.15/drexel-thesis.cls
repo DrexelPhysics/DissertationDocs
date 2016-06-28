@@ -1,846 +1,35 @@
-% \def\fileversion{0.15}
-% \def\filedate{2013/05/21}
-% \iffalse meta-comment
-%<*driver>
-\ProvidesFile{drexel-thesis.dtx}
-\documentclass{ltxdoc}
-%</driver>
-%<*class|driver>
+%%
+%% This is file `drexel-thesis.cls',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% drexel-thesis.dtx  (with options: `class')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2010 W. Trevor King
+%% 
+%% This file may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License, either version 1.3 of this license
+%% or (at your option) any later version.  The latest version of this
+%% license is in:
+%% 
+%%    http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.3 or later is part of all distributions of LaTeX version
+%% 2003/06/01 or later.
+%% 
 \def\fileversion{0.15}
 \def\filedate{2013/05/21}
-%</class|driver>
-%
-% Copyright (C) 2010-2013  C.Y. Ip
-%                          Christopher D. Cera
-%                          Christopher S. Dahn
-%                          Daniel J. Cross
-%                          David T. McWherter
-%                          Evan Sultanik
-%                          Jeff Arahamson
-%                          Mitchell Peabody
-%                          R. Rojas, E
-%                          Robert Bernecky
-%                          T. Tsankov
-%                          Vincent A. Cicirello
-%                          W. Trevor King
-% -------------------------------------------------------
-% 
-% This file may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or (at your option) any later version.
-% The latest version of this license is in:
-%
-%    http://www.latex-project.org/lppl.txt
-%
-% and version 1.3 or later is part of all distributions of LaTeX 
-% version 2003/12/01 or later.
-%
-% Docstrip formatting initially based on Scott Pakin's
-% dtxtut/cskeleton.dtx
-%   http://www.ctan.org/tex-archive/info/dtxtut/
-%
-% \fi
-%
-% \iffalse meta-comment
-%<class>\NeedsTeXFormat{LaTeX2e}
-%<class>\ProvidesClass{drexel-thesis}
-%<class> [\filedate\ \fileversion\ Drexel Thesis]
-%
-% Code for the .ini driver, see \S 2.1 ``The driver file'' of doc.dtx.
-%<*driver>
-\usepackage[colorlinks=true,]{hyperref}
-\hypersetup{pdfauthor={W. Trevor King et al.}}
-\hypersetup{pdftitle={drexel-thesis \fileversion\ documentation}}
-%</driver>
-% Include some useful commands from |xkeyval|'s |<preamble>|.
-%<*driver>
-\usepackage{xcolor}
-\usepackage{listings}
-\lstnewenvironment{command}{%
-  \lstset{columns=flexible,frame=single,backgroundcolor=\color{blue!20},%
-    xleftmargin=\fboxsep,xrightmargin=\fboxsep,escapeinside=`',gobble=1}}{}
-\lstnewenvironment{example}{%
-  \lstset{basicstyle=\footnotesize\ttfamily,columns=flexible,frame=single,%
-    backgroundcolor=\color{yellow!20},xleftmargin=\fboxsep,%
-    xrightmargin=\fboxsep,gobble=1}}{}
-%</driver>
-% Define a quick and dirty version of |xkeyval|'s |\DescribeOptions|.
-%<*driver>
-\newenvironment{option}[1]{\begin{macro}{#1}}
-                          {\end{macro}}
-%</driver>
-% Some commonly used abbreviations from |classes.dtx|.
-%<*driver>
-\newcommand*{\Lopt}[1]{\textsf {#1}}
-\newcommand*{\file}[1]{\texttt {#1}}
-\newcommand*{\Lcount}[1]{\textsl {\small#1}}
-\newcommand*{\pstyle}[1]{\textsl {#1}}
-%</driver>
-% Provide easy access to the @ character.  Note that this, like the
-% short-verbatim markers ||, does not work in |\changes| sections
-% because of the way they are cached to the glossary file.  If you
-% find a way to make them work there, let me know :).
-%<*driver>
-\newcommand*{\textat}{\makeatletter @ \makeatother}
-%</driver>
-%<*driver>
-\makeatletter
-\def\DescribeOption#1{\leavevmode\@bsphack
-              \marginpar{\raggedleft\PrintDescribeOption{#1}}%
-              \SpecialOptionIndex{#1}\@esphack\ignorespaces}
-\def\PrintDescribeOption#1{\strut\emph{option}\\\MacroFont #1\ }
-\def\SpecialOptionIndex#1{\@bsphack
-    \index{#1\actualchar{\protect\ttfamily#1}
-           (option)\encapchar usage}%
-    \index{options:\levelchar#1\actualchar{\protect\ttfamily#1}\encapchar
-           usage}\@esphack}
-\def\DescribeOptions#1{\leavevmode\@bsphack
-  \marginpar{\raggedleft\strut\emph{options}%
-  \@for\@tempa:=#1\do{%
-    \\\strut\MacroFont\@tempa\SpecialOptionIndex\@tempa
-  }}\@esphack\ignorespaces}
-\makeatother
-%</driver>
-%<*driver>
-\EnableCrossrefs
-\RecordChanges
-\EnableCrossrefs         
-\begin{document}
-  \DocInput{drexel-thesis.dtx}
-\end{document}
-%</driver>
-% \fi
-%
-% \CheckSum{0}
-%
-% \CharacterTable
-%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%   Digits        \0\1\2\3\4\5\6\7\8\9
-%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%   Dollar        \$     Percent       \%     Ampersand     \&
-%   Acute accent  \'     Left paren    \(     Right paren   \)
-%   Asterisk      \*     Plus          \+     Comma         \,
-%   Minus         \-     Point         \.     Solidus       \/
-%   Colon         \:     Semicolon     \;     Less than     \<
-%   Equals        \=     Greater than  \>     Question mark \?
-%   Commercial at \@     Left bracket  \[     Backslash     \\
-%   Right bracket \]     Circumflex    \^     Underscore    \_
-%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%   Right brace   \}     Tilde         \~}
-%
-%
-% \changes{0.1}{2006/01/18}{Rewrite by Daniel J.~Cross}
-% \changes{0.2}{2010/01/09}{W.~Trevor King transitioned from thesis.cls
-%   to drexel-thesis.dtx and did a good deal of reorganizing.}
-% \changes{0.3}{2010/01/13}{W.~Trevor King merged drexelthesis.cls
-%   developed in the Comp.~Sci.~Department by Jeff Abrahamson,
-%   Evan Sultanik, C.Y.~Ip, Christopher S.~Dahn, Christopher D.~Cera,
-%   Mitchell Peabody, David T.~McWherter, and Vincent A.~Cicirello.
-%   Based on the University of Toronto Thesis \LaTeXe\ Class.  Also
-%   greatly improved the documentation by incorperating bits of
-%   the base/*.dtx files.}
-% \changes{0.4}{2010/02/23}{W.~Trevor King repositioned hyperref
-%   inclusion for proper hyperref overriding.  The previous
-%   implementation couldn't handle \cs{label} for \cs{paragraph} and
-%   some other section levels.  The page number for the reference was
-%   correct, but the link went to the label's parent chapter.}
-% \changes{0.5}{2010/03/03}{W.~Trevor King use hypcap for better
-%   caption hyperlink anchor placement.}
-% \changes{0.6}{2010/03/11}{W.~Trevor King fixed \cs{if@final}
-%   handling.  Previous versions used it more like a hypothetical
-%   \cs{if@finalspace}.  Also adjusted theindex to use a
-%   \cs{listed@schapter}.}
-% \changes{0.10}{2010/05/21}{W.~Trevor King added \cs{DUT*}
-%   aliases for all public macros and environments and renamed
-%   \cs{defmonth} and \cs{defyear} to \cs{DUTmonth} and \cs{DUTyear}
-%   for consistency with the new aliases.}
-% \changes{0.13}{2010/07/28}{W.~Trevor King cleaned up TOC/LOT/LOF code.}
-% \changes{0.14}{2010/09/21}{Evan Sultanik added the
-%   \texttt{approvalform} option for including a \LaTeX\ version of
-%   the T-1 thesis form.}
-% \changes{0.15}{2011/04/22}{W.~Trevor King added the
-%   \texttt{nodraftwatermark} option for clearing previous watermark
-%   options.}
-% \changes{0.15}{2011/04/23}{W.~Trevor King added the
-%   \texttt{pagebreak} and \texttt{nopagebreak} options for
-%   controlling page breaking independently of \texttt{final} and
-%   \texttt{draft}.}
-%
-% \MakeShortVerb{\|}
-% \newcommand{\pkg}[1]{\textsf{#1}}
-% \newcommand{\cls}[1]{\textsf{#1}}
-% ^^A\newcommand{\BibTeX}{{\scshape Bib}\TeX}
-% 
-% \title{The \textsf{drexel-thesis} class\thanks{This document
-%   corresponds to \textsf{drexel-thesis}~\fileversion, dated \filedate.}}
-% \author{W.~Trevor King \\\texttt{wking@tremily.us}
-%         \and Daniel J.~Cross \and T.~Tsankov \and R.~Rojas. \and Evan A.~Sultanik}
-% \date{\filedate}
-%
-% \maketitle
-%
-%
-% \section{Introduction}
-%
-% This package defines a \LaTeX\ thesis class for Drexel University
-% conforming to the
-% \href{http://www.library.drexel.edu/files/services_documents/thesismanual.pdf}
-%   {Drexel University Thesis Manual version 2009/06/01}.
-%
-% \section{Usage}
-%
-% To write a thesis, you load the Drexel thesis definitions by loading
-% the \pkg{drexel-thesis} class at the beginning of your
-% \LaTeX\ document with the |\documentclass| command.  For example,
-% \begin{example}
-%   \documentclass{drexel-thesis}
-% \end{example}
-%
-% For \href{http://www.lyx.org/}{LyX} users, we include a LyX template
-% (\file{drexel-thesis.layout}, originally by John K. Parejko) so that
-% the previews generated in LyX are similar to those generated by the
-% actual \cls{drexel-thesis} class.
-%
-%
-% \subsection{Options}
-%
-% \DescribeOptions{final,draft}
-% The default option (selected if not options are passed) is
-% \Lopt{final} mode, which has all the proper formatting and spacing
-% for your final product. The other main option is \Lopt{draft} mode,
-% which reduces all the spacing in the document, so might be helpful
-% when printing out drafts (saves paper).
-%
-% \Lopt{final} mode corresponds to (with Thesis Manual chapter and
-% verse) \\
-% \begin{tabular}{r p{0.8\textwidth}}
-%   \Lopt{oneside} & 1.5 Library Submission Information, Print
-%     Version: ``All copies must be: \ldots Typed/printed on only one
-%     side of the page (not double-sided).'' \\
-%   \Lopt{finalspace} & Assorted single, double, and triple spacing
-%   directives. \\
-%   \Lopt{pagebreak} & Conform to thesis pagebreak rules. \\
-%   \Lopt{dottedtoc} & From the example on p17. \\
-%   \Lopt{nodraftwatermark} & Clear any earlier watermark options.
-% \end{tabular}
-%
-% \Lopt{draft} mode corresponds to \\
-% \begin{tabular}{r p{0.8\textwidth}}
-%   \Lopt{twoside} & Save space. \\
-%   \Lopt{draftspace} & Save space. \\
-%   \Lopt{nopagebreak} & Save space. \\
-%   \Lopt{dottedtoc} & Might as well be consistent with \Lopt{final}. \\
-%   \Lopt{xdraftwatermark} & It's good to have a timestamp.
-% \end{tabular}
-%
-% \DescribeOption{subfig}
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/}{\pkg{subfig}}
-% makes it easy to include and caption multi-part figures.  However,
-% getting \pkg{subfig} to cooperate with \pkg{floatrow} and
-% \pkg{tocloft} can be tricky.  If you want to use \pkg{subfig}, just
-% pass the \Lopt{subfig} option to \cls{drexel-thesis}, and all the
-% pesky details will be taken care of.  See \S
-% \ref{sec:better-example} for an example.
-%
-% \DescribeOption{finalspace}
-% Loosen spacing.
-%
-% \DescribeOption{draftspace}
-% Tighten spacing.
-%
-% \DescribeOption{pagebreak}
-% Break pages between chapters and chapter-like blocks.
-%
-% \DescribeOption{nopagebreak}
-% Don't break pages between chapters and chapter-like blocks (saves paper).
-%
-% \DescribeOptions{dottedtoc,boldtoc,
-%                  dottedpart,boldpart,
-%                  dottedchapter,boldchapter}
-% These options change how the relevant table of contents lines are
-% printed.  \LaTeX\ defaults to bold but not dots.  The \Lopt{*toc}
-% options set all of the types.  For example, \Lopt{boldtoc} is
-% equivalent to \Lopt{boldchapter,boldpart}.
-%
-% \DescribeOption{indenttoc}
-% The example table of contents in the Manual p17 does not indent
-% section entries, etc., so neither does \cls{drexel-thesis}.  If you
-% \emph{do} want pretty, indented TOCs, like the \LaTeX\ defaults pass
-% \Lopt{indenttoc} to \cls{drexel-thesis}.
-%
-% \DescribeOption{blackref}
-% \Lopt{blackref} colors all \pkg{hyperref} links black, so they won't
-% stand out in your printed document.
-%
-% \DescribeOption{draftwatermark}
-% \Lopt{draftwatermark} adds ``DRAFT \meta{date}'' watermarks to each
-% page.  A useful way to remember that the version you're looking at
-% is not final.  Also helps reviewers tell you what version they're
-% correcting.  Requires the \pkg{draftmark} package, which allows you
-% to override the default watermark style if it is not to your liking
-% (\S~\ref{sec:draftmark}).
-%
-% \DescribeOption{xdraftwatermark}
-% \Lopt{xdraftwatermark} is also similar to \Lopt{draftwatermark} but
-% depends on the possibly more common \pkg{xcolor}, \pkg{eso-pic}, and
-% \pkg{graphicx}.
-%
-% \DescribeOption{nodraftwatermark}
-% \Lopt{nodraftwatermark} clears any earlier watermark options.  For
-% example
-% \begin{example}
-%   \documentclass[draft,nodraftwatermark]{drexel-thesis}
-% \end{example}
-% will format your thesis in \Lopt{draft} mode but without a watermark.
-% On the other hand,
-% \begin{example}
-%   \documentclass[draftmark,final]{drexel-thesis}
-% \end{example}
-% will also format your thesis without a watermark, because
-% \Lopt{final} sets \Lopt{nodraftwatermark} internally.
-%
-% \DescribeOption{indentfirst}
-% \Lopt{indentfirst} indents the first paragraph after sections etc.
-%
-% \DescribeOption{approvalform}
-% \Lopt{approvalform} includes a copy of the
-% \href{http://www.drexel.edu/graduatestudies/forms/Thesis_Approval_Form.pdf}{%
-%   T-1} approval form as the first page of your thesis/dissertation.
-% This form is bound to the front of every thesis/dissertation by the
-% library.  The version that is generated by this option is typeset in
-% \LaTeX\ with the same margins, fonts, etc.~as the rest of
-% your document.  The title of your dissertation and your name are
-% automatically entered.
-%
-% \DescribeOption{daring}
-% \Lopt{daring} breaks the official thesis rules in pursuit of a nicer
-% layout.
-%
-%
-% \subsubsection{Interesting \cls{book} options}
-% 
-% \DescribeOption{oneside}
-% Setup output for one-sided printing.
-%
-% \DescribeOption{twoside}
-% Setup output for two-sided printing.
-%
-% \DescribeOption{leqno}
-% \Lopt{leqno} places the numbering of formulae on the left hand side
-% instead of the right.
-%
-% \DescribeOption{fleqn}
-% \Lopt{fleqn} typesets displayed formulae left-aligned instead of
-% centered.
-%
-%
-% \subsection{Macros}
-%
-% To help deal with name collisions, all \cls{drexel-thesis} macros
-% have ``secret'' aliases.  For example, |\author| can also be used as
-% |\DUTauthor|.  This is useful if one of your packages clobbers a
-% \cls{drexel-thesis} macro, but you still want to use the original.
-% \begin{example}
-%   \documentclass{drexel-thesis}
-%   \renewcommand{\author}[1]{I'm forgetting about your author! Muahahaha!}
-%   \DUTauthor{Your Name Here}
-%   ...
-% \end{example}
-%
-% \begin{command}
-%   `\cs{author}\marg{name}'
-% \end{command}
-% \DescribeMacro{\author}
-% \DescribeMacro{\DUTauthor}
-% Use this macro to set your full name to \meta{name}, including
-% your middle initial or name.  For example
-% \begin{example}
-%   \name{Richard P. Feynman}
-% \end{example}
-% See the Manual \S 3.1 p8.
-%
-% \begin{command}
-%   `\cs{title}\marg{title}'
-% \end{command}
-% \DescribeMacro{\title}
-% \DescribeMacro{\DUTtitle}
-% Use this macro to set your thesis title to \meta{name}.  For example
-% \begin{example}
-%   \title{A New Approach to Quantum Theory}
-% \end{example}
-% See the Manual p16.
-%
-% \begin{command}
-%   `\cs{advisor}\marg{name}'
-% \end{command}
-% \DescribeMacro{\advisor}
-% \DescribeMacro{\DUTadvisor}
-% Use this macro to set your advisor's name to \meta{name}.  For
-% example
-% \begin{example}
-%   \advisor{John A. Wheeler, Ph.D.}
-% \end{example}
-% You can set multiple advisors, if appropriate, by calling |\advisor|
-% multiple times.
-% \begin{example}
-%   \advisor{John A. Wheeler, Ph.D.}
-%   \advisor{Advisor 2}
-% \end{example}
-% See the Manual \S 3.1 p8.
-%
-% \begin{command}
-%   `\cs{DUTmonth}\marg{month}'
-%   `\cs{DUTyear}\marg{year}'
-% \end{command}
-% \DescribeMacro{\DUTmonth}
-% \DescribeMacro{\DUTyear}
-% Use these macros to set the month with \meta{month} (spelled out)
-% and year with \meta{year} (four digits) of your thesis defense.  For
-% example
-% \begin{example}
-%   \DUTmonth{June}
-%   \DUTyear{1942}
-% \end{example}
-% See the Manual \S 3.1 p8.
-% There are no non-|DUT| versions of these commands to avoid
-% collisions with the plain \TeX\ |\month| and |\year| (see the
-% \href{http://www.tug.org/utilities/plain/cseq.html#month-rp}{month}
-% and
-% \href{http://www.tug.org/utilities/plain/cseq.html#year-rp}{year}
-% entries in the HTML version of David Bausum's \emph{TeX Reference
-% Manual}).
-%
-% \begin{command}
-%   `\cs{degree}\marg{degree}'
-% \end{command}
-% \DescribeMacro{\degree}
-% \DescribeMacro{\DUTdegree}
-% Set your target degree with \meta{degree}.  From the Manual \S 3.1
-% p8.
-% \begin{quote}
-%   Write out the name of the degree for which you are a candidate.
-%   All Ph.D.\ candidates must use |Doctor of Philosophy|.  All
-%   Master's degree candidates should use the precise degree name
-%   (e.g., |Master of Science in Mechanical Engineering|).
-% \end{quote}
-% So, for a Ph.D candidate,
-% \begin{example}
-%   \degree{Doctor of Philosophy}
-% \end{example}
-%
-% \begin{command}
-%   `\cs{copyrighttext}\marg{text}'
-% \end{command}
-% \DescribeMacro{\copyrighttext}
-% \DescribeMacro{\DUTcopyrighttext}
-% Use this macro to set the copyright text to \meta{text}.
-% The default value is ``All Rights Reserved.''.
-% \begin{example}
-%   \copyrighttext{Released to the Public Domain.}
-% \end{example}
-% See the Manual \S 3.2 p9.
-%
-% \begin{command}
-%   `\cs{copyrighttextCCBYSA}'
-% \end{command}
-% \DescribeMacro{\copyrighttextCCBYSA}
-% \DescribeMacro{\DUTcopyrighttextCCBYSA}
-% There are a number of predefined copyright messages for ease of use \\
-% \begin{tabular}{l l}
-%   |\copyrighttextCCBYSA| &
-%     Creative Commons Attribution-ShareAlike License Version 3.0.\\
-% \end{tabular}
-%
-% \begin{command}
-%   `\cs{tableofcontents}'
-% \end{command}
-% \DescribeMacro{\tableofcontents}
-% \DescribeMacro{\DUTtableofcontents}
-% Write the table of contents (Manual \S 3.5 p9).  You can control the
-% verbosity by setting |\tocdepth| according to the following table
-% (\href{http://www.image.ufl.edu/help/latex/intext.shtml}{source}). \\
-% \begin{tabular}{l l l}
-%   Depth in document & Section Command & Depth for |\secnumdepth| Command \\
-%   -1 & |\part| & 1 \\
-%    0 & |\chapter| & 2 \\
-%    1 & |\section| & 3 \\
-%    2 & |\subsection| & 4 \\
-%    3 & |\subsubsection| & 5 \\
-%    4 & |\paragraph| & 6 \\
-%    5 & |\subparagraph| & 7
-% \end{tabular} \\
-% For example, to expose everything down to and including the
-% |\subsection| level, you would add
-% \begin{example}
-%   \setcounter{tocdepth}{2}
-% \end{example}
-% to your preamble (the section before |\begin{document}|, not the
-% |preamble| environment discussed below).
-%
-% Note that the Manual \S 3.5 p9 requires ``List chapter titles and at
-% least the first and second order subdivisions.'', which corresponds
-% to a |\tocdepth| of at least 2.
-%
-% \begin{command}
-%   `\cs{listoftables}'
-% \end{command}
-% \DescribeMacro{\listoftables}
-% \DescribeMacro{\DUTlistoftables}
-% Write the List of Tables page (Manual \S 3.6 p10).
-% Skip if you have no tables in your thesis.
-%
-% \begin{command}
-%   `\cs{listoffigures}'
-% \end{command}
-% \DescribeMacro{\listoffigures}
-% \DescribeMacro{\DUTlistoffigures}
-% Write the List of Figures page (Manual \S 3.7 p10).
-% Skip if you have no figures in your thesis.
-%
-% \begin{command}
-%   `\cs{blanklines}\marg{num}'
-% \end{command}
-% \DescribeMacro{\blanklines}
-% \DescribeMacro{\DUTblanklines}
-% Insert \meta{num} blank lines.  For example
-% \begin{example}
-%   \blanklines{2}
-% \end{example}
-% The skipped lines are always \emph{single spaced} lines, regardless
-% of the current line spacing in the environment calling this macro.
-%
-% \begin{command}
-%   `\cs{iffinal}\marg{final-mode-action}\marg{draft-mode-action}'
-% \end{command}
-% \DescribeMacro{\iffinal}
-% \DescribeMacro{\DUTiffinal}
-% Include \Lopt{final}- or \Lopt{draft}-specific code.
-% \begin{example}
-%   We're in \iffinal{final}{draft} mode!
-% \end{example}
-%
-% \begin{command}
-%   `\cs{ifdraftwatermark}\marg{draftwatermark-mode-action}\marg{other-action}'
-% \end{command}
-% \DescribeMacro{\ifdraftwatermark}
-% \DescribeMacro{\DUTifdraftwatermark}
-% Include \Lopt{draftwatermark}-specific code (e.g. |\draftmarksetup|,
-% \S~\ref{sec:draftmark})..
-% \begin{example}
-%   We \ifdraftwatermark{are}{aren't} in draftwatermark mode!
-% \end{example}
-%
-% \begin{command}
-%   `\cs{ifdaring}\marg{daring-action}\marg{wimpy-action}'
-% \end{command}
-% \DescribeMacro{\ifdaring}
-% \DescribeMacro{\DUTifdaring}
-% Include \Lopt{daring}-specific code, with wimpy fallbacks.
-% \begin{example}
-%   \ifdaring{\singlespacing Muahahahaha!}{mumble mumble}.
-% \end{example}
-%
-% \begin{command}
-%   `\cs{drexellogobw}'
-% \end{command}
-% \DescribeMacro{\drexellogobw}
-% Draws a black-and-white official vector Drexel logo.  The image is
-% exactly 1~inch wide and 1.016~inches tall.  This is accomplished
-% using the \pkg{tikz} package (\S~\ref{sec:tikz}).  You can enclose
-% this command in a |\scalebox| to alter its size.
-%
-%
-% \subsection{Environments}
-%
-% To help deal with name collisions, all \cls{drexel-thesis}
-% environments have ``secret'' aliases.  For example, |preamble| can
-% also be used as |DUTpreamble|.  This is useful if one of your
-% packages clobbers a \cls{drexel-thesis} environment, but you still
-% want to use the original.
-% \begin{example}
-%   \documentclass{drexel-thesis}
-%   \renewenvironment{preamble}{%
-%     What preamble?\begingroup\color{white}}{\endgroup}
-%   \begin{document}
-%   \begin{DUTpreamble}
-%   Thwarted again, evil one!
-%   ...
-% \end{example}
-%
-%
-% \DescribeEnv{preamble}
-% \DescribeEnv{DUTpreamble}
-% Generalize the |\frontmatter| for the thesis, setting up page
-% numbering, including the title page, copyright page etc.  The
-% |preamble| environment should contain the following elements
-% (in order, see the Manual p8)
-% \begin{itemize}
-%   \item |dedication| environment (optional)
-%   \item |acknowledgments| environment (optional)
-%   \item |\tableofcontents|
-%   \item |\listoftables|
-%   \item |\listoffigures|
-%   \item |abstract| environment
-% \end{itemize}
-% This will take care of everything from the title page (Manual \S 3.1),
-% up through the blank page before the text (Manual \S 3.9).
-%
-% \DescribeEnv{dedications}
-% \DescribeEnv{DUTdedications}
-% Set the dedications text.
-% Highlights from the Manual \S 3.3 p9:
-% \begin{quote}
-%   The |Dedications| page is optional.
-% \end{quote}
-%
-% \DescribeEnv{acknowledgments}
-% \DescribeEnv{DUTacknowledgments}
-% Set the acknowledgments text.
-% Highlights from the Manual \S 3.4 p9:
-% \begin{quote}
-%   The |Acknowledgments| page is optional, but most theses do
-%   include a brief statement of thanks or recognition of any special
-%   assistance.
-% \end{quote}
-%
-% \DescribeEnv{abstract}
-% \DescribeEnv{DUTabstract}
-% Set the thesis abstract text.  In the Thesis Manual, see \S 3.8
-% Abstract (p10) for details, p20 for an example.
-%
-% Highlights from the Manual:
-% \begin{quote}
-%   The abstract is a summary that allows readers to determine the
-%   value of reading the full thesis.  It should include a statement
-%   of the problem, an outline of procedures or methods, and a summary
-%   of results and conclusions.
-% \end{quote}
-% \begin{itemize}
-%   \item Word limits: 600 for a Master's thesis, 350 for a Ph.D.\ thesis.
-% \end{itemize}
-%
-% \DescribeEnv{thesis}
-% \DescribeEnv{DUTthesis}
-% Set the thesis text.  In the Thesis Manual, see \S 3.10 Thesis (p11)
-% for details.
-%
-% Highlights from the Manual:
-% \begin{quote}
-%   Divide the text into its major parts/chapters/subsections.  No
-%   fixed arrangement is necessary.  The major parts may contain such
-%   subjects as introduction, general argument, description of
-%   experimental procedures, research methods, discussion, summary,
-%   conclusions, recommendations, and other pertinent topics that are
-%   necessary for a complete understanding on the part of a
-%   sophisticated or professional reader.
-% \end{quote}
-%
-% \DescribeEnv{vita}
-% \DescribeEnv{DUTvita}
-% Set the thesis vita text (Ph.D.\ only).  See the Manual \S 3.15 p12,
-% ``Vita'', for details.
-%
-% Highlights from the Manual:
-% \begin{quote}
-%   The Vita is a biography of the student written in the third person
-%   in either essay or outline form.  It should include the full name,
-%   place and date of birth (optional), country of citizenship
-%   (optional), institutions attended, degrees and honors received,
-%   titles of publications, teaching and professional experience, and
-%   other pertinent data.  The Vita must be one page or less.
-% \end{quote}
-%
-%
-% \subsection{Hints}
-%
-%
-% \subsubsection{Package installation}
-% \label{sec:dependencies}
-%
-% All the packages this class depends on must be installed somewhere
-% in your texmf tree (they probably already are).  If not, you will
-% recieve warning messages on compilation such as
-% \begin{example}
-%   ! LaTeX Error: File `missing-package.sty' not found.
-% \end{example}
-% You should then install the missing package(s) using your operating
-% systems package manager, or grab the missing package from
-% \href{http://www.ctan.org/}{CTAN}, and install them following TODO.
-%
-%
-% \subsubsection{Tables and Figures}
-%
-% \pkg{drexel-thesis} loads
-% \href{http://www.ctan.org/tex-archive/macros/latex/required/graphics/}{\pkg{graphicx}}
-% to define the |\includegraphics| macro,
-% \href{http://www.ctan.org/tex-archive/macros/latex/required/caption/}{\pkg{caption}}
-% for pretty caption formatting,
-% \href{http://www.ctan.org/tex-archive/macros/latex/required/floatrow/}{\pkg{floatrow}}
-% for placing captions, and
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/}{\pkg{hypcap}}
-% for placing caption anchors.
-%
-% Simple float definitions will look like
-% \begin{example}
-%   \begin{table}
-%      \caption{Some caption text}
-%      \begin{tabular}{...}
-%        ...
-%      \end{tabular}
-%   \end{table}
-% \end{example}
-% or
-% \begin{example}
-%   \begin{float}
-%      \includegraphics{...}
-%      \caption{Some caption text}
-%   \end{float}
-% \end{example}
-% For more useful float information, see the examples in \S
-% \ref{sec:better-example-part} and the
-% \href{http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}
-%   {\LaTeX\ wikibook page}.
-%
-%
-% \subsubsection{Citations}
-%
-% I highly recommend using \BibTeX\ and
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/natbib/}{\pkg{natbib}}.
-% See \S \ref{sec:better-example} for a simple example.
-%
-% Suggested options:\\
-% \begin{tabular}{r p{0.8\textwidth}}
-%   |super| & selects citations in superscript mode. \\
-%   |sort&compress| & automatically sorts and compresses compound
-%     citations (|\pcite{a,b,...}|).
-% \end{tabular}
-%
-%
-% \subsubsection{References}
-%
-% Easier cross referencing with
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/cleveref/}{\pkg{cleveref}}.
-% Is a wonderful tool for easy, consistent crosslinking via |\cref|,
-% |\Cref|, etc..  The manual is also very good.
-% Note that if you use |\part|s in your document, you need to tell
-% \pkg{cleveref} how to deal with them:
-% \begin{example}
-%   \usepackage{cleveref}
-%   \crefname{part}{part}{parts}
-% \end{example}
-%
-%
-% \subsubsection{Hyperlinks}
-%
-% \cls{drexel-thesis} loads
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/hyperref/}{%
-%   \pkg{hyperref}}.
-% with the options:\\
-% \begin{tabular}{r p{0.8\textwidth}}
-%   |colorlinks| & color the link letters instead of drawing colored boxes. \\
-% \end{tabular}
-%
-% The default \pkg{hyperref} colors can be a bit jarring.  Feel free
-% to use \Lopt{blackref} or override them yourself:
-% \begin{example}
-%   \usepackage{xcolor}
-%   \definecolor{dark-gray}{gray}{0.3}
-%   \hypersetup{citecolor=dark-gray}
-% \end{example}
-% See
-% \href{http://mirror.ctan.org/macros/latex/contrib/hyperref/doc/manual.pdf}{%
-%   the hyperref manual} (\S 3.4 Extension options)
-% for a list of |*color| options.
-%
-% If running with a pdftex-based driver, |\author|, |\title|, and
-% |\degree| automatically set |pdfauthor|, |pdftitle|, and
-% |pdfsubject| respectively.  You can use the |\hypersetup| macro to
-% set options overriding these defaults.
-%
-%
-% \subsubsection{Developing large \LaTeX\ documents}
-%
-% A thesis may take a while to compile, especially if it contains
-% lots of images, etc..  One way to save time, is to use |\includeonly|
-% when including chapter \file{*.tex} files (see
-% \href{http://en.wikibooks.org/wiki/TeX/includeonly}{the \TeX\ Wikibook}).
-% Usage would be something like
-% \begin{example}
-% \documentclass{drexel-thesis}
-% ...
-% \includeonly{chapter2.tex,chapter3.tex}
-% \begin{document}
-% ...
-% \begin{thesis}
-% \include{chapter1.tex}
-% \include{chapter2.tex}
-% \include{chapter3.tex}
-% \include{chapter4.tex}
-% \end{thesis}
-% ...
-% \end{document}
-% \end{example}
-% which would only compile chapters two and three.  Don't confuse the
-% similar commands |\include| and |\input|.  The more fundamental
-% |\input| just inserts the file contents at that point, while
-% |\include|
-% \begin{itemize}
-%   \item may only be used after |\begin{document}|
-%   \item acts like |\clearpage \input{} \clearpage|
-%   \item will not crash on nonexistent files
-% \end{itemize}
-%
-%
-% \StopEventually{\pagebreak\PrintChanges}
-%
-%
-% \subsubsection{Passing options to packages used by \textsf{drexel-thesis}}
-%
-%
-% \cls{drexel-thesis} uses a number of \LaTeX\ packages internally to
-% format your thesis.  Sometimes you also want to use these packages
-% directly, but \cls{drexel-thesis} is not passing them the option(s)
-% you need.  The way to deal with these issues is
-% \href{http://www.tex.ac.uk/cgi-bin/texfaq2html?label=optionclash}{%
-%  \cs{PassOptionsToPackage}}.
-% \begin{command}
-%   `\cs{PassOptionsToPackage}\marg{option,...}\marg{package}'
-% \end{command}
-% For example, if you need to pass \Lopt{table} to \pkg{xcolor}, use:
-% \begin{example}
-% \PassOptionToPackage{table}{xcolor}
-% \documentclass{drexel-thesis}
-% \end{example}
-% Note that you need to call \cs{PassOptionsToPackage} before the
-% target package is imported via \cs{documentclass}.
-%
-%
-% \section{Implementation}
-%    \begin{macrocode}
-%<*class>
-%    \end{macrocode}
-%
-% For simplicity, we'll derive everything from the standard \cls{book}
-% class.
-%
-%
-% \subsection{Option Processing}
-%
-% Include
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/xkeyval/}{\pkg{xkeyval}}
-% for easier option parsing.  If the package is not installed on your system,
-% see \S \ref{sec:dependencies} for installation instructions.
-%    \begin{macrocode}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{drexel-thesis}
+ [\filedate\ \fileversion\ Drexel Thesis]
 \RequirePackage{xkeyval}
-%    \end{macrocode}
-%
-% Define some booleans to store option states
-%    \begin{macrocode}
 \newif\if@mainmatter \@mainmattertrue
 \newif\if@DUT@subfigopt
 \newif\if@DUT@pagebreak
-\newif\if@dottedchapter 
+\newif\if@dottedchapter
 \newif\if@boldchapter
 \newif\if@boldpart
 \newif\if@dottedpart
@@ -852,95 +41,30 @@
 \newif\if@final
 \newif\if@daring
 \newif\if@approvalform
-%    \end{macrocode}
-%
-% \begin{macro}{\iffinal}
-% \begin{macro}{\DUTiffinal}
-% Setup a user-friendly means for including \Lopt{final}- or
-% \Lopt{draft}-specific code.
-% \changes{0.7}{2010/03/14}{W.~Trevor King added iffinal macro.}
-% \changes{0.15}{2011/04/22}{W.~Trevor King added DUTiffinal macro.}
-%    \begin{macrocode}
 \newcommand\iffinal[2]{\if@final #1\else #2\fi}
 \let\DUTiffinal\iffinal
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-%
-% \begin{macro}{\ifdraftwatermark}
-% \begin{macro}{\DUTifdraftwatermark}
-% Setup a user-friendly means for including
-% \Lopt{draftwatermark}-specific code (e.g. |\draftmarksetup|,
-% \S~\ref{sec:draftmark}).
-% \changes{0.15}{2011/04/22}{W.~Trevor King added ifdraftwatermark macro.}
-% \changes{0.15}{2011/04/22}{W.~Trevor King added DUTifdraftwatermark macro.}
-%    \begin{macrocode}
 \newcommand\ifdraftwatermark[2]{\if@draftwatermark #1\else #2\fi}
 \let\DUTifdraftwatermark\ifdraftwatermark
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-%
-% \begin{macro}{\ifdaring}
-% \begin{macro}{\DUTifdaring}
-% Setup a user-friendly means for including \Lopt{daring}-specific
-% code.
-% \changes{0.11}{2010/06/04}{W.~Trevor King added ifdaring macro.}
-% \changes{0.15}{2011/04/22}{W.~Trevor King added DUTifdaring macro.}
-%    \begin{macrocode}
 \newcommand\ifdaring[2]{\if@daring #1\else #2\fi}
 \let\DUTifdaring\ifdaring
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-%
-% \begin{macro}{\DUT@makeapprovalform}
-% Typesets the T-1 thesis/dissertation approval form.
-% \changes{0.14}{2010/09/21}{Evan Sultanik added macro.}
-%    \begin{macrocode}
 \newcommand\DUT@makeapprovalform{
   \thispagestyle{empty}
   \begingroup
   \newlength{\tempskipa}
   \newlength{\tempskipb}
-%    \end{macrocode}
-% Don't indent paragraphs on this page.
-%    \begin{macrocode}
   \parindent \z@
-%    \end{macrocode}
-% Setup $\mbox{tempskipa} = \mbox{logo width} + \mbox{4pt}$ and
-% $\mbox{tempskipb} = \mbox{textwidth} - \mbox{tempskipa} -
-% \mbox{4pt}$.  The first |pt| ensures the logo will fit in the left
-% column; the second provides some buffer space between the minipages.
-%    \begin{macrocode}
   \settowidth{\tempskipa}{\drexellogobw}
   \addtolength{\tempskipa}{1em}
   \setlength{\tempskipb}{\textwidth}
   \addtolength{\tempskipb}{-\tempskipa}
   \addtolength{\tempskipb}{-1em}
-%    \end{macrocode}
-% Add the logo and form title in columns.  Each column is in a minipage.
-%    \begin{macrocode}
   \begin{minipage}[c]{\tempskipa}
-%    \end{macrocode}
-% |\raisebox| drops the logo so that the image is centered on the baseline.
-%    \begin{macrocode}
     \raisebox{-0.5\height}{\drexellogobw}
   \end{minipage}
   \hfill
   \begin{minipage}[c]{\tempskipb}
-%    \end{macrocode}
-% Unlike |\newline| or |\\|, |\linebreak| justifies the current line
-% before requesting a newline.
-%    \begin{macrocode}
     \textbf{\Huge Office of Graduate Studies} \linebreak
     \vskip 0.1\baselineskip
-%    \end{macrocode}
-% The original form lacks the spaces around the slash (|/|), but
-% \LaTeX's font and kerning make the second line more compact in our
-% version.  Allowing stretchy spaces around the slash helps the second
-% line look more balanced.
-%    \begin{macrocode}
     \textbf{\LARGE Dissertation / Thesis Approval Form} \linebreak
   \end{minipage}
 
@@ -955,20 +79,10 @@
   the Thesis Manual located on the library website.
 
   \vspace*{\fill}
-%    \end{macrocode}
-% Setup $\mbox{tempskipb} = \mbox{left column width}$ and
-% $\mbox{tempskipa} = \mbox{textwidth} - \mbox{tempskipb} -
-% \mbox{4em}$.  The |4em| provides some buffer space between the
-% columns.
-%    \begin{macrocode}
   \settowidth{\tempskipb}{Dissertation/Thesis Title:}
   \setlength{\tempskipa}{\textwidth}
   \addtolength{\tempskipa}{-\tempskipb}
   \addtolength{\tempskipa}{-4em}
-%    \end{macrocode}
-% Double space the student-contolled section to allow plenty of space
-% for hand-written entries.
-%    \begin{macrocode}
   \begin{spacing}{2}
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l p{\tempskipa}}
       \textbf{Dissertation/Thesis Title:} & \@DUT@title \\
@@ -985,11 +99,6 @@
 
     \textbf{Signatures:} \\
     Examining Committee \\
-%    \end{macrocode}
-% The left most column is left blank and the stretchy space between
-% columns indents the middle column.  I think this looks bad, but
-% that's how Drexel's version of the T-1 form looks.
-%    \begin{macrocode}
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} p{0pt} l p{\tempskipa}}
       & Chair            & \hrulefill \\
       & Members          & \hrulefill \\
@@ -1020,14 +129,6 @@
   \endgroup
   \pagebreak
 }
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\drexellogobw}
-% Draws a vector art official black-and-white Drexel logo.  The image
-% is exactly 1~inch wide and 1.016~inches tall.
-% \changes{0.14}{2010/09/21}{Evan Sultanik added macro.}
-%    \begin{macrocode}
 \newcommand\drexellogobw{
   \begin{tikzpicture}[y=0.8pt, x=0.8pt,yscale=-1, inner sep=0pt, outer sep=0pt]
   \begin{scope}[cm={{1.25,0.0,0.0,-1.25,(-332.5,550.73629)}},]
@@ -1367,18 +468,7 @@
   \end{scope}
   \end{tikzpicture}
 }
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{option}{subfig}
-% Set \Lopt{subfig} flag
-%    \begin{macrocode}
 \DeclareOptionX{subfig}{\@DUT@subfigopttrue}
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{finalspace}
-%    \begin{macrocode}
 \DeclareOptionX{finalspace}{
   \setlength\overfullrule{0pt}
   \def\@DUT@toc@sep{1} % content page separation (# blanklines between entries)
@@ -1386,10 +476,6 @@
   \def\@dsp{2} % double space
   \def\@tsp{3} % triple space
 }
-%    \end{macrocode}
-% \end{option}
-% \begin{option}{draftspace}
-%    \begin{macrocode}
 \DeclareOptionX{draftspace}{
   \setlength\overfullrule{5pt}
   \def\DUT@toc@sep{0} % content page separation (# blanklines between entries)
@@ -1397,137 +483,40 @@
   \def\@dsp{1} % double space
   \def\@tsp{2} % triple space
 }
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{pagebreak}
-%    \begin{macrocode}
 \DeclareOptionX{pagebreak}{
   \@DUT@pagebreaktrue
-%    \end{macrocode}
-%  Force chapters onto right-hand pages.
-%    \begin{macrocode}
   \PassOptionsToClass{openright}{book}
 }
-%    \end{macrocode}
-% \end{option}
-% \begin{option}{nopagebreak}
-%    \begin{macrocode}
 \DeclareOptionX{nopagebreak}{
   \@DUT@pagebreakfalse
-%    \end{macrocode}
-%  Don't force chapters onto right-hand pages.
-%    \begin{macrocode}
   \PassOptionsToClass{openany}{book}
 }
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{dottedpart}
-%    \begin{macrocode}
 \DeclareOptionX{dottedpart}{\@dottedparttrue}
-%    \end{macrocode}
-% \end{option}
-% \begin{option}{dottedchapter}
-%    \begin{macrocode}
 \DeclareOptionX{dottedchapter}{\@dottedchaptertrue}
-%    \end{macrocode}1
-% \end{option}
-% \begin{option}{boldpart}
-%    \begin{macrocode}
 \DeclareOptionX{boldpart}{\@boldparttrue}
-%    \end{macrocode}
-% \end{option}
-% \begin{option}{boldchapter}
-%    \begin{macrocode}
 \DeclareOptionX{boldchapter}{\@boldchaptertrue}
-%    \end{macrocode}
-% \end{option}
-% \begin{option}{dottedtoc}
-%    \begin{macrocode}
 \DeclareOptionX{dottedtoc}{
   \setkeys{drexel-thesis.cls}{dottedpart}
   \setkeys{drexel-thesis.cls}{dottedchapter}
 }
-%    \end{macrocode}
-% \end{option}
-% \begin{option}{boldtoc}
-%    \begin{macrocode}
 \DeclareOptionX{boldtoc}{
   \setkeys{drexel-thesis.cls}{boldpart}
   \setkeys{drexel-thesis.cls}{boldchapter}
 }
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{indenttoc}
-% Set \Lopt{indenttoc} flag
-%    \begin{macrocode}
 \DeclareOptionX{indenttoc}{\@indenttoctrue}
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{blackref}
-% Set \Lopt{blackref} flag
-% \changes{0.13}{2010/06/17}{W.~Trevor King added blackref option.}
-%    \begin{macrocode}
 \DeclareOptionX{blackref}{\@blackreftrue}
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{draftwatermark}
-% Set \Lopt{draftwatermark} flag
-%    \begin{macrocode}
 \DeclareOptionX{draftwatermark}{%
   \@draftwatermarktrue
   \@xdraftwatermarkfalse}
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{xdraftwatermark}
-% Set \Lopt{xdraftwatermark} flag
-% \changes{0.15}{2011/04/22}{W.~Trevor King renamed mydraftwatermark
-%   to xdraftwatermark.}
-%    \begin{macrocode}
-\DeclareOptionX{xdraftwatermark}{% 
+\DeclareOptionX{xdraftwatermark}{%
   \@draftwatermarkfalse
   \@xdraftwatermarktrue}
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{nodraftwatermark}
-% Clear \Lopt{draftwatermark} and \Lopt{xdraftwatermark} flags
-% \changes{0.15}{2011/04/22}{W.~Trevor King added nodraftwatermark option.}
-%    \begin{macrocode}
- \DeclareOptionX{nodraftwatermark}{% 
+ \DeclareOptionX{nodraftwatermark}{%
   \@draftwatermarkfalse
   \@xdraftwatermarkfalse}
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{indentfirst}
-% Set \Lopt{indentfirst} flag
-%    \begin{macrocode}
 \DeclareOptionX{indentfirst}{\@indentfirsttrue}
-%    \end{macrocode}
-% \end{option}
-%
-% Define the book options that \Lopt{final} and \Lopt{draft} need to
-% access.
-% \begin{option}{oneside}
-%    \begin{macrocode}
 \DeclareOptionX{oneside}{\PassOptionsToClass{oneside}{book}}
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{twoside}
-%    \begin{macrocode}
 \DeclareOptionX{twoside}{\PassOptionsToClass{twoside}{book}}
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{final}
-%    \begin{macrocode}
 \DeclareOptionX{final}{
   \@finaltrue
   \setkeys{drexel-thesis.cls}{oneside}
@@ -1535,11 +524,6 @@
   \setkeys{drexel-thesis.cls}{pagebreak}
   \setkeys{drexel-thesis.cls}{dottedtoc}
 }
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{draft}
-%    \begin{macrocode}
 \DeclareOptionX{draft}{
   \@finalfalse
   \setkeys{drexel-thesis.cls}{twoside}
@@ -1548,669 +532,141 @@
   \setkeys{drexel-thesis.cls}{dottedtoc}
   \setkeys{drexel-thesis.cls}{xdraftwatermark}
 }
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{daring}
-%    \begin{macrocode}
 \DeclareOptionX{daring}{
   \@daringtrue
 }
-%    \end{macrocode}
-% \end{option}
-%
-% \begin{option}{approvalform}
-%    \begin{macrocode}
 \DeclareOptionX{approvalform}{
   \@approvalformtrue
 }
-%    \end{macrocode}
-% \end{option}
-%
-% Use the default \cls{book} implementation for any remaining options
-% including \Lopt{oneside}, \Lopt{twoside}, \Lopt{leqno}, \Lopt{fleqn},
-% \ldots.
-%    \begin{macrocode}
 \DeclareOptionX*{\PassOptionsToClass{\CurrentOption}{book}}
-%    \end{macrocode}
-%
-% Execute the default options
-%    \begin{macrocode}
 \ExecuteOptionsX{final}
-%    \end{macrocode}
-%
-% Process options and load the book class
-%    \begin{macrocode}
 \ProcessOptionsX\relax
 \LoadClass{book}
-%    \end{macrocode}
-%
-%
-% \subsection{Internal package includes}
-%
-%
-% Include some other packages we'll need.  If the package is not
-% installed on your system, see \S \ref{sec:dependencies} for
-% installation instructions.
-%
-% For many packages, we want the same functionality for both
-% \Lopt{final} and \Lopt{draft} modes.  We pass \Lopt{final} to most
-% of those packages to override a possible \Lopt{draft} option passed
-% to \pkg{drexel-thesis}.
-%
-%
-% \subsubsection{\pkg{setspace}}
-%
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/setspace/}{\pkg{setspace}}
-% for double spacing.
-%    \begin{macrocode}
 \RequirePackage{setspace}
-%    \end{macrocode}
-%
-%
-% \subsubsection{\pkg{calc}}
-%
-% \href{http://www.ctan.org/tex-archive/macros/latex/required/tools/}{\pkg{calc}}
-% for |\set@lines@length| macro (page
-%   \pageref{sec:implement-line-spacing}).
-%    \begin{macrocode}
 \RequirePackage{calc}
-%    \end{macrocode}
-%
-%
-% \subsubsection{\pkg{graphicx}}
-%
-% \href{http://www.ctan.org/tex-archive/macros/latex/required/graphics/}{\pkg{graphicx}}
-% for |\includegraphics|.  Not strictly necessary, but I can't imagine
-% a thesis without figures.
-%    \begin{macrocode}
 \RequirePackage[final]{graphicx}
-%    \end{macrocode}
-%
-% We include the graphicx package now so we can
-% pass \Lopt{final}, because some later packages include it with no options,
-% and a \Lopt{final} include after that produces errors like
-% \begin{example}
-%   l.104 \RequirePackage
-%                        [final]{ifpdf}
-%   The package graphicx has already been loaded with options:
-%     []
-%   There has now been an attempt to load it with options
-%     [final]
-% \end{example}
-%
-%
-% \subsubsection{\pkg{draftmark}}
-% \label{sec:draftmark}
-%
-% The Comp.~Sci.\ class used
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/draftcopy/}{\pkg{draftcopy}}
-% to add their watermarks, but as of the current 2002/02/25 v2.16, it
-% uses postscript specials, and so doesn't work with pdf\LaTeX.
-% Instead we use the recent (catalogued 2009/11/03)
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/draftmark/}{\pkg{draftmark}}
-% which unfortunately has a number of apparently non-standard dependencies
-% (\href{http://www.ctan.org/tex-archive/macros/latex/contrib/etextools/}{\pkg{etextools}},
-%  \href{http://www.ctan.org/tex-archive/macros/latex/contrib/etoolbox/}{\pkg{etoolbox}},
-%  \href{http://www.ctan.org/tex-archive/macros/latex/contrib/lastpage/}{\pkg{lastpage}},
-%  \href{http://www.ctan.org/tex-archive/macros/latex/contrib/ltxnew/}{\pkg{ltxnew}},
-%  \href{http://www.ctan.org/tex-archive/macros/latex/contrib/pagerange/}{\pkg{pagerange}},
-%  \href{http://www.ctan.org/tex-archive/macros/latex/contrib/xifthen/}{\pkg{xifthen}},
-%  if only I had the space to install |texlive-latexextra| |:p|).
-% The output is, however, very flexible, and it \emph{does} work with
-% both \LaTeX\ and pdf\LaTeX.  If you don't like the default watermark,
-% you can also adjust the particulars with |\draftmarksetup|.
-%    \begin{macrocode}
 \if@draftwatermark
   \RequirePackage[draft,allpages,mark={DRAFT \today},
                   fontsize=2cm,grayness=0.9]{draftmark}
 \fi
-%    \end{macrocode}
-%
-% Travis Hoppe went for a more discrete watermark in the lower right
-% corner with something along the lines of:
-% \begin{example}
-%   \ifdraftwatermark{
-%     \draftmarksetup{angle=0,fontsize=24pt,color=red!45!blue!25,
-%                     xcoord=80,ycoord=-129,mark={DRAFT\\[12pt] \today}}
-%   }{}
-% \end{example}
-%
-% Here is Evan's alternative implementation.  This will not look right
-% as a DVI, but it'll look fine once rendered to either a PS or PDF.
-%    \begin{macrocode}
 \if@xdraftwatermark
-%    \end{macrocode}
-% Use \pkg{eso-pic} for |\AddToShipoutPicture|.
-%    \begin{macrocode}
   \RequirePackage{eso-pic}
-%    \end{macrocode}
-% Use \pkg{xcolor} for |\definecolor|.
-%    \begin{macrocode}
   \RequirePackage{xcolor}
   \definecolor{watermark}{rgb}{0.9,0.9,0.9}
-%    \end{macrocode}
-% Set the font explicitly to avoid being effected by the last text on
-% the page having some strange font.  |\sffamily| sets a sans serif
-% font.
-%    \begin{macrocode}
   \newcommand{\watermarkfont}{%
     \color{watermark}}%\fontfamily{phv}\selectfont\sffamily}
   \newcommand{\watermark}{%
     \rule{4.25in}{0pt}\raisebox{5.5in}{%
       \makebox[0pt]{%
-%    \end{macrocode}
-% |\rotatebox| and |\resizebox| from \pkg{graphicx}.
-%    \begin{macrocode}
-	\rotatebox[origin=c]{45}{%
+\rotatebox[origin=c]{45}{%
           \resizebox{!}{1.5in}{%
             {\watermarkfont DRAFT}%
     }}}}
     \raisebox{4.2in}{%
       \makebox[0pt]{%
-	\rotatebox[origin=c]{45}{%
+\rotatebox[origin=c]{45}{%
           \resizebox{!}{.6in}{%
             {\watermarkfont \qquad\today}%
     }}}}}
   \AddToShipoutPicture{\watermark{}}
 \fi
-%    \end{macrocode}
-%
-%
-% \subsubsection{\pkg{indentfirst}}
-%
-% Indent the first paragraph after sections etc.\ with
-% \href{http://www.ctan.org/tex-archive/macros/latex/required/tools/}{\pkg{indentfirst}}.
-%    \begin{macrocode}
 \if@indentfirst
   \RequirePackage{indentfirst}
 \fi
-%    \end{macrocode}
-%
-%
-% \subsubsection{\pkg{geometry}}
-%
-% Setup page margins with
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/geometry/}{\pkg{geometry}}.
-% From the Manual p5:
-% \begin{itemize}
-%   \item The left margin must be at least 1 1/2'' (1.5 inches)
-%   throughout the document.
-%   \item All other margins (top, bottom, and right) must be at least 1''.
-% \end{itemize}
-% And from the Manual \S 1.5 p4, Print Version:
-% \begin{quote}
-%   The paper size must be 8 1/2'' x 11''.
-% \end{quote}
-%    \begin{macrocode}
 \RequirePackage[letterpaper,margin=1in,bindingoffset=0.5in]{geometry}
-%    \end{macrocode}
-% Note that we include the \pkg{geometry} package after loading \cls{book} to
-% override the margin manipulation that takes place in \cls{book}.
-%
-%
-% \subsubsection{\pkg{tocloft}}
-%
-% Typeset the table of contents, etc., with
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/tocloft/}{\pkg{tocloft}}.
-%    \begin{macrocode}
 \if@DUT@subfigopt
   \RequirePackage[subfigure]{tocloft}
 \else
   \RequirePackage{tocloft}
 \fi
-%    \end{macrocode}
-% The \Lopt{subfigure} option sets up \pkg{tocloft} for
-% \pkg{subfig}/\pkg{subfigure} compatibility. See the
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/tocloft/tocloft.pdf}{%
-%   \pkg{tocloft} manual \S 2.1}
-% for details.
-%
-% The configuration of \pkg{tocloft} takes place in \S
-% \ref{sec:implement-toc}, \S \ref{sec:implement-lof}, and \S
-% \ref{sec:implement-lot}.
-%
-%
-% \subsubsection{\pkg{caption}}
-%
-% Get nice caption formatting with
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/caption/}{\pkg{caption}}.
-% From the Manual p5:
-% \begin{itemize}
-%   \item The left margin must be at least 1 1/2'' (1.5 inches)
-%   throughout the document.
-%   \item All other margins (top, bottom, and right) must be at least 1''.
-% \end{itemize}
-%    \begin{macrocode}
 \RequirePackage[margin=10pt,labelfont=bf,labelsep=colon]{caption}
-%    \end{macrocode}
-% You can change these settings if you like using |\captionsetup|.
-%
-%
-% \subsubsection{\pkg{floatrow}}
-% \label{sec:floatrow}
-%
-% Enforce caption placement with
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/floatrow/}{\pkg{floatrow}}.
-% From the Manual \S 2.3 p6, ``Tables and Figures'', 
-% \begin{quote}
-%   \begin{itemize}
-%     \item Place figure captions below figures.
-%     \item Place table captions above tables.
-%   \end{itemize}
-% \end{quote}
-%    \begin{macrocode}
 \RequirePackage{floatrow}
 \floatsetup[table]{style=plaintop}
 \floatsetup{captionskip=10pt}
 \floatsetup[table]{captionskip=10pt}
-%    \end{macrocode}
-% Use \pkg{fr-subfig} for \pkg{floatrow}/\pkg{subfig} compatibility.
-% See the \pkg{floatrow} documentation (Sec.~7.1, ``The \pkg{subfig}
-% package'') and \pkg{subfig} documentation (Sec.~4.3,
-% ``\pkg{FloatRow} Package'') for details.
-%    \begin{macrocode}
 \if@DUT@subfigopt
   \RequirePackage{fr-subfig}
 \fi
-%    \end{macrocode}
-% We set up the three-line surrounding spaces in \S
-% \ref{sec:implement-floats}.
-%
-% You can change these settings using |\floatsetup|, but you probably
-% won't need to.
-%
-%
-% \subsubsection{\pkg{subfig}}
-% \label{sec:subfig}
-%
-% Allow multi-part figures with
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/}{\pkg{subfig}}.
-%    \begin{macrocode}
 \if@DUT@subfigopt
   \RequirePackage{subfig}
 \fi
-%    \end{macrocode}
-%
-%
-% \subsubsection{\pkg{fancyhdr}}
-% \label{sec:fancyhdr}
-%
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/fancyhdr/}{\pkg{fancyhdr}}
-% for correct page numbering and fancy headers.
-% From the Manual \S 2.3 p5, ``Pagination''
-% \begin{quote}
-%   Place page numbers in the upper right-hand corner of the page,
-%   3/4'' from the top.
-% \end{quote}
-%    \begin{macrocode}
 \RequirePackage{fancyhdr}
-%    \end{macrocode}
-% Setup the standard |fancy| format.
-%    \begin{macrocode}
 \pagestyle{fancy}
 \fancyhf{}
-%    \end{macrocode}
-% Turn off the header rule by setting its width to $0$.
-%    \begin{macrocode}
 \renewcommand{\headrulewidth}{0pt}
-%    \end{macrocode}
-% 0.4 pt is \pkg{fancyhdr}'s default |\headrulewidth|, so we'll
-% recycle the value.
-%    \begin{macrocode}
 \renewcommand{\footrulewidth}{0.4pt}
-%    \end{macrocode}
-% |\leftmark| is the higher level mark, see |\chaptermark| below.
-% |\rightmark| is the lower level mark, see |\sectionmark| below.
-% We put the lower level mark to the outside because it changes more
-% often.  Page numbers also go on the outside.
-%    \begin{macrocode}
 \fancyfoot[RE,LO]{\scshape\leftmark}
 \fancyfoot[LE,RO]{\scshape\rightmark}
 \fancyhead[LE,RO]{\thepage}
-%    \end{macrocode}
-% Override the |plain| format (for part pages, etc.).
-%    \begin{macrocode}
 \fancypagestyle{plain}{
   \fancyhf{}
   \renewcommand{\footrulewidth}{0pt}
   \fancyhead[LE,RO]{\thepage}
 }
-%    \end{macrocode}
-% Keep the |empty| format at its default.
-%    \begin{macrocode}
 \fancypagestyle{empty}{
   \fancyhf{}
   \renewcommand{\footrulewidth}{0pt}
 }
-%    \end{macrocode}
-%
-% Note that the chapter/section footer is not required.  You can
-% remove the footer text and rule entirely with.
-% \begin{example}
-%   \renewcommand{\footrulewidth}{0pt}
-%   \fancyfoot[RE,LO]{}
-%   \fancyfoot[LE,RO]{}
-% \end{example}
-%
-%
-% \subsubsection{\pkg{ifpdf}}
-%
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/}{\pkg{ifpdf}}
-% for detecting PDF drivers.  We use it to configure \pkg{hyperref} below.
-%    \begin{macrocode}
 \RequirePackage{ifpdf}
-%    \end{macrocode}
-% 
-% \subsubsection{\pkg{hyperref}}
-% \label{sec:hyperref}
-%
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/hyperref/}{\pkg{hyperref}}
-% for hyperlinks.  Not strictly necessary, but I can't imagine a
-% thesis without it.  We actually include this later (\S
-% \ref{sec:hyperref-inclusion}), because \pkg{hyperref} sticks its
-% fingers into \emph{everything} and we want it to use our versions of
-% some macros (e.g., |\@sect|) but not others (e.g., |thebibliography|).
-%
-%
-% \subsubsection{\pkg{hypcap}}
-% \label{sec:hypcap}
-%
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/}{\pkg{hypcap}}
-% for placing caption hyperlink anchors.  Must be included after
-% \pkg{hypercap}, so the actual inclusion is in \S
-% \ref{sec:hypcap-inclusion}).
-%
-%
-% \subsubsection{\pkg{tikz}}
-% \label{sec:tikz}
-%
-% \href{http://sourceforge.net/projects/pgf/}{\pkg{tikz}}
-% for vector drawing natively in \TeX.  This package is currently only
-% required for the \Lopt{approvalform} option (it is used in drawing
-% the Drexel logo on the approval form).
-%    \begin{macrocode}
 \if@approvalform\RequirePackage{tikz}\fi
-%    \end{macrocode}
-%
-%
-% \subsection{\LaTeX\ overrides and extensions}
-%
-% Here we change the behavior of a bunch of macros and environments
-% from \file{latex.ltx} (generated by \file{format.ins} in
-% \href{http://www.ctan.org/tex-archive/macros/latex/base/}{\pkg{base}}).
-% We'll copy in their original notes along with their code, following
-% the relevant documentation an order given in \file{format.ins} and
-% the associated \file{*.dtx} files.
-%
-%
-% \subsubsection{\file{ltsect.dtx}}
-%
-% \begin{macro}{\title}
-% \begin{macro}{\DUTtitle}
-% \begin{macro}{\@DUT@title}
-% |\title| for use in |\maketitle|. If not given |\maketitle| will
-% produce a warning message (\file{ltsect.dtx}, L117).
-%
-% We extend |\title| to set \pkg{hyperref}'s |pdftitle|.
-% (\file{ltsect.dtx}, L117).
-%    \begin{macrocode}
 \renewcommand{\title}[1]{
   \gdef\@DUT@title{#1}
   \ifpdf \hypersetup{pdftitle={\@DUT@title}} \fi
 }
 \let\DUTtitle\title
 \def\@DUT@title{\@latex@error{No \noexpand\title given}\@ehc}
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-%
-% \begin{macro}{\author}
-% \begin{macro}{\DUTauthor}
-% \begin{macro}{\@DUT@author}
-% |\author| for use in |\maketitle|.  If not given |\maketitle| will
-% produce a warning message (\file{ltsect.dtx}, L129).
-%
-% We extend |\author| to set \pkg{hyperref}'s |pdfauthor| if we're
-% writing a PDF to avoid using |\AtBeginDocument| or some such.
-% (\file{ltsect.dtx}, L129).
-%    \begin{macrocode}
 \renewcommand{\author}[1]{
   \gdef\@DUT@author{#1}
   \ifpdf \hypersetup{pdfauthor={\protect\@DUT@author}} \fi
 }
 \let\DUTauthor\author
 \def\@DUT@author{\@latex@error{No \noexpand\author given}\@ehc}
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-%
-% In a similar vein, we some additional meta-info macros.
-%
-%  \begin{macro}{\DUTmonth}
-%  \begin{macro}{\@DUT@month}
-% |\DUTmonth| (defense month) for use in |\maketitle|.  If not given
-% |\maketitle| will produce an error message.
-%    \begin{macrocode}
 \def\DUTmonth#1{\gdef\@DUT@month{#1}}
 \def\@DUT@month{\@latex@error{No \noexpand\DUTmonth given}\@ehc}
-%    \end{macrocode}
-%  \end{macro}
-%  \end{macro}
-%
-%  \begin{macro}{\DUTyear}
-%  \begin{macro}{\@DUT@year}
-% |\DUTyear| (defense year) for use in |\maketitle|.  If not given
-% |\maketitle| will produce an error message.
-%    \begin{macrocode}
 \def\DUTyear#1{\gdef\@DUT@year{#1}}
 \def\@DUT@year{\@latex@error{No \noexpand\DUTyear given}\@ehc}
-%    \end{macrocode}
-%  \end{macro}
-%  \end{macro}
-%
-%  \begin{macro}{\degree}
-%  \begin{macro}{\DUTdegree}
-%  \begin{macro}{\@DUT@degree}
-% |\degree| for use in |\maketitle|.  If not given |\maketitle| will
-% produce an error message.
-%    \begin{macrocode}
 \def\degree#1{\gdef\@DUT@degree{#1}
   \ifpdf \hypersetup{pdfsubject={\@DUT@degree}} \fi}
 \let\DUTdegree\degree
 \def\@DUT@degree{\@latex@error{No \noexpand\degree given}\@ehc}
-%    \end{macrocode}
-%  \end{macro}
-%  \end{macro}
-%  \end{macro}
-%
-%  \begin{macro}{\copyrighttext}
-%  \begin{macro}{\DUTcopyrighttext}
-%  \begin{macro}{\@copyrighttext}
-% |\copyrighttext| for use in |\@DUT@makecopyright|.  There are a
-% number of blurbs predefined in \S \ref{sec:implement-copyright}.
-%    \begin{macrocode}
 \def\copyrighttext#1{\gdef\@DUT@copyrighttext{#1}}
 \let\DUTcopyrighttext\copyrighttext
 \def\@DUT@copyrighttext{All Rights Reserved.}
-%    \end{macrocode}
-%  \end{macro}
-%  \end{macro}
-%  \end{macro}
-%
-%  \begin{macro}{\advisor}
-%  \begin{macro}{\DUTadvisor}
-%  \begin{macro}{\@DUT@advisor}
-% |\advisor| stores advisor names, and |\@DUT@advisor| prints them out
-% nicely for the |abstract| environment.  If no advisors are given
-% |\@DUT@advisor| will produce an error message.  We get a bit fancier
-% here to support multiple advisors.
-%    \begin{macrocode}
 \newcounter{@DUT@advisors}
 \setcounter{@DUT@advisors}{0}
-%    \end{macrocode}
-% Store a new advisor name.
-%    \begin{macrocode}
 \newcommand\advisor[1]{%
   \ifx
-%    \end{macrocode}
-% If |#1| is |\empty|, this call is a no-op.
-%    \begin{macrocode}
     \empty{#1}
   \else
-%    \end{macrocode}
-% Save the advisors to |\@DUT@advisor@a|, |\@DUT@advisor@b|, \ldots.
-% |\alph{|\Lcount{COUNTER}|}| (\file{ltcounts.dtx}, L319) prints the
-%   value of \Lcount{COUNTER} as a lowercase letter: $1 =$~a, $2 =$~
-%   b, etc.
-%    \begin{macrocode}
     \stepcounter{@DUT@advisors}
     \expandafter\gdef\csname @DUT@advisor@\alph{@DUT@advisors}\endcsname{#1}
   \fi}
-%    \end{macrocode}
-% Format and print a list of advisor names.
-%    \begin{macrocode}
 \newcommand\@DUT@advisor{%
   \ifnum\c@@DUT@advisors=0%
     \@latex@error{No \noexpand\advisor given}\@ehc%
   \else%
-%    \end{macrocode}
-% Start a group so the scratch counter \Lcount{count\textat} is restored
-% afterwards\footnote{See the discussion in
-%   \href{http://www.ctan.org/tex-archive/macros/latex/contrib/localloc/}{%
-%     \pkg{localloc}}
-%   for some points on counter allocation.}.
-%    \begin{macrocode}
     \begingroup%
-%    \end{macrocode}
-% Because \Lcount{count\textat} is a \TeX\ counter register not
-% wrapped by \LaTeX's counter sugar, we don't use \LaTeX's
-% |\setcounter| to set \Lcount{count\textat} to one.
-%    \begin{macrocode}
       \count@\@ne
-%    \end{macrocode}
-% Print the first advisor, using \TeX's |\@alph| macro instead of
-% \LaTeX's |\alph|.
-%    \begin{macrocode}
-%    \begin{macrocode}
       \csname @DUT@advisor@\@alph\count@\endcsname\relax%
-%    \end{macrocode}
-% For any remaining advisors\ldots
-%    \begin{macrocode}
       \loop\ifnum\count@<\c@@DUT@advisors%
-%    \end{macrocode}
-% Advance \Lcount{count\textat} using \TeX's |\advance| macro instead
-% of \LaTeX's |\stepcounter|.
-%    \begin{macrocode}
         \advance\count@\@ne
-%    \end{macrocode}
-% Print the connecting text.
-%    \begin{macrocode}
         \ifnum\count@=\c@@DUT@advisors%
           \ifnum\c@@DUT@advisors=2%
-%    \end{macrocode}
-% The next advisor if the last of two.
-%    \begin{macrocode}
             {\ and\ }%
           \else%
-%    \end{macrocode}
-% The next advisor if the last of many.
-%    \begin{macrocode}
             {, and\ }%
           \fi%
         \else%
-%    \end{macrocode}
-% The next advisor is not the last.
-%    \begin{macrocode}
           {,\ }%
         \fi%
-%    \end{macrocode}
-% Print the advisor's name.
-%    \begin{macrocode}
         \csname @DUT@advisor@\@alph\count@\endcsname\relax%
       \repeat%
     \endgroup%
   \fi}
-%    \end{macrocode}
-%  \end{macro}
-%  \end{macro}
-%  \end{macro}
-%
-% \paragraph{baselineskip}
-% \label{sec:implement-line-spacing}
-%
-% \begin{macro}{\@DUT@baselineskip}
-% Since we'll be messing with the spacing, save the single-spaced
-% baseline.
-%   \changes{0.3}{2010/01/13}{Use \cs{setlength} to store the value at
-%     the default font.  The previous version used \cs{let}, which
-%     made \cs{DUT@baselineskip} a synonym for \cs{baselineskip} that
-%     changed with font size.}
-%    \begin{macrocode}
 \newlength\@DUT@baselineskip
 \setlength\@DUT@baselineskip\baselineskip
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{command}
-%   `\cs{set@lines@length}\marg{length}\marg{N}'
-% \end{command}
-% \begin{macro}{\set@lines@length}
-% Many specifications in the Manual refer to ``\meta{N} blank lines''.
-% |\set@lines@length| allows you to set a length to a given number of
-% lines, protecting against external |spacing| environments.  It
-% requires \pkg{calc} for the multiplication.
-%    \begin{macrocode}
 \newcommand{\set@lines@length}[2]{%
   \setlength{#1}{\@DUT@baselineskip * {#2}}}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% Fix |\@ssect| and |\@sect| from \file{latex.ltx} to give single
-% spaced headings.
-%
-% \begin{macro}{\@sect}
-% Pseudocode for the |\@sect| command
-% \begin{example}
-% \@sect{NAME}{LEVEL}{INDENT}{BEFORESKIP}{AFTERSKIP}{STYLE}[ARG1]{ARG2}
-%           ==
-%   BEGIN
-%    IF LEVEL > \c@secnumdepth
-%      THEN \@svsec :=L null
-%      ELSE \refstepcounter{NAME}
-%           \@svsec :=L BEGIN \@seccntformat{#1}\relax END
-%    FI
-%    IF AFTERSKIP > 0
-%      THEN \begingroup
-%              STYLE
-%              \@hangfrom{\hskip INDENT\@svsec}
-%              {\interlinepenalty 10000 ARG2\par}
-%           \endgroup
-%           \NAMEmark{ARG1}
-%           \addcontentsline{toc}{NAME}
-%              { IF  LEVEL > \c@secnumdepth
-%                  ELSE \protect\numberline{\theNAME}  FI
-%                ARG1 }
-%      ELSE \@svsechd == BEGIN  STYLE
-%                               \hskip INDENT\@svsec
-%                               ARG2
-%                               \NAMEmark{ARG1}
-%                               \addcontentsline{toc}{NAME}
-%                                  { IF  LEVEL > \c@secnumdepth
-%                                      ELSE 
-%                                        \protect\numberline{\theNAME}
-%                                      FI
-%                                    ARG1 }
-%                        END
-%    FI
-%    \@xsect{AFTERSKIP}
-% END
-% \end{example}
-% (\file{ltsect.dtx}, L295).
-%    \begin{macrocode}
 \def\@sect#1#2#3#4#5#6[#7]#8{%
   \ifnum #2>\c@secnumdepth
     \let\@svsec\@empty
@@ -2221,10 +677,6 @@
   \@tempskipa #5\relax
   \ifdim \@tempskipa>\z@
     \begingroup
-%    \end{macrocode}
-% Here we deviate from \file{ltsect.dtx} to ensure single spacing for
-% the section title.
-%    \begin{macrocode}
       \setstretch{\@ssp}%
       #6{%
         \@hangfrom{\hskip #3\relax\@svsec}%
@@ -2248,37 +700,10 @@
         #7}}%
   \fi
   \@xsect{#5}}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\@ssect}
-% Pseudocode for the |\@ssect| command
-% \begin{example}
-% \@ssect{INDENT}{BEFORESKIP}{AFTERSKIP}{STYLE}{ARG} ==
-%   BEGIN
-%    IF AFTERSKIP > 0
-%      THEN \begingroup
-%             STYLE
-%             \@hangfrom{\hskip INDENT}{\interlinepenalty 10000 ARG\par}
-%           \endgroup
-%      ELSE \@svsechd == BEGIN STYLE
-%                              \hskip INDENT
-%                              ARG
-%                        END
-%    FI
-%    \@xsect{AFTERSKIP}
-%   END
-% \end{example}
-% (\file{ltsect.dtx}, L521).
-%    \begin{macrocode}
 \def\@ssect#1#2#3#4#5{%
   \@tempskipa #3\relax
   \ifdim \@tempskipa>\z@
     \begingroup
-%    \end{macrocode}
-% Here we deviate from \file{ltsect.dtx} to ensure single spacing for
-% the section title.
-%    \begin{macrocode}
       \setstretch{\@ssp}%
       #4{%
         \@hangfrom{\hskip #1}%
@@ -2288,71 +713,12 @@
     \def\@svsechd{#4{\hskip #1\relax #5}}%
   \fi
   \@xsect{#3}}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \subsubsection{\file{ltbibl.dtx}}
-%
-% \DescribeMacro{\bibliography}
-% \DescribeEnv{thebibliography}
-% A bibliography is created by the |thebibliography| environment, which
-% generates a title such as ``Bibliography'', and a list of entries.
-% The \BibTeX\ program will create a file containing such an
-% environment, which will be read in by the |\bibliography| command.
-% With \BibTeX, the following commands will be used.
-%
-% The document class must define the thebibliography environment.  This
-% environment has a single argument, which is the widest bibliography
-% label-- e.g., if the [Knuth67] is the widest entry, then this
-% argument will be Knuth67.  The |\thebibliography| command must begin
-% a list  environment, which the |\endthebibliography| command ends.
-%
-% \begin{macro}{\bibliography}
-% |\bibliography|\marg{file1,file2,\ldots,filen} : specifies
-%   the bibdata files.  Writes a |\bibdata| entry on the |.aux| file
-%   and tries to read in |mainfile.bbl|.
-%
-% We don't need to change it, but it explains why we need to override
-% |thebibliography| even when we don't use it directly.
-% (\file{ltbibl.dtx}, L284).
-%    \begin{macrocode}
-%\def\bibliography#1{%
-%  \if@filesw
-%    \immediate\write\@auxout{\string\bibdata{#1}}%
-%  \fi
-%  \@input@{\jobname.bbl}
-%}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \subsubsection{\file{ltoutput.dtx}}
-%
-% \begin{macro}{\@DUT@clearpage}
-% \begin{macro}{\@DUT@cleardoublepage}
-% \begin{macro}{\@DUT@newpage}
-% Versions of |\clear*page| and |\newpage| that only work in
-% \Lopt{pagebreak} mode (\file{ltoutput.dtx}, L877 and L904).
-% Otherwise they add four blank lines.
-% \changes{0.15}{2011/04/23}{W.~Trevor King added
-%   $\backslash$\@DUT\@newpage macro.}
-%    \begin{macrocode}
 \newcommand\@DUT@clearpage{%
   \if@DUT@pagebreak \clearpage \else \blanklinesp{4} \fi}
 \newcommand\@DUT@cleardoublepage{%
   \if@DUT@pagebreak \cleardoublepage \else \blanklinesp{4} \fi}
 \newcommand\@DUT@newpage{%
   \if@DUT@pagebreak \newpage \else \blanklinesp{4} \fi}
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-%
-% \begin{macro}{\@DUT@blankpage}
-% Add a useful extension to insert a blank page without numbering.
-% If we're not in \Lopt{pagebreak} mode, this macro is a no-op.
-%    \begin{macrocode}
 \newcommand\@DUT@blankpage{%
   \if@DUT@pagebreak
     \@DUT@clearpage
@@ -2361,20 +727,6 @@
     \@DUT@clearpage
   \fi
 }
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{command}
-%   `\cs{blanklines}\marg{N}'
-%   `\cs{blanklines*}\marg{N}'
-% \end{command}
-% \begin{macro}{\blanklines}
-% Insert \meta{N} blank lines.  The starred forms use |\vspace|, which
-% inserts space even at the start and end of pages.  The |p| forms
-% add a trailing |\par|.  \emph{I'm still trying to get this part working
-% cleanly\ldots}
-%    \begin{macrocode}
 \newlength\@DUT@blanklines@length
 \newcommand{\@blanklines@setup}[1]{%
   \set@lines@length{\@DUT@blanklines@length}{#1}%
@@ -2395,24 +747,8 @@
 \newcommand{\@sblanklinesp}[1]{%
   \@blanklines@setup{#1}%
   \vspace*{\@DUT@blanklines@length}\par}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \subsection{\pkg{hyperref} inclusion}
-% \label{sec:hyperref-inclusion}
-%
-% This is the awkward \pkg{hyperref} inclusion.  See \S
-% \ref{sec:hyperref} for an explanation of why we stash it here.
-%    \begin{macrocode}
 \RequirePackage[final]{hyperref}
-%    \end{macrocode}
-% Nobody likes the default colored boxes.  Color the text itself.
-%    \begin{macrocode}
 \hypersetup{colorlinks}
-%    \end{macrocode}
-% If \Lopt{blackref} is set, set all \pkg{hyperref} colors to black.
-%    \begin{macrocode}
 \if@blackref
   \hypersetup{linkcolor=black}
   \hypersetup{anchorcolor=black}
@@ -2422,105 +758,18 @@
   \hypersetup{runcolor=black}
   \hypersetup{urlcolor=black}
 \fi
-%    \end{macrocode}
-%
-% \subsubsection{\pkg{hypcap}}
-% \label{sec:hypcap-inclusion}
-%
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/}{\pkg{hypcap}}
-% for placing caption hyperlink anchors.  Not strictly necessary, but
-% we're using \pkg{hyperref}, and the poor link targets are annoying.
-%    \begin{macrocode}
 \RequirePackage[all]{hypcap}
-%    \end{macrocode}
-% \Lopt{all} redefines the figure and table environments to
-% place the anchor at the start of the float.
-%
-%
-% \subsection{\cls{book} overrides and extensions}
-%
-% Here we change the behavior of a bunch of macros and environments from
-% \cls{book} (generated by \file{classes.ins} from \file{classes.dtx}) in
-% \href{http://www.ctan.org/tex-archive/macros/latex/base/}{\pkg{base}}).
-% We'll copy in their original notes along with their code, following
-% the relevant documentation an order given in \file{classes.dtx}.
-%
-%
-% \subsubsection{Floats on a text page}
-% \label{sec:implement-floats}
-%
-% \begin{macro}{\floatsep}
-% \begin{macro}{\textfloatsep}
-% When a floating object is placed on a page with text, these
-% parameters control the separation between the float and the other
-% objects on the page.
-%
-% |\floatsep| is the space between adjacent floats that are moved
-% to the top or bottom of the text page.
-%
-% |\textfloatsep| is the space between the main text and floats
-% at the top or bottom of the page.
-%
-% |\intextsep| is the space between in-text floats and the text.  We
-% don't bother overriding this one, because we've handled it with
-% \pkg{floatrow} in \S \ref{sec:floatrow}.
-%
-% From the Manual \S 2.3 p6, ``Tables and Figures''
-% \begin{quote}
-%   Insert at least 3 single-spaced lines of space above table
-%   captions and figures and below figure captions, tables, and other
-%   graphics.
-% \end{quote}
-% (\file{classes.dtx}, L1426)
-%    \begin{macrocode}
 \set@lines@length{\floatsep}{\@ssp}
 \set@lines@length{\textfloatsep}{\@tsp}
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-%
-%
-% \subsubsection{The title}
-%
-% \begin{macro}{\maketitle}
-% Automate the creation of the title page.
-% From Manual \S 3.1 p8, ``Title Page'', and the example on p16.
-% \begin{itemize}
-%   \item This page is counted but not numbered (it counts as page i,
-%   but should not have a page number).  TODO: How is this implemented?
-% \end{itemize}
-% Our definition simplifies \cls{book}'s by ignoring footnotes.
-% (\file{classes.dtx}, L1796)
-%    \begin{macrocode}
 \newcommand\@DUT@maketitle{
   \begin{@DUT@titlepage}%
-%    \end{macrocode}
-% Add some bookmarks if we're using pdf\LaTeX.  The |frontmatter|
-% bookmark is set at the \emph{part} level (-1) to hold all bookmarks
-% from the |preamble| environment, since those entries are all
-% chapters.
-% \changes{0.8}{2010/05/20}{W.~Trevor King replaced Frontmatter with
-%   Front Matter and Titlepage with Title Page for consistency with
-%   \LaTeX's book class.}
-%    \begin{macrocode}
     \ifpdf
       \pdfbookmark[-1]{Front Matter}{Front Matter}
       \pdfbookmark[0]{Title Page}{Title Page}
     \fi
-%    \end{macrocode}
-% Add some stretchy space to center the title vertically if we're in
-% \Lopt{pagebreak} mode.
-%    \begin{macrocode}
     \if@DUT@pagebreak \vspace*{\fill} \fi
-%    \end{macrocode}
-% Here is the title text itself.
-%    \begin{macrocode}
     \begin{center}%
       {\setstretch{\@tsp} \bfseries \@DUT@title \par}%
-%    \end{macrocode}
-% We want two blank lines (triple spacing) between the title and the
-% remaining material, so add three but don't end the paragraph.
-%    \begin{macrocode}
       \blanklines{\@tsp}%
       \setstretch{\@dsp}%
       A Thesis\\
@@ -2535,96 +784,35 @@
       \@DUT@degree\\
       \@DUT@month\ \@DUT@year
     \end{center}\par
-%    \end{macrocode}
-% Some more stretchy space for the bottom if we're not in draft mode.
-%    \begin{macrocode}
-%    \end{macrocode}
-% Add some stretchy space to center the title vertically if we're in
-% \Lopt{pagebreak} mode.
-%    \begin{macrocode}
-    \if@DUT@pagebreak \vspace*{\fill} \fi
+    \if@DUT@pagebreak \vspace*{\fill}
+    \centering
+    \mbox{\smash{\includegraphics[width=4cm]{drexel-logo}}}
+    \fi
   \end{@DUT@titlepage}%
-%    \end{macrocode}
-% And that's it.  We reset the footnote counter for the rest of the
-% document and save space by freeing the memory associated with the
-% |\maketitle| and |\and| macros (by setting them equal to |\relax|).
-%    \begin{macrocode}
   \setcounter{footnote}{0}%
   \global\let\maketitle\relax
   \global\let\and\relax
 }
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \subsubsection{Copyright pages}
-% \label{sec:implement-copyright}
-%
-% \begin{macro}{\@DUT@makecopyright}
-% The Manual allows for the selection of different copyrights, so we
-% define a base macro that generates a proper copyright page
-% containing |\@copyrighttext|, which the user can set with
-% |\copyrighttext|.
-% From Manual \S 3.2 p9, ``Copyright Page''.
-% \begin{itemize}
-%   \item Include a copyright page with the following information: a
-%   copyright notice, full legal name of author, and date of
-%   publication on file.
-%   \item This page is neither counted nor numbered.
-% \end{itemize}
-% In final mode, we start off on a new page and center the blurb.
-% In draft mode, we dive right into the text.
-%    \begin{macrocode}
 \newcommand\@DUT@makecopyright{%
   \@DUT@clearpage
-%    \end{macrocode}
-% If we're using pdf\LaTeX, add a bookmark.
-%    \begin{macrocode}
   \ifpdf \pdfbookmark[0]{Copyright Page}{Copyright Page} \fi
   \if@DUT@pagebreak \vspace*{\fill} \fi
   \begin{center}
     \copyright~Copyright \@DUT@year\\
-    \@DUT@author.  \@DUT@copyrighttext
+    \@DUT@author.~All Rights Reserved.  \@DUT@copyrighttext
   \end{center}
   \if@DUT@pagebreak \vspace*{\fill} \fi
-%    \end{macrocode}
-% Turn off page numbering for this page.
-%    \begin{macrocode}
   \thispagestyle{empty}
 }
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\copyrighttextCCBYSA}
-% \begin{macro}{\DUTcopyrighttextCCBYSA}
-% The Creative Commons Attribution-ShareAlike License.
-% \changes{0.4}{2010/02/23}{W.~Trevor King renamed from
-%   \cs{copyrighttextCC}, and made specific to Creative Commons
-%   Attribution-ShareAlike Version 3.0.}
-%    \begin{macrocode}
 \newcommand\copyrighttextCCBYSA{
   \begin{quote}
     This work is licensed under the terms of the Creative Commons
-    Attribution-ShareAlike license Version 3.0.  The license is
+    Attribution-ShareAlike 4.0 International license.  The license is
     available at \\
-    \url{http://creativecommons.org/licenses/by-sa/3.0/}.
+    \url{http://creativecommons.org/licenses/by-sa/4.0/}.
   \end{quote}
 }
 \let\DUTcopyrighttextCCBYSA\copyrighttextCCBYSA
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-%
-%
-% \subsubsection{Mark commands}
-%
-% Default initializations of |\*mark| commands.  These commands
-% are used in the definition of the page styles.
-%
-% \begin{macro}{\chaptermark}
-% Setup colon rather than period separated chapter marks.
-% (\file{classes.dtx}, L2053)
-%    \begin{macrocode}
 \renewcommand\chaptermark[1]{%
   \markboth {%
     \ifnum \c@secnumdepth >\m@ne
@@ -2633,70 +821,17 @@
       \fi
     \fi
     #1}{}}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\schaptermark}
-% Setup unnumbered chapter marks for \pkg{fancyhdr}.
-%    \begin{macrocode}
 \newcommand\schaptermark[1]{\markboth{#1}{}}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\sectionmark}
-% Setup space rather than period separated section marks.
-% (\file{classes.dtx}, L2054)
-%    \begin{macrocode}
 \renewcommand{\sectionmark}[1]{%
   \markright {%
     \ifnum \c@secnumdepth >\z@
       \thesection \ %
     \fi
     #1}}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \subsubsection{Front Matter, Main Matter, and Back Matter}
-%
-% A book contains these three (logical) sections. The switch
-% |\@mainmatter| is true if and only if we are processing main
-% matter\footnote{%
-%   \href{http://en.wikipedia.org/wiki/Book_design}{Wikipedia}
-%   suggests \emph{body matter} for the main content, but
-%   \href{http://mirror.ctan.org/macros/latex/base/classes.dtx}{\LaTeX's
-%   \cls{book}} uses \emph{Main Matter}.  We're a \LaTeX\ class, so
-%   we'll stick with ``main matter'' for consistency.
-% }.  When this switch is false, the
-% |\chapter| command does not print chapter numbers.
-%
-% \begin{macro}{\mainmatter}
-% This command clears the page (in final mode), starts arabic page
-% numbering and turns on chapter numbering.  Since this restarts the
-% page numbering from 1, it should also ensure that a recto page is
-% used.
-%
-% We replace \cls{book}'s |\clear*page| calls with |\@DUT@clearpage| calls.
-% (\file{classes.dtx}, L2211)
-%    \begin{macrocode}
 \renewcommand\mainmatter{%
   \@DUT@cleardoublepage
   \@mainmattertrue
   \pagenumbering{arabic}}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \subsubsection{Parts}
-%
-% \begin{macro}{\part}
-% The command to start a new part of our document.
-%
-% We start a new (righthand) page and use the \pstyle{plain}
-% pagestyle, replacing \cls{book}'s |\clear*page| calls with
-% |\@DUT@clearpage| calls and dropping twopage code.
-% (\file{classes.dtx}, L2249)
-%    \begin{macrocode}
 \renewcommand\part{%
   \if@openright
     \@DUT@cleardoublepage
@@ -2705,28 +840,8 @@
   \fi
   \thispagestyle{plain}%
   \@tempswafalse
-%    \end{macrocode}
-% Add some stretchy space for vertical centering if we're in
-% \Lopt{pagebreak} mode.
-%    \begin{macrocode}
   \if@DUT@pagebreak \null\vfil \fi
-%    \end{macrocode}
-% Here we use |\secdef| to indicate which commands to use to make
-% the actual heading.
-%    \begin{macrocode}
   \secdef\@part\@spart}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\@part}
-% This macro does the actual formatting of the title of the part.  We
-% replace \cls{book}'s |\Huge| with |\large|, and make use of
-% |\numberline| for consistent spacing.
-%
-% When \Lcount{secnumdepth} is larger than $-2$, we have a numbered
-% part, otherwise it is unnumbered.
-% (\file{classes.dtx}, L2310)
-%    \begin{macrocode}
 \def\@part[#1]#2{%
     \ifnum \c@secnumdepth >-2\relax
       \refstepcounter{part}%
@@ -2735,61 +850,25 @@
     \else
       \addcontentsline{toc}{part}{#1}%
     \fi
-%    \end{macrocode}
-% We empty the mark registers and center the title on the page.
-% Also we prevent breaking between lines and reset the font.
-%    \begin{macrocode}
     \markboth{}{}%
     {\centering
      \interlinepenalty \@M
      \normalfont
-%    \end{macrocode}
-% When this is a numbered part we have to print the number.
-%    \begin{macrocode}
      \ifnum \c@secnumdepth >-2\relax
        \large\bfseries \partname\nobreakspace\thepart
        \par
-%    \end{macrocode}
-% We leave some space before we print the title and leave the
-% finishing up to |\@endpart|.
-%    \begin{macrocode}
        \vskip 20\p@
      \fi
      \large \bfseries #2\par}%
     \@endpart}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\@spart}
-% This macro does the actual formatting of the title of the part
-% when the star form of the user command was used. In this case we
-% \emph{never} print a number. Otherwise the formatting is the
-% same.
-% (\file{classes.dtx}, L2402)
-%    \begin{macrocode}
 \def\@spart#1{%
     {\centering
      \interlinepenalty \@M
      \normalfont
      \large \bfseries #1\par}%
     \@endpart}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\@endpart}
-% This macro finishes the part page, for both |\@part| and |\@spart|.
-% We drop \cls{book}'s twoside handling.
-% If we're in \Lopt{pagebreak} mode, we fill the current page.
-% (\file{classes.dtx}, L2435)
-%    \begin{macrocode}
 \def\@endpart{
   \if@DUT@pagebreak \vfil\newpage \fi
-%    \end{macrocode}
-% Then, when we are in twosided mode and the chapters are supposed to
-% be on the right hand sides, we produce a completely blank page.  We
-% don't need to check \Lopt{pagebreak}-mode here, because the
-% pagebreak options set the \cls{book} opening options.
-%    \begin{macrocode}
   \if@twoside
     \if@openright
       \null
@@ -2797,46 +876,12 @@
       \newpage
     \fi
   \fi}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \subsubsection{Chapters}
-% \label{sec:implement-chapters}
-%
-% \begin{macro}{\chapter}
-% \cls{book} always starts a chapter on a new page, but we don't want
-% to do that if we're in draft mode.
-% (\file{classes.dtx}, L2472).
-%    \begin{macrocode}
 \renewcommand\chapter{%
   \if@openright\@DUT@cleardoublepage\else\@DUT@clearpage\fi
   \thispagestyle{plain}%
-%    \end{macrocode}
-% Then we prevent floats from appearing at the top of this page
-% because it looks weird to see a floating object above a chapter
-% title.
-%    \begin{macrocode}
   \global\@topnum\z@
-%    \end{macrocode}
-% Then we suppress the indentation of the first paragraph by
-% setting the switch |\@afterindent| to false. We use |\secdef|
-% to specify the macros to use for actually setting the chapter
-% title.
-%    \begin{macrocode}
   \@afterindentfalse
   \secdef\@chapter\@schapter}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\listed@schapter}
-% |\chapter| declares numbered chapters, which are listed in the table
-% of contents.
-% |\chapter*| declares unnumbered chapters, which are \emph{not}
-% listed in the TOC.
-% |\listed@schapter| declares an unnumbered chapter that \emph{is}
-% listed in the TOC.
-%    \begin{macrocode}
 \newcommand\listed@schapter[1]{%
   \if@openright\@DUT@cleardoublepage\else\@DUT@clearpage\fi
   \thispagestyle{plain}%
@@ -2845,49 +890,11 @@
   \addcontentsline{toc}{chapter}{#1}
   \@afterindentfalse
   \@schapter{#1}}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\@chapter}
-% This macro is called when we have a numbered chapter. When
-% \Lcount{secnumdepth} is larger than $-1$ and |\@mainmatter| is true,
-% we display the chapter number.
-% We drop \cls{book}'s \Lopt{twocolumn} code. 
-% (\file{classes.dtx}, L2496).
-%    \begin{macrocode}
 \def\@chapter[#1]#2{
-%    \end{macrocode}
-% Inform the user that a new chapter is about to be typeset by writing
-% a message to the terminal.
-% \changes{0.9}{2010/05/21}{W.~Trevor King disabled the label macro
-% for typeout.}
-% Some users place |\label| in their chapter argument:
-% \begin{example}
-%   \chapter{Bla bla\label{x}}
-% \end{example}
-% rather than after (as recommended by
-% \href{http://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing#Sections}%
-%   {the \LaTeX\ Wikibook} and
-% \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}%
-%   {The Not So Short Introduction to \LaTeXe\ (\S 2.8, p36)}):
-% \begin{example}
-%   \chapter{Bla bla}
-%   \label{x}
-% \end{example}
-% The embedded |\label| chokes |\typeout| so we temporarily redefine
-% |\label| to just gobble its contents.  |\@DUT@label| stores the
-% original definition.
-%    \begin{macrocode}
   \let\@DUT@label=\label%
   \renewcommand{\label}[1]{}%
   \typeout{\@chapapp\space\thechapter. #1}%
-%    \end{macrocode}
-% Restore |\label| to its previous glory.
-%    \begin{macrocode}
   \let\label=\@DUT@label%
-%    \end{macrocode}
-% Now we can get on with the real work.
-%    \begin{macrocode}
   \ifnum \c@secnumdepth >\m@ne
     \if@mainmatter
       \refstepcounter{chapter}%
@@ -2898,126 +905,31 @@
   \else
     \addcontentsline{toc}{chapter}{#1}%
   \fi
-%    \end{macrocode}
-% After having written an entry to the table of contents we store
-% the (alternative) title of this chapter with |\chaptermark|.
-%    \begin{macrocode}
   \chaptermark{#1}%
-%    \end{macrocode}
-% For nicer lists of figures and tables, we could add some white space
-% to separate the chapters.  However, nice lists $\neq$~Manual
-% specifications.
-%    \begin{macrocode}
-%  \addtocontents{lof}{\protect\addvspace{10\p@}}%
-%  \addtocontents{lot}{\protect\addvspace{10\p@}}%
-%    \end{macrocode}
-% Then we call upon |\@makechapterhead| to format the actual chapter
-% title.  |\@afterheading| which takes care of suppressing the
-% indentation.
-%    \begin{macrocode}
   \@makechapterhead{#2}%
   \@afterheading}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\@makechapterhead}
-% The |\@chapter| macro uses |\@makechapterhead|\meta{text} to format
-% the heading of the chapter.
-% From the Manual \S 3.11 p11.
-% \begin{quote}
-%   Chapter headings must be bold and centered.
-%   The chapter number and title must be on the same line, separated
-%   by a colon or period, as shown in the example below:
-%   \begin{center}
-%     CHAPTER 1: INTRODUCTION
-%   \end{center}
-%   Headings must not be larger than 12 points.
-%   Headings must be single spaced.
-% \end{quote}
-% \cls{book} sets |\@chapapp| and |\thechapter| (e.g., ``Chapter 5'')
-% on a line above the chapter title, but that doesn't match the
-% Manual's specification.
-%
-% We begin by leaving some white space. The we open a group in which
-% we have a paragraph indent of 0pt, and in which we have the text set
-% ragged right. We also reset the font.
-% (\file{classes.dtx}, L2540).
-%    \begin{macrocode}
 \def\@makechapterhead#1{%
-%    \end{macro}
-% Adding even a \vspace*{0\p@} here seems to increase the vertical
-% space above the chapter heading by two lines.  I'm not sure why.
-% Workaround is to pass the ``value of blanklines you want minus two''
-% to |\blanklines*|.  HACK!
-%    \begin{macro}
   \blanklines*{-1}% HACK!
   {\parindent \z@ \raggedright \normalfont
-%    \end{macrocode}
-% Ensure single spacing.
-%    \begin{macrocode}
     \setstretch{\@ssp}%
-%    \end{macrocode}
-% Prevent a pagebreak from occuring in the middle of or after the title.
-%    \begin{macrocode}
     \interlinepenalty\@M
-%    \end{macrocode}
-% Check whether the number of the chapter has to be printed.
-%    \begin{macrocode}
     \ifnum \c@secnumdepth >\m@ne
-%    \end{macrocode}
-% Check whether there \emph{is} a number to be printed.
-%    \begin{macrocode}
       \if@mainmatter
-%    \end{macrocode}
-% Setup a ``Chapter \#: Title'' heading.
-%    \begin{macrocode}
         \center \large \bfseries \@chapapp{} \thechapter: #1\par\nobreak
       \else
-%    \end{macrocode}
-% Setup a ``Title'' heading.
-%    \begin{macrocode}
         \center \large \bfseries #1\par\nobreak
       \fi
     \else
       \center \large \bfseries #1\par\nobreak
     \fi
-%    \end{macrocode}
-% Put a little space before the chapter body.  We use four blank lines
-% to comply with the Manual \S 3.13 p12
-% \begin{quote}
-%   Begin the list of sources four spaces below the heading.
-% \end{quote}
-%    \begin{macrocode}
     \blanklines{4}
   }
 }
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\@schapter}
-% This macro is called when we have an unnumbered chapter.  We drop
-% \file{classes.dtx}'s \Lopt{twocolumn} code and set marks for
-% \pkg{fancyhdr}.
-% (\file{classes.dtx}, L2582).
-%    \begin{macrocode}
 \def\@schapter#1{
-%    \end{macrocode}
-% Inform the user that a new chapter is about to be typeset by writing
-% a message to the terminal.
-%    \begin{macrocode}
   \typeout{\@chapapp\space #1}%
   \schaptermark{#1}%
   \@makeschapterhead{#1}%
   \@afterheading}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\@makeschapterhead}
-% The macro above uses |\@makeschapterhead|\meta{text} to format
-% the heading of the chapter. It is similar to |\@makechapterhead|
-% except that it never has to print a chapter number.
-% (\file{classes.dtx}, L2595).
-%    \begin{macrocode}
 \def\@makeschapterhead#1{%
   \blanklines*{-1}% HACK!
   {\parindent \z@ \raggedright \normalfont
@@ -3027,35 +939,11 @@
     \blanklines{4}%
   }
 }
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \subsubsection{Lower level headings}
-%
-% \begin{macro}{\section}
-% Setup section headings in |\large| rather than \cls{book}'s
-% |\Large|.
-% (\file{classes.dtx}, L2623).
-%    \begin{macrocode}
 \renewcommand\section{%
   \@startsection {section}{1}{\z@}%
     {-3.5ex \@plus -1ex \@minus -.2ex}%
     {2.3ex \@plus.2ex}%
     {\normalfont\large\bfseries}}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \subsubsection{Defining new environments}
-%
-% We don't override any of \cls{book}'s environments, but this is
-% where \file{classes.dtx} defines its environments (L2996), so we'll put
-% ours here too.
-%
-% \begin{environment}{preamble}
-% \begin{environment}{DUTpreamble}
-%    \begin{macrocode}
 \newenvironment{preamble}{%
   \cleardoublepage
   \@mainmatterfalse
@@ -3066,48 +954,13 @@
     \fi
     \DUT@makeapprovalform
   \fi
-%    \end{macrocode}
-% From Manual \S 3.1 p8, ``Title Page''.
-%    \begin{macrocode}
   \@DUT@maketitle
-%    \end{macrocode}
-% From Manual \S 3.2 p9, ``Copyright Page''.
-%    \begin{macrocode}
   \@DUT@makecopyright
 }{%
-%    \end{macrocode}
-% From the Manual \S 3.9, p11:
-% \begin{quote}
-%   Include a blank page (with no page number) before the first page
-%   of text.  The blank page is neither numbered nor counted.
-% \end{quote}
-%    \begin{macrocode}
   \@DUT@blankpage
 }
-%    \end{macrocode}
-% \LaTeX's |\newenvironment| and company work by defining |\X| and
-% |\endX| for the environment |X|.  We can alias the preamble
-% environment by saving these macros.
-%    \begin{macrocode}
 \let\DUTpreamble\preamble
 \let\endDUTpreamble\endpreamble
-%    \end{macrocode}
-% \end{environment}
-% \end{environment}
-%
-% \begin{environment}{dedications}
-% \begin{environment}{DUTdedications}
-% From the Manual \S 3.3 p9
-% \begin{itemize}
-%   \item The heading |Dedications| must appear at the top of the
-%   page.  The heading must be bold, centered, and without
-%   punctuation.
-%   \item This page is counted and numbered in lowercase Roman numerals.
-% \end{itemize}
-% \changes{0.12}{2010/06/17}{W.~Trevor King added \cs{par} to detach
-%   the single space \cs{setstretch} from the from the final
-%   paragraph.}
-%    \begin{macrocode}
 \newenvironment{dedications}{%
   \@DUT@clearpage
   \ifpdf
@@ -3121,23 +974,6 @@
 }
 \let\DUTdedications\dedications
 \let\endDUTdedications\enddedications
-%    \end{macrocode}
-% \end{environment}
-% \end{environment}
-%
-% \begin{environment}{acknowledgments}
-% \begin{environment}{DUTacknowledgments}
-% From the Manual \S 3.4 p9
-% \begin{itemize}
-%   \item The heading |Acknowledgments| must appear at the top of the
-%   page.  The heading must be bold, centered, and without
-%   punctuation.
-%   \item This page is counted and numbered in lowercase Roman numerals.
-% \end{itemize}
-% \changes{0.12}{2010/06/17}{W.~Trevor King added \cs{par} to detach
-%   the single space \cs{setstretch} from the from the final
-%   paragraph.}
-%    \begin{macrocode}
 \newenvironment{acknowledgments}{%
   \@DUT@clearpage
   \ifpdf
@@ -3149,59 +985,15 @@
 }{%
   \par\setstretch{\@ssp}%
 }
-%    \end{macrocode}
 \let\DUTacknowledgments\acknowledgments
 \let\endDUTacknowledgments\endacknowledgments
-% \end{environment}
-% \end{environment}
-%
-% \begin{environment}{abstract}
-% \begin{environment}{DUTabstract}
-%    \begin{macrocode}
 \newenvironment{abstract}{%
   \listed@schapter{\abstractname}%
-%    \end{macrocode}
-% Suck up some blank space to position the rest of the header right
-% under the chapter title.
-%    \begin{macrocode}
   \blanklines{-4}%
-%    \end{macrocode}
-% From the Manual \S 3.9 p10
-% \begin{quote}
-%   \begin{itemize}
-%     \item The following heading must be centered at the top of the page
-%       \begin{center}
-%         Abstract \\
-%         Full Title of Dissertation or Thesis \\
-%         Author's Name as it appears on the Dissertation or Thesis
-%       \end{center}
-%       In the example on p20, they list the advisor's name after the
-%       author, but that is not specified in the text on p10.
-%     \item The text begins four lines below this heading.
-%   \end{itemize}
-% \end{quote}
-% On p20
-% \begin{quote}
-%   \begin{itemize}
-%     \item These pages are numbered using lowercase Roman numerals.
-%     \item Note that the heading is single spaced, but the abstract
-%       is double spaced.
-%   \end{itemize}
-% \end{quote}
-% \changes{0.12}{2010/06/17}{W.~Trevor King added \cs{par} to detach
-%   the single space \cs{setstretch} from the from the final
-%   paragraph.}
-%    \begin{macrocode}
     \begin{center}
       \setstretch{\@ssp}%
       \@DUT@title\\
       \@DUT@author\\
-%    \end{macrocode}
-% If you're feeling daring, break the rules and add ``Advisor(s):'' to
-% set off your list of advisor names.
-% \changes{0.11}{2010/06/04}{W.~Trevor King added ``Advisor(s):'' for
-%   daring users.}
-%    \begin{macrocode}
       \ifdaring{%
         \ifnum\c@@DUT@advisors=\@ne%
         Advisor:
@@ -3220,19 +1012,6 @@
 }
 \let\DUTabstract\abstract
 \let\endDUTabstract\endabstract
-%    \end{macrocode}
-% \end{environment}
-% \end{environment}
-%
-% \begin{environment}{thesis}
-% \begin{environment}{DUTthesis}
-% From the Manual \S 3.10 p11
-% \begin{itemize}
-%   \item The pages are counted and numbered in Arabic numerals.
-% \end{itemize}
-% \changes{0.8}{2010/05/20}{W.~Trevor King replaced Backmatter with
-%   Back Matter for consistency with \LaTeX's book class.}
-%    \begin{macrocode}
 \newenvironment{thesis}{%
   \mainmatter
   \setstretch{\@dsp}%
@@ -3246,27 +1025,6 @@
 }
 \let\DUTthesis\thesis
 \let\endDUTthesis\endthesis
-%    \end{macrocode}
-% \end{environment}
-% \end{environment}
-%
-% \paragraph{Vita}
-% \label{sec:implement-vita}
-% 
-% \begin{environment}{vita}
-% \begin{environment}{DUTvita}
-% From the Manual \S 3.15 p13
-% \begin{itemize}
-%   \item The heading |Vita| must appear at the top of the page.  The
-%   heading must be bold, centered, and without punctuation.
-%   \item The Vita text should begin four spaces below the heading.
-%   \item List the Vita separately in the Table of Contents.
-%   \item The page is counted and numbered in Arabic numerals.
-% \end{itemize}
-% \changes{0.12}{2010/06/17}{W.~Trevor King added \cs{par} to detach
-%   the single space \cs{setstretch} from the from the final
-%   paragraph.}
-%    \begin{macrocode}
 \newenvironment{vita}{%
   \listed@schapter{\vitaname}
   \setstretch{\@dsp}%
@@ -3275,181 +1033,34 @@
 }
 \let\DUTvita\vita
 \let\endDUTvita\endvita
-%    \end{macrocode}
-% \end{environment}
-% \end{environment}
-%
-%
-% \subsubsection{Titlepage}
-%
-% \begin{environment}{titlepage}
-% In the normal environments, the titlepage environment does nothing
-% but start and end a page, and inhibit page numbers.  We inhibit the
-% paging in draft mode, since it seems silly to waste a whole page on
-% the title.  We also drop the \Lopt{twocolumn} code.
-% (\file{classes.dtx}, L3111)
-%    \begin{macrocode}
 \renewenvironment{titlepage}%
   {\thispagestyle{empty}\setcounter{page}\z@}%
   {\@DUT@newpage}
 \let\@DUT@titlepage\titlepage
 \let\end@DUT@titlepage\endtitlepage
-%    \end{macrocode}
-% \end{environment}
-%
-%
-% \subsubsection{Appendix}
-% \label{sec:implement-appendix}
-%
-% \begin{macro}{\appendix}
-% \begin{macro}{\DUTappendix}
-% The |\appendix| command is not really an environment, it is a
-% macro that makes some changes in the way things are done.
-%
-% In the article document class the |\appendix| command must do the
-% following:
-% \begin{itemize}
-%   \item reset the section and subsection counters to zero,
-%   \item redefine |\thesection| to produce alphabetic appendix
-%         numbers. This redefinition is done globally to ensure that it 
-%         survives even if |\appendix| is issued within an environment such
-%         as |multicols|.
-% \end{itemize}
-%
-% In addition to \cls{book}'s (or \pkg{hyperref}'s) activity, we
-% fiddle with the \pkg{tocloft} chapter settings add switch to global
-% double-spacing.
-% (\file{classes.dtx}, L3177)
-%    \begin{macrocode}
 \let\@DUT@appendix\appendix
 \renewcommand\appendix{%
   \@DUT@appendix%
-%    \end{macrocode}
-% Setup TOC entries like
-% \begin{center}
-%   Appendix A: Chapter Title
-% \end{center}
-% We don't need to worry about the |vita| environment (page
-% \pageref{sec:implement-vita}), because it is a |\listed@schapter|,
-% and therefore lacks a |\numberline| section in its \file{*.toc}
-% entry.
-%
-% We increase |numwidth| to 6.5em to make room for |Appendix~| before
-% the chapter number/letter, and add a colon after it.
-%
-% The |\protect| calls get the macros into \file{*.toc} unexpanded, so
-% they function correctly when \LaTeX\ parses \file{*.toc}.
-%    \begin{macrocode}
   \addtocontents{toc}{%
     \protect\cftsetindents{chapter}{0pt}{6.5em}
     \protect\renewcommand{\protect\cftchappresnum}{\protect\appendixname~}
     \protect\renewcommand{\protect\cftchapaftersnum}{:}}
-%    \end{macrocode}
-% We also turn on double spacing by default, since we're no longer
-% wrapped in the |thesis| environment.
-%    \begin{macrocode}
   \setstretch{\@dsp}%
 }
 \let\DUTappendix\appendix
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-%
-%
-% \subsubsection{Table of Contents}
-% \label{sec:implement-toc}
-%
-% From Manual \S 3.5 p9, ``Table of Contents'', and the example on p17.
-% \begin{quote}
-%   \begin{itemize}
-%     \item Do not list any sections that precede the
-%     |Table of Contents| (e.g., |Dedications|, |Acknowledgments|).  Do
-%     not list the |Table of Contents| itself.
-%     \item These pages are counted and numbered in lowercase Roman numerals.
-%   \end{itemize}
-% \end{quote}
-%
-% \begin{macro}{\cfttoctitlefont}
-% Take advantange of \pkg{tocloft}'s TOC title code.
-% (\file{tocloft.dtx}, L1501)
-% \begin{example}
-%   \cfttoctitlefont\contentsname}{\cftaftertoctitle}
-% \end{example}
-% by setting it equal to something ending in |\chapter*|.  That way
-% \LaTeX parses the whole thing as
-% \begin{example}
-%   ...\chapter*\contentsname}{\cftaftertoctitle}
-% \end{example}
-% which will set up the TOC page correctly.
-%    \begin{macrocode}
 \renewcommand\cfttoctitlefont{%
-%    \end{macrocode}
-% Start a new page in \Lopt{final} mode
-%    \begin{macrocode}
   \@DUT@clearpage
-%    \end{macrocode}
-% Add a bookmark if we're using pdf\LaTeX.
-%    \begin{macrocode}
   \ifpdf
     \phantomsection
     \pdfbookmark[0]{\contentsname}{\contentsname}
   \fi
-%    \end{macrocode}
-% |\chapter*| to gobble and format the next token (|\contentsname|).
-%    \begin{macrocode}
   \chapter*}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\aftertoctitleskip}
-% Don't add any extra space after the title (the chapter will take
-% care of that).
-%    \begin{macrocode}
 \setlength\cftaftertoctitleskip{0pt}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\l@DUT@toc@sep}
-% Define a length for TOC/LOF/LOT spacing.
-% \changes{0.13}{2010/07/28}{Renamed from \cs{l@cont@sep}.}
-%    \begin{macrocode}
 \newlength\l@DUT@toc@sep
 \set@lines@length{\l@DUT@toc@sep}{\@DUT@toc@sep}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\DUT@toc@high@font}
-% Define a font for high level (part, chapter) entries.
-% \changes{0.13}{2010/07/28}{Renamed from \cs{@cont@font}.}
-%    \begin{macrocode}
 \newcommand{\DUT@toc@high@font}{\normalsize\scshape}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\DUT@toc@low@font}
-% Define a font for low level (section, table, figure) entries.
-% \changes{0.13}{2010/07/28}{Macro added.}
-%    \begin{macrocode}
 \newcommand{\DUT@toc@low@font}{\normalfont}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\DUT@toc@page@font}
-% Define a font for page numbers.
-% \changes{0.13}{2010/07/28}{Macro added.}
-%    \begin{macrocode}
 \newcommand{\DUT@toc@page@font}{\normalfont}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\cftbeforepartskip}
-% \begin{macro}{\cftpartfont}
-% \begin{macro}{\cftpartleader}
-% \begin{macro}{\cftpartdotsep}
-% \begin{macro}{\cftpartpagefont}
-% Setup parts.  See the \pkg{tocloft} manual for a description of the
-% commands.
-%    \begin{macrocode}
 \setlength\cftbeforepartskip{\l@DUT@toc@sep}
 \cftsetindents{part}{0pt}{3em}
 \if@boldpart   \renewcommand{\cftpartfont}{\bfseries\DUT@toc@high@font}
@@ -3458,23 +1069,6 @@
 \if@dottedpart \renewcommand{\cftpartdotsep}{\cftdotsep}
 \else          \renewcommand{\cftpartdotsep}{\cftnodots} \fi
 \renewcommand{\cftpartpagefont}{\DUT@toc@page@font}
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-%
-% \begin{macro}{\cftbeforechapskip}
-% \begin{macro}{\cftchapaftersnum}
-% \begin{macro}{\cftchapfont}
-% \begin{macro}{\cftchapleader}
-% \begin{macro}{\cftchapdotsep}
-% \begin{macro}{\cftchappagefont}
-% Setup chapters and appendicies.  Some of these settings are adjusted
-% for appendicies in particular by |\appendix|
-% (Sec.~\ref{sec:implement-appendix}).
-%    \begin{macrocode}
 \setlength\cftbeforechapskip{\l@DUT@toc@sep}
 \cftsetindents{chapter}{0pt}{1.5em}
 \renewcommand{\cftchapaftersnum}{.}
@@ -3484,29 +1078,6 @@
 \if@dottedchapter \renewcommand{\cftchapdotsep}{\cftdotsep}
 \else             \renewcommand{\cftchapdotsep}{\cftnodots} \fi
 \renewcommand{\cftchappagefont}{\DUT@toc@page@font}
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-%
-% \begin{macro}{\cftbeforesecskip}
-% \begin{macro}{\cftsecfont}
-% \begin{macro}{\cftpagefont}
-% \begin{macro}{\cftbeforesubsecskip}
-% \begin{macro}{\cftsubsecfont}
-% \begin{macro}{\cftsubsecpagefont}
-% \begin{macro}{\cftbeforesubsubsecskip}
-% \begin{macro}{\cftsubsubsecfont}
-% \begin{macro}{\cftsubsubsecpagefont}
-% Setup sections, subsections, etc.
-% \changes{0.13}{2010/07/28}{Added \cs{cft*pagefont} definitions and
-%   switch \cs{cft*font} from hardcoded \cs{normalsize} to
-%   \cs{DUT@toc@low@font}.}
-%    \begin{macrocode}
-%\cftsetindents{chap}{0pt}{1.5em}
 \setlength\cftbeforesecskip{\l@DUT@toc@sep}
 \cftsetindents{section}{0pt}{3em}
 \renewcommand{\cftsecfont}{\DUT@toc@low@font}
@@ -3519,168 +1090,24 @@
 \cftsetindents{subsubsection}{0pt}{6em}
 \renewcommand{\cftsubsubsecfont}{\DUT@toc@low@font}
 \renewcommand{\cftsubsubsecpagefont}{\DUT@toc@page@font}
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-%
-% The default indents above are all |0pt|.  If \Lopt{indenttoc} was
-% given, override this, restoring the \pkg{tocloft} defaults, see the
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/tocloft/tocloft.pdf}{%
-%   \pkg{tocloft} manual, Table 1}.
-%    \begin{macrocode}
 \if@indenttoc
   \cftsetindents{chapter}{0pt}{1.5em}
   \cftsetindents{section}{1.5em}{2.3em}
   \cftsetindents{subsection}{3.8em}{3.2em}
   \cftsetindents{subsubsection}{7.0em}{4.1em}
 \fi
-%    \end{macrocode}
-%
-%
-% \subsubsection{List of figures}
-% \label{sec:implement-lof}
-%
-% From the Manual \S 3.7 p10
-% \begin{quote}
-%   \begin{itemize}
-%     \item The heading |List of Figures| must appear at the top of
-%       the first page.
-%     \item The heading must be bold, centered, and without
-%       punctuation.  List figure captions exactly as they appear
-%       below the figures in the text.
-%     \item Single space each entry, but double-space between entries.
-%     \item Separate figure captions from page numbers with
-%       right-justified tabs and dot leaders.
-%     \item Do not use periods to separate captions and page numbers.
-%     \item These pages are counted and numbered in lowercase Roman
-%     numerals.
-%   \end{itemize}
-% \end{quote}
-%
-% \begin{macro}{\cftloftitlefont}
-% Much like our |\cfttoctitlefont|, but the list of figures gets
-% listed in the TOC.
-%    \begin{macrocode}
 \renewcommand\cftloftitlefont{\listed@schapter}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\afterloftitleskip}
-% Don't add any extra space after the title (the chapter will take
-% care of that).  Actually we make a one-line correction so the first
-% line matches the first line in the TOC.  HACK!
-%    \begin{macrocode}
 \setlength\cftafterloftitleskip{-12pt}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\cftbeforefigskip}
-% \begin{macro}{\cftfigindent}
-% \begin{macro}{\cftfigfont}
-% \begin{macro}{\cftfigpagefont}
-% Setup figure entries.
-% \changes{0.13}{2010/07/28}{Added \cs{cftfigpagefont} definition and
-%   switch \cs{cftfigfont} from hardcoded \cs{normalsize}
-%   \cs{singlespace} to \cs{DUT@toc@low@font}.  The \cs{singlespace}
-%   portion appears to be unnecessary, and it was causing post-number
-%   linebreak issues with latex (pdflatex always worked).}
-%    \begin{macrocode}
 \setlength{\cftbeforefigskip}{\l@DUT@toc@sep}
 \setlength{\cftfigindent}{0pt}
 \renewcommand{\cftfigfont}{\DUT@toc@low@font}
 \renewcommand{\cftfigpagefont}{\DUT@toc@page@font}
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-%
-%
-% \subsubsection{List of tables}
-% \label{sec:implement-lot}
-%
-% From the Manual \S 3.6 p10
-% \begin{quote}
-%   \begin{itemize}
-%     \item The heading |List of Tables| must appear at the top of the
-%       first page.
-%     \item The heading must be bold, centered, and without
-%       punctuation.
-%     \item List table captions exactly as they appear above the
-%       tables in the text.
-%     \item Single space each entry, but double-space between entries.
-%     \item Separate table captions from page numbers with
-%       right-justified tabs and dot leaders.
-%     \item Do not use periods to separate captions and page numbers.
-%       These pages are counted and numbered in lowercase Roman
-%       numerals.
-%   \end{itemize}
-% \end{quote}
-%
-% \begin{macro}{\cftlottitlefont}
-% Much like our |\cfttoctitlefont|, but the list of tables gets
-% listed in the TOC.
-%    \begin{macrocode}
 \renewcommand\cftlottitlefont{\listed@schapter}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\afterlottitleskip}
-% Don't add any extra space after the title (the chapter will take
-% care of that).  Actually we make a one-line correction so the first
-% line matches the first line in the TOC.  HACK!
-%    \begin{macrocode}
 \setlength\cftafterlottitleskip{-12pt}
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\cftbeforetabskip}
-% \begin{macro}{\cfttabindent}
-% \begin{macro}{\cfttabfont}
-% \begin{macro}{\cfttabpagefont}
-% Setup table entries.
-% \changes{0.13}{2010/07/28}{Added \cs{cfttabpagefont} definition and
-%   switch \cs{cftfabfont} from hardcoded \cs{normalsize}
-%   \cs{singlespace} to \cs{DUT@toc@low@font}.  The \cs{singlespace}
-%   portion appears to be unnecessary, and it was causing post-number
-%   linebreak issues with latex (pdflatex always worked).}
-%    \begin{macrocode}
 \setlength{\cfttabindent}{0pt}
 \setlength{\cftbeforetabskip}{\l@DUT@toc@sep}
 \renewcommand{\cfttabfont}{\DUT@toc@low@font}
 \renewcommand{\cfttabpagefont}{\DUT@toc@page@font}
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-% \end{macro}
-%
-%
-% \subsubsection{Bibliography}
-%
-% \begin{environment}{thebibliography}
-% The |thebibliography| environment is a list environment.  To save the
-% use of an extra counter, it should use |enumiv| as the item
-% counter. 
-% Instead of using |\item|, items in the bibliography are produced by
-% the following commands:\\
-%   |\bibitem|\marg{name} : Produces a numbered entry cited as
-%   \meta{name}.\\
-%   |\bibitem|\oarg{label}\marg{name} : Produces an entry labeled by
-%   \meta{Label} and cited by \meta{name}.
-%
-% Override \cls{book}'s version, adding a line to the table of
-% contents.  We split out the section-creation code into
-% |\bib@heading| for \pkg{natbib} compatibility.
-% (\file{classes.dtx}, L4063).
-%    \begin{macrocode}
 \renewenvironment{thebibliography}[1]
      {\bib@heading%
       \list{\@biblabel{\@arabic\c@enumiv}}%
@@ -3691,68 +1118,23 @@
             \usecounter{enumiv}%
             \let\p@enumiv\@empty
             \renewcommand\theenumiv{\@arabic\c@enumiv}}%
-%    \end{macrocode}
-% Because it's hard to do line breaks in bibliographies.
-%    \begin{macrocode}
       \sloppy
-%    \end{macrocode}
-%    This is setting the normal (non-infinite) value of
-%    |\clubpenalty| for the whole of this environment,
-%    so we must reset its stored value also.  (Why is there a |%| after
-%    the second 4000 below?)
-%    \begin{macrocode}
       \clubpenalty4000
       \@clubpenalty \clubpenalty
       \widowpenalty4000%
-%    \end{macrocode}
-% Cause a `.' (period) not to produce an end-of-sentence space.
-%    \begin{macrocode}
       \sfcode`\.\@m}
-%    \end{macrocode}
-% Warn if an empty `thebibliography' environment is found.
-%    \begin{macrocode}
      {\def\@noitemerr
        {\@latex@warning{Empty `thebibliography' environment}}%
       \endlist}
-%    \end{macrocode}
-% \end{environment}
-%
-% \begin{macro}{\bib@heading}
-% \pkg{natbib} messes with |thebibliography|.  We setup |\bib@heading|
-% so we will still get our table of contents entry.
-%    \begin{macrocode}
 \newcommand{\bib@heading}{%
   \listed@schapter{\bibname}%
 }
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \subsubsection{Index}
-%
-% \begin{environment}{theindex}
-% The environment |theindex| can be used for indices. It makes an
-% index with two columns, with each entry a separate paragraph. At
-% the user level the commands |\item|, |\subitem| and |\subsubitem|
-% are used to produce index entries of various levels. When a new
-% letter of the alphabet is encountered an amount of |\indexspace|
-% white space can be added.
-%
-% Override \cls{book}'s version, adding a line to the table of
-% contents.  We split out the section-creation code into
-% |\bib@heading| for \pkg{natbib} compatibility.
-% (\file{classes.dtx}, L4107).
-%    \begin{macrocode}
 \renewenvironment{theindex}
                {\if@twocolumn
                   \@restonecolfalse
                 \else
                   \@restonecoltrue
                 \fi
-%    \end{macrocode}
-% Here we add our TOC entry, and setup two columns by hand
-% to avoid the |\clearpage| in \LaTeX's default |\twocolumn|.
-%    \begin{macrocode}
   \listed@schapter{\indexname}
   \global\columnwidth\textwidth
   \global\advance\columnwidth-\columnsep
@@ -3762,123 +1144,30 @@
   \global\@twocolumntrue
   \global\@firstcolumntrue
   \col@number \tw@
-%    \end{macrocode}
-%    Parameter changes to |\columnseprule| and |\columnsep| have to be
-%    done after |\twocolumn| has acted. Otherwise they can affect the
-%    last page before the index.
-%    \begin{macrocode}
                 \parindent\z@
                 \parskip\z@ \@plus .3\p@\relax
                 \columnseprule \z@
                 \columnsep 35\p@
                 \let\item\@idxitem}
-%    \end{macrocode}
-%    When the document continues after the index and it was a one
-%    column document we have to switch back to one column after the
-%    index.
-%    \begin{macrocode}
                {\if@restonecol\onecolumn\else\@DUT@clearpage\fi}
-%    \end{macrocode}
-% \end{environment}
-%
-%
-% \subsubsection{Words}
-% \label{sec:words}
-%
-% Set the official names of the various sections encountered.  Some of
-% these are not defined in \file{classes.dtx} but are close analogs of
-% those that are.
-%
-% \begin{macro}{\dedicationsname}
-% From the Manual \S 3.3 p9, ``The heading |Dedications| must appear at
-% the top of the page.''
-%    \begin{macrocode}
 \newcommand\dedicationsname{Dedications}
 \let\DUTdedicationsname\dedicationsname
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\acknowledgmentsname}
-% From the Manual \S 3.4 p9, ``The heading |Acknowledgments| must appear
-% at the top of the page.''
-%    \begin{macrocode}
 \newcommand\acknowledgmentsname{Acknowledgments}
 \let\DUTacknowledgmentsname\acknowledgmentsname
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\contentsname}
-% From the Manual \S 3.5 p9, ``The heading |Table of Contents| must
-% appear at the top of the page.''  (\file{classes.dtx}, L4331)
-%    \begin{macrocode}
 \renewcommand\contentsname{Table of Contents}
 \let\DUTcontentsname\contentsname
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\listtablename}
-% From the Manual \S 3.6 p10, ``The heading |List of Tables| must appear
-% at the top of the page.''  (\file{classes.dtx}, L4333)
-%    \begin{macrocode}
 \renewcommand\listtablename{List of Tables}
 \let\DUTlisttablename\listtablename
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\listfigurename}
-% From the Manual \S 3.7 p10, ``The heading |List of Figures| must appear
-% at the top of the page.''  (\file{classes.dtx}, L4332)
-%    \begin{macrocode}
 \renewcommand\listfigurename{List of Figures}
 \let\DUTlistfigurename\listfigurename
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\abstractname}
-% From the Manual \S 3.8 p10, ``The following heading must be centered at
-% the top of the first page: |Abstract|\ldots.''
-% (\file{classes.dtx}, L4367)
-%    \begin{macrocode}
 \newcommand\abstractname{Abstract}
 \let\DUTabstractname\abstractname
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\bibname}
-% From the Manual \S 3.13 p12, ``The heading |Bibliography| (or
-% |List of References|) must appear at the top of first page.''
-% (\file{classes.dtx}, L4344)
-%    \begin{macrocode}
 \renewcommand\bibname{Bibliography}
 \let\DUTbibname\bibname
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\appendixname}
-% From the Manual \S 3.14 p12, ``Number the appendicies consecutively
-% either alphabetically or numerically (|Appendix A|, |Appendix B|\ldots
-% or |Appendix 1|, |Appendix 2|\ldots).''
-% (\file{classes.dtx}, L4366)
-%    \begin{macrocode}
 \renewcommand\appendixname{Appendix}
 \let\DUTappendixname\appendixname
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\vitaname}
-% From the Manual \S 3.15 p13, ``The heading |Vita| must appear at the
-% top of the page.''
-%    \begin{macrocode}
 \newcommand\vitaname{Vita}
 \let\DUTvitaname\vitaname
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\DUTnames}
-% Some packages (e.g.,
-%   \href{http://www.ctan.org/tex-archive/macros/latex/required/babel/}{%
-%     \pkg{babel}})
-% mess with our |\*name| values and we have to restore them.
 \newcommand{\DUTnames}{%
   \gdef\dedicationsname{\DUTdedicationsname}%
   \gdef\contentsname{\DUTcontentsname}%
@@ -3888,393 +1177,7 @@
   \gdef\appendixname{\DUTappendixname}%
   \gdef\vitaname{\DUTvitaname}%
 }
-% \end{macro}
-%
-%
-% \subsection{Remaining details}
-%
-%
-% \subsubsection{Terminal blank page}
-%
-% Add a terminal blank page (in \Lopt{pagebreak} mode)
-% From the Manual \S 3.16 p13
-% \begin{quote}
-%   Include a blank page (with no page number) at the end of the
-%   thesis or dissertation.  The blank page is neither counted nor
-%   numbered.
-% \end{quote}
-%    \begin{macrocode}
 \AtEndDocument{\@DUT@blankpage}
-%    \end{macrocode}
-%
-%
-%    \begin{macrocode}
-%</class>
-%    \end{macrocode}
-%
-%
-% \section{Examples}
-%
-%
-% \subsubsection{Template}
-%
-%    \begin{macrocode}
-%<*template>
-% See drexel-thesis.pdf for details.
-\documentclass{drexel-thesis}
-
-%% Enter the appropriate information here
-\author{}    % Fullname
-\title{}     % Title Of Thesis
-\DUTmonth{}  % Name of the month of you defense
-\DUTyear{}   % Year you are defending
-\degree{}    % Your target degree, spelled out
-\advisor{}   % Advisor's full name, degree
-\copyrighttext{} % If not "All Rights Reserved."
-
-%% unsrt style give references in order of citation
-\bibliographystyle{unsrt}
-
-\begin{document}
-\begin{preamble}
-
-\begin{dedications} % OPTIONAL
-%% Type dedications here
-\end{dedications}
-
-\begin{acknowledgments} % OPTIONAL
-%% Type acknowledgments here
-\end{acknowledgments}
-
-\tableofcontents
-\listoftables  % If you have tables
-\listoffigures % If you have figures
-
-\begin{abstract}
-%% Type abstract here
-\end{abstract}
-\end{preamble}
-
-\begin{thesis}
-%% If your thesis does not use \part{}s, you may want to add a
-%% part-level PDF bookmark to set the main matter of from the front
-%% matter.
-%%\pdfbookmark[-1]{Main Matter}{Main Matter}
-
-%% Use include statements to include your main thesis code
-%% from seperate files.
-%%\include{part1}
-%%...
-\end{thesis}
-
-\bibliography{references} % Include references.bib BibTeX
-
-\appendix % If you have appendices
-%% include files with your appendicies (if any) here
-%%\include{appendixA}
-%%...
-
-\begin{vita} % Ph.D. only.
-%%Vita text.
-\end{vita}
-
-\end{document}
-%</template>
-%    \end{macrocode}
-%
-%
-% \subsection{A better example}
-% \label{sec:better-example}
-%
-% \subsubsection{Main}
-%
-%    \begin{macrocode}
-%<*example|example-draft>
-%% See drexel-thesis.pdf for details.
-%<example>\documentclass[subfig,blackref,approvalform]{drexel-thesis}
-%<example-draft>\documentclass[draft,subfig]{drexel-thesis}
-
-%% Enter the appropriate information here
-\author{Johny Henry}
-\title{Inadequacies of Steam-Driven Boring Machines}
-\DUTmonth{July}
-\DUTyear{1872}
-\degree{Doctor of Philosophy}
-\advisor{Collis Potter Huntington, R.R.D.}
-\advisor{Advisor 2, Ph.D.}
-\advisor{Advisor 3, Ph.D.}
-\copyrighttext{\copyrighttextCCBYSA}
-
-\usepackage[super,sort&compress]{natbib} % fancy citation extensions
-\bibliographystyle{unsrtnat}
-
-\usepackage{fancyvrb} % nicer verbatim handling
-\DefineShortVerb{\|}  % \verb+TEXT+  ->  |TEXT|
-
-%    \end{macrocode}
-% Sometimes other packages clobber \cls{drexel-thesis}'s macros and
-% environments.  It's ok though, the originals are all aliased to
-% |\DUT*|.  We'll just have to use |DUTpreamble| instead.
-%    \begin{macrocode}
-\renewenvironment{preamble}{% look, we're clobbering an environment!
-  What preamble?\begingroup\color{white}}{\endgroup}
-
-%    \end{macrocode}
-% Use
-% \href{http://www.ctan.org/tex-archive/macros/latex/contrib/blindtext/}%
-%   {\pkg{blindtext}}
-% for dummy text creation.  \pkg{blindtext} requires
-% \href{http://www.ctan.org/tex-archive/macros/latex/required/babel/}%
-%   {\pkg{babel}}.
-%    \begin{macrocode}
-\usepackage[english]{babel} % English blindtext
-\usepackage{blindtext} % macros for producing dummy output
-%    \end{macrocode}
-% \pkg{babel} messes with some of our words (\S \ref{sec:words}), so
-% we have to reset them.  See the
-% \href{http://www.tex.ac.uk/cgi-bin/texfaq2html?label=latexwords}{\TeX\ FAQ}
-% for details.
-%    \begin{macrocode}
-\addto\captionsenglish{\DUTnames}
-
-\begin{document}
-\begin{DUTpreamble} % "DUT" because original preamble was clobbered.
-
-\begin{dedications}
-We're in \iffinal{final}{draft} mode!
-
-\Blindtext[3]
-\end{dedications}
-
-\begin{acknowledgments}
-\Blindtext[3]
-\end{acknowledgments}
-
-\tableofcontents
-\listoftables
-\listoffigures
-
-\begin{abstract}
-\Blindtext[3]
-\end{abstract}
-\end{DUTpreamble}
-
-\begin{thesis}
-\include{example-1}
-\end{thesis}
-
-\bibliography{example-ref}
-
-\appendix
-\include{example-a}
-
-\begin{vita}
-\Blindtext[3]
-\end{vita}
-
-\end{document}
-%</example|example-draft>
-%    \end{macrocode}
-%
-%
-% \subsubsection{Part}
-% \label{sec:better-example-part}
-%
-%    \begin{macrocode}
-%<*example-part>
-\part{A Part Heading}
-\chapter{A Chapter Heading}
-\section{A Section Heading}
-The following sectioning commands are available:
-\begin{quote}
- part \\
- chapter \\
- section \\
- subsection \\ 
- subsubsection \\ 
- paragraph \\ 
- subparagraph 
-\end{quote}
-
-\subsection{natbib}
-You can cite your references with |natbib|'s |\citet| and |\citep|
-macros.  See
-\href{http://www.ctan.org/tex-archive/macros/latex/contrib/natbib/}
-{the natbib manual} for details.
-
-Here we have a text citation \citet{rief97} followed by a
-parenthetical citation\citep{rief97}.
-
-\subsubsection{Tables and Figures}
-\Blindtext[2]
-\begin{table}
-  \begin{center}
-  \begin{tabular}{r@{.}l r@{.}l r@{.}l}
-    \multicolumn{2}{c}{Time (s)} &
-      \multicolumn{2}{c}{John Henry (m)} &
-      \multicolumn{2}{c}{Steam drill (m)} \\
-    0&0 & 0&0 & 0&0 \\
-    10&0 & 4&3 & 3&75 \\
-    30&0 & 11&9 & 10&1 \\
-    \ldots
-  \end{tabular}
-  \caption{A table float.} % low caption allowed with floatrow
-%% Note the strange |r@{.}l| notation in the |\tabular| column
-%% definition.  This allows for numbers aligned at the decimal point
-%% (see \href{http://www.stat.unipg.it/tex-man/ltx-68.html}{here}).
-%%
-%% |\multicolumn{num_cols}{alignment}{contents}| allows the headings
-%% to span the pre- and post-decimal columns.
-  \end{center}
-\end{table}
-\Blindtext[2]
-\begin{figure}
-  \caption{A figure float. \blindtext} % high caption allowed with floatrow
-  \begin{center}
-    \includegraphics[width=0.4\textwidth]{drexel-logo}
-  \end{center}
-\end{figure}
-\Blindtext[3]
-\begin{figure}
-  \begin{center}
-    \subfloat[][]{%
-      \includegraphics[width=0.2\textwidth]{drexel-logo}%
-      \label{fig:sub-a}}
-    \subfloat[][]{%
-      \includegraphics[width=0.2\textwidth]{drexel-logo}%
-      \label{fig:sub-b}}
-    \caption{(a) One subfig float. (b) Another subfig float.%
-      \label{fig:both}}
-  \end{center}
-\end{figure}
-You can reference the subfig floats individually (\ref{fig:sub-a}) or
-together (\ref{fig:both}).
-
-\Blindtext[3]
-
-\part{Another Part}
-\chapter{Another Chapter}
-\Blindtext[5]
-\chapter{A Long Title Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla}
-\Blindtext[5]
-%</example-part>
-%    \end{macrocode}
-%
-%
-% \subsubsection{\BibTeX}
-%
-% What goes into the \BibTeX\ file |example-ref.bib|?
-% For more information, check out this 
-% \href{http://cmtw.harvard.edu/Documentation/TeX/Bibtex/Example.html}{basic tutorial}.
-% If you want to get deeper, take a look at
-% \href{http://www.ctan.org/tex-archive/info/bibtex/tamethebeast/}{Tame the BeaST}.
-% Other resources:
-% \href{http://www.andy-roberts.net/misc/latex/latextutorial3.html}{how the process works},
-%   \href{http://newton.ex.ac.uk/tex/pack/bibtex/btxdoc/node6.html}{entry types},
-%   \href{http://newton.ex.ac.uk/tex/pack/bibtex/btxdoc/node7.html}{fields},
-%   \href{http://en.wikipedia.org/wiki/BibTeX}{entries and fields},
-%   \href{http://www.cs.stir.ac.uk/~kjt/software/latex/showbst.html}{assorted style examples}, and
-%   \href{http://liinwww.ira.uka.de/bibliography/Bib.Format.html}{assorted \BibTeX tools}.
-%
-% Here is an example \BibTeX\ file to get you started.  We define
-% strings for the publishers, journals, and authors to avoid
-% duplication, minimize the risk of typos, etc.
-%
-%    \begin{macrocode}
-%<*example-bibtex-refs>
-%% Publishers
-@String{APS = "American Physical Society"}
-
-%% Journals
-@String{SCI = "Science"}
-
-%% Authors
-@String{MRief = "Rief, Matthias"}
-@String{MGautel = "Gautel, Mathias"}
-@String{FOesterhelt = "Oesterhelt, Filipp"}
-@String{JFernandez = "Fernandez, Julio M."}
-@String{HGaub = "Gaub, Hermann E."}
-
-%% Articles
-@Article{rief97,
-  author = MRief #" and "# MGautel #" and "# FOesterhelt #" and "#
-           JFernandez #" and "# HGaub,
-  title = "Reversible Unfolding of Individual Titin Immunoglobulin
-           Domains by {AFM}",
-  journal = SCI,
-  volume =  276,
-  number =  5315,
-  pages =   "1109--1112",
-  year =    1997,
-  doi =     "10.1126/science.276.5315.1109",
-  URL =     "http://www.sciencemag.org/cgi/content/abstract/276/5315/1109",
-  eprint =  "http://www.sciencemag.org/cgi/reprint/276/5315/1109.pdf",
-  mynote = "Seminal paper for force spectroscopy on Titin. Cited by
-           Dietz '04 (ref 9) as an example of how unfolding large
-           proteins is easily interpreted (vs.\ confusing unfolding in
-           bulk), but Titin is a rather simple example of that, because
-           of its globular-chain structure.",
-}
-%% ...
-%</example-bibtex-refs>
-%    \end{macrocode}
-%
-%
-% \subsubsection{Appendix}
-%
-%    \begin{macrocode}
-%<*example-appendix>
-\chapter{Some Appendix Heading}
-\Blindtext[5]
-\chapter{Another Appendix Heading}
-\Blindtext[5]
-%</example-appendix>
-%    \end{macrocode}
-%
-%
-% \section{Known bugs and issues}
-%
-%
-% \subsection{Hacks}
-%
-% \begin{itemize}
-%   \item |\vspace*{0\p@}| space between page top and chapter
-%     headings (|\@makechapterhead| and |\@makeschapterhead|,
-%     Sec.~\ref{sec:implement-chapters}).
-%   \item Extra space under LOT and LOF titles compared to TOC.
-%     (Secs.~\ref{sec:implement-lof} and \ref{sec:implement-lot}).
-% \end{itemize}
-%
-%
-% \subsection{Bugs}
-%
-% \begin{itemize}
-%   \item Different space between chapter heading and section heading,
-%     vs.\ chapter heading and text.  Compare \emph{A Chapter Heading}
-%     and \emph{Another Chapter} in \file{example.pdf}.  This is a
-%     problem (although with opposite order) in the \cls{book} class
-%     itself.  For example, compile
-%     \begin{example}
-%\documentclass{book}
-%\begin{document}
-%\chapter{Chapter with text}
-%Bla bla bla.
-%\chapter{Chapter with section}
-%\section{Section}
-%Bla bla bla.
-%\end{document}
-%     \end{example}
-%   \item Footer overlap if chapter/section names are particularly long.
-%     See \emph{Section in long-titled chapter} in \file{example.pdf}.
-%     Workaround: turn off sections in the footer:
-%     \begin{example}
-%       \fancyfoot[RE,LO]{\scshape\leftmark}
-%       \fancyfoot[LE,RO]{}
-%     \end{example}
-%     For more header or footer manipulation ideas, see \S \ref{sec:fancyhdr}.
-% \end{itemize}
-%
-%
-% \Finale
 \endinput
+%%
+%% End of file `drexel-thesis.cls'.
