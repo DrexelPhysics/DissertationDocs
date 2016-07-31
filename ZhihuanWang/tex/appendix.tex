@@ -1,127 +1,32 @@
-\chapter{Bayesian Model} \label{ch:mcmc}
+\chapter{Transtion Rates} \label{ch:mcmc}
+This research project focuses on the dimensional dependence of the absorption behavior in semiconductor when interacting with light. Through time-dependent perturbation theory, we find out the transition rate and Fermi’s Golden Rule, then based on the light interaction Hamiltonian, time average Poynting vector and matrix element, derive the absorption coefficient for bulk semiconductor (3-dimension), quantum well (2-dimension) and quantum wire (1-dimension) structure.
+Finally, this report will discuss the partial confinement on the electron in the conduction band without the hole confined in the valence band situation.
 
-In the Bayesian framework, the fit parameters for a model are not assumed to be fixed value, but instead, these parameters are assumed to come from some probability distribution.  Bayes' theorem tells us how to express this probability distribution in terms of the likelihood of the {\em data} given a set of model parameters and any prior information we have about the model parameters.  Applying Bayes' theorem to a toy model that has a set of $n$ model parameters, $\vec{\phi} = \{\phi_0,\phi_1,...,\phi_n\}$, and measured data, $D$, gives:
-\begin{equation}
- P(\vec{\phi}|D) \propto P(\vec{\phi})P(D|\vec{\phi})
-\end{equation}
-Or in words: the posterior distribution for $\vec{\phi}$ is proportional to the prior distribution of $\vec{\phi}$ times the likelihood of the data, given $\vec{\phi}$.
+The Schrodinger equation
 
-In hierarchical Bayes, the prior distribution, $P(\vec{\phi})$, is not known or assumed beforehand, but instead is a function of another set of $m$ parameters, $\vec{\theta} = \{\theta_0,\theta_1,...,\theta_m\}$, known as hyperparameters.  This leads to the joint posterior distribution for $\vec{\phi}$ and $\vec{\theta}$ of:
-\begin{equation}
- P(\vec{\theta},\vec{\phi}|D) \propto P(\vec{\theta})P(\vec{\phi}|\vec{\theta})P(D|\vec{\phi})
-\end{equation}
-where $P(\vec{\theta})$ are the hyperpriors that are placed on $\vec{\theta}$.
+The Hamiltonian H can be expressed as:
 
-With the posterior distribution defined by Bayes' theorem, Markov Chain Monte Carlo (MCMC) sampling methods can be used to simulate data points drawn from it, providing the full joint probability distribution for all parameters and hyperparameters given the observed data. When using a hierarchical model, care must be taken to make sure that the sampling method is self consistent; that is, when $\vec{\phi}$ changes, $\vec{\theta}$ changes to match the new distribution of $\vec{\phi}$.  This can be achieved by using a Gibbs sampler \citep{Gelman:2006}.
+where  is the unperturbed part Hamiltonian and is time-independent,  is the small perturbation.
+The solution to the unperturbed part is assumed known
 
-\section{Gibbs Sampling}
-In Gibbs sampling, sample points are drawn from the posterior by drawing from the {\em conditional probabilities} for each parameter (or set of parameters) in turn. These conditional probabilities are found by taking the posterior distribution and holding all but one (or a small set of) parameters fixed.  As an example, take a model that has two parameters, $A$ and $B$, being estimated. Given inital values, $A_0$ and $B_0$, the Gibbs sampler updates these values by alternating between drawing a new $A$ value from the posterior holding $B$ fixed, $A_{i+1} \sim P(A|B_i,D)$, and then drawing a new $B$ value from the posterior holding $A$ fixed at its new value, $B_{i+1} \sim P(B|A_{i+1},D)$, where ``$\sim$'' is read ``distributed as''. After a sufficient number of iterations, known as the burn-in period, each step of the Gibbs sampler will simulate a draw from the joint distribution $P(A,B|D)$.
+The time-dependent perturbation is assumed to have the form
 
-For some models these conditional probabilities have known distributions. One such model is estimating the mean, $\mu$, and standard deviation, $\sigma$, when given a set of $n$ normally distributed observations $\vec{x}$. The conditional probabilities from this model are:
-\begin{eqnarray}
- P(\mu|\sigma,\vec{x}) \sim \operatorname{N}\left( \frac{\sum_i^n x_i}{n}, \frac{\sigma}{\sqrt{n}} \right) \\
- P(\sigma^2|\mu,\vec{x}) \sim \frac{(n-1)\sum_i^n(x_i-\mu)^2}{n}\frac{1}{\chi_{n-1}^2} 
-\end{eqnarray}
-where $\operatorname{N}(a,b)$ is a normal distribution with mean $a$ and standard deviation $b$, and $\chi_{n-1}^2$ is a chi-square random variable with $n-1$ degrees of freedom \citep{Gelman:2006}.
+Expand the wave function in terms of the unperturbed solution, we find out
 
-When the conditional probability cannot be represented by a known distribution, draws can still be simulated by using another MCMC sampler. Typically, a Metropolis-Hasting \citep[MH;][]{Hastings:1970} step is used, resulting in a method called Metropolis-within-Gibbs sampling \citep{Metropolis:1953}, but {\em any} MCMC sampler can be used to draw from the conditional.  In this work, we use the affine invariant MCMC ensemble sampler \texttt{emcee}, described in \citet{Foreman-Mackey:2013}\footnote{python code available at \href{http://dan.iel.fm/emcee/current/}{http://dan.iel.fm/emcee/current/}}, to form an \texttt{emcee}-within-Gibbs sampler.  This sampler efficiently samples distributions with degenerate variables, and it only has one tuning parameter, unlike the MH sampler, which has one tuning parameter for each fit parameter and is slow to converge for degenerate variables.
+gives the probability that the electron is in the state n at time t.
+Substituting the expansion for into Schrodinger equation and using (II.3), we have
 
-The \texttt{emcee} sampler works by simulating $N$ simultaneous draws from the conditional distribution, where each draw is known as a walker. The proposal distribution for each walker is based on the current positions of all the remaining walkers. In each step, a new position is proposed for each walker by``walking" it along the vector connecting it to another randomly selected walker. If the likelihood of the conditional is higher at this proposed value, the step is accepted; if it is not, it is accepted with a probability related to the ratio of the likelihoods at its current position and the proposed position (see \citet{Foreman-Mackey:2013} for more details). Because this sampler uses an ensemble of walkers, at every step of the algorithm it produces $N$ estimates for each parameter.
+Taking the inner product with the wave function , and using the orthonormal property,
 
-To form a \texttt{emcee}-within-Gibbs sampler some care must be taken in choosing the number of walkers, $N$, needed.  The general rule of thumb is $N$ should be larger then twice the number of parameters being estimated.  With hierarchical models, the number of parameters can grow to be very large.  If every parameter was estimated in the same step (i.e. when not using Gibbs sampling) then $N$ would be too large to make the \texttt{emcee} sampler a practical solution.  When placing the \texttt{emcee} sampler within a Gibbs step, the number of parameters being estimated in each conditional is small (3 for the model considered here), meaning $N$ only needs to be larger than twice the dimensionality of the largest conditional, bringing $N$ down to a reasonable size.
+Therefore, the electron stays at the state i in the absence of any perturbation. The first order solution is 
 
-%In a typical Gibbs step, only a small set of parameters are stepped forward while the others are held fixed at their current value. As mentioned above, \texttt{emcee} produces $N$ estimates for each parameter in every step, unlike a Gibbs or MH sampler, where only one estimate is produced. Given the way the \texttt{emcee} algorithm steps forward each walker, the same value for each of the fixed parameters must be used when evaluating the likelihood of each walker. This raises the question: what value should be chosen to represent the fixed set of parameters in each conditional? For our sampler, we pick one of the walkers at random to represent the fixed parameters in each conditional. [I have no idea if this the propper way to deal with this.  I have also tried using the median vlaue of all the walkers as the fixed values, but that seems to make the convergence rate worse...   GTR: Ask Hogg, Daniel?] When updating a parameter that can be represented by a known distribution (i.e. \texttt{emcee} is not used), we treat each walker as an {\em independent} Gibbs chain.  In other words, the fixed parameters are taken to be each walker's current position.
+If we consider the photon energy to be near resonance, either  or , we find the dominant terms:
+The absorption coefficient is a strong function of dimensionality. The confining situation of the quantum structure will considerably affect the energy levels, the overlap function of the conduction and valance band envelope function and also the joint optical density of state.
+Through the derivation of the absorption coefficient, we can observe the interaction between the light and semiconductor.
+The next questions should address:
+1. The simulation data for single nanowire abs
 
-\section{The Model} \label{sec:mcmc_model}
+%\section{The Model} \label{sec:mcmc_model}
 
-For this paper we create a hierarchical model we use to estimate the slopes and curvatures for each quasar in our sample.
-We start by modeling each observed $\mrel_{ij}$ as coming from a Student's $t$-distribution with 3 degrees of freedom %normal distribution 
-centered on the model given by Equation~\ref{eqn:rel_red_eq}(b), with components $\vec{m_0}$, $\vec{2.5\dal}$, and $\vec{\ebv}$, and with a width given by the observed measurement error, $\sigma_{ij}$, combined with an unknown term $S$ representing the error in the modal magnitudes:
-\begin{equation} \label{eqn:model}
- \mrel_{ij} \sim \operatorname{T}(3,\mrel_{ij}^{\rm model},\sqrt{\sigma_{ij}^2+S^2}),
-\end{equation}
-where the $t$-distribution is:
-\begin{equation}
- \operatorname{T}(\nu,\mu,\sigma) \propto \frac{1}{\sqrt{\nu \pi}\sigma} \left( 1 + \frac{\mu^2}{\sigma^2 \nu} \right)^{-(\nu+1)/2},
-\end{equation}
-$\mrel_{ij}^{\rm model}$ is the model for $\mrel$ given in Equation~\ref{eqn:rel_red_eq}(b), $S$ can be thought of as a ``calibration'' error in our model, $i$ is used to index each quasar, and $j$ is used to index each filter. We use a Student's $t$-distribution instead of a normal distribution to make our model more robust against outliers. A value of $\nu=3$ degrees of freedom implies $\sim6\%$ of the data are outliers by more than 3$\sigma$ \citep{Kelly:2012}.
 
-With the likelihood of our data given the model defined, we next model the prior distributions for our set of fit parameters $\phi=\{ \vec{m_0}, \vec{2.5\dal}, \vec{\ebv} \}$.  The collection of powerlaw slopes, $\vec{2.5\dal}$, are modeled as coming from a normal distribution with unknown mean, $\mu_{\alpha}$, and standard deviation, $\sigma_{\alpha}$. This distribution was chosen since we expect to see just as many intrinsically blue as intrinsically red quasars.  Unlike \citet{Hopkins:2004} we do not assume $\mu_{\alpha}$ is zero; this way we account for differences between the {\em observed} modal quasar and the necessarily bluer {\em intrinsic} modal quasar (i.e. the modal quasar after correcting for dust reddening). We additionally limit the values of $\vec{2.5\dal}$ to stay in the range $[-1.25,5.75]$, where the lower limit is equivalent to a quasar with $\alpha_{\lambda} \sim -1.22$ (a very red quasar) and the upper limit is equivalent to a quasar with $\alpha_{\lambda} \sim -4$ (an infinite temperature blackbody).
-
-The collection of reddening amounts, $\vec{\ebv}$, are modeled as coming from exponentially modified Gaussian (EMG) with unknown shape parameters. This distribution is the result of summing together random variables drawn from a normal distribution with mean $\mu_{\rm dust}$ and standard deviation $\sigma_{\rm dust}$, and random variables drawn from a exponential distribution with rate parameter $\lambda_{\rm dust}$ (smaller values indicate a heavier tail). This is very similar to the half-normal half-exponential distribution \citet{Hopkins:2004} found to work well for quasars. As with the $\vec{2.5\dal}$ distribution, we do not assume $\mu_{\rm dust}$ is zero beforehand.
-
-To normalize our data, we have set the $i$ band $\mrel$ to zero for all quasars. Under this normalization the offset parameters, $\vec{m_0}$, will be normally distributed with mean zero and standard deviation $\sqrt{\sigma_{i{\rm  band}}^2+S^2}$. For our data the observed $i$ band errors are small compared to $S$, allowing us to drop the $\sigma_{i{\rm  band}}$ term.
-
-Using these distributions, our priors are:
-\begin{eqnarray} \label{eqn:priors}
- m_{0,i} &\sim& \operatorname{N}(0,S) \nonumber \\
- 2.5\dal_{i} &\sim& \operatorname{N}(\mu_{\alpha},\sigma_{\alpha}) \\
- \ebv_{i} &\sim& \operatorname{N}(\mu_{\rm dust},\sigma_{\rm dust}) + \operatorname{E}(\lambda_{\rm dust}) \nonumber 
-\end{eqnarray}
-where $\operatorname{E}(\lambda)$ is an exponential distribution with rate parameter $\lambda$.
-To complete defining our model, we place uninformative hyperpriors on the hyperparameters $\theta=\{ \mu_{\alpha},\sigma_{\alpha},\mu_{\rm dust},\sigma_{\rm dust},\lambda_{\rm dust},S \}$:
-\begin{eqnarray} \label{eqn:h_priors}
- \mu_{\alpha} &\sim& \operatorname{U}(-5,5) \nonumber \\
- \sigma_{\alpha} &\sim& \operatorname{U}(0,10) \nonumber \\
- \mu_{\rm dust} &\sim& \operatorname{U}(-5,5) \\
- \sigma_{\rm dust} &\sim& \operatorname{U}(0,10) \nonumber \\
- \lambda_{\rm dust} &\sim& \operatorname{U}(0,40) \nonumber \\
- S &\sim& \operatorname{U}(0,10) \nonumber
-\end{eqnarray}
-where $\operatorname{U}(a,b)$ is a uniform distribution between the values $a$ and $b$.
-
-As written, equation~\ref{eqn:model} is dependent on both $\phi$ and $\theta$.  Leaving it like this can lead to instabilities in our sampler.  These instabilities can be removed to introducing a set of nuisance parameters, $\delta_{ij}$, into $\phi$ that represent the normally distributed noise introduced by $S$. Equation~\ref{eqn:model} now becomes:
-\begin{equation} \label{eqn:model2}
- \mrel_{ij} \sim \operatorname{T}(3,\mrel_{ij}^{\rm model}+\delta_{ij},\sigma_{ij})
-\end{equation}
-and one more prior is added to equation~\ref{eqn:priors}:
-\begin{equation}
- \delta_{ij} \sim \operatorname{N}(0,S)
-\end{equation}
-
-\section{Conditional Likelihoods} \label{sec:conditionals}
-To make use of a Gibbs sampler to estimate both $\phi$ and $\theta$, the conditional likelihoods for each parameter (or set of parameters) need to be found. Taking the model defined in \S\ref{sec:mcmc_model}, several of the fit parameters have conditionals with analytic forms:
-\begin{eqnarray}
- \mu_{\alpha} &\sim& \operatorname{N}\left( \frac{\sum_i^n 2.5\dal_i}{n},\frac{\sigma_{\alpha}}{\sqrt{n}} \right) \\
- \sigma_{\alpha}^2 &\sim& \frac{(n-1) \sum_i^n (2.5\dal_i-\mu_{\alpha})^2}{n} \frac{1}{\chi_{n-1}^2} \\
- S^2 &\sim& \frac{\sum_i^n \sum_j^m (\delta_{ij}+m_{0,i})^2}{2} \frac{1}{\chi_{nm}^2} \\
- \delta_{ij} &\sim& \operatorname{N}\left( \frac{S^2}{S^2+\sigma_{ij}^2} (\mrel_{ij}-\mrel_{ij}^{\rm model}), \frac{S^2 \sigma_{ij}^2}{S^2+\sigma_{ij}^2} \right)
-\end{eqnarray}
-
-For the remaining conditionals it is useful to define the probability density functions for the exponentially modified Gaussian distribution and the normal distribution:
-\begin{eqnarray}
- \operatorname{EMG}(x|\mu,\sigma,\lambda) &=& \frac{\lambda}{2} \exp{\left(\frac{\lambda}{2} (2\mu+\lambda \sigma^2-2x) \right)} \nonumber \\
- & &\operatorname{erfc}\left( \frac{\mu+\lambda \sigma^2-x}{\sqrt{2} \sigma} \right) \\
- \operatorname{N}(x|\mu,\sigma) &=& \frac{1}{\sqrt{2\pi}\sigma} \exp{\left(\frac{-(x-\mu)^2}{2\sigma^2} \right)} 
-\end{eqnarray}
-where $\operatorname{erfc}$ is the complementary error function. The remaining conditional probabilities are:
-\begin{eqnarray}
- &P&(\mu_{\rm dust},\sigma_{\rm dust},\lambda_{\rm dust}|\ebv) \propto P(\mu_{\rm dust})P(\sigma_{\rm dust}) \nonumber \\
-& &P(\lambda_{\rm dust}) \prod_i \operatorname{EMG}(\ebv_i|\mu_{\rm dust},\sigma_{\rm dust},\lambda_{\rm dust})  \label{eqn:mcmc_data_eqn11} \\
- &P&(\phi_i|\theta,\vec{\mrel_i}) \propto \operatorname{EMG}(\ebv_i|\mu_{\rm dust},\sigma_{\rm dust},\lambda_{\rm dust}) \nonumber \\
-& & \operatorname{N}(2.5\dal_i|\mu_{\alpha},\sigma_{\alpha}) \operatorname{N}(m_{0,i}|0,S) \nonumber \\
-& & \prod_j \operatorname{T}(\mrel_{ij}|3,\mrel_{ij}^{\rm model}+\delta_{ij},\sigma_{ij})  \label{eqn:mcmc_data_eqn12}
-\end{eqnarray}
-By breaking up the conditionals in this manner, the largest number of parameters being estimated in any given \texttt{emcee} step is 3.  As discussed in \S\ref{sec:mcmc}, this means a few hundred walkers are sufficient to fully sample the space.
-
-In order to increase the efficiency of our MCMC sampler, we use an Ancillarity-Sufficiency Interweaving Strategy (ASIS) similar to the one used in \citet{Kelly:2011} \citep[see also ][]{Yu:2011}.  The ASIS works by introducing the following change of variables for Equation~\ref{eqn:mcmc_data_eqn12}:
-\begin{eqnarray}
-\tilde{\delta_{ij}} &=& \mrel_{ij}^{\rm model}+\delta_{ij}  \label{eqn:delta_trans} \\
-\tilde{\delta_{ij}} &\sim& \operatorname{T}(3,\mrel_{ij}^{\rm model},S) 
-\end{eqnarray}
-This change allows for a second way of updating the individual fit parameters $\vec{m_{0}}$, $\vec{2.5\dal}$, and $\vec{\ebv}$ that is not directly dependent on the observed data:
-\begin{eqnarray} \label{eqn:mcmc_data_eqn2}
-&P&(\phi_i|\theta,\tilde{\delta_{ij}}) \propto \operatorname{EMG}(\ebv_i|\mu_{\rm dust},\sigma_{\rm dust},\lambda_{\rm dust}) \nonumber \\
-& & \operatorname{N}(2.5\dal_i|\mu_{\alpha},\sigma_{\alpha}) \operatorname{N}(m_{0,i}|0,S) \nonumber \\
-& & \prod_j \operatorname{T}(\tilde{\delta_{ij}}|3,\mrel_{ij}^{\rm model},S)
-\end{eqnarray}
-ASIS replaces the update step given by Equation~\ref{eqn:mcmc_data_eqn12} with the following steps:
-\begin{enumerate}
-    \item{Update $\vec{m_{0}}$, $\vec{2.5\dal}$, and $\vec{\ebv}$ using Equation~\ref{eqn:mcmc_data_eqn12}}
-    \item{Find $\tilde{\delta_{ij}}$ using Equation~\ref{eqn:delta_trans} and the current values for the fit parameters}
-    \item{Update $\vec{m_{0}}$, $\vec{2.5\dal}$, and $\vec{\ebv}$ using Equation~\ref{eqn:mcmc_data_eqn2}}
-    \item{Find the new values for $\delta_{ij}$ associated with these parameters by apply the inverse of the transformation given in Equation~\ref{eqn:delta_trans}}
-\end{enumerate}
-
-In our analysis we used 200 walkers with a 2000 step burn-in and 400 steps of sampling.  In Chapter~\ref{Dust} we refer to $\theta$ as the population parameters and $\phi$ as the individual parameters.
-%[Maybe put auto-correlation values to show we don't fail the convergence test.] 
+%\section{Conditional Likelihoods} \label{sec:conditionals}

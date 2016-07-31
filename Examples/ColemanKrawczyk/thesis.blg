@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: yahapj.bst
+A level-1 auxiliary file: tex/preamble.aux
+A level-1 auxiliary file: tex/Introduction.aux
+A level-1 auxiliary file: tex/Data.aux
+A level-1 auxiliary file: tex/SEDs.aux
+A level-1 auxiliary file: tex/Dust.aux
+A level-1 auxiliary file: tex/BH.aux
+A level-1 auxiliary file: tex/Conclusion.aux
+A level-1 auxiliary file: tex/appendix.aux
+A level-1 auxiliary file: tex/CV.aux
+Database file #1: bib/All_refs.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--empty publisher in Beckmann:2012
+Warning--empty publisher in Ferland:2002
+Warning--empty publisher in Krolik:1999
+Warning--empty publisher in Rybicki:1986
+You've used 165 entries,
+            3201 wiz_defined-function locations,
+            1932 strings with 57182 characters,
+and the built_in function-call counts, 95674 in all, are:
+= -- 7170
+> -- 7827
+< -- 63
++ -- 2896
+- -- 2793
+* -- 8788
+:= -- 17477
+add.period$ -- 165
+call.type$ -- 165
+change.case$ -- 1105
+chr.to.int$ -- 165
+cite$ -- 169
+duplicate$ -- 4464
+empty$ -- 5678
+format.name$ -- 3027
+if$ -- 18933
+int.to.chr$ -- 4
+int.to.str$ -- 1
+missing$ -- 159
+newline$ -- 499
+num.names$ -- 666
+pop$ -- 1727
+preamble$ -- 1
+purify$ -- 1103
+quote$ -- 0
+skip$ -- 2697
+stack$ -- 0
+substring$ -- 3893
+swap$ -- 157
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 1467
+warning$ -- 4
+while$ -- 759
+width$ -- 0
+write$ -- 1648
+(There were 4 warnings)

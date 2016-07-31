@@ -1,5 +1,6 @@
 %\documentclass[final,subfig,blackref,approvalform]{drexel-thesis} %final copy
-\documentclass[final,subfig,blackref]{drexel-thesis} %final copy
+%\documentclass[final,subfig,blackref]{drexel-thesis} %final copy
+\documentclass[final,subfig,daring]{drexel-thesis} %colorful links copy
 %\documentclass[daring,subfig,blackref,draftspace]{drexel-thesis} %for committee
 %\documentclass[daring,subfig,blackref,draftwatermark,draftspace]{drexel-thesis} %draft copy
 
@@ -10,47 +11,73 @@
 %\let\evensidemargin\tmp
 %\reversemarginpar
 
+% packages for CV formatting
+\usepackage{marvosym}
+\usepackage{url,parskip}   %other packages for formatting
+\RequirePackage{color,graphicx}
+%\usepackage[usenames,dvipsnames]{xcolor}
+%\usepackage{fullpage} 
+\usepackage{longtable}
+\usepackage[super]{nth}
+
+\usepackage{verbatim}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{placeins}   % To allow pictures to flush after a section
 \usepackage{setspace}
 \usepackage{nth}
-\usepackage{natbib}
+
+% Draft mode on the pictures
+% \setkeys{gin}{draft}
+
+% Fancy citation extensions
+\usepackage[super,sort&compress,comma]{natbib}
 \bibliographystyle{yahapj}
 
 % fncychap clobbers \appendix with a silly implementation that breaks
 % hyperlinks to appendix chapters.  Work around this by ignoring their
 % implementation completely.
-%\let\temporaryAppendix\appendix
-%\usepackage[Conny]{fncychap}  % Nicer style used for distribution
+\let\temporaryAppendix\appendix
+\usepackage[Conny]{fncychap}  % Nicer style used for distribution
 %\usepackage[]{fncychap}
-%\let\appendix\temporaryAppendix
+\let\appendix\temporaryAppendix
 
 \usepackage{deluxetable}
-\usepackage{aastex_hack}
+%\usepackage{aastex_hack}
+\usepackage{tikz}
+\usepackage{tkz-berge}
+\usetikzlibrary{shapes}
 %\usepackage[left]{showlabels}
+
+
+\ChRuleWidth{1.5pt}
+\ChTitleVar{\Large \sc \bf}
+\ChNumVar{\Large \sc \bf}
+\ChNameVar{\Large \sc \bf}
 
 \input{supplement/customizations}
 
 \includeonly{
-	tex/preamble,
-	tex/Introduction,
-	tex/Data,
-	tex/SEDs,
-	tex/Dust,
-	tex/BH,
-	tex/Conclusion,
-	tex/appendix,
-	tex/CV,
+	tex/preamble,           %Dedications, acknowledgments, TOC, and abstract
+	tex/Introduction,       %CHAPTER: Introduction
+	tex/Data,               %CHAPTER: Introduction
+	tex/LM,               %CHAPTER: Introduction
+	tex/ED,               %CHAPTER: Introduction
+	tex/RM,                 %CHAPTER: Introduction
+	tex/Conclusion,         %CHAPTER: Conclusion
+	tex/appendix,           %APPENDIX
+	tex/CV,                 %CV
 }
 
-\author{Coleman M. Krawczyk}
-\title{Spectral Energy Distributions, Dust, and Black Hole Properties: A Statistical, Multi-Wavelength Quasar Analysis}
+\author{Zhihuan Wang}
+\title{Dimensional Dependence of Light Interaction with Nanowires}
 \DUTmonth{September}
-\DUTyear{2014}
+\DUTyear{2016}
 \degree{Doctor of Philosophy}
-\advisor{Dr. Gordon Richards}
-\copyrighttext{}
+\advisor{Dr. Bahram Nabet}
+\copyrighttext{\copyrighttextCCBYSA}
+
+\input{pictures/tikzpics}
 
 \begin{document}
 
@@ -68,13 +95,13 @@
   \include{tex/Data}
   
   %CHAPTER: Multiwavelength SEDs
-  \include{tex/SEDs}
+  \include{tex/LM}
   
   %CHAPTER: Dusty Quasars
-  \include{tex/Dust}
+  \include{tex/ED}
   
   %CHAPTER: Black Hole Properties
-  \include{tex/BH}
+  \include{tex/RM}
   
   %CHAPTER: Conclusion
   \include{tex/Conclusion}
@@ -82,10 +109,14 @@
   
 \end{thesis}
 
+\suppressfooter
+
 \bibliography{bib/All_refs}
 
 \appendix
+\restorefooter
 \include{tex/appendix}
+\suppressfooter
 \include{tex/CV}
-
+\restorefooter
 \end{document}
