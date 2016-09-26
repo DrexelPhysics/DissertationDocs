@@ -37,15 +37,45 @@
 \BOOKMARK [1][-]{section.4.3}{Conclusions}{chapter.4}% 37
 \BOOKMARK [0][-]{chapter.5}{Dimensional Dependence of Optical Transition Rates}{Main Matter.-1}% 38
 \BOOKMARK [1][-]{section.5.1}{Time-dependent Perturbation Theory}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.2}{Upward and Downward Transition Rates}{chapter.5}% 40
-\BOOKMARK [1][-]{section.5.3}{Contributing Factors}{chapter.5}% 41
-\BOOKMARK [2][-]{subsection.5.3.1}{Overlap Integral}{section.5.3}% 42
-\BOOKMARK [2][-]{subsection.5.3.2}{Oscillator Strength}{section.5.3}% 43
-\BOOKMARK [2][-]{subsection.5.3.3}{Joint Optical Density of States}{section.5.3}% 44
-\BOOKMARK [0][-]{chapter.6}{Conclusions and Future Research}{Main Matter.-1}% 45
-\BOOKMARK [1][-]{section.6.1}{Contributions of this dissertation}{chapter.6}% 46
-\BOOKMARK [1][-]{section.6.2}{Outline of the future work}{chapter.6}% 47
-\BOOKMARK [-1][-]{Back Matter.-1}{Back Matter}{}% 48
-\BOOKMARK [0][-]{section*.8}{Bibliography}{Back Matter.-1}% 49
-\BOOKMARK [0][-]{appendix.A}{Transtion Rates}{Back Matter.-1}% 50
-\BOOKMARK [0][-]{section*.9}{Vita}{Back Matter.-1}% 51
+\BOOKMARK [2][-]{subsection.5.1.1}{}{section.5.1}% 40
+\BOOKMARK [1][-]{section.5.2}{Upward and Downward Transition Rates}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.3}{Contributing Factors}{chapter.5}% 42
+\BOOKMARK [2][-]{subsection.5.3.1}{Overlap Integral}{section.5.3}% 43
+\BOOKMARK [2][-]{subsection.5.3.2}{Oscillator Strength}{section.5.3}% 44
+\BOOKMARK [2][-]{subsection.5.3.3}{Joint Optical Density of States}{section.5.3}% 45
+\BOOKMARK [0][-]{chapter.6}{Modeling Lasing Threshold}{Main Matter.-1}% 46
+\BOOKMARK [1][-]{section.6.1}{History of Semiconductor Lasers}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.2}{Principle of Semiconductor Lasers}{chapter.6}% 48
+\BOOKMARK [2][-]{subsection.6.2.1}{Optical Gain`}{section.6.2}% 49
+\BOOKMARK [2][-]{subsection.6.2.2}{Feedback and Laser Threshold}{section.6.2}% 50
+\BOOKMARK [1][-]{section.6.3}{Types of semiconductor Lasers}{chapter.6}% 51
+\BOOKMARK [2][-]{subsection.6.3.1}{Fabry-Perot Semiconductor Lasers}{section.6.3}% 52
+\BOOKMARK [2][-]{subsection.6.3.2}{Grating-Based semiconductor Lasers}{section.6.3}% 53
+\BOOKMARK [2][-]{subsection.6.3.3}{Vertical-Cavity Surface-Emitting Lasers}{section.6.3}% 54
+\BOOKMARK [2][-]{subsection.6.3.4}{Grating Surface-Emitting Lasers}{section.6.3}% 55
+\BOOKMARK [1][-]{section.6.4}{Characteristics of Semiconductor Lasers}{chapter.6}% 56
+\BOOKMARK [1][-]{section.6.5}{Basic Requrement for Design of Semiconductor Lasers}{chapter.6}% 57
+\BOOKMARK [2][-]{subsection.6.5.1}{Spectral width and Linewidth}{section.6.5}% 58
+\BOOKMARK [2][-]{subsection.6.5.2}{Operating Wavelength, Switching Time, and Modulation}{section.6.5}% 59
+\BOOKMARK [1][-]{section.6.6}{Modeling of Semiconductor Lasers}{chapter.6}% 60
+\BOOKMARK [1][-]{section.6.7}{Laser Rate Equations}{chapter.6}% 61
+\BOOKMARK [1][-]{section.6.8}{Wave Model of Semiconductor Lasers}{chapter.6}% 62
+\BOOKMARK [1][-]{section.6.9}{Implementations}{chapter.6}% 63
+\BOOKMARK [2][-]{subsection.6.9.1}{Optical Modes}{section.6.9}% 64
+\BOOKMARK [2][-]{subsection.6.9.2}{Steady State Analysis}{section.6.9}% 65
+\BOOKMARK [2][-]{subsection.6.9.3}{Dynamic State Analysis}{section.6.9}% 66
+\BOOKMARK [1][-]{section.6.10}{Simulation Results}{chapter.6}% 67
+\BOOKMARK [2][-]{subsection.6.10.1}{Input Parameters}{section.6.10}% 68
+\BOOKMARK [2][-]{subsection.6.10.2}{Optical Modes}{section.6.10}% 69
+\BOOKMARK [2][-]{subsection.6.10.3}{Steady State Analysis}{section.6.10}% 70
+\BOOKMARK [2][-]{subsection.6.10.4}{Dynamic State Analysis}{section.6.10}% 71
+\BOOKMARK [0][-]{chapter.7}{Conclusions and Future Research}{Main Matter.-1}% 72
+\BOOKMARK [1][-]{section.7.1}{Contributions of this dissertation}{chapter.7}% 73
+\BOOKMARK [1][-]{section.7.2}{Outline of the future work}{chapter.7}% 74
+\BOOKMARK [-1][-]{Back Matter.-1}{Back Matter}{}% 75
+\BOOKMARK [0][-]{section*.8}{Bibliography}{Back Matter.-1}% 76
+\BOOKMARK [0][-]{appendix.A}{Transition Rates}{Back Matter.-1}% 77
+\BOOKMARK [0][-]{appendix.B}{Semiconductor Laser Modeling}{Back Matter.-1}% 78
+\BOOKMARK [1][-]{section.B.1}{Threshold or Steady-State Gain in Lasers}{appendix.B}% 79
+\BOOKMARK [1][-]{section.B.2}{Threshold Current and Output Power}{appendix.B}% 80
+\BOOKMARK [0][-]{section*.9}{Vita}{Back Matter.-1}% 81

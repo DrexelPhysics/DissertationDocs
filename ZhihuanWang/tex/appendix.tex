@@ -1,32 +1,320 @@
-\chapter{Transtion Rates} \label{ch:mcmc}
-This research project focuses on the dimensional dependence of the absorption behavior in semiconductor when interacting with light. Through time-dependent perturbation theory, we find out the transition rate and Fermi’s Golden Rule, then based on the light interaction Hamiltonian, time average Poynting vector and matrix element, derive the absorption coefficient for bulk semiconductor (3-dimension), quantum well (2-dimension) and quantum wire (1-dimension) structure.
-Finally, this report will discuss the partial confinement on the electron in the conduction band without the hole confined in the valence band situation.
+\chapter{Transition Rates} \label{ch:rates} 
 
-The Schrodinger equation
+This research project focuses on the dimensional dependence of the absorption
+behavior in semiconductor when interacting with light. Through time-dependent
+perturbation theory, we find out the transition rate and Fermi’s Golden Rule,
+then based on the light interaction Hamiltonian, time average Poynting vector
+and matrix element, derive the absorption coefficient for bulk semiconductor
+(3-dimension), quantum well (2-dimension) and quantum wire (1-dimension)
+structure.  Finally, this report will discuss the partial confinement on the
+electron in the conduction band without the hole confined in the valence band
+situation.
 
-The Hamiltonian H can be expressed as:
+The Schrödinger equation:
+\begin{equation}
+  \HAM\Psi(r,t) = - \frac{\hbar}{i}\\frac{\partial }{\partial t}\Psi(r,t)
+\end{equation}
 
-where  is the unperturbed part Hamiltonian and is time-independent,  is the small perturbation.
-The solution to the unperturbed part is assumed known
+The Hamiltonian $\HAM$ can be expressed as:
+\begin{equation}
+  \HAM = \HAM_0 + \HAM^\prime(r,t)
+\end{equation}
+
+where $\HAM_0$ is the unperturbed part Hamiltonian and is time-independent, $\HAM^\prime(r,t)$ is the
+small perturbation.
+
+The solution to the unperturbed part is assumed known:
+
+\begin{eqnarray}
+\begin{aligned}
+  & \HAM_0\Psi_n(r,t) = - \frac{\hbar}{i}\\frac{\partial }{\partial t}\Psi_n(r,t),
+  \\
+  & \frac{dN_p}{dt} = {\Gamma}v_g{g}N_p + \Gamma\beta_{sp}R_{sp} - \frac{N_p}{\tau_p},
+\end{aligned}
+\label{eq:eight}
+\end{eqnarray}
 
 The time-dependent perturbation is assumed to have the form
 
-Expand the wave function in terms of the unperturbed solution, we find out
+\begin{equation}
+  \HAM = \begin{cases}
+    \HAM^\prime(r)e^{-i\omega t} + \HAM^{\prime+}(r)e^{+\omega t}, & t \geq 0 \\
+    0, & t < 0
+  \end{cases}
+\end{equation}
 
-gives the probability that the electron is in the state n at time t.
-Substituting the expansion for into Schrodinger equation and using (II.3), we have
+Expand the wave function in terms of the unperturbed solution, we find out $\Psi(r,t)$:
 
-Taking the inner product with the wave function , and using the orthonormal property,
+\begin{equation}
+  \Psi(r,t) = \sum_{n}a_n(t)\Phi_n(r)e^{(-iE_{n}t/\hbar)}
+\end{equation}
 
-Therefore, the electron stays at the state i in the absence of any perturbation. The first order solution is 
+$|a_n(t)|^2$ gives the probability that the electron is in the state n at time t.
 
-If we consider the photon energy to be near resonance, either  or , we find the dominant terms:
-The absorption coefficient is a strong function of dimensionality. The confining situation of the quantum structure will considerably affect the energy levels, the overlap function of the conduction and valance band envelope function and also the joint optical density of state.
-Through the derivation of the absorption coefficient, we can observe the interaction between the light and semiconductor.
-The next questions should address:
-1. The simulation data for single nanowire abs
+Substituting the expansion for $\Psi$ into Schrödinger equation and using (II.3), we
+have
 
-%\section{The Model} \label{sec:mcmc_model}
+\begin{equation}
+  \sum_n \frac{da_n(t)}{dt}\Psi_n(r)e^{-iE_{n}t/\hbar} = -\frac{\hbar}{i}\sum_n \HAM^{\prime}(r,t)a_n(t)\Phi_n(r)e^{(-iE_{n}t/\hbar)}
+\end{equation}
+
+Taking the inner product with the wave function ${\Phi_m}^\star(r)$, and using the orthonormal
+property,
+
+\begin{equation}
+  {I_{hm}^{en}}=\int_{-\infty}^\infty{\Phi_n^\ast}(z){g_m(z)}\,\mathrm{d}z,
+\end{equation}
+
+\begin{equation}
+{I_{hm}^{en}}=\int_{-\infty}^\infty{\Phi_n^\ast}(z){g_m(z)}\,\mathrm{d}z,
+\label{eq:seven}
+\end{equation}
+
+Therefore, the electron stays at the state i in the absence of any
+perturbation. The first order solution is 
+
+If we consider the photon energy to be near resonance, either  or, we find the
+dominant terms: The absorption coefficient is a strong function of
+dimensionality. The confining situation of the quantum structure will
+considerably affect the energy levels, the overlap function of the conduction
+and valance band envelope function and also the joint optical density of state.
+Through the derivation of the absorption coefficient, we can observe the
+interaction between the light and semiconductor.  The next questions should
+address: 1. The simulation data for single nanowire abs
+
+\chapter{Semiconductor Laser Modeling}
+\label{sec:model}
+
+In this section, we are trying to delve into the mechanics of how an injected
+current actually results in an optical output in a semiconductor heterojunction
+laser by providing a systematic derivation of the dc light-current
+characteristics. First, the rate equation for photon generation and loss in a
+laser cavity is developed. This shows that only a small portion of the
+spontaneously generated light contributes to the lasing mode. Most of it comes
+from the stimulated recombination of carriers. All of the carriers that are
+stimulated to recombine by light in a certain mode contribute more photons to
+that same mode. Thus, the stimulated carrier recombination/photon generation
+process is a gain process. We find the threshold gain for lasing which is the
+gain necessary to compensate for cavity losses. The threshold current is the
+current required to reach this gain 
+
+For electrons and holes in the active region of a diode laser, only a fraction,
+$\eta_i$, of injected current will contribute to the generation of carriers.We
+assumed the active regions that are undoped or lightly doped, so that under
+high injection levels, charge neutrality applies and the electron density
+equals the hole density (i.e., $N = P$ in the active region). Thus, we can
+greatly simplify our analysis by specifically tracking only the electron
+density, N.
+
+We start with the governing equations of carrier density and photon density in
+the active region which is governed by a dynamic process.
+
+\begin{eqnarray}
+\begin{aligned}
+  & \frac{dN}{dt} = \frac{\eta_{i}I}{qV} - \frac{N}{\tau} - R_{st},
+  \\
+  & \frac{dN_p}{dt} = {\Gamma}v_g{g}N_p + \Gamma\beta_{sp}R_{sp} - \frac{N_p}{\tau_p},
+\end{aligned}
+\label{eq:eight}
+\end{eqnarray}
+
+where $\beta_{sp}$ is the spontaneous emission factor, defined as the
+percentage of the total spontaneous emission coupled into the lasing mode. And it is
+just the reciprocal of the number of available optical modes in the bandwidth of
+the spontaneous emission for uniform coupling to all modes. The g is Incremental gain
+per unit length.
+
+The first term of equation 1 is the rate of injected electrons $G_{gen} =
+{\Gamma_{i}I}/{qV}$, ${\Gamma_{i}I}/{q}$ is the number of electrons per
+second being injected into the active region, where V is the volume of the
+active region. The rest terms are the rate of recombining of electrons per unit
+volume in the active region. There are several mechanisms should be considered,
+including a spontaneous recombination rate, $R_{sp}$, a nonradiative
+recombination rate, $R_{nr}$, a carrier leakage rate, $R_l$ and a net
+stimulated recombination, $R_{st}$, including both stimulated absorption and
+emission. Which looks like:
+
+\begin{equation}
+  R_{rec} = R_{sp} + R_{nr} + R_{l} + R_{st}
+\end{equation}
+
+The first three terms on the right refer to the natural or unstimulated carrier
+decay processes. The fourth one, $R_{st}$, require the presence of photon.
+
+The natural decay process can be described by a carrier lifetime, $\tau$. In
+the absence of photon or a generation term, the rate equation for carrier decay
+is $dN/dt = -N/\tau$, where $N/\tau = R_{sp} + R_{nr} + R_{l}$.
+
+The natural decay rate can also be expressed in a power series of the carrier
+density, N. We can also rewrite $R_{rec} = BN^2 + (AN + CN^3) + R_{st}$.  Where
+$R_{sp} ~ BN^2$ and $R_{nr} + R_{l} ~ (AN + cN^3)$. The coefficient B is the
+bimolecular recombination coefficient, and it has a magnitude, $B \sim 10^{-10}
+cm^3/s$ for most AlGaAs and InGaAsP alloys of interest.
+
+When a laser is below threshold, in which the gain is insufficient to
+compensate for cavity losses, the generated photons do not receive net
+amplification. The spontaneous photon generation rate per unit volume is
+exactly equal to the spontaneous electron recombination rate, $R_{sp}$, because
+an electron-hole pair will emit a photon when they recombine radiatively.
+Under steady-state conditions ($dN/dt = 0$), the generation rate equals the
+recombination rate with $R_{st} = 0$.
+
+\begin{equation}
+  \frac{\eta_{i}I}{qV} = R_{sp} + R_{nr} + R_{l}
+\end{equation}
+
+The spontaneously generated optical power, $P_{sp}$, is obtained by multiplying
+the number of photons generated per unit time per unit volume, $R_{sp}$, by the
+energy per photon, $hv$, and the volume of the active region, V.
+
+\begin{equation}
+  P_{sp} = h{\upsilon}VR_{sp} = \eta_i\eta_r\frac{h\upsilon}{q}I
+\end{equation}
+
+The main photon generation term above threshold is $R_{st}$. Electron-hole pair
+is stimulated to recombine, another photon is generated. But since the cavity
+volume occupied by photons, $V_p$, is usually larger than the active region
+volume occupied by electrons, V, the photon density generation rate will be
+$[V/V_p]R_{st}$, not just $R_{st}$. The electron-photon overlap factor,
+$[V/V_p]$, is generally referred to as the confinement factor, $\Gamma$.
+
+\section{Threshold or Steady-State Gain in Lasers} \label{sec:conditionals}
+
+The cavity loss can be characterized by a photon decay constant or lifetime,
+$\tau_p$, and the gain necessary to overcome losses, and thus reach threshold.
+By assuming steady-state conditions (\ie $dN_p/dt = 0$), and solving for this
+steady-state or threshold gain, $g_{th}$, where the generation term equals the
+recombination term for photons. We assume only a small fraction of the
+spontaneous emission is coupled into the mode (\ie $\beta_{sp}$ is quite
+small), then the second term can be neglected, and we have the solution:
+
+\begin{equation}
+  \Gamma{g_{th}} = \frac{1}{v_g\tau_p} = <\alpha_i> + \alpha_m
+\end{equation}
+
+The product, $\Gamma{g_{th}}$, is referred to as the threshold modal gain
+because it now represents the net gain required for the mode as a whole, and it
+is the mode as a whole that experiences the cavity loss. $<\alpha_i>$ is the
+average internal loss, and $\alpha_m$ is the mirror loss if we considered an
+in-plane wave laser.
+
+The optical energy of a nano-cavity laser propagates in a dielectric waveguide
+mode, which is confined both transversely and laterally as defined by a
+normalized transverse electric field profile, $U(x,y)$. In the axial direction
+this mode propagates as $exp^{(-j\beta z)}$, where $\beta$ is the complex
+propagation constant, which includes any loss or gain. Thus, the time- and
+space-varying electric field can be written as
+
+\begin{equation}
+  \xi = \hat{e}_{y}E_{0}U(x,y)e^{j(\omega t- \beta z)}
+\end{equation}
+
+where $\hat{e}_y$ is the unit vector indicating TE polarization and $E_0$ is
+the magnitude of the field. The complex propagation constant, $\beta$, includes
+the incremental transverse modal gain, $<g>_{xy}$ and internal modal loss,
+$<\alpha_i>_{xy}$. If we consider a Fabry-Perot laser with the propagating mode
+is reflected by end mirrors, and the reflection coefficients are $r_1$ and
+$r_2$. respectively. In addition, the mean mirror intensity reflection coefficient, $R = r_1r_2$.
+
+Define the mirror lass as $\alpha_m$
+
+\begin{equation}
+  \alpha_m \equiv \frac{1}{L}\ln(\frac{1}{R})
+\end{equation}
+
+The photon decay lifetime is given by,
+
+\begin{equation}
+  \frac{1}{\tau_p} = \frac{1}{\tau_i} + \frac{1}{\tau_m} = v_g(<\alpha_i> + \alpha_m)
+\end{equation}
+
+Thus, we can also write
+
+\begin{equation}
+  \Gamma g_{th} = <\alpha_i> + \alpha_m = \frac{1}{v_g\tau_p}
+\end{equation}
+
+\section{Threshold Current and Output Power}
+\label{sec:threshold_current_and_power_out_versus_current}
+
+We construct together a below-threshold and an above-threshold characteristic
+to illustrate the output power versus input current for a normal diode laser.
+The first step is to use the below-threshold steady-state carrier rate
+equation,
+
+\begin{equation}
+  \frac{\eta_{i}I_{th}}{qV} = {(R_{sp} + R_{nr} + R_{l})}_{th} = \frac{N_{th}}{\tau} 
+\end{equation}
+
+Then, recognizing that $(R_{sp} + R_{nr} + R_{l}) =AN + BN^2 +CN^3$ depends
+monotonically on $N$, we observe from eq 2.34 that above threshold $(R_{sp} +
+R_{nr} + R_{l})$ will also clamp at its threshold value, given by Eq 2.35. Thus,
+we can substitute Eq 2.35 into the carrier rate equation, eq 2.16 to obtain a
+new above threshold carrier rate equations,
+
+\begin{equation}
+  \frac{dN}{dt} = \eta_i \frac{(I - I_{th})}{qV} - v_{g}gN_p,~~~   (I > I_{th})
+\end{equation}
+
+We also calculate a steady-state photon density above threshold where $g = g_{th}$,
+
+\begin{equation}
+  N_p = \frac{\eta_i (I - I_{th})}{qv_{g}g{th}V}~~~   (steady~ state)
+\end{equation}
+
+To obtain the power out, we first construct the stored optical energy in the
+cavity, $E_{os}$, by multiplying the photon density, $N_p$, by the energy per
+photon, $hv$, and the cavity volume, $V_p$. That is $E_{os} = N_phvV_p$. Then,
+we multiply this by the erngy loss rate through the mirrors, $v_g\alpha_m =
+\frac{1}{\tau_m}$, to get the optical power output from the mirrors,
+
+\begin{equation}
+  P_0 = v_g\alpha_{m}N_phvV_p
+\end{equation}
+
+Substituting from , and using $\Gamma = V/V_p$,
+
+\begin{equation}
+  P_0 = \eta_i(\frac{\alpha_m}{<\alpha_i> + \alpha_m})\frac{hv}{q}(I - I{th}),~~~(I > I_{th})
+\end{equation}
+
+For the output power below-threshold $(I < I_{th})$ can be approximated by neglecting the stimulated emission term and solving for $N_p$ under steady-state conditions.
+
+\begin{equation}
+N_p = \Gamma\beta_{sp}R_{sp}\tau{p}~~~(I < I_{th})
+\end{equation}
+
+and 
+
+\begin{equation}
+  P_0(I < I_{th}) = \eta_r\eta_i\left(\frac{\alpha_m}{<\alpha_i> + \alpha_m}\right)\frac{hv}{q}\beta_{sp}I,
+\end{equation}
 
 
-%\section{Conditional Likelihoods} \label{sec:conditionals}
+We can get the threshold carrier density
+
+\begin{equation}
+  N_{th} = N_{tr}e^{g_{th}/g_{0}N} = N_{tr}e^{(<\alpha_i> + \alpha_m)/\Gamma{g_{0}}N}
+\end{equation}
+
+Using the polynomial fit for the recombination rates, and recognizing that for
+the best laser material the recombination at threshold is dominated by
+spontaneous recombination, we have, $I_{th}\cong B{N_{th}}^2qV/\eta_i$, Thus
+
+\begin{equation}
+  I_{th} {\cong} \frac{qVB{N_{tr}}^2}{\eta_i}e^{(<\alpha_i> + \alpha_m)/\Gamma{g_0}N}
+\end{equation}
+
+where for most $\uppercase\expandafter{\romannumeral3} -
+\uppercase\expandafter{\romannumeral5}$ materials the bimolecular recombination
+coefficient, $B \sim 10^{-10} cm^3/s$.
+
+For a multiple quantum-well (MQW) lasers, we have to multiply the single-well confinement factor, $\Gamma_1$, and volume, $V_1$, by the number of wells, $N_w$.
+
+
+\begin{equation}
+  I_{thMQW} {\cong} \frac{qN_{w}V_{1}B{N_{tr}}^2}{\eta_i}e^{2(<\alpha_i> + \alpha_m)/{N_w\Gamma_{1}g_{0}N}}
+\end{equation}
+
+
+

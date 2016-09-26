@@ -11,4 +11,4 @@ view:
 cleanext = ~ .out .log .toc .aux .log .lof .bbl .blg
 
 clean:
-	$(foreach x,$(cleanext),find . -name *$(x) | xargs -I {} rm -vf {};)
+	$(foreach x,$(cleanext),find . -name '*$(x)' | xargs -I {} rm -vf {};)

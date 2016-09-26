@@ -8,6 +8,7 @@ A level-1 auxiliary file: tex/Data.aux
 A level-1 auxiliary file: tex/LM.aux
 A level-1 auxiliary file: tex/ED.aux
 A level-1 auxiliary file: tex/RM.aux
+A level-1 auxiliary file: tex/LT.aux
 A level-1 auxiliary file: tex/Conclusion.aux
 A level-1 auxiliary file: tex/appendix.aux
 A level-1 auxiliary file: tex/CV.aux
@@ -15,7 +16,7 @@ Database file #1: bib/All_refs.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 You've used 1 entry,
             3201 wiz_defined-function locations,
-            670 strings with 5099 characters,
+            671 strings with 5109 characters,
 and the built_in function-call counts, 733 in all, are:
 = -- 39
 > -- 83
