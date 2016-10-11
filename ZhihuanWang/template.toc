@@ -1,6 +1,0 @@
-\contentsline {chapter}{List of Tables}{v}{section*.4}
-\contentsline {chapter}{List of Figures}{vi}{section*.5}
-\contentsline {chapter}{Abstract}{vii}{section*.6}
-\contentsline {chapter}{Bibliography}{1}{section*.8}
-\cftsetindents {chapter}{0pt}{6.5em} \renewcommand {\cftchappresnum }{\appendixname \nobreakspace {}} \renewcommand {\cftchapaftersnum }{:}
-\contentsline {chapter}{Vita}{2}{section*.9}
