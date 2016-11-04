@@ -22,18 +22,150 @@ significantly.
 
 As we know, the semiconductor laser (or laser diode) in its simplest form is a
 p-n junction of a single crystal of semiconductor material arranged in a
-cavity, as shown in . The type and confiuration of the material used determines
-the optical characteristics of the laser diode emission. Like others in various
-oscillators or wave sources, the fundamental elements in the semiconductor
-lasers are the following three elements: semiconductor band structure
-(population inversion to provide gain mechanism) current injection and P-N
-junction ( external pumping to make gain sustainable) Reflector of cavity
-(feedback to provide coherence) Therefore, the fundamental elements in the
-laser are the semiconductor band structure (population inversion to provide
-gain mechanism), current injection and P-N junction (external pumping to make
-gain sustainable), and Fabry-Perot(FP) or distributed feedback (DFB)/distributed Bragg reflector (DBR) 
+cavity, as shown in . The type and configuration of the material used to
+determine the optical characteristics of the laser diode emission. Like others
+in various oscillators or wave sources, the fundamental elements in the
+semiconductor lasers are the following three elements: semiconductor band
+structure (population inversion to provide gain mechanism), current injection
+and P-N junction ( external pumping to make gain sustainable) and reflector of
+cavity (feedback to provide coherence). The most common semiconductor lasers
+are including Fabry-Perot(FP) or distributed feedback (DFB)/distributed Bragg
+reflector (DBR) 
 
-\subsection{Optical Gain`}
+\subsection{Absorption of Light}
+
+The light and matter interaction includes absorption, spontaneous emission and
+stimulated emission, we first discuss the absorption of light by introducing
+the absorption coeffiecient. This is the absorption rate without considering
+the occupation factors.
+
+Based on the following equations for different dimensionality.
+
+
+\begin{equation}
+\begin{aligned}
+    \alpha_{3D}(\hbar\omega)= & C_0{|\hat{e}\cdot\bf{p}_{cv}|^2}(f_v-f_c)\\
+    & \frac{1}{2\pi^2}(\frac{2m_r^\ast}{\hbar^2})^{3/_2}(\hbar\omega-E_g)^{1/_2},\\
+    & C_0=\frac{\pi{e^2}}{n_r\epsilon_0{c}{m_0^2}\omega},
+\end{aligned}
+\label{eq:two}
+\end{equation}
+
+\begin{eqnarray}
+\begin{aligned}
+& \alpha_{2D}(\hbar\omega)=C_0{|\hat{e}\cdot\bf{p}_{cv}|^2}\frac{m_r^\ast}{\pi\hbar^2{L_z}},
+\\
+& \alpha_{1D}(\hbar\omega)=C_0{|\hat{e}\cdot\bf{p}_{cv}|^2}\frac{{(m_r^\ast)}^{3/_2}}{\pi\hbar{m_e^\ast}{L_x}{L_y}}\frac{1}{\sqrt{(\hbar\omega-E_g)}},
+\end{aligned}
+\label{eq:five}
+\end{eqnarray}
+
+The split plots of absorption coefficient for different dimensionality as in
+Fig.~\ref{absrate_split}. Noted the unique shapes of density of states.
+
+\begin{figure}
+  \caption{Absorption Coefficient versus Photon Energy for 1D 2D and 3D with split plot}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/LT/absrate_split}
+  \label{absrate_split}
+\end{figure}
+
+Then the overlay plot with multiple y axis as in Fig.~\ref{absrate_overlay} and
+the different scales indicating the enhancement factor for 1D is 35(need to be
+verified) compared to 3D.
+
+\begin{figure}
+  \caption{Absorption Coefficient versus Photon Energy for 1D 2D and 3D}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/LT/absrate_overlay}
+  \label{absrate_overlay}
+\end{figure}
+
+\subsection{Optical Gain}
+
+Following the treatments of Appendix 3, we can derive the gain spectrum for 3D,
+2D and 1D with consideration of occupation factor by calculating the Fermi
+levels.
+
+\begin{eqnarray}
+\begin{aligned}
+  & g_{3D}(\xi)=\frac{\sqrt{2}e^2{m_r^\ast}^{3/2}{p_{cv}^2}}{3{\pi}n_r\epsilon_0{m_0}^2C{\hbar^2}\xi}{\sqrt{(\xi-\xi_g)}}(f_n(\xi_2)-f_p(\xi_1)),
+\\
+& g_{2D}(\xi)=\frac{e^2{m_r^\ast}{p_{cv}^2}}{3{n_r}\epsilon_0{m_0}^2C{\hbar}L_z\xi}(f_n(\xi_2)-f_p(\xi_1)),
+\\
+& g_{1D}(\xi)=\frac{e^2{m_r^\ast}^{3/2}{p_{cv}^2}}{3{n_r}\epsilon_0{m_0}^2C\xi{L_x}{L_y}}\frac{1}{\sqrt{(\xi-\xi_g)}}(f_n(\xi_2)-f_p(\xi_1)),
+\end{aligned}
+\label{eq:five}
+\end{eqnarray}
+
+Now we can plot the gain spectrum respect to photon energy for 3D, 2D and 1D in
+the figure below. As we can see, the gain spectrums follow the unique shapes of
+density of states. The fourth figure is the maximum gain versus electron
+carrier concentration varing from $3\times10^{18} (cm^{-3})$ to
+$3\times10^{19}(cm^{-3})$. Using parameters $N_{tr} = 2\times10^{18} cm^{-3}$,
+$N_{s} = 4\times10^{18} cm^{-3}$, and $g_0 = 6.11\times10^{5} cm^{-1}$, we fit
+the curve in Fig.~\ref{gainspectrum} to build a logarithmic gain model of the
+form for 3D case:
+
+\begin{equation}
+  g(N) = g_0\ln\left(\frac{N+N_s}{N_{tr}+ N_s}\right)
+\end{equation}
+
+where $N_s$ is a shift to force the natural logrithm to be finite at $N = 0$
+such that the gain equals the umpumped absorption due to the band-to-band
+transitions, $N_{tr}$ is the transparency carrier density, and $g_0$ is the
+gain coefficient. $N_{tr}$ and $g_0$ will be different for different
+dimensionality.
+
+\begin{figure}
+  \caption{Gain Coefficient versus Photon Energy for 1D 2D and 3D}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/LT/gainspectrum}
+  \label{gainspectrum}
+\end{figure}
+
+\begin{figure}
+  \caption{Gain Model Fitting}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/LT/gainModelFit_Anoted}
+  \label{gainModelFit_Anoted}
+\end{figure}
+
+After fitting the curve in Fig.~\ref{gainModelFit_Anoted}, we can calculate the
+threshold carrier density is $N_{th} = 4.533\times10^{18} cm^{-3}$. Then
+plotting the spontaneous emission rate with respect to the threshold carrier
+density $N_{th}$ for 3D, 2D and 1D as following: 
+
+\begin{eqnarray}
+\begin{aligned}
+& r_{3D}^{\mathrm{spon}}(\xi)=\frac{n_re^2\xi{p_{cv}^2}}{{\pi}\epsilon_0{m_0}^2C^3{\hbar^2}}\frac{{m_r^\ast}^{3/2}}{2\pi^2\hbar^3}{\sqrt{(\xi-\xi_g)}}f_n(\xi_2)(1-f_p(\xi_1)),
+\\
+& r_{2D}^{\mathrm{spon}}(\xi)=\frac{n_re^2\xi{p_{cv}^2}}{{\pi}\epsilon_0{m_0}^2C^3{\hbar^2}}\frac{{m_r^\ast}}{\pi\hbar^2L_z}f_n(\xi_2)(1-f_p(\xi_1)),
+\\
+& r_{1D}^{\mathrm{spon}}(\xi)=\frac{n_re^2\xi{p_{cv}^2}}{{\pi}\epsilon_0{m_0}^2C^3{\hbar^2}}\frac{{m_r^\ast}^{3/2}}{\pi\hbar{m_e^\ast}L_xL_y}\frac{1}{\sqrt{(\xi-\xi_g)}}f_n(\xi_2)(1-f_p(\xi_1)),
+\end{aligned}
+\label{eq:six}
+\end{eqnarray}
+
+\begin{figure}
+  \caption{Spontaneous Emission Rate versus Photon Energy for 1D 2D and 3D}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/LT/sponrate}
+  \label{sponrate}
+\end{figure}
+
+Integraing over all the photn energy spectrum, we have $R_{sp} =
+\int_{\xi}r_{sp}d{\xi}$ for different dimensionality, then the threshold
+current density can be simply caluclated as: $J_{th}= qdR_{sp}|_{N_{th}}$ and
+plotted in the fourth part of Fig.~\ref{sponrate}. The threshold current for 3D
+is $2.62\times10^{27} (A/cm^2)$, 2D is $2.42\times10^{10} (A/cm^2)$, and 1D
+case is $4.73\times10^{6} (A/cm^2)$. The threshold current density needed for
+lower-dimensional structure is greatly reduced.
+
+Next, we can do dynamic analysis of laser modal and replace the threshold
+current density to threshold pumping power. And verify the result with the
+experimental data.
+
 \subsection{Feedback and Laser Threshold}
 \section{Types of semiconductor Lasers} \label{corrections}
 \subsection{Fabry-Perot Semiconductor Lasers}
@@ -244,10 +376,39 @@ where for most $\uppercase\expandafter{\romannumeral3} -
 \uppercase\expandafter{\romannumeral5}$ materials the bimolecular recombination
 coefficient, $B \sim 10^{-10} cm^3/s$.
 
-Reduce the transparency value and increase the differential gain of the active materials.
+Reduce the transparency value and increase the differential gain of the active
+materials.
 
-It is desirable to reduce the cavity loss $(<\alpha_i> + \alpha_m)$ and volume, $V$, in order to retaining a reasonably large confinement factor, $\Gamma$.
+It is desirable to reduce the cavity loss $(<\alpha_i> + \alpha_m)$ and volume,
+$V$, in order to retaining a reasonably large confinement factor, $\Gamma$.
+
 \section{Wave Model of Semiconductor Lasers} \label{corrections}
+
+\section{Linewidth Enhancement Factor} \label{corrections}
+
+Electrons and holes frequently interact with other carriers and with phonons,
+thereby changing their energy within the sub-band. Such intra-band scatter
+events happen about every 0.1 ps, much more often than band-to-band
+recombination events. Thus, scattering leads to an uncertainty of the electron
+energy, which can be accounted for by introducing a symmetrical linewidth
+broadening funtion L into the gain formula.  This convolution integral means
+that gain at the photon energy can now receive contributions from electron
+transitions with, weighted by 
+
+In fact, positive gain is now possible even for photon energies slightly below
+the bandgap. Cauchy himself exploited such a density function in 1827, with
+infinitesimal scale parameter, in defining a Dirac delta function, while among
+physicists, it is known as the Lorentzian line shape functionL with the
+half-width. This function is based on the assumption that the occupation
+probability of an electron state decays proportionally to exp(-t/). The Fourier
+transformation of this exponential function into the nergy domain leads to .
+Gamma is the average of the broadening in the conduction and inthe valence
+band. The full linewidth 2gamma is related to the average intra-band scattering
+time 
+
+Which includes scattering events in the conduction band and valence band. For
+each band, linewidth contributions from different scattering processes are
+adding up.
 
 \section{Implementations} \label{corrections}
 \subsection{Optical Modes}

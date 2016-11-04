@@ -6,7 +6,7 @@ all:
 
 OS := $(shell uname)
 view:
-ifeq ($(os),Darwin)
+ifeq ($(OS),Darwin)
 		open thesis.pdf
 else
 		evince thesis.pdf
