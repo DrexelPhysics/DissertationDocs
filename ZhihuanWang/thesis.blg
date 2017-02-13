@@ -14,46 +14,47 @@ A level-1 auxiliary file: tex/appendix.aux
 A level-1 auxiliary file: tex/CV.aux
 Database file #1: bib/All_refs.bib
 Warning--I didn't find a database entry for "Jarosik:2011"
+Warning--I didn't find a database entry for ""
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 0 entries,
+You've used 3 entries,
             3201 wiz_defined-function locations,
-            661 strings with 4526 characters,
-and the built_in function-call counts, 23 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 8
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+            682 strings with 4978 characters,
+and the built_in function-call counts, 1443 in all, are:
+= -- 124
+> -- 80
+< -- 2
++ -- 31
+- -- 29
+* -- 103
+:= -- 259
+add.period$ -- 3
+call.type$ -- 3
+change.case$ -- 20
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 78
+empty$ -- 104
+format.name$ -- 33
+if$ -- 296
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 0
-newline$ -- 4
-num.names$ -- 0
-pop$ -- 0
+missing$ -- 3
+newline$ -- 13
+num.names$ -- 12
+pop$ -- 30
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 20
 quote$ -- 0
-skip$ -- 1
+skip$ -- 49
 stack$ -- 0
-substring$ -- 0
+substring$ -- 67
 swap$ -- 0
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 27
 warning$ -- 0
-while$ -- 0
+while$ -- 15
 width$ -- 0
-write$ -- 3
-(There was 1 warning)
+write$ -- 33
+(There were 2 warnings)
