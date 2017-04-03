@@ -67,10 +67,10 @@
 \contentsline {chapter}{\numberline {7}Conclusions and Future Research}{42}{chapter.7}
 \contentsline {section}{\numberline {7.1}Contributions of this dissertation}{43}{section.7.1}
 \contentsline {section}{\numberline {7.2}Outline of the future work}{43}{section.7.2}
-\contentsline {chapter}{Bibliography}{45}{section*.28}
+\contentsline {chapter}{Bibliography}{46}{section*.29}
 \cftsetindents {chapter}{0pt}{6.5em} \renewcommand {\cftchappresnum }{\appendixname \nobreakspace {}} \renewcommand {\cftchapaftersnum }{:}
-\contentsline {chapter}{\numberline {A}Transition Rates}{46}{appendix.A}
-\contentsline {chapter}{\numberline {B}Semiconductor Laser Modeling}{49}{appendix.B}
-\contentsline {section}{\numberline {B.1}Threshold or Steady-State Gain in Lasers}{51}{section.B.1}
-\contentsline {section}{\numberline {B.2}Threshold Current and Output Power}{53}{section.B.2}
-\contentsline {chapter}{Vita}{56}{section*.29}
+\contentsline {chapter}{\numberline {A}Transition Rates}{47}{appendix.A}
+\contentsline {chapter}{\numberline {B}Semiconductor Laser Modeling}{50}{appendix.B}
+\contentsline {section}{\numberline {B.1}Threshold or Steady-State Gain in Lasers}{52}{section.B.1}
+\contentsline {section}{\numberline {B.2}Threshold Current and Output Power}{54}{section.B.2}
+\contentsline {chapter}{Vita}{57}{section*.30}

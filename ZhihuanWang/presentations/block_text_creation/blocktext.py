@@ -86,7 +86,5 @@ system('pdfcrop %s out.pdf 1>/dev/null'%fin.replace('.tex','.pdf'))
 system('cp out.pdf %s/text_block.pdf' % odir)
 
 chdir(odir)
-system('evince text_block.pdf')
-
-
-
+#system('evince text_block.pdf')
+system('open text_block.pdf')

@@ -93,9 +93,9 @@ gline = r'''
 T = []
 pcount = 0
 for n in range(len(special)):
-    if special[n]: 
+    if special[n]:
         v = special[n][1:].lstrip()
-    else: 
+    else:
         v = r"\includegraphics[width=\textblocklength]{%s}" % pics[pcount]
         pcount += 1
     T.append(gline%(v,v))
@@ -114,10 +114,5 @@ system('pdfcrop %s out.pdf 1>/dev/null'%fin.replace('.tex','.pdf'))
 #system('pdfcrop %s out.pdf'%fin.replace('.tex','.pdf'))
 system('cp out.pdf %s/text_block.pdf' % odir)
 chdir(odir)
-system('evince text_block.pdf')
-
-
-
-
-
-
+#system('evince text_block.pdf')
+system('open text_block.pdf')
