@@ -1,15 +1,178 @@
-\begin{thebibliography}{3}
-\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\begin{thebibliography}{10}
 
-\bibitem[{Givargizov(1975)}]{givargizov1975fundamental}
-Givargizov, E. 1975, Journal of Crystal Growth, 31, 20
+\bibitem{Nobis:2005wg}
+T.~Nobis and M.~Grundmann, ``{Low-order optical whispering-gallery modes in
+  hexagonal nanocavities},'' {\em Physical Review A}, vol.~72, no.~6,
+  p.~063806, 2005.
 
-\bibitem[{Motohisa {et~al.}(2004)Motohisa, Noborisaka, Takeda, Inari, \&
-  Fukui}]{motohisa2004catalyst}
-Motohisa, J., Noborisaka, J., Takeda, J., Inari, M., \& Fukui, T. 2004, Journal
-  of Crystal Growth, 272, 180
+\bibitem{Chen:2011cg}
+R.~Chen, T.~T.~D. Tran, K.~W. Ng, W.~S. Ko, L.~C. Chuang, F.~G. Sedgwick, and
+  C.~Chang-Hasnain, ``{Nanolasers grown on silicon},'' {\em Nature Photonics},
+  vol.~5, no.~3, pp.~170--175, 2011.
 
-\bibitem[{Wagner \& Ellis(1964)}]{wagner1964vapor}
-Wagner, R., \& Ellis, W. 1964, Applied Physics Letters, 4, 89
+\bibitem{sun2005organic}
+S.~Sun, Z.~Fan, Y.~Wang, and J.~Haliburton, ``Organic solar cell
+  optimizations,'' {\em Journal of materials science}, vol.~40, no.~6,
+  pp.~1429--1443, 2005.
+
+\bibitem{perlin1999space}
+J.~Perlin, {\em From space to earth: the story of solar electricity}.
+\newblock Earthscan, 1999.
+
+\bibitem{razeghi1996semiconductor}
+M.~Razeghi and A.~Rogalski, ``Semiconductor ultraviolet detectors,'' {\em
+  Journal of Applied Physics}, vol.~79, no.~10, pp.~7433--7473, 1996.
+
+\bibitem{rogalski2002infrared}
+A.~Rogalski, ``Infrared detectors: an overview,'' {\em Infrared Physics \&
+  Technology}, vol.~43, no.~3, pp.~187--210, 2002.
+
+\bibitem{chen2011broadband}
+E.~Chen and A.~Murphy, {\em Broadband optical modulators: science, technology,
+  and applications}.
+\newblock CRC press, 2011.
+
+\bibitem{schuller2010plasmonics}
+J.~A. Schuller, E.~S. Barnard, W.~Cai, Y.~C. Jun, J.~S. White, and M.~L.
+  Brongersma, ``Plasmonics for extreme light concentration and manipulation,''
+  {\em Nature materials}, vol.~9, no.~3, pp.~193--204, 2010.
+
+\bibitem{spanggaard2004brief}
+H.~Spanggaard and F.~C. Krebs, ``A brief history of the development of organic
+  and polymeric photovoltaics,'' {\em Solar Energy Materials and Solar Cells},
+  vol.~83, no.~2, pp.~125--146, 2004.
+
+\bibitem{schubert2005solid}
+E.~F. Schubert and J.~K. Kim, ``Solid-state light sources getting smart,'' {\em
+  Science}, vol.~308, no.~5726, pp.~1274--1278, 2005.
+
+\bibitem{schubert2005light}
+E.~F. Schubert, T.~Gessmann, and J.~K. Kim, {\em Light emitting diodes}.
+\newblock Wiley Online Library, 2005.
+
+\bibitem{chow2012semiconductor}
+W.~W. Chow, S.~W. Koch, and M.~I. Sargent, {\em Semiconductor-laser physics}.
+\newblock Springer Science \& Business Media, 2012.
+
+\bibitem{yablonovitch1987inhibited}
+E.~Yablonovitch, ``Inhibited spontaneous emission in solid-state physics and
+  electronics,'' {\em Physical review letters}, vol.~58, no.~20, p.~2059, 1987.
+
+\bibitem{alferov2000double}
+Z.~Alferov, ``Double heterostructure lasers: early days and future
+  perspectives,'' {\em IEEE Journal of Selected Topics in Quantum Electronics},
+  vol.~6, no.~6, pp.~832--840, 2000.
+
+\bibitem{xia2003one}
+Y.~Xia, P.~Yang, Y.~Sun, Y.~Wu, B.~Mayers, B.~Gates, Y.~Yin, F.~Kim, and
+  H.~Yan, ``One-dimensional nanostructures: synthesis, characterization, and
+  applications,'' {\em Advanced materials}, vol.~15, no.~5, pp.~353--389, 2003.
+
+\bibitem{motohisa2004catalyst}
+J.~Motohisa, J.~Noborisaka, J.~Takeda, M.~Inari, and T.~Fukui, ``Catalyst-free
+  selective-area movpe of semiconductor nanowires on (111) b oriented
+  substrates,'' {\em Journal of Crystal Growth}, vol.~272, no.~1, pp.~180--185,
+  2004.
+
+\bibitem{wagner1964vapor}
+R.~Wagner and W.~Ellis, ``Vapor-liquid-solid mechanism of single crystal
+  growth,'' {\em Applied Physics Letters}, vol.~4, no.~5, pp.~89--90, 1964.
+
+\bibitem{givargizov1975fundamental}
+E.~Givargizov, ``Fundamental aspects of vls growth,'' {\em Journal of Crystal
+  Growth}, vol.~31, pp.~20--30, 1975.
+
+\bibitem{Maslov:2003cq}
+A.~V. Maslov and C.~Z. Ning, ``{Reflection of guided modes in a semiconductor
+  nanowire laser},'' {\em Applied Physics Letters}, vol.~83, no.~6,
+  pp.~1237--1239, 2003.
+
+\bibitem{Johnson:2002ua}
+J.~C. Johnson, H.-J. Choi, K.~P. Knutsen, R.~D. Schaller, P.~Yang, and R.~J.
+  Saykally, ``{Single gallium nitride nanowire lasers},'' {\em Nat Mater},
+  vol.~1, no.~2, pp.~106--110, 2002.
+
+\bibitem{Hua:2007fn}
+B.~Hua, J.~Motohisa, Y.~Ding, S.~Hara, and T.~Fukui, ``{Characterization of
+  Fabry-P{\'e}rot microcavity modes in GaAs nanowires fabricated by
+  selective-area metal organic vapor phase epitaxy},'' {\em Applied Physics
+  Letters}, vol.~91, no.~13, pp.~--, 2007.
+
+\bibitem{Duan:2003en}
+X.~Duan, Y.~Huang, R.~Agarwal, and C.~M. Lieber, ``{Single-nanowire
+  electrically driven lasers},'' {\em Nature}, vol.~421, no.~6920,
+  pp.~241--245, 2003.
+
+\bibitem{Saxena:2015cn}
+D.~Saxena, F.~Wang, Q.~Gao, S.~Mokkapati, H.~H. Tan, and C.~Jagadish, ``{Mode
+  Profiling of Semiconductor Nanowire Lasers},'' {\em Nano Letters}, 2015.
+
+\bibitem{Arab:2014wy}
+S.~Arab, P.~D. Anderson, M.~Yao, C.~Zhou, P.~D. Dapkus, M.~L. Povinelli, and
+  S.~B. Cronin, ``{Enhanced Fabry-Perot resonance in GaAs nanowires through
+  local field enhancement and surface passivation},'' {\em Nano Research},
+  vol.~7, no.~8, pp.~1146--1153, 2014.
+
+\bibitem{Oskooi:2010fb}
+A.~F. Oskooi, D.~Roundy, M.~Ibanescu, P.~Bermel, J.~D. Joannopoulos, and S.~G.
+  Johnson, ``{Meep: A flexible free-software package for electromagnetic
+  simulations by the FDTD method},'' {\em Computer Physics Communications},
+  vol.~181, no.~3, pp.~687--702, 2010.
+
+\bibitem{bathe2006finite}
+K.-J. Bathe, {\em Finite element procedures}.
+\newblock Klaus-Jurgen Bathe, 2006.
+
+\bibitem{tan1990self}
+I.-H. Tan, G.~Snider, L.~Chang, and E.~Hu, ``A self-consistent solution of
+  schr{\"o}dinger--poisson equations using a nonuniform mesh,'' {\em Journal of
+  applied physics}, vol.~68, no.~8, pp.~4071--4076, 1990.
+
+\bibitem{birner2007nextnano}
+S.~Birner, T.~Zibold, T.~Andlauer, T.~Kubis, M.~Sabathil, A.~Trellakis, and
+  P.~Vogl, ``Nextnano: general purpose 3-d simulations,'' {\em IEEE
+  Transactions on Electron Devices}, vol.~54, no.~9, pp.~2137--2142, 2007.
+
+\bibitem{Wong:2011tn}
+B.~M. Wong, F.~L{\'e}onard, Q.~Li, and G.~T. Wang, ``{Nanoscale effects on
+  heterojunction electron gases in GaN/AlGaN core/shell nanowires},'' {\em Nano
+  Letters}, vol.~11, no.~8, pp.~3074--3079, 2011.
+
+\bibitem{Bertoni:2011hn}
+A.~Bertoni, M.~Royo, F.~Mahawish, and G.~Goldoni, ``{Electron and hole gas in
+  modulation-doped $GaAs/Al_{1-x}Ga_{x}As$ radial heterojunctions},'' {\em
+  Physical Review B}, vol.~84, no.~20, 2011.
+
+\bibitem{Wolf:2011if}
+D.~Wolf, H.~Lichte, G.~Pozzi, P.~Prete, and N.~Lovergine, ``{Electron
+  holographic tomography for mapping the three-dimensional distribution of
+  electrostatic potential in III-V semiconductor nanowires},'' {\em Applied
+  Physics Letters}, vol.~98, no.~26, pp.~264103--264103--3, 2011.
+
+\bibitem{asryan2004theory}
+L.~Asryan and R.~Suris, ``Theory of threshold characteristics of semiconductor
+  quantum dot lasers,'' {\em Semiconductors}, vol.~38, no.~1, pp.~1--22, 2004.
+
+\bibitem{Wang:2015hz}
+Z.~Wang and B.~Nabet, ``{Nanowire Optoelectronics},'' {\em Nanophotonics},
+  vol.~4, no.~1, 2015.
+
+\bibitem{Bergman:2003vo}
+D.~J. Bergman and M.~I. Stockman, ``{Surface Plasmon Amplification by
+  Stimulated Emission of Radiation: Quantum Generation of Coherent Surface
+  Plasmons in Nanosystems},'' {\em Physical Review Letters}, vol.~90, no.~2,
+  p.~027402, 2003.
+
+\bibitem{montazeri2016plasmonic}
+K.~Montazeri, Z.~Wang, and B.~Nabet, ``Plasmonic effect of low-dimensional
+  electron gas in core-shell nanowires,'' in {\em Frontiers in Optics},
+  pp.~JTh2A--6, Optical Society of America, 2016.
+
+\bibitem{Zhang:2015ec}
+X.~Zhang, J.~K. Lin, S.~Wickramanayaka, S.~Zhang, R.~Weerasekera, R.~Dutta,
+  K.~F. Chang, K.-J. Chui, H.~Y. Li, D.~S. Wee~Ho, L.~Ding, G.~Katti,
+  S.~Bhattacharya, and D.-L. Kwong, ``{Heterogeneous 2.5D integration on
+  through silicon interposer},'' {\em Applied Physics Reviews}, vol.~2, no.~2,
+  p.~021308, 2015.
 
 \end{thebibliography}

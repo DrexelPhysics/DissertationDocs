@@ -122,7 +122,7 @@
 }
 
 % -----------------------------------------------------------------------------
-% Enviorment for temporarily removing the page footer
+% Environment for temporarily removing the page footer
 \newcommand{\suppressfooter}
 {%
 \fancyfoot[RE,LO,LE,RO]{}
@@ -132,6 +132,13 @@
 \newcommand{\restorefooter}
 {%
 \fancyfoot[RE,LO]{\scshape\leftmark}
+\fancyfoot[LE,RO]{\scshape\rightmark}
+\renewcommand{\footrulewidth}{.4pt}
+}%
+
+\newcommand{\rightfooter}
+{%
+%\fancyfoot[RE,LO]{\scshape\leftmark}
 \fancyfoot[LE,RO]{\scshape\rightmark}
 \renewcommand{\footrulewidth}{.4pt}
 }%

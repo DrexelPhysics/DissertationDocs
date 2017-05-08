@@ -1,7 +1,7 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
-The style file: yahapj.bst
+The style file: ieeetr.bst
 A level-1 auxiliary file: tex/preamble.aux
 A level-1 auxiliary file: tex/Introduction.aux
 A level-1 auxiliary file: tex/Data.aux
@@ -13,48 +13,49 @@ A level-1 auxiliary file: tex/Conclusion.aux
 A level-1 auxiliary file: tex/appendix.aux
 A level-1 auxiliary file: tex/CV.aux
 Database file #1: bib/All_refs.bib
-Warning--I didn't find a database entry for "Jarosik:2011"
 Warning--I didn't find a database entry for ""
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 3 entries,
-            3201 wiz_defined-function locations,
-            682 strings with 4978 characters,
-and the built_in function-call counts, 1443 in all, are:
-= -- 124
-> -- 80
-< -- 2
-+ -- 31
-- -- 29
-* -- 103
-:= -- 259
-add.period$ -- 3
-call.type$ -- 3
-change.case$ -- 20
-chr.to.int$ -- 3
-cite$ -- 3
-duplicate$ -- 78
-empty$ -- 104
-format.name$ -- 33
-if$ -- 296
-int.to.chr$ -- 1
-int.to.str$ -- 1
-missing$ -- 3
-newline$ -- 13
-num.names$ -- 12
-pop$ -- 30
+Warning--I didn't find a database entry for "wong2011nanoscale"
+Warning--I didn't find a database entry for "bertoni2011electron"
+Warning--I didn't find a database entry for "Krawczyk:2013"
+You've used 36 entries,
+            1876 wiz_defined-function locations,
+            730 strings with 10214 characters,
+and the built_in function-call counts, 11484 in all, are:
+= -- 1178
+> -- 480
+< -- 0
++ -- 174
+- -- 138
+* -- 844
+:= -- 1600
+add.period$ -- 41
+call.type$ -- 36
+change.case$ -- 31
+chr.to.int$ -- 0
+cite$ -- 36
+duplicate$ -- 576
+empty$ -- 990
+format.name$ -- 138
+if$ -- 2797
+int.to.chr$ -- 0
+int.to.str$ -- 36
+missing$ -- 41
+newline$ -- 116
+num.names$ -- 36
+pop$ -- 76
 preamble$ -- 1
-purify$ -- 20
+purify$ -- 0
 quote$ -- 0
-skip$ -- 49
+skip$ -- 442
 stack$ -- 0
-substring$ -- 67
-swap$ -- 0
+substring$ -- 861
+swap$ -- 284
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 27
+type$ -- 0
 warning$ -- 0
-while$ -- 15
-width$ -- 0
-write$ -- 33
-(There were 2 warnings)
+while$ -- 113
+width$ -- 38
+write$ -- 381
+(There were 4 warnings)

@@ -32,7 +32,8 @@
 
 % Fancy citation extensions
 \usepackage[super,sort&compress,comma]{natbib}
-\bibliographystyle{yahapj}
+%\bibliographystyle{yahapj}
+\bibliographystyle{ieeetr}
 
 % fncychap clobbers \appendix with a silly implementation that breaks
 % hyperlinks to appendix chapters.  Work around this by ignoring their
@@ -72,8 +73,8 @@
 
 \author{Zhihuan Wang}
 \title{Dimensional Dependence of Light Interaction with Nanowires}
-\DUTmonth{September}
-\DUTyear{2016}
+\DUTmonth{June}
+\DUTyear{2017}
 \degree{Doctor of Philosophy}
 \advisor{Dr. Bahram Nabet}
 \copyrighttext{\copyrighttextCCBYSA}
@@ -81,7 +82,7 @@
 \input{pictures/tikzpics}
 
 \begin{document}
-
+\suppressfooter{}
 \include{tex/preamble}
 
 \begin{thesis}
@@ -89,6 +90,8 @@
   \ifdaring{\setstretch{1.3}}{}
   %\ifdaring{\setstretch{1.3}}{\setstretch{1.3}}
   
+  \restorefooter{}
+
   %CHAPTER: Introduction
   \include{tex/Introduction}
   
@@ -99,9 +102,13 @@
   \include{tex/LM}
   
   %CHAPTER: Electronic Density Distribution
+  \suppressfooter{}
+  \rightfooter{}
   \include{tex/ED}
-  
+
   %CHAPTER: Rate Management
+  \suppressfooter{}
+  \restorefooter{}
   \include{tex/RM}
 
   %CHAPTER: Laser Threshold Calculation
@@ -113,14 +120,13 @@
   
 \end{thesis}
 
-\suppressfooter
-
+\suppressfooter{}
 \bibliography{bib/All_refs}
-
-\appendix
-\restorefooter
+\suppressfooter{}
+\restorefooter{}
+\appendix{}
 \include{tex/appendix}
-\suppressfooter
+\suppressfooter{}
 \include{tex/CV}
-\restorefooter
+\restorefooter{}
 \end{document}
