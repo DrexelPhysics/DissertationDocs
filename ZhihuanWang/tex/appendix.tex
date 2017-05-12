@@ -10,9 +10,9 @@ structure.  Finally, this report will discuss the partial confinement on the
 electron in the conduction band without the hole confined in the valence band
 situation.
 
-The Schrödinger equation:
+The Schr{\"o}dinger equation:
 \begin{equation}
-  \HAM\Psi(r,t) = - \frac{\hbar}{i}\\frac{\partial }{\partial t}\Psi(r,t)
+  \HAM\Psi(r,t) = - \frac{\hbar}{i}\frac{\partial}{\partial t}\Psi(r,t)
 \end{equation}
 
 The Hamiltonian $\HAM$ can be expressed as:
@@ -20,18 +20,18 @@ The Hamiltonian $\HAM$ can be expressed as:
   \HAM = \HAM_0 + \HAM^\prime(r,t)
 \end{equation}
 
-where $\HAM_0$ is the unperturbed part Hamiltonian and is time-independent, $\HAM^\prime(r,t)$ is the
-small perturbation.
+where $\HAM_0$ is the unperturbed part Hamiltonian and is time-independent,
+$\HAM^\prime(r,t)$ is the small perturbation.
 
 The solution to the unperturbed part is assumed known:
 
 \begin{eqnarray}
 \begin{aligned}
-  & \HAM_0\Psi_n(r,t) = - \frac{\hbar}{i}\\frac{\partial }{\partial t}\Psi_n(r,t),
+  & \HAM_0\Psi_n(r,t) = - \frac{\hbar}{i}\frac{\partial }{\partial t}\Psi_n(r,t),
   \\
   & \frac{dN_p}{dt} = {\Gamma}v_g{g}N_p + \Gamma\beta_{sp}R_{sp} - \frac{N_p}{\tau_p},
 \end{aligned}
-\label{eq:eight}
+\label{eq:unperturbHAM}
 \end{eqnarray}
 
 The time-dependent perturbation is assumed to have the form
@@ -51,15 +51,134 @@ Expand the wave function in terms of the unperturbed solution, we find out $\Psi
 
 $|a_n(t)|^2$ gives the probability that the electron is in the state n at time t.
 
-Substituting the expansion for $\Psi$ into Schrödinger equation and using (II.3), we
-have
+Substituting the expansion for $\Psi$ into Schr{\"o}dinger equation and using~\ref{eq:unperturbHAM}, we have
 
 \begin{equation}
   \sum_n \frac{da_n(t)}{dt}\Psi_n(r)e^{-iE_{n}t/\hbar} = -\frac{\hbar}{i}\sum_n \HAM^{\prime}(r,t)a_n(t)\Phi_n(r)e^{(-iE_{n}t/\hbar)}
 \end{equation}
 
-Taking the inner product with the wave function ${\Phi_m}^\star(r)$, and using the orthonormal
-property,
+Taking the inner product with the wave function ${\Phi_m}^\star(r)$, and using
+the orthonormal property,
+
+\begin{equation}
+  \int{d^3}\bm{r}{{\Phi^\ast}_m}(\bm{r})\Phi_n(\bm{r}) = \delta_{mn}
+\end{equation}
+
+We find:
+
+\begin{equation}
+\frac{d{a_n(t)}}{dt}=-\frac{i}{\hbar}\sum_{n}a_n(t){\HAM^\prime}_{mn}(t)e^{i\omega_{mn}t}
+\end{equation}
+
+where
+
+
+\begin{eqnarray}
+\begin{aligned}
+  & {\HAM^\prime}_{mn}(t)=\langle{m}|\HAM^\prime(\bm{r},t)|{n}\rangle \\
+  & = \int{\Phi^\ast}_m(\bm{r}){\HAM^\prime}(\bm{r},t)\Psi_n(\bm{r})d^3\bm{r} \\
+  & = {\HAM^\prime}_{mn}e^{-i\omega{t}} + {\HAM^\prime}_{mn}e^{+i\omega{t}}
+\end{aligned}
+\label{eq:HAMintigral}
+\end{eqnarray}
+
+\begin{equation}
+  {\omega_{mn}}=(E_m-E_n)/\hbar
+\end{equation}
+
+and the matrix element is:
+
+\begin{equation}
+  {\HAM^\prime}_{mn}(t)=\int{{\Phi^\ast}_m}(\bm{r})\HAM^\prime(\bm{r},t)\Psi_{n}(\bm{r})d^3\bm{r}
+\end{equation}
+
+Introducing the perturbation parameter $\lambda$
+
+
+\begin{equation}
+  \HAM=\HAM_0+\lambda\HAM^\prime(\bm{r},t)
+\end{equation}
+
+and letting
+
+\begin{equation}
+  a_n(t)={a^{(0)}}_n+\lambda{a^{(1)}}_n(t)+\lambda^2{a^{(2)}}_n(t)+\cdots
+\end{equation}
+
+we can take the derivative and set $\lambda=1$
+
+
+\begin{eqnarray}
+\begin{aligned}
+  & \frac{d{{a^{(0)}}_n(t)}}{dt}=0 \\
+  & \frac{d{{a^{(1)}}_n(t)}}{dt}=-\frac{i}{\hbar}\sum_{n}{a^{(0)}_n(t)}{\HAM^\prime}_{mn}(t)e^{i\omega_{mn}t}
+\\
+  & \frac{d{{a^{(2)}}_n(t)}}{dt}=- \frac{i}{\hbar}\sum_{n}{a^{(1)}_n(t)}{\HAM^\prime}_{mn}(t)e^{i\omega_{mn}t}
+\\
+\label{eq:probility}
+\end{aligned}
+\end{eqnarray}
+
+Thus, the zeroth-order solutions for equation~\ref{eq:probility} are constant. Let the electron be at the state i initially
+
+\begin{equation}
+  {a^{(0)}}_i(t=0)=1; \quad {a^{(0)}}_m(t)=0, \quad m\neq {i}
+\end{equation}
+
+We have the zeroth-order solution
+
+\begin{equation}
+  {a^{(0)}}_i(t=0)=1; \quad {a^{(0)}}_m(t)=0, \quad m\neq {i}
+\end{equation}
+
+Therefore, the electron stays at the state i in the absence of any perturbation. The first order solution is
+
+\begin{eqnarray}
+\begin{aligned}
+  & \frac{d{a^{(1)}_n}}{dt}=-\frac{i}{\hbar}{\HAM^\prime}_{mn}(t)e^{i\omega_{mn}t} \\
+  & = -\frac{i}{\hbar}[{\HAM^\prime}_{mi}e^{-i(\omega_{mi}-\omega)t}+{\HAM^\prime}_{mi}e^{+i(\omega_{mi}-\omega)t}]
+\end{aligned}
+\end{eqnarray}
+
+If for final state $m=f$; then integrate above equation, we have
+
+\begin{equation}
+{a^{(1)}_{f}(t)}=-\frac{i}{\hbar}[{\HAM^\prime}_{fi}\frac{e^{-i(\omega_{mi}-\omega)t}}{\omega_{fi}-\omega}+{\HAM^{\prime+}}_{fi}\frac{e^{+i(\omega_{mi}-\omega)t}}{\omega_{fi}+\omega}]
+\end{equation}
+
+If we consider the photon energy to be near resonance, either $\omega\sim\omega_{fi}$ or $\omega\sim-\omega{fi}$, we find the dominant terms:
+
+\begin{equation}
+  {a^{(1)}_{f}(t)}=\frac{4{|{\HAM^\prime}_{fi}|}^2}{\hbar^2}\frac{{sin}^2\frac{t}{2}(\omega_{fi}-\omega)}{{(\omega_{fi}-\omega)}^2} +\frac{4{|{\HAM^\prime}_{fi}|}^2}{\hbar^2}\frac{{sin}^2\frac{t}{2}(\omega_{fi}+\omega)}{{(\omega_{fi}+\omega)}^2}
+\end{equation}
+
+where the cross-term has been dropped because it is small compared with either of the above two terms.
+
+When the interaction time is long enough, using approcimation
+\begin{equation}
+  \frac{{sin}^2(\frac{xt}{2})}{x^2}\rightarrow \frac{\pi{t}}{2}\delta(x)
+\end{equation}
+
+Then
+
+\begin{equation}
+  {|a^{(1)}_f(t)|}^2= \frac{2\pi{t}}{\hbar^2}{|\HAM^\prime_(fi)|}^2\delta(\omega_{fi}-\omega)+\frac{2\pi{t}}{\hbar^2}{|\HAM^\prime_(fi)|}^2\delta(\omega_{fi}+\omega)
+\end{equation}
+
+The transition rate should be, after using the property of
+
+\begin{equation}
+  \delta(\hbar\omega)=\frac{\delta(w)}{\hbar}
+\end{equation}
+
+\begin{eqnarray}
+\begin{aligned}
+  & W_{if} = \frac{d{|a^{(1)}_f(t)|}^2}{dt} \\ 
+  &  \frac{2\pi}{\hbar}{|\HAM^\prime_(fi)|}^2\delta(E_{f}-E_{i}-\hbar\omega)+\frac{2\pi}{\hbar}{|\HAM^\prime_(fi)|}^2\delta(E_{f}-E_{i}+\hbar\omega)
+\end{aligned}
+\end{eqnarray}
+
+where $E_f = E_i+ \hbar\omega$ represents the absorption of a photon by an electron, and $E_f = E_i - \hbar\omega$ corresponds with the emission of a photon.
 
 \begin{equation}
   {I_{hm}^{en}}=\int_{-\infty}^\infty{\Phi_n^\ast}(z){g_m(z)}\,\mathrm{d}z,
@@ -317,4 +436,16 @@ For a multiple quantum-well (MQW) lasers, we have to multiply the single-well co
 \end{equation}
 
 
+\chapter{MEEP Simulation Code} \label{ch:meepcode} 
+\section{Cylindrical Core-Shell Nanowire}
 
+%\SyntaxHighLighting{}
+\lstinputlisting[language=Scheme]{snippet/sourcecode/CylindCS.ctl}
+
+\section{Hexagonal Core-Shell Nanowire}
+%\SyntaxHighLighting{}
+\lstinputlisting[language=Scheme]{snippet/sourcecode/HexCS3D.ctl}
+
+\chapter{Gain Spectrum and Threshold Calculation Matlab Code} \label{ch:matlabcode} 
+%\SyntaxHighLighting{}
+\lstinputlisting[language=matlab]{snippet/sourcecode/gain1band.m}

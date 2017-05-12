@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Crowding Effects}{5}{0}{2}
+\beamer@sectionintoc {3}{Experimental starting points}{11}{0}{3}
+\beamer@sectionintoc {4}{Monte Carlo Techniques}{14}{0}{4}
+\beamer@sectionintoc {5}{Modeling and Results}{19}{0}{5}
+\beamer@sectionintoc {6}{Extensions and Future Work}{30}{0}{6}

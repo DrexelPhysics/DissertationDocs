@@ -13,49 +13,48 @@ A level-1 auxiliary file: tex/Conclusion.aux
 A level-1 auxiliary file: tex/appendix.aux
 A level-1 auxiliary file: tex/CV.aux
 Database file #1: bib/All_refs.bib
-Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "wong2011nanoscale"
 Warning--I didn't find a database entry for "bertoni2011electron"
 Warning--I didn't find a database entry for "Krawczyk:2013"
-You've used 36 entries,
+You've used 46 entries,
             1876 wiz_defined-function locations,
-            730 strings with 10214 characters,
-and the built_in function-call counts, 11484 in all, are:
-= -- 1178
-> -- 480
+            788 strings with 11972 characters,
+and the built_in function-call counts, 15105 in all, are:
+= -- 1554
+> -- 635
 < -- 0
-+ -- 174
-- -- 138
-* -- 844
-:= -- 1600
-add.period$ -- 41
-call.type$ -- 36
-change.case$ -- 31
++ -- 229
+- -- 183
+* -- 1121
+:= -- 2097
+add.period$ -- 51
+call.type$ -- 46
+change.case$ -- 41
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 576
-empty$ -- 990
-format.name$ -- 138
-if$ -- 2797
+cite$ -- 46
+duplicate$ -- 754
+empty$ -- 1284
+format.name$ -- 183
+if$ -- 3679
 int.to.chr$ -- 0
-int.to.str$ -- 36
-missing$ -- 41
-newline$ -- 116
-num.names$ -- 36
-pop$ -- 76
+int.to.str$ -- 46
+missing$ -- 51
+newline$ -- 146
+num.names$ -- 46
+pop$ -- 88
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 442
+skip$ -- 595
 stack$ -- 0
-substring$ -- 861
-swap$ -- 284
+substring$ -- 1159
+swap$ -- 382
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 113
-width$ -- 38
-write$ -- 381
-(There were 4 warnings)
+while$ -- 149
+width$ -- 48
+write$ -- 491
+(There were 3 warnings)

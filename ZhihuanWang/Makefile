@@ -2,7 +2,7 @@ all:
 	pdflatex thesis.tex
 	bibtex thesis.aux
 	pdflatex thesis.tex
-	pdflatex thesis.tex
+	#pdflatex thesis.tex
 
 OS := $(shell uname)
 view:

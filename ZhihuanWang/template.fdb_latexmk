@@ -1,5 +1,5 @@
 # Fdb version 3
-["bibtex template"] 1474298363 "template.aux" "template.bbl" "template" 1474298386
+["bibtex template"] 1474298363 "template.aux" "template.bbl" "template" 1494512681
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
   "references.bib" 0 -1 0 ""
   "template.aux" 1474298364 1210 728b3c8b2381dca72d3fd24f14bad2e6 ""
@@ -7,7 +7,7 @@
   (generated)
   "template.bbl"
   "template.blg"
-["pdflatex"] 1474298363 "template.tex" "template.pdf" "template" 1474298386
+["pdflatex"] 1474298363 "template.tex" "template.pdf" "template" 1494512681
   "/etc/texmf/web2c/texmf.cnf" 1466717701 1101 af7716885e081ab43982cab7b4672c1a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -66,20 +66,20 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1392645748 31083 1dfd8bf685ce0009c40532fedf8a7c53 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1466717806 1346346 7f2b8b715a9ddb095afe3697a6ba02b5 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1466717766 3822874 37d63ff2409f30ad102928b4b0d4d6ae ""
-  "drexel-logo.pdf" 1466696715 7389 650600af02ecb06b9e398e73c92669e2 ""
-  "drexel-thesis.cls" 1469914849 51963 292724436f87dccd2290fc0ed414e601 ""
+  "drexel-logo.pdf" 1475852695 7389 650600af02ecb06b9e398e73c92669e2 ""
+  "drexel-thesis.cls" 1493654930 51963 292724436f87dccd2290fc0ed414e601 ""
   "template.aux" 1474298364 1210 728b3c8b2381dca72d3fd24f14bad2e6 ""
   "template.bbl" 1474298363 49 0eba253fc001332e731e8aba3f23127b "bibtex template"
   "template.lof" 1474298364 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "template.lot" 1474298364 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "template.lot" 1475852696 0 d41d8cd98f00b204e9800998ecf8427e ""
   "template.out" 1474298364 764 267c1cc67f1db7c4c975c61e32fec55d ""
-  "template.tex" 1466698210 2031 4f63b3398622a0914998a35d22e1c5ec ""
+  "template.tex" 1475852696 2031 4f63b3398622a0914998a35d22e1c5ec ""
   "template.toc" 1474298364 401 5c8260268d1c29a52ed4b5a340f2cbd5 ""
   (generated)
-  "template.out"
-  "template.lof"
   "template.pdf"
-  "template.toc"
   "template.log"
   "template.lot"
   "template.aux"
+  "template.out"
+  "template.lof"
+  "template.toc"

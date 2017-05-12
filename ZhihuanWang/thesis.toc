@@ -1,80 +1,83 @@
 \contentsline {chapter}{List of Tables}{ix}{section*.4}
 \contentsline {chapter}{List of Figures}{x}{section*.5}
-\contentsline {chapter}{Abstract}{xii}{section*.6}
+\contentsline {chapter}{Abstract}{xiii}{section*.6}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Background}{3}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Photonics and Optoelectronics}{3}{subsection.1.1.1}
 \contentsline {subsection}{\numberline {1.1.2}Core-Shell Nanowires}{4}{subsection.1.1.2}
 \contentsline {section}{\numberline {1.2}Literature Review}{6}{section.1.2}
 \contentsline {section}{\numberline {1.3}Scope and Organization of the Dissertation}{7}{section.1.3}
-\contentsline {chapter}{\numberline {2}Optical Enhancement of Core-Shell Nanowire}{8}{chapter.2}
-\contentsline {section}{\numberline {2.1}Growth of Nanowires}{9}{section.2.1}
-\contentsline {section}{\numberline {2.2}Scanning Electron Microscopy Images}{10}{section.2.2}
-\contentsline {section}{\numberline {2.3}Electrical Characterization of Nanowire}{12}{section.2.3}
-\contentsline {section}{\numberline {2.4}Absorption Enhancement}{12}{section.2.4}
-\contentsline {section}{\numberline {2.5}Emission Enhancement}{12}{section.2.5}
-\contentsline {section}{\numberline {2.6}Lasing}{12}{section.2.6}
-\contentsline {chapter}{\numberline {3}Light confinement in sub-wavelength nano-structure}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}Light and Nanowire}{17}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Leaky Mode Resonance}{17}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Whispering Gallery Modes}{18}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Fabry-P{\'e}rot Resonant Mode}{20}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Helical Resonance Modes}{21}{subsection.3.1.4}
-\contentsline {section}{\numberline {3.2}Volumetric Modes}{23}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Nanocavity Geometry Dependence}{23}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Light Engineering of sub-wavelength Nano-structure}{23}{subsection.3.2.2}
-\contentsline {chapter}{\numberline {4}Reduced Electronic Density Distribution}{31}{chapter.4}
-\contentsline {section}{\numberline {4.1}Self-consistent Schr{\"o}dinger-Poisson Solver}{32}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Finite Element Method}{32}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Variational form of Schr{\"o}dinger and Poisson equations}{33}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Numerical Implementation}{34}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Electronic Distribution in Nanowires}{35}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Cylindrical Core-Shell Nanowire}{37}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Hexagonal Core-shell Nanowire}{37}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Conclusions}{39}{section.4.3}
-\contentsline {chapter}{\numberline {5}Dimensional Dependence of Optical Transition Rates}{41}{chapter.5}
-\contentsline {section}{\numberline {5.1}Time-dependent Perturbation Theory}{41}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}}{41}{subsection.5.1.1}
-\contentsline {section}{\numberline {5.2}Upward and Downward Transition Rates}{41}{section.5.2}
-\contentsline {section}{\numberline {5.3}Contributing Factors}{41}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Overlap Integral}{41}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Oscillator Strength}{41}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Joint Optical Density of States}{41}{subsection.5.3.3}
-\contentsline {chapter}{\numberline {6}Modeling Lasing Threshold}{45}{chapter.6}
-\contentsline {section}{\numberline {6.1}History of Semiconductor Lasers}{45}{section.6.1}
-\contentsline {section}{\numberline {6.2}Principle of Semiconductor Lasers}{45}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Absorption of Light}{46}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Optical Gain}{46}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Feedback and Laser Threshold}{51}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Types of semiconductor Lasers}{51}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Fabry-Perot Semiconductor Lasers}{51}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Grating-Based semiconductor Lasers}{52}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Vertical-Cavity Surface-Emitting Lasers}{52}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Grating Surface-Emitting Lasers}{52}{subsection.6.3.4}
-\contentsline {section}{\numberline {6.4}Characteristics of Semiconductor Lasers}{52}{section.6.4}
-\contentsline {section}{\numberline {6.5}Basic Requrement for Design of Semiconductor Lasers}{52}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Spectral width and Linewidth}{52}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Operating Wavelength, Switching Time, and Modulation}{53}{subsection.6.5.2}
-\contentsline {section}{\numberline {6.6}Modeling of Semiconductor Lasers}{53}{section.6.6}
-\contentsline {section}{\numberline {6.7}Laser Rate Equations}{54}{section.6.7}
-\contentsline {section}{\numberline {6.8}Wave Model of Semiconductor Lasers}{57}{section.6.8}
-\contentsline {section}{\numberline {6.9}Linewidth Enhancement Factor}{57}{section.6.9}
-\contentsline {section}{\numberline {6.10}Implementations}{58}{section.6.10}
-\contentsline {subsection}{\numberline {6.10.1}Optical Modes}{58}{subsection.6.10.1}
-\contentsline {subsection}{\numberline {6.10.2}Steady State Analysis}{58}{subsection.6.10.2}
-\contentsline {subsection}{\numberline {6.10.3}Dynamic State Analysis}{58}{subsection.6.10.3}
-\contentsline {section}{\numberline {6.11}Simulation Results}{58}{section.6.11}
-\contentsline {subsection}{\numberline {6.11.1}Input Parameters}{58}{subsection.6.11.1}
-\contentsline {subsection}{\numberline {6.11.2}Optical Modes}{58}{subsection.6.11.2}
-\contentsline {subsection}{\numberline {6.11.3}Steady State Analysis}{58}{subsection.6.11.3}
-\contentsline {subsection}{\numberline {6.11.4}Dynamic State Analysis}{58}{subsection.6.11.4}
-\contentsline {chapter}{\numberline {7}Conclusions and Future Research}{59}{chapter.7}
-\contentsline {section}{\numberline {7.1}Contributions of this dissertation}{60}{section.7.1}
-\contentsline {section}{\numberline {7.2}Outline of the future work}{60}{section.7.2}
-\contentsline {chapter}{Bibliography}{65}{section*.38}
+\contentsline {chapter}{\numberline {2}Optical Enhancement of Core-Shell Nanowire}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Growth of Nanowires}{10}{section.2.1}
+\contentsline {section}{\numberline {2.2}Scanning Electron Microscopy Images}{11}{section.2.2}
+\contentsline {section}{\numberline {2.3}Electrical Characterization of Nanowire}{11}{section.2.3}
+\contentsline {section}{\numberline {2.4}Absorption Enhancement}{13}{section.2.4}
+\contentsline {section}{\numberline {2.5}Emission Enhancement}{17}{section.2.5}
+\contentsline {section}{\numberline {2.6}Lasing}{18}{section.2.6}
+\contentsline {chapter}{\numberline {3}Light confinement in sub-wavelength nano-structure}{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}Light and Nanowire}{21}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Leaky Mode Resonance}{21}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Whispering Gallery Modes}{22}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Fabry-P{\'e}rot Resonant Mode}{24}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Helical Resonance Modes}{25}{subsection.3.1.4}
+\contentsline {section}{\numberline {3.2}Volumetric Modes}{27}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Nanocavity Geometry Dependence}{27}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Light Engineering of sub-wavelength Nano-structure}{27}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {4}Reduced Electronic Density Distribution}{35}{chapter.4}
+\contentsline {section}{\numberline {4.1}Self-consistent Schr{\"o}dinger-Poisson Solver}{36}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Finite Element Method}{36}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Variational form of Schr{\"o}dinger and Poisson equations}{37}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Numerical Implementation}{38}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Electronic Distribution in Nanowires}{39}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Cylindrical Core-Shell Nanowire}{41}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Hexagonal Core-shell Nanowire}{41}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Conclusions}{43}{section.4.3}
+\contentsline {chapter}{\numberline {5}Dimensional Dependence of Optical Transition Rates}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}Time-dependent Perturbation Theory}{45}{section.5.1}
+\contentsline {section}{\numberline {5.2}Upward and Downward Transition Rates}{45}{section.5.2}
+\contentsline {section}{\numberline {5.3}Contributing Factors}{45}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Overlap Integral}{45}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Oscillator Strength}{45}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Joint Optical Density of States}{46}{subsection.5.3.3}
+\contentsline {chapter}{\numberline {6}Modeling Lasing Threshold}{50}{chapter.6}
+\contentsline {section}{\numberline {6.1}History of Semiconductor Lasers}{50}{section.6.1}
+\contentsline {section}{\numberline {6.2}Principle of Semiconductor Lasers}{50}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Absorption of Light}{51}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Optical Gain}{51}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Feedback and Laser Threshold}{56}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Types of semiconductor Lasers}{56}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Fabry-Perot Semiconductor Lasers}{56}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Grating-Based semiconductor Lasers}{57}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Vertical-Cavity Surface-Emitting Lasers}{57}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Grating Surface-Emitting Lasers}{57}{subsection.6.3.4}
+\contentsline {section}{\numberline {6.4}Characteristics of Semiconductor Lasers}{57}{section.6.4}
+\contentsline {section}{\numberline {6.5}Basic Requrement for Design of Semiconductor Lasers}{57}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Spectral width and Linewidth}{57}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Operating Wavelength, Switching Time, and Modulation}{58}{subsection.6.5.2}
+\contentsline {section}{\numberline {6.6}Modeling of Semiconductor Lasers}{58}{section.6.6}
+\contentsline {section}{\numberline {6.7}Laser Rate Equations}{59}{section.6.7}
+\contentsline {section}{\numberline {6.8}Wave Model of Semiconductor Lasers}{62}{section.6.8}
+\contentsline {section}{\numberline {6.9}Linewidth Enhancement Factor}{62}{section.6.9}
+\contentsline {section}{\numberline {6.10}Implementations}{63}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}Optical Modes}{63}{subsection.6.10.1}
+\contentsline {subsection}{\numberline {6.10.2}Steady State Analysis}{63}{subsection.6.10.2}
+\contentsline {subsection}{\numberline {6.10.3}Dynamic State Analysis}{63}{subsection.6.10.3}
+\contentsline {section}{\numberline {6.11}Simulation Results}{63}{section.6.11}
+\contentsline {subsection}{\numberline {6.11.1}Input Parameters}{63}{subsection.6.11.1}
+\contentsline {subsection}{\numberline {6.11.2}Optical Modes}{63}{subsection.6.11.2}
+\contentsline {subsection}{\numberline {6.11.3}Steady State Analysis}{63}{subsection.6.11.3}
+\contentsline {subsection}{\numberline {6.11.4}Dynamic State Analysis}{63}{subsection.6.11.4}
+\contentsline {chapter}{\numberline {7}Conclusions and Future Research}{64}{chapter.7}
+\contentsline {section}{\numberline {7.1}Contributions of this dissertation}{65}{section.7.1}
+\contentsline {section}{\numberline {7.2}Outline of the future work}{65}{section.7.2}
+\contentsline {chapter}{Bibliography}{70}{section*.41}
 \cftsetindents {chapter}{0pt}{6.5em} \renewcommand {\cftchappresnum }{\appendixname \nobreakspace {}} \renewcommand {\cftchapaftersnum }{:}
-\contentsline {chapter}{\numberline {A}Transition Rates}{68}{appendix.A}
-\contentsline {chapter}{\numberline {B}Semiconductor Laser Modeling}{71}{appendix.B}
-\contentsline {section}{\numberline {B.1}Threshold or Steady-State Gain in Lasers}{73}{section.B.1}
-\contentsline {section}{\numberline {B.2}Threshold Current and Output Power}{75}{section.B.2}
-\contentsline {chapter}{Vita}{78}{section*.39}
+\contentsline {chapter}{\numberline {A}Transition Rates}{73}{appendix.A}
+\contentsline {chapter}{\numberline {B}Semiconductor Laser Modeling}{79}{appendix.B}
+\contentsline {section}{\numberline {B.1}Threshold or Steady-State Gain in Lasers}{81}{section.B.1}
+\contentsline {section}{\numberline {B.2}Threshold Current and Output Power}{83}{section.B.2}
+\contentsline {chapter}{\numberline {C}MEEP Simulation Code}{86}{appendix.C}
+\contentsline {section}{\numberline {C.1}Cylindrical Core-Shell Nanowire}{86}{section.C.1}
+\contentsline {section}{\numberline {C.2}Hexagonal Core-Shell Nanowire}{88}{section.C.2}
+\contentsline {chapter}{\numberline {D}Gain Spectrum and Threshold Calculation Matlab Code}{91}{appendix.D}
+\contentsline {chapter}{Vita}{102}{section*.42}

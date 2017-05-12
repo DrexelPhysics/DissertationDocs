@@ -15,7 +15,7 @@
 \usepackage{marvosym}
 \usepackage{url,parskip}   %other packages for formatting
 \RequirePackage{color,graphicx}
-%\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[usenames,dvipsnames]{xcolor}
 %\usepackage{fullpage} 
 \usepackage{longtable}
 \usepackage[super]{nth}
@@ -23,9 +23,12 @@
 \usepackage{verbatim}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{bm}
 \usepackage{placeins}   % To allow pictures to flush after a section
 \usepackage{setspace}
 \usepackage{nth}
+\usepackage{listings}   % Source code highlighting and formatting
+\usepackage{hyperref}   % Hyperlinks for forms and links within the text
 
 % Draft mode on the pictures
 % \setkeys{gin}{draft}
@@ -57,6 +60,7 @@
 \ChNameVar{\Large \sc \bf}
 
 \input{supplement/customizations}
+\SyntaxHighLighting{}
 
 \includeonly{
 	tex/preamble,           %Dedications, acknowledgments, TOC, and abstract
@@ -124,6 +128,8 @@
 \bibliography{bib/All_refs}
 \suppressfooter{}
 \restorefooter{}
+%\syntaxhighlighting{}
+
 \appendix{}
 \include{tex/appendix}
 \suppressfooter{}

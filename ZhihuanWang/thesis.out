@@ -41,47 +41,50 @@
 \BOOKMARK [1][-]{section.4.3}{Conclusions}{chapter.4}% 41
 \BOOKMARK [0][-]{chapter.5}{Dimensional Dependence of Optical Transition Rates}{Main Matter.-1}% 42
 \BOOKMARK [1][-]{section.5.1}{Time-dependent Perturbation Theory}{chapter.5}% 43
-\BOOKMARK [2][-]{subsection.5.1.1}{}{section.5.1}% 44
-\BOOKMARK [1][-]{section.5.2}{Upward and Downward Transition Rates}{chapter.5}% 45
-\BOOKMARK [1][-]{section.5.3}{Contributing Factors}{chapter.5}% 46
-\BOOKMARK [2][-]{subsection.5.3.1}{Overlap Integral}{section.5.3}% 47
-\BOOKMARK [2][-]{subsection.5.3.2}{Oscillator Strength}{section.5.3}% 48
-\BOOKMARK [2][-]{subsection.5.3.3}{Joint Optical Density of States}{section.5.3}% 49
-\BOOKMARK [0][-]{chapter.6}{Modeling Lasing Threshold}{Main Matter.-1}% 50
-\BOOKMARK [1][-]{section.6.1}{History of Semiconductor Lasers}{chapter.6}% 51
-\BOOKMARK [1][-]{section.6.2}{Principle of Semiconductor Lasers}{chapter.6}% 52
-\BOOKMARK [2][-]{subsection.6.2.1}{Absorption of Light}{section.6.2}% 53
-\BOOKMARK [2][-]{subsection.6.2.2}{Optical Gain}{section.6.2}% 54
-\BOOKMARK [2][-]{subsection.6.2.3}{Feedback and Laser Threshold}{section.6.2}% 55
-\BOOKMARK [1][-]{section.6.3}{Types of semiconductor Lasers}{chapter.6}% 56
-\BOOKMARK [2][-]{subsection.6.3.1}{Fabry-Perot Semiconductor Lasers}{section.6.3}% 57
-\BOOKMARK [2][-]{subsection.6.3.2}{Grating-Based semiconductor Lasers}{section.6.3}% 58
-\BOOKMARK [2][-]{subsection.6.3.3}{Vertical-Cavity Surface-Emitting Lasers}{section.6.3}% 59
-\BOOKMARK [2][-]{subsection.6.3.4}{Grating Surface-Emitting Lasers}{section.6.3}% 60
-\BOOKMARK [1][-]{section.6.4}{Characteristics of Semiconductor Lasers}{chapter.6}% 61
-\BOOKMARK [1][-]{section.6.5}{Basic Requrement for Design of Semiconductor Lasers}{chapter.6}% 62
-\BOOKMARK [2][-]{subsection.6.5.1}{Spectral width and Linewidth}{section.6.5}% 63
-\BOOKMARK [2][-]{subsection.6.5.2}{Operating Wavelength, Switching Time, and Modulation}{section.6.5}% 64
-\BOOKMARK [1][-]{section.6.6}{Modeling of Semiconductor Lasers}{chapter.6}% 65
-\BOOKMARK [1][-]{section.6.7}{Laser Rate Equations}{chapter.6}% 66
-\BOOKMARK [1][-]{section.6.8}{Wave Model of Semiconductor Lasers}{chapter.6}% 67
-\BOOKMARK [1][-]{section.6.9}{Linewidth Enhancement Factor}{chapter.6}% 68
-\BOOKMARK [1][-]{section.6.10}{Implementations}{chapter.6}% 69
-\BOOKMARK [2][-]{subsection.6.10.1}{Optical Modes}{section.6.10}% 70
-\BOOKMARK [2][-]{subsection.6.10.2}{Steady State Analysis}{section.6.10}% 71
-\BOOKMARK [2][-]{subsection.6.10.3}{Dynamic State Analysis}{section.6.10}% 72
-\BOOKMARK [1][-]{section.6.11}{Simulation Results}{chapter.6}% 73
-\BOOKMARK [2][-]{subsection.6.11.1}{Input Parameters}{section.6.11}% 74
-\BOOKMARK [2][-]{subsection.6.11.2}{Optical Modes}{section.6.11}% 75
-\BOOKMARK [2][-]{subsection.6.11.3}{Steady State Analysis}{section.6.11}% 76
-\BOOKMARK [2][-]{subsection.6.11.4}{Dynamic State Analysis}{section.6.11}% 77
-\BOOKMARK [0][-]{chapter.7}{Conclusions and Future Research}{Main Matter.-1}% 78
-\BOOKMARK [1][-]{section.7.1}{Contributions of this dissertation}{chapter.7}% 79
-\BOOKMARK [1][-]{section.7.2}{Outline of the future work}{chapter.7}% 80
-\BOOKMARK [-1][-]{Back Matter.-1}{Back Matter}{}% 81
-\BOOKMARK [0][-]{section*.38}{Bibliography}{Back Matter.-1}% 82
-\BOOKMARK [0][-]{appendix.A}{Transition Rates}{Back Matter.-1}% 83
-\BOOKMARK [0][-]{appendix.B}{Semiconductor Laser Modeling}{Back Matter.-1}% 84
-\BOOKMARK [1][-]{section.B.1}{Threshold or Steady-State Gain in Lasers}{appendix.B}% 85
-\BOOKMARK [1][-]{section.B.2}{Threshold Current and Output Power}{appendix.B}% 86
-\BOOKMARK [0][-]{section*.39}{Vita}{Back Matter.-1}% 87
+\BOOKMARK [1][-]{section.5.2}{Upward and Downward Transition Rates}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.3}{Contributing Factors}{chapter.5}% 45
+\BOOKMARK [2][-]{subsection.5.3.1}{Overlap Integral}{section.5.3}% 46
+\BOOKMARK [2][-]{subsection.5.3.2}{Oscillator Strength}{section.5.3}% 47
+\BOOKMARK [2][-]{subsection.5.3.3}{Joint Optical Density of States}{section.5.3}% 48
+\BOOKMARK [0][-]{chapter.6}{Modeling Lasing Threshold}{Main Matter.-1}% 49
+\BOOKMARK [1][-]{section.6.1}{History of Semiconductor Lasers}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.2}{Principle of Semiconductor Lasers}{chapter.6}% 51
+\BOOKMARK [2][-]{subsection.6.2.1}{Absorption of Light}{section.6.2}% 52
+\BOOKMARK [2][-]{subsection.6.2.2}{Optical Gain}{section.6.2}% 53
+\BOOKMARK [2][-]{subsection.6.2.3}{Feedback and Laser Threshold}{section.6.2}% 54
+\BOOKMARK [1][-]{section.6.3}{Types of semiconductor Lasers}{chapter.6}% 55
+\BOOKMARK [2][-]{subsection.6.3.1}{Fabry-Perot Semiconductor Lasers}{section.6.3}% 56
+\BOOKMARK [2][-]{subsection.6.3.2}{Grating-Based semiconductor Lasers}{section.6.3}% 57
+\BOOKMARK [2][-]{subsection.6.3.3}{Vertical-Cavity Surface-Emitting Lasers}{section.6.3}% 58
+\BOOKMARK [2][-]{subsection.6.3.4}{Grating Surface-Emitting Lasers}{section.6.3}% 59
+\BOOKMARK [1][-]{section.6.4}{Characteristics of Semiconductor Lasers}{chapter.6}% 60
+\BOOKMARK [1][-]{section.6.5}{Basic Requrement for Design of Semiconductor Lasers}{chapter.6}% 61
+\BOOKMARK [2][-]{subsection.6.5.1}{Spectral width and Linewidth}{section.6.5}% 62
+\BOOKMARK [2][-]{subsection.6.5.2}{Operating Wavelength, Switching Time, and Modulation}{section.6.5}% 63
+\BOOKMARK [1][-]{section.6.6}{Modeling of Semiconductor Lasers}{chapter.6}% 64
+\BOOKMARK [1][-]{section.6.7}{Laser Rate Equations}{chapter.6}% 65
+\BOOKMARK [1][-]{section.6.8}{Wave Model of Semiconductor Lasers}{chapter.6}% 66
+\BOOKMARK [1][-]{section.6.9}{Linewidth Enhancement Factor}{chapter.6}% 67
+\BOOKMARK [1][-]{section.6.10}{Implementations}{chapter.6}% 68
+\BOOKMARK [2][-]{subsection.6.10.1}{Optical Modes}{section.6.10}% 69
+\BOOKMARK [2][-]{subsection.6.10.2}{Steady State Analysis}{section.6.10}% 70
+\BOOKMARK [2][-]{subsection.6.10.3}{Dynamic State Analysis}{section.6.10}% 71
+\BOOKMARK [1][-]{section.6.11}{Simulation Results}{chapter.6}% 72
+\BOOKMARK [2][-]{subsection.6.11.1}{Input Parameters}{section.6.11}% 73
+\BOOKMARK [2][-]{subsection.6.11.2}{Optical Modes}{section.6.11}% 74
+\BOOKMARK [2][-]{subsection.6.11.3}{Steady State Analysis}{section.6.11}% 75
+\BOOKMARK [2][-]{subsection.6.11.4}{Dynamic State Analysis}{section.6.11}% 76
+\BOOKMARK [0][-]{chapter.7}{Conclusions and Future Research}{Main Matter.-1}% 77
+\BOOKMARK [1][-]{section.7.1}{Contributions of this dissertation}{chapter.7}% 78
+\BOOKMARK [1][-]{section.7.2}{Outline of the future work}{chapter.7}% 79
+\BOOKMARK [-1][-]{Back Matter.-1}{Back Matter}{}% 80
+\BOOKMARK [0][-]{section*.41}{Bibliography}{Back Matter.-1}% 81
+\BOOKMARK [0][-]{appendix.A}{Transition Rates}{Back Matter.-1}% 82
+\BOOKMARK [0][-]{appendix.B}{Semiconductor Laser Modeling}{Back Matter.-1}% 83
+\BOOKMARK [1][-]{section.B.1}{Threshold or Steady-State Gain in Lasers}{appendix.B}% 84
+\BOOKMARK [1][-]{section.B.2}{Threshold Current and Output Power}{appendix.B}% 85
+\BOOKMARK [0][-]{appendix.C}{MEEP Simulation Code}{Back Matter.-1}% 86
+\BOOKMARK [1][-]{section.C.1}{Cylindrical Core-Shell Nanowire}{appendix.C}% 87
+\BOOKMARK [1][-]{section.C.2}{Hexagonal Core-Shell Nanowire}{appendix.C}% 88
+\BOOKMARK [0][-]{appendix.D}{Gain Spectrum and Threshold Calculation Matlab Code}{Back Matter.-1}% 89
+\BOOKMARK [0][-]{section*.42}{Vita}{Back Matter.-1}% 90
