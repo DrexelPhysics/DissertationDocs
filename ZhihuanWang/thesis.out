@@ -1,0 +1,97 @@
+\BOOKMARK [-1][-]{Front Matter.-1}{Front Matter}{}% 1
+\BOOKMARK [0][-]{Title Page.0}{Title Page}{Front Matter.-1}% 2
+\BOOKMARK [0][-]{Copyright Page.0}{Copyright Page}{Front Matter.-1}% 3
+\BOOKMARK [0][-]{Dedications.0}{Dedications}{Front Matter.-1}% 4
+\BOOKMARK [0][-]{Acknowledgments.0}{Acknowledgments}{Front Matter.-1}% 5
+\BOOKMARK [0][-]{Table of Contents.0}{Table of Contents}{Front Matter.-1}% 6
+\BOOKMARK [0][-]{section*.4}{List of Tables}{Front Matter.-1}% 7
+\BOOKMARK [0][-]{section*.5}{List of Figures}{Front Matter.-1}% 8
+\BOOKMARK [0][-]{section*.6}{Abstract}{Front Matter.-1}% 9
+\BOOKMARK [-1][-]{Main Matter.-1}{Main Matter}{}% 10
+\BOOKMARK [0][-]{chapter.1}{Introduction}{Main Matter.-1}% 11
+\BOOKMARK [1][-]{section.1.1}{Background}{chapter.1}% 12
+\BOOKMARK [2][-]{subsection.1.1.1}{Photonics and Optoelectronics}{section.1.1}% 13
+\BOOKMARK [2][-]{subsection.1.1.2}{Core-Shell Nanowires}{section.1.1}% 14
+\BOOKMARK [1][-]{section.1.2}{Literature Review}{chapter.1}% 15
+\BOOKMARK [1][-]{section.1.3}{Scope and Organization of the Dissertation}{chapter.1}% 16
+\BOOKMARK [0][-]{chapter.2}{Optical Enhancement of Core-Shell Nanowire}{Main Matter.-1}% 17
+\BOOKMARK [1][-]{section.2.1}{Growth of Nanowires}{chapter.2}% 18
+\BOOKMARK [1][-]{section.2.2}{Scanning Electron Microscopy Images}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.3}{Electrical Characterization of Nanowire}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.4}{Electro-Optically Sampled Time Response}{chapter.2}% 21
+\BOOKMARK [1][-]{section.2.5}{Optical Characterization of Nanowire}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.5.1}{Absorption Enhancement}{section.2.5}% 23
+\BOOKMARK [1][-]{section.2.6}{Emission Enhancement}{chapter.2}% 24
+\BOOKMARK [1][-]{section.2.7}{Lasing}{chapter.2}% 25
+\BOOKMARK [0][-]{chapter.3}{Light confinement in sub-wavelength nano-structure}{Main Matter.-1}% 26
+\BOOKMARK [1][-]{section.3.1}{Light and Nanowire}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.1.1}{Leaky Mode Resonance}{section.3.1}% 28
+\BOOKMARK [2][-]{subsection.3.1.2}{Whispering Gallery Modes}{section.3.1}% 29
+\BOOKMARK [2][-]{subsection.3.1.3}{Fabry-P\351rot Resonant Mode}{section.3.1}% 30
+\BOOKMARK [2][-]{subsection.3.1.4}{Helical Resonance Modes}{section.3.1}% 31
+\BOOKMARK [1][-]{section.3.2}{Volumetric Modes}{chapter.3}% 32
+\BOOKMARK [2][-]{subsection.3.2.1}{Nanocavity Geometry Dependence}{section.3.2}% 33
+\BOOKMARK [2][-]{subsection.3.2.2}{Light Engineering of sub-wavelength Nano-structure}{section.3.2}% 34
+\BOOKMARK [0][-]{chapter.4}{Reduced Electronic Density Distribution}{Main Matter.-1}% 35
+\BOOKMARK [1][-]{section.4.1}{Self-consistent Schr\366dinger-Poisson Solver}{chapter.4}% 36
+\BOOKMARK [2][-]{subsection.4.1.1}{Finite Element Method}{section.4.1}% 37
+\BOOKMARK [2][-]{subsection.4.1.2}{Variational form of Schr\366dinger and Poisson equations}{section.4.1}% 38
+\BOOKMARK [2][-]{subsection.4.1.3}{Numerical Implementation}{section.4.1}% 39
+\BOOKMARK [1][-]{section.4.2}{Electronic Distribution in Nanowires}{chapter.4}% 40
+\BOOKMARK [2][-]{subsection.4.2.1}{Cylindrical Core-Shell Nanowire}{section.4.2}% 41
+\BOOKMARK [2][-]{subsection.4.2.2}{Hexagonal Core-shell Nanowire}{section.4.2}% 42
+\BOOKMARK [1][-]{section.4.3}{Conclusions}{chapter.4}% 43
+\BOOKMARK [0][-]{chapter.5}{Dimensional Dependence of Optical Transition Rates}{Main Matter.-1}% 44
+\BOOKMARK [1][-]{section.5.1}{Time-dependent Perturbation Theory}{chapter.5}% 45
+\BOOKMARK [2][-]{subsection.5.1.1}{Fermi's Golden Rule}{section.5.1}% 46
+\BOOKMARK [1][-]{section.5.2}{Interband Absorption for a Bulk Semiconductor}{chapter.5}% 47
+\BOOKMARK [1][-]{section.5.3}{Interband Absorption and Gain in A Quantum Well}{chapter.5}% 48
+\BOOKMARK [1][-]{section.5.4}{Interband Absorption and Gain in A Quantum Wire}{chapter.5}% 49
+\BOOKMARK [1][-]{section.5.5}{Partial Confinement on the Electron in Conduction Band}{chapter.5}% 50
+\BOOKMARK [1][-]{section.5.6}{Upward and Downward Transition Rates}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.7}{Contributing Factors}{chapter.5}% 52
+\BOOKMARK [2][-]{subsection.5.7.1}{Overlap Integral}{section.5.7}% 53
+\BOOKMARK [2][-]{subsection.5.7.2}{Oscillator Strength}{section.5.7}% 54
+\BOOKMARK [2][-]{subsection.5.7.3}{Joint Optical Density of States}{section.5.7}% 55
+\BOOKMARK [0][-]{chapter.6}{Modeling Lasing Threshold}{Main Matter.-1}% 56
+\BOOKMARK [1][-]{section.6.1}{History of Semiconductor Lasers}{chapter.6}% 57
+\BOOKMARK [1][-]{section.6.2}{Principle of Semiconductor Lasers}{chapter.6}% 58
+\BOOKMARK [2][-]{subsection.6.2.1}{Absorption of Light}{section.6.2}% 59
+\BOOKMARK [2][-]{subsection.6.2.2}{Optical Gain}{section.6.2}% 60
+\BOOKMARK [2][-]{subsection.6.2.3}{Feedback and Laser Threshold}{section.6.2}% 61
+\BOOKMARK [1][-]{section.6.3}{Types of semiconductor Lasers}{chapter.6}% 62
+\BOOKMARK [2][-]{subsection.6.3.1}{Fabry-Perot Semiconductor Lasers}{section.6.3}% 63
+\BOOKMARK [2][-]{subsection.6.3.2}{Grating-Based semiconductor Lasers}{section.6.3}% 64
+\BOOKMARK [2][-]{subsection.6.3.3}{Vertical-Cavity Surface-Emitting Lasers}{section.6.3}% 65
+\BOOKMARK [2][-]{subsection.6.3.4}{Grating Surface-Emitting Lasers}{section.6.3}% 66
+\BOOKMARK [1][-]{section.6.4}{Characteristics of Semiconductor Lasers}{chapter.6}% 67
+\BOOKMARK [1][-]{section.6.5}{Basic Requrement for Design of Semiconductor Lasers}{chapter.6}% 68
+\BOOKMARK [2][-]{subsection.6.5.1}{Spectral width and Linewidth}{section.6.5}% 69
+\BOOKMARK [2][-]{subsection.6.5.2}{Operating Wavelength, Switching Time, and Modulation}{section.6.5}% 70
+\BOOKMARK [1][-]{section.6.6}{Modeling of Semiconductor Lasers}{chapter.6}% 71
+\BOOKMARK [1][-]{section.6.7}{Laser Rate Equations}{chapter.6}% 72
+\BOOKMARK [1][-]{section.6.8}{Wave Model of Semiconductor Lasers}{chapter.6}% 73
+\BOOKMARK [1][-]{section.6.9}{Linewidth Enhancement Factor}{chapter.6}% 74
+\BOOKMARK [1][-]{section.6.10}{Implementations}{chapter.6}% 75
+\BOOKMARK [2][-]{subsection.6.10.1}{Optical Modes}{section.6.10}% 76
+\BOOKMARK [2][-]{subsection.6.10.2}{Steady State Analysis}{section.6.10}% 77
+\BOOKMARK [2][-]{subsection.6.10.3}{Dynamic State Analysis}{section.6.10}% 78
+\BOOKMARK [1][-]{section.6.11}{Simulation Results}{chapter.6}% 79
+\BOOKMARK [2][-]{subsection.6.11.1}{Input Parameters}{section.6.11}% 80
+\BOOKMARK [2][-]{subsection.6.11.2}{Optical Modes}{section.6.11}% 81
+\BOOKMARK [2][-]{subsection.6.11.3}{Steady State Analysis}{section.6.11}% 82
+\BOOKMARK [2][-]{subsection.6.11.4}{Dynamic State Analysis}{section.6.11}% 83
+\BOOKMARK [0][-]{chapter.7}{Conclusions and Future Research}{Main Matter.-1}% 84
+\BOOKMARK [1][-]{section.7.1}{Contributions of this dissertation}{chapter.7}% 85
+\BOOKMARK [1][-]{section.7.2}{Outline of the future work}{chapter.7}% 86
+\BOOKMARK [-1][-]{Back Matter.-1}{Back Matter}{}% 87
+\BOOKMARK [0][-]{section*.46}{Bibliography}{Back Matter.-1}% 88
+\BOOKMARK [0][-]{appendix.A}{Transition Rates}{Back Matter.-1}% 89
+\BOOKMARK [0][-]{appendix.B}{Semiconductor Laser Modeling}{Back Matter.-1}% 90
+\BOOKMARK [1][-]{section.B.1}{Threshold or Steady-State Gain in Lasers}{appendix.B}% 91
+\BOOKMARK [1][-]{section.B.2}{Threshold Current and Output Power}{appendix.B}% 92
+\BOOKMARK [0][-]{appendix.C}{MEEP Simulation Code}{Back Matter.-1}% 93
+\BOOKMARK [1][-]{section.C.1}{Cylindrical Core-Shell Nanowire}{appendix.C}% 94
+\BOOKMARK [1][-]{section.C.2}{Hexagonal Core-Shell Nanowire}{appendix.C}% 95
+\BOOKMARK [0][-]{appendix.D}{Gain Spectrum and Threshold Calculation Matlab Code}{Back Matter.-1}% 96
+\BOOKMARK [0][-]{section*.47}{Vita}{Back Matter.-1}% 97

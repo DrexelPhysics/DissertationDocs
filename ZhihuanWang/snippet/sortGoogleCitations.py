@@ -48,7 +48,7 @@ def get_author(content):
     return out
 
 # Update these variables according to your requirement
-keyword = "'semiconductor laser review'" # the double quote will look for the exact keyword,
+keyword = "'nanowire MOSFET'" # the double quote will look for the exact keyword,
                                             # the simple quote will also look for similar keywords
 number_of_results = 50 # number of results to look for on Google Scholar
 save_database = False # choose if you would like to save the database to .csv

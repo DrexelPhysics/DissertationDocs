@@ -1,82 +1,95 @@
 \chapter{Light confinement in sub-wavelength nano-structure} \label{LM}
 
 
-\section{Light and Nanowire} \label{corrections}
+\section{Light and Nanowire} \label{LightNW}
 
 
 \subsection{Leaky Mode Resonance}
-\label{sec:hydrogen}
+\label{sec:LMR}
 
 Interaction of light with a dielectric or metallic cylindrical medium is
 analyzed by solving Maxwell's equations with the appropriate boundary
-conditions in the classical waveguide theory [80] which leads to highly
-confined modes in optical fibers and microscale dielectric resonators. In an
-infinitely long cylinder, even at deep sub-wavelength diameters this results in
-a “characteristic equation” the solution to which are the transverse magnetic
-(TM) and transverse electric (TE) resonant modes. We can define the
+conditions in the classical waveguide theory~\cite{Kapany:tq} which leads to
+highly confined modes in optical fibers and microscale dielectric resonators.
+In an infinitely long cylinder, even at deep sub-wavelength diameters this
+results in a “characteristic equation” the solution to which are the transverse
+magnetic (TM) and transverse electric (TE) resonant modes. We can define the
 electromagnetic modes of localized resonators as time-harmonic solutions of the
-form  to the source-free Maxwell equations. This solution shows that the
+form to the source-free Maxwell equations. This solution shows that the
 longitudinal field component distributes outside the NW, and is in resonance
-with the natural modes, such as TE11, TM02, etc., supported by the NW. These
-modes have been termed leaky-mode resonances (LMR) [81, 82], and provide an
-intuitive tool to facilitate the understanding and optimization of the
-resonance effect in such nano-structures.  We replicate these results using
-MEEP, a widely used open-source finite-difference time-domain (FDTD) simulation
-package [83], to identify how light is confined in an infinitely long GaAs
-nanowire. The top row of Fig. 1 shows several configurations of TM LMR modes
-for a NW with diameter of 220nm, with excitation single wavelength light being
-incident parallel to the NW axis. The blue and red color codes represent the
-polarization of the electric fields. The TE modes are primarily identical to
-the TM modes shown here with the electric and magnetic fields exchanged. If the
-light is incident with an arbitrary angle, then so-called hybrid HE and EH
-leaky modes will be excited instead of the pure TE or TM mode.  The bottom row
-of Fig. 1 shows the directional energy flux density of the electromagnetic
-field, the Poynting vector, at different time frames with light being incident
-perpendicular to the NW axis from the right side. The light is seen to
-propagate from the right and then mostly remain confined at the left part of
-the cylinder. It is notable that in either case the light energy is spatially
-distributed along the cross section of the wire but, as expected from a 2D
-treatment does not vary axially. Figure 1 demonstrates that the LMR can gently
-confine light within subwavelength semiconductor nano-structures, similar to
-the intuitive ray-optics picture of multiple total internal reflections from
-the periphery of the cylinder. As shown by in Ref. [81], these LMRs depend on
-the radius and the height of the dielectric, which allows ‘light engineering’
-of the nanowires so as to increase its absorption efficiency at pre-determined
+with the natural modes, such as ${TE}_{11}$, ${TM}_{02}$, etc., supported by
+the NW. These modes have been termed leaky-mode resonances
+(LMR)~\cite{Cao:2009ho,Fountaine:2014de} , and provide an intuitive tool to
+facilitate the understanding and optimization of the resonance effect in such
+nano-structures.  We replicate these results using MEEP, a widely used
+open-source finite-difference time-domain (FDTD) simulation
+package~\cite{Oskooi:2010fb}, to identify how light is confined in an
+infinitely long GaAs nanowire. The top row of Fig.~\ref{CylindEz} shows several
+configurations of TM LMR modes for a NW with diameter of 220nm, with excitation
+single wavelength light being incident parallel to the NW axis. The blue and
+red color codes represent the polarization of the electric fields. The TE modes
+are primarily identical to the TM modes shown here with the electric and
+magnetic fields exchanged. If the light is incident with an arbitrary angle,
+then so-called hybrid HE and EH leaky modes will be excited instead of the pure
+TE or TM mode. The bottom row of Fig.~\ref{CylindEz} shows the directional
+energy flux density of the electromagnetic field, the Poynting vector, at
+different time frames with light being incident perpendicular to the NW axis
+from the right side. The light is seen to propagate from the right and then
+mostly remain confined at the left part of the cylinder. It is notable that in
+either case the light energy is spatially distributed along the cross section
+of the wire but, as expected from a 2D treatment does not vary axially.
+Figure~\ref{CylindEz} demonstrates that the LMR can gently confine light within
+subwavelength semiconductor nano-structures, similar to the intuitive
+ray-optics picture of multiple total internal reflections from the periphery of
+the cylinder. As shown by in Ref.~\cite{Cao:2009ho}, these LMRs depend on the
+radius and the height of the dielectric, which allows ‘light engineering’ of
+the nanowires so as to increase its absorption efficiency at pre-determined
 wavelength, e.g., to maximize absorption of sunlight spectrum for  higher
-efficiency solar cells, or to radiate as optical antennas. 
+efficiency solar cells, or to radiate as optical antennas.
+
+\begin{figure}
+  \caption{(Top) Resonant modes in an infinitely long cylinder of GaAs with diameter of 220 nm with light incident parallel to NW axis. (Bottom) The Poynting vector at different time frames with light incident perpendicular to the NW axis from the right.}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/LM/CylindEz}
+  \label{CylindEz}
+\end{figure}
 
 \subsection{Whispering Gallery Modes}
 \label{sec:host}
 
 Infinitely long cylindrical or hexagonal NW structures can also support
-Whispering Gallery (WG) modes [78, 79, 84-90]. To calculate the resonant WGMs,
-Maxwell’s equations have to be solved numerically [91] taking into
-consideration the spectral dependence of the material of interest’s index of
-refraction. However, we can deduce a simple plane-wave model from theoretical
-derivations, and the relationship between resonance wavelength λ and the
-corresponding mode serial number N can be obtained [92]. The WG modes can also
-reflect and confine light in the (subwavelength) nanostructure by total
-internal reflection from the curvature of the structure boundaries. However, a
-light wave can interfere with itself only when having completed one full
-circulation within the resonator, which means only the light with one or
-multiple wavelengths are allowed to perform multiple circulations generating a
-standing wave. Figure 2 from reference 85 shows near-field intensity patterns
-of low-order TM polarized hexagonal WGMs for n=1 and refractive index =2.1.
-Each mode pattern is labeled by its respective mode number m (lower right
-number) and its symmetry class (upper right symbol).  For comparison, four mode
-patterns of the circular cavity are given in the upper left and lower right
-together with their angular mode number. We again observe the radial spatial
-dependence of light intensity. Furthermore, the low order WG modes of hexagonal
-NWs are essentially similar to the cylindrical ones, but for higher order modes
-additional features will arise on the facets of the hexagonal NWs [85].
-Simulation results also show little difference between WG mode and Leaky modes
-in lower order modes for both hexagonal and cylindrical structures. As with the
-LMR, the resonant WG modes have been used as the basis for a precise
-theoretical explanation of the enhanced optical behavior of hexagonal NWs, such
-as enhanced light absorption [81, 93-96] and emission [78, 97-99]. Furthermore,
-these numerical solutions have lead to reproduction of experimental resonance
-spectra, e.g., polarization-resolved micro-photoluminescence (µ-PL) and
-cathodeluminescence (CL) spectroscopy.  
+Whispering Gallery (WG)
+modes~\cite{Zimmler:2008fc,huang2001room,Zhao:2014jt,Nobis:2005wg,Czekalla:2010uw,Gargas:2009cx,Fallert:2008ej,Johnson:2002ua,Nobis:2004tp}.
+To calculate the resonant WGMs, Maxwell’s equations have to be solved
+numerically~\cite{Wiersig;2003vo} taking into consideration the spectral
+dependence of the material of interest’s index of refraction. However, we can
+deduce a simple plane-wave model from theoretical derivations, and the
+relationship between resonance wavelength λ and the corresponding mode serial
+number N can be obtained~\cite{Nobis:2004tp}. The WG modes can also reflect and
+confine light in the (subwavelength) nanostructure by total internal reflection
+from the curvature of the structure boundaries. However, a light wave can
+interfere with itself only when having completed one full circulation within
+the resonator, which means only the light with one or multiple wavelengths are
+allowed to perform multiple circulations generating a standing wave.
+Figure~\ref{WGMode} from reference~\cite{Nobis:2005wg} shows near-field
+intensity patterns of low-order TM polarized hexagonal WGMs for n=1 and
+refractive index =2.1.  Each mode pattern is labeled by its respective mode
+number m (lower right number) and its symmetry class (upper right symbol). For
+comparison, four mode patterns of the circular cavity are given in the upper
+left and lower right together with their angular mode number. We again observe
+the radial spatial dependence of light intensity. Furthermore, the low order WG
+modes of hexagonal NWs are essentially similar to the cylindrical ones, but for
+higher order modes additional features will arise on the facets of the
+hexagonal NWs~\cite{Nobis:2005wg}.  Simulation results also show little
+difference between WG mode and Leaky modes in lower order modes for both
+hexagonal and cylindrical structures. As with the LMR, the resonant WG modes
+have been used as the basis for a precise theoretical explanation of the
+enhanced optical behavior of hexagonal NWs, such as enhanced light
+absorption~\cite{Cao:2009ho,Kim:2014ig,Zhang:2013wb,Kelzenberg:2010fa,Wang:2013ux}
+and emission~\cite{Zimmler:2008fc,Currie:2013to,Le:2014cp,Grzela:2012wa}.
+Furthermore, these numerical solutions have lead to reproduction of
+experimental resonance spectra, e.g., polarization-resolved
+micro-photoluminescence (µ-PL) and cathodeluminescence (CL) spectroscopy.
 
 \begin{figure}
   \caption{Several configurations of Whispering Gallery resonance modes in infinite long cylindrical and hexagonal nanowire. For comparison, four mode patterns of the circular cavity are given in the upper and lower right together with their angular mode number. (Reprinted with permission from~\cite{Nobis:2005wg} , \textcopyright 2005 by the American Physical Society.)}
@@ -186,20 +199,28 @@ has been~\cite{Oskooi:2010fb}
   \label{MeepSchematic}
 \end{figure}
 
+\begin{figure}
+  \caption{Simulation Schematic for Cylindrical and Hexagonal Nanowires}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/LM/NWsketch}
+  \label{NWsketch}
+\end{figure}
+
 \subsection{Nanocavity Geometry Dependence}
 
+
 \begin{figure}
-  \caption{(Top) Resonant modes in an infinitely long cylinder of GaAs with diameter of 220 nm with light incident parallel to NW axis. (Bottom) The Poynting vector at different time frames with light incident perpendicular to the NW axis from the right.}
+  \caption{Simulation Schematic for Cylindrical and Hexagonal Nanowires}
   \centering
-  \includegraphics[width=\textwidth]{pictures/LM/CylindEz}
-  \label{CylindEz}
+  \includegraphics[width=\textwidth]{pictures/LM/CylinRP}
+  \label{CylinRP}
 \end{figure}
 
 \begin{figure}
   \caption{Simulation Schematic for Cylindrical and Hexagonal Nanowires}
   \centering
-  \includegraphics[width=\textwidth]{pictures/LM/NW}
-  \label{NW}
+  \includegraphics[width=\textwidth]{pictures/LM/HexRP}
+  \label{HexRP}
 \end{figure}
 
 \subsection{Light Engineering of sub-wavelength Nano-structure}
@@ -207,8 +228,8 @@ has been~\cite{Oskooi:2010fb}
 \begin{figure}
   \caption{Geometric Dependence TM radius variation for different Radius and Diameters}
   \centering
-  \includegraphics[width=\textwidth]{pictures/LM/TMradius}
-  \label{TMradius}
+  \includegraphics[width=\textwidth]{pictures/LM/TMRadius}
+  \label{TMRadius}
 \end{figure}
 
 \begin{figure}
