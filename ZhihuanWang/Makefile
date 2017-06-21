@@ -1,7 +1,7 @@
 all:
 	pdflatex thesis.tex
 	bibtex thesis.aux
-	pdflatex thesis.tex
+	latexmk thesis.tex
 	#pdflatex thesis.tex
 
 OS := $(shell uname)
