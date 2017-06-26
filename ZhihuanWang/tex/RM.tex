@@ -1,6 +1,6 @@
 \chapter{Dimensional Dependence of Optical Transition Rates} \label{RM}
  
-\section{Time-dependent Perturbation Theory} \label{dust_seds}
+%\section{Time-dependent Perturbation Theory} \label{dust_seds}
 
 \subsection{Fermi's Golden Rule} \label{dust_corrections}
 
@@ -585,140 +585,140 @@ wire model, and the absorption spectrum is
   & C_{0} = \frac{\pi e^{2}}{n_{r}\varepsilon_{0}cm_{0}^{2}\omega}
 \end{eqnarray}
 
-\section{Partial Confinement on the Electron in Conduction
-Band}\label{partial-confinement-on-the-electron-in-conduction-band}
-
-If the one-dimensional confinement only apply to the electrons in the
-conduction band, i.e., the holes in the valance band are free to move as
-in the bulk semiconductor, the wavefunction in the conduction band and
-valance band will change accordingly. The overlap of the conduction and
-valance band envelope function will no longer exist.
-
-Within a two-band model, the Bloch wave functions can be described by
-
-\begin{equation}
-\Psi_{a}\left( \bm{r} \right) = u_{v}(\bm{r})\frac{e^{i\bm{k}_{\bm{t}} \cdot \rho}}{\sqrt{L_{z}}}
-\end{equation}
-
-for a hole wave function in the heavy-hole or a light-hole subband m.
-and
-
-\begin{equation}
-\Psi_{b}\left( \bm{r} \right) = u_{c}(\bm{r})\frac{e^{i\bm{k}_{\bm{t}} \cdot \rho}}{\sqrt{L_{z}}}\Phi_{n}(x,y)
-\end{equation}
-
-for an electron in the conduction subband n. The momentum matrix element
-\(\bm{p}_{\text{ba}}\) is given by
-
-\begin{equation}
-\bm{p}_{\text{ba}}\bm{=}\left\langle \Psi_{b} \middle| \bm{p} \middle| \Psi_{a} \right\rangle \approx \left\langle u_{c} \middle| \bm{p} \middle| u_{v} \right\rangle\delta_{k_{t},k_{t}^{'}}\ I_{\text{en}}
-\end{equation}
-
-where
-
-\begin{eqnarray}
-  & I_{\text{en}} = \int_{- \infty}^{+ \infty}{\text{dxdy}\Phi_{n}^{*}\left( x,y \right)} \nonumber \\
-  & = \int_{- \infty}^{+ \infty}{dxdy \cdot const \times e^{- \alpha^{2}y^{2}}\mathcal{H}_{n_{1}}(\alpha y)sin\frac{\text{πx}n_{2}}{L_{x}}}
-\end{eqnarray}
-
-Here introduce the notations
-
-\begin{equation}
-\alpha = \frac{m_{e}^{*}\omega}{\hbar}\ , \quad
-\mathcal{H}_{n}\left( y \right) = {( - 1)}^{n}e^{y^{2}}\frac{d^{n}}{dy^{n}}e^{{- y}^{2}}
-\end{equation}
-
-where \(\mathcal{H}_{n}\) are the Hermite
-polynomials{[}\protect\hyperlink{_ENREF_3}{3}{]},
-\(n_{1}\text{\ and\ }n_{2}\) are two quantum numbers.
-
-There is no overlap of the conduction and valence band envelope
-functions and the \textbf{K}-Selection rule also applied. The energy
-levels, which arise in quantum wires, are strongly dependent on the form
-of the confining potentials. And the additional confinement of electrons
-leads to an increase of the lowest energy level.
-
-Take into account the quantization of the electron and hole energies
-\(E_{a}\text{\ and\ }E_{b}\)
-
-\begin{equation}
-E_{a} = E_{\text{hm}} - \frac{\hbar^{2}\bm{k}_{\bm{t}}^{2}}{2m_{h}^{*}}
-\end{equation}
-
-\begin{equation}
-E_{b} = {E_{g} + E}_{\text{en}} + \frac{\hbar^{2}\bm{k}_{\bm{t}}^{2}}{2m_{e}^{*}}
-\end{equation}
-
-And \(E_{\text{hm}} < 0\),
-
-\begin{equation}
-E_{b} - E_{a} = E_{\text{hm}}^{\text{en}} + E_{t},
-E_{t} = \frac{\hbar^{2}\bm{k}_{\bm{t}}^{2}}{2m_{e}^{*}}
-\end{equation}
-
-where
-
-\begin{equation}
-E_{\text{hm}}^{\text{en}} = {E_{g} + E}_{\text{en}} - E_{\text{hm}}
-\end{equation}
-
-is the band edge transition energy (\(\bm{k}_{\bm{t}} = 0\)).
-The summations over the quantum numbers
-\(\bm{k}_{a}\text{\ and}\bm{\ }\bm{k}_{b}\)become summations
-over (\(\bm{k}_{\bm{t}}^{\bm{'}},m\)) and
-(\(\bm{k}_{\bm{t}},n\)). Noting in the matrix element
-\(\bm{k}_{\bm{t}}\bm{=}\bm{k}_{\bm{t}}^{\bm{'}}\)
-
-\begin{equation}
-\alpha\left( \hbar\omega \right) = C_{0}\sum_{n}^{}\left| I_{\text{en}} \right|^{2}\frac{2}{V}\sum_{\bm{k}_{t}}^{}\left| \hat{e}\bm{\cdot}\bm{p}_{\text{cv}} \right|^{2}\delta(E_{\text{hm}}^{\text{en}} + E_{t} - \hbar\omega)(f_{v}^{m} - f_{c}^{n})
-\end{equation}
-
-Similarly, for this quasi-one dimensional case, assume the
-one-dimensional joint density of states also apply
-
-\begin{equation}
-\frac{2}{V}\sum_{\bm{k}_{t}}^{}{= \frac{2L_{z}}{V}}\int_{}^{}\frac{d\bm{k}_{\bm{t}}}{2\pi} = \frac{1}{\pi L_{x}L_{y}}\int_{0}^{\infty}\frac{\bm{1}}{\bm{k}_{\bm{t}}}d\bm{k}_{\bm{t}}\bm{=}\int_{0}^{\infty}{dE_{t}}\rho_{r}^{1D}
-\end{equation}
-
-\begin{equation}
-\rho_{r}^{1D} = \frac{\left( m_{r}^{*} \right)^{\frac{3}{2}}}{\text{πℏ}m_{e}^{*}L_{x}L_{y}}\frac{\bm{1}}{\sqrt{\bm{(}\hbar\omega - E_{g}\bm{)}}}
-\end{equation}
-
-where \(L_{z}L_{x}L_{y} = V\), \({L_{x},L_{y,}L}_{z}\) are effective
-period of the quantum wire along different directions, \(L_{z}\) along
-the axial of the quantum wire, and V is a volume of a period. The delta
-function gives the contribution at
-\(E_{\text{hm}}^{\text{en}} + E_{t} = \hbar\omega\), and the
-absorption edges occur at \(\hbar\omega = E_{\text{hm}}^{\text{en}}\).
-For an unpumped semiconductor, \(f_{v}^{m} = 1\ and\ f_{c}^{n} = 0\), we
-have the absorption spectrum at thermal equilibrium
-\(\alpha_{0}\left( \hbar\omega \right)\)
-
-\begin{equation}
-\alpha_{0}\left( \hbar\omega \right) = C_{0}\sum_{n}^{}\left| I_{\text{en}} \right|^{2}\left| \hat{e}\bm{\cdot}\bm{p}_{\text{cv}} \right|^{2}\rho_{r}^{1D}H(\hbar\omega - E_{\text{hm}}^{\text{en}})
-\end{equation}
-
-Because the integration of the delta function gives the step function,
-shown as H or the Heaviside step function,
-\(H\left( x \right) = 1\ for\ x > 0,\ and\ 0\ for\ x < 0\). The
-summation of \(I_{\text{en}}\)becomes the integral of conduction band
-electron envelope function, using an infinite wire model, and the
-absorption spectrum is
-
-\begin{equation}
-\alpha_{0}\left( \hbar\omega \right) = C_{0}{\sum_{n}^{}\left| I_{\text{en}} \right|^{2}\left| \hat{e}\bm{\cdot}\bm{p}_{\text{cv}} \right|}^{2}\frac{\left( m_{r}^{*} \right)^{\frac{3}{2}}}{\pi\hbar}m_{e}^{*}L_{x}L_{y}\frac{\bm{1}}{\sqrt{\bm{(}\hbar\omega - E_{g}\bm{)}}}
-\end{equation}
-
-\(C_{0} = \frac{\pi e^{2}}{n_{r}\varepsilon_{0}cm_{0}^{2}\omega}\)
-We can see that the factors containing \(A_{0}^{2}\) are canceled
-because the linear optical absorption coefficient is independent of the
-optical intensity.
+%\section{Partial Confinement on the Electron in Conduction
+%Band}\label{partial-confinement-on-the-electron-in-conduction-band}
+%
+%If the one-dimensional confinement only apply to the electrons in the
+%conduction band, i.e., the holes in the valance band are free to move as
+%in the bulk semiconductor, the wavefunction in the conduction band and
+%valance band will change accordingly. The overlap of the conduction and
+%valance band envelope function will no longer exist.
+%
+%Within a two-band model, the Bloch wave functions can be described by
+%
+%\begin{equation}
+%\Psi_{a}\left( \bm{r} \right) = u_{v}(\bm{r})\frac{e^{i\bm{k}_{\bm{t}} \cdot \rho}}{\sqrt{L_{z}}}
+%\end{equation}
+%
+%for a hole wave function in the heavy-hole or a light-hole subband m.
+%and
+%
+%\begin{equation}
+%\Psi_{b}\left( \bm{r} \right) = u_{c}(\bm{r})\frac{e^{i\bm{k}_{\bm{t}} \cdot \rho}}{\sqrt{L_{z}}}\Phi_{n}(x,y)
+%\end{equation}
+%
+%for an electron in the conduction subband n. The momentum matrix element
+%\(\bm{p}_{\text{ba}}\) is given by
+%
+%\begin{equation}
+%\bm{p}_{\text{ba}}\bm{=}\left\langle \Psi_{b} \middle| \bm{p} \middle| \Psi_{a} \right\rangle \approx \left\langle u_{c} \middle| \bm{p} \middle| u_{v} \right\rangle\delta_{k_{t},k_{t}^{'}}\ I_{\text{en}}
+%\end{equation}
+%
+%where
+%
+%\begin{eqnarray}
+%  & I_{\text{en}} = \int_{- \infty}^{+ \infty}{\text{dxdy}\Phi_{n}^{*}\left( x,y \right)} \nonumber \\
+%  & = \int_{- \infty}^{+ \infty}{dxdy \cdot const \times e^{- \alpha^{2}y^{2}}\mathcal{H}_{n_{1}}(\alpha y)sin\frac{\text{πx}n_{2}}{L_{x}}}
+%\end{eqnarray}
+%
+%Here introduce the notations
+%
+%\begin{equation}
+%\alpha = \frac{m_{e}^{*}\omega}{\hbar}\ , \quad
+%\mathcal{H}_{n}\left( y \right) = {( - 1)}^{n}e^{y^{2}}\frac{d^{n}}{dy^{n}}e^{{- y}^{2}}
+%\end{equation}
+%
+%where \(\mathcal{H}_{n}\) are the Hermite
+%polynomials{[}\protect\hyperlink{_ENREF_3}{3}{]},
+%\(n_{1}\text{\ and\ }n_{2}\) are two quantum numbers.
+%
+%There is no overlap of the conduction and valence band envelope
+%functions and the \textbf{K}-Selection rule also applied. The energy
+%levels, which arise in quantum wires, are strongly dependent on the form
+%of the confining potentials. And the additional confinement of electrons
+%leads to an increase of the lowest energy level.
+%
+%Take into account the quantization of the electron and hole energies
+%\(E_{a}\text{\ and\ }E_{b}\)
+%
+%\begin{equation}
+%E_{a} = E_{\text{hm}} - \frac{\hbar^{2}\bm{k}_{\bm{t}}^{2}}{2m_{h}^{*}}
+%\end{equation}
+%
+%\begin{equation}
+%E_{b} = {E_{g} + E}_{\text{en}} + \frac{\hbar^{2}\bm{k}_{\bm{t}}^{2}}{2m_{e}^{*}}
+%\end{equation}
+%
+%And \(E_{\text{hm}} < 0\),
+%
+%\begin{equation}
+%E_{b} - E_{a} = E_{\text{hm}}^{\text{en}} + E_{t},
+%E_{t} = \frac{\hbar^{2}\bm{k}_{\bm{t}}^{2}}{2m_{e}^{*}}
+%\end{equation}
+%
+%where
+%
+%\begin{equation}
+%E_{\text{hm}}^{\text{en}} = {E_{g} + E}_{\text{en}} - E_{\text{hm}}
+%\end{equation}
+%
+%is the band edge transition energy (\(\bm{k}_{\bm{t}} = 0\)).
+%The summations over the quantum numbers
+%\(\bm{k}_{a}\text{\ and}\bm{\ }\bm{k}_{b}\)become summations
+%over (\(\bm{k}_{\bm{t}}^{\bm{'}},m\)) and
+%(\(\bm{k}_{\bm{t}},n\)). Noting in the matrix element
+%\(\bm{k}_{\bm{t}}\bm{=}\bm{k}_{\bm{t}}^{\bm{'}}\)
+%
+%\begin{equation}
+%\alpha\left( \hbar\omega \right) = C_{0}\sum_{n}^{}\left| I_{\text{en}} \right|^{2}\frac{2}{V}\sum_{\bm{k}_{t}}^{}\left| \hat{e}\bm{\cdot}\bm{p}_{\text{cv}} \right|^{2}\delta(E_{\text{hm}}^{\text{en}} + E_{t} - \hbar\omega)(f_{v}^{m} - f_{c}^{n})
+%\end{equation}
+%
+%Similarly, for this quasi-one dimensional case, assume the
+%one-dimensional joint density of states also apply
+%
+%\begin{equation}
+%\frac{2}{V}\sum_{\bm{k}_{t}}^{}{= \frac{2L_{z}}{V}}\int_{}^{}\frac{d\bm{k}_{\bm{t}}}{2\pi} = \frac{1}{\pi L_{x}L_{y}}\int_{0}^{\infty}\frac{\bm{1}}{\bm{k}_{\bm{t}}}d\bm{k}_{\bm{t}}\bm{=}\int_{0}^{\infty}{dE_{t}}\rho_{r}^{1D}
+%\end{equation}
+%
+%\begin{equation}
+%\rho_{r}^{1D} = \frac{\left( m_{r}^{*} \right)^{\frac{3}{2}}}{\text{πℏ}m_{e}^{*}L_{x}L_{y}}\frac{\bm{1}}{\sqrt{\bm{(}\hbar\omega - E_{g}\bm{)}}}
+%\end{equation}
+%
+%where \(L_{z}L_{x}L_{y} = V\), \({L_{x},L_{y,}L}_{z}\) are effective
+%period of the quantum wire along different directions, \(L_{z}\) along
+%the axial of the quantum wire, and V is a volume of a period. The delta
+%function gives the contribution at
+%\(E_{\text{hm}}^{\text{en}} + E_{t} = \hbar\omega\), and the
+%absorption edges occur at \(\hbar\omega = E_{\text{hm}}^{\text{en}}\).
+%For an unpumped semiconductor, \(f_{v}^{m} = 1\ and\ f_{c}^{n} = 0\), we
+%have the absorption spectrum at thermal equilibrium
+%\(\alpha_{0}\left( \hbar\omega \right)\)
+%
+%\begin{equation}
+%\alpha_{0}\left( \hbar\omega \right) = C_{0}\sum_{n}^{}\left| I_{\text{en}} \right|^{2}\left| \hat{e}\bm{\cdot}\bm{p}_{\text{cv}} \right|^{2}\rho_{r}^{1D}H(\hbar\omega - E_{\text{hm}}^{\text{en}})
+%\end{equation}
+%
+%Because the integration of the delta function gives the step function,
+%shown as H or the Heaviside step function,
+%\(H\left( x \right) = 1\ for\ x > 0,\ and\ 0\ for\ x < 0\). The
+%summation of \(I_{\text{en}}\)becomes the integral of conduction band
+%electron envelope function, using an infinite wire model, and the
+%absorption spectrum is
+%
+%\begin{equation}
+%\alpha_{0}\left( \hbar\omega \right) = C_{0}{\sum_{n}^{}\left| I_{\text{en}} \right|^{2}\left| \hat{e}\bm{\cdot}\bm{p}_{\text{cv}} \right|}^{2}\frac{\left( m_{r}^{*} \right)^{\frac{3}{2}}}{\pi\hbar}m_{e}^{*}L_{x}L_{y}\frac{\bm{1}}{\sqrt{\bm{(}\hbar\omega - E_{g}\bm{)}}}
+%\end{equation}
+%
+%\(C_{0} = \frac{\pi e^{2}}{n_{r}\varepsilon_{0}cm_{0}^{2}\omega}\)
+%We can see that the factors containing \(A_{0}^{2}\) are canceled
+%because the linear optical absorption coefficient is independent of the
+%optical intensity.
 
 %\subsection{A Uniform Sample}
 %\subsection{\ltwofive\ and \bctwofive\ Distributions} \label{l_bc_dust}
 %\subsection{Extinction Corrected SEDs} \label{l_bc_dust}
 
-\section{Upward and Downward Transition Rates} \label{rates}
+%\section{Upward and Downward Transition Rates} \label{rates}
 
 \section{Contributing Factors} \label{factor}
 
@@ -760,6 +760,38 @@ and the two-dimensional case and the one-dimensional shown as:
 
 The extremely reduced effective hole mass which mentioned in Coldren's paper, from 0.118 reduced to as in quantum wire structure, may cause by the hole band separation due to the local force or string inside the semiconductor.
 
+\section{Spacial Overlapping of confined light and electronic wavefunctions}
+
+Figure~\ref{PhotonCharge} (C) shows the FDTD-simulated electric field density
+of a hexagonal nanowire at y cross section (top) and x cross section (bottom).
+The photon energy of this mode shown as the insets of Fig.~\ref{PhotonCharge}
+(C) is concentrated primarily along the 6 corners and secondarily along the
+facets with little light in the 3D core of GaAs. Hence, we suggest that the
+fortuitous spatial overlap of the resonant optical modes on reduced dimensional
+electronic wavefunctions plays a significant role in the remarkable
+optoelectronic properties of core-shell nanowires. Restated, the superposition
+of the photon modes  on reduced electronic states that form on the facets and
+vortices of the hexagonal CSNWs strongly enhances both upward and downward
+transition rates.  Thus, the reduced dimensionality transition rate
+distinguishes the core-shell nanostructure from the optically equivalent
+core-only structure due to its significantly modified rate management. These
+nanostructures are not only excellent optical cavities, but despite their large
+size also provide the right reduced dimensional electronic structures which
+enhance optoelectronic interactions.  It should be noted the present analysis
+is for direct optical transitions; although it can be extended to incorporate
+k-vector changes as in phonon scattering, other important factors such as
+many-body interactions need to be included in a more detailed analysis.
+
+
+\begin{figure}
+  \caption{Photon Charge Distribution}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/ED/Photoncharge}
+  \label{PhotonCharge}
+\end{figure}
+
+\section{Many body effects}
+
 As the reduced effective mass plays an important role in joint optical density
 of states and obtained from electron and hole effective mass is much larger
 than electron effective mass, the reduced effective mass will have a strong
@@ -781,10 +813,10 @@ exsit primarily at low carrier densityies and low temperatures, where bandgap
 shrinkage becomes noticeable at high carrier densities.
 
 Under conditions of low carrier density and low temperature, it is possible for
-an electron and hole to orbit each othere for an extended period of time,
+an electron and hole to orbit each other for an extended period of time,
 forming what is referred to as an exciton pair. Such exciton pairs have a
 binding energy associated with them that is euqal to the energy required to
-separate the electron and hole. As a rsult, electrons that are elevated from
+separate the electron and hole. As a result, electrons that are elevated from
 the valence band to one of these exciton states will absorb radiation at
 energies equal to the bandgap less the binding energy (the bandgap will appear
 to be red-shifted). More significatnly however, the overlap integral ( and
@@ -829,32 +861,4 @@ in the number of states to be filled to make the active region transparent
 loss) Consequently, the transparency current (or inversion current) at which
 the gain is equal to the loss and lasing begins decrease and their temperature
 dependences become weaker~\cite{asryan2004theory}.
-
-Figure 8 (C) shows the FDTD-simulated electric field density of a hexagonal
-nanowire at y cross section (top) and x cross section (bottom). The photon
-energy of this mode shown as the insets of Fig. 8(C) is concentrated primarily
-along the 6 corners and secondarily along the facets with little light in the
-3D core of GaAs. Hence, we suggest that the fortuitous spatial overlap of the
-resonant optical modes on reduced dimensional electronic wavefunctions plays a
-significant role in the remarkable optoelectronic properties of core-shell
-nanowires. Restated, the superposition of the photon modes  on reduced
-electronic states that form on the facets and vortices of the hexagonal CSNWs
-strongly enhances both upward and downward transition rates.  Thus, the reduced
-dimensionality transition rate distinguishes the core-shell nanostructure from
-the optically equivalent structures of Fig. 6 due to its significantly modified
-rate management. These nanostructures are not only excellent optical cavities,
-but despite their large size also provide the right reduced dimensional
-electronic structures which enhance optoelectronic interactions.  It should be
-noted the present analysis is for direct optical transitions; although it can
-be extended to incorporate k-vector changes as in phonon scattering, other
-important factors such as many-body interactions need to be included in a
-
-
-\begin{figure}
-  \caption{Photon Charge Distribution}
-  \centering
-  \includegraphics[width=\textwidth]{pictures/ED/Photoncharge}
-  \label{PhotonCharge}
-\end{figure}
-
 

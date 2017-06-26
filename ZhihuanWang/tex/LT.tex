@@ -1,28 +1,30 @@
 \chapter{Modeling Lasing Threshold} \label{LT}
 
 
-\section{History of Semiconductor Lasers} \label{corrections} As we know,
-semiconductor lasers are important optoelectric devices ofr optical
+\section{History of Semiconductor Lasers} \label{corrections} 
+
+As we know, semiconductor lasers are important optoelectric devices for optical
 communication systems. They are essential components for building optical
 communication systems. There are intensive research results and achievements
 from beginning.  In 1917, Einstein predicted the existence of spontaneous and
 stimulated emission by which an atom can emit radiation. The first
-semiconductor lasers were fabricated in 1962 using homojuncations. These lasers
-had high threshold current density ( 19000/A/cm2 ) and operated at cryogenic
-temperatures.  The concept of heterojuntion semiconductor lasers was realized
-in 1969~1970 with a low threshold current density (1600 A/cm2) operating at
-room temperature. These double-heterostructure diode lasers provide both
-carrier and optical confinements, which imporve the efficiency for stimulated
-emission.  The concept of quantum well structures for semicondcutor lasers was
-proposed and realized experimentally in the late 1970s. The threshold current
-density was reduced to about 500 A/cm, which improved the laser performance
-significantly.
+semiconductor lasers were fabricated in 1962 using homojunctions. These lasers
+had high threshold current density ( $19000/A/{cm}^2$ ) and operated at
+cryogenic temperatures.  The concept of heterojuntion semiconductor lasers was
+realized in 1969~1970 with a low threshold current density ($1600 A/{cm}^2$)
+operating at room temperature. These double-heterostructure diode lasers
+provide both carrier and optical confinements, which improve the efficiency for
+stimulated emission.  The concept of quantum well structures for semiconductor
+lasers was proposed and realized experimentally in the late 1970s. The
+threshold current density was reduced to about 500 $A/{cm}^2$, which improved
+the laser performance significantly.
 
 \section{Principle of Semiconductor Lasers} \label{corrections}
 
-As we know, the semiconductor laser (or laser diode) in its simplest form is a
+The semiconductor laser (or laser diode) in its simplest form is a
 p-n junction of a single crystal of semiconductor material arranged in a
-cavity, as shown in . The type and configuration of the material used to
+cavity.%, as shown in . 
+The type and configuration of the material used
 determine the optical characteristics of the laser diode emission. Like others
 in various oscillators or wave sources, the fundamental elements in the
 semiconductor lasers are the following three elements: semiconductor band
@@ -30,16 +32,14 @@ structure (population inversion to provide gain mechanism), current injection
 and P-N junction ( external pumping to make gain sustainable) and reflector of
 cavity (feedback to provide coherence). The most common semiconductor lasers
 are including Fabry-Perot(FP) or distributed feedback (DFB)/distributed Bragg
-reflector (DBR) 
+reflector (DBR).
 
 \subsection{Absorption of Light}
 
 The light and matter interaction includes absorption, spontaneous emission and
-stimulated emission, we first discuss the absorption of light by introducing
-the absorption coeffiecient. This is the absorption rate without considering
-the occupation factors.
-
-Based on the following equations for different dimensionality.
+stimulated emission. We first discuss the absorption of light by introducing
+the absorption coefficient. This is the absorption rate without considering
+the occupation factors. As derived in Chapter~\ref{ch:rates}, the absorption coefficient for 3D can be expressed as:
 
 
 \begin{equation}
@@ -51,6 +51,7 @@ Based on the following equations for different dimensionality.
 \label{eq:two}
 \end{equation}
 
+and for 2D and 1D can be expressed as:
 \begin{eqnarray}
 \begin{aligned}
 & \alpha_{2D}(\hbar\omega)=C_0{|\hat{e}\cdot\bf{p}_{cv}|^2}\frac{m_r^\ast}{\pi\hbar^2{L_z}},
@@ -60,8 +61,8 @@ Based on the following equations for different dimensionality.
 \label{eq:five}
 \end{eqnarray}
 
-The split plots of absorption coefficient for different dimensionality as in
-Fig.~\ref{absrate_split}. Noted the unique shapes of density of states.
+The split plots of absorption coefficient for 3D, 2D and 1D are shown in
+Fig.~\ref{absrate_split}. Note the unique shapes of density of states.
 
 \begin{figure}
   \caption{Absorption Coefficient versus Photon Energy for 1D 2D and 3D with split plot}
@@ -71,8 +72,8 @@ Fig.~\ref{absrate_split}. Noted the unique shapes of density of states.
 \end{figure}
 
 Then the overlay plot with multiple y axis as in Fig.~\ref{absrate_overlay} and
-the different scales indicating the enhancement factor for 1D is 35(need to be
-verified) compared to 3D.
+the different scales indicating the absorption rates for 1D is 35
+times larger than 3D.
 
 \begin{figure}
   \caption{Absorption Coefficient versus Photon Energy for 1D 2D and 3D}
@@ -83,9 +84,9 @@ verified) compared to 3D.
 
 \subsection{Optical Gain}
 
-Following the treatments of Appendix 3, we can derive the gain spectrum for 3D,
-2D and 1D with consideration of occupation factor by calculating the Fermi
-levels.
+Following the derivation of absorption coefficient but with substitution to
+spontaneous emission, we can derive the gain spectrum for 3D, 2D and 1D with
+consideration of occupation factor by calculating the Fermi levels.
 
 With decreasing dimensionality of the active region of an injection laser, the
 density of states and gain spectra become narrower, which leads to a decrease
@@ -96,18 +97,18 @@ injection current at which the population inversion is zero) and the threshold
 current (injection current at which the gain is equal to the loss and lasing
 begins) decrease and their temperature dependences become weaker. The decrease
 in the threshold current and increase in its temperature stability reflect one
-fo the main areas of development and improvement of injection lasers. Owing to
+of the main areas of development and improvement of injection lasers. Owing to
 the continuous nature of the carrier spectrum within the allowed subbands, the
-use of QWs or QURs as active medium for optical transitions can only
+use of QWs or QWRs as active medium for optical transitions can only
 quantitatively improve the parameters of devices based on them compared with
-devices with a bulk active region. 
+devices with a bulk active region.
 
-Among the advantages of QD lasers over the presently used QW lasers are their
+Among the advantages of QWR lasers over the presently used QW lasers are their
 narrower gain spectra, much lower threshold currents, and ultrahigh temperature
 stability, as well as the wider possibilities for controlling their lasing
 wavelength.
 
-All the parameters for rate quations analysis in table~\ref{tab:rate_eq}.
+All the parameters for rate equations analysis in table~\ref{tab:rate_eq}.
 
 \input{tables/LT/tab1stub}
 
@@ -122,9 +123,9 @@ All the parameters for rate quations analysis in table~\ref{tab:rate_eq}.
 \label{eq:five}
 \end{eqnarray}
 
-Now we can plot the gain spectrum respect to photon energy for 3D, 2D and 1D in
-the figure below. As we can see, the gain spectrums follow the unique shapes of
-density of states. The fourth figure is the maximum gain versus electron
+Now the gain spectrum respect to photon energy for 3D, 2D and 1D can be calculated in
+Figure~\ref{gainspectrum}. As expected, the gain spectrum also follows the unique shapes of
+density of states. The Fig.~\ref{gainspectrum}(d) is the maximum gain versus electron
 carrier concentration varing from $3\times10^{18} (cm^{-3})$ to
 $3\times10^{19}(cm^{-3})$. Using parameters $N_{tr} = 2\times10^{18} cm^{-3}$,
 $N_{s} = 4\times10^{18} cm^{-3}$, and $g_0 = 6.11\times10^{5} cm^{-1}$, we fit
@@ -178,61 +179,63 @@ density $N_{th}$ for 3D, 2D and 1D as following:
   \label{sponrate}
 \end{figure}
 
-Integraing over all the photn energy spectrum, we have $R_{sp} =
-\int_{\xi}r_{sp}d{\xi}$ for different dimensionality, then the threshold
-current density can be simply caluclated as: $J_{th}= qdR_{sp}|_{N_{th}}$ and
-plotted in the fourth part of Fig.~\ref{sponrate}. The threshold current for 3D
-is $2.62\times10^{27} (A/cm^2)$, 2D is $2.42\times10^{10} (A/cm^2)$, and 1D
-case is $4.73\times10^{6} (A/cm^2)$. The threshold current density needed for
-lower-dimensional structure is greatly reduced.
+Integrating over all the photon energy spectrum, we have the total spontaneous emission rates, $R_{sp} =
+\int_{\xi}r_{sp}d{\xi}$, for different cases. Thus, the optical output power
+can be calculated as: $J_{th}= qdR_{sp}|_{N_{th}}$ and
+plotted in the fourth part of Fig.~\ref{sponrate}. The total generated optical output power is 6.5 times and 175.3 times more for 2D and 1D compared to 3D case, respectively. In other words, with the same amount of carriers injected either by optical pumping or electrical injection, highly confined electronic structure can easily produce more than two orders of magnitude more light compared to less confined structure.
 
-Next, we can do dynamic analysis of laser modal and replace the threshold
-current density to threshold pumping power. And verify the result with the
-experimental data.
+%The threshold current for 3D
+%is $2.62\times10^{27} (A/cm^2)$, 2D is $2.42\times10^{10} (A/cm^2)$, and 1D
+%case is $4.73\times10^{6} (A/cm^2)$. The threshold current density needed for
+%lower-dimensional structure is greatly reduced.
 
-\subsection{Feedback and Laser Threshold}
-\section{Types of semiconductor Lasers} \label{corrections}
-\subsection{Fabry-Perot Semiconductor Lasers}
-
-The Fabry-Perot(FP) laser is conceptually just an LED with a pair of end
-mirrors or facets. The mirrors are needed to create the right conditions for
-lasing to occur. The lasing medium can only amplify (undergo stimulated
-emission) over a fairly narrow range because of the characteristics of the
-material it is made from . A typical gain curve is illustrated on the
-left-hand. 
-
-\subsection{Grating-Based semiconductor Lasers}
-\subsection{Vertical-Cavity Surface-Emitting Lasers}
-
-As seen, light in the VCSEL propagates vertically with DBR mirrors as the
-nature of the manufacturing process, the entire round-trip of the VCSEL is much
-shorter than that of with the edge-emitting lasers. It leads to high
-reflectivity ( around 99.9$\%$) of DBR mirrors, in which the large number of
-layers are required.
-
-One of features related to the VCSELs is the longitudianl modal stability due
-to its short cavity length (around order of the wavelength). A
-
-\subsection{Grating Surface-Emitting Lasers}
-\section{Characteristics of Semiconductor Lasers} \label{corrections}
-
-In order to understand their operation, it is necessary to know some basic
-performance parameters or important features of semiconductor lasers.
-
-\section{Basic Requrement for Design of Semiconductor Lasers} \label{corrections}
-\subsection{Spectral width and Linewidth}
-
-FP semiconductor lasers produce a range of wavelengths. This range of
-wavelengths is called the "spectral width" of the laser. Typically there will
-be around 8 "modes" and the spectral width. In order to determin exactly the
-spectral shape, spectral width is usually quoted as the FWHM (Full Width Half
-Maximun) Instead of producing a continuous range of wavelengths over their
-spectral width. Semiconductor lasers produce a series of "lines" at a number of
-discrete wavelengths. Lines themselves vary in width (in different types of
-lasers) very significantly. The linewidth is inversely proportional to the
-coherence length of the laser.
-
-\subsection{Operating Wavelength, Switching Time, and Modulation}
+%Next, we can do dynamic analysis of laser modal and replace the threshold
+%current density to threshold pumping power. And verify the result with the
+%experimental data.
+%
+%\subsection{Feedback and Laser Threshold}
+%\section{Types of semiconductor Lasers} \label{corrections}
+%\subsection{Fabry-Perot Semiconductor Lasers}
+%
+%The Fabry-Perot(FP) laser is conceptually just an LED with a pair of end
+%mirrors or facets. The mirrors are needed to create the right conditions for
+%lasing to occur. The lasing medium can only amplify (undergo stimulated
+%emission) over a fairly narrow range because of the characteristics of the
+%material it is made from . A typical gain curve is illustrated on the
+%left-hand. 
+%
+%\subsection{Grating-Based semiconductor Lasers}
+%\subsection{Vertical-Cavity Surface-Emitting Lasers}
+%
+%As seen, light in the VCSEL propagates vertically with DBR mirrors as the
+%nature of the manufacturing process, the entire round-trip of the VCSEL is much
+%shorter than that of with the edge-emitting lasers. It leads to high
+%reflectivity ( around 99.9$\%$) of DBR mirrors, in which the large number of
+%layers are required.
+%
+%One of features related to the VCSELs is the longitudianl modal stability due
+%to its short cavity length (around order of the wavelength). A
+%
+%\subsection{Grating Surface-Emitting Lasers}
+%\section{Characteristics of Semiconductor Lasers} \label{corrections}
+%
+%In order to understand their operation, it is necessary to know some basic
+%performance parameters or important features of semiconductor lasers.
+%
+%\section{Basic Requrement for Design of Semiconductor Lasers} \label{corrections}
+%\subsection{Spectral width and Linewidth}
+%
+%FP semiconductor lasers produce a range of wavelengths. This range of
+%wavelengths is called the "spectral width" of the laser. Typically there will
+%be around 8 "modes" and the spectral width. In order to determin exactly the
+%spectral shape, spectral width is usually quoted as the FWHM (Full Width Half
+%Maximun) Instead of producing a continuous range of wavelengths over their
+%spectral width. Semiconductor lasers produce a series of "lines" at a number of
+%discrete wavelengths. Lines themselves vary in width (in different types of
+%lasers) very significantly. The linewidth is inversely proportional to the
+%coherence length of the laser.
+%
+%\subsection{Operating Wavelength, Switching Time, and Modulation}
 \section{Modeling of Semiconductor Lasers} \label{corrections}
 
 From the general formulations through the rate equations ans wave equations
@@ -240,39 +243,39 @@ based on the
 
 As we know, from different aspects of the same physics of the energy
 conservation, there are two basic classical methods to model the operation of
-semiconductor lasers. The first method, which will be summarized , applies the
-concept of photo/electron particle exchange with the abtract optical parameters
+semiconductor lasers. The first method applies the
+concept of photo/electron particle exchange with the abstract optical parameters
 and is suitable for the FP lasers. For the DBR/DFB lasers, due to strong
 non-uniformities of index distribution. The interaction between electromagnetic
 fields and electric particles has been considered, which . Indeed, those two
-methods are wholly compatible with one anohter. In this project, because we
-focus on the FP lasers as , we employ the first method: the standard rate
+methods are wholly compatible with one another. In this section, because the nanowire based lasers have net propagating resonance mode in the axial direction and the resonance modes are very similar to
+the FP modes, we employ the first method: the standard rate
 equation approach.
 
 Three fundamental elements in the semiconductor lasers: semiconductor band
 structure, current injection, and cavity. The former two are related to the
-material and junction structure， and the later is related to the laser
+material and junction structure, and the later is related to the laser
 structure. For semiconductor lasers, the key in the modeling is to deal with
 the interaction between electromagnetic fields and gain medium. The basic
 procedure of modeling of semiconductor lasers: Due to the complexity of the
 rate equation and coupling between carrier and photon density, the coupling
 rate equations are further solved by numerical methods such as the
 standing-wave approach (in frequency domain) and the traveling-wave approach
-(in time domain). The stading-wave approach is based on the assumption that the
-temporal and the spatial dependence of field distributions of the cavity odes
+(in time domain). The standing-wave approach is based on the assumption that the
+temporal and the spatial dependence of field distributions of the cavity modes
 are separable. As such, the dynamics is considered in the modal amplitudes.
-Consequently, the standing-wave apporach is valid only when the photon lifetime
+Consequently, the standing-wave approach is valid only when the photon lifetime
 is much shorter than the characteristic time of the laser dynamics. The
 traveling-wave approach, on the other hand, makes no assumptions about the
 cavity modes. Rather, it solves the time-dependent coupled=wave equations for
-the forward and the backward traveling waves directly and tehrefore is valid
+the forward and the backward traveling waves directly and therefore is valid
 even the laser cavity has relatively small Q-factor and/or the characteristic
 time of the laser dynamics is very short. Another advantage of the
 traveling-wave model is that it can be readily applied to laser diodes operated
-with multiple cavity modes, for which the stading-wave model may have
+with multiple cavity modes, for which the standing-wave model may have
 difficulty in finding the complex roots corresponding to each mode.
-\section{Laser Rate Equations} \label{corrections} 
 
+\section{Laser Rate Equations} \label{corrections} 
 
 We start with the governing equations of carrier density and photon density in
 the active region which is governed by a dynamic process.
@@ -406,7 +409,7 @@ materials.
 It is desirable to reduce the cavity loss $(<\alpha_i> + \alpha_m)$ and volume,
 $V$, in order to retaining a reasonably large confinement factor, $\Gamma$.
 
-\section{Wave Model of Semiconductor Lasers} \label{corrections}
+%\section{Wave Model of Semiconductor Lasers} \label{corrections}
 
 \section{Linewidth Enhancement Factor} \label{corrections}
 
@@ -415,32 +418,30 @@ thereby changing their energy within the sub-band. Such intra-band scatter
 events happen about every 0.1 ps, much more often than band-to-band
 recombination events. Thus, scattering leads to an uncertainty of the electron
 energy, which can be accounted for by introducing a symmetrical linewidth
-broadening funtion L into the gain formula.  This convolution integral means
+broadening function L into the gain formula. This convolution integral means
 that gain at the photon energy can now receive contributions from electron
-transitions with, weighted by 
+transitions within subbands.
 
 In fact, positive gain is now possible even for photon energies slightly below
 the bandgap. Cauchy himself exploited such a density function in 1827, with
 infinitesimal scale parameter, in defining a Dirac delta function, while among
-physicists, it is known as the Lorentzian line shape functionL with the
+physicists, it is known as the Lorentzian line shape function L with the
 half-width. This function is based on the assumption that the occupation
-probability of an electron state decays proportionally to exp(-t/). The Fourier
-transformation of this exponential function into the nergy domain leads to .
-Gamma is the average of the broadening in the conduction and inthe valence
-band. The full linewidth 2gamma is related to the average intra-band scattering
-time 
-
-Which includes scattering events in the conduction band and valence band. For
+probability of an electron state decays proportionally to ${exp}^{(-t/\tar)}$. The Fourier
+transformation of this exponential function into the energy domain.
+$\Gamma$ is the average of the broadening in the conduction and in the valence
+band. The full linewidth $2\Gamma$ is related to the average intra-band scattering
+time, which includes scattering events in the conduction band and valence band. For
 each band, linewidth contributions from different scattering processes are
 adding up.
 
-\section{Implementations} \label{corrections}
-\subsection{Optical Modes}
-\subsection{Steady State Analysis}
-\subsection{Dynamic State Analysis}
-
-\section{Simulation Results} \label{corrections}
-\subsection{Input Parameters}
-\subsection{Optical Modes}
-\subsection{Steady State Analysis}
-\subsection{Dynamic State Analysis}
+%\section{Implementations} \label{corrections}
+%\subsection{Optical Modes}
+%\subsection{Steady State Analysis}
+%\subsection{Dynamic State Analysis}
+%
+%\section{Simulation Results} \label{corrections}
+%\subsection{Input Parameters}
+%\subsection{Optical Modes}
+%\subsection{Steady State Analysis}
+%\subsection{Dynamic State Analysis}

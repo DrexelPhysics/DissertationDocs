@@ -117,23 +117,28 @@ dispersed between two transmission lines, then contacted with the transmission
 lines by FIB using platinum metal.
 
 Characteristic current-voltage (I-V) curves of the nanowire device are given in
-Fig.~\ref{CSNWIVlight}. The I-V curve exhibits rectifying behavior, confirming
-that the device is a well=behaved diode structure with the electric contact on
-one side (Al) ohmic and the other (Pt) Schottky. The reverse bias dark current
-of the device is very small, $\sim20pA$ at -1V, and could be further improved
-by properly passivating the CSNW surface. Upon illumination, the device shows a
-prnounced photovoltaic response due to the built-in potential from the Schottky
-junction. The short length of the nanowire device and the large depleted region
-by the built-in potential enable the nanowire photodetector to be operated at
-zero bias. Fig.~\ref{CSNWIVlight} shows the photocurrent of the device at zero
-bias as a function of irradiance. The linearity of the device was demonstrated
-up to at least at a 632 nm wavelength. The excellent linear response is in part
-based on the good crystalline quality of the nanowires, as confirmed by
-transmission electron microscopy. In addition, the capactiance of a typical
-device () is calculated to be 5 aF based on a simple parallel-plate model and
-thus its cutoff frequency is mainly limited by the transit time of the
-photo-generated charge carriers in the device, which may in principle reach ~
-100 GHz after certain parameter opti 
+Fig.~\ref{CSNWIVlight}. The experiment is performed with a room-temperature
+probe station connected with a Keithley 6487 picoammeter voltage source and a
+network analyzer. The light source is provided by a solar light simulation
+system with up to $90 kW/{cm}^2$ light intensity. The I-V curve exhibits Ohmic
+behavior with decreasing of current under higher applied voltage and
+illumination, confirming that the device is a well-behaved conductor with the
+electric contact on both sides (Pt) ohmic. The reverse bias dark current of the
+device is very small, $\sim4nA$ at -10V, and could be further improved by
+properly passivating the CSNW surface.  Upon illumination, the device shows a
+photo-resistance response due to the excited electron distribution in the CSNW.
+And this response is magnified with higher bias voltage.
+Fig.~\ref{CSNWCVlight} shows the capacitance of the device at 1Khz as a
+function of applied voltage with or without illumination. The metal contact
+pads of the CSNW device are made large enough to compensate the geometric
+capacitance as shown in Fig.~\ref{ContactNW}(right).  The capacitance of this
+typical device is measured to be $\sim20-60 pF$ based on a simple
+parallel-plate model and thus its cutoff frequency is mainly limited by the
+transit time of the photo-generated charge carriers in the device, which may in
+principle reach ~ 100 GHz after certain parameter optimization. With light
+illumination, the curve fitted capacitance (red line with red dots) increased
+to 80 pf with a significant transition of capacitance happened at -3.3V. The
+similar effect also observed in forward bias situation.
 
 \begin{figure}
   \caption{Scanning Electron Microscopy (SEM) image of one dispersed core-shell nanowire connecting with the transmission line by Focus Ion Beam (FIB). (left) NW with small contact pad to connect the transmission line for I-V measurement. (right) NW with large contact pad to connect the transmission line for C-V measurement.}
@@ -237,19 +242,11 @@ in a semiconductor can transfer energy, hence respond much faster than the
 electric field-induced carrier drift current.
 
 \begin{figure}
-  \caption{(a) Electro-optic sampling (EOS) time response measurement set up: RF probe is at one end of a transmission line in the middle of which the NW is contacted and is excited by 400 fs pulses of light delivered by fiber; probe beam samples the electric field through the electro-optic crystal. (b) Image of the FIB-contacted NWs. (c) Time response data.}
+  \caption{(a) Electro-optic sampling (EOS) time response measurement set up: RF probe is at one end of a transmission line in the middle of which the NW is contacted and is excited by 400 fs pulses of light delivered by fiber; probe beam samples the electric field through the electro-optic crystal. (b) Image of the FIB-contacted NWs. (c) Time response data. Image courtesy of Dr. Marc Currie at Naval Research Lab.}
   \centering
   \includegraphics[width=\textwidth]{pictures/Data/NWEOS}
   \label{NWEOS}
 \end{figure}
-
-In conclusion, we use an electro-optically sampling measurement technique to
-demonstrate a high-responsivity and high-speed opto-electronic device which may
-be constructed based on the collective response of reservoirs of charge. This
-significantly removes device limitations based on the paradigm of transport of
-electrons and holes.  The unique charge carriers' distribution in a hexagonal
-core-shell nanowire facilitates the faster collective response of such device
-due to a small light perturbation.
 
 \section{Optical Characterization of Nanowire}
 
@@ -298,7 +295,7 @@ more ligth than their thin-film counterparts.
   \label{reflectCSNW}
 \end{figure}
 
-\section{Emission Enhancement} \label{Dust_data}
+\subsection{Emission Enhancement} \label{Dust_data}
 
 Figure~\ref{PL} compares room temperature micro photoluminescence (PL) spectrum
 of bulk GaAs to CSNWs grown on GaAs, and two cuts of Si. The ratio of peak
@@ -314,7 +311,7 @@ order of magnitude more light compared to bulk.
   \label{PL}
 \end{figure}
 
-\section{Lasing} \label{data_lasing}
+\subsection{Lasing} \label{data_lasing}
 
 Photoluminescence (PL) of bulk GaAs to CSNWs grown on GaAs, and on two
 directions of Si showed that normalized to the fraction of the volume that
