@@ -1,4 +1,5 @@
-\chapter{Optical Enhancement of Core-Shell Nanowire} \label{data}
+\chapter[Optical Enhancement]{Optical Enhancement of Core-Shell Nanowire}
+\label{data}
 
 Given that the profound enhancement of optoeletronic properties of nanowires is
 the major theme of this dissertation, it is dutiful to first summarize the
@@ -81,7 +82,7 @@ GaAs substrate into the Au nanoparticles. After ramping down the sample
 temperature to the final growth value, TMGa was admitted to the reactor chamber
 and the growth was initiated.
 
-\section{Scanning Electron Microscopy Images} 
+\section{Nanowire Morphology} 
 
 The nanowire morphology and dimensions were studied by scanning electron
 microscopy (SEM) observations using a Dual Beam Scanning Electron/Focused Ion
@@ -142,6 +143,7 @@ similar effect also observed in forward bias situation.
 
 \begin{figure}
   \caption{Scanning Electron Microscopy (SEM) image of one dispersed core-shell nanowire connecting with the transmission line by Focus Ion Beam (FIB). (left) NW with small contact pad to connect the transmission line for I-V measurement. (right) NW with large contact pad to connect the transmission line for C-V measurement.}
+
   \centering
   \includegraphics[width=\textwidth]{pictures/Data/ContactNW}
   \label{ContactNW}
@@ -242,13 +244,13 @@ in a semiconductor can transfer energy, hence respond much faster than the
 electric field-induced carrier drift current.
 
 \begin{figure}
-  \caption{(a) Electro-optic sampling (EOS) time response measurement set up: RF probe is at one end of a transmission line in the middle of which the NW is contacted and is excited by 400 fs pulses of light delivered by fiber; probe beam samples the electric field through the electro-optic crystal. (b) Image of the FIB-contacted NWs. (c) Time response data. Image courtesy of Dr. Marc Currie at Naval Research Lab.}
+  \caption[Electro-optic sampling (EOS) time response measurement set up and results.]{(a) Electro-optic sampling (EOS) time response measurement set up: RF probe is at one end of a transmission line in the middle of which the NW is contacted and is excited by 400 fs pulses of light delivered by fiber; probe beam samples the electric field through the electro-optic crystal. (b) Image of the FIB-contacted NWs. (c) Time response data. Courtesy of Dr. Marc Currie at Naval Research Lab.}
   \centering
   \includegraphics[width=\textwidth]{pictures/Data/NWEOS}
   \label{NWEOS}
 \end{figure}
 
-\section{Optical Characterization of Nanowire}
+\section{Optical Characterization of as-grown Nanowires}
 
 Linear optical spectroscopic techniques, such as absorption, luminescnence and
 modulation spectroscopy, have for a long time been important tools in
@@ -261,32 +263,39 @@ give yet further impetus to research on semiconductor optical properties.
 
 \subsection{Absorption Enhancement} \label{Data_Abs}
 
+The reflectance spectra measurement was performed with an Oriel 77501 white
+light source to illuminate the samples after being coupled through a 1 mm
+fiber, collimated with a lens and focused onto the sample with a 25x reflecting
+objective. Reflectivity was measured by using a glass cover slip as a
+beamsplitter to couple 5\% of the light onto the sample while transmitting 95\%
+of the reflected light. The reflected light was coupled into a 1 mm fiber with
+a 10x objective and the spectra were measured with an Ando6317B OSA.
 Figure~\ref{reflecbulk} shows the reflectivity of a GaAs wafer on which 50 nm
 thin film of AlGaAs is grown, and compared this to the reflectivity spectrum of
-a Si substrate. As expected, about 30\% to 55\% of a normally incident light is
-reflected in bulk Si and GaAs, with a sharp change for wavelengths near their
-respective band gaps. All the data are normalized to the reflectivity of gold
-(Au).
+a Si substrate~\cite{Wang:2013ux}. As expected, about 30\% to 55\% of a
+normally incident light is reflected in bulk Si and GaAs, with a sharp change
+for wavelengths near their respective band gaps. All the data are normalized to
+the reflectivity of gold (Au).
 
 \begin{figure}
-  \caption{Reflectivity of GaAs (blue) and Si (green) substrates measured with $\sim{\mu}m$ normally incident beam.}
+  \caption{Reflectivity of GaAs (blue) and Si (green) substrates measured with $\sim{1}{\mu}m$ normally incident beam. Courtesy of Dr. Marc Currie at Naval Research Lab.}
   \centering
   \includegraphics[width=\textwidth]{pictures/Data/reflecbulk}
   \label{reflecbulk}
 \end{figure}
 
-Figure~\ref{reflectCSNW} contrasts this with the measured absorption spectrum
+Figure~\ref{reflectCSNW} contrasts this with the measured reflectance spectra
 of two types of GaAs core, AlGaAs shell nanowires (CSNWs): those grown on a
 GaAs substrate (black), and the others heteroexpitaxially grown on a Si
-substrate (red). The spectra show that both cases have the signature change of
-reflectivity at badgap of GaAs, i.e., these are due to the GaAs/AlGaAs CSNWs,
-not the substrate. Importantly, for the wavelength range of 700-1200nm these
-core-shells which only occupy ~15\% of the volume compared to thin films of the
-same height, reflect 2-4\% of light for the CSNWs grown on Si, and 3-7\% of
-light for those grown on GaAs substrate. The beam-width of the incident light
-being $\sim1{\mu}m$, this shows that only a few NWs are interrogated by ligth
-and, normalized to volume, these wires absorb more than two orders of magnitude
-more ligth than their thin-film counterparts.
+substrate (red)~\cite{Wang:2013ux}. The spectra show that both cases have the
+signature change of reflectivity at badgap of GaAs, i.e., these are due to the
+GaAs/AlGaAs CSNWs, not the substrate. Importantly, for the wavelength range of
+700-1200nm these core-shells which only occupy ~15\% of the volume compared to
+thin films of the same height, reflect 2-4\% of light for the CSNWs grown on
+Si, and 3-7\% of light for those grown on GaAs substrate. The beam-width of the
+incident light being $\sim1{\mu}m$, this shows that only a few NWs are
+interrogated by ligth and, normalized to volume, these wires absorb more than
+two orders of magnitude more ligth than their thin-film counterparts.
 
 \begin{figure}
   \caption{Reflectivity spectrum of GaAs/AlGaAs core-shells grown on Si (red) and GaAs (black) substrates shows, normalized to volume, nearly two orders of magnitude more absorption of ligth.}
@@ -298,11 +307,11 @@ more ligth than their thin-film counterparts.
 \subsection{Emission Enhancement} \label{Dust_data}
 
 Figure~\ref{PL} compares room temperature micro photoluminescence (PL) spectrum
-of bulk GaAs to CSNWs grown on GaAs, and two cuts of Si. The ratio of peak
-luminescence of a) CSNWs on GaAs, B) CSNWs on Si[111] and c) Si(miscut)
-substrates to bulk GaAs are, respectively, 923, 311 and 10. Considering the
-beam width of $\sim1{\mu}m$, 5-10 NW were excited, yet emitted over three
-order of magnitude more light compared to bulk.
+of bulk GaAs to CSNWs grown on GaAs, and two cuts of Si~\cite{Currie:2013to}.
+The ratio of peak luminescence of a) CSNWs on GaAs, B) CSNWs on Si[111] and c)
+Si(miscut) substrates to bulk GaAs are, respectively, 923, 311 and 10.
+Considering the beam width of $\sim1{\mu}m$, 5-10 NW were excited, yet emitted
+over three order of magnitude more light compared to bulk.
 
 \begin{figure}
   \caption{Photoluminescence of bulk GaAs, Core-Shell Nanowires grown on GaAs and Si.}
@@ -311,35 +320,35 @@ order of magnitude more light compared to bulk.
   \label{PL}
 \end{figure}
 
-\subsection{Lasing} \label{data_lasing}
+\subsection{Optical Amplification and Lasing} \label{data_lasing}
 
 Photoluminescence (PL) of bulk GaAs to CSNWs grown on GaAs, and on two
 directions of Si showed that normalized to the fraction of the volume that
 these wires occupy, nearly 10,000 times more brightness is observed in these
-wires compared to thin-film as in Fig.~\ref{PL}. In the case of stimulated
-emission of light, the photon mode density $(1+u_\varepsilon)$ plays a crucial
-role. Figure ~\ref{lasing} is the photoluminescence (PL) spectrum at various
-optical pump intensities. As the excitation laser power increase beyond
-$5{\mu}W$ a sudden and highly nonlinear increase in the emission intensity is
-observed, with pronounced peaks emerging from 800nm to 850nm that rapidly grows
-to become several orders of magnitude stronger than the background emission.
-The lasing amplitude versus excitation power demonstrates a threshold of around
-$5{\mu}W$, followed by saturation near $12{\mu}W$. This nonlinear threshold
-behavior shows in detail in the L-L plot, (i.e., The pumping power intensity
-(L) versus output light power intensity (L)) as in Fig.~\ref{expthreshold}. The
-sharp peak has a full width half maximum (FWHM) that varies from 1.5 to 3.5 nm.
-This remarkable behavior is achieved in the as-grown wires with no vertical
-structure.
+wires compared to thin-film~\cite{Wang:2015bz} as in Fig.~\ref{PL}. In the case
+of stimulated emission of light, the photon mode density $(1+u_\varepsilon)$
+plays a crucial role. Figure ~\ref{lasing} is the photoluminescence (PL)
+spectrum at various optical pump intensities. As the excitation laser power
+increase beyond $5{\mu}W$ a sudden and highly nonlinear increase in the
+emission intensity is observed, with pronounced peaks emerging from 800nm to
+850nm that rapidly grows to become several orders of magnitude stronger than
+the background emission.  The lasing amplitude versus excitation power
+demonstrates a threshold of around $5{\mu}W$, followed by saturation near
+$12{\mu}W$. This nonlinear threshold behavior shows in detail in the L-L plot,
+(i.e., The pumping power intensity (L) versus output light power intensity (L))
+as in Fig.~\ref{expthreshold}. The sharp peak has a full width half maximum
+(FWHM) that varies from 1.5 to 3.5 nm.  This remarkable behavior is achieved in
+the as-grown wires with no vertical structure.
 
 \begin{figure}
-  \caption{Micro-Photoluminescence measurements with fs-pulsed, 532-nm laser excitation at 250kHz repetition rate shows lasing of the as-grown wires.}
+  \caption{Micro-Photoluminescence measurements with fs-pulsed, 532-nm laser excitation at 250kHz repetition rate shows lasing of the as-grown wires. (Courtesy of Dr. Marc Currie at Naval Research Lab)}
   \centering
   \includegraphics[width=\textwidth]{pictures/Data/lasing}
   \label{lasing}
 \end{figure}
 
 \begin{figure}
-  \caption{\em{L-L curve of as-grown core-shell nanowire.} The pumping power intensity (L) versus output light power intensity (L) of as-grown core-shell nanowire operating at room temperature with a low threshold of $\sim10{\mu}W$ and followed by saturation near $22{\mu}W$.}
+\caption{The pumping power intensity (L) versus output light power intensity (L) of as-grown core-shell nanowire operating at room temperature with a low threshold of $\sim10{\mu}W$ and followed by saturation near $22{\mu}W$. (Courtesy of Dr. Marc Currie at Naval Research Lab)}
   \centering
   \includegraphics[width=\textwidth]{pictures/Data/expthreshold}
   \label{expthreshold}

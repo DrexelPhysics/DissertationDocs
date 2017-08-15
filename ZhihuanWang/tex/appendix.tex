@@ -1,16 +1,10 @@
-\chapter{Transition Rates} \label{ch:rates} 
+\chapter{Time-Dependent Perturbation Theory} \label{ch:rates} 
 
-This research project focuses on the dimensional dependence of the absorption
-behavior in semiconductor when interacting with light. Through time-dependent
-perturbation theory, we find out the transition rate and Fermi’s Golden Rule,
-then based on the light interaction Hamiltonian, time average Poynting vector
-and matrix element, derive the absorption coefficient for bulk semiconductor
-(3-dimension), quantum well (2-dimension) and quantum wire (1-dimension)
-structure.  Finally, this report will discuss the partial confinement on the
-electron in the conduction band without the hole confined in the valence band
-situation.
+In this appendix section, we review the time-dependent perturbation theory in
+detail as in reference~\cite{Chuang:2009tx}. The method and conclusion will be
+used as the fundamental blocks in the derivation of the optical transition
+rates in Chapter~\ref{RM}. Starting from the Schr{\"o}dinger equation:
 
-The Schr{\"o}dinger equation:
 \begin{equation}
   \HAM\Psi(r,t) = - \frac{\hbar}{i}\frac{\partial}{\partial t}\Psi(r,t)
 \end{equation}
@@ -25,16 +19,16 @@ $\HAM^\prime(r,t)$ is the small perturbation.
 
 The solution to the unperturbed part is assumed known:
 
-\begin{eqnarray}
-\begin{aligned}
-  & \HAM_0\Psi_n(r,t) = - \frac{\hbar}{i}\frac{\partial }{\partial t}\Psi_n(r,t),
-  \\
-  & \frac{dN_p}{dt} = {\Gamma}v_g{g}N_p + \Gamma\beta_{sp}R_{sp} - \frac{N_p}{\tau_p},
-\end{aligned}
+\begin{equation}
+  \HAM_0\Psi_n(r,t) = - \frac{\hbar}{i}\frac{\partial }{\partial t}\Phi_n(r,t),
 \label{eq:unperturbHAM}
-\end{eqnarray}
+\end{equation}
 
-The time-dependent perturbation is assumed to have the form
+\begin{equation}
+  \Phi_n(r,t)=\Phi_n(r)e^{-iE_nt/\hbar}
+\end{equation}
+
+The time-dependent perturbation is assumed to have the form:
 
 \begin{equation}
   \HAM = \begin{cases}
@@ -43,15 +37,18 @@ The time-dependent perturbation is assumed to have the form
   \end{cases}
 \end{equation}
 
-Expand the wave function in terms of the unperturbed solution, we find out $\Psi(r,t)$:
+Expand the wave function in terms of the unperturbed solution, we find out
+$\Psi(r,t)$:
 
 \begin{equation}
   \Psi(r,t) = \sum_{n}a_n(t)\Phi_n(r)e^{(-iE_{n}t/\hbar)}
 \end{equation}
 
-$|a_n(t)|^2$ gives the probability that the electron is in the state n at time t.
+$|a_n(t)|^2$ gives the probability that the electron is in the state n at time
+t.
 
-Substituting the expansion for $\Psi$ into Schr{\"o}dinger equation and using~\ref{eq:unperturbHAM}, we have
+Substituting the expansion for $\Psi$ into Schr{\"o}dinger equation and
+using~\ref{eq:unperturbHAM}, we have
 
 \begin{equation}
   \sum_n \frac{da_n(t)}{dt}\Psi_n(r)e^{-iE_{n}t/\hbar} = -\frac{\hbar}{i}\sum_n \HAM^{\prime}(r,t)a_n(t)\Phi_n(r)e^{(-iE_{n}t/\hbar)}
@@ -71,7 +68,6 @@ We find:
 \end{equation}
 
 where
-
 
 \begin{eqnarray}
 \begin{aligned}
@@ -128,7 +124,7 @@ Thus, the zeroth-order solutions for equation~\ref{eq:probility} are constant. L
 We have the zeroth-order solution
 
 \begin{equation}
-  {a^{(0)}}_i(t=0)=1; \quad {a^{(0)}}_m(t)=0, \quad m\neq {i}
+  {{a_i}^{(0)}}(t=0)=1; \quad {a^{(0)}}_m(t)=0, \quad m\neq {i}
 \end{equation}
 
 Therefore, the electron stays at the state i in the absence of any perturbation. The first order solution is
@@ -136,7 +132,7 @@ Therefore, the electron stays at the state i in the absence of any perturbation.
 \begin{eqnarray}
 \begin{aligned}
   & \frac{d{a^{(1)}_n}}{dt}=-\frac{i}{\hbar}{\HAM^\prime}_{mn}(t)e^{i\omega_{mn}t} \\
-  & = -\frac{i}{\hbar}[{\HAM^\prime}_{mi}e^{-i(\omega_{mi}-\omega)t}+{\HAM^\prime}_{mi}e^{+i(\omega_{mi}-\omega)t}]
+  & = -\frac{i}{\hbar}[{\HAM^\prime}_{mi}e^{-i(\omega_{mi}-\omega)t}+{\HAM^\prime}_{mi}e^{+i(\omega_{mi}+\omega)t}]
 \end{aligned}
 \end{eqnarray}
 
@@ -172,34 +168,140 @@ The transition rate should be, after using the property of
 \end{equation}
 
 \begin{eqnarray}
-\begin{aligned}
   & W_{if} = \frac{d{|a^{(1)}_f(t)|}^2}{dt} \\ 
-  &  \frac{2\pi}{\hbar}{|\HAM^\prime_(fi)|}^2\delta(E_{f}-E_{i}-\hbar\omega)+\frac{2\pi}{\hbar}{|\HAM^\prime_(fi)|}^2\delta(E_{f}-E_{i}+\hbar\omega)
-\end{aligned}
+  & = \frac{2\pi}{\hbar}{|\HAM^\prime_(fi)|}^2\delta(E_{f}-E_{i}-\hbar\omega)+\frac{2\pi}{\hbar}{|\HAM^\prime_(fi)|}^2\delta(E_{f}-E_{i}+\hbar\omega)
 \end{eqnarray}
 
 where $E_f = E_i+ \hbar\omega$ represents the absorption of a photon by an electron, and $E_f = E_i - \hbar\omega$ corresponds with the emission of a photon.
 
+\chapter{Partial Confinement on the Electron in Conduction
+Band}\label{partialconfinement}
+
+If the one-dimensional confinement only apply to the electrons in the
+conduction band, i.e., the holes in the valance band are free to move as
+in the bulk semiconductor, the wavefunction in the conduction band and
+valance band will change accordingly. The overlap of the conduction and
+valance band envelope function will no longer exist.
+
+Within a two-band model, the Bloch wave functions can be described by
+
 \begin{equation}
-  {I_{hm}^{en}}=\int_{-\infty}^\infty{\Phi_n^\ast}(z){g_m(z)}\,\mathrm{d}z,
+\Psi_{a}\left( \bm{r} \right) = u_{v}(\bm{r})\frac{e^{i\bm{k}_{\bm{t}} \cdot \rho}}{\sqrt{L_{z}}}
+\end{equation}
+
+for a hole wave function in the heavy-hole or a light-hole subband m.
+and
+
+\begin{equation}
+\Psi_{b}\left( \bm{r} \right) = u_{c}(\bm{r})\frac{e^{i\bm{k}_{\bm{t}} \cdot \rho}}{\sqrt{L_{z}}}\Phi_{n}(x,y)
+\end{equation}
+
+for an electron in the conduction subband n. The momentum matrix element
+\(\bm{p}_{\text{ba}}\) is given by
+
+\begin{equation}
+\bm{p}_{\text{ba}}\bm{=}\left\langle \Psi_{b} \middle| \bm{p} \middle| \Psi_{a} \right\rangle \approx \left\langle u_{c} \middle| \bm{p} \middle| u_{v} \right\rangle\delta_{k_{t},k_{t}^{'}}\ I_{\text{en}}
+\end{equation}
+
+where
+
+\begin{eqnarray}
+  & I_{\text{en}} = \int_{- \infty}^{+ \infty}{\text{dxdy}\Phi_{n}^{*}\left( x,y \right)} \nonumber \\
+  & = \int_{- \infty}^{+ \infty}{dxdy \cdot const \times e^{- \alpha^{2}y^{2}}\mathcal{H}_{n_{1}}(\alpha y)sin\frac{\text{πx}n_{2}}{L_{x}}}
+\end{eqnarray}
+
+Here introduce the notations
+
+\begin{equation}
+\alpha = \frac{m_{e}^{*}\omega}{\hbar}\ , \quad
+\mathcal{H}_{n}\left( y \right) = {( - 1)}^{n}e^{y^{2}}\frac{d^{n}}{dy^{n}}e^{{- y}^{2}}
+\end{equation}
+
+where \(\mathcal{H}_{n}\) are the Hermite
+polynomials{[}\protect\hyperlink{_ENREF_3}{3}{]},
+\(n_{1}\text{\ and\ }n_{2}\) are two quantum numbers.
+
+There is no overlap of the conduction and valence band envelope
+functions and the \textbf{K}-Selection rule also applied. The energy
+levels, which arise in quantum wires, are strongly dependent on the form
+of the confining potentials. And the additional confinement of electrons
+leads to an increase of the lowest energy level.
+
+Take into account the quantization of the electron and hole energies
+\(E_{a}\text{\ and\ }E_{b}\)
+
+\begin{equation}
+E_{a} = E_{\text{hm}} - \frac{\hbar^{2}\bm{k}_{\bm{t}}^{2}}{2m_{h}^{*}}
 \end{equation}
 
 \begin{equation}
-{I_{hm}^{en}}=\int_{-\infty}^\infty{\Phi_n^\ast}(z){g_m(z)}\,\mathrm{d}z,
-\label{eq:seven}
+E_{b} = {E_{g} + E}_{\text{en}} + \frac{\hbar^{2}\bm{k}_{\bm{t}}^{2}}{2m_{e}^{*}}
 \end{equation}
 
-Therefore, the electron stays at the state i in the absence of any
-perturbation. The first order solution is 
+And \(E_{\text{hm}} < 0\),
 
-If we consider the photon energy to be near resonance, either  or, we find the
-dominant terms: The absorption coefficient is a strong function of
-dimensionality. The confining situation of the quantum structure will
-considerably affect the energy levels, the overlap function of the conduction
-and valance band envelope function and also the joint optical density of state.
-Through the derivation of the absorption coefficient, we can observe the
-interaction between the light and semiconductor.  The next questions should
-address: 1. The simulation data for single nanowire abs
+\begin{equation}
+E_{b} - E_{a} = E_{\text{hm}}^{\text{en}} + E_{t},
+E_{t} = \frac{\hbar^{2}\bm{k}_{\bm{t}}^{2}}{2m_{e}^{*}}
+\end{equation}
+
+where
+
+\begin{equation}
+E_{\text{hm}}^{\text{en}} = {E_{g} + E}_{\text{en}} - E_{\text{hm}}
+\end{equation}
+
+is the band edge transition energy (\(\bm{k}_{\bm{t}} = 0\)).
+The summations over the quantum numbers
+\(\bm{k}_{a}\text{\ and}\bm{\ }\bm{k}_{b}\)become summations
+over (\(\bm{k}_{\bm{t}}^{\bm{'}},m\)) and
+(\(\bm{k}_{\bm{t}},n\)). Noting in the matrix element
+\(\bm{k}_{\bm{t}}\bm{=}\bm{k}_{\bm{t}}^{\bm{'}}\)
+
+\begin{equation}
+\alpha\left( \hbar\omega \right) = C_{0}\sum_{n}^{}\left| I_{\text{en}} \right|^{2}\frac{2}{V}\sum_{\bm{k}_{t}}^{}\left| \hat{e}\bm{\cdot}\bm{p}_{\text{cv}} \right|^{2}\delta(E_{\text{hm}}^{\text{en}} + E_{t} - \hbar\omega)(f_{v}^{m} - f_{c}^{n})
+\end{equation}
+
+Similarly, for this quasi-one dimensional case, assume the
+one-dimensional joint density of states also apply
+
+\begin{equation}
+\frac{2}{V}\sum_{\bm{k}_{t}}^{}{= \frac{2L_{z}}{V}}\int_{}^{}\frac{d\bm{k}_{\bm{t}}}{2\pi} = \frac{1}{\pi L_{x}L_{y}}\int_{0}^{\infty}\frac{\bm{1}}{\bm{k}_{\bm{t}}}d\bm{k}_{\bm{t}}\bm{=}\int_{0}^{\infty}{dE_{t}}\rho_{r}^{1D}
+\end{equation}
+
+\begin{equation}
+\rho_{r}^{1D} = \frac{\left( m_{r}^{*} \right)^{\frac{3}{2}}}{\text{πℏ}m_{e}^{*}L_{x}L_{y}}\frac{\bm{1}}{\sqrt{\bm{(}\hbar\omega - E_{g}\bm{)}}}
+\end{equation}
+
+where \(L_{z}L_{x}L_{y} = V\), \({L_{x},L_{y,}L}_{z}\) are effective
+period of the quantum wire along different directions, \(L_{z}\) along
+the axial of the quantum wire, and V is a volume of a period. The delta
+function gives the contribution at
+\(E_{\text{hm}}^{\text{en}} + E_{t} = \hbar\omega\), and the
+absorption edges occur at \(\hbar\omega = E_{\text{hm}}^{\text{en}}\).
+For an unpumped semiconductor, \(f_{v}^{m} = 1\ and\ f_{c}^{n} = 0\), we
+have the absorption spectrum at thermal equilibrium
+\(\alpha_{0}\left( \hbar\omega \right)\)
+
+\begin{equation}
+\alpha_{0}\left( \hbar\omega \right) = C_{0}\sum_{n}^{}\left| I_{\text{en}} \right|^{2}\left| \hat{e}\bm{\cdot}\bm{p}_{\text{cv}} \right|^{2}\rho_{r}^{1D}H(\hbar\omega - E_{\text{hm}}^{\text{en}})
+\end{equation}
+
+Because the integration of the delta function gives the step function,
+shown as H or the Heaviside step function,
+\(H\left( x \right) = 1\ for\ x > 0,\ and\ 0\ for\ x < 0\). The
+summation of \(I_{\text{en}}\)becomes the integral of conduction band
+electron envelope function, using an infinite wire model, and the
+absorption spectrum is
+
+\begin{equation}
+\alpha_{0}\left( \hbar\omega \right) = C_{0}{\sum_{n}^{}\left| I_{\text{en}} \right|^{2}\left| \hat{e}\bm{\cdot}\bm{p}_{\text{cv}} \right|}^{2}\frac{\left( m_{r}^{*} \right)^{\frac{3}{2}}}{\pi\hbar}m_{e}^{*}L_{x}L_{y}\frac{\bm{1}}{\sqrt{\bm{(}\hbar\omega - E_{g}\bm{)}}}
+\end{equation}
+
+\(C_{0} = \frac{\pi e^{2}}{n_{r}\varepsilon_{0}cm_{0}^{2}\omega}\)
+We can see that the factors containing \(A_{0}^{2}\) are canceled
+because the linear optical absorption coefficient is independent of the
+optical intensity.
 
 \chapter{Semiconductor Laser Modeling}
 \label{sec:model}
@@ -449,3 +551,11 @@ For a multiple quantum-well (MQW) lasers, we have to multiply the single-well co
 \chapter{Gain Spectrum and Threshold Calculation Matlab Code} \label{ch:matlabcode} 
 %\SyntaxHighLighting{}
 \lstinputlisting[language=matlab]{snippet/sourcecode/gain1band.m}
+
+\chapter[NW Lasing Modeling]{Semiconductor nanowire laser modeling Matlab Code} \label{ch:NWLaserMcode} 
+\section{FDTD Simulation Results Processing}
+%\SyntaxHighLighting{}
+\lstinputlisting[language=matlab]{snippet/sourcecode/Mode_CSNW_FDTD.m}
+\section{Steady State Rate Calculation}
+%\SyntaxHighLighting{}
+\lstinputlisting[language=matlab]{snippet/sourcecode/CSNW_Laser.m}

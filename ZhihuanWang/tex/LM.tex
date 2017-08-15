@@ -1,8 +1,176 @@
-\chapter{Light confinement in sub-wavelength nano-structure} \label{LM}
+\chapter[Light Confinement]{Light confinement in sub-wavelength nano-structures} \label{LM}
 
 
 \section{Light and Nanowire} \label{LightNW}
 
+\subsection{Modal Analysis of Cylindrical Nanowire}
+
+The basic equation describing scalar wave (e.g., single components of the
+electromagnetic filed) is the wave equation for the complex wave field
+amplitude $u(r,t)\in\mathbb{C}$:
+
+\begin{equation}
+  {\nabla}^2u-\frac{1}{c^2}\frac{{\partial}^2u}{\partial{t}^2}=f(r,t)
+\end{equation}
+
+where c is the wave speed or phase velocity, $f(r,t)\in\mathbb{C}$ represents
+wave field sources. By applying the technique of separation of variables
+$u(r,t)=\psi_\zeta(r)e^{-i\omega_zeta{t}}, Re(\omega_\zeta)\geq0$ (from
+$e^{-i\omega_\zeta{t}}=e^{-i\Re(\omega_\zeta)t}e^{-i\Im(\omega_\zeta)t}$ we
+observe that solutions with $\Im(\omega_\zeta)\neq0$ dissipate in time as
+"leaky modes") to reduce the complexity of the analysis and considering the
+free wave equation $f(r,t)\equiv{0}$, we obtain the Helmholtz or the amplitude
+wave equations for a nanostructure representing by electromagnetic field:
+
+\begin{equation}
+  {\nabla}^2\bm{E} + {\omega}^2\mu\epsilon\bm{E} = 0
+\end{equation}
+\begin{equation}
+  {\nabla}^2\bm{H} + {\omega}^2\mu\epsilon\bm{H} = 0
+\end{equation}
+
+where $\bm{E}$ and $\bm{H}$ are the macroscopic electric and magnetic fields,
+respectively. This is an eigenvalue equation for the operator $\nabla^2$ with
+eigenvalues ${\omega}^2\mu\epsilon$ and eigenfunctions $\bm{E}$ and $\bm{H}$.
+Because all other components of both electric and magnetic fields can be
+derived from their z component, we only consider $\bm{E}_z$ and $\bm{H}_z$
+here,
+
+\begin{equation}
+  \frac{{\partial}^2\bm{E}_z}{\partial{r^2}} +\frac{1}{r}\frac{\partial\bm{E}_z}{\partial{r}} +\frac{1}{r^2}\frac{{\partial}^2\bm{E}_z}{\partial{{\phi}^2}} + \frac{{\partial}^2\bm{E}_z}{\partial{z^2}} +{\omega}^2\mu\epsilon\bm{E}_z = 0
+\end{equation}
+\begin{equation}
+  \frac{{\partial}^2\bm{H}_z}{\partial{r^2}} +\frac{1}{r}\frac{\partial\bm{H}_z}{\partial{r}} +\frac{1}{r^2}\frac{{\partial}^2\bm{H}_z}{\partial{{\phi}^2}} + \frac{{\partial}^2\bm{H}_z}{\partial{z^2}} +{\omega}^2\mu\epsilon\bm{H}_z = 0
+\end{equation}
+
+Under specified boundary conditions, these equations can only be solved for a
+discrete set of eigenfrequencies $\omega_\zeta$ (resonant angular frequencies)
+with an index $\zeta$ (also called mode numbers). These special solutions
+(called the eigenmodes) allow us 1) to write the general solution of the free
+wave equation $(f(r,t)\equiv0)$ as a linear combination of eigenmodes, and 2)
+to obtain the solution to the harmonically forced wave equation $(f(r,t) =
+F(r)e^{-i\omega{t}})$. The general solutions for the above equations can be
+written as,
+
+\begin{equation}
+  \bm{E}_z(r,\phi,z)=\psi(r)e^{-j\beta{z}}e^{-jv\phi}
+\end{equation}
+
+If at the edge of the cavity, only the wave speed changes, $c_1$ inside the
+cavity and $c_0$ outside, and the refractive index inside the cavity defined as
+$n=c_0/c_1$. We impose the following boundary conditions: 1) the function
+$\psi(r)$ should be finite everywhere (no singularities), 2) it should describe
+only outgoing waves for $r\rightarrow\infty$, 3) the wave function should be
+continuous at the edge of the cavity at $r=a$.
+
+Thus, we have the wave function inside the cylinder $(r<a)$,
+\begin{equation}
+  {r^2}\frac{{\partial}^2\psi}{\partial{r^2}}+r\frac{\partial\psi}{\partial{r}}+r^2({k_0}^2n^2-\beta^2-\frac{v^2}{r^2})\psi = 0
+\end{equation}
+and outside the cylinder $(r>a)$,
+\begin{equation}
+  {r^2}\frac{{\partial}^2\psi}{\partial{r^2}}+r\frac{\partial\psi}{\partial{r}}+r^2({k_0}^2-\beta^2-\frac{m^2}{r^2})\psi = 0
+\end{equation}
+
+where $k_0=\omega_\zeta/c$ is the wave number, and $\beta$ is the wave vector
+in z direction. Define $\kappa$ and $\gamma$ as wave vectors in the transverse
+direction inside and out side of the cylindrical structure:
+
+\begin{equation}
+  \kappa^2={k_0}^2n^2-\beta^2
+  \label{eq:kappa}
+\end{equation}
+\begin{equation}
+  \gamma^2={k_0}^2-\beta^2
+  \label{eq:gamma}
+\end{equation}
+
+After applying the separation of variables in a cylindrical coordinates system
+$(r,\varphi)$, the Bessel $J_m$ and Hankel functions ${H_m}^{(1)}$ of the first
+kind of order m will be the proper solution for Eqs.~\ref{eq:kappa}
+and~\ref{eq:gamma}, respectively.
+
+\begin{equation}
+  \psi_\zeta(r)=e^{im\varphi}\cdot\left\{
+    \begin{array}{ll}
+      A_\zeta\cdot{J_m}(nk_0r)\quad;\quad r<a\\
+      B_\zeta\cdot{H_m}^{(1)}(k_0r)\quad;\quad r>a
+    \end{array}
+    \right.
+\end{equation}
+
+The first boundary condition determines the ratio $B_\zeta$ over
+$A_\zeta$~\ref{eq:BAratio} and the second one determines the eigenfrequency
+$\omega_\zeta$ from the characteristic equations~\ref{eq:characterEq}, which
+can only be solved numerically due to its transcendental form.
+
+\begin{equation}
+  \frac{B_\zeta}{A_\zeta}=\frac{J_m(nk_0a)}{{H_m}^{(1)}(nk_0a)}
+  \label{eq:BAratio}
+\end{equation}
+\begin{equation}
+  \frac{{J_m}^\prime(nk_0a)}{{J_m}(nk_0a)}=\frac{1}{n}\cdot\frac{{H_m}^{(1)\prime}(nk_0a)}{{H_m}^{(1)}(nk_0a)}
+  \label{eq:characterEq}
+\end{equation}
+
+where the prime denotes ordinary differentiation.
+
+To be more specific, the excitation of leaky modes occurs in an infinitely-long
+dielectric cylinders of radius a when the following condition is satisfied (the
+characterization equation)~\cite{Cao:2009ho}:
+
+\begin{equation}
+  {(\frac{1}{\kappa^2}-\frac{1}{\gamma^2})}^2{(\frac{\beta{m}}{a})}^2={k_0}^2(n^2\frac{{J^\prime}_m(\kappa{a})}{\kappa{J_m}(\kappa{a})}-{n_0}^2\frac{{H^\prime}_m(\gamma{a})}{\gamma{H_m}(\gamma{a})})(\frac{{J^\prime}_m(\kappa{a})}{\kappa{J_m}(\kappa{a})}-\frac{{H^\prime}_m(\gamma{a})}{\gamma{H_m}(\gamma{a})})
+  \label{eq:LMcharacter}
+\end{equation}
+
+Equation~\ref{eq:LMcharacter} can be split in conditions for purely transverse
+magnetic (TM) modes, if a cylinder in vacuum and air $(n_0=1)$ is illuminated
+by normal incidence $(\beta=0)$, with the magnetic fields in the plane normal
+to the nanowire axis
+$[n{J^\prime}_m(nK_0a)/J_m(nk_0a)={H^\prime}_m(K_0a)/H_m(k_0a)]$ and transverse
+electric (TE) modes
+$[{J^\prime}_m(nK_0a)/nJ_m(nk_0a)={H^\prime}_m(K_0a)/H_m(k_0a)]$ with the
+electric fields normal to the nanowire axis. From these conditions it follows
+that nanowires tend to support a limited number of TE and TM leaky modes, which
+increase in number as their radius is increased.
+
+On the other hand, Whispering Gallery Modes (WGM) can also be supported by
+solving the characteristic equation~\ref{eq:characterEq} numerically. They
+correspond to waves circling around the cavity, supported by continuous total
+internal reflection off the cavity surface, and return to the same point with
+the same phase after round trip, thus, interfere constructively with
+themselves, forming standing waves.
+
+One of the most important quantities that describe the performance of any
+resonator is the quality factor or Q-factor. It can be defined
+as~\cite{tobing2010fundamental}:
+
+\begin{equation}
+  Q=\omega_0 \frac{Stored\ energy}{Power\ loss}=\omega_0\tau=\frac{\omega_0}{\triangle\omega_{FWHM}}=\frac{\Re(\omega_\zeta)}{2|\Im(\omega_\zeta)|}
+  \label{eq:Qfactor}
+\end{equation}
+
+where $\omega_0=2\pi{v_0}$ is the angular frequency and $v_0$ is the frequency
+of the resonance, $\tau$ is the cavity ring down lifetime (i.e., the time
+required for the field intensity to decay by a factor of e) and
+$\triangle\omega_{FWHM}={\tau}^{-1}$ is the linewidth of the frequency of the
+resonance in angular frequency.
+
+Large Q-factors are necessary for most applications. The Q-factor measures the
+characteristic time for the natural decay of the energy stored inside the
+resonator in terms of the number of full field oscillations (times $2\pi$).
+This means that for a higher Q-factor the time that energy is stored inside the
+resonator is proportionally longer, and the total field intensity of the
+resonating mode will be higher 
+
+The last term in Eq.~\ref{eq:Qfactor} express the Q-factor of the resonance
+mode from the complex propagation constant (wave number):
+$k_0=\frac{\omega_\zeta}{c_0}=\beta+\frac{1}{2}i\alpha$, where
+$\beta=\frac{2\pi}{\lambda_0}=\Re(\omega_\zeta)$ is the phase constant,
+$\lambda_0$ is the wavelength in vacuum or air, and
+$|\alpha|=2|\Im(\omega_\zeta)|$ is the intensity attenuation coefficient due to
+various cavity loss mechanisms.
 
 \subsection{Leaky Mode Resonance}
 \label{sec:LMR}
@@ -12,17 +180,17 @@ analyzed by solving Maxwell's equations with the appropriate boundary
 conditions in the classical waveguide theory~\cite{Kapany:tq}, which leads to
 highly confined modes in optical fibers and microscale dielectric resonators.
 In an infinitely long cylinder, even at deep sub-wavelength diameters this
-results in a “characteristic equation,” the solution to which are the
-transverse magnetic (TM) and transverse electric (TE) resonant modes. We can
-define the electromagnetic modes of localized resonators as time-harmonic
-solutions of the form $\bm{E}(\bm{r},t) = \bm{E}(\bm{r},\omega)e^{-i\omega{t}}$
-to the source-free Maxwell equations. This solution shows that the longitudinal
-field component distributes outside the NW and is in resonance with the
-natural modes, such as ${TE}_{11}$, ${TM}_{02}$, etc., supported by the NW.
-These modes have been termed leaky-mode resonances
-(LMR)~\cite{Cao:2009ho,Fountaine:2014de}, and provide an intuitive tool to
-facilitate the understanding and optimization of the resonance effect in such
-nano-structures.
+results in a “characteristic equation~\ref{eq:LMcharacter},” the solution to
+which are the transverse magnetic (TM) and transverse electric (TE) resonant
+modes. We can define the electromagnetic modes of localized resonators as
+time-harmonic solutions of the form $\bm{E}(\bm{r},t) =
+\bm{E}(\bm{r},\omega)e^{-i\omega{t}}$ to the source-free Maxwell equations.
+This solution shows that the longitudinal field component distributes outside
+the NW and is in resonance with the natural modes, such as ${TE}_{11}$,
+${TM}_{02}$, etc., supported by the NW.  These modes have been termed
+leaky-mode resonances (LMR)~\cite{Cao:2009ho,Fountaine:2014de}, and provide an
+intuitive tool to facilitate the understanding and optimization of the
+resonance effect in such nano-structures.
 
 We replicate these results using MEEP, a widely used open-source
 finite-difference time-domain (FDTD) simulation package~\cite{Oskooi:2010fb},
@@ -94,10 +262,10 @@ absorption~\cite{Cao:2009ho,Kim:2014ig,Zhang:2013wb,Kelzenberg:2010fa,Wang:2013u
 and emission~\cite{Zimmler:2008fc,Currie:2013to,Le:2014cp,Grzela:2012wa}.
 Furthermore, these numerical solutions have lead to reproduction of
 experimental resonance spectra, e.g., polarization-resolved
-micro-photoluminescence (µ-PL) and cathodeluminescence (CL) spectroscopy.
+micro-photoluminescence $(\mu-PL)$ and cathodeluminescence (CL) spectroscopy.
 
 \begin{figure}
-  \caption{Several configurations of Whispering Gallery resonance modes in infinite long cylindrical and hexagonal nanowire. For comparison, four mode patterns of the circular cavity are given in the upper and lower right together with their angular mode number. (Reprinted with permission from~\cite{Nobis:2005wg} , \textcopyright 2005 by the American Physical Society.)}
+  \caption[Several configuration of Whispering Gallery resonance modes in infinite long cylindrical and hexagonal nanowires.]{Several configurations of Whispering Gallery resonance modes in infinite long cylindrical and hexagonal nanowires. For comparison, four mode patterns of the circular cavity are given in the upper and lower right together with their angular mode number. (Reprinted with permission from~\cite{Nobis:2005wg} , \textcopyright 2005 by the American Physical Society.)}
   \centering
   \includegraphics[width=\textwidth]{pictures/LM/WGMode}
   \label{WGMode}
@@ -178,7 +346,7 @@ structures have been proposed as an avenue for engineering and integrating
 on-chip nanophotonic devices.
 
 \begin{figure}
-  \caption{Helically propagating modes for optical feedback. (a) SEM image of the nanolaser grown on silicon substrate. (b) Schematic depicting a helical ray path because of glancing angle of incidence from the hexagonal facetes of the nanolaser shown in (a). (c) FDTD-simulated field profile shows a hexagonal WG-like mode pattern in the transverse plane, which arises from strong azimuthal components of helical resonance modes. (d) First-order and higher-order standing waves' axial variation. (Reprinted with permission from Macmillan Publishers Ltd: Nature Photonics~\cite{Chen:2011cg}, \textcopyright2011)}
+  \caption[Hexlically propagating modes for optical feedback.]{Helically propagating modes for optical feedback. (a) SEM image of the nanolaser grown on silicon substrate. (b) Schematic depicting a helical ray path because of glancing angle of incidence from the hexagonal facetes of the nanolaser shown in (a). (c) FDTD-simulated field profile shows a hexagonal WG-like mode pattern in the transverse plane, which arises from strong azimuthal components of helical resonance modes. (d) First-order and higher-order standing waves' axial variation. (Reprinted with permission from Macmillan Publishers Ltd: Nature Photonics~\cite{Chen:2011cg}, \textcopyright2011)}
   \centering
   \includegraphics[width=\textwidth]{pictures/LM/HelicalMode}
   \label{HelicalMode}
@@ -195,10 +363,10 @@ starting point for any FDTD solver is the time-derivative parts of Maxwell's
 equations, which in their simplest form can be written:
 
 \begin{equation}
-  \frac{\partial\bm{B}}{\partical{t}} = - \nabla \times \bm{E} - \bm{J}_B
+  \frac{\partial\bm{B}}{\partial{t}} = - \nabla \times \bm{E} - \bm{J}_B
 \end{equation}
 \begin{equation}
-  \frac{\partial\bm{D}}{\partical{t}} = + \nabla \times \bm{H} - \bm{J}
+  \frac{\partial\bm{D}}{\partial{t}} = + \nabla \times \bm{H} - \bm{J}
 \end{equation}
 
 where $\bm{E}$ and $\bm{H}$ are the macroscopic electric and magnetic fields,
