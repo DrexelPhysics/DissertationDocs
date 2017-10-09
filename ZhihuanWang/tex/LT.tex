@@ -151,13 +151,13 @@ transparent (zero population inversion and zero gain) and to achieve lasing
 inversion current, i.e., the injection current at which the population
 inversion is zero) and the threshold current (injection current at which the
 gain is equal to the loss and lasing begins) decrease and their temperature
-dependence becomes weaker. The decrease in the threshold current and increase
-in its temperature stability reflect one of the main areas of development and
-improvement of injection lasers. Owing to the continuous nature of the carrier
-spectrum within the allowed subbands, the use of quantum wells (QWs) or quantum
-well wires (QWRs) as active medium for optical transitions can quantitatively
-improve the parameters of devices based on them compared with devices with a
-bulk active region.
+dependence becomes weaker~\cite{asryan2004theory}. The decrease in the
+threshold current and increase in its temperature stability reflect one of the
+main areas of development and improvement of injection lasers. Owing to the
+continuous nature of the carrier spectrum within the allowed subbands, the use
+of quantum wells (QWs) or quantum well wires (QWRs) as active medium for
+optical transitions can quantitatively improve the parameters of devices based
+on them compared with devices with a bulk active region.
 
 Among the advantages of QWR lasers over the presently used QW lasers are their
 narrower gain spectra, much lower threshold currents, and ultrahigh temperature
@@ -450,13 +450,13 @@ calculated parameters listed in Table~\ref{tab:Calcpara_SL}.
 Now, we are able to generate the transient responses of carrier and photon
 densities with respect to the pumping power. Figure~\ref{L-L} shows the optical
 output power versus the input pumping power with a threshold pumping power at
-$30 \nu{W}$. The gain switching occurs because of ultrafast excitation. By
+$30 \mu{W}$. The gain switching occurs because of ultrafast excitation. By
 generating a large amount of carriers at a very short times cale, picosecond
 pump pulses excite carrier densities significantly above threshold, resulting
 in a strong peak of stimulated emission as shown in Fig.~\ref{SteadyPower} and
 Fig.~\ref{SteadyGain}. Thus, the optical output power reaches maximum value
 when the gain at its maxim, and quickly drops below threshold after this
-initial spike. 
+initial spike.
 
 \begin{figure}
   \caption{Calculated optical output power vs. pumping power, i.e., L-L curve.}
@@ -486,19 +486,27 @@ thereby changing their energy within the sub-band. Such intra-band scatter
 events happen about every 0.1 ps, much more often than band-to-band
 recombination events. Thus, scattering leads to an uncertainty of the electron
 energy, which can be accounted for by introducing a symmetrical linewidth
-broadening function L into the gain formula. This convolution integral means
-that gain at the photon energy can now receive contributions from electron
-transitions within subbands.
-
-In fact, positive gain is now possible even for photon energies slightly below
-the bandgap. Cauchy himself exploited such a density function in 1827, with
-infinitesimal scale parameter, in defining a Dirac delta function, while among
-physicists, it is known as the Lorentzian line shape function L with the
+broadening function $L$ into the gain formula~\cite{Piprek:2013wu}.  In fact,
+positive gain is now possible even for photon energies slightly below the
+bandgap. Cauchy himself exploited such a density function in
+1827~\cite{stigler2002statistics}, with an infinitesimal scale parameter, in
+defining a Dirac delta function, while among physicists, it is known as the
+Lorentzian lineshape function $L$ as in Eq.~\ref{eq:LorentzianEq} with the
 half-width. This function is based on the assumption that the occupation
 probability of an electron state decays proportionally to
-${exp}^{(-{t}/{\tau})}$.  The Fourier transformation of this exponential
-function into the energy domain.  $\Gamma$ is the average of the broadening in
-the conduction and in the valence band. The full linewidth $2\Gamma$ is related
-to the average intra-band scattering time, which includes scattering events in
-the conduction band and valence band. For each band, linewidth contributions
-from different scattering processes are adding up.
+${exp}^{(-{t}/{\tau})}$. And the Fourier transformation of this exponential
+function into the energy domain gives the Lorentzian lineshape function.
+
+\begin{equation}
+L(E-E_{21})=\frac{1}{\pi}\frac{\hbar/\tau_{in}}{{(\hbar/\tau_{in})}^2+{(E-E_{21})}^2}
+\label{eq:LorentzianEq}
+\end{equation}
+
+The intraband relaxation time, $\tau_{in}$, is the tiem constant associated
+with the exponetial decay of the elctron. $\Gamma=\hbar/\tau_{in}$ is the
+average of the broadening in the conduction and in the valence band. The full
+linewidth $2\Gamma$ is related to the average intra-band scattering time, which
+includes scattering events in the conduction band and valence band. For each
+band, linewidth contributions from different scattering processes are adding
+up. This convolution integral means that gain at the photon energy can now
+receive contributions from electron transitions within sub-bands.

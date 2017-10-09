@@ -3,18 +3,29 @@
 
 \section{Light and Nanowire} \label{LightNW}
 
+We have demonstrated that core-shell nanowires grown on Si or GaAs substrate
+have extraordinary enhanced optical and electronic properties compared to their
+thin film counterparts in the previous chapter. However, the question about how
+the light interact with these sub-wavelength structures still remains, and one
+cannot simply apply ray-optics to solve this issue. Thus, in this chapter, a
+proper model of electromagnetic wave propagation and resonating in the
+cavities will be proposed, and the general solutions of this eigen problem will
+be discussed. In addition, with the aim of finite-difference-time-domain (FDTD)
+simulation, we generalized the volumetric cavity modes in CSNWs, and studied
+their geometric dependence and light engineering applications.
+
 \subsection{Modal Analysis of Cylindrical Nanowire}
 
-The basic equation describing scalar wave (e.g., single components of the
-electromagnetic filed) is the wave equation for the complex wave field
-amplitude $u(r,t)\in\mathbb{C}$:
+The general equation describing the scalar wave (e.g., single components of the
+electromagnetic field) is:
 
 \begin{equation}
   {\nabla}^2u-\frac{1}{c^2}\frac{{\partial}^2u}{\partial{t}^2}=f(r,t)
 \end{equation}
 
-where c is the wave speed or phase velocity, $f(r,t)\in\mathbb{C}$ represents
-wave field sources. By applying the technique of separation of variables
+where $u(r,t)\in\mathbb{C}$ is the wave field amplitude, c is the wave speed or
+phase velocity, $f(r,t)\in\mathbb{C}$ represents wave field sources. By
+applying the technique of separation of variables
 $u(r,t)=\psi_\zeta(r)e^{-i\omega_zeta{t}}, Re(\omega_\zeta)\geq0$ (from
 $e^{-i\omega_\zeta{t}}=e^{-i\Re(\omega_\zeta)t}e^{-i\Im(\omega_\zeta)t}$ we
 observe that solutions with $\Im(\omega_\zeta)\neq0$ dissipate in time as
@@ -58,10 +69,11 @@ written as,
 
 If at the edge of the cavity, only the wave speed changes, $c_1$ inside the
 cavity and $c_0$ outside, and the refractive index inside the cavity defined as
-$n=c_0/c_1$. We impose the following boundary conditions: 1) the function
-$\psi(r)$ should be finite everywhere (no singularities), 2) it should describe
-only outgoing waves for $r\rightarrow\infty$, 3) the wave function should be
-continuous at the edge of the cavity at $r=a$.
+$n=c_0/c_1$, outside the cavity as $1$ for air. We impose the following
+boundary conditions: 1) the function $\psi(r)$ should be finite everywhere (no
+singularities), 2) it should describe only outgoing waves for
+$r\rightarrow\infty$, 3) the wave function should be continuous at the edge of
+the cavity at $r=a$.
 
 Thus, we have the wave function inside the cylinder $(r<a)$,
 \begin{equation}
@@ -74,7 +86,7 @@ and outside the cylinder $(r>a)$,
 
 where $k_0=\omega_\zeta/c$ is the wave number, and $\beta$ is the wave vector
 in z direction. Define $\kappa$ and $\gamma$ as wave vectors in the transverse
-direction inside and out side of the cylindrical structure:
+direction inside and outside of the cylindrical structure;
 
 \begin{equation}
   \kappa^2={k_0}^2n^2-\beta^2
@@ -87,8 +99,8 @@ direction inside and out side of the cylindrical structure:
 
 After applying the separation of variables in a cylindrical coordinates system
 $(r,\varphi)$, the Bessel $J_m$ and Hankel functions ${H_m}^{(1)}$ of the first
-kind of order m will be the proper solution for Eqs.~\ref{eq:kappa}
-and~\ref{eq:gamma}, respectively.
+kind of order $m$ will be the proper solution for Eqs.~\ref{eq:kappa}
+and~\ref{eq:gamma}, respectively:
 
 \begin{equation}
   \psi_\zeta(r)=e^{im\varphi}\cdot\left\{
@@ -100,9 +112,9 @@ and~\ref{eq:gamma}, respectively.
 \end{equation}
 
 The first boundary condition determines the ratio $B_\zeta$ over
-$A_\zeta$~\ref{eq:BAratio} and the second one determines the eigenfrequency
-$\omega_\zeta$ from the characteristic equations~\ref{eq:characterEq}, which
-can only be solved numerically due to its transcendental form.
+$A_\zeta$~(\ref{eq:BAratio}) and the second one determines the eigenfrequency
+$\omega_\zeta$ from the characteristic equations~(\ref{eq:characterEq}), which
+can only be solved numerically due to its transcendental form. Thus,
 
 \begin{equation}
   \frac{B_\zeta}{A_\zeta}=\frac{J_m(nk_0a)}{{H_m}^{(1)}(nk_0a)}
@@ -116,8 +128,8 @@ can only be solved numerically due to its transcendental form.
 where the prime denotes ordinary differentiation.
 
 To be more specific, the excitation of leaky modes occurs in an infinitely-long
-dielectric cylinders of radius a when the following condition is satisfied (the
-characterization equation)~\cite{Cao:2009ho}:
+dielectric cylinders of radius $a$ when the following condition is satisfied;
+i.e., the characteristic equation is~\cite{Cao:2009ho}:
 
 \begin{equation}
   {(\frac{1}{\kappa^2}-\frac{1}{\gamma^2})}^2{(\frac{\beta{m}}{a})}^2={k_0}^2(n^2\frac{{J^\prime}_m(\kappa{a})}{\kappa{J_m}(\kappa{a})}-{n_0}^2\frac{{H^\prime}_m(\gamma{a})}{\gamma{H_m}(\gamma{a})})(\frac{{J^\prime}_m(\kappa{a})}{\kappa{J_m}(\kappa{a})}-\frac{{H^\prime}_m(\gamma{a})}{\gamma{H_m}(\gamma{a})})
@@ -133,7 +145,8 @@ electric (TE) modes
 $[{J^\prime}_m(nK_0a)/nJ_m(nk_0a)={H^\prime}_m(K_0a)/H_m(k_0a)]$ with the
 electric fields normal to the nanowire axis. From these conditions it follows
 that nanowires tend to support a limited number of TE and TM leaky modes, which
-increase in number as their radius is increased.
+increase in number as their radius is increased. Detailed discussion of Leaky
+Resonant Mode will be present in the following section~\ref{sec:LMR}.
 
 On the other hand, Whispering Gallery Modes (WGM) can also be supported by
 solving the characteristic equation~\ref{eq:characterEq} numerically. They
@@ -177,13 +190,13 @@ various cavity loss mechanisms.
 
 Interaction of light with a dielectric or metallic cylindrical medium is
 analyzed by solving Maxwell's equations with the appropriate boundary
-conditions in the classical waveguide theory~\cite{Kapany:tq}, which leads to
-highly confined modes in optical fibers and microscale dielectric resonators.
-In an infinitely long cylinder, even at deep sub-wavelength diameters this
-results in a “characteristic equation~\ref{eq:LMcharacter},” the solution to
-which are the transverse magnetic (TM) and transverse electric (TE) resonant
-modes. We can define the electromagnetic modes of localized resonators as
-time-harmonic solutions of the form $\bm{E}(\bm{r},t) =
+conditions in the classical waveguide theory~\cite{Kapany2012optical}, which
+leads to highly confined modes in optical fibers and microscale dielectric
+resonators.  In an infinitely long cylinder, even at deep sub-wavelength
+diameters this results in a “characteristic equation~\ref{eq:LMcharacter},” the
+solution to which are the transverse magnetic (TM) and transverse electric (TE)
+resonant modes. We can define the electromagnetic modes of localized resonators
+as time-harmonic solutions of the form $\bm{E}(\bm{r},t) =
 \bm{E}(\bm{r},\omega)e^{-i\omega{t}}$ to the source-free Maxwell equations.
 This solution shows that the longitudinal field component distributes outside
 the NW and is in resonance with the natural modes, such as ${TE}_{11}$,
@@ -192,7 +205,8 @@ leaky-mode resonances (LMR)~\cite{Cao:2009ho,Fountaine:2014de}, and provide an
 intuitive tool to facilitate the understanding and optimization of the
 resonance effect in such nano-structures.
 
-We replicate these results using MEEP, a widely used open-source
+In order to gain an understanding of light confinement and guiding in NWs. We
+replicate previous results using MEEP, a widely used open-source
 finite-difference time-domain (FDTD) simulation package~\cite{Oskooi:2010fb},
 to identify how light is confined in an infinitely long GaAs nanowire. The top
 row of Fig.~\ref{CylindEz} shows several configurations of TM LMR modes for a
@@ -219,7 +233,7 @@ absorption of sunlight spectrum for higher efficiency solar cells, or to
 radiate as optical antennas.
 
 \begin{figure}
-  \caption{(Top) Resonant modes in an infinitely long cylinder of GaAs with diameter of 220 nm with light incident parallel to NW axis. (Bottom) The Poynting vector at different time frames with light incident perpendicular to the NW axis from the right.}
+  \caption{(Top) Resonant modes in an infinitely long cylinder of GaAs with diameter of 220 nm with light incident parallel to NW axis. (Bottom) The Poynting vector at different time frames with light incident perpendicular to the NW axis from the right. The black lines show the physical boundary between the nanowire and air.}
   \centering
   \includegraphics[width=\textwidth]{pictures/LM/CylindEz}
   \label{CylindEz}
@@ -231,9 +245,9 @@ radiate as optical antennas.
 Infinitely long cylindrical or hexagonal NW structures can also support
 Whispering Gallery (WG)
 modes~\cite{Zimmler:2008fc,huang2001room,Zhao:2014jt,Nobis:2005wg,Czekalla:2010uw,Gargas:2009cx,Fallert:2008ej,Johnson:2002ua,Nobis:2004tp}.
-To calculate the resonant WGMs, Maxwell’s equations have to be solved
+To calculate the resonant WGMs, Maxwell's equations have to be solved
 numerically~\cite{Wiersig:2003vo} taking into consideration the spectral
-dependence of the material of interest’s index of refraction. However, we can
+dependence of the material of interest's index of refraction. However, we can
 deduce a simple plane-wave model from theoretical derivations, and the
 relationship between resonance wavelength $\lambda$ and the corresponding mode
 serial number N can be obtained~\cite{Nobis:2004tp}. The WG modes can also
@@ -242,7 +256,7 @@ internal reflection from the curvature of the structure boundaries. However, a
 light wave can interfere with itself only when having completed one full
 circulation within the resonator, which means only the light with one or
 multiple wavelengths are allowed to perform multiple circulations generating a
-standing wave.  Figure~\ref{WGMode} from reference~\cite{Nobis:2005wg} shows
+standing wave. Figure~\ref{WGMode} from reference~\cite{Nobis:2005wg} shows
 near-field intensity patterns of low-order TM polarized hexagonal WGMs for $n =
 1$ and refractive index $n_r = 2.1$. Each mode pattern is labeled by its
 respective mode number m (lower right number) and its symmetry class (upper
@@ -316,28 +330,28 @@ Nanoneedles of III-V material grown on heterogeneous substrates are
 optoelectronic devices which have shown interesting optical behavior, including
 lasing, at room temperature~\cite{Chen:2011cg}. Figure~\ref{HelicalMode} (a)
 shows SEM image of a nano-laser grown on silicon substrate that has
-subwavelength dimensions on all sides. Analysis of light propagation introduced
-by shows that unlike the traditional WG mode that lack vertical structure,
-there is net propagation in axial direction in these structures which leads to
-volumetric resonant modes which are termed helical mode
-resonances~\cite{Chen:2011cg}. The schematic Fig.~\ref{HelicalMode}(b)
-suggests a helical ray path with nearly total internal reflection at the
-nanopillar-silicon interface due to the glancing angle of incidence from the
-hexagonal facets of the nano-laser shown in Fig.~\ref{HelicalMode}(a). As such,
-the faceted shape of the structure affects the optical cavity properties.
-FDTD-simulated field profile shows a hexagonal WG-like mode pattern  in the
-transverse plane as in Fig.~\ref{HelicalMode} (c), which arises from strong
-azimuthal components of helical modes.  Figure~\ref{HelicalMode} (d) shows
-first-order and higher-order standing waves’ axial variation. The radial mode
-number (first number, m) describes the transverse field pattern for WG modes,
-and the axial mode number (second number, n) describes the axial standing wave
-as is the case for Fabry-Perot resonances. It is seen that light or optical
-field can be well confined in the nanostructure even with low index contrast at
-the dielectric interface thus producing the nano-resonators needed for lasing.
-Although the quality (Q) factors of such nanostructure are usually not large,
-these helically propagating cavity modes, provide an optical feedback mechanism
+subwavelength dimensions on all sides. Analysis of light propagation shows that
+unlike the traditional WG mode that lack vertical structure, there is net
+propagation in axial direction in these structures which leads to volumetric
+resonant modes which are termed helical mode resonances~\cite{Chen:2011cg}. The
+schematic Fig.~\ref{HelicalMode}(b) suggests a helical ray path with nearly
+total internal reflection at the nanopillar-silicon interface due to the
+glancing angle of incidence from the hexagonal facets of the nano-laser shown
+in Fig.~\ref{HelicalMode}(a). As such, the faceted shape of the structure
+affects the optical cavity properties. FDTD-simulated field profile shows a
+hexagonal WG-like mode pattern  in the transverse plane as in
+Fig.~\ref{HelicalMode} (c), which arises from strong azimuthal components of
+helical modes.  Figure~\ref{HelicalMode} (d) shows first-order and higher-order
+standing waves’ axial variation. The radial mode number (first number, m)
+describes the transverse field pattern for WG modes, and the axial mode number
+(second number, n) describes the axial standing wave as is the case for
+Fabry-Perot resonances. It is seen that light or optical field can be well
+confined in the nanostructure even with low index contrast at the dielectric
+interface thus producing the nano-resonators needed for lasing. Although the
+quality (Q) factors of such nanostructure are usually not large, these
+helically propagating cavity modes, provide an optical feedback mechanism
 without the sophisticated mirror structures of the vertical cavity surface
-emitting lasers (VCSEL’s). Additionally, since the nanowires are
+emitting lasers (VCSEL's). Additionally, since the nanowires are
 heteroepitaxially grown on different substrates, they enable heterogeneous
 integration of photonic emitters and silicon based computational circuitry.
 Whereas traditional FP modes are inhibited by the interface between
@@ -373,7 +387,7 @@ where $\bm{E}$ and $\bm{H}$ are the macroscopic electric and magnetic fields,
 respectively. $\bm{D}$ and $\bm{B}$ are the electric displacement and magnetic
 induction fields~\cite{jackson1999classical}, respectively. $\bm{J}$ is the
 electric-charge current density, and $\bm{J}_b$ is a fictitious magnetic-charge
-current density which used for the calculation convenience of magnetic-dipole
+current density which is used for the calculation convenience of magnetic-dipole
 sources. In time-domain calculations, one typically solves the initial-value
 problem where the fields and currents are zero for $t < 0$, and then nonzero
 values evolve in response to some currents $\bm{J}(\bm{x},t)$ and/or
@@ -411,11 +425,11 @@ at the right corner of the hexagon with certain center frequency and bandwidth
 is used to excite the structure. The simulation stops until the sources are
 finished, and then to run for some additional period of time. In that
 additional period, the electromagnetic field is processed at a specific point
-to identify the frequencies and decay rates of the modes excited.
+to identify the frequencies and decay rates of the modes that are excited.
 
 3D simulation can be easily performed by adding one additional degree of
 freedom which is the nanowire length. The simulated cylindrical and hexagonal
-structures with cylindrical coordinates sketch at the bottom of
+structures with cylindrical coordinates are sketched at the bottom of
 Fig.~\ref{NWsketch} (a). The top row of Fig.~\ref{NWsketch} (a) shows the
 transverse plane mode for cylindrical (left) and hexagonal (right) core-only NW
 which is a cross-section cut at the center of the wire. The middle row depicts
@@ -492,28 +506,36 @@ to reflect from the parallel facets of the wire as in the last two
 descriptions, rather, the curved surfaces in the sub-wavelength structure can
 confine the light equally well.
 
-\subsection{Geometry Dependence}
+\begin{figure}
+  \caption{Cavity modes for (a) core-only cylindrical, (b) core-shell cylindrical, (c) hexagonal core-only, and (d) hexagonal core-shell. The radius of nanowire is 185 nm and the height is 1~$\mu{m}$.}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/LM/structuredep}
+  \label{structuredep}
+\end{figure}
 
-Both the materials and the geometric parameters of the core-shell nanowires can
-be easily controlled by the chemical compositions and/or the
-temperature/reaction rates during the growth process. Figure~\ref{CylinRP}
-and~\ref{HexRP} show the FDTD simulation results for both transverse plane and
-longitudinal plane modes for cylindrical and hexagonal CSNWs at same wavelength
-(532 nm) of incident light, respectively. The left part of Fig.~\ref{CylinRP}
-and~\ref{HexRP} is air-core/AlGaAs-shell, while the right part is
-GaAs-core/AlGaAs-shell. And they vary with different core/shell radius ratios,
-i.e., (top) $r_{core} = 40\%\ r_{shell}$ (middle) $r_{core} = 60\%\ r_{shell}$
-and (bottom) $r_{core} = 80\%\ r_{shell}$. As expected, a core with unit
-dielectric constant will confine the light more into the shell. The reduction
-of the shell thickness will further move the light into the shell with a little
-light in the core. However, in the right part of Fig.~\ref{CylinRP}
-and~\ref{HexRP}, the results clear indicated that the increasing of the
-core-shell radius ratio does not modify the electromagnetic field distribution
-inside of the CSNWs. The transverse plane modes keep the same mode number, as
-${TM}_{5n}$, for different ratios. In addition, the materials variation does
-not alter the mechanisms of confinement of light in the CSNWs, but only a shift
-of the resonance frequency corresponding to the dielectric constant and the
-bandgap of the materials.
+\subsection{Geometry Dependence of Resonant Modes}
+
+We examine the optical properties of CSNW to see whether it significantly
+differs from core-only or dielectric core NWs. Both the materials and the
+geometric parameters of the core-shell nanowires can be controlled by the
+chemical compositions and/or the temperature/reaction rates during the growth
+process. Figure~\ref{CylinRP} and~\ref{HexRP} show the FDTD simulation results
+for both transverse plane and longitudinal plane modes for cylindrical and
+hexagonal CSNWs at same wavelength (532 nm) of incident light, respectively.
+The left part of Fig.~\ref{CylinRP} and~\ref{HexRP} is air-core/AlGaAs-shell,
+while the right part is GaAs-core/AlGaAs-shell. And they vary with different
+core/shell radius ratios, i.e., (top) $r_{core} = 40\%\ r_{shell}$ (middle)
+$r_{core} = 60\%\ r_{shell}$ and (bottom) $r_{core} = 80\%\ r_{shell}$. As
+expected, a core with unit dielectric constant will confine the light more into
+the shell. The reduction of the shell thickness will further move the light
+into the shell with a little light in the core. However, in the right part of
+Fig.~\ref{CylinRP} and~\ref{HexRP}, the results clear indicated that the
+increasing of the core-shell radius ratio does not modify the electromagnetic
+field distribution inside of the CSNWs. The transverse plane modes keep the
+same mode number, as ${TM}_{5n}$, for different ratios. In addition, the
+materials variation does not alter the mechanisms of confinement of light in
+the CSNWs, but only a shift of the resonance frequency corresponding to the
+dielectric constant and the bandgap of the materials.
 
 \begin{figure}
   \caption{FDTD simulation results for different ratios, (top) $r_{core} = 40\%\ r_{shell}$ (middle) $r_{core} = 60\%\ r_{shell}$ and (bottom) $r_{core} = 80\%\ r_{shell}$, of core-shell radius of (left) air-core/AlGaAs-shell (right) GaAs-core/AlGaAs-shell cylindrical nanowires.}
@@ -538,7 +560,7 @@ demonstrated that with increasing of the diameters or lengths while remain the
 other factor same, the resonant mode numbers also increased correspondingly.
 However, if the diameter of the CSNW is smaller than 150 nm, there is no clear
 confined resonant modes excited by the structure which is consistent with the
-findings in Ref.~\ref{Zimmler:2008fc}.
+findings in Ref.~\cite{Zimmler:2008fc}.
 
 \begin{figure}
   \caption{Geometric Dependence TM radius variation for different diameters and length. Top two rows are the transverse plane TM modes with diameters varying from 20 nm to 370 nm. Bottom row is the longitudinal plane TM modes with length varying from $0.5 \mu{m}$ to $3 \mu{m}$.}
@@ -553,16 +575,9 @@ GaAs and shell of AlGaAs. These simulations show that there is little
 difference between core-only as in Fig.~\ref{structuredep} (a, c) and
 core-shell (b, d) NWs, since the difference of the refractive indices of core
 and shell is small. Despite being optically identical, these structures have
-very different optoelectronic properties which will be discussed after
-describing the important ramifications of the optical analysis of NWs in
-Chapter~\ref{RM}.
-
-\begin{figure}
-  \caption{Cavity modes for (a) core-only cylindrical, (b) core-shell cylindrical, (c) hexagonal core-only, and (d) hexagonal core-shell. The radius of nanowire is 185 nm and the height is 1~$\mu{m}$.}
-  \centering
-  \includegraphics[width=\textwidth]{pictures/LM/structuredep}
-  \label{structuredep}
-\end{figure}
+very different optoelectronic properties which will be discussed in
+Chapter~\ref{RM} after describing the important ramifications of the optical
+analysis of NWs.
 
 \subsection{Light Engineering of sub-wavelength Nano-structure}
 
@@ -588,7 +603,7 @@ engineer the absorption spectrum in order to match desired properties.
   \label{TMRadiusScat}
 \end{figure}
 
-\subsection{Tapering effect}
+\subsection{Continuous Variation of Geometry - The Tapering effect}
 
 The dependence of the resonant modes on NW radius also suggests the
 interesting possibility of having tapered structures which can support more

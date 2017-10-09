@@ -142,7 +142,7 @@ If for final state $m=f$; then integrate above equation, we have
 {a^{(1)}_{f}(t)}=-\frac{i}{\hbar}[{\HAM^\prime}_{fi}\frac{e^{-i(\omega_{mi}-\omega)t}}{\omega_{fi}-\omega}+{\HAM^{\prime+}}_{fi}\frac{e^{+i(\omega_{mi}-\omega)t}}{\omega_{fi}+\omega}]
 \end{equation}
 
-If we consider the photon energy to be near resonance, either $\omega\sim\omega_{fi}$ or $\omega\sim-\omega{fi}$, we find the dominant terms:
+If we consider the photon energy to be near resonance, either $\omega\sim\omega_{fi}$ or $\omega\sim-\omega_{fi}$, we find the dominant terms:
 
 \begin{equation}
   {a^{(1)}_{f}(t)}=\frac{4{|{\HAM^\prime}_{fi}|}^2}{\hbar^2}\frac{{sin}^2\frac{t}{2}(\omega_{fi}-\omega)}{{(\omega_{fi}-\omega)}^2} +\frac{4{|{\HAM^\prime}_{fi}|}^2}{\hbar^2}\frac{{sin}^2\frac{t}{2}(\omega_{fi}+\omega)}{{(\omega_{fi}+\omega)}^2}
@@ -158,7 +158,7 @@ When the interaction time is long enough, using approcimation
 Then
 
 \begin{equation}
-  {|a^{(1)}_f(t)|}^2= \frac{2\pi{t}}{\hbar^2}{|\HAM^\prime_(fi)|}^2\delta(\omega_{fi}-\omega)+\frac{2\pi{t}}{\hbar^2}{|\HAM^\prime_(fi)|}^2\delta(\omega_{fi}+\omega)
+{|a^{(1)}_f(t)|}^2= \frac{2\pi{t}}{\hbar^2}{|{\HAM^\prime}_{fi}|}^2\delta(\omega_{fi}-\omega)+\frac{2\pi{t}}{\hbar^2}{|{\HAM^\prime}_{fi}|}^2\delta(\omega_{fi}+\omega)
 \end{equation}
 
 The transition rate should be, after using the property of
@@ -169,7 +169,7 @@ The transition rate should be, after using the property of
 
 \begin{eqnarray}
   & W_{if} = \frac{d{|a^{(1)}_f(t)|}^2}{dt} \\ 
-  & = \frac{2\pi}{\hbar}{|\HAM^\prime_(fi)|}^2\delta(E_{f}-E_{i}-\hbar\omega)+\frac{2\pi}{\hbar}{|\HAM^\prime_(fi)|}^2\delta(E_{f}-E_{i}+\hbar\omega)
+  & = \frac{2\pi}{\hbar}{|{\HAM^\prime}_{fi}|}^2\delta(E_{f}-E_{i}-\hbar\omega)+\frac{2\pi}{\hbar}{|{\HAM^\prime}_{fi}|}^2\delta(E_{f}-E_{i}+\hbar\omega)
 \end{eqnarray}
 
 where $E_f = E_i+ \hbar\omega$ represents the absorption of a photon by an electron, and $E_f = E_i - \hbar\omega$ corresponds with the emission of a photon.
@@ -218,7 +218,7 @@ Here introduce the notations
 \end{equation}
 
 where \(\mathcal{H}_{n}\) are the Hermite
-polynomials{[}\protect\hyperlink{_ENREF_3}{3}{]},
+polynomials~\cite{Mitin:1999vs},
 \(n_{1}\text{\ and\ }n_{2}\) are two quantum numbers.
 
 There is no overlap of the conduction and valence band envelope
@@ -288,22 +288,25 @@ have the absorption spectrum at thermal equilibrium
 \end{equation}
 
 Because the integration of the delta function gives the step function,
-shown as H or the Heaviside step function,
+shown as $H$ or the Heaviside step function,
 \(H\left( x \right) = 1\ for\ x > 0,\ and\ 0\ for\ x < 0\). The
 summation of \(I_{\text{en}}\)becomes the integral of conduction band
 electron envelope function, using an infinite wire model, and the
 absorption spectrum is
 
 \begin{equation}
-\alpha_{0}\left( \hbar\omega \right) = C_{0}{\sum_{n}^{}\left| I_{\text{en}} \right|^{2}\left| \hat{e}\bm{\cdot}\bm{p}_{\text{cv}} \right|}^{2}\frac{\left( m_{r}^{*} \right)^{\frac{3}{2}}}{\pi\hbar}m_{e}^{*}L_{x}L_{y}\frac{\bm{1}}{\sqrt{\bm{(}\hbar\omega - E_{g}\bm{)}}}
+  \alpha_{0}\left( \hbar\omega \right) = C_{0}{\sum_{n}^{}\left| I_{\text{en}} \right|^{2}\left| \hat{e}\bm{\cdot}\bm{p}_{\text{cv}} \right|}^{2}\frac{\left( m_{r}^{*} \right)^{\frac{3}{2}}}{\pi\hbar{m_{e}}^{*}L_{x}L_{y}}\frac{\bm{1}}{\sqrt{\bm{(}\hbar\omega - E_{g}\bm{)}}}
 \end{equation}
 
-\(C_{0} = \frac{\pi e^{2}}{n_{r}\varepsilon_{0}cm_{0}^{2}\omega}\)
+\begin{equation}
+C_{0} = \frac{\pi e^{2}}{n_{r}\varepsilon_{0}cm_{0}^{2}\omega}
+\end{equation}
+
 We can see that the factors containing \(A_{0}^{2}\) are canceled
 because the linear optical absorption coefficient is independent of the
 optical intensity.
 
-\chapter{Semiconductor Laser Modeling}
+\chapter[Lasing Modeling]{Semiconductor Laser Modeling}
 \label{sec:model}
 
 In this section, we are trying to delve into the mechanics of how an injected
@@ -317,10 +320,10 @@ stimulated to recombine by light in a certain mode contribute more photons to
 that same mode. Thus, the stimulated carrier recombination/photon generation
 process is a gain process. We find the threshold gain for lasing which is the
 gain necessary to compensate for cavity losses. The threshold current is the
-current required to reach this gain 
+current required to reach this gain.
 
 For electrons and holes in the active region of a diode laser, only a fraction,
-$\eta_i$, of injected current will contribute to the generation of carriers.We
+$\eta_i$, of injected current will contribute to the generation of carriers. We
 assumed the active regions that are undoped or lightly doped, so that under
 high injection levels, charge neutrality applies and the electron density
 equals the hole density (i.e., $N = P$ in the active region). Thus, we can
@@ -336,18 +339,18 @@ the active region which is governed by a dynamic process.
   \\
   & \frac{dN_p}{dt} = {\Gamma}v_g{g}N_p + \Gamma\beta_{sp}R_{sp} - \frac{N_p}{\tau_p},
 \end{aligned}
-\label{eq:eight}
+\label{eq:NgoverningEq}
 \end{eqnarray}
 
 where $\beta_{sp}$ is the spontaneous emission factor, defined as the
-percentage of the total spontaneous emission coupled into the lasing mode. And it is
-just the reciprocal of the number of available optical modes in the bandwidth of
-the spontaneous emission for uniform coupling to all modes. The g is Incremental gain
-per unit length.
+percentage of the total spontaneous emission coupled into the lasing mode. And
+it is just the reciprocal of the number of available optical modes in the
+bandwidth of the spontaneous emission for uniform coupling to all modes. The g
+is the incremental gain per unit length.
 
-The first term of equation 1 is the rate of injected electrons $G_{gen} =
-{\Gamma_{i}I}/{qV}$, ${\Gamma_{i}I}/{q}$ is the number of electrons per
-second being injected into the active region, where V is the volume of the
+The first term of Eq.~\ref{eq:NgoverningEq} is the rate of injected electrons
+$G_{gen} = {\Gamma_{i}I}/{qV}$, ${\Gamma_{i}I}/{q}$ is the number of electrons
+per second being injected into the active region, where V is the volume of the
 active region. The rest terms are the rate of recombining of electrons per unit
 volume in the active region. There are several mechanisms should be considered,
 including a spontaneous recombination rate, $R_{sp}$, a nonradiative
@@ -367,10 +370,10 @@ the absence of photon or a generation term, the rate equation for carrier decay
 is $dN/dt = -N/\tau$, where $N/\tau = R_{sp} + R_{nr} + R_{l}$.
 
 The natural decay rate can also be expressed in a power series of the carrier
-density, N. We can also rewrite $R_{rec} = BN^2 + (AN + CN^3) + R_{st}$.  Where
-$R_{sp} ~ BN^2$ and $R_{nr} + R_{l} ~ (AN + cN^3)$. The coefficient B is the
-bimolecular recombination coefficient, and it has a magnitude, $B \sim 10^{-10}
-cm^3/s$ for most AlGaAs and InGaAsP alloys of interest.
+density, N. We can also rewrite $R_{rec} = BN^2 + (AN + CN^3) + R_{st}$. Where
+$R_{sp} \sim BN^2$ and $R_{nr} + R_{l} \sim (AN + cN^3)$. The coefficient $B$
+is the bimolecular recombination coefficient, and it has a magnitude, $B \sim
+10^{-10} cm^3/s$ for most AlGaAs and InGaAsP alloys of interest.
 
 When a laser is below threshold, in which the gain is insufficient to
 compensate for cavity losses, the generated photons do not receive net
@@ -399,7 +402,7 @@ volume occupied by electrons, V, the photon density generation rate will be
 $[V/V_p]R_{st}$, not just $R_{st}$. The electron-photon overlap factor,
 $[V/V_p]$, is generally referred to as the confinement factor, $\Gamma$.
 
-\section{Threshold or Steady-State Gain in Lasers} \label{sec:conditionals}
+\section[Steady-State Gain]{Threshold or Steady-State Gain in Lasers} \label{sec:steadystate}
 
 The cavity loss can be characterized by a photon decay constant or lifetime,
 $\tau_p$, and the gain necessary to overcome losses, and thus reach threshold.
@@ -435,7 +438,8 @@ the magnitude of the field. The complex propagation constant, $\beta$, includes
 the incremental transverse modal gain, $<g>_{xy}$ and internal modal loss,
 $<\alpha_i>_{xy}$. If we consider a Fabry-Perot laser with the propagating mode
 is reflected by end mirrors, and the reflection coefficients are $r_1$ and
-$r_2$. respectively. In addition, the mean mirror intensity reflection coefficient, $R = r_1r_2$.
+$r_2$. respectively. In addition, the mean mirror intensity reflection
+coefficient, $R = r_1r_2$.
 
 Define the mirror lass as $\alpha_m$
 
@@ -455,7 +459,7 @@ Thus, we can also write
   \Gamma g_{th} = <\alpha_i> + \alpha_m = \frac{1}{v_g\tau_p}
 \end{equation}
 
-\section{Threshold Current and Output Power}
+\section[Threshold Output Power]{Threshold Current and Output Power}
 \label{sec:threshold_current_and_power_out_versus_current}
 
 We construct together a below-threshold and an above-threshold characteristic
@@ -464,20 +468,24 @@ The first step is to use the below-threshold steady-state carrier rate
 equation,
 
 \begin{equation}
-  \frac{\eta_{i}I_{th}}{qV} = {(R_{sp} + R_{nr} + R_{l})}_{th} = \frac{N_{th}}{\tau} 
+  \frac{\eta_{i}I_{th}}{qV} = {(R_{sp} + R_{nr} + R_{l})}_{th} = \frac{N_{th}}{\tau}
+  \label{eq:thresholdsteadyrate}
 \end{equation}
 
-Then, recognizing that $(R_{sp} + R_{nr} + R_{l}) =AN + BN^2 +CN^3$ depends
-monotonically on $N$, we observe from eq 2.34 that above threshold $(R_{sp} +
-R_{nr} + R_{l})$ will also clamp at its threshold value, given by Eq 2.35. Thus,
-we can substitute Eq 2.35 into the carrier rate equation, eq 2.16 to obtain a
-new above threshold carrier rate equations,
+Then, recognizing that $(R_{sp} + R_{nr} + R_{l}) = AN + BN^2 +CN^3$ depends
+monotonically on $N$, we observe from $N(I > I_{th}) = N_{th}$ that above
+threshold $(R_{sp} + R_{nr} + R_{l})$ will also clamp at its threshold value,
+given by Eq.~\ref{eq:thresholdsteadyrate}. Thus, we can substitute
+Eq.~\ref{eq:thresholdsteadyrate} into the carrier rate equation,
+Eq.~\ref{eq:NgoverningEq} to obtain a new above threshold carrier rate
+equations,
 
 \begin{equation}
   \frac{dN}{dt} = \eta_i \frac{(I - I_{th})}{qV} - v_{g}gN_p,~~~   (I > I_{th})
 \end{equation}
 
-We also calculate a steady-state photon density above threshold where $g = g_{th}$,
+We also calculate a steady-state photon density above threshold where $g =
+g_{th}$,
 
 \begin{equation}
   N_p = \frac{\eta_i (I - I_{th})}{qv_{g}g{th}V}~~~   (steady~ state)
@@ -499,20 +507,21 @@ Substituting from , and using $\Gamma = V/V_p$,
   P_0 = \eta_i(\frac{\alpha_m}{<\alpha_i> + \alpha_m})\frac{hv}{q}(I - I{th}),~~~(I > I_{th})
 \end{equation}
 
-For the output power below-threshold $(I < I_{th})$ can be approximated by neglecting the stimulated emission term and solving for $N_p$ under steady-state conditions.
+The output power below-threshold $(I < I_{th})$ can be approximated by
+neglecting the stimulated emission term and solving for $N_p$ under
+steady-state conditions.
 
 \begin{equation}
 N_p = \Gamma\beta_{sp}R_{sp}\tau{p}~~~(I < I_{th})
 \end{equation}
 
-and 
+and
 
 \begin{equation}
   P_0(I < I_{th}) = \eta_r\eta_i\left(\frac{\alpha_m}{<\alpha_i> + \alpha_m}\right)\frac{hv}{q}\beta_{sp}I,
 \end{equation}
 
-
-We can get the threshold carrier density
+We can get the threshold carrier density:
 
 \begin{equation}
   N_{th} = N_{tr}e^{g_{th}/g_{0}N} = N_{tr}e^{(<\alpha_i> + \alpha_m)/\Gamma{g_{0}}N}
@@ -530,13 +539,13 @@ where for most $\uppercase\expandafter{\romannumeral3} -
 \uppercase\expandafter{\romannumeral5}$ materials the bimolecular recombination
 coefficient, $B \sim 10^{-10} cm^3/s$.
 
-For a multiple quantum-well (MQW) lasers, we have to multiply the single-well confinement factor, $\Gamma_1$, and volume, $V_1$, by the number of wells, $N_w$.
-
+For a multiple quantum-well (MQW) lasers, we have to multiply the single-well
+confinement factor, $\Gamma_1$, and volume, $V_1$, by the number of wells,
+$N_w$.
 
 \begin{equation}
   I_{thMQW} {\cong} \frac{qN_{w}V_{1}B{N_{tr}}^2}{\eta_i}e^{2(<\alpha_i> + \alpha_m)/{N_w\Gamma_{1}g_{0}N}}
 \end{equation}
-
 
 \chapter{MEEP Simulation Code} \label{ch:meepcode} 
 \section{Cylindrical Core-Shell Nanowire}

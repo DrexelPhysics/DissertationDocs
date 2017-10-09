@@ -1,12 +1,15 @@
 \chapter{Conclusions and Future Research} \label{conclusions}
 
 In this chapter, conclusions about the dissertation will be drawn and the
-author's contributions will be presented. Further work in the future, including 
+author's contributions will be presented. Further work in the future, including
+investigation and application of Plasmonic effects in CSNW; heterogeneous
+integration of CSNW active and passive components on the silicon-based photonic
+integrated circuit, will be discussed.
 
 \section{Summary of Contributions}
 
 As mentioned previously, communication of information, together with storage
-and computation form a “grand challenge” of the information age.  Recently, the
+and computation form a “grand challenge” of the information age. Recently, the
 analysis of big data has become the engine for societal, financial, scientific,
 and technological endeavors. This demands an infrastructure that is capable of
 fast and reliable high volume data processing. Traditionally, this requirement
@@ -30,13 +33,12 @@ substrates, particularly silicon, and as such becoming an important component
 in the next generation of photonic integrated circuits which are particularly
 useful in meeting the grand challenge of low energy and fast speed computation.
 
-
 In this dissertation, we designed and fabricated the CSNWs based
 heterostructure devices, measured and simulated their opto-electronic
 properties, and compared it with bulk structures. The static behavior
 simulations, including 2-D potential profile, electric field distributions, and
 carrier concentration, were performed with commercially available software. The
-light confinement and  distribution in the CSNWs was investigated by FDTD
+light confinement and distribution in the CSNWs was investigated by FDTD
 simulation. The simulation revealed the transverse and longitudinal plane waves
 in the resonance frequency enhanced the optical confinement of these sub-micron
 scale cavities.
@@ -67,15 +69,17 @@ laser and produced more light compare to their bulk counterparts.
 Several aspects of research, such as in-depth theoretical work, wide ranges of
 applications, further material explorations, can be extended from the present
 work in the future as both breadth and depth are concerned. These issues
-include collective behavior in low dimensional structures, waveguide design,
-employment of 
+include collective behavior in low dimensional structures, optimization of
+growth techniques and materials, development of Schottky contacts and
+exploiting electrical injection applications, employment of plasmonic effects,
+heterogeneous integration on Silicon based photonic integrated circuits.
 
 \subsection{Plasmonic Effects}
 
-Low dimensional electron gases exsit at the heterointerfaces of core-shell
+Low dimensional electron gases exist at the heterointerfaces of core-shell
 nanowires (CSNWs). For example, the GaAs/AlGaAs CSNWs typically form a
 hexagonal structure in which six (6) pillars of 1D charge at the vortices, and
-six (6) sheets of 2D charge at facets  are formed~\cite{Wang:2015hz}. At the
+six (6) sheets of 2D charge at facets are formed~\cite{Wang:2015hz}. At the
 same time, nanowires (NW) have also been shown to be capable of confining light
 in their sub-wavelength nano-structure, supporting photonic modes, and
 producing resonant cavities without the need for polished end facets. We have
@@ -106,9 +110,8 @@ materials, Core-Shell nanowires (CSNWs) can naturally form two-dimensional
 electron gas (2DEG) at the heterojunction interface and even large
 one-dimensional pillar of charge at the corners of thier hexagonal facets.
 
-
 \begin{figure}
-  \caption{An FDTD-simulated electric field profile (linear scale) of (a) a hexagonal core-shell nanowire (CSNW), (b) photonic modes are affected by plamonic modes in a CSNW covered with silver coating, (c) CSNW with embedded silver layer between the core and the shell; (d) plasmonic and photonic modes of CSNW with embedded 2DEG show similar effects compared to embedded metal. The black boundaries represent the interface betweeen layers of the structure.}
+  \caption[An FDTD-simulated electric field profile of (a) a hexagonal core-shell nanowire (CSNW), (b) CSNW covered with silver coating, (c) CSNW with embeded silver layer between the core and the shell, (d) CSNW with embedded 2DEG.]{An FDTD-simulated electric field profile (linear scale) of (a) a hexagonal core-shell nanowire (CSNW), (b) photonic modes are affected by plamonic modes in a CSNW covered with silver coating, (c) CSNW with embedded silver layer between the core and the shell; (d) plasmonic and photonic modes of CSNW with embedded 2DEG show similar effects compared to embedded metal. The black boundaries represent the interface betweeen layers of the structure.}
   \centering
   \includegraphics[width=\textwidth]{pictures/Conclusion/PlasmonMode}
   \label{PlasmonMode}
@@ -127,35 +130,32 @@ CSNW~\cite{montazeri2016plasmonic}.
 \subsection{Heterogeneous Integration on PIC}
 
 Recently, the increasing demand for high-speed low-power computation and
-communication has driven the growth of photonics integrated circuit
-(PIC) technology with projected market size of a billion dollars by 2018
-. Silicon photonics have received significant attention as it
-benefits from well-established complementary metal-oxide-semiconductor
-(CMOS) technology. Lack of an efficient silicon-based light source and
-photodetector, has motivated development of technologies for
-heterogeneous integration of efficient III-V semiconductor light sources
-and detector with silicon chips. Here we present core-shell
-nanowires (CSNWs) as versatile low-dimensional optoelectronic systems as
-a replacement to their conventional thin film counterparts in
-heterogeneous integration in silicon photonics. These CSNWs have
-extraordinary performance in light generation, absorption, light
-modulation, energy generation, and high-speed optical detection.
-Finally, we elaborate on a vision for a low-cost high-performance
-silicon photonics chip based on a core-shell nanowire platform. In this
-scheme, CSNWs are applied as high-speed low-power optical detectors,
-light source, and waveguides.
+communication has driven the growth of photonics integrated circuit (PIC)
+technology with projected market size of a billion dollars by 2018. Silicon
+photonics have received significant attention as it benefits from
+well-established complementary metal-oxide-semiconductor (CMOS) technology.
+Lack of an efficient silicon-based light source and photodetector, has
+motivated development of technologies for heterogeneous integration of
+efficient III-V semiconductor light sources and detector with silicon chips.
+Here we present core-shell nanowires (CSNWs) as versatile low-dimensional
+optoelectronic systems as a replacement to their conventional thin film
+counterparts in heterogeneous integration in silicon photonics. These CSNWs
+have extraordinary performance in light generation, absorption, light
+modulation, energy generation, and high-speed optical detection. Finally, we
+elaborate on a vision for a low-cost high-performance silicon photonics chip
+based on a core-shell nanowire platform. In this scheme, CSNWs are applied as
+high-speed low-power optical detectors, light source, and waveguides.
 
-In order to process high volume data,
-we need data computation, storage, and communication to work in concert as the
-three fundamental functions of a computation cell. As schematically shown in
-Fig.~\ref{NWPIC_NB}, a monolithic nanosystem may be envisioned, which
-incorporates NWs as waveguides, detectors, photovoltaic cells, antennas,
-modulators, (photo)capacitors, LEDs and lasers. These components may be
-incorporated in circuit layers, such as network-on-chip. Different layers can
-communicate using NW through-silicon vias (TSVs). Similar
-low-power/high-performance advantags can be realized through achievement of
-high interconnect densities on the 2.5D through-Si-interposer (TSI) as reported
-in reference~\cite{Zhang:2015ec} 
+In order to process high volume data, we need data computation, storage, and
+communication to work in concert as the three fundamental functions of a
+computation cell. As schematically shown in Fig.~\ref{NWPIC_NB}, a monolithic
+nanosystem may be envisioned, which incorporates NWs as waveguides, detectors,
+photovoltaic cells, antennas, modulators, (photo)capacitors, LEDs and lasers.
+These components may be incorporated in circuit layers, such as
+network-on-chip. Different layers can communicate using NW through-silicon vias
+(TSVs). Similar low-power/high-performance advantags can be realized through
+achievement of high interconnect densities on the 2.5D through-Si-interposer
+(TSI) as reported in reference~\cite{Zhang:2015ec} 
 
 Performance enhancement of CSNWs can be attributed to the formation of confined
 quasi-one-dimensional electron gas at the vortices, and two-dimensional
@@ -167,29 +167,27 @@ Additionally these plasmons, which are unique to CSNWs, affect waveguiding and
 optical cavity properties of CSNWs and can be used as waveguides, modulators
 and photocapacitors.
 
-The proposed integrated photonic platform is schematically depicted at
-the bottom part of Fig.~\ref{NWPIC_NB} with multiple key components implemented
-through utilizing core-shell nanowires. This monolithic nanosystem
-incorporates CSNWs as waveguides, detectors, photovoltaic cells,
-antennas, modulators, LEDs, and lasers. These components may be
-incorporated in circuit layers, such as networks on chip. Additionally,
-they can be used for 3D integration using NW through-silicon vias
-(TSVs). Such a circuit may compete with manufacturing methods such as
-flip-chip bonding and achieves further miniaturization by incorporating
-high-performance nanowires in vertical architectures to replace large
-surface area thin film structures such as vertical cavity surface
+The proposed integrated photonic platform is schematically depicted at the
+bottom part of Fig.~\ref{NWPIC_NB} with multiple key components implemented
+through utilizing core-shell nanowires. This monolithic nanosystem incorporates
+CSNWs as waveguides, detectors, photovoltaic cells, antennas, modulators, LEDs,
+and lasers. These components may be incorporated in circuit layers, such as
+networks on chip. Additionally, they can be used for 3D integration using NW
+through-silicon vias (TSVs). Such a circuit may compete with manufacturing
+methods such as flip-chip bonding and achieves further miniaturization by
+incorporating high-performance nanowires in vertical architectures to replace
+large surface area thin film structures such as vertical cavity surface
 emitting lasers (VCSELs).
 
-In conclusion, CSNW demonstrate unique combination of plasmonic, photonic,
-and electronic properties which makes them versatile high-performance
-optoelectronic devices including Lasers, LEDs, photodetectors, solar
-cells, waveguides, and optical amplifiers. Since they can be grown from
-a wide range of material including GaAs, InP, and GaN, at different
-directions and on foreign substrates such as oxides, Graphene, Si, and
-III-Vs, they offer a competitive platform for photonic integrated
-circuits, and specifically for heterogeneous integration in silicon
-photonics chips, photodetectors/photocapacitors, antennas and
-waveguides.
+In conclusion, CSNW demonstrate unique combination of plasmonic, photonic, and
+electronic properties which makes them versatile high-performance
+optoelectronic devices including Lasers, LEDs, photodetectors, solar cells,
+waveguides, and optical amplifiers. Since they can be grown from a wide range
+of material including GaAs, InP, and GaN, at different directions and on
+foreign substrates such as oxides, Graphene, Si, and III-Vs, they offer a
+competitive platform for photonic integrated circuits, and specifically for
+heterogeneous integration in silicon photonics chips,
+photodetectors/photocapacitors, antennas and waveguides.
 
 \begin{figure}
   \caption{Schematic depiction of an optoelectronic nanosystem may include key components such as NW LED/laser source, photodetector/photocapacitor, NW antennas, and NW-enabled network-on-chip integrated on silicon.}
