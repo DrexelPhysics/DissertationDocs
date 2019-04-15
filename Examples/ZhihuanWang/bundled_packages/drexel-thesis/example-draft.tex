@@ -1,0 +1,88 @@
+%%
+%% This is file `example-draft.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% drexel-thesis.dtx  (with options: `example-draft')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2010 W. Trevor King
+%% 
+%% This file may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License, either version 1.3 of this license
+%% or (at your option) any later version.  The latest version of this
+%% license is in:
+%% 
+%%    http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.3 or later is part of all distributions of LaTeX version
+%% 2003/06/01 or later.
+%% 
+%% See drexel-thesis.pdf for details.
+\documentclass[draft,subfig]{drexel-thesis}
+
+%% Enter the appropriate information here
+\author{Johny Henry}
+\title{Inadequacies of Steam-Driven Boring Machines}
+\DUTmonth{July}
+\DUTyear{1872}
+\degree{Doctor of Philosophy}
+\advisor{Collis Potter Huntington, R.R.D.}
+\advisor{Advisor 2, Ph.D.}
+\advisor{Advisor 3, Ph.D.}
+\copyrighttext{\copyrighttextCCBYSA}
+
+\usepackage[super,sort&compress]{natbib} % fancy citation extensions
+\bibliographystyle{unsrtnat}
+
+\usepackage{fancyvrb} % nicer verbatim handling
+\DefineShortVerb{\|}  % \verb+TEXT+  ->  |TEXT|
+
+\renewenvironment{preamble}{% look, we're clobbering an environment!
+  What preamble?\begingroup\color{white}}{\endgroup}
+
+\usepackage[english]{babel} % English blindtext
+\usepackage{blindtext} % macros for producing dummy output
+\addto\captionsenglish{\DUTnames}
+
+\begin{document}
+\begin{DUTpreamble} % "DUT" because original preamble was clobbered.
+
+\begin{dedications}
+We're in \iffinal{final}{draft} mode!
+
+\Blindtext[3]
+\end{dedications}
+
+\begin{acknowledgments}
+\Blindtext[3]
+\end{acknowledgments}
+
+\tableofcontents
+\listoftables
+\listoffigures
+
+\begin{abstract}
+\Blindtext[3]
+\end{abstract}
+\end{DUTpreamble}
+
+\begin{thesis}
+\include{example-1}
+\end{thesis}
+
+\bibliography{example-ref}
+
+\appendix
+\include{example-a}
+
+\begin{vita}
+\Blindtext[3]
+\end{vita}
+
+\end{document}
+\endinput
+%%
+%% End of file `example-draft.tex'.

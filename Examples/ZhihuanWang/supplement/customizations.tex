@@ -1,0 +1,382 @@
+% Spacings between the chapter top and to the text
+%-----------------------------------------------------------------------------
+\newcommand{\chaptertopspacing}{10}
+\newcommand{\chaptertotextspacing}{-10}
+\newcommand{\chaptertopspacingSTAR}{10}
+\newcommand{\chaptertotextspacingSTAR}{-10}
+
+\iffinal{}{  % Library format requires numbered footnotes
+\renewcommand{\thefootnote}{$\dagger$}	% Daggers for footnote markers style
+}
+
+% Convenience functions
+% -----------------------------------------------------------------------------
+\newcommand{\B}[1]{ {\bf #1} }      		% Bold text for matrices
+\newcommand{\Z}{\mathcal{Z}}				% Partition function
+\newcommand{\HAM}{\mathcal{H}}		% Hamiltonian
+\newcommand{\qp}[0]{(\B{q},\B{p})}  % Cannonical variables (q,p) 
+\newcommand{\pfrac}[2]{\frac{\partial #1}{\partial #2}} 	% partial 1 /partial 2 
+%\newcommand{\fr}{2}{\frac{#1}{#2}}   % frac 1/2
+\newcommand{\ket}[1]  {\left | \, #1 \right \rangle}			% bra-ket notation
+\newcommand{\abs}[1]{\left\vert #1 \right\vert}		% vert bars for averages
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}	% taller vert bars for the norm
+\newcommand{\evalat}[1]{\left. #1 \right \vert}	% ex. evaluating the int. at its limits
+\newcommand{\set}[1]{\left\{ #1 \right\}}					% squigle brackets for sets
+\newcommand{\avg}[1]{\left< #1 \right>}					% angle brackets for averages
+\newcommand{\paren}[1]{\left( #1 \right)}					% grows parentheses to the correct size
+\newcommand{\brackets}[1]{\left[ #1 \right]}			% grows square brackets
+\newcommand{\braces}[1]{\left \{ #1 \right \}}
+\newcommand{\piecewisebrace}[1]{\left \{ #1 \right .} % Useful for piecewise functions
+
+\newcommand{\ie}{i.e.\ }
+\newcommand{\eg}{e.g.\ }
+\newcommand{\cf}{c.f.\ }
+\newcommand{\chem}[1]{\ensuremath{\mathrm{#1}}} % Chemical formula
+
+\DeclareMathOperator*{\minor}{minor\,}
+\DeclareMathOperator*{\sgn}{\mathbf{sgn}\,}
+\DeclareMathOperator*{\rootof}{RootOf\,}
+
+
+\newcommand{\figurewidthSINGLE}{0.8\textwidth}
+\newcommand{\figurewidthDOUBLE}{0.45\textwidth}
+\newcommand{\figurewidthTRIPLE}{0.35\textwidth}
+
+\newcommand{\CHI}[2]{\chi_{#1 #2}} % Cluster Counting function
+
+% ----------------------------------------------------------------------------
+
+\newcommand{\civ}{\ion{C}{4}}
+\newcommand{\athree}{$\alpha_{\rm 3D}$}
+\newcommand{\aone}{$\alpha_{\rm 1D}$}
+\newcommand{\atwo}{$\alpha_{\rm 2D}$}
+\newcommand{\luvaox}{$L_{\rm }$--$\alpha_{\rm ox}$}
+\newcommand{\lbol}{$L_{\rm bol}$}
+\newcommand{\luv}{$L_{\rm uv}$}
+\newcommand{\lx}{$L_{\rm x}$}
+\newcommand{\llam}{$L_{\lambda}$}
+\newcommand{\ltwofive}{$L_{\rm 2500\,\AA}$}
+\newcommand{\lfiveone}{$L_{\rm 5100\,\AA}$}
+\newcommand{\bctwofive}{BC$_{\rm 2500\,\AA}$}
+\newcommand{\bcfiveone}{BC$_{\rm 5100\,\AA}$}
+\newcommand{\onemum}{1\,$\mu$m}
+\newcommand{\tenmum}{10\,$\mu$m}
+\newcommand{\thirtymum}{30\,$\mu$m}
+\newcommand{\twokev}{2\,keV}
+\newcommand{\tenkev}{10\,keV}
+\newcommand{\hundredev}{0.1\,keV}
+\newcommand{\twohundredev}{0.2\,keV}
+\newcommand{\ebv}{{\rm E(B-V)}}
+\newcommand{\dal}{\Delta(\alpha_{\lambda})}
+\newcommand{\dgi}{\Delta(g-i)}
+\newcommand{\dug}{\Delta(u-g)}
+\newcommand{\diz}{\Delta(i-z)}
+\newcommand{\mrel}{\Delta m}
+\newcommand{\mbh}{M_{\rm BH}}
+\newcommand{\lmbh}{\log{(M_{\rm BH})}}
+%\newcommand{\lf}{L_{\rm frac}}
+\newcommand{\lf}{L/L_{\rm Edd}}
+
+% ----------------------------------------------------------------------------
+% Override the color of links
+%\newif\if@colorref
+\hypersetup{colorlinks}
+%\if@colorref
+  \hypersetup{linkcolor=blue}
+  \hypersetup{anchorcolor=black}
+  \hypersetup{citecolor=blue}
+  \hypersetup{filecolor=black}
+  \hypersetup{menucolor=black}
+  \hypersetup{runcolor=black}
+  \hypersetup{urlcolor=blue}
+\fi
+
+% Partition block notation
+% -----------------------------------------------------------------------------
+\newcommand*\pblock[3]{
+	\tikz[baseline=(char.base)]{
+		\node[ellipse,draw,inner sep=2pt] (char) {$#1$};
+	} ^{#2}_{#3}
+}
+
+\newcommand{\Go}{\text{G}\bar{\text{o}}}
+\newcommand{\GO}{\textbf{G}}
+\newcommand{\CHIX}{\mathbf{X}}
+\newcommand{\KP}{k_+}
+\newcommand{\KM}{k_-}
+\newcommand{\KPMAX}{k_+^*}
+
+% -----------------------------------------------------------------------------
+% Add the CC logo to the copyright page and spruce it up a bit
+\renewcommand\copyrighttextCCBYSA{
+\\[2 em]
+\begin{quote}
+\begin{center}
+\includegraphics[width=.3\textwidth]{pictures/cc_logo.pdf} \\[2 em]
+\end{center} 
+    This work is licensed under the terms of the Creative Commons
+    Attribution-ShareAlike 4.0 International license.  The license is
+    available at \\
+    \url{http://creativecommons.org/licenses/by-sa/4.0/}.
+\end{quote}
+}
+
+% -----------------------------------------------------------------------------
+% Environment for temporarily removing the page footer
+\newcommand{\suppressfooter}
+{%
+\fancyfoot[RE,LO,LE,RO]{}
+\renewcommand{\footrulewidth}{0.0pt}
+}%
+
+\newcommand{\restorefooter}
+{%
+\fancyfoot[RE,LO]{\scshape\leftmark}
+\fancyfoot[LE,RO]{\scshape\rightmark}
+\renewcommand{\footrulewidth}{.4pt}
+}%
+
+\newcommand{\rightfooter}
+{%
+%\fancyfoot[RE,LO]{\scshape\leftmark}
+\fancyfoot[LE,RO]{\scshape\rightmark}
+\renewcommand{\footrulewidth}{.4pt}
+}%
+
+% -----------------------------------------------------------------------------
+% Simple command for inline figures (does not count towards a normal figure)
+
+\newcommand{\inlinespacing}{1em}
+\newcommand{\inlineframebox}[2]{
+\vspace{1em}
+\newline
+\fbox{
+\begin{minipage}[]{.95 \linewidth}
+\begin{center}
+#1 \\
+#2
+\end{center}
+\end{minipage}
+}
+\vspace{1em}
+\newline
+}
+
+\newcommand{\inlinembox}[2]{
+\vspace{1em}
+\newline
+\begin{minipage}[]{.95 \linewidth}
+\begin{center}
+#1 \\
+#2
+\end{center}
+\end{minipage}
+\vspace{1em}
+\newline
+}
+
+
+% -----------------------------------------------------------------------------
+% Custom styling for listing the source code with syntax highlighting
+
+\newcommand{\SyntaxHighLighting}{
+% the following is needed for syntax highlighting
+\usepackage{xcolor}
+\usepackage{textcomp}
+
+\lstdefinelanguage{Scheme}{
+  morekeywords=[1]{define, define-syntax, define-param, define-macro, lambda, define-stream, stream-lambda},
+  morekeywords=[2]{begin, call-with-current-continuation, call/cc,
+    at-beginning, after-sources,
+    call-with-input-file, call-with-output-file, case, cond,
+    do, else, for-each, if,
+    let*, let, let-syntax, letrec, letrec-syntax,
+    set!, set-param!, run-sources+, run-until,
+    let-values, let*-values,
+    and, or, not, delay, force,
+    quasiquote, quote, unquote, unquote-splicing,
+    map, fold, syntax, syntax-rules, eval, environment, query },
+  morekeywords=[3]{import, export,
+    make, list, component, frequency, fwidth,
+    harminv, output-efield-z },
+  alsodigit=!\$\%&*+-./:<=>?@^_~,
+  sensitive=true,
+  morecomment=[l]{;},
+  morecomment=[s]{\#|}{|\#},
+  morestring=[b]",
+  basicstyle=\small\ttfamily,
+  keywordstyle=\bf\ttfamily\color[rgb]{0,.3,.7},
+  commentstyle=\color[rgb]{0.133,0.545,0.133},
+  stringstyle={\color[rgb]{0.75,0.49,0.07}},
+  upquote=true,
+  breaklines=true,
+  breakatwhitespace=true,
+  literate=*{`}{{`}}{1}
+}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  language=Scheme,                % the language of the code
+  basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=4,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                 % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add a comment within your code
+  morekeywords={*,...}               % if you want to add more keywords to the set
+}
+}
+
+% -----------------------------------------------------------------------------
+% Custom styling for quote boxes, use \epigraph
+
+\definecolor{quotationcolour}{HTML}{F0F0F0}
+\definecolor{quotationmarkcolour}{HTML}{1F3F81}
+
+\newcommand{\epiline}{\hrule \vskip -.2em \hrule}
+% Massively humongous opening quotation mark.
+\newcommand{\hugequote}[1]{%
+  \fontsize{42}{48}\selectfont \color{quotationmarkcolour} \textbf{#1}
+  \vskip -.5em
+}
+
+\newcommand{\epigraph}[2]{%
+  \smallskip
+ \begin{center}
+%  \hspace{1em}
+  \colorbox{quotationcolour}{%
+    \parbox{.8\textwidth}{%
+    \epiline \vskip 1em 
+    #1
+    \begin{flushright}\textsc{#2}\end{flushright}
+    \epiline
+    }
+  }
+  \end{center}
+  \medskip
+}
+
+\newcommand{\epigraphshort}[1]{%
+  \smallskip
+ \begin{center}
+%  \hspace{1em}
+  \colorbox{quotationcolour}{%
+    \parbox{.8\textwidth}{%
+    \epiline \vskip 1em 
+     \begin{center}
+    #1
+    \end{center}
+
+    \epiline
+    }
+  }
+  \end{center}
+  \medskip
+}
+
+% -----------------------------------------------------------------------------
+% custom DRAFT MARK
+
+\usepackage[]{datetime} 
+\usepackage[allpages]{draftmark}
+
+\iffinal{}{
+\draftmarksetup{
+  angle=0,scale=.34,
+  color=red!45!blue!25,xcoord=117,ycoord=-129,
+  mark={  \raggedright \mmddyyyydate (DRAFT)\\ \today} }
+}
+
+% -----------------------------------------------------------------------------
+% Customize fncychap settings
+\iffinal{}{
+	\ChRuleWidth{1.5pt}
+	\ChTitleLowerCase
+	\ChTitleVar{\Huge \sc}
+	}
+
+% -----------------------------------------------------------------------------
+% tighten the fncychap spacings, TeX code taken from
+% http://tex.stackexchange.com/questions/13357/fncychap-package-reduce-vertical-gap-space-between-header-and-chapter-heading
+
+\makeatletter
+\renewcommand*{\@makechapterhead}[1]{%
+  \iffinal{\setstretch{\@ssp}}{}
+  
+  \vspace*{\chaptertopspacing\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 040920
+        \DOCH
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 060424
+      \DOTI{#1}%
+    \else%
+      \DOTIS{#1}%
+    \fi
+    \vspace*{\chaptertotextspacing\p@}
+  }
+  \iffinal{\setstretch{\@dsp}}{}  
+}
+
+
+ \renewcommand*{\@makeschapterhead}[1]{%
+  \vspace*{\chaptertopspacingSTAR\p@}%
+  {\parindent \z@ \centering%\raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \DOTIS{#1}
+    \vskip \chaptertotextspacingSTAR\p@
+  }}
+ 
+\makeatother
+
+
+% -----------------------------------------------------------------------------
+% redefine abstract from drexel-thesis since the spacing is now wrong
+\makeatletter
+\renewenvironment{abstract}{%
+  \listed@schapter{\abstractname}%
+  \blanklines{-0}%
+    \begin{center}
+      \setstretch{\@ssp}%
+      \@DUT@title\\
+      \@DUT@author\\
+      \ifdaring{%
+        \ifnum\c@@DUT@advisors=\@ne%
+        Advisor:
+        \else%
+        Advisors:
+        \fi}{}
+      \@DUT@advisor\\
+    \end{center}
+  \blanklines{4}%
+  \setstretch{\@dsp}%
+  \@nobreaktrue
+  \@afterindentfalse
+  \@afterheading
+}{%
+  \par\setstretch{\@ssp}%
+}
+\makeatother

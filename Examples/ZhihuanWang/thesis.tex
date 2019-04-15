@@ -1,0 +1,137 @@
+%\documentclass[final,subfig,blackref,approvalform]{drexel-thesis} %final copy
+%\documentclass[final,subfig,blackref]{drexel-thesis} %final copy
+\documentclass[final,subfig,daring]{drexel-thesis} %colorful links copy
+%\documentclass[daring,subfig,blackref,draftspace]{drexel-thesis} %for committee
+%\documentclass[daring,subfig,blackref,draftwatermark,draftspace]{drexel-thesis} %draft copy
+
+%swap margins so the wide one is down the binding edge when printing double sided
+%only use this with twoside
+%\let\tmp\oddsidemargin
+%\let\oddsidemargin\evensidemargin
+%\let\evensidemargin\tmp
+%\reversemarginpar
+
+% packages for CV formatting
+\usepackage{marvosym}
+\usepackage{url,parskip}   %other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+%\usepackage{fullpage} 
+\usepackage{longtable}
+\usepackage[super]{nth}
+
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{placeins}   % To allow pictures to flush after a section
+\usepackage{setspace}
+\usepackage{nth}
+\usepackage{listings}   % Source code highlighting and formatting
+\usepackage{hyperref}   % Hyperlinks for forms and links within the text
+
+% Draft mode on the pictures
+% \setkeys{gin}{draft}
+
+% Fancy citation extensions
+\usepackage[super,sort&compress,comma]{natbib}
+%\bibliographystyle{yahapj}
+\bibliographystyle{ieeetr}
+
+% fncychap clobbers \appendix with a silly implementation that breaks
+% hyperlinks to appendix chapters.  Work around this by ignoring their
+% implementation completely.
+\let\temporaryAppendix\appendix
+\usepackage[Conny]{fncychap}  % Nicer style used for distribution
+%\usepackage[]{fncychap}
+\let\appendix\temporaryAppendix
+
+\usepackage{deluxetable}
+%\usepackage{aastex_hack}
+\usepackage{tikz}
+\usepackage{tkz-berge}
+\usetikzlibrary{shapes}
+%\usepackage[left]{showlabels}
+
+
+\ChRuleWidth{1.5pt}
+\ChTitleVar{\Large \sc \bf}
+\ChNumVar{\Large \sc \bf}
+\ChNameVar{\Large \sc \bf}
+
+\input{supplement/customizations}
+\SyntaxHighLighting{}
+
+\includeonly{
+	tex/preamble,           %Dedications, acknowledgments, TOC, and abstract
+	tex/Introduction,       %CHAPTER: Introduction
+	tex/Data,               %CHAPTER: Experimental Results
+	tex/LM,               %CHAPTER: Light Management
+	tex/ED,               %CHAPTER: Electronic Density Distribution
+	tex/RM,                 %CHAPTER: Rate Management
+	tex/LT,                 %CHAPTER: Laser Threshold Calculation
+	tex/Conclusion,         %CHAPTER: Conclusion
+	tex/appendix,           %APPENDIX
+	tex/CV,                 %CV
+}
+
+\author{Zhihuan Wang}
+\title{Dimensional Dependence of Light Interaction with Nanowires}
+\DUTmonth{September}
+\DUTyear{2017}
+\degree{Doctor of Philosophy}
+\advisor{Dr. Bahram Nabet}
+\copyrighttext{\copyrighttextCCBYSA}
+
+\input{pictures/tikzpics}
+
+\begin{document}
+\suppressfooter{}
+\include{tex/preamble}
+
+\begin{thesis}
+  \pdfbookmark[-1]{Main Matter}{Main Matter}
+  \ifdaring{\setstretch{1.3}}{}
+  %\ifdaring{\setstretch{1.3}}{\setstretch{1.3}}
+  
+  \restorefooter{}
+
+  %CHAPTER: Introduction
+  \include{tex/Introduction}
+  
+  %CHAPTER: Experimental Results
+  \include{tex/Data}
+  
+  %CHAPTER: Light Management
+  \include{tex/LM}
+  
+  %CHAPTER: Electronic Density Distribution
+  %\suppressfooter{}
+  %\rightfooter{}
+  \include{tex/ED}
+
+  %CHAPTER: Rate Management
+  %\suppressfooter{}
+  %\restorefooter{}
+  \include{tex/RM}
+
+  %CHAPTER: Laser Threshold Calculation
+  \include{tex/LT}
+
+  %CHAPTER: Conclusion
+  \include{tex/Conclusion}
+
+\end{thesis}
+
+\suppressfooter{}
+\bibliography{bib/All_refs}
+\suppressfooter{}
+\restorefooter{}
+%\syntaxhighlighting{}
+
+\appendix{}
+\include{tex/appendix}
+\suppressfooter{}
+\include{tex/CV}
+\restorefooter{}
+\end{document}

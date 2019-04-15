@@ -1,0 +1,218 @@
+\documentclass[a4paper,11pt,final]{article}
+\InputIfFileExists{draftmark-guide.cfg}{}{No file draftmark-guide.cfg}
+\pagestyle{fancyplain}
+\begin{document}
+\MakeShortVerb{\+}
+\title{\bfseries The \texttt{\TC{blue}{draftmark}}
+  \xcopyright{Package}{red}\\[1ex]\fbox{\large Version 1.2}}
+\author{Ahmed Musa\\[1ex]University of Central Lancashire\\
+  Preston PR1 2HE, United Kingdom\\[1ex]
+  \texttt{a.musa@rocketmail.com}}
+\maketitle
+\draftmarksetup{fontfamily=cmr,color=magenta,
+  mark={\color{orange}\framebox[22.3cm][c]{}\\[15.35cm]
+  \color{magenta}\framebox[22.3cm][c]{}},angle=90,scale=1,xcoord=0,ycoord=-1.5}
+
+\section{Introduction}
+\lletter{I}{t is perhaps} uncommon but it sometimes arises that your employer, line manager or client wants you to place some peculiar draft/watermark such as ``Directorate Only'' at a quaint position and in a curious color and orientation, on one or more pages of a document. If you find yourself in that odd situation, this package may help you. One of the numerous advantages of \texorlatex is that the typesetter can assume full control of his presentation style.
+
+This package puts a user-specified draftmark and arbitrary multi-line texts on pages of documents. It is more general and dynamic than the package +draftwatermark+ by Sergio Callegari~\cite{SCallegari2006}. The advantages of this package over +draftwatermark+ include: the user can specify his own draftmark and color, the draftmark position, orientation, the page(s) (all pages, odd pages, even pages, a particular page, and a range of pages) on which the draftmark should appear, and all the options are passed directly to package instead of being defined in the source file by many macros. Moreover, all these options can be customized for individual pages and segments of the document. There is also the provision to use the +\draftmarksetup+ macro, by which the user can dynamically pass the draftmark properties for each page or range of pages. With the +xcolor+ package (loaded by this package), all colors (including +white+, shades like +red!75!green!50+, and those defined within the user document) can be passed to this package. The code of this package is very much shorter than that of the +draftcopy+ package by J\"{u}rgen Vollmer~\cite{JVollmer2002}---because it capitalizes on some shipout hook-handling utilities that have become available in recent years (post 2002)---but has more dynamism, thanks to the +\draftmarksetup+ macro. This package uses Heiko Oberdiek's shipout hooks from the +atbegshi+ package~\cite{HOberdiek2008}. The package +eso-pic+~\cite{RNiepraschk2006} offers another shipout hook, but we settled on +atbegshi+.
+
+\section {User manual}
+\lletter{T}{his guide describes} in sufficient detail the most important features of the current version of the package. An example source file entitled +draftmark-examples.tex+ accompanies this document.
+
+\subsection{User interface}
+The package may be loaded with full options such as in
+
+\begin{dmverbatim}
+\usepackage[draft=true,allpages=true,fontfamily=pag,color=gray,
+  grayness=0.8,mark=DRAFT,angle=45,scale=0.8,
+  xcoord=0,ycoord=0]{draftmark}
+
+\usepackage[draft,pages=1-4,fontfamily=phv,color=red!55!yellow!50,
+  mark=CONFIDENTIAL,angle=55,scale=0.8,
+  xcoord=20,ycoord=10]{draftmark}.
+\end{dmverbatim}
+
+The option +draft+ (or +final+) and the one that specifies the pages on which the draftmark should appear (+allpages+, +oddpages+, +evenpages+, etc.\@) should be set when loading the package, \eg,
+
+\begin{dmverbatim}
+\usepackage[draft,evenpages]{draftmark}.
+\end{dmverbatim}
+
+The remaining options can be set dynamically using the +\draftmarksetup+ macro. These other options can be set for each page, as on the pages of this document. The +\draftmarksetup+ macro can be used as in
+
+\begin{dmverbatim}
+\draftmarksetup{fontfamily=bch,color=gray,grayness=0.9,
+  mark=DRAFT,angle=45,scale=0.8,xcoord=0,ycoord=0}.
+\end{dmverbatim}
+
+The options +draft+ and +final+ should not appear in +\draftmarksetup+ but in +\usepackage[draft]{draftmark}+; this was one of the package design choices. However, the booleans that specify pages for the draftmark (\eg, +allpages+ and  +evenpages+) can appear in +\draftmarksetup+. This implies that the page-specifying instructions may be issued and superseded dynamically (page by page or chapter by chapter). For small documents, this feature may be unnecessary, but will be useful in large documents (such as a report or book), in which the draftmark may change from chapter to chapter.
+
+The package option +allpages+ in
+
+\begin{dmverbatim}
+\usepackage[draft,allpages]{draftmark},
+\end{dmverbatim}
+
+which specifies the pages that should receive draftmark, may be replaced by any of the following:
+
+\begin{dmverbatim}
+firstpage, oddpages, evenpages, pageno=x, pages=x-x,
+\end{dmverbatim}
+
+where +x+ means any page number. If you enter, for example, +pages=0-10+, all pages from 1 to 10 will have draftmark. On the other hand, an entry like +pages=10-0+ will print draftmark on no page. If no page option is given, draftmark will appear only on the first page and a warning message will be entered in the transcript file. When entering +pageno=x+ or +pages=x-x+ as option to package, don't forget to include the equality sign (+=+), otherwise the option will be ignored by the package and a warning message will logged in the transcript file.
+
+If you follow an option key with an equality sign but without a value, as in, \eg,
+
+\begin{dmverbatim}
+\draftmarksetup{|color(red)fontfamily=|color(blue),color=gray,grayness=0.8,|color(red)mark=|color(blue),
+  angle=45,scale=0.8,xcoord=0,ycoord=0},
+\end{dmverbatim}
+
+then there will be no problem but the outcome may be unpredictable, depending on the key that has no value. In the above example, no draftmark will be printed (not even the default mark, which is +DRAFT+) because the entry \TC{blue}{+mark=+} is valid and implies that no draftmark should be printed. The absence of fontfamily in \TC{blue}{+fontfamily=+} will compel \texorlatex to use an arbitrary fontfamily that isn't the default (the default fontfamily is +phv+ if the key +fontfamily+ is not passed, and +cmr+ otherwise).
+
+Indeed this feature can be used to empty the contents of the draftmark for any page by issuing the command
+
+\begin{dmverbatim}
+\draftmarksetup{mark=}.
+\end{dmverbatim}
+
+\subsection{\textbackslash documentclass\ options}
+The package is set to inherit the +\documentclass+ options, if the options apply to the package. Therefore, some of the package options can be passed to the package via the +\documentclass+ options list. This is perhaps most appropriate in the case of the options +draft+ and +final+. But package options supersede those of the +\documentclass+. For example, the option +final+ in the +\documentclass+ options list is normally superseded by the option +draft+ to +draftmark+ package, \eg, as in
+
+\begin{dmverbatim}
+\usepackage[draft]{draftmark}.
+\end{dmverbatim}
+
+If you don't need the draftmark on any page of your document, simply replace the +draft+ option to +\usepackage+ by +final+, or indeed by nothing if you haven't specified +draft+ in the +\documentclass+ options list. If you have specified +draft+ in the +\documentclass+ options list but you still don't need the draftmark on any page of your document, then you would have to specify +final+ when loading the package, as in
+
+\begin{dmverbatim}
+\usepackage[final]{draftmark}.
+\end{dmverbatim}
+
+Sample draftmarks are offered by the following settings (see also the example file +draftmark-examples.tex+):
+
+\begin{dmverbatim}
+\draftmarksetup{fontfamily=panr,angle=45,scale=0.9,mark=Confidential!,
+  color=gray,grayness=0.8,xcoord=0,ycoord=0}
+
+\draftmarksetup{fontfamily=put,angle=90,scale=1.0,mark=-Official-,
+  color=red!75!green!50,xcoord=-80,ycoord=20}.
+\end{dmverbatim}
+
+\subsection{The size of the draftmark}
+The size of the mark is controlled by two parameters: +fontsize+ and +scale+ and both can be set dynamically. Their default values are 5cm and 1, respectively.
+
+\subsection{The coordinates of the draftmark}
+The draftmark coordinates (specified by +xcoord+ and +ycoord+) have their origin at the center of the page and are with respect to the geometric center of the draftmark. The default unit is +millimeter+, but this can be changed on any page by issuing
+
+\begin{dmverbatim}
+\draftmarksetup{coordunit=|color(red)unit of length|color(blue)}.
+\end{dmverbatim}
+
+Acceptable units of length are +mm+ (millimeter), +cm+ (centimeter), +in+ (inch), +pt+~(point), +bp+ (big point), +dd+ (didot), +ex+ (height of small +x+), +pc+ (pica), +cc+~(cicero), +em+~(width of capital +M+). The unit of coordinates can also be changed by simply submitting the unit to the package with other options at each call, as in
+
+\begin{dmverbatim}
+\draftmarksetup{|color(red)coordunit=pc,|color(blue)fontfamily=cmss,angle=90,scale=1.0,
+  mark=-Official-,color=red!75!green!50,xcoord=-10,ycoord=10}.
+\end{dmverbatim}
+
+\subsubsection{Wrong location of the draftmark}
+If you discover that the draftmark is wrongly positioned on the page(s) of your document, the chances are that you have submitted wrong coordinates (values of +xcoord+ and +ycoord+) to the package. The package does not take responsibility for this and will normally not warn you in this respect. Since the output file provides direct and simple indication of the occurrence of this error, no attempt has been made in the package to warn users in this regard. If you do not specify the keys +xcoord+ and/or +ycoord+ at all in the call to the package, their immediate past values will be used by the package. On the other hand, if you list these keys without their values in the call to the package, their default values (center of paper) will be assumed by the package.
+
+\subsection{Choice of \texttt{grayness}}
+If the chosen color is not +gray+, the option +grayness+ (which may vary from 0.1 to 0.9) is, of course, ignored (\ie, not used) and no warning or information is written into the document log file. Instead of specifying the +grayness+, the shade of the gray color can be chosen as a factor, \eg, as in +color=gray!35+. In this case, the +grayness+ is superfluous.
+
+\subsection{Breaking the draftmark into lines}\label{sec:Breakin-draftma}
+From version 1.1 it has been possible to break the draftmark into lines as in the following examples:
+
+\begin{dmverbatim}
+\draftmarksetup{fontfamily=ptm,angle=45,scale=0.7,
+  mark=|color(red){Directorate\\[.25ex]Only}|color(blue),color=green,xcoord=0,ycoord=0}.
+
+\draftmarksetup{fontfamily=ptm,angle=45,scale=0.8,
+  mark=|color(red){\raggedright Control\\[.25ex]\raggedleft Version}|color(blue),
+  color=green,xcoord=0,ycoord=0}.
+\end{dmverbatim}
+
+Examples of this nature are provided in the source file +draftmark-examples.tex+.
+
+\subsubsection{The alignment of the draftmark}
+The default alignment of the draftmark is ``center'' and is enforced by the \LaTeX\ command +\centering+. This default can be superseded in the macro +\draftmarksetup+ as in the second example of section~\ref{sec:Breakin-draftma}. There is no package option for alignment.
+
+\subsection{Locating the page center}
+In case you need to locate the paper/page center for placing the draftmark or some other material at any position on the page, a two-line grid can be placed on the page background with the key +showcenter+, which may be issued (dynamically for each page) with the +\draftmarksetup+ macro as follows:
+
+\begin{dmverbatim}
+\draftmarksetup{|color(red)showcenter|color(blue)} |color(black)or
+
+\draftmarksetup{|color(red)showcenter=true|color(blue)} |color(black)or
+
+\draftmarksetup{|color(red)showcenter|color(blue),fontfamily=ptm,angle=60,scale=0.7,
+  mark=Confidential!,color=brown!25!yellow!75,coordunit=cc,
+  xcoord=0,ycoord=0}.
+\end{dmverbatim}
+
+An example is given in the example file +draftmark-examples.tex+. If after issuing this command to get a centered grid on a page, you no longer require the grid on the following pages, you simply issue another
+
+\begin{dmverbatim}
+\draftmarksetup{|color(red)showcenter=false|color(blue)} |color(black)or
+
+\draftmarksetup{|color(red)showcenter=false|color(blue),fontfamily=panr,angle=60,
+  scale=0.7,mark=Confidential!,color=brown!25!yellow!75,
+  coordunit=cc,xcoord=0,ycoord=0}.
+\end{dmverbatim}
+
+\section{Graphic watermarks}
+\lletter{W}{ith the} +\includegraphics+ command of the +graphicx+ package (which is loaded by this package), this package can be used to insert graphic watermarks. To insert graphic watermarks, simply set the key +mark+ as
+
+\begin{dmverbatim}
+  mark={\includegraphics[key-value list]{pic-file.eps}}.
+\end{dmverbatim}
+
+However, this appears rather awkward and the file extension has to be changed with other graphic formats (\eg, .pdf). Graphic watermarks are conveniently handled by the sister +xwatermark+ package.
+
+\section{Epilogue}
+\lletter{B}{ug reports and} suggestions for further improvement and extension of the package are very much welcome. An example source file entitled +draftmark-examples.tex+ accompanies this guide.
+
+\appendix
+\section{Package options\label{sec:package-options}}
+
+\extrarowheight=2pt
+\arrayrulecolor{yellow}
+\centering
+\begin{longtable}{|m{3cm}|m{2.5cm}|m{\hsize-7cm}|}
+\caption{Package options \label{tab:package-options}}\\\hline
+\rowcolor{pink}
+\bfseries Option&\bfseries Default&\bfseries Meaning\\\hline
+\endfirsthead
+\hline
+\multicolumn{3}{|l|}{\emph{Continued from last page}}\\\hline
+\bfseries Option&\bfseries Default&\bfseries Meaning\\\hline
+\endhead
+\multicolumn{3}{|r|}{\emph{Continued on next page}}\\\hline
+\endfoot
+\hline
+\endlastfoot
++draft+, +final+ & +final+ & The boolean switches that determine whether watermark should be printed or not. These options can be passed to package either through the \dclass options list or \cmdb{\usepackage}. Options to \cmdb{\usepackage} supersede those of \dclass.\\\hline
++allpages+, +evenpages+, +oddpages+, +pages+,~+page+ & +page=1+ & These determine the pages on which the watermarks are to be printed. The options \stya{allpages}, \stya{evenpages}, \stya{oddpages} are boolean keys, while \stya{pages} and \stya{page} require values, \eg, \stya{pages=x-x} and \stya{page=x}. If the package is loaded with the \stya{draft} option and none of these options is passed to it, the default watermark (DRAFT) will be printed on the first page of the document and a warning message logged in the transcript file.\\\hline
++mark+ & DRAFT & The text watermark.\\\hline
++angle+ & $45^\circ$ & The orientation of the watermark (text and/or picture). \\\hline
++scale+ & 1 & The scale of the text watermark.\\\hline
++grayness+ & 0.8 & The grayness of the text watermark. This option is no longer necessary since the grayness of the gray color can be set as a percentage (\eg, +color=gray!25+).\\\hline
++color+ & +gray+ & The color of the text watermark.\\\hline
++fontfamily+ & +cmr+ & The fontfamily of the text watermark.\\\hline
++fontsize+ & 5cm& The fontsize of the text watermark. If for some reason you need other fontsizes (\eg, 10pt, 11pt or 12pt for printing text watermarks in +\normalfont+), you will need to submit them as values of \stya{fontsize} (\eg, +fontsize=12pt+).\\\hline
++xcoord+ & 0 & x-coordinate of watermark (with reference to the center of paper and not the text center).\\\hline
++ycoord+ & 0 & y-coordinate of watermark. Both \stya{xcoord} and \stya{ycoord} should be submitted without units, since the unit is set separately by \stya{coordunit}.\\\hline
++coordunit+ & +mm+ & The unit for x- and y-coordinates. \\\hline
++showcenter+ & +false+ & Boolean that indicates if the center of the paper should be shown with a cross (and circle).\\\hline
++acceptrange+ & +false+ & Boolean that indicates if blank page ranges (\eg, +pages=+) should be accepted by the package. If it is set to +true+, blank page ranges are assumed to imply +pages=1-1+ (implying the watermark is printed on only the first page); otherwise they flag a fatal error.\\\hline
+\end{longtable}
+
+\bibfont
+\bibliographystyle{abbrv}
+\bibliography{draftmark-guide}
+
+\end{document}
